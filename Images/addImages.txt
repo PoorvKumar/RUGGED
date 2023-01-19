@@ -1,0 +1,6 @@
+Add images related to nature.
+Some images for light theme. This requires images related to mountains . 
+Snowy mountains / white mountains / mountains with snow on top.
+
+Some images for dark theme.
+THis will require images of rainforest and other images of greenery. 
