@@ -12,17 +12,27 @@
         integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
         crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/style.css">
+    <style>
+        .nk{
+            margin-top: 12px;
+            margin-left: 12px;
+            margin-right: 12px;
+            margin-bottom: 12px;
+        }
+        .dropdown-menu { background-color: rgb(60, 51, 52); }
+        .dropdown-menu a:hover{   background-color: #110e0e;  }
+    </style>
 </head>
 
 <body>
     <header>
-        <nav class="navbar nav nav-tabs navbar-dark bg-dark justify-content-start">
+        <nav class="navbar nav nav-tabs navbar-dark bg-dark justify-content-start fixed-top">
+            <div class="d-flex flex-row justify-content-between">
             <a class="navbar-brand" href="index.html">
                 <img src="/LOGO/LogoMain/rugged-high-resolution-logo-white-on-transparent-background.png" alt="Logo"
                     width="110" height="50" class="d-inline-block align-text-top">
             </a>
             <div class="navbar-brand" >RUGGED</div>
-            <div class="d-flex flex-row justify-content-between">
                 <div class="nav-item">
                     <a href="#" class="nav-link text-white">Explore</a>
                 </div>
@@ -35,7 +45,32 @@
                 <div class="nav-item">
                     <a href="#" class="nav-link text-white">Interview Experience</a>
                 </div>
-            </div>
+                </div>
+            <div class="d-flex flex-row justify-content-between nk">
+                <!-- <div class="row">     -->
+                 <!-- <div class="col-xs-8 col-xs-offset-2"> -->
+                  <div class="input-group">
+                   <div class="btn-group">
+                    <button type="button" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                      All
+                    </button>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item text-white" href="#">Action</a></li>
+                      <li><a class="dropdown-item text-white" href="#">Another action</a></li>
+                      <li><a class="dropdown-item text-white"  href="#">Something else here</a></li>
+                      <li><hr class="dropdown-divider"></li>
+                      <li><a class="dropdown-item " href="#">Separated link</a></li>
+                    </ul>
+                  </div>
+                   <input type="hidden" name="search_param" value="all" id="search_param">
+                   <input type="text" class="form-control" name="x" id="search" placeholder="Search">
+                   <span class="input-group-btn">
+                       <button type="button" class="btn btn-outline-light">Search</button>
+                         <span class="glyphicon glyphicon-search"></span>
+                       </button>
+                   </span>
+                  </div>
+                 </div>
         </nav>
     </header>
     <div data-bs-theme="dark" >
