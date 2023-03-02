@@ -1,0 +1,118 @@
+.pcHzMain{
+    /* max-width:; */
+    max-height: 280px;
+}
+.HzSampleTxt{
+    margin: 0;
+}
+.pcHzPrice{
+    display: inline-flex;
+    margin: 0;
+    flex-wrap: wrap;
+    opacity: 80%;
+}
+.pcHzDiscount{
+    max-width: fit-content;
+    margin: 0;
+    display: inline-flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    border-radius: 5%;
+    background-color: royalblue;
+    color: whitesmoke;
+    padding: 0.5%;
+    margin: 2% 3%;
+}
+.pcHzLimitedTimeDeal{
+    max-width: fit-content;
+    margin: 0;
+    display: inline-flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    border-radius: 2%;
+    color: whitesmoke;
+    background-color: brown;
+    padding: 1%;
+    margin: 0;
+    font-size: 7px;
+}
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial;
+    margin: 0 auto; 
+    max-width: 75%;
+    padding: 20px;
+  }
+  
+  .heading {
+    font-size: 15px;
+    opacity: 75%;
+    margin-right: 25px;
+  }
+  .headingJr{
+    font-size: 12px;
+    opacity: 50%;
+    margin: 0;
+  }
+  
+  .fa {
+    font-size: 25px;
+  }
+  
+  .checked {
+    color: lightblue;
+  }
+  
+  /* Three column layout */
+  .side {
+    float: left;
+    width: 15%;
+    margin-top: 10px;
+  }
+  
+  .middle {
+    float: left;
+    width: 70%;
+    margin-top: 10px;
+  }
+  
+  /* Place text to the right */
+  .right {
+    text-align: right;
+  }
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  /* The bar container */
+  .bar-container {
+    width: 100%;
+    background-color: #f1f1f1;
+    text-align: center;
+    color: white;
+  }
+  
+  /* Individual bars */
+  .bar-5 {width: 60%; height: 18px; background-color: #04AA6D;}
+  .bar-4 {width: 30%; height: 18px; background-color: #2196F3;}
+  .bar-3 {width: 10%; height: 18px; background-color: #00bcd4;}
+  .bar-2 {width: 4%; height: 18px; background-color: #ff9800;}
+  .bar-1 {width: 15%; height: 18px; background-color: #f44336;}
+  
+  /* Responsive layout - make the columns stack on top of each other instead of next to each other */
+  @media (max-width: 400px) {
+    .side, .middle {
+      width: 100%;
+    }
+    /* Hide the right column on small screens */
+    .right {
+      display: none;
+    }
+  }
