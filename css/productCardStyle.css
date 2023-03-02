@@ -1,0 +1,15 @@
+.cardWidth{
+    width: 23%;
+}
+.pcButton{
+    width: 30%;
+    margin: 0 2%;
+    border-radius: 10%;
+
+}
+.pcBtnGroup{
+    position: relative;
+    display: inline-flex;
+    vertical-align: middle;
+    margin: 3%;
+}
