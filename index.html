@@ -11,25 +11,34 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
         crossorigin="anonymous"></script>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+        integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="css/style.css">
     <style>
-        .nk{
+        .nk {
             margin-top: 12px;
             margin-left: 12px;
             margin-right: 12px;
             margin-bottom: 12px;
         }
-        .dropdown-menu { background-color: rgb(60, 51, 52); }
-        .dropdown-menu a:hover{   background-color: #110e0e;  }
-        .ll{
+
+        .dropdown-menu {
+            background-color: rgb(60, 51, 52);
+        }
+
+        .dropdown-menu a:hover {
+            background-color: #110e0e;
+        }
+
+        .ll {
             margin-left: 1%;
             margin-right: 1%;
             margin-top: 1%;
         }
-        .card,a:hover{
-            
-        }
+
+        .card,
+        a:hover {}
     </style>
 </head>
 
@@ -37,11 +46,11 @@
     <header>
         <nav class="navbar nav nav-tabs navbar-dark bg-dark justify-content-start fixed-top">
             <div class="d-flex flex-row justify-content-between">
-            <a class="navbar-brand" href="index.html">
-                <img src="/LOGO/LogoMain/rugged-high-resolution-logo-white-on-transparent-background.png" alt="Logo"
-                    width="110" height="50" class="d-inline-block align-text-top">
-            </a>
-            <div class="navbar-brand" >RUGGED</div>
+                <a class="navbar-brand" href="index.html">
+                    <img src="/LOGO/LogoMain/rugged-high-resolution-logo-white-on-transparent-background.png" alt="Logo"
+                        width="110" height="50" class="d-inline-block align-text-top">
+                </a>
+                <div class="navbar-brand">RUGGED</div>
                 <div class="nav-item">
                     <a href="#" class="nav-link text-white">Explore</a>
                 </div>
@@ -54,35 +63,38 @@
                 <div class="nav-item">
                     <a href="#" class="nav-link text-white">Interview Experience</a>
                 </div>
-                </div>
+            </div>
             <div class="d-flex flex-row justify-content-between nk">
                 <!-- <div class="row">     -->
-                 <!-- <div class="col-xs-8 col-xs-offset-2"> -->
-                  <div class="input-group">
-                   <div class="btn-group">
-                    <button type="button" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                      All
-                    </button>
-                    <ul class="dropdown-menu">
-                      <li><a class="dropdown-item text-white" href="#">Action</a></li>
-                      <li><a class="dropdown-item text-white" href="#">Another action</a></li>
-                      <li><a class="dropdown-item text-white"  href="#">Something else here</a></li>
-                      <li><hr class="dropdown-divider"></li>
-                      <li><a class="dropdown-item " href="#">Separated link</a></li>
-                    </ul>
-                  </div>
-                   <input type="hidden" name="search_param" value="all" id="search_param">
-                   <input type="text" class="form-control" name="x" id="search" placeholder="Search">
-                   <span class="input-group-btn">
-                       <button type="button" class="btn btn-outline-light">Search</button>
-                         <span class="glyphicon glyphicon-search"></span>
-                       </button>
-                   </span>
-                  </div>
-                 </div>
+                <!-- <div class="col-xs-8 col-xs-offset-2"> -->
+                <div class="input-group">
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            All
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item text-white" href="#">Action</a></li>
+                            <li><a class="dropdown-item text-white" href="#">Another action</a></li>
+                            <li><a class="dropdown-item text-white" href="#">Something else here</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item " href="#">Separated link</a></li>
+                        </ul>
+                    </div>
+                    <input type="hidden" name="search_param" value="all" id="search_param">
+                    <input type="text" class="form-control" name="x" id="search" placeholder="Search">
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-outline-light">Search</button>
+                        <span class="glyphicon glyphicon-search"></span>
+                        </button>
+                    </span>
+                </div>
+            </div>
         </nav>
     </header>
-    <div data-bs-theme="dark" >
+    <div data-bs-theme="dark">
         <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active carouselMain" data-bs-interval="10000">
