@@ -1,60 +1,91 @@
-.card {
-    width: 100%;
-    height: 350px;
-    margin-bottom: 20px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+.slider{
+  width:300px;
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  opacity: 0.8;
+  box-shadow: #e73c7e;
+  overflow:hidden;
+  display:flex;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+}
+.card-header{
+  text-align: center;
+}
+.ok{
+  margin-bottom:10px;
+  margin-left:10px;
+}
+button {
+background-color: transparent;
+background-repeat: no-repeat;
+border: none;
+cursor: pointer;
+overflow: hidden;
+outline: none;
+margin-bottom: 15px;
+}
+button:hover{
+background-color: #a309e0;
+background-repeat: no-repeat;
+border-radius: 20px;
+cursor: pointer;
+overflow: hidden;
+outline: none;
+}
+.carousel-indicators li {
+  background-color: #ddd;
+  border: none;
+}
+
+.carousel-indicators .active {
+  background-color: #007bff;
+}
+
+.carousel-control {
+  background-color: transparent;
+  color: #007bff;
+  font-size: 30px;
+  text-shadow: none;
+}
+
+.carousel-control:hover,
+.carousel-control:focus {
+  color: #007bff;
+  text-shadow: none;
+}
+
+.carousel-control.left,
+.carousel-control.right {
+  background-image: none;
+}
+
+@media (max-width: 991.20px) {
+  .slider{
+    width:auto;
+    height: auto;
   }
-  
-  .card img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
+  .slider img{
+    width:90px;
+    height: 70px;
   }
-  
-  .card-body {
-    padding: 20px;
+}
+@media (max-width: 900px) {
+  .slider{
+    width:auto;
+    height: auto;
   }
-  
-  .card-title {
-    font-size: 20px;
-    font-weight: bold;
-    margin-bottom: 10px;
+  .slider img{
+    width:80px;
+    height:60px;
   }
-  
-  .card-text {
-    font-size: 16px;
-    line-height: 1.5;
+}
+@media (max-width: 770px) {
+  .slider{
+    width:auto;
+    height: auto;
   }
-  
-  .carousel-indicators li {
-    background-color: #ddd;
-    border: none;
+  .slider img{
+    width:60px;
+    height:40px;
   }
-  
-  .carousel-indicators .active {
-    background-color: #007bff;
-  }
-  
-  .carousel-control {
-    background-color: transparent;
-    color: #007bff;
-    font-size: 30px;
-    text-shadow: none;
-  }
-  
-  .carousel-control:hover,
-  .carousel-control:focus {
-    color: #007bff;
-    text-shadow: none;
-  }
-  
-  .carousel-control.left,
-  .carousel-control.right {
-    background-image: none;
-  }
-  
-  @media (max-width: 767px) {
-    .card {
-      height: auto;
-    }
-  }
+}
