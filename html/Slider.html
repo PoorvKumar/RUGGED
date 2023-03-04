@@ -13,46 +13,106 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
         integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="css/Slider.css">
+    <!-- <link rel="stylesheet" href="css/Slider.css"> -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-       <style>
-          .slider{
-    width:300px !important;
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>   
+    <style>
+      .slider{
+    width:300px;
     background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
     opacity: 0.8;
     box-shadow: #e73c7e;
-    
- }
- .card-header{
+    overflow:hidden;
+    display:flex;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+  }
+  .card-header{
     text-align: center;
- }
- .ok{
+  }
+  .ok{
     margin-bottom:10px;
     margin-left:10px;
- }
- button {
-background-color: transparent;
-background-repeat: no-repeat;
-border: none;
-cursor: pointer;
-overflow: hidden;
-outline: none;
-margin-bottom: 15px;
-}
-button:hover{
-background-color: #a309e0;
-background-repeat: no-repeat;
-border-radius: 20px;
-cursor: pointer;
-overflow: hidden;
-outline: none;
-}
-       </style>                                
+  }
+  button {
+  background-color: transparent;
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  outline: none;
+  margin-bottom: 15px;
+  }
+  button:hover{
+  background-color: #a309e0;
+  background-repeat: no-repeat;
+  border-radius: 20px;
+  cursor: pointer;
+  overflow: hidden;
+  outline: none;
+  }
+  .carousel-indicators li {
+    background-color: #ddd;
+    border: none;
+  }
+  
+  .carousel-indicators .active {
+    background-color: #007bff;
+  }
+  
+  .carousel-control {
+    background-color: transparent;
+    color: #007bff;
+    font-size: 30px;
+    text-shadow: none;
+  }
+  
+  .carousel-control:hover,
+  .carousel-control:focus {
+    color: #007bff;
+    text-shadow: none;
+  }
+  
+  .carousel-control.left,
+  .carousel-control.right {
+    background-image: none;
+  }
+  
+  @media (max-width: 991.20px) {
+    .slider{
+      width:auto;
+      height: auto;
+    }
+    .slider img{
+      width:90px;
+      height: 70px;
+    }
+  }
+  @media (max-width: 900px) {
+    .slider{
+      width:auto;
+      height: auto;
+    }
+    .slider img{
+      width:80px;
+      height:60px;
+    }
+  }
+  @media (max-width: 770px) {
+    .slider{
+      width:auto;
+      height: auto;
+    }
+    .slider img{
+      width:60px;
+      height:40px;
+    }
+  }
+    </style>                         
     </head>
     <body>
-        <div class="container">
+        <div class="container" style="min-width: 580px;">
             <div id="myCarousel" class="carousel slide" data-ride="carousel">
               <!-- Indicators -->
               <ol class="carousel-indicators">
@@ -65,9 +125,9 @@ outline: none;
               <div class="carousel-inner">
                 <div class="item active">
                   <div class="row">
-                    <div class="col-sm-4">
+                    <div class="col">
                         <div class="slider border border-info rounded-top">
-                            <div style="margin-top: 20px;">
+                            <div style="margin-top: 20px ;">
                                 <h5>See More</h5>
                             </div>
                             <div class="d-flex flex-column ok">
@@ -93,7 +153,7 @@ outline: none;
                            <button >See More..</button>
                         </div>
                       </div>
-                    <div class="col-sm-4">
+                    <div class="col">
                         <div class="slider border border-info rounded-top">
                             <div style="margin-top: 20px;">
                                 <h5>See More</h5>
@@ -121,96 +181,7 @@ outline: none;
                            <button >See More..</button>
                         </div>
                     </div>
-                    <div class="col-sm-4">
-                        <div class="slider border border-info rounded-top">
-                            <div style="margin-top: 20px;">
-                                <h5>See More</h5>
-                            </div>
-                            <div class="d-flex flex-column ok">
-                              <div class="d-inline-flex py-3">
-                                <div class="colk px-1">
-                                    <a aria-label="Help us" href="#"><img src="/LOGO/LOGO2/rugged-high-resolution-logo-color-on-transparent-background - Copy.png" width="120" height="100" class="rounded"></a>
-                                    <p class="card-header">XYZ</p>
-                                </div>
-                                <div class="colk px-1">
-                                    <a aria-label="Help us" href="#"><img src="/LOGO/LOGO3/rugged-high-resolution-logo-white-on-black-background.png"  width="120" height="100" class="rounded"></a>
-                                    <p class="card-header">XYZ</p></div>
-                              </div>
-                              <div class="d-inline-flex py-3">
-                                <div class="colk px-1">
-                                    <a aria-label="Help us"href="#"><img src="/LOGO/LOGO2/rugged-high-resolution-logo-color-on-transparent-background - Copy.png" width="120" height="100" class="rounded"></a>
-                                    <p class="card-header">XYZ</p></div>
-                                <div class="colk px-1">
-                                    <a aria-label="Help us"href="#"><img src="/LOGO/LOGO3/rugged-high-resolution-logo-white-on-black-background.png"  width="120" height="100" class="rounded"></a>
-                                    <p class="card-header">XYZ</p></div>
-                              </div>
-                            </div>
-                            <hr>
-                           <button >See More..</button>
-                        </div>
-                    </div>
-                  </div>
-                </div>
-          
-                <div class="item">
-                  <div class="row">
-                    <div class="col-sm-4">
-                        <div class="slider border border-info rounded-top">
-                            <div style="margin-top: 20px;">
-                                <h5>See More</h5>
-                            </div>
-                            <div class="d-flex flex-column ok">
-                              <div class="d-inline-flex py-3">
-                                <div class="colk px-1">
-                                    <a aria-label="Help us" href="#"><img src="/LOGO/LOGO2/rugged-high-resolution-logo-color-on-transparent-background - Copy.png" width="120" height="100" class="rounded"></a>
-                                    <p class="card-header">XYZ</p>
-                                </div>
-                                <div class="colk px-1">
-                                    <a aria-label="Help us" href="#"><img src="/LOGO/LOGO3/rugged-high-resolution-logo-white-on-black-background.png"  width="120" height="100" class="rounded"></a>
-                                    <p class="card-header">XYZ</p></div>
-                              </div>
-                              <div class="d-inline-flex py-3">
-                                <div class="colk px-1">
-                                    <a aria-label="Help us"href="#"><img src="/LOGO/LOGO2/rugged-high-resolution-logo-color-on-transparent-background - Copy.png" width="120" height="100" class="rounded"></a>
-                                    <p class="card-header">XYZ</p></div>
-                                <div class="colk px-1">
-                                    <a aria-label="Help us"href="#"><img src="/LOGO/LOGO3/rugged-high-resolution-logo-white-on-black-background.png"  width="120" height="100" class="rounded"></a>
-                                    <p class="card-header">XYZ</p></div>
-                              </div>
-                            </div>
-                            <hr>
-                           <button >See More..</button>
-                        </div>
-                    </div>
-                    <div class="col-sm-4">
-                        <div class="slider border border-info rounded-top">
-                            <div style="margin-top: 20px;">
-                                <h5>See More</h5>
-                            </div>
-                            <div class="d-flex flex-column ok">
-                              <div class="d-inline-flex py-3">
-                                <div class="colk px-1">
-                                    <a aria-label="Help us" href="#"><img src="/LOGO/LOGO2/rugged-high-resolution-logo-color-on-transparent-background - Copy.png" width="120" height="100" class="rounded"></a>
-                                    <p class="card-header">XYZ</p>
-                                </div>
-                                <div class="colk px-1">
-                                    <a aria-label="Help us" href="#"><img src="/LOGO/LOGO3/rugged-high-resolution-logo-white-on-black-background.png"  width="120" height="100" class="rounded"></a>
-                                    <p class="card-header">XYZ</p></div>
-                              </div>
-                              <div class="d-inline-flex py-3">
-                                <div class="colk px-1">
-                                    <a aria-label="Help us"href="#"><img src="/LOGO/LOGO2/rugged-high-resolution-logo-color-on-transparent-background - Copy.png" width="120" height="100" class="rounded"></a>
-                                    <p class="card-header">XYZ</p></div>
-                                <div class="colk px-1">
-                                    <a aria-label="Help us"href="#"><img src="/LOGO/LOGO3/rugged-high-resolution-logo-white-on-black-background.png"  width="120" height="100" class="rounded"></a>
-                                    <p class="card-header">XYZ</p></div>
-                              </div>
-                            </div>
-                            <hr>
-                           <button >See More..</button>
-                        </div>
-                    </div>
-                    <div class="col-sm-4">
+                    <div class="col">
                         <div class="slider border border-info rounded-top">
                             <div style="margin-top: 20px;">
                                 <h5>See More</h5>
@@ -243,7 +214,96 @@ outline: none;
           
                 <div class="item">
                   <div class="row">
-                    <div class="col-sm-4">
+                    <div class="col">
+                        <div class="slider border border-info rounded-top">
+                            <div style="margin-top: 20px;">
+                                <h5>See More</h5>
+                            </div>
+                            <div class="d-flex flex-column ok">
+                              <div class="d-inline-flex py-3">
+                                <div class="colk px-1">
+                                    <a aria-label="Help us" href="#"><img src="/LOGO/LOGO2/rugged-high-resolution-logo-color-on-transparent-background - Copy.png" width="120" height="100" class="rounded"></a>
+                                    <p class="card-header">XYZ</p>
+                                </div>
+                                <div class="colk px-1">
+                                    <a aria-label="Help us" href="#"><img src="/LOGO/LOGO3/rugged-high-resolution-logo-white-on-black-background.png"  width="120" height="100" class="rounded"></a>
+                                    <p class="card-header">XYZ</p></div>
+                              </div>
+                              <div class="d-inline-flex py-3">
+                                <div class="colk px-1">
+                                    <a aria-label="Help us"href="#"><img src="/LOGO/LOGO2/rugged-high-resolution-logo-color-on-transparent-background - Copy.png" width="120" height="100" class="rounded"></a>
+                                    <p class="card-header">XYZ</p></div>
+                                <div class="colk px-1">
+                                    <a aria-label="Help us"href="#"><img src="/LOGO/LOGO3/rugged-high-resolution-logo-white-on-black-background.png"  width="120" height="100" class="rounded"></a>
+                                    <p class="card-header">XYZ</p></div>
+                              </div>
+                            </div>
+                            <hr>
+                           <button >See More..</button>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="slider border border-info rounded-top">
+                            <div style="margin-top: 20px;">
+                                <h5>See More</h5>
+                            </div>
+                            <div class="d-flex flex-column ok">
+                              <div class="d-inline-flex py-3">
+                                <div class="colk px-1">
+                                    <a aria-label="Help us" href="#"><img src="/LOGO/LOGO2/rugged-high-resolution-logo-color-on-transparent-background - Copy.png" width="120" height="100" class="rounded"></a>
+                                    <p class="card-header">XYZ</p>
+                                </div>
+                                <div class="colk px-1">
+                                    <a aria-label="Help us" href="#"><img src="/LOGO/LOGO3/rugged-high-resolution-logo-white-on-black-background.png"  width="120" height="100" class="rounded"></a>
+                                    <p class="card-header">XYZ</p></div>
+                              </div>
+                              <div class="d-inline-flex py-3">
+                                <div class="colk px-1">
+                                    <a aria-label="Help us"href="#"><img src="/LOGO/LOGO2/rugged-high-resolution-logo-color-on-transparent-background - Copy.png" width="120" height="100" class="rounded"></a>
+                                    <p class="card-header">XYZ</p></div>
+                                <div class="colk px-1">
+                                    <a aria-label="Help us"href="#"><img src="/LOGO/LOGO3/rugged-high-resolution-logo-white-on-black-background.png"  width="120" height="100" class="rounded"></a>
+                                    <p class="card-header">XYZ</p></div>
+                              </div>
+                            </div>
+                            <hr>
+                           <button >See More..</button>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="slider border border-info rounded-top">
+                            <div style="margin-top: 20px;">
+                                <h5>See More</h5>
+                            </div>
+                            <div class="d-flex flex-column ok">
+                              <div class="d-inline-flex py-3">
+                                <div class="colk px-1">
+                                    <a aria-label="Help us" href="#"><img src="/LOGO/LOGO2/rugged-high-resolution-logo-color-on-transparent-background - Copy.png" width="120" height="100" class="rounded"></a>
+                                    <p class="card-header">XYZ</p>
+                                </div>
+                                <div class="colk px-1">
+                                    <a aria-label="Help us" href="#"><img src="/LOGO/LOGO3/rugged-high-resolution-logo-white-on-black-background.png"  width="120" height="100" class="rounded"></a>
+                                    <p class="card-header">XYZ</p></div>
+                              </div>
+                              <div class="d-inline-flex py-3">
+                                <div class="colk px-1">
+                                    <a aria-label="Help us"href="#"><img src="/LOGO/LOGO2/rugged-high-resolution-logo-color-on-transparent-background - Copy.png" width="120" height="100" class="rounded"></a>
+                                    <p class="card-header">XYZ</p></div>
+                                <div class="colk px-1">
+                                    <a aria-label="Help us"href="#"><img src="/LOGO/LOGO3/rugged-high-resolution-logo-white-on-black-background.png"  width="120" height="100" class="rounded"></a>
+                                    <p class="card-header">XYZ</p></div>
+                              </div>
+                            </div>
+                            <hr>
+                           <button >See More..</button>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+          
+                <div class="item">
+                  <div class="row">
+                    <div class="col">
                         <div class="slider border border-info rounded-top">
                             <div style="margin-top: 20px;">
                                 <h5>See More</h5>
@@ -271,7 +331,7 @@ outline: none;
                            <button >See More..</button>
                         </div>
                           </div>
-                          <div class="col-sm-4">
+                          <div class="col">
                             <div class="slider border border-info rounded-top">
                                 <div style="margin-top: 20px;">
                                     <h5>See More</h5>
@@ -299,7 +359,7 @@ outline: none;
                                <button >See More..</button>
                             </div>
                           </div>
-                          <div class="col-sm-4">
+                          <div class="col">
                             <div class="slider border border-info rounded-top">
                                 <div style="margin-top: 20px;">
                                     <h5>See More</h5>
