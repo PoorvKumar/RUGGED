@@ -23,9 +23,9 @@
             margin-bottom: 12px;
         }
 
-        .dropdown-menu {
+        /* .dropdown-menu {
             background-color: rgb(60, 51, 52);
-        }
+        } */
 
         .dropdown-menu a:hover {
             background-color: #110e0e;
@@ -43,54 +43,50 @@
 </head>
 
 <body>
-    <header>
-        <nav class="navbar nav nav-tabs navbar-dark bg-dark justify-content-start fixed-top">
-            <div class="d-flex flex-row justify-content-between">
-                <a class="navbar-brand" href="index.html">
-                    <img src="/LOGO/LogoMain/rugged-high-resolution-logo-white-on-transparent-background.png" alt="Logo"
-                        width="110" height="50" class="d-inline-block align-text-top">
-                </a>
-                <div class="navbar-brand">RUGGED</div>
-                <div class="nav-item">
-                    <a href="#" class="nav-link text-white">Explore</a>
-                </div>
-                <div class="nav-item">
-                    <a href="#" class="nav-link text-white">Problems</a>
-                </div>
-                <div class="nav-item">
-                    <a href="#" class="nav-link text-white">Discuss</a>
-                </div>
-                <div class="nav-item">
-                    <a href="#" class="nav-link text-white">Interview Experience</a>
-                </div>
-            </div>
-            <div class="d-flex flex-row justify-content-between nk">
-                <!-- <div class="row">     -->
-                 <!-- <div class="col-xs-8 col-xs-offset-2"> -->
-                  <div class="input-group">
-                   <div class="btn-group">
-                    <button type="button" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                      All
-                    </button>
-                    <ul class="dropdown-menu">
-                      <li><a class="dropdown-item text-white" href="#">Action</a></li>
-                      <li><a class="dropdown-item text-white" href="#">Another action</a></li>
-                      <li><a class="dropdown-item text-white"  href="#">Something else here</a></li>
-                      <li><hr class="dropdown-divider"></li>
-                      <li><a class="dropdown-item " href="#">Separated link</a></li>
-                    </ul>
-                  </div>
-                   <input type="hidden" name="search_param" value="all" id="search_param">
-                   <input type="text" class="form-control" name="x" id="search" placeholder="Search">
-                   <span class="input-group-btn">
-                       <button type="button" class="btn btn-outline-light">Search</button>
-                         <span class="glyphicon glyphicon-search"></span>
-                       </button>
-                   </span>
-                  </div>
-                 </div>
-        </nav>
-    </header>
+  <header>
+    <nav
+      class="container-fluid d-grid gap-3 align-items-center navbar px-3 border"
+      style="grid-template-columns: 1fr 2fr 1fr"
+    >
+      <div class="nav-left">
+          <img src="LOGO/LogoMain/rugged-high-resolution-logo-color-on-transparent-background.png" alt="" class="nav-brand" width="110" height="50">
+      </div>
+      <div class="nav-search">
+        <form action="" class="w-100 input-group">
+          <div class="dropdown">
+            <button class="btn" type="button" data-bs-toggle="dropdown">
+              <span style="font-size: 13.5px;">All</span><span class="dropdown-toggle"> </span></button>
+            <ul class="dropdown-menu shadow" style="font-size: 13.5px;">
+              <li class="dropdown-header">Dropdown header 1</li>
+            <li>
+            <a class="dropdown-item active" href="#" aria-current="page">Current</a>
+          </li>
+          <li><a class="dropdown-item" href="#">Inventory</a></li>
+          <li><a class="dropdown-item" href="#">Customers</a></li>
+          <li><a class="dropdown-item" href="#">Products</a></li>
+          <li><hr class="dropdown-divider" /></li>
+          <li><a class="dropdown-item" href="#">Reports</a></li>
+          <li><a class="dropdown-item" href="#">Analytics</a></li>
+        </ul>
+          </div>
+          <input
+            type="search"
+            class="form-control"
+            placeholder="Search Here..."
+            aria-label="Search"
+          />
+          <button type="button" class="btn">
+            <i class="fas fa-search"></i>
+          </button>
+        </form>
+      </div>
+      <div class="nav-right">
+          <nav class="navbar-nav">
+              <a href="#" class="nav-link">SignUp</a>
+          </nav>
+      </div>
+    </nav>
+  </header>
     <div data-bs-theme="dark">
         <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">

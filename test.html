@@ -27,23 +27,33 @@
     <title>Document</title>
     <style>
       ::-webkit-input-placeholder {
-        font-size: 14px;
+        font-size: small;
+      }
+      .form-control:focus 
+      {
+        border-color: coral; 
+        -webkit-box-shadow: none; 
+         box-shadow: none;
       }
     </style>
   </head>
   <body>
     <header>
       <nav
-        class="container-fluid d-grid gap-3 align-items-center navbar"
+        class="container-fluid d-grid gap-3 align-items-center navbar px-3 border"
         style="grid-template-columns: 1fr 2fr 1fr"
       >
-        <div class="nav-left"></div>
+        <div class="nav-left">
+            <img src="LOGO/LogoMain/rugged-high-resolution-logo-color-on-transparent-background.png" alt="" class="nav-brand" width="110" height="50">
+        </div>
         <div class="nav-search">
           <form action="" class="w-100 input-group">
             <div class="dropdown">
-              <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown">All</button>
-              <ul class="dropdown-menu text-small shadow">
-            <li>
+              <button class="btn" type="button" data-bs-toggle="dropdown">
+                <span style="font-size: 13.5px;">All</span><span class="dropdown-toggle"> </span></button>
+              <ul class="dropdown-menu shadow" style="font-size: 13.5px;">
+                <li class="dropdown-header">Dropdown header 1</li>
+              <li>
               <a class="dropdown-item active" href="#" aria-current="page">Current</a>
             </li>
             <li><a class="dropdown-item" href="#">Inventory</a></li>
@@ -66,7 +76,9 @@
           </form>
         </div>
         <div class="nav-right">
-
+            <nav class="navbar-nav">
+                <a href="#" class="nav-link">SignUp</a>
+            </nav>
         </div>
         <!-- <div class="dropdown">
           <a
