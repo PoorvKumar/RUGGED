@@ -6,20 +6,99 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Product Card Horizontal</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  <link rel="stylesheet" href="../css/productCardHorizontalStyle.css">
 </head>
 
 <body>
-  <div class="card mb-3" style="max-width: 540px;">
+  <div class="card mb-3 pcHzMain">
     <div class="row g-0">
       <div class="col-md-4">
-        <img src="../Images/ProductImages/Rucksack1/image1.jpg" class="img-fluid rounded-start" alt="...">
+        <img src="../Images/ProductImages/Rucksack1/image1.jpg" class="img-fluid rounded-start" alt="Product Image" style="max-height: 200px;">
       </div>
       <div class="col-md-8">
         <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+            <h3 class="card-title">RuckSack</h3>
+            <span class="pcHzLimitedTimeDeal">Limited Time Deal</span>
+          <!-- <p class="card-text HzSampleTxt">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p> -->
+          <div class="">
+            <div class="pcHzRating">
+              <span class="heading">User Rating</span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star"></span>
+              <p class="headingJr">4.1 average based on 254 reviews.</p>
+              <!-- <hr style="border:1px solid #f1f1f1">
+              <div class="detailedRating">
+                <div class="row">
+                  <div class="side">
+                    <div>5 star</div>
+                  </div>
+                  <div class="middle">
+                    <div class="bar-container">
+                      <div class="bar-5"></div>
+                    </div>
+                  </div>
+                  <div class="side right">
+                    <div>150</div>
+                  </div>
+                  <div class="side">
+                    <div>4 star</div>
+                  </div>
+                  <div class="middle">
+                    <div class="bar-container">
+                      <div class="bar-4"></div>
+                    </div>
+                  </div>
+                  <div class="side right">
+                    <div>63</div>
+                  </div>
+                  <div class="side">
+                    <div>3 star</div>
+                  </div>
+                  <div class="middle">
+                    <div class="bar-container">
+                      <div class="bar-3"></div>
+                    </div>
+                  </div>
+                  <div class="side right">
+                    <div>15</div>
+                  </div>
+                  <div class="side">
+                    <div>2 star</div>
+                  </div>
+                  <div class="middle">
+                    <div class="bar-container">
+                      <div class="bar-2"></div>
+                    </div>
+                  </div>
+                  <div class="side right">
+                    <div>6</div>
+                  </div>
+                  <div class="side">
+                    <div>1 star</div>
+                  </div>
+                  <div class="middle">
+                    <div class="bar-container">
+                      <div class="bar-1"></div>
+                    </div>
+                  </div>
+                  <div class="side right">
+                    <div>20</div>
+                  </div>
+                </div> 
+              </div>-->
+            </div>
+            <span class="pcHzPrice">₹2500</span><span class="pcHzPrice"> M.R.P</span>
+            <span class="pcHzDiscount">50% off</span>
+          </div>
+          <div class="pcBtnGroup">
+            <button type="button" class="btn btn-sm btn-secondary pcButton">Buy Now</button>
+            <button type="button" class="btn btn-sm btn-outline-secondary pcButton">Add to Cart</button>
+          </div>
         </div>
       </div>
     </div>
@@ -28,3 +107,70 @@
 </body>
 
 </html>
+
+<!-- <div data-asin="B0BBPFL27Q" data-index="3" data-uuid="419ce7df-b8cc-40b7-888c-dbd3b270522d" data-component-type="s-search-result" class="sg-col-20-of-24 s-result-item s-asin sg-col-0-of-12 sg-col-16-of-20 AdHolder sg-col s-widget-spacing-small sg-col-12-of-16" data-component-id="7" data-cel-widget="search_result_3">
+  <div class="sg-col-inner">
+    <div cel_widget_id="MAIN-SEARCH_RESULTS-3" class="s-widget-container s-spacing-small s-widget-container-height-small celwidget slot=MAIN template=SEARCH_RESULTS widgetId=search-results_2" data-csa-c-pos="2" data-csa-c-item-id="amzn1.asin.1.B0BBPFL27Q" data-csa-op-log-render="" data-csa-c-type="item" data-csa-c-id="fmngu8-qadyub-pulgft-wu9ted" data-cel-widget="MAIN-SEARCH_RESULTS-3">
+
+      <div data-component-type="s-impression-logger" data-component-props="{&quot;percentageShownToFire&quot;:&quot;50&quot;,&quot;batchable&quot;:true,&quot;requiredElementSelector&quot;:&quot;.s-image:visible&quot;,&quot;url&quot;:&quot;https://unagi-eu.amazon.com/1/events/com.amazon.eel.SponsoredProductsEventTracking.prod?qualifier=1677750820&amp;id=5230682742191761&amp;widgetName=sp_atf&amp;adId=20079527902498&amp;eventType=1&amp;adIndex=1&quot;}" class="rush-component" data-component-id="8">
+
+        <div data-component-type="s-impression-counter" data-component-props="{&quot;presenceCounterName&quot;:&quot;sp_delivered&quot;,&quot;testElementSelector&quot;:&quot;.s-image&quot;,&quot;hiddenCounterName&quot;:&quot;sp_hidden&quot;}" class="rush-component s-featured-result-item " data-component-id="9">
+          <div class="s-card-container s-overflow-hidden aok-relative puis-include-content-margin puis s-latency-cf-section s-card-border">
+            <div class="a-section">
+              <div class="sg-row">
+                <div class="sg-col sg-col-4-of-12 sg-col-4-of-16 sg-col-4-of-20 sg-col-4-of-24 s-list-col-left">
+                  <div class="sg-col-inner">
+                    <div class="a-section a-spacing-none aok-relative puis-status-badge-container s-list-status-badge-container"></div>
+                    <div class="s-product-image-container aok-relative s-text-center s-image-overlay-grey s-padding-left-small s-padding-right-small s-flex-expand-height">
+                      <div class="aok-relative"><span data-component-type="s-product-image" class="rush-component"><a class="a-link-normal s-no-outline" target="_blank" href="/sspa/click?ie=UTF8&amp;spc=MTo1MjMwNjgyNzQyMTkxNzYxOjE2Nzc3NTA4MjA6c3BfYXRmOjIwMDc5NTI3OTAyNDk4OjowOjo&amp;url=%2FMechanical-Keyboard-Switches-Powerful-Software%2Fdp%2FB0BBPFL27Q%2Fref%3Dsr_1_2_sspa%3Fkeywords%3Dmechanical%2Bkeyboards%26qid%3D1677750820%26sprefix%3Dmechani%252Caps%252C226%26sr%3D8-2-spons%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9hdGY%26psc%3D1">
+                            <div class="a-section aok-relative s-image-fixed-height"><img class="s-image" src="https://m.media-amazon.com/images/I/61XYmVDQdwL._AC_UY218_.jpg" srcset="https://m.media-amazon.com/images/I/61XYmVDQdwL._AC_UY218_.jpg 1x, https://m.media-amazon.com/images/I/61XYmVDQdwL._AC_UY327_FMwebp_QL65_.jpg 1.5x, https://m.media-amazon.com/images/I/61XYmVDQdwL._AC_UY436_FMwebp_QL65_.jpg 2x, https://m.media-amazon.com/images/I/61XYmVDQdwL._AC_UY545_FMwebp_QL65_.jpg 2.5x, https://m.media-amazon.com/images/I/61XYmVDQdwL._AC_UY654_FMwebp_QL65_.jpg 3x" alt="Sponsored Ad - EvoFox Katana Pro RGB Mechanical Keyboard with Silent Outemu Red Switches | 16 Million True Prism RGB | Pow..." data-image-index="2" data-image-load="" data-image-latency="s-product-image" data-image-source-density="1"></div>
+                          </a></span></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="sg-col sg-col-4-of-12 sg-col-8-of-16 sg-col-12-of-20 sg-col-12-of-24 s-list-col-right">
+                  <div class="sg-col-inner">
+                    <div class="a-section a-spacing-small a-spacing-top-small">
+                      <div class="a-section a-spacing-none puis-padding-right-small s-title-instructions-style">
+                        <div class="a-row a-spacing-micro"><span class="a-declarative" data-action="a-popover" data-csa-c-type="widget" data-csa-c-func-deps="aui-da-a-popover" data-a-popover="{&quot;closeButton&quot;:&quot;true&quot;,&quot;dataStrategy&quot;:&quot;preload&quot;,&quot;name&quot;:&quot;sp-info-popover-B0BBPFL27Q&quot;,&quot;position&quot;:&quot;triggerVertical&quot;}" data-csa-c-id="y951u7-v6nesk-f9kyux-8cdzuc"><a href="javascript:void(0)" role="button" style="text-decoration: none;" aria-label="View Sponsored information or leave ad feedback" class="puis-label-popover puis-sponsored-label-text"><span class="puis-label-popover-default"><span class="a-color-secondary">Sponsored</span></span><span class="puis-label-popover-hover"><span class="a-color-base">Sponsored</span></span> <span class="aok-inline-block puis-sponsored-label-info-icon"></span></a></span>
+                          <div class="a-popover-preload puis" id="a-popover-sp-info-popover-B0BBPFL27Q"><span>You are seeing this ad based on the product’s relevance to your search query.</span>
+                            <div class="a-row"><span class="a-declarative" data-action="s-safe-ajax-modal-trigger" data-csa-c-type="widget" data-csa-c-func-deps="aui-da-s-safe-ajax-modal-trigger" data-s-safe-ajax-modal-trigger="{&quot;ajaxUrl&quot;:&quot;/af/sp-loom/feedback-form?pl=%7B%22adPlacementMetaData%22%3A%7B%22searchTerms%22%3A%22bWVjaGFuaWNhbCBrZXlib2FyZHM%3D%22%2C%22pageType%22%3A%22Search%22%2C%22feedbackType%22%3A%22sponsoredProductsLoom%22%2C%22slotName%22%3A%22TOP%22%7D%2C%22adCreativeMetaData%22%3A%7B%22adProgramId%22%3A1024%2C%22adCreativeDetails%22%3A%5B%7B%22asin%22%3A%22B0BBPFL27Q%22%2C%22title%22%3A%22EvoFox+Katana+Pro+RGB+Mechanical+Keyboard+with+Silent+Outemu+Red+Switches+%7C+16+Million+True+Prism+RG%22%2C%22priceInfo%22%3A%7B%22amount%22%3A2499.0%2C%22currencyCode%22%3A%22INR%22%7D%2C%22sku%22%3A%22B0BBPFL27Q%22%2C%22adId%22%3A%22A1040150516ZIQ7COGI4%22%2C%22campaignId%22%3A%22A057381325IGQ81LVJPEX%22%7D%5D%7D%7D&quot;,&quot;dataStrategy&quot;:&quot;ajax&quot;,&quot;header&quot;:&quot;Share Your Feedback&quot;}" data-csa-c-id="rziv17-r69cjt-a0bxhe-utrf4n"><a class="a-link-normal s-underline-text s-underline-link-text s-link-style" href="#"><span>Let us know</span> </a> </span></div>
+                          </div>
+                        </div>
+                        <h2 class="a-size-mini a-spacing-none a-color-base s-line-clamp-2"><a class="a-link-normal s-underline-text s-underline-link-text s-link-style a-text-normal" target="_blank" href="/sspa/click?ie=UTF8&amp;spc=MTo1MjMwNjgyNzQyMTkxNzYxOjE2Nzc3NTA4MjA6c3BfYXRmOjIwMDc5NTI3OTAyNDk4OjowOjo&amp;url=%2FMechanical-Keyboard-Switches-Powerful-Software%2Fdp%2FB0BBPFL27Q%2Fref%3Dsr_1_2_sspa%3Fkeywords%3Dmechanical%2Bkeyboards%26qid%3D1677750820%26sprefix%3Dmechani%252Caps%252C226%26sr%3D8-2-spons%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9hdGY%26psc%3D1"><span class="a-size-medium a-color-base a-text-normal">EvoFox Katana Pro RGB Mechanical Keyboard with Silent Outemu Red Switches | 16 Million True Prism RGB | Powerful Software | 4 Game Modes Presets | 16 Lighting Effects | TKL Keyboard | On Board Memory | Braided Cable with EMI Ring (Red + Black)</span> </a> </h2>
+                      </div>
+                      <div class="a-section a-spacing-none a-spacing-top-micro">
+                        <div class="a-row a-size-small"><span aria-label="4.6 out of 5 stars"><span class="a-size-base">4.6</span><span class="a-letter-space"></span><span class="a-declarative" data-action="a-popover" data-csa-c-type="widget" data-csa-c-func-deps="aui-da-a-popover" data-a-popover="{&quot;closeButton&quot;:false,&quot;closeButtonLabel&quot;:&quot;&quot;,&quot;position&quot;:&quot;triggerBottom&quot;,&quot;popoverLabel&quot;:&quot;&quot;,&quot;url&quot;:&quot;/review/widgets/average-customer-review/popover/ref=acr_search__popover?ie=UTF8&amp;asin=B0BBPFL27Q&amp;ref=acr_search__popover&amp;contextId=search&quot;}" data-csa-c-id="nhfmps-du61nx-8ks0so-3csd6h"><a href="javascript:void(0)" role="button" class="a-popover-trigger a-declarative"><i class="a-icon a-icon-star-small a-star-small-4-5 aok-align-bottom"><span class="a-icon-alt">4.6 out of 5 stars</span></i><i class="a-icon a-icon-popover"></i></a></span> </span><span aria-label="233"><a class="a-link-normal s-underline-text s-underline-link-text s-link-style" target="_blank" href="/sspa/click?ie=UTF8&amp;spc=MTo1MjMwNjgyNzQyMTkxNzYxOjE2Nzc3NTA4MjA6c3BfYXRmOjIwMDc5NTI3OTAyNDk4OjowOjo&amp;url=%2FMechanical-Keyboard-Switches-Powerful-Software%2Fdp%2FB0BBPFL27Q%2Fref%3Dsr_1_2_sspa%3Fkeywords%3Dmechanical%2Bkeyboards%26qid%3D1677750820%26sprefix%3Dmechani%252Caps%252C226%26sr%3D8-2-spons%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9hdGY%26psc%3D1#customerReviews"><span class="a-size-base s-underline-text">(233)</span> </a> </span></div>
+                      </div>
+                      <div class="sg-row">
+                        <div class="sg-col sg-col-4-of-12 sg-col-4-of-16 sg-col-4-of-20 sg-col-4-of-24">
+                          <div class="sg-col-inner">
+                            <div class="a-section a-spacing-none a-spacing-top-micro s-price-instructions-style">
+                              <div class="a-row"><a class="a-link-normal s-underline-text s-underline-link-text s-link-style" href="/gp/goldbox/"><span id="LIGHTNING_DEAL_B0BBPFL27Q" class="a-badge" data-a-badge-type="deal"><span id="LIGHTNING_DEAL_B0BBPFL27Q-label" class="a-badge-label" data-a-badge-color="sx-lightning-deal-red"><span class="a-badge-label-inner a-text-ellipsis"><span class="a-badge-text" data-a-badge-color="sx-cloud">Limited time deal</span></span></span></span> </a> </div>
+                              <div class="a-row a-size-base a-color-base"><a class="a-size-base a-link-normal s-underline-text s-underline-link-text s-link-style a-text-normal" target="_blank" href="/sspa/click?ie=UTF8&amp;spc=MTo1MjMwNjgyNzQyMTkxNzYxOjE2Nzc3NTA4MjA6c3BfYXRmOjIwMDc5NTI3OTAyNDk4OjowOjo&amp;url=%2FMechanical-Keyboard-Switches-Powerful-Software%2Fdp%2FB0BBPFL27Q%2Fref%3Dsr_1_2_sspa%3Fkeywords%3Dmechanical%2Bkeyboards%26qid%3D1677750820%26sprefix%3Dmechani%252Caps%252C226%26sr%3D8-2-spons%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9hdGY%26psc%3D1"><span class="a-price" data-a-size="xl" data-a-color="base"><span class="a-offscreen">₹2,369</span><span aria-hidden="true"><span class="a-price-symbol">₹</span><span class="a-price-whole">2,369</span></span></span>
+                                  <div style="display: inline-block"><span class="a-size-base a-color-secondary">M.R.P: </span><span class="a-price a-text-price" data-a-size="b" data-a-strike="true" data-a-color="secondary"><span class="a-offscreen">₹3,499</span><span aria-hidden="true">₹3,499</span></span></div>
+                                </a> <span class="a-letter-space"></span><span>(32% off)</span><span class="a-letter-space"></span></div>
+                            </div>
+                            <div class="a-section a-spacing-none a-spacing-top-micro">
+                              <div class="a-row a-size-base a-color-secondary s-align-children-center">
+                                <div class="a-row s-align-children-center"><span class="aok-inline-block s-image-logo-view"><span class="aok-relative s-icon-text-medium s-prime"><i class="a-icon a-icon-prime a-icon-medium" role="img" aria-label="Amazon Prime"></i></span><span></span></span> <span aria-label="Get it by Tomorrow, 3 March"><span class="a-color-base">Get it by </span><span class="a-color-base a-text-bold">Tomorrow, 3 March</span></span></div>
+                                <div class="a-row"><span aria-label="FREE Delivery by Amazon"><span class="a-color-base">FREE Delivery by Amazon</span></span></div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="sg-col sg-col-4-of-12 sg-col-4-of-16 sg-col-8-of-20 sg-col-8-of-24">
+                          <div class="sg-col-inner"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> 
+  </div>
+</div>-->
