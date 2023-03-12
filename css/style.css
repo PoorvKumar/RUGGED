@@ -15,7 +15,7 @@
     margin-bottom:10px;
     margin-left:10px;
  }
- button {
+ /* button {
 background-color: transparent;
 background-repeat: no-repeat;
 border: none;
@@ -23,7 +23,7 @@ cursor: pointer;
 overflow: hidden;
 outline: none;
 margin-bottom: 15px;
-}
+} */
 button:hover{
 background-color: #a309e0;
 background-repeat: no-repeat;
