@@ -1,0 +1,33 @@
+.form-control:focus
+{
+border: none;
+box-shadow: none;
+}
+
+.input-group:focus-within
+{
+outline: rgb(20, 156, 149) solid 4px !important;
+border-radius: 6px;
+}
+
+.nav-main
+{
+background-color: #162e3e;
+height: 75px !important;
+}
+.nav-link
+{
+font-weight: bold !important;
+color:aliceblue;
+border: 2px solid #162e3e;
+padding: 2px;
+}
+.nav-link:hover
+{
+border-color: aliceblue;
+color:aliceblue;
+}
+.nav-sign-line-1
+{
+font-size: small;
+}

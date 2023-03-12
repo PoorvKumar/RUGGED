@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
         integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="css/main.css"> <!--for main page-->
     <link rel="stylesheet" href="css/style.css">
     <style>
         .nk {
@@ -57,15 +58,15 @@
 <body>
   <header>
     <nav
-      class="container-fluid d-grid gap-3 align-items-center navbar px-3 border"
-      style="grid-template-columns: 1fr 2fr 1fr"
+      class="container-fluid d-grid gap-3 align-items-center navbar px-3 pt-1 fixed-top nav-main"
+      style="grid-template-columns: 1fr 2.5fr 1.5fr"
     >
       <div class="nav-left">
           <img src="LOGO/LogoMain/rugged-high-resolution-logo-color-on-transparent-background.png" alt="" class="nav-brand" width="110" height="50">
       </div>
       <div class="nav-search">
         <form action="" class="w-100 input-group">
-          <div class="dropdown">
+          <!-- <div class="dropdown">
             <button class="btn" type="button" data-bs-toggle="dropdown">
               <span style="font-size: 13.5px;">All</span><span class="dropdown-toggle"> </span></button>
             <ul class="dropdown-menu shadow" style="font-size: 13.5px;">
@@ -80,22 +81,28 @@
           <li><a class="dropdown-item" href="#">Reports</a></li>
           <li><a class="dropdown-item" href="#">Analytics</a></li>
         </ul>
-          </div>
+          </div> --> <!--removed all -->
           <input
             type="search"
             class="form-control"
             placeholder="Search Here..."
             aria-label="Search"
           />
-          <button type="button" class="btn">
+          <button type="button" class="btn bg-secondary">
             <i class="fas fa-search"></i>
           </button>
         </form>
       </div>
-      <div class="nav-right">
-          <nav class="navbar-nav">
-              <a href="#" class="nav-link">SignUp</a>
-          </nav>
+      <div class="nav-right navbar">
+        <div class="first"></div>
+        <div class="nav-sign nav-link">
+          <div class="nav-sign-line-1">
+            <span class="small">Hello! User</span>
+          </div>
+          <div class="nav-sign-line-2">Account & Lists <span class="dropdown-toggle"></span></div>
+        </div>
+        <div class="first"></div>
+        <div class="first"></div>
       </div>
     </nav>
   </header>

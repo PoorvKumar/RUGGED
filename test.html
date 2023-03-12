@@ -26,29 +26,58 @@
     />
     <title>Document</title>
     <style>
-      ::-webkit-input-placeholder {
+      /* ::-webkit-input-placeholder {
+        font-size: small;
+      } */
+
+      .form-control:focus
+      {
+        border: none;
+        box-shadow: none;
+      }
+
+      .input-group:focus-within
+      {
+        outline: rgb(20, 156, 149) solid 4px !important;
+        border-radius: 6px;
+      }
+
+      .nav-main
+      {
+        background-color: #162e3e;
+        height: 75px !important;
+      }
+      .nav-link
+      {
+        font-weight: bold !important;
+        color:aliceblue;
+        border: 2px solid #162e3e;
+        padding: 2px;
+      }
+      .nav-link:hover
+      {
+        border-color: aliceblue;
+        color:aliceblue;
+      }
+      .nav-sign-line-1
+      {
         font-size: small;
       }
-      .form-control:focus 
-      {
-        border-color: coral; 
-        -webkit-box-shadow: none; 
-         box-shadow: none;
-      }
+
     </style>
   </head>
   <body>
     <header>
       <nav
-        class="container-fluid d-grid gap-3 align-items-center navbar px-3 border"
-        style="grid-template-columns: 1fr 2fr 1fr"
+        class="container-fluid d-grid gap-3 align-items-center navbar px-3 pt-1 fixed-top nav-main"
+        style="grid-template-columns: 1fr 2.5fr 1.5fr"
       >
         <div class="nav-left">
             <img src="LOGO/LogoMain/rugged-high-resolution-logo-color-on-transparent-background.png" alt="" class="nav-brand" width="110" height="50">
         </div>
         <div class="nav-search">
           <form action="" class="w-100 input-group">
-            <div class="dropdown">
+            <!-- <div class="dropdown">
               <button class="btn" type="button" data-bs-toggle="dropdown">
                 <span style="font-size: 13.5px;">All</span><span class="dropdown-toggle"> </span></button>
               <ul class="dropdown-menu shadow" style="font-size: 13.5px;">
@@ -63,88 +92,176 @@
             <li><a class="dropdown-item" href="#">Reports</a></li>
             <li><a class="dropdown-item" href="#">Analytics</a></li>
           </ul>
-            </div>
+            </div> --> <!--removed all -->
             <input
               type="search"
               class="form-control"
               placeholder="Search Here..."
               aria-label="Search"
             />
-            <button type="button" class="btn">
+            <button type="button" class="btn bg-secondary">
               <i class="fas fa-search"></i>
             </button>
           </form>
         </div>
-        <div class="nav-right">
-            <nav class="navbar-nav">
-                <a href="#" class="nav-link">SignUp</a>
-            </nav>
-        </div>
-        <!-- <div class="dropdown">
-          <a
-            href="#"
-            class="d-flex align-items-center col-lg-4 mb-2 mb-lg-0 link-dark text-decoration-none dropdown-toggle"
-            data-bs-toggle="dropdown"
-            aria-expanded="false"
-          >
-            <svg class="bi me-2" width="40" height="32">
-              <use xlink:href="#bootstrap" />
-            </svg>
-          </a>
-          <ul class="dropdown-menu text-small shadow">
-            <li>
-              <a class="dropdown-item active" href="#" aria-current="page"
-                >Overview</a
-              >
-            </li>
-            <li><a class="dropdown-item" href="#">Inventory</a></li>
-            <li><a class="dropdown-item" href="#">Customers</a></li>
-            <li><a class="dropdown-item" href="#">Products</a></li>
-            <li><hr class="dropdown-divider" /></li>
-            <li><a class="dropdown-item" href="#">Reports</a></li>
-            <li><a class="dropdown-item" href="#">Analytics</a></li>
-          </ul>
-        </div>
-
-        <div class="d-flex align-items-center">
-          <form class="w-100 me-3" role="search">
-            <input
-              type="search"
-              class="form-control"
-              placeholder="Search..."
-              aria-label="Search"
-            />
-          </form>
-
-          <div class="flex-shrink-0 dropdown">
-            <a
-              href="#"
-              class="d-block link-dark text-decoration-none dropdown-toggle"
-              data-bs-toggle="dropdown"
-              aria-expanded="false"
-            >
-              <img
-                src="https://github.com/mdo.png"
-                alt="mdo"
-                width="32"
-                height="32"
-                class="rounded-circle"
-              />
-            </a>
-            <ul class="dropdown-menu text-small shadow">
-              <li><a class="dropdown-item" href="#">New project...</a></li>
-              <li><a class="dropdown-item" href="#">Settings</a></li>
-              <li><a class="dropdown-item" href="#">Profile</a></li>
-              <li><hr class="dropdown-divider" /></li>
-              <li><a class="dropdown-item" href="#">Sign out</a></li>
-            </ul>
+        <div class="nav-right navbar">
+          <div class="first"></div>
+          <div class="nav-sign nav-link">
+            <div class="nav-sign-line-1">
+              <span class="small">Hello! User</span>
+            </div>
+            <div class="nav-sign-line-2">Account & Lists <span class="dropdown-toggle"></span></div>
           </div>
-        </div> -->
+          <div class="first"></div>
+          <div class="first"></div>
+        </div>
       </nav>
     </header>
+
+    <div data-bs-theme="dark">
+      <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-inner">
+              <div class="carousel-item active carouselMain" data-bs-interval="10000">
+                  <img src="/Images/carouselImages/kayaking.jpg" class="d-block w-100" alt="Kayaking">
+              </div>
+              <div class="carousel-item carouselMain" data-bs-interval="2000">
+                  <img src="/Images/carouselImages/mountainClimbing.jpg" class="d-block w-100" alt="mountainClimbing">
+              </div>
+              <div class="carousel-item carouselMain">
+                  <img src="/Images/carouselImages/riverRafting.jpg" class="d-block w-100" alt="riverRafting">
+              </div>
+              <div class="carousel-item carouselMain">
+                  <img src="/Images/carouselImages/scubaDiving.webp" class="d-block w-100" alt="scubaDiving">
+              </div>
+              <div class="carousel-item carouselMain">
+                  <img src="/Images/carouselImages/skyDiving.webp" class="d-block w-100" alt="skyDiving">
+              </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval"
+              data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval"
+              data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+          </button>
+      </div>
+  </div>
+  <main class="ll">
+    <div class="need">
+    <div class="row row-cols-1 row-cols-md-4 g-4">
+        <div class="col">
+          <div class="card h-70">
+            <a href="#"><img src="/LOGO/LOGO1/rugged-high-resolution-logo-black-on-white-background.png" class="card-img-top"
+              alt="Hollywood Sign on The Hill" />
+            <div class="card-body">
+              <h5 class="card-title">Name</h5>
+              <p class="card-text">
+                Price
+              </p>
+              </div>
+            </a>
+            </div>
+          </div>
+        <div class="col">
+          <div class="card h-70">
+            <a href="#"><img src="/LOGO/LOGO2/rugged-high-resolution-logo-white-on-black-background.png" class="card-img-top"
+              alt="Palm Springs Road" />
+            <div class="card-body">
+              <h5 class="card-title">Name</h5>
+              <p class="card-text">Price</p>
+            </div>
+            </a>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-70">
+            <a href="#"><img src="/LOGO/LOGO3/rugged-high-resolution-logo-black-on-white-background.png" class="card-img-top"
+              alt="Los Angeles Skyscrapers" />
+            <div class="card-body">
+              <h5 class="card-title">Name</h5>
+              <p class="card-text">Price</p>
+            </div>
+            </a>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-70">
+            <a href="#"><img src="/LOGO/LOGO3/rugged-high-resolution-logo-black-on-white-background.png" class="card-img-top"
+              alt="Skyscrapers" />
+            <div class="card-body">
+              <h5 class="card-title">Name</h5>
+              <p class="card-text">
+                Price
+              </p>
+            </div>
+            </a>
+          </div>
+        </div>
+        </div>
+      </div>
+     <div class="need">
+      <div class="row row-cols-1 row-cols-md-4 g-4">
+          <div class="col">
+            <div class="card h-70">
+              <a href="#"><img src="/LOGO/LOGO1/rugged-high-resolution-logo-black-on-white-background.png" class="card-img-top"
+                alt="Hollywood Sign on The Hill" />
+              <div class="card-body">
+                <h5 class="card-title">Name</h5>
+                <p class="card-text">
+                  Price
+                </p>
+                </div>
+              </a>
+              </div>
+            </div>
+          <div class="col">
+            <div class="card h-70">
+              <a href="#"><img src="/LOGO/LOGO2/rugged-high-resolution-logo-white-on-black-background.png" class="card-img-top"
+                alt="Palm Springs Road" />
+              <div class="card-body">
+                <h5 class="card-title">Name</h5>
+                <p class="card-text">Price</p>
+              </div>
+              </a>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card h-70">
+              <a href="#"><img src="/LOGO/LOGO3/rugged-high-resolution-logo-black-on-white-background.png" class="card-img-top"
+                alt="Los Angeles Skyscrapers" />
+              <div class="card-body">
+                <h5 class="card-title">Name</h5>
+                <p class="card-text">Price</p>
+              </div>
+              </a>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card h-70">
+              <a href="#"><img src="/LOGO/LOGO3/rugged-high-resolution-logo-black-on-white-background.png" class="card-img-top"
+                alt="Skyscrapers" />
+              <div class="card-body">
+                <h5 class="card-title">Name</h5>
+                <p class="card-text">
+                  Price
+                </p>
+              </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      </main>
+
     <main></main>
     <footer></footer>
 
+    <script>
+      
+    </script>
 
     <script
       src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
