@@ -45,37 +45,56 @@
       .nav-main
       {
         background-color: #162e3e;
-        height: 72px !important;
+        height: 77.5px !important;
       }
       .nav-link
       {
         font-weight: bold !important;
         color:aliceblue;
         border: 2px solid #162e3e;
-        padding: 2px;
+        padding: 1px 2px;
+        max-width: fit-content;
+        height: 50px;
       }
       .nav-link:hover
       {
         border-color: aliceblue;
         color:aliceblue;
       }
-      .nav-sign-line-1
+      .nav-right-line-1
       {
         font-size: small;
       }
 
+      #overlay
+      {
+        position: fixed;
+        display: none;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0.5);
+        z-index: 2;
+      }
+
     </style>
   </head>
+  <div id="overlay" onclick="overlayOff()"></div> <!--overlay entire page whenever needed-->
   <body>
     <header>
       <nav
-        class="container-fluid d-grid gap-3 align-items-center navbar px-3 pt-1 fixed-top nav-main"
+        class="container-fluid d-grid gap-3 align-items-center navbar px-3 pt-0 pb-0 fixed-top nav-main"
         style="grid-template-columns: 1fr 2.5fr 1.5fr"
       >
         <div class="nav-left">
-            <img src="LOGO/LogoMain/rugged-high-resolution-logo-color-on-transparent-background.png" alt="" class="nav-brand" width="110" height="50">
+            <!-- <img src="LOGO/LogoMain/rugged-high-resolution-logo-color-on-transparent-background.png" alt="" class="nav-brand" width="110" height="50"> -->
+            <div class="nav-link col">
+              <div class="nav-left-line-1">
+                <span class="small">Hello! User</span>
+              </div>
+              <div class="nav-left-line-2">Select Your Address!</div>
+            </div>
         </div>
-        <div class="nav-search">
+        <div class="nav-search me-0">
           <form action="" class="w-100 input-group">
             <!-- <div class="dropdown">
               <button class="btn" type="button" data-bs-toggle="dropdown">
@@ -98,22 +117,32 @@
               class="form-control"
               placeholder="Search Here..."
               aria-label="Search"
+              onclick="overlayOn()"
             />
             <button type="button" class="btn bg-secondary">
               <i class="fas fa-search"></i>
             </button>
           </form>
         </div>
-        <div class="nav-right navbar">
-          <div class="first"></div>
-          <div class="nav-sign nav-link">
-            <div class="nav-sign-line-1">
+        <div class="nav-right navbar" >
+          <div class="nav-wish nav-link col">
+            WishList
+          </div>
+          <div class="nav-sign nav-link col">
+            <div class="nav-right-line-1">
               <span class="small">Hello! User</span>
             </div>
-            <div class="nav-sign-line-2">Account & Lists <span class="dropdown-toggle"></span></div>
+            <div class="nav-right-line-2">Account & Lists<span class="dropdown-toggle"></span></div>
           </div>
-          <div class="first"></div>
-          <div class="first"></div>
+          <div class="nav-returns nav-link col me-0">
+            <div class="nav-right-line-1">
+              <span class="small">Returns</span>
+            </div>
+            <div class="nav-right-line-2">&Orders</div>
+          </div>
+          <div class="nav-cart nav-link col">
+            Cart
+          </div>
         </div>
       </nav>
     </header>
@@ -259,9 +288,7 @@
     <main></main>
     <footer></footer>
 
-    <script>
-
-    </script>
+    <script src="js/script.js"></script>
 
     <script
       src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
