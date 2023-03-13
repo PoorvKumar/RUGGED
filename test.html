@@ -61,7 +61,7 @@
         border-color: aliceblue;
         color:aliceblue;
       }
-      .nav-right-line-1
+      .nav-line-1
       {
         font-size: small;
       }
@@ -76,6 +76,18 @@
         z-index: 2;
       }
 
+      #brand-logo
+      {
+        /* color: indigo; */
+        
+      }
+
+      #brand-line-2
+      {
+        color: aliceblue;
+        font-size: 5px;
+      }
+
     </style>
   </head>
   <div id="overlay" onclick="overlayOff()"></div> <!--overlay entire page whenever needed-->
@@ -85,16 +97,23 @@
         class="container-fluid d-grid gap-3 align-items-center navbar px-3 pt-0 pb-0 fixed-top nav-main"
         style="grid-template-columns: 1fr 2.5fr 1.5fr"
       >
-        <div class="nav-left">
+        <div class="nav-left navbar d-flex flex-row">
             <!-- <img src="LOGO/LogoMain/rugged-high-resolution-logo-color-on-transparent-background.png" alt="" class="nav-brand" width="110" height="50"> -->
-            <div class="nav-link col">
-              <div class="nav-left-line-1">
-                <span class="small">Hello! User</span>
+            <div id="brand-logo">
+              <div class="pt-2 text-white"> RUGGED </div>
+              <div>
+                <span id="brand-line-2">Camping,Trekking, Hiking Equipements</span>
               </div>
-              <div class="nav-left-line-2">Select Your Address!</div>
+              
+            </div>
+            <div class="nav-link col">
+              <div class="nav-line-1">
+                <span class="small">Hello</span>
+              </div>
+              <div class="nav-line-2">Select Your Address!</div>
             </div>
         </div>
-        <div class="nav-search me-0">
+        <div class="nav-search">
           <form action="" class="w-100 input-group">
             <!-- <div class="dropdown">
               <button class="btn" type="button" data-bs-toggle="dropdown">
@@ -124,23 +143,23 @@
             </button>
           </form>
         </div>
-        <div class="nav-right navbar" >
-          <div class="nav-wish nav-link col">
+        <div class="nav-right navbar d-flex flex-row" >
+          <div class="nav-wish nav-link d-flex-inline p-2">
             WishList
           </div>
-          <div class="nav-sign nav-link col">
-            <div class="nav-right-line-1">
+          <div class="nav-sign nav-link d-flex-inline ">
+            <div class="nav-line-1">
               <span class="small">Hello! User</span>
             </div>
-            <div class="nav-right-line-2">Account & Lists<span class="dropdown-toggle"></span></div>
+            <div class="nav-line-2">Account & Lists<span class="dropdown-toggle"></span></div>
           </div>
-          <div class="nav-returns nav-link col me-0">
-            <div class="nav-right-line-1">
+          <div class="nav-returns nav-link d-flex-inline ">
+            <div class="nav-line-1">
               <span class="small">Returns</span>
             </div>
-            <div class="nav-right-line-2">&Orders</div>
+            <div class="nav-line-2">&Orders</div>
           </div>
-          <div class="nav-cart nav-link col">
+          <div class="nav-cart nav-link d-flex-inline p-2">
             Cart
           </div>
         </div>
