@@ -130,11 +130,18 @@
          <!-- Cart dropover -->
       <div class="nav-cart nav-link d-flex-inline p-2">
         <div class="nav-line-2">
-          <span class="small"><i class="fa fa-shopping-cart non-empty" style="font-size:36px"></i></span>
+          <a data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions"><span class="small"><i class="fa fa-shopping-cart non-empty" style="font-size:36px"></i></span></a>
         </div>
-        <!-- BigBox -->
-        <div class="whole-cart-window hide"><!-- add hide class to hide cart window-->
-          <div class="heading"><p>Your Bag</p></div>
+          <!-- Canvas down now -->
+          <div class="offcanvas offcanvas-end bgclr" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
+            <div class="offcanvas-header">
+              <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Apna Cart</h5>
+              <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                  <!-- BigBox -->
+        <div class="whole-cart-window"><!-- add hide class to hide cart window-->
+          <!-- <div class="heading"><p>Your Bag</p></div> -->
           <div class="cart-wrapper">
             <div class="cart-item">
                        <img src="/Images/ProductImages/Rucksack1/image1.jpg"> 
@@ -180,6 +187,11 @@
         <!-- BigBox Finish -->
       </div>
     <!-- Cart Dropover Finish -->
+            </div>
+          </div>
+          
+          <!-- Canvas Finish -->
+        
       </div>
     </nav>
   </header>
