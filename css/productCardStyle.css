@@ -44,3 +44,18 @@
 .ratingInfo .written {
     color: orange;
 }
+.carouselButton{
+    max-height: fit-content;
+    margin-top: 35%;
+}
+.cardBodyHead{
+    display: flex;
+    justify-content: space-around;
+}
+.wishlist{
+    display: flex;
+    justify-content: center;
+}
+.wishlistInner{
+    margin-top: 50%
+}
