@@ -7,5 +7,29 @@
     "not ie 11",
     "not and_ff <= 109",
     "not firefox <= 110"
-  ]
+  ],
+  "hints": {
+    "axe/name-role-value": [
+      "default",
+      {
+        "button-name": "off"
+      }
+    ],
+    "no-inline-styles": "off",
+    "axe/text-alternatives": [
+      "default",
+      {
+        "image-alt": "off"
+      }
+    ],
+    "axe/forms": [
+      "default",
+      {
+        "label": "off"
+      }
+    ],
+    "disown-opener": "off",
+    "apple-touch-icons": "off",
+    "meta-viewport": "off"
+  }
 }
