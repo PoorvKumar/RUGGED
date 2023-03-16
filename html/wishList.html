@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RUGGED</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+        integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="/css/main.css"> <!--for main page-->
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/wishList.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+  crossorigin="anonymous"></script>
+  <script src="/js/wishscript.js"></script>
+    <!-- <link rel="stylesheet" href="/css/Slider.css"> -->
+</head>
+
+<body>
+  <div id="overlay" onclick="overlayOff()"></div> <!--overlay entire page whenever needed-->
+  <header>
+    <nav
+      class="container-fluid d-grid gap-3 align-items-center navbar px-3 pt-0 pb-0 fixed-top nav-main"
+      style="grid-template-columns: 1fr 2.5fr 1.5fr"
+    >
+      <div class="nav-left navbar d-flex flex-row">
+          <!-- <img src="LOGO/LogoMain/rugged-high-resolution-logo-color-on-transparent-background.png" alt="" class="nav-brand" width="110" height="50"> -->
+          <div id="brand-logo">
+            <!-- <div class="pt-2 text-white"> RUGGED </div>
+            <div>
+              <span id="brand-line-2">Camping,Trekking, Hiking Equipements</span>
+            </div> -->
+            
+          </div>
+          <div class="nav-link col">
+            <div class="nav-line-1">
+              <span class="small">Hello</span>
+            </div>
+            <div class="nav-line-2">Select Your Address!</div>
+          </div>
+      </div>
+      <div class="nav-search">
+        <form action="" class="w-100 input-group">
+          <!-- <div class="dropdown">
+            <button class="btn" type="button" data-bs-toggle="dropdown">
+              <span style="font-size: 13.5px;">All</span><span class="dropdown-toggle"> </span></button>
+            <ul class="dropdown-menu shadow" style="font-size: 13.5px;">
+              <li class="dropdown-header">Dropdown header 1</li>
+            <li>
+            <a class="dropdown-item active" href="#" aria-current="page">Current</a>
+          </li>
+          <li><a class="dropdown-item" href="#">Inventory</a></li>
+          <li><a class="dropdown-item" href="#">Customers</a></li>
+          <li><a class="dropdown-item" href="#">Products</a></li>
+          <li><hr class="dropdown-divider" /></li>
+          <li><a class="dropdown-item" href="#">Reports</a></li>
+          <li><a class="dropdown-item" href="#">Analytics</a></li>
+        </ul>
+          </div> --> <!--removed all -->
+          <input
+            type="search"
+            class="form-control"
+            placeholder="Search Here..."
+            aria-label="Search"
+            onclick="overlayOn()"
+          />
+          <button type="button" class="btn bg-secondary">
+            <i class="fas fa-search"></i>
+          </button>
+        </form>
+      </div>
+      <div class="nav-right navbar d-flex flex-row" >
+        <div class="nav-wish nav-link d-flex-inline p-2">
+          WishList
+        </div>
+        <div class="nav-sign nav-link d-flex-inline ">
+          <div class="nav-line-1">
+            <span class="small">Hello! User</span>
+          </div>
+          <div class="nav-line-2">Account & Lists<span class="dropdown-toggle"></span></div>
+        </div>
+        <div class="nav-returns nav-link d-flex-inline ">
+          <div class="nav-line-1">
+            <span class="small">Returns</span>
+          </div>
+          <div class="nav-line-2">&Orders</div>
+        </div>
+        <!-- <div class="nav-cart nav-link d-flex-inline p-2">
+          Cart
+        </div> -->
+         <!-- Cart dropover -->
+      <div class="nav-cart nav-link d-flex-inline p-2">
+        <div class="nav-line-2">
+          <a data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions"><span class="small"><i class="fa fa-shopping-cart non-empty" style="font-size:36px"></i></span></a>
+        </div>
+          <!-- Canvas down now -->
+          <div class="offcanvas offcanvas-end bgclr" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
+            <div class="offcanvas-header">
+              <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Apna Cart</h5>
+              <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                  <!-- BigBox -->
+        <div class="whole-cart-window"><!-- add hide class to hide cart window-->
+          <!-- <div class="heading"><p>Your Bag</p></div> -->
+          <div class="cart-wrapper">
+            <div class="cart-item">
+                       <img src="/Images/ProductImages/Rucksack1/image1.jpg"> 
+                       <div class="details">
+                           <h3>RuckSack</h3>
+                           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.<br>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="quantity">Quantity: 1</span>
+                               <span class="price">Price: ₹50.00</span>
+                           </p>
+                       </div>
+                       <div class="cancel"><i class="fa-regular fa-trash-can coll"></i></div>
+                    </div>
+            <!-- item 2 -->
+            <div class="cart-item">
+                        <img src="/Images/ProductImages/Rucksack1/image1.jpg"> 
+                        <div class="details">
+                            <h3>Item Name2</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.<br>
+                              <span class="fa fa-star"></span>
+                              <span class="fa fa-star"></span>
+                              <span class="fa fa-star"></span>
+                              <span class="fa fa-star"></span>
+                              <span class="fa fa-star checked"></span>
+                             <span class="quantity">Quantity: 1</span>
+                                <span class="price">Price: ₹100.00</span>
+                            </p>
+                        </div>
+                        <div class="cancel"><i class="fa-regular fa-trash-can coll"></i></div>
+                     </div>
+          </div>
+          <div class="subtotal">Delivery: ₹0.00</div>
+          <div class="subtotal">Total: ₹0.00</div>
+          <div class="cv">
+            <button type="button" class="btn btn-outline-secondary">View WishList</button>
+            <button type="button" class="btn btn-primary">Checkout</button>
+          </div>
+        </div>
+        <!-- BigBox Finish -->
+      </div>
+    <!-- Cart Dropover Finish -->
+            </div>
+          </div>
+          
+          <!-- Canvas Finish -->
+        
+      </div>
+    </nav>
+  </header>
+
+
+
+  <main>
+   <div class="container-just-below-nav">
+
+    <div class="hc-1">           
+            <!--nav start  -->
+          <ul>
+            <li>WhishLists</li>
+            <li>Your Friends</li>
+            <li>
+              <form action="" class="w-100 lp">
+                <input
+                type="search"
+                class="form-control"
+                placeholder="Search for item in List"
+                aria-label="Search"
+                onclick="overlayOn()"
+              />
+              <button type="button" class="btn bg-secondary">
+                <i class="fas fa-search ic"></i>
+              </button>
+            </form>
+
+
+            </li>
+            <li>
+              Send
+            </li>
+            <li>Print</li>
+            <li><div class="dropdown show">
+              <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Filter by
+              </a>
+            
+              <div class="dropdown-menu drpbgclr" aria-labelledby="dropdownMenuLink">
+                <a class="dropdown-item i1" href="#">Purchased</a>
+                <a class="dropdown-item i2" href="#">Unpurchased</a>
+                <!-- <a class="dropdown-item" href="#">Something else here</a> -->
+              </div>
+            </div></li>
+            <li><div class="invitebtn"><div class="plus">+</div><div class="invite">Invite</div></li>
+            <li>Create</li>
+          </ul>
+
+      <!-- nav finish -->
+    </div>
+
+
+
+
+    <div class="hc-2">
+      <div class="hvc-1">
+        <ul>
+          <li>ListName1<div class="private-list">Private</div></li>
+          <li>ListName1<div class="private-list">Private</div></li>
+          <li>ListName1<div class="private-list">Private</div></li>
+          <li>ListName1<div class="private-list">Private</div></li>
+        </ul>
+
+
+      </div>
+      <div class="hvc-2">
+        <!-- start card -->
+        <div class="card mb-3 pcHzMain">
+          <div class="row g-0">
+            <div class="col-md-4">
+              <img src="../Images/ProductImages/Rucksack1/image1.jpg" class="img-fluid rounded-start" alt="Product Image" style="max-height: 200px;">
+            </div>
+            <div class="col-md-4">
+              <div class="card-body">
+                  <a href="#" class="linkitem"><b>RuckSackLorem, ipsum dolor sit amet consectetur adipisicing elit</b></a><br>
+                  <div class="pcHzLimitedTimeDeal">Limited Time Deal</div>
+                <!-- <p class="card-text HzSampleTxt">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p> -->
+                <div class="">
+                  <div class="pcHzRating">
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star checked"></span>
+                  </div>
+                  <span class="pcHzPrice">₹2500</span><span class="pcHzPrice"> M.R.P</span>
+                  <span class="pcHzDiscount">50% off</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card-body">
+                <div class="pcBtnGroup">
+                  <p class="headingJr">Item added on 12 March</p>
+                  <button type="button" class="btn btn-warning pcButton1">Add to Cart</button>
+                  <div class="pcBtnsc">
+                  <button type="button" class="btn btn-sm btn-outline-primary btn-sm pcButton2">Move</button>
+                  <button type="button" class="btn btn-sm btn-outline-danger pcButton3">Delete</button>
+                 <p class="headingk"> <a href="#">Add comments,quantity</a></p>
+                  </div>
+                </div>
+                </div>
+                </div>
+          </div>
+        </div>
+<!-- end card -->
+
+<!--  -->
+<div class="card mb-3 pcHzMain">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img src="../Images/ProductImages/Rucksack1/image1.jpg" class="img-fluid rounded-start" alt="Product Image" style="max-height: 200px;">
+    </div>
+    <div class="col-md-4">
+      <div class="card-body">
+          <a href="#" class="linkitem"><b>RuckSackLorem, ipsum dolor sit amet consectetur adipisicing elit</b></a><br>
+          <div class="pcHzLimitedTimeDeal">Limited Time Deal</div>
+        <!-- <p class="card-text HzSampleTxt">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p> -->
+        <div class="">
+          <div class="pcHzRating">
+            <span class="fa fa-star"></span>
+            <span class="fa fa-star"></span>
+            <span class="fa fa-star"></span>
+            <span class="fa fa-star"></span>
+            <span class="fa fa-star checked"></span>
+          </div>
+          <span class="pcHzPrice">₹2500</span><span class="pcHzPrice"> M.R.P</span>
+          <span class="pcHzDiscount">50% off</span>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card-body">
+        <div class="pcBtnGroup">
+          <p class="headingJr">Item added on 12 March</p>
+          <button type="button" class="btn btn-warning pcButton1">Add to Cart</button>
+          <div class="pcBtnsc">
+          <button type="button" class="btn btn-sm btn-outline-primary btn-sm pcButton2">Move</button>
+          <button type="button" class="btn btn-sm btn-outline-danger pcButton3">Delete</button>
+         <p class="headingk"> <a href="#">Add comments,quantity</a></p>
+          </div>
+        </div>
+        </div>
+        </div>
+  </div>
+</div>
+<!--  -->
+<!--  -->
+<div class="card mb-3 pcHzMain">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img src="../Images/ProductImages/Rucksack1/image1.jpg" class="img-fluid rounded-start" alt="Product Image" style="max-height: 200px;">
+    </div>
+    <div class="col-md-4">
+      <div class="card-body">
+          <a href="#" class="linkitem"><b>RuckSackLorem, ipsum dolor sit amet consectetur adipisicing elit</b></a><br>
+          <div class="pcHzLimitedTimeDeal">Limited Time Deal</div>
+        <!-- <p class="card-text HzSampleTxt">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p> -->
+        <div class="">
+          <div class="pcHzRating">
+            <span class="fa fa-star"></span>
+            <span class="fa fa-star"></span>
+            <span class="fa fa-star"></span>
+            <span class="fa fa-star"></span>
+            <span class="fa fa-star checked"></span>
+          </div>
+          <span class="pcHzPrice">₹2500</span><span class="pcHzPrice"> M.R.P</span>
+          <span class="pcHzDiscount">50% off</span>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card-body">
+        <div class="pcBtnGroup">
+          <p class="headingJr">Item added on 12 March</p>
+          <button type="button" class="btn btn-warning pcButton1">Add to Cart</button>
+          <div class="pcBtnsc">
+          <button type="button" class="btn btn-sm btn-outline-primary btn-sm pcButton2">Move</button>
+          <button type="button" class="btn btn-sm btn-outline-danger pcButton3">Delete</button>
+         <p class="headingk"> <a href="#">Add comments,quantity</a></p>
+          </div>
+        </div>
+        </div>
+        </div>
+  </div>
+</div>
+<!--  -->
+<!--  -->
+<div class="card mb-3 pcHzMain">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img src="../Images/ProductImages/Rucksack1/image1.jpg" class="img-fluid rounded-start" alt="Product Image" style="max-height: 200px;">
+    </div>
+    <div class="col-md-4">
+      <div class="card-body">
+          <a href="#" class="linkitem"><b>RuckSackLorem, ipsum dolor sit amet consectetur adipisicing elit</b></a><br>
+          <div class="pcHzLimitedTimeDeal">Limited Time Deal</div>
+        <!-- <p class="card-text HzSampleTxt">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p> -->
+        <div class="">
+          <div class="pcHzRating">
+            <span class="fa fa-star"></span>
+            <span class="fa fa-star"></span>
+            <span class="fa fa-star"></span>
+            <span class="fa fa-star"></span>
+            <span class="fa fa-star checked"></span>
+          </div>
+          <span class="pcHzPrice">₹2500</span><span class="pcHzPrice"> M.R.P</span>
+          <span class="pcHzDiscount">50% off</span>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card-body">
+        <div class="pcBtnGroup">
+          <p class="headingJr">Item added on 12 March</p>
+          <button type="button" class="btn btn-warning pcButton1">Add to Cart</button>
+          <div class="pcBtnsc">
+          <button type="button" class="btn btn-sm btn-outline-primary btn-sm pcButton2">Move</button>
+          <button type="button" class="btn btn-sm btn-outline-secondary pcButton3">Delete</button>
+         <p class="headingk"> <a href="#">Add comments,quantity</a></p>
+          </div>
+        </div>
+        </div>
+        </div>
+  </div>
+</div>
+<!--  -->
+      </div>
+    </div>
+    <div class="hc-3">
+     <!--  -->
+     <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner mr">
+        <div class="carousel-item active">
+          <div class="card-wrapper container-sm d-flex justify-content-around">
+              <div class="card" style="width: 18rem; height: 22rem;">
+                <img class="card-img-top iimmgg" src="/Images/ProductImages/Shoes/shoes-removebg-preview.png" width="5rem" height="180rem" alt="Card image cap">
+                <div class="card-body">
+                  <p class="ttl"><span>Shoes:Sports type</span>
+                  <span class="pricetag">$200</span></p>
+                  <p class="card-text">
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="nopersonRated">11220</span>
+                  </p>
+                  <button type="button" class="btn btn-outline-warning btntxt">Add to cart</button>
+                  <button type="button" class="btn btn-outline-warning btntxt">Add to Wishlist</button>
+                </div>
+              </div>
+              <div class="card" style="width: 18rem; height: 22rem;">
+                <img class="card-img-top iimmgg" src="/Images/ProductImages/Shoes/shoes-removebg-preview.png" width="5rem" height="180rem" alt="Card image cap">
+                <div class="card-body">
+                  <p class="ttl"><span>Shoes:Sports type</span>
+                  <span class="pricetag">$200</span></p>
+                  <p class="card-text">
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="nopersonRated">11220</span>
+                  </p>
+                  <button type="button" class="btn btn-outline-warning btntxt">Add to cart</button>
+                  <button type="button" class="btn btn-outline-warning btntxt">Add to Wishlist</button>
+                </div>
+              </div>
+              <div class="card" style="width: 18rem; height: 22rem;">
+                <img class="card-img-top iimmgg" src="/Images/ProductImages/Shoes/shoes-removebg-preview.png" width="5rem" height="180rem" alt="Card image cap">
+                <div class="card-body">
+                  <p class="ttl"><span>Shoes:Sports type</span>
+                  <span class="pricetag">$200</span></p>
+                  <p class="card-text">
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="nopersonRated">11220</span>
+                  </p>
+                  <button type="button" class="btn btn-outline-warning btntxt">Add to cart</button>
+                  <button type="button" class="btn btn-outline-warning btntxt">Add to Wishlist</button>
+                </div>
+              </div>
+              <div class="card" style="width: 18rem; height: 22rem;">
+                <img class="card-img-top iimmgg" src="/Images/ProductImages/Shoes/shoes-removebg-preview.png" width="5rem" height="180rem" alt="Card image cap">
+                <div class="card-body">
+                  <p class="ttl"><span>Shoes:Sports type</span>
+                  <span class="pricetag">$200</span></p>
+                  <p class="card-text">
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="nopersonRated">11220</span>
+                  </p>
+                  <button type="button" class="btn btn-outline-warning btntxt">Add to cart</button>
+                  <button type="button" class="btn btn-outline-warning btntxt">Add to Wishlist</button>
+                </div>
+              </div>
+              </div>
+        </div>
+        <div class="carousel-item">
+          <div class="card-wrapper container-sm d-flex justify-content-around">
+                <div class="card" style="width: 18rem; height: 22rem;">
+                  <img class="card-img-top iimmgg" src="/Images/ProductImages/Shoes/shoes-removebg-preview.png" width="5rem" height="180rem" alt="Card image cap">
+                  <div class="card-body">
+                    <p class="ttl"><span>Shoes:Sports type</span>
+                    <span class="pricetag">$200</span></p>
+                    <p class="card-text">
+                      <span class="fa fa-star"></span>
+                      <span class="fa fa-star"></span>
+                      <span class="fa fa-star"></span>
+                      <span class="fa fa-star"></span>
+                      <span class="fa fa-star checked"></span>
+                      <span class="nopersonRated">11220</span>
+                    </p>
+                    <button type="button" class="btn btn-outline-warning btntxt">Add to cart</button>
+                    <button type="button" class="btn btn-outline-warning btntxt">Add to Wishlist</button>
+                  </div>
+                </div>
+                <div class="card" style="width: 18rem; height: 22rem;">
+                  <img class="card-img-top iimmgg" src="/Images/ProductImages/Shoes/shoes-removebg-preview.png" width="5rem" height="180rem" alt="Card image cap">
+                  <div class="card-body">
+                    <p class="ttl"><span>Shoes:Sports type</span>
+                    <span class="pricetag">$200</span></p>
+                    <p class="card-text">
+                      <span class="fa fa-star"></span>
+                      <span class="fa fa-star"></span>
+                      <span class="fa fa-star"></span>
+                      <span class="fa fa-star"></span>
+                      <span class="fa fa-star checked"></span>
+                      <span class="nopersonRated">11220</span>
+                    </p>
+                    <button type="button" class="btn btn-outline-warning btntxt">Add to cart</button>
+                    <button type="button" class="btn btn-outline-warning btntxt">Add to Wishlist</button>
+                  </div>
+                </div>
+                <div class="card" style="width: 18rem; height: 22rem;">
+                  <img class="card-img-top iimmgg" src="/Images/ProductImages/Shoes/shoes-removebg-preview.png" width="5rem" height="180rem" alt="Card image cap">
+                  <div class="card-body">
+                    <p class="ttl"><span>Shoes:Sports type</span>
+                    <span class="pricetag">$200</span></p>
+                    <p class="card-text">
+                      <span class="fa fa-star"></span>
+                      <span class="fa fa-star"></span>
+                      <span class="fa fa-star"></span>
+                      <span class="fa fa-star"></span>
+                      <span class="fa fa-star checked"></span>
+                      <span class="nopersonRated">11220</span>
+                    </p>
+                    <button type="button" class="btn btn-outline-warning btntxt">Add to cart</button>
+                    <button type="button" class="btn btn-outline-warning btntxt">Add to Wishlist</button>
+                  </div>
+                </div>
+                <div class="card" style="width: 18rem; height: 22rem;">
+                  <img class="card-img-top iimmgg" src="/Images/ProductImages/Shoes/shoes-removebg-preview.png" width="5rem" height="180rem" alt="Card image cap">
+                  <div class="card-body">
+                    <p class="ttl"><span>Shoes:Sports type</span>
+                    <span class="pricetag">$200</span></p>
+                    <p class="card-text">
+                      <span class="fa fa-star"></span>
+                      <span class="fa fa-star"></span>
+                      <span class="fa fa-star"></span>
+                      <span class="fa fa-star"></span>
+                      <span class="fa fa-star checked"></span>
+                      <span class="nopersonRated">11220</span>
+                    </p>
+                    <button type="button" class="btn btn-outline-warning btntxt">Add to cart</button>
+                    <button type="button" class="btn btn-outline-warning btntxt">Add to Wishlist</button>
+                  </div>
+                </div>
+                </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+           <div class="card-wrapper container-sm d-flex justify-content-around">
+              <div class="card" style="width: 18rem; height: 22rem;">
+                <img class="card-img-top iimmgg" src="/Images/ProductImages/Shoes/shoes-removebg-preview.png" width="5rem" height="180rem" alt="Card image cap">
+                <div class="card-body">
+                  <p class="ttl"><span>Shoes:Sports type</span>
+                  <span class="pricetag">$200</span></p>
+                  <p class="card-text">
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="nopersonRated">11220</span>
+                  </p>
+                  <button type="button" class="btn btn-outline-warning btntxt">Add to cart</button>
+                  <button type="button" class="btn btn-outline-warning btntxt">Add to Wishlist</button>
+                </div>
+              </div>
+              <div class="card" style="width: 18rem; height: 22rem;">
+                <img class="card-img-top iimmgg" src="/Images/ProductImages/Shoes/shoes-removebg-preview.png" width="5rem" height="180rem" alt="Card image cap">
+                <div class="card-body">
+                  <p class="ttl"><span>Shoes:Sports type</span>
+                  <span class="pricetag">$200</span></p>
+                  <p class="card-text">
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="nopersonRated">11220</span>
+                  </p>
+                  <button type="button" class="btn btn-outline-warning btntxt">Add to cart</button>
+                  <button type="button" class="btn btn-outline-warning btntxt">Add to Wishlist</button>
+                </div>
+              </div>
+              <div class="card" style="width: 18rem; height: 22rem;">
+                <img class="card-img-top iimmgg" src="/Images/ProductImages/Shoes/shoes-removebg-preview.png" width="5rem" height="180rem" alt="Card image cap">
+                <div class="card-body">
+                  <p class="ttl"><span>Shoes:Sports type</span>
+                  <span class="pricetag">$200</span></p>
+                  <p class="card-text">
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="nopersonRated">11220</span>
+                  </p>
+                  <button type="button" class="btn btn-outline-warning btntxt">Add to cart</button>
+                  <button type="button" class="btn btn-outline-warning btntxt">Add to Wishlist</button>
+                </div>
+              </div>
+              <div class="card" style="width: 18rem; height: 22rem;">
+                <img class="card-img-top iimmgg" src="/Images/ProductImages/Shoes/shoes-removebg-preview.png" width="5rem" height="180rem" alt="Card image cap">
+                <div class="card-body">
+                  <p class="ttl"><span>Shoes:Sports type</span>
+                  <span class="pricetag">$200</span></p>
+                  <p class="card-text">
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="nopersonRated">11220</span>
+                  </p>
+                  <button type="button" class="btn btn-outline btntxt">Add to cart</button>
+                  <button type="button" class="btn btn-outline btntxt">Add to Wishlist</button>
+                </div>
+              </div>
+              
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon placeprev" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+        <span class="carousel-control-next-icon placenext" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+    </div>
+      <!--  -->
+    </div>
+   </div>
+  </main>
+  <footer></footer>
+  </body>
+  </html>
