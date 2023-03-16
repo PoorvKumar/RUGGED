@@ -116,16 +116,22 @@
     padding: 1%;
 }
 .hvc-1 ul li:hover{
-    background-color: grey;
+    /* background-color: grey; */
     cursor: pointer;
     color:rgb(134, 166, 168);
     text-decoration: underline;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
 }
 .pcHzMain{
     /* max-width:; */
     max-height: 280px;
     background-color: #eee;
 }
+.pcHzMain:hover{
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+  cursor: pointer;
+}
+
 .HzSampleTxt{
     margin: 0;
 }
@@ -160,7 +166,7 @@
     margin: 0%;
     font-size: 7px;
 }
-.linkitem:hover{
+.pcHzMain .linkitem:hover{
     color:#0770cf;
 }
 * {
