@@ -24,12 +24,20 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <link rel="stylesheet" href="css/style.css">
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+    <link rel="stylesheet" href="public/css/style.css">
     <title>Test</title>
     <style>
       /* ::-webkit-input-placeholder {
         font-size: small;
       } */
+
+      .navbar-color
+      {
+        background: linear-gradient(to right, rgba(202, 165, 33, 0.9), rgba(173, 84, 19, 0.9));
+      }
 
       .form-control:focus
       {
@@ -39,20 +47,22 @@
 
       .input-group:focus-within
       {
-        outline: rgb(26, 111, 107) solid 4px !important;
+        outline: rgb(141, 64, 218) solid 4px !important;
         border-radius: 6px;
       }
 
       .nav-main
       {
-        background-color: #172f47;
+        background-color: #030b13;
+        background: linear-gradient(to right, rgba(122, 55, 193, 0.9), rgba(37, 117, 252, 0.9));
         height: 72.5px !important;
       }
       .nav-link
       {
         font-weight: bold !important;
         color:aliceblue;
-        border: 2px solid #172f47;
+        border: 2px solid transparent; 
+        /* same color as nav-main */
         padding: 1px 2px;
         max-width: fit-content;
         height: 6.78%;
@@ -100,15 +110,13 @@
         margin-top: 72.56px !important;
         height: 37.5px !important;
         width: 100%;
-        background-color: #4670af ;
         display: inline-block;
       }
 
       .nav-item
       {
         color:aliceblue;
-        font-weight: 650;
-        display: inline-flex;
+        font-weight: 500;
         margin-left: 21px;
       }
 
@@ -134,7 +142,7 @@
               <div><i class="fa fa-map-marker-alt mt-3 me-2" style="font-size: larger;"></i></div>
               <div>
                 <div class="nav-line-1">
-                  <span class="small">Hello</span>
+                  <span class="small">Hello User!</span>
                 </div>
                 <div class="nav-line-2">Select Your Address!</div>
             </div>
@@ -165,12 +173,12 @@
               aria-label="Search"
               onclick="overlayOn()"
             />
-            <button type="button" class="btn bg-secondary">
+            <button type="button" class="btn bg-danger">
               <i class="fas fa-search"></i>
             </button>
           </form>
         </div>
-        <div class="nav-right navbar d-flex flex-row" >
+        <div class="nav-right navbar d-flex flex-row">
           <div class="nav-wish nav-link d-flex-inline p-2">
             WishList
           </div>
@@ -188,77 +196,112 @@
             <div class="nav-line-2">&Orders</div>
           </div>
           <!-- <div class="nav-cart nav-link d-flex-inline p-2">
-            Cart
-          </div> -->
-           <!-- Cart dropover -->
-           <div class="nav-cart nav-link d-flex-inline p-2">
+                    Cart
+                  </div> -->
+          <!-- Cart dropover -->
+          <div class="nav-cart nav-link d-flex-inline p-2">
             <div class="nav-line-2">
-              <a data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions"><span class="small"><i class="fa fa-shopping-cart non-empty" style="font-size:36px"></i></span></a>
+              <a data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions"
+                aria-controls="offcanvasWithBothOptions">
+                <!-- <span class="small">
+                  <i class="fa fa-shopping-cart non-empty"
+                    style="font-size:33px"></i></span> -->
+                    <span class="material-icons non-empty" style="font-size: 36px;"> <!--material icon google-->
+                      shopping_cart
+                      </span></a> <!--need  to change non-empty class-->
             </div>
-              <!-- Canvas down now -->
-              <div class="offcanvas offcanvas-end bgclr" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
-                <div class="offcanvas-header">
-                  <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Apna Cart</h5>
-                  <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            <!-- Canvas down now -->
+            <div class="offcanvas offcanvas-end " data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions"
+              aria-labelledby="offcanvasWithBothOptionsLabel">
+              <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Apna Cart</h5>
+                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+              </div>
+              <div class="offcanvas-body">
+                <!-- BigBox -->
+                <div class="whole-cart-window"><!-- add hide class to hide cart window-->
+                  <!-- <div class="heading"><p>Your Bag</p></div> -->
+                  <div class="cart-wrapper">
+                    <div class="cart-item">
+                      <img src="/Images/ProductImages/Rucksack1/image1.jpg" alt="rucksack">
+                      <div class="details">
+                        <h3>RuckSack</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.<br>
+                          <span class="fa fa-star"></span>
+                          <span class="fa fa-star"></span>
+                          <span class="fa fa-star"></span>
+                          <span class="fa fa-star checked"></span>
+                          <span class="fa fa-star checked"></span>
+                          <span class="quantity">Quantity: 1</span>
+                          <span class="price">Price: ₹50.00</span>
+                        </p>
+                      </div>
+                      <div class="cancel"><i class="fa-regular fa-trash-can coll"></i></div>
+                    </div>
+                    <!-- item 2 -->
+                    <div class="cart-item">
+                      <img src="/Images/ProductImages/Rucksack1/image1.jpg" alt="Rucksack">
+                      <div class="details">
+                        <h3>Item Name2</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.<br>
+                          <span class="fa fa-star"></span>
+                          <span class="fa fa-star"></span>
+                          <span class="fa fa-star"></span>
+                          <span class="fa fa-star"></span>
+                          <span class="fa fa-star checked"></span>
+                          <span class="quantity">Quantity: 1</span>
+                          <span class="price">Price: ₹100.00</span>
+                        </p>
+                      </div>
+                      <div class="cancel"><i class="fa-regular fa-trash-can coll"></i></div>
+                    </div>
+                  </div>
+                  <div class="subtotal">Delivery: ₹0.00</div>
+                  <div class="subtotal">Total: ₹0.00</div>
+                  <div class="cv">
+                    <button type="button" class="btn btn-outline-secondary">View WishList</button>
+                    <button type="button" class="btn btn-primary">Checkout</button>
+                  </div>
                 </div>
-                <div class="offcanvas-body">
-                      <!-- BigBox -->
-            <div class="whole-cart-window"><!-- add hide class to hide cart window-->
-              <!-- <div class="heading"><p>Your Bag</p></div> -->
-              <div class="cart-wrapper">
-                <div class="cart-item">
-                           <img src="/Images/ProductImages/Rucksack1/image1.jpg" alt="rucksack"> 
-                           <div class="details">
-                               <h3>RuckSack</h3>
-                               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.<br>
-                                <span class="fa fa-star"></span>
-                                <span class="fa fa-star"></span>
-                                <span class="fa fa-star"></span>
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                                <span class="quantity">Quantity: 1</span>
-                                   <span class="price">Price: ₹50.00</span>
-                               </p>
-                           </div>
-                           <div class="cancel"><i class="fa-regular fa-trash-can coll"></i></div>
-                        </div>
-                <!-- item 2 -->
-                <div class="cart-item">
-                            <img src="/Images/ProductImages/Rucksack1/image1.jpg" alt="Rucksack"> 
-                            <div class="details">
-                                <h3>Item Name2</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.<br>
-                                  <span class="fa fa-star"></span>
-                                  <span class="fa fa-star"></span>
-                                  <span class="fa fa-star"></span>
-                                  <span class="fa fa-star"></span>
-                                  <span class="fa fa-star checked"></span>
-                                 <span class="quantity">Quantity: 1</span>
-                                    <span class="price">Price: ₹100.00</span>
-                                </p>
-                            </div>
-                            <div class="cancel"><i class="fa-regular fa-trash-can coll"></i></div>
-                         </div>
+                <!-- BigBox Finish -->
               </div>
-              <div class="subtotal">Delivery: ₹0.00</div>
-              <div class="subtotal">Total: ₹0.00</div>
-              <div class="cv">
-                <button type="button" class="btn btn-outline-secondary">View WishList</button>
-                <button type="button" class="btn btn-primary">Checkout</button>
-              </div>
+              <!-- Cart Dropover Finish -->
             </div>
-            <!-- BigBox Finish -->
           </div>
-        <!-- Cart Dropover Finish -->
-                </div>
-              </div>
-      <!-- Cart Dropover Finish -->
+          <!-- Cart Dropover Finish -->
         </div>
       </nav>
-      <nav class="container-fluid navbar nav-sec">
-        <a class="nav-item" href="#">
-          <i class="fa fa-bars"> </i>
+      <nav class="container-fluid navbar nav-sec navbar-color">
+        <a class="nav-item" href="#" data-bs-toggle="offcanvas" data-bs-target="#offcanvasAllSection" role="button" aria-label="allSection">
+          <i class="fa fa-bars"></i>
+          All
         </a>
+          <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasAllSection" aria-labelledby="allSection">
+            <div class="offcanvas-header navbar-color">
+              <h4 class="offcanvas-title"> <span class="fa fa-user"> </span><i> Hello User!</i> </h4>
+              <button class="btn-close text-reset" type="button" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body px-0">
+              <div class="container">
+                <h5 class="px-3">Trending Today</h5>
+                <ul class="list-group">
+                  <a class="list-group-item list-group-item-action border-0 px-4" href="#">First</a>
+                  <a class="list-group-item list-group-item-action border-0 px-4" href="#">Second</a>
+                  <a class="list-group-item list-group-item-action border-0 px-4" href="#">Third</a>
+                  <a class="list-group-item list-group-item-action border-0 px-4" href="#">Four</a>
+                </ul>
+                <hr>
+                <h5 class="px-3">Trending Today</h5>
+                <ul class="list-group">
+                  <a class="list-group-item list-group-item-action border-0 px-4" href="#">First</a>
+                  <a class="list-group-item list-group-item-action border-0 px-4" href="#">Second</a>
+                  <a class="list-group-item list-group-item-action border-0 px-4" href="#">Third</a>
+                  <a class="list-group-item list-group-item-action border-0 px-4" href="#">Four</a>
+                </ul>
+              </div>
+            </div>
+          </div>
+        
         <a class="nav-item" href="#">
         Sell
         </div>
@@ -284,19 +327,19 @@
       <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
           <div class="carousel-inner">
               <div class="carousel-item active carouselMain" data-bs-interval="10000">
-                  <img src="/Images/carouselImages/kayaking.jpg" class="d-block w-100" alt="Kayaking">
+                  <img src="public/Images/carouselImages/kayaking.jpg" class="d-block w-100" alt="Kayaking">
               </div>
               <div class="carousel-item carouselMain" data-bs-interval="2000">
-                  <img src="/Images/carouselImages/mountainClimbing.jpg" class="d-block w-100" alt="mountainClimbing">
+                  <img src="public/Images/carouselImages/mountainClimbing.jpg" class="d-block w-100" alt="mountainClimbing">
               </div>
               <div class="carousel-item carouselMain">
-                  <img src="/Images/carouselImages/riverRafting.jpg" class="d-block w-100" alt="riverRafting">
+                  <img src="public/Images/carouselImages/riverRafting.jpg" class="d-block w-100" alt="riverRafting">
               </div>
               <div class="carousel-item carouselMain">
-                  <img src="/Images/carouselImages/scubaDiving.webp" class="d-block w-100" alt="scubaDiving">
+                  <img src="public/Images/carouselImages/scubaDiving.webp" class="d-block w-100" alt="scubaDiving">
               </div>
               <div class="carousel-item carouselMain">
-                  <img src="/Images/carouselImages/skyDiving.webp" class="d-block w-100" alt="skyDiving">
+                  <img src="public/Images/carouselImages/skyDiving.webp" class="d-block w-100" alt="skyDiving">
               </div>
           </div>
           <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval"
