@@ -6,32 +6,33 @@ box-shadow: none;
 
 .input-group:focus-within
 {
-outline: rgb(20, 156, 149) solid 4px !important;
+outline: rgb(26, 111, 107) solid 4px !important;
 border-radius: 6px;
 }
 
 .nav-main
 {
-background-color: #162e3e;
-height: 77.5px !important;
+background-color: #0a2e52;
+height: 72.5px !important;
 }
 .nav-link
 {
 font-weight: bold !important;
 color:aliceblue;
-border: 2px solid #162e3e;
+border: 2px solid #0a2e52;
 padding: 1px 2px;
 max-width: fit-content;
-height: 50px;
+height: 6.78%;
 }
 .nav-link:hover
 {
 border-color: aliceblue;
 color:aliceblue;
 }
-.nav-right-line-1
+.nav-line-1
 {
 font-size: small;
+font-stretch: expanded;
 }
 
 #overlay
@@ -42,4 +43,39 @@ width: 100%;
 height: 100%;
 background-color: rgba(0,0,0,0.5);
 z-index: 2;
+}
+
+#brand-logo
+{
+/* color: indigo; */
+
+}
+
+#brand-line-2
+{
+color: aliceblue;
+font-size: 5px;
+}
+
+.dropdown:hover 
+{
+display: block;
+}
+
+.nav-sec
+{
+margin-top: 72.56px !important;
+height: 38.5px;
+background-color: #2f97b1 ;
+display: inline-block;
+}
+
+.nav-item
+{
+color:aliceblue;
+font-weight: 650;
+display: inline-flex;
+height: 20px;
+margin-top: 5px;
+margin-left: 16px;
 }

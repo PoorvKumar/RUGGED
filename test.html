@@ -25,7 +25,7 @@
       referrerpolicy="no-referrer"
     />
     <link rel="stylesheet" href="css/style.css">
-    <title>Document</title>
+    <title>Test</title>
     <style>
       /* ::-webkit-input-placeholder {
         font-size: small;
@@ -39,23 +39,23 @@
 
       .input-group:focus-within
       {
-        outline: rgb(20, 156, 149) solid 4px !important;
+        outline: rgb(26, 111, 107) solid 4px !important;
         border-radius: 6px;
       }
 
       .nav-main
       {
-        background-color: #162e3e;
-        height: 77.5px !important;
+        background-color: #172f47;
+        height: 72.5px !important;
       }
       .nav-link
       {
         font-weight: bold !important;
         color:aliceblue;
-        border: 2px solid #162e3e;
+        border: 2px solid #172f47;
         padding: 1px 2px;
         max-width: fit-content;
-        height: 50px;
+        height: 6.78%;
       }
       .nav-link:hover
       {
@@ -65,6 +65,7 @@
       .nav-line-1
       {
         font-size: small;
+        font-stretch: expanded;
       }
 
       #overlay
@@ -96,7 +97,19 @@
 
       .nav-sec
       {
-        margin-top: 72px !important;
+        margin-top: 72.56px !important;
+        height: 37.5px !important;
+        width: 100%;
+        background-color: #4670af ;
+        display: inline-block;
+      }
+
+      .nav-item
+      {
+        color:aliceblue;
+        font-weight: 650;
+        display: inline-flex;
+        margin-left: 21px;
       }
 
     </style>
@@ -117,12 +130,15 @@
               </div>
               
             </div>
-            <div class="nav-link col">
-              <div class="nav-line-1">
-                <span class="small">Hello</span>
-              </div>
-              <div class="nav-line-2">Select Your Address!</div>
+            <div class="nav-link col d-flex flex-inline">
+              <div><i class="fa fa-map-marker-alt mt-3 me-2" style="font-size: larger;"></i></div>
+              <div>
+                <div class="nav-line-1">
+                  <span class="small">Hello</span>
+                </div>
+                <div class="nav-line-2">Select Your Address!</div>
             </div>
+          </div>
         </div>
         <div class="nav-search">
           <form action="" class="w-100 input-group">
@@ -175,82 +191,92 @@
             Cart
           </div> -->
            <!-- Cart dropover -->
-        <div class="nav-cart nav-link d-flex-inline p-2">
-          <div class="nav-line-2">
-            <span class="small"><i class="fa fa-shopping-cart non-empty" style="font-size:36px"></i></span>
-          </div>
-          <!-- BigBox -->
-          <div class="whole-cart-window hide"><!-- add hide class to hide cart window-->
-            <div class="heading"><p>Your Bag</p></div>
-            <div class="cart-wrapper">
-              <div class="cart-item">
-                         <img src="/Images/ProductImages/Rucksack1/image1.jpg"> 
-                         <div class="details">
-                             <h3>RuckSack</h3>
-                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.<br>
-                              <span class="fa fa-star"></span>
-                              <span class="fa fa-star"></span>
-                              <span class="fa fa-star"></span>
-                              <span class="fa fa-star checked"></span>
-                              <span class="fa fa-star checked"></span>
-                              <span class="quantity">Quantity: 1</span>
-                                 <span class="price">Price: ₹50.00</span>
-                             </p>
-                         </div>
-                         <div class="cancel"><i class="fa-regular fa-trash-can coll"></i></div>
-                      </div>
-              <!-- item 2 -->
-              <div class="cart-item">
-                          <img src="/Images/ProductImages/Rucksack1/image1.jpg"> 
-                          <div class="details">
-                              <h3>Item Name2</h3>
-                              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.<br>
-                                <span class="fa fa-star"></span>
+           <div class="nav-cart nav-link d-flex-inline p-2">
+            <div class="nav-line-2">
+              <a data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions"><span class="small"><i class="fa fa-shopping-cart non-empty" style="font-size:36px"></i></span></a>
+            </div>
+              <!-- Canvas down now -->
+              <div class="offcanvas offcanvas-end bgclr" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
+                <div class="offcanvas-header">
+                  <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Apna Cart</h5>
+                  <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                      <!-- BigBox -->
+            <div class="whole-cart-window"><!-- add hide class to hide cart window-->
+              <!-- <div class="heading"><p>Your Bag</p></div> -->
+              <div class="cart-wrapper">
+                <div class="cart-item">
+                           <img src="/Images/ProductImages/Rucksack1/image1.jpg" alt="rucksack"> 
+                           <div class="details">
+                               <h3>RuckSack</h3>
+                               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.<br>
                                 <span class="fa fa-star"></span>
                                 <span class="fa fa-star"></span>
                                 <span class="fa fa-star"></span>
                                 <span class="fa fa-star checked"></span>
-                               <span class="quantity">Quantity: 1</span>
-                                  <span class="price">Price: ₹100.00</span>
-                              </p>
-                          </div>
-                          <div class="cancel"><i class="fa-regular fa-trash-can coll"></i></div>
-                       </div>
+                                <span class="fa fa-star checked"></span>
+                                <span class="quantity">Quantity: 1</span>
+                                   <span class="price">Price: ₹50.00</span>
+                               </p>
+                           </div>
+                           <div class="cancel"><i class="fa-regular fa-trash-can coll"></i></div>
+                        </div>
+                <!-- item 2 -->
+                <div class="cart-item">
+                            <img src="/Images/ProductImages/Rucksack1/image1.jpg" alt="Rucksack"> 
+                            <div class="details">
+                                <h3>Item Name2</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.<br>
+                                  <span class="fa fa-star"></span>
+                                  <span class="fa fa-star"></span>
+                                  <span class="fa fa-star"></span>
+                                  <span class="fa fa-star"></span>
+                                  <span class="fa fa-star checked"></span>
+                                 <span class="quantity">Quantity: 1</span>
+                                    <span class="price">Price: ₹100.00</span>
+                                </p>
+                            </div>
+                            <div class="cancel"><i class="fa-regular fa-trash-can coll"></i></div>
+                         </div>
+              </div>
+              <div class="subtotal">Delivery: ₹0.00</div>
+              <div class="subtotal">Total: ₹0.00</div>
+              <div class="cv">
+                <button type="button" class="btn btn-outline-secondary">View WishList</button>
+                <button type="button" class="btn btn-primary">Checkout</button>
+              </div>
             </div>
-            <div class="subtotal">Delivery: ₹0.00</div>
-            <div class="subtotal">Total: ₹0.00</div>
-            <div class="cv">
-              <button type="button" class="btn btn-outline-secondary">View WishList</button>
-              <button type="button" class="btn btn-primary">Checkout</button>
-            </div>
+            <!-- BigBox Finish -->
           </div>
-          <!-- BigBox Finish -->
-        </div>
+        <!-- Cart Dropover Finish -->
+                </div>
+              </div>
       <!-- Cart Dropover Finish -->
         </div>
       </nav>
       <nav class="container-fluid navbar nav-sec">
-        <div class="d-flex flex-inline nav-item">
-          All
+        <a class="nav-item" href="#">
+          <i class="fa fa-bars"> </i>
+        </a>
+        <a class="nav-item" href="#">
+        Sell
         </div>
-        <div class="d-flex flex-inline nav-item">
-          Sell
-        </div>
-        <div class="d-flex flex-inline nav-item">
+        <a class=" nav-item" href="#">
           Best Sellers
-        </div>
-        <div class="d-flex flex-inline nav-item">
+        </a>
+        <a class="nav-item" href="#">
           Today's Deals
-        </div>
-        <div class="d-flex flex-inline nav-item">
+        </a>
+        <a class="nav-item" href="#">
           New Releases
-        </div>
-        <div class="d-flex flex-inline nav-item">
+        </a>
+        <a class="nav-item" href="#">
           Electronics
-        </div>
-        <div class="d-flex flex-inline nav-item">
+        </a>
+        <a class="nav-item" href="#">
           Fashion
-        </div>
+        </a>
       </nav>
     </header>
 
