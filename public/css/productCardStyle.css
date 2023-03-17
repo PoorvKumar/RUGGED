@@ -1,8 +1,10 @@
 .totalCard{
     background-color: #e9ecef;
     border-radius: 1.5rem;
-    margin: 3rem;
+    margin: 1rem 0.5rem !important;
     border: 2px solid grey;
+    max-width: fit-content;
+    display: inline-flex;
 }
 .cardWidth {
     width: 24%;
