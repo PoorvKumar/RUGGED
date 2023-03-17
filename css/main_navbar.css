@@ -1,3 +1,8 @@
+.navbar-color
+{
+background: linear-gradient(to right, rgba(202, 165, 33, 0.9), rgba(173, 84, 19, 0.9));
+}
+
 .form-control:focus
 {
 border: none;
@@ -6,20 +11,22 @@ box-shadow: none;
 
 .input-group:focus-within
 {
-outline: rgb(26, 111, 107) solid 4px !important;
+outline: rgb(141, 64, 218) solid 4px !important;
 border-radius: 6px;
 }
 
 .nav-main
 {
-background-color: #0a2e52;
+background-color: #030b13;
+/* background: linear-gradient(to right, rgba(122, 55, 193, 0.9), rgba(37, 117, 252, 0.9)); */
 height: 72.5px !important;
 }
 .nav-link
 {
 font-weight: bold !important;
 color:aliceblue;
-border: 2px solid #0a2e52;
+border: 2px solid transparent; 
+/* same color as nav-main */
 padding: 1px 2px;
 max-width: fit-content;
 height: 6.78%;
@@ -65,17 +72,14 @@ display: block;
 .nav-sec
 {
 margin-top: 72.56px !important;
-height: 38.5px;
-background-color: #2f97b1 ;
+height: 37.5px !important;
+width: 100%;
 display: inline-block;
 }
 
 .nav-item
 {
 color:aliceblue;
-font-weight: 650;
-display: inline-flex;
-height: 20px;
-margin-top: 5px;
-margin-left: 16px;
+font-weight: 500;
+margin-left: 21px;
 }
