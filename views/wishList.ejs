@@ -1,0 +1,44 @@
+<%- include('partials/Navbars/navbarHeader.ejs') %>
+<%- include('partials/Navbars/UpperNavbar.ejs') %>
+<%- include('partials/Navbars/MiddleNavbar.ejs') %>
+<%- include('partials/Navbars/LowerNavbar.ejs') %>
+<body>
+<main>
+<div class="container-just-below-nav">
+
+    <div class="hc-1"> 
+    <%- include('partials/wishList/navbar.ejs') %>
+    </div>
+    <div class="hc-2">
+        <div class="hvc-1">
+        </div>
+        <div class="hvc-2">
+            <%-include('partials/wishList/horizontalCard.ejs') %>
+            <%-include('partials/wishList/horizontalCard.ejs') %>
+            <%-include('partials/wishList/horizontalCard.ejs') %>
+            <%-include('partials/wishList/horizontalCard.ejs') %>
+        </div>
+    </div>
+    <div class="hc-3">
+        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner mr">
+              <div class="carousel-item active">
+                <div class="card-wrapper container-sm d-flex justify-content-around">
+                    <%-include('partials/wishList/verticleCardCarousel.ejs') %>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon placeprev" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+              <span class="carousel-control-next-icon placenext" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+</div>
+</div>
+</main>
+<footer></footer>
+</body>
