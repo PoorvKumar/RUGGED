@@ -36,7 +36,8 @@
 
       .navbar-color
       {
-        background: linear-gradient(to right, rgba(202, 165, 33, 0.9), rgba(173, 84, 19, 0.9));
+        /* background: linear-gradient(to right, rgba(202, 165, 33, 0.9), rgba(173, 84, 19, 0.9)); */
+        background-color: #5b2ace;
       }
 
       .form-control:focus
@@ -54,7 +55,7 @@
       .nav-main
       {
         background-color: #030b13;
-        background: linear-gradient(to right, rgba(122, 55, 193, 0.9), rgba(37, 117, 252, 0.9));
+        background: linear-gradient(to right, rgba(96, 44, 159, 0.9), rgba(21, 127, 233, 0.9));
         height: 72.5px !important;
       }
       .nav-link
@@ -107,17 +108,19 @@
 
       .nav-sec
       {
-        margin-top: 72.56px !important;
-        height: 37.5px !important;
+        margin-top: 72.5px !important;
+        height: 36.75px !important;
         width: 100%;
         display: inline-block;
       }
 
       .nav-item
       {
-        color:aliceblue;
-        font-weight: 500;
+        color:rgb(255, 255, 255);
+        font-weight: 450;
         margin-left: 21px;
+        padding-top: 2em;
+        padding-bottom: 4em;
       }
 
     </style>
@@ -173,7 +176,7 @@
               aria-label="Search"
               onclick="overlayOn()"
             />
-            <button type="button" class="btn bg-danger">
+            <button type="button" class="btn bg-white">
               <i class="fas fa-search"></i>
             </button>
           </form>
@@ -271,14 +274,14 @@
           <!-- Cart Dropover Finish -->
         </div>
       </nav>
-      <nav class="container-fluid navbar nav-sec navbar-color">
+      <nav class="container-fluid navbar  nav-sec navbar-color">
         <a class="nav-item" href="#" data-bs-toggle="offcanvas" data-bs-target="#offcanvasAllSection" role="button" aria-label="allSection">
           <i class="fa fa-bars"></i>
           All
         </a>
           <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasAllSection" aria-labelledby="allSection">
             <div class="offcanvas-header navbar-color">
-              <h4 class="offcanvas-title"> <span class="fa fa-user"> </span><i> Hello User!</i> </h4>
+              <h4 class="offcanvas-title text-white"> <span class="fa fa-user"> </span><i> Hello User!</i> </h4>
               <button class="btn-close text-reset" type="button" data-bs-dismiss="offcanvas" aria-label="Close"></button>
             </div>
             <div class="offcanvas-body px-0">
