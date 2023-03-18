@@ -61,19 +61,14 @@
   <div id="overlay" onclick="overlayOff()"></div> <!--overlay entire page whenever needed-->
   <header>
     <nav
-      class="container-fluid d-grid gap-3 align-items-center navbar px-3 pt-0 pb-0 fixed-top nav-main "
-      style="grid-template-columns: 1fr 2.5fr 1.5fr"
-    >
-      <div class="nav-left navbar d-flex flex-row">
+      class="container-fluid d-flex flex-inline navbar px-3 pt-0 pb-0 fixed-top nav-main ">
+      <div class="nav-left navbar d-flex justify-content-around pt-0 ms-0">
           <!-- <img src="LOGO/LogoMain/rugged-high-resolution-logo-color-on-transparent-background.png" alt="" class="nav-brand" width="110" height="50"> -->
-          <div id="brand-logo">
-            <div class="pt-2 text-white"> RUGGED </div>
-            <div>
-              <span id="brand-line-2">Camping,Trekking, Hiking Equipements</span>
-            </div>
+          <div class="nav-link nav-logo " id="brand-logo" style="font-size: large;">
+            <img src="LOGO/newLOGOTest/newLOGO_no_background.png" alt="" height="65em" width="120em">
             
           </div>
-          <div class="nav-link col d-flex flex-inline">
+          <div class="nav-link col d-flex flex-inline nav-address">
             <div><i class="fa fa-map-marker-alt mt-3 me-2" style="font-size: larger;"></i></div>
             <div>
               <div class="nav-line-1">
@@ -83,7 +78,7 @@
           </div>
         </div>
       </div>
-      <div class="nav-search">
+      <div class="nav-search ">
         <form action="" class="w-100 input-group">
           <!-- <div class="dropdown">
             <button class="btn" type="button" data-bs-toggle="dropdown">
@@ -108,7 +103,7 @@
             aria-label="Search"
             onclick="overlayOn()"
           />
-          <button type="button" class="btn bg-danger">
+          <button type="button" class="btn bg-white">
             <i class="fas fa-search"></i>
           </button>
         </form>
@@ -158,7 +153,7 @@
                 <!-- <div class="heading"><p>Your Bag</p></div> -->
                 <div class="cart-wrapper">
                   <div class="cart-item">
-                    <img src="public/Images/ProductImages/Rucksack1/image1.jpg" alt="rucksack">
+                    <img src="/Images/ProductImages/Rucksack1/image1.jpg" alt="rucksack">
                     <div class="details">
                       <h3>RuckSack</h3>
                       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.<br>
@@ -175,7 +170,7 @@
                   </div>
                   <!-- item 2 -->
                   <div class="cart-item">
-                    <img src="public/Images/ProductImages/Rucksack1/image1.jpg" alt="Rucksack">
+                    <img src="/Images/ProductImages/Rucksack1/image1.jpg" alt="Rucksack">
                     <div class="details">
                       <h3>Item Name2</h3>
                       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.<br>
@@ -206,14 +201,14 @@
         <!-- Cart Dropover Finish -->
       </div>
     </nav>
-    <nav class="container-fluid navbar nav-sec navbar-color">
+    <nav class="container-fluid navbar  nav-sec navbar-color">
       <a class="nav-item" href="#" data-bs-toggle="offcanvas" data-bs-target="#offcanvasAllSection" role="button" aria-label="allSection">
         <i class="fa fa-bars"></i>
         All
       </a>
         <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasAllSection" aria-labelledby="allSection">
           <div class="offcanvas-header navbar-color">
-            <h4 class="offcanvas-title"> <span class="fa fa-user"> </span><i> Hello User!</i> </h4>
+            <h4 class="offcanvas-title text-white"> <span class="fa fa-user"> </span><i> Hello User!</i> </h4>
             <button class="btn-close text-reset" type="button" data-bs-dismiss="offcanvas" aria-label="Close"></button>
           </div>
           <div class="offcanvas-body px-0">

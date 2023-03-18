@@ -1,6 +1,7 @@
 .navbar-color
 {
-background: linear-gradient(to right, rgba(202, 165, 33, 0.9), rgba(173, 84, 19, 0.9));
+/* background: linear-gradient(to right, rgba(202, 165, 33, 0.9), rgba(173, 84, 19, 0.9)); */
+background-color: #5b2ace;
 }
 
 .form-control:focus
@@ -18,7 +19,7 @@ border-radius: 6px;
 .nav-main
 {
 background-color: #030b13;
-/* background: linear-gradient(to right, rgba(122, 55, 193, 0.9), rgba(37, 117, 252, 0.9)); */
+background: linear-gradient(to right, rgba(96, 44, 159, 0.9), rgba(21, 127, 233, 0.9));
 height: 72.5px !important;
 }
 .nav-link
@@ -71,15 +72,17 @@ display: block;
 
 .nav-sec
 {
-margin-top: 72.56px !important;
-height: 37.5px !important;
+margin-top: 72.5px !important;
+height: 36.75px !important;
 width: 100%;
 display: inline-block;
 }
 
 .nav-item
 {
-color:aliceblue;
-font-weight: 500;
+color:rgb(255, 255, 255);
+font-weight: 450;
 margin-left: 21px;
+padding-top: 2em;
+padding-bottom: 4em;
 }
