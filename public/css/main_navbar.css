@@ -1,6 +1,10 @@
+/* ::-webkit-input-placeholder {
+        font-size: small;
+      } */
+
 .navbar-color {
     /* background: linear-gradient(to right, rgba(202, 165, 33, 0.9), rgba(173, 84, 19, 0.9)); */
-    background-color: rgba(21, 116, 233, 0.9);
+    background-color: rgba(39, 166, 230, 0.9);
 }
 
 .form-control:focus {
@@ -15,7 +19,7 @@
 
 .nav-main {
     background-color: #030b13;
-    background: linear-gradient(to right, rgba(21, 116, 233, 0.9), rgba(50, 211, 206, 0.9));
+    background: linear-gradient(to right, rgba(39, 166, 230, 0.9), rgba(50, 211, 206, 0.9));
     height: 72.5px !important;
 }
 
