@@ -1,0 +1,195 @@
+.outer{
+   display: flex;
+}
+.cl{    
+    background: url("/Images/ProductImages/Shoes/search-icon-removebg-preview.png")no-repeat;
+    background-size:10%;
+    background-position: 6%;
+    padding-left:4%;
+    padding:2%;
+    border: ridge 1px grey;
+    }
+    .cl:focus{
+        background: none;
+        border:ridge 1px red !important;
+        border-radius: 5%;
+    }
+    .navpluscards{
+        display:flex;
+        flex-direction: column;
+        width:78%;
+        height:45rem;
+    }
+    .nav{
+        display:flex;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        width:80%;
+        padding:2%;
+        height:fit-content;
+        position: fixed;
+    }
+    #body{
+        background-color: rgb(26, 64, 64);
+    }
+    .secnav{
+        margin-left:40%;
+    }
+    .secnav1{
+        margin-left:3%;
+        font-size: 150%;
+        margin-top:0%;
+        font-weight: lighter;
+        color:grey;
+    }
+    .thinav{
+        margin-left:2%;
+        font-size: 140%;
+    }
+    .fornav{
+     margin-left:3%;
+     font-size: 140%;
+    }
+    .fivnav{
+        margin-left:3%;
+    }
+    .dropdown{
+        margin-left:1%;
+        background-color: white;
+    }
+
+    .leftbar{
+        height:45rem;
+        width:20%;
+        box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+        background: radial-gradient(780px at 37.8% 100.3%, rgb(19, 55, 115) 2.2%, rgb(32, 7, 80) 20.2%, rgb(27, 88, 111) 58.6%, rgb(115, 88, 44) 75%, rgb(99, 19, 90) 89.6%, rgb(12, 51, 76) 96.1%);
+    }
+    .forlogo{
+        margin-top:15%;
+        margin-left:23%;
+        margin-right:24%;
+    }
+    .menu{
+        margin-top:10%;
+        display:flex;
+    }
+    .line{
+        width:60%;
+    }
+    .linemenu{
+        padding:1%;
+        margin-left:4%;
+    }
+    .dropdown2{
+        margin-left:8%;
+    }
+    .dropdown2-content{
+        /* display: none; */
+        position: absolute;
+        background: linear-gradient(178.6deg, rgb(20, 36, 50) 11.8%, rgb(124, 143, 161) 83.8%);
+        width: 16rem;
+        height:30rem;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    }
+    .Main-menu{
+        color:whitesmoke;
+        font-size:small;
+        margin-top:10%;
+        margin-left: 10%;
+    }
+    .dropdown2-content ul{
+        color:#D5D0E5;
+        list-style: none;
+        margin:10%;
+        padding:0;
+        font-size: 15px;
+    }
+    .dropdown2-content ul li{
+        padding:8%;
+    }
+    .dropdown2-content ul li:hover{
+        background-color:#ada7a7;
+        color:whitesmoke;
+        opacity:50%;
+        cursor:pointer;
+    }
+    .olmargin{
+        margin-left:8%;
+    }
+    .firnav{
+        font-size: 20px;
+        font-weight: 700;
+    }
+    .revenuecards{
+        display: flex;
+        margin-top:10%;
+        margin-left:2%;
+    }
+    .graphs{
+        display:flex;
+        margin-top:1%;
+    }
+    .graph1{
+        width:33%;
+        height:100%;
+        padding: 2%;
+        margin-left:4%;
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+        border-radius: 8px;
+    }
+    .graph2{
+        width:63%;
+        height:100%;
+        padding: 2%;
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+       margin-left:4%;
+       margin-right:2%;
+       border-radius: 8px;
+    }
+    .uppercard{
+        display:flex;
+        width:100%;
+        height:50%;
+    }
+    .linever{
+        width:2%;
+        height:85%;
+        background-color: blueviolet;
+        margin:9%;
+        border-radius: 8px;
+    }
+    .revenuecards1{
+        width:22%;
+        height:8rem;;
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+        margin:2%;
+        border-radius: 8px;
+    }
+    .heading{
+        margin-top:25%;
+        font-weight: 500;
+        color:grey;
+        opacity:50%;
+    }
+    .number{
+        font-size: 25px;
+        font-weight: 600;
+    }
+    .image{
+        margin-left:20%;
+        margin-top:9%;
+    }
+    .text{
+        margin:9%;
+        font-size:14px;
+    }
+    .fsttxt{
+        color:green;
+        font-weight: 500;
+    }
+    .ttwn{
+        color:grey;
+        opacity:50%;
+    }
+
+
+    

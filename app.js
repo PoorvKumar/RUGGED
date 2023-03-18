@@ -6,6 +6,7 @@ const path = require('path')
 const app = express();
 
 const wishListRoute=require('./routes/wishlistRoutes')
+const sellerDashboard=require('./routes/sellerDashboardRoutes')
 app.set('view engine','ejs');
 
 app.use(bodyParser.urlencoded({extended: true}));
@@ -17,6 +18,7 @@ app.get('/',(req,res)=>{
 });
 
 app.use(wishListRoute)
+app.use(sellerDashboard)
 
 app.listen(3000, function(){
     console.log("Listening at port 3000!");
