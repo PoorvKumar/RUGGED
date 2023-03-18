@@ -1,0 +1,35 @@
+.mainBody{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+}
+.filtersLeft{
+    display: flex;
+    /* max-width: fit-content; */
+    flex-flow: column nowrap;
+    border:2px solid grey;
+    border-radius: 0.5rem;
+    width: 18rem;
+    justify-content: flex-start;
+    padding: 1%;
+    margin-top: 1%;
+}
+.customerReviewTitleText ,.FiltersSubHeadingTitleText{
+    background-color: whitesmoke;
+    border-radius: 1.5rem;
+}
+.mainContent{
+    display: flex;
+    flex-flow: row wrap;
+}
+.starSelection{
+    display: flex;
+    max-width: fit-content;
+    flex-flow: row nowrap;
+    margin: 2%
+}
+.customerRating{
+    display: inline-flex;
+    flex-flow: column nowrap;
+    /* max-width: fit-content; */
+}
