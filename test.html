@@ -124,16 +124,29 @@
         padding-bottom: 4em;
       }
 
+      .nav-left
+      {
+        width: 25%;
+      }
+
       .nav-search
       {
         width: 45%;
       }
 
+      .nav-logo
+      {
+        width: 40%;
+      }
+
       .nav-logo:hover
       {
-        border-color: linear-gradient(to right,  rgba(21, 116, 233, 0.9),rgba(50, 211, 206, 0.9));
-        border-radius: 5%;
-        border-width: 3pt;
+        border: transparent;
+      }
+
+      .nav-address
+      {
+        margin-left: 0 !important;
       }
 
     </style>
@@ -143,13 +156,13 @@
     <header>
       <nav
         class="container-fluid d-flex flex-inline navbar px-3 pt-0 pb-0 fixed-top nav-main ">
-        <div class="nav-left navbar d-flex flex-row ">
+        <div class="nav-left navbar d-flex justify-content-around pt-0 ms-0">
             <!-- <img src="LOGO/LogoMain/rugged-high-resolution-logo-color-on-transparent-background.png" alt="" class="nav-brand" width="110" height="50"> -->
-            <div class="nav-link nav-logo" id="brand-logo" style="font-size: large;">
-              RUGGED
+            <div class="nav-link nav-logo " id="brand-logo" style="font-size: large;">
+              <img src="LOGO/newLOGOTest/newLOGO_no_background.png" alt="" height="65em" width="120em">
               
             </div>
-            <div class="nav-link col d-flex flex-inline">
+            <div class="nav-link col d-flex flex-inline nav-address">
               <div><i class="fa fa-map-marker-alt mt-3 me-2" style="font-size: larger;"></i></div>
               <div>
                 <div class="nav-line-1">
