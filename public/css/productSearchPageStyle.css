@@ -3,16 +3,16 @@
     flex-flow: row wrap;
     justify-content: space-evenly;
 }
-.filtersLeft{
+.filtersLeft {
     display: flex;
-    /* max-width: fit-content; */
+    max-width: fit-content !important;
     flex-flow: column nowrap;
-    border:2px solid grey;
+    border: 2px solid grey;
     border-radius: 0.5rem;
-    width: 18rem;
+    width: 18rem !important;
     justify-content: flex-start;
     padding: 1%;
-    margin-top: 1%;
+    margin-top: 1% !important;
 }
 .customerReviewTitleText ,.FiltersSubHeadingTitleText{
     background-color: whitesmoke;
@@ -21,6 +21,7 @@
 .mainContent{
     display: flex;
     flex-flow: row wrap;
+    justify-content: space-evenly;
 }
 .starSelection{
     display: flex;

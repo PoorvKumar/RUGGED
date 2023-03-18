@@ -24,7 +24,7 @@ height: 72.5px !important;
 .nav-link
 {
 font-weight: bold !important;
-color:aliceblue;
+color:aliceblue !important;
 border: 2px solid transparent; 
 /* same color as nav-main */
 padding: 1px 2px;
@@ -52,11 +52,10 @@ background-color: rgba(0,0,0,0.5);
 z-index: 2;
 }
 
-#brand-logo
+/* #brand-logo
 {
-/* color: indigo; */
-
-}
+    color: indigo;
+} */
 
 #brand-line-2
 {
@@ -79,7 +78,8 @@ display: inline-block;
 
 .nav-item
 {
-color:aliceblue;
+/* color:aliceblue; */
+color: black;
 font-weight: 500;
 margin-left: 21px;
 }

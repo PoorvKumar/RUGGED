@@ -6,18 +6,18 @@ const path = require('path')
 const app = express();
 
 const wishListRoute=require('./routes/wishlistRoutes')
+app.set('view engine','ejs');
 
 app.use(bodyParser.urlencoded({extended: true}));
-app.use(express.static(path.join(__dirname,"public")));
-
-app.use(express.static("public"));
-
-app.set('view engine','ejs');
+app.use(express.static(path.join(__dirname,'public')));
+// app.use(express.static())
 
 app.get('/',(req,res)=>{
     res.render('productSearchPage.ejs');
 });
+
 app.use(wishListRoute)
+
 app.listen(3000, function(){
     console.log("Listening at port 3000!");
 });

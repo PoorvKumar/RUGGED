@@ -38,16 +38,16 @@
  overflow: hidden;
  outline: none;
  margin-bottom: 15px;
- } */
- /* button:hover{
+ }
+ button:hover{
  background-color: #a309e0;
  background-repeat: no-repeat;
  border-radius: 20px;
  cursor: pointer;
  overflow: hidden;
  outline: none;
- } */
- /* .cartbox{
+ }
+ .cartbox{
    position:absolute;
    font-weight: normal !important;
    color:black;
