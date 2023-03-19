@@ -36,8 +36,8 @@
 
       .navbar-color
       {
-        /* background: linear-gradient(to right, rgba(202, 165, 33, 0.9), rgba(173, 84, 19, 0.9)); */
-        background-color: rgba(39, 166, 230, 0.9);
+        background: linear-gradient(to right,  rgba(39, 166, 230, 0.9),rgba(50, 211, 206, 0.9));
+        /* background-color: rgba(39, 166, 230, 0.9); */
       }
 
       .form-control:focus
@@ -57,6 +57,7 @@
         background-color: #030b13;
         background: linear-gradient(to right,  rgba(39, 166, 230, 0.9),rgba(50, 211, 206, 0.9));
         height: 72.5px !important;
+        border-bottom: 1pt solid rgba(50, 165, 211, 0.9);
       }
       .nav-link
       {
@@ -196,7 +197,8 @@
               placeholder="Search Here..."
               aria-label="Search"
               onclick="overlayOn()"
-            />
+              id="nav-main-searchbar"
+            /> 
             <button type="button" class="btn bg-white">
               <i class="fas fa-search"></i>
             </button>
@@ -204,11 +206,11 @@
         </div>
         <div class="nav-right navbar d-flex flex-row">
           <div class="nav-wish nav-link d-flex-inline p-2">
-            WishList
+            WishList 
           </div>
           <div class="nav-sign nav-link d-flex-inline ">
             <div class="nav-line-1">
-              <span class="small">Hello! User</span>
+              <span class="small"><span class="fa fa-user"> </span> Hello! User</span>
             </div>
             <div class="nav-line-2">Account & Lists <span class="dropdown-toggle"></span>
             </div>
@@ -351,19 +353,19 @@
       <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
           <div class="carousel-inner">
               <div class="carousel-item active carouselMain" data-bs-interval="10000">
-                  <img src="public/Images/carouselImages/kayaking.jpg" class="d-block w-100" alt="Kayaking">
+                  <img src="images/test_carousel_background/woman-hiking-mountain-getty-0720.jpg" class="d-block w-100" alt="Kayaking">
               </div>
               <div class="carousel-item carouselMain" data-bs-interval="2000">
-                  <img src="public/Images/carouselImages/mountainClimbing.jpg" class="d-block w-100" alt="mountainClimbing">
+                  <img src="images/test_carousel_background/camping-in-chakrata-8761748.jpg" class="d-block w-100" alt="mountainClimbing">
               </div>
               <div class="carousel-item carouselMain">
-                  <img src="public/Images/carouselImages/riverRafting.jpg" class="d-block w-100" alt="riverRafting">
+                  <img src="images/test_carousel_background/couple-hiking-mountain-climbing-1296x728-header.jpg" class="d-block w-100" alt="riverRafting">
               </div>
               <div class="carousel-item carouselMain">
-                  <img src="public/Images/carouselImages/scubaDiving.webp" class="d-block w-100" alt="scubaDiving">
+                  <img src="images/test_carousel_background/istockphoto-531024681-170667a.jpg" class="d-block w-100" alt="scubaDiving">
               </div>
               <div class="carousel-item carouselMain">
-                  <img src="public/Images/carouselImages/skyDiving.webp" class="d-block w-100" alt="skyDiving">
+                  <img src="images/test_carousel_background/hd/mountain-climbing-2124113_960_720.jpg" class="d-block w-100" alt="skyDiving">
               </div>
           </div>
           <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval"
@@ -485,11 +487,25 @@
       </div>
       </main>
 
-    <main></main>
-    <footer></footer>
+  <hr>
+  <hr>
+  <span id="test-typed-js"></span>
+
+    <footer>
+
+    </footer>
 
     <script src="js/script.js"></script>
-
+    <script src="https://kit.fontawesome.com/f6e56633d7.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/typed.js@2.0.132/dist/typed.umd.js"></script> <!--typed js-->
+    <script>
+      // var typed = new Typed('#nav-main-searchbar', {
+      //   strings: ['This is a JavaScript library', 'This is an ES6 module'],
+      //   smartBackspace: true, // Default value
+      //   attr: null
+      // });
+    </script>
+    
     <script
       src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
       integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
