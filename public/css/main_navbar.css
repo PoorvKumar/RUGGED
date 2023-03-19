@@ -27,16 +27,16 @@ background: linear-gradient(to right,  rgba(39, 166, 230, 0.9),rgba(50, 211, 206
 height: 72.5px !important;
 border-bottom: 1pt solid rgba(50, 165, 211, 0.9);
 }
-.nav-link
-{
-font-weight: bold !important;
-color:aliceblue;
-border: 2px solid transparent; 
-/* same color as nav-main */
-padding: 1px 2px;
-max-width: fit-content;
-height: 6.78%;
-margin-inline: 5px;
+
+.nav-link {
+    font-weight: bold !important;
+    color: aliceblue;
+    border: 2px solid transparent;
+    /* same color as nav-main */
+    padding: 1px 2px;
+    max-width: fit-content;
+    height: 6.78%;
+    margin-inline: 5px;
 }
 .nav-link:hover
 {
@@ -59,11 +59,10 @@ background-color: rgba(0,0,0,0.5);
 z-index: 2;
 }
 
-#brand-logo
-{
-/* color: indigo; */
+#brand-logo {
+    /* color: indigo; */
 
-}
+} */
 
 #brand-line-2
 {
@@ -84,23 +83,16 @@ width: 100%;
 display: inline-block;
 }
 
-.nav-item
-{
-color:rgb(255, 255, 255);
-font-weight: 450;
-margin-left: 21px;
-padding-top: 2em;
-padding-bottom: 4em;
+.nav-item {
+    color: rgb(255, 255, 255);
+    font-weight: 450;
+    margin-left: 21px;
+    padding-top: 2em;
+    padding-bottom: 4em;
 }
 
-.nav-left
-{
-width: 25%;
-}
-
-.nav-search
-{
-width: 45%;
+.nav-search {
+    width: 45%;
 }
 
 .nav-logo
