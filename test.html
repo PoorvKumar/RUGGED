@@ -27,136 +27,69 @@
 
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
+      <link rel="stylesheet" href="public/css/main_navbar.css">
     <link rel="stylesheet" href="public/css/style.css">
     <title>Test</title>
     <style>
-      /* ::-webkit-input-placeholder {
-        font-size: small;
-      } */
-
-      .navbar-color
+      .product-card img 
       {
-        background: linear-gradient(to right,  rgba(39, 166, 230, 0.9),rgba(50, 211, 206, 0.9));
-        /* background-color: rgba(39, 166, 230, 0.9); */
-      }
-
-      .form-control:focus
-      {
-        border: none;
-        box-shadow: none;
-      }
-
-      .input-group:focus-within
-      {
-        outline: rgb(121, 21, 204) solid 4px !important;
-        border-radius: 6px;
-      }
-
-      .nav-main
-      {
-        background-color: #030b13;
-        background: linear-gradient(to right,  rgba(39, 166, 230, 0.9),rgba(50, 211, 206, 0.9));
-        height: 72.5px !important;
-        border-bottom: 1pt solid rgba(50, 165, 211, 0.9);
-      }
-      .nav-link
-      {
-        font-weight: bold !important;
-        color:aliceblue;
-        border: 2px solid transparent; 
-        /* same color as nav-main */
-        padding: 1px 2px;
-        max-width: fit-content;
-        height: 6.78%;
-        margin-inline: 5px;
-      }
-      .nav-link:hover
-      {
-        border-color: aliceblue;
-        color:aliceblue;
-      }
-      .nav-line-1
-      {
-        font-size: small;
-        font-stretch: expanded;
-      }
-
-      #overlay
-      {
-        position: fixed;
-        display: none;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0,0,0,0.5);
-        z-index: 2;
-      }
-
-      #brand-logo
-      {
-        /* color: indigo; */
-        
-      }
-
-      #brand-line-2
-      {
-        color: aliceblue;
-        font-size: 5px;
-      }
-
-      .dropdown:hover 
-      {
+        max-width: 100%;
+        max-height: 80%;
         display: block;
+        /* to make image fit in a block */
+        /* margin-bottom: 1rem; */
+        margin: 0 auto 1rem;
       }
 
-      .nav-sec
+      .prod-line1
       {
-        margin-top: 72.5px !important;
-        height: 36.75px !important;
-        width: 100%;
-        display: inline-block;
+        font-weight: bold;
+        font-size: large;
+        text-align: center;
       }
 
-      .nav-item
+      .prod-line2
       {
-        color:rgb(255, 255, 255);
-        font-weight: 450;
-        margin-left: 21px;
-        padding-top: 2em;
-        padding-bottom: 4em;
+        padding-top: 0.5rem;
+        color: green;
+        text-align: center;
+        font-size: medium;
       }
 
-      .nav-left
+      .prod-line3
       {
-        width: 25%;
+        padding-top: 0.25rem;
+        color: grey;
+        text-align: center;
+        font-size: medium;
       }
 
-      .nav-search
+      .prod-imag img
       {
-        width: 45%;
+        object-fit: cover;
       }
 
-      .nav-logo
+      .prod-imag
       {
-        width: 40%;
+        max-height: 15rem;
+        min-height: 12rem;
+        margin: auto;
       }
 
-      .nav-logo:hover
+      .product-card
       {
-        border: transparent;
+        width: 15rem;
+        min-height: 21rem;
+        max-height: 21rem;
+        padding: 1.5rem;  
       }
-
-      .nav-address
-      {
-        margin-left: 0 !important;
-      }
-
     </style>
   </head>
   <div id="overlay" onclick="overlayOff()"></div> <!--overlay entire page whenever needed-->
   <body>
     <header>
       <nav
-        class="container-fluid d-flex flex-inline navbar px-3 pt-0 pb-0 fixed-top nav-main pe-0">
+        class="container-fluid d-flex flex-inline navbar px-3 pt-0 pb-0 fixed-top nav-main px-0">
         <div class="nav-left navbar d-flex justify-content-around pt-0 ms-0">
             <!-- <img src="LOGO/LogoMain/rugged-high-resolution-logo-color-on-transparent-background.png" alt="" class="nav-brand" width="110" height="50"> -->
             <div class="nav-link nav-logo " id="brand-logo" style="font-size: large;">
@@ -193,8 +126,9 @@
             </div> --> <!--removed all -->
             <input
               type="search"
-              class="form-control"
+              class="form-control basicAutoComplete"
               placeholder="Search Here..."
+              autocomplete="off"
               aria-label="Search"
               onclick="overlayOn()"
               id="nav-main-searchbar"
@@ -214,6 +148,7 @@
             </div>
             <div class="nav-line-2">Account & Lists <span class="dropdown-toggle"></span>
             </div>
+            <a href="#" data-toggle="popover" data-trigger="hover" data-content="popver"></a>
           </div>
           <div class="nav-returns nav-link d-flex-inline ">
             <div class="nav-line-1">
@@ -225,14 +160,14 @@
                     Cart
                   </div> -->
           <!-- Cart dropover -->
-          <div class="nav-cart nav-link d-flex-inline p-2">
+          <div class="nav-cart nav-link d-flex-inline p-2 ms-0">
             <div class="nav-line-2">
               <a data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions"
                 aria-controls="offcanvasWithBothOptions">
                 <!-- <span class="small">
                   <i class="fa fa-shopping-cart non-empty"
                     style="font-size:33px"></i></span> -->
-                    <span class="material-icons non-empty" style="font-size: 36px;"> <!--material icon google-->
+                    <span class="material-icons " style="font-size: 36px;"> <!--material icon google-->
                       shopping_cart
                       </span></a> <!--need  to change non-empty class-->
             </div>
@@ -375,6 +310,275 @@
       </button>
     </div>
 
+    <div class="product-slider">
+      <div id="product-carousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="product-wrapper d-flex flex-inline justify-content-around">
+              <a href="#" class="product-card-link ">
+                <div class="product-card">
+    
+                  <div class="prod-imag">
+                    <img src="public/Images/ProductImages/Shoes/shoes-removebg-preview.png" alt="">
+                  </div>
+                  <div class="prod-line1">Product Name</div>
+                  <div class="prod-line2">Price Rs.123</div>
+                  <div class="prod-line3">Some Tagline</div>
+    
+                </div>
+              </a>
+              <a href="#" class="product-card-link ">
+                <div class="product-card">
+    
+                  <div class="prod-imag">
+                    <img src="public/Images/ProductImages/Shoes/shoes-removebg-preview.png" alt="">
+                  </div>
+                  <div class="prod-line1">Product Name</div>
+                  <div class="prod-line2">Price Rs.123</div>
+                  <div class="prod-line3">Some Tagline</div>
+    
+                </div>
+              </a>
+              <a href="#" class="product-card-link ">
+                <div class="product-card">
+    
+                  <div class="prod-imag">
+                    <img src="public/Images/ProductImages/Shoes/shoes-removebg-preview.png" alt="">
+                  </div>
+                  <div class="prod-line1">Product Name</div>
+                  <div class="prod-line2">Price Rs.123</div>
+                  <div class="prod-line3">Some Tagline</div>
+    
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="product-wrapper d-flex flex-inline justify-content-around">
+              <a href="#" class="product-card-link">
+                <div class="product-card">
+    
+                  <div class="prod-imag">
+                    <img src="public/Images/ProductImages/Shoes/search-icon-removebg-preview.png" alt="">
+                  </div>
+                  <div class="prod-line1">Product Name</div>
+                  <div class="prod-line2">Price Rs.123</div>
+                  <div class="prod-line3">Some Tagline</div>
+                </div>
+              </a>
+              <a href="#" class="product-card-link">
+                <div class="product-card">
+    
+                  <div class="prod-imag">
+                    <img src="public/Images/ProductImages/Shoes/search-icon-removebg-preview.png" alt="">
+                  </div>
+                  <div class="prod-line1">Product Name</div>
+                  <div class="prod-line2">Price Rs.123</div>
+                  <div class="prod-line3">Some Tagline</div>
+    
+                </div>
+              </a>
+              <a href="#" class="product-card-link">
+                <div class="product-card">
+    
+                  <div class="prod-imag">
+                    <img src="public/Images/ProductImages/Shoes/search-icon-removebg-preview.png" alt="">
+                  </div>
+                  <div class="prod-line1">Product Name</div>
+                  <div class="prod-line2">Price Rs.123</div>
+                  <div class="prod-line3">Some Tagline</div>
+    
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="product-wrapper d-flex flex-inline justify-content-around">
+              <a href="#" class="product-card-link">
+                <div class="product-card">
+    
+                  <div class="prod-imag">
+                    <img src="public/Images/ProductImages/Shoes/icoon-removebg-preview.png" alt="">
+                  </div>
+                  <div class="prod-line1">Product Name</div>
+                  <div class="prod-line2">Price Rs.123</div>
+                  <div class="prod-line3">Some Tagline</div>
+    
+                </div>
+              </a>
+              <a href="#" class="product-card-link">
+                <div class="product-card">
+    
+                  <div class="prod-imag">
+                    <img src="public/Images/ProductImages/Shoes/icoon-removebg-preview.png" alt="">
+                  </div>
+                  <div class="prod-line1">Product Name</div>
+                  <div class="prod-line2">Price Rs.123</div>
+                  <div class="prod-line3">Some Tagline</div>
+    
+                </div>
+              </a>
+              <a href="#" class="product-card-link">
+                <div class="product-card">
+    
+                  <div class="prod-imag">
+                    <img src="public/Images/ProductImages/Shoes/icoon-removebg-preview.png" alt="">
+                  </div>
+                  <div class="prod-line1">Product Name</div>
+                  <div class="prod-line2">Price Rs.123</div>
+                  <div class="prod-line3">Some Tagline</div>
+    
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+    
+        <button class="carousel-control-prev" type="button" data-bs-slide="prev"
+          data-bs-target="#product-carousel">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-slide="next"
+          data-bs-target="#product-carousel">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </button>
+      </div>
+    </div>
+
+  <!-- <a href="#" class="product-card-link">
+    <div class="product-card">
+        <div class="prod-imag">
+          <img src="public/Images/ProductImages/Shoes/shoes-removebg-preview.png" alt="">
+        </div>
+        <div class="prod-line1">Product Name</div>
+        <div class="prod-line2">Price Rs.123</div>
+        <div class="prod-line3">Some Tagline</div>
+    </div>
+  </a>
+  <a href="#" class="product-card-link">
+    <div class="product-card">
+        <div class="prod-imag">
+          <img src="public/Images/ProductImages/Shoes/icoon-removebg-preview.png" alt="">
+        </div>
+        <div class="d-flex flex-column ">
+        <div class="prod-line1">Product Name</div>
+        <div class="prod-line2">Price Rs.123</div>
+        <div class="prod-line3">Some Tagline</div>
+      </div>
+    </div>
+  </a> -->
+
+    <div class="mainBody row">
+      <div class="filtersLeft col-3">
+        <div class="categoriesText">
+          <h4 class="FiltersSubHeadingTitleText"> Categories</h4>
+          <p> Backpacks</p>
+          <p> Rucksacks & Trekking Backpacks</p>
+          <p> Casual Daypacks</p>
+          <p> Camping & Hiking</p>
+          <p> Hiking Daypacks</p>
+          <p> Portable Computer Bags & Sleeves</p>
+          <p> Laptop Backpacks</p>
+        </div>
+        <div class="customerRating">
+          <div class="customerReviewTitleText">
+            <h5>Customer Reviews</h5>
+          </div>
+          <div class="form-check starSelection">
+            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+            <label class="form-check-label" for="flexRadioDefault1">
+              5★ & above
+            </label>
+          </div>
+          <div class="form-check starSelection">
+            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+            <label class="form-check-label" for="flexRadioDefault1">
+              4★ & above
+            </label>
+          </div>
+          <div class="form-check starSelection">
+            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3">
+            <label class="form-check-label" for="flexRadioDefault1">
+              3★ & above
+            </label>
+          </div>
+          <div class="form-check starSelection">
+            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault4">
+            <label class="form-check-label" for="flexRadioDefault1">
+              2★ & above
+            </label>
+          </div>
+          <div class="form-check starSelection">
+            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault5">
+            <label class="form-check-label" for="flexRadioDefault1">
+              1★ & above
+            </label>
+          </div>
+          <!-- <div class="form-check">
+              <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+              <label class="form-check-label" for="flexRadioDefault2">
+                Default checked radio
+              </label>
+            </div> -->
+        </div>
+      </div>
+
+      <div class="mainBody row">
+        <div class="filtersLeft col-3">
+          <div class="categoriesText">
+            <h4 class="FiltersSubHeadingTitleText"> Categories</h4>
+            <p> Backpacks</p>
+            <p> Rucksacks & Trekking Backpacks</p>
+            <p> Casual Daypacks</p>
+            <p> Camping & Hiking</p>
+            <p> Hiking Daypacks</p>
+            <p> Portable Computer Bags & Sleeves</p>
+            <p> Laptop Backpacks</p>
+          </div>
+          <div class="customerRating">
+            <div class="customerReviewTitleText">
+              <h5>Customer Reviews</h5>
+            </div>
+            <div class="form-check starSelection">
+              <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+              <label class="form-check-label" for="flexRadioDefault1">
+                5★ & above
+              </label>
+            </div>
+            <div class="form-check starSelection">
+              <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+              <label class="form-check-label" for="flexRadioDefault1">
+                4★ & above
+              </label>
+            </div>
+            <div class="form-check starSelection">
+              <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3">
+              <label class="form-check-label" for="flexRadioDefault1">
+                3★ & above
+              </label>
+            </div>
+            <div class="form-check starSelection">
+              <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault4">
+              <label class="form-check-label" for="flexRadioDefault1">
+                2★ & above
+              </label>
+            </div>
+            <div class="form-check starSelection">
+              <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault5">
+              <label class="form-check-label" for="flexRadioDefault1">
+                1★ & above
+              </label>
+            </div>
+            <!-- <div class="form-check">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                <label class="form-check-label" for="flexRadioDefault2">
+                  Default checked radio
+                </label>
+              </div> -->
+          </div>
+        </div>
   
   <span id="test-typed-js"></span>
 
@@ -391,8 +595,53 @@
       //   smartBackspace: true, // Default value
       //   attr: null
       // });
+      // $(function () {
+      //   $('[data-toggle="popover"]').popover()
+      // });
+
+      // var searchSuggestions=
+      // [
+      //   "shoes",
+      //   "cycle",
+      //   "electric lighter",
+      //   "tent",
+      //   "compass",
+      //   "torch",
+      //   "boat"
+      // ];
+
+      // $('#nav-main-search').autocomplete(
+      //   {source: searchSuggestions}
+      // );
+
+      $('.basicAutoComplete').autoComplete({
+    resolverSettings: {
+        url: 'bin/autocomplete.json'
+    }
+});
+
+      // $(function()
+      // {
+      //   var searchSuggestions=
+      //   [
+      //     "shoes",
+      //     "cycle",
+      //     "electric lighter",
+      //     "tent",
+      //     "compass",
+      //     "torch",
+      //     "boat"
+      //   ];
+
+      //   $('#nav-main-search').autocomplete(
+      //     {source: searchSuggestions}
+      //   );
+      // });
     </script>
     
+    <script src="https://cdn.jsdelivr.net/gh/xcash/bootstrap-autocomplete@v2.3.7/dist/latest/bootstrap-autocomplete.min.js"></script>
+
+
     <script
       src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
       integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
