@@ -36,7 +36,20 @@
     vertical-align: middle;
     margin: 3%;
 }
-
+.rightCompartment{
+    display: flex;
+    flex-flow: row nowrap;
+    padding-right: 5%;
+    margin-right: 1%;
+}
+.rightCompartmentInner{
+    margin: 1%;
+    padding: 0 5%;
+}
+.shareIcon{
+    margin-right: 12px;
+    padding-right: 3px;
+}
 .jumbotron {
     padding: 3% 1%;
     /* background-color:whitesmoke; */
@@ -86,6 +99,7 @@
     display: flex;
     justify-content: center;
     margin: 2% 15%;
+    padding-top: 4px;
 }
 .wishlistInner{
     color: rgb(228, 32, 32);
