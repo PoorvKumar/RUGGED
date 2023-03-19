@@ -1,4 +1,4 @@
-.totalCard{
+.totalCard {
     background-color: #e9ecef;
     /* background-color: white; */
     /* background-color:rgb(217, 227, 228); */
@@ -8,57 +8,85 @@
     max-width: fit-content;
     display: inline-flex;
 }
-.totalCard:hover{
+
+.totalCard:hover {
     box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
 }
+
 .cardWidth {
     width: 24%;
 }
-.myCarousel{
+
+.myCarousel {
     border-radius: 1.5rem 1.5rem 0rem 0rem;
 }
+
 .pcButton {
     margin: 0 2%;
     border-radius: 10%;
     max-width: max-content;
 }
-.cardTitleInner{
+
+.cardTitleInner {
     color: black;
     text-decoration: none;
 }
-.cardTitleInner:hover{
-    color:rgb(223, 195, 152) ;
+
+.cardTitleInner:hover {
+    color: rgb(223, 195, 152);
 }
-.pcBtnGroup {
+
+/* .pcBtnGroup {
     position: relative;
     display: flex;
     justify-content: flex-start;
     vertical-align: middle;
     margin: 3%;
-}
-.rightCompartment{
+} */
+
+.rightCompartment {
     display: flex;
     flex-flow: row nowrap;
-    padding-right: 5%;
-    margin-right: 1%;
+    padding-right: 10%;
+    margin-right: 2%;
+    justify-content: flex-start;
 }
-.rightCompartmentInner{
+
+.rightCompartmentInner {
     margin: 1%;
-    padding: 0 5%;
 }
-.shareIcon{
+
+.shareIcon {
     margin-right: 12px;
     padding-right: 3px;
 }
+
 .jumbotron {
     padding: 3% 1%;
     /* background-color:whitesmoke; */
-    background-color:whitesmoke;
+    background-color: whitesmoke;
     border-radius: 1.5rem;
     position: relative;
     display: inline-flex;
     vertical-align: middle;
     justify-content: space-evenly;
+}
+
+.starsRatingGreen {
+    line-height: normal;
+    display: inline-flex;
+    color: #fff;
+    padding: 4px;
+    border-radius: 3px;
+    font-weight: 500;
+    font-size: 12px;
+    vertical-align: middle;
+    background-color: #388e3c;
+}
+
+.innerStars {
+    margin: 4px 0 0 2px;
+    height: 10px;
 }
 
 .mainInfoCard {
@@ -68,49 +96,55 @@
     padding: 4%;
 }
 
-.checked {
-    color: orange;
-}
-
+/* 
 .ratingInfo .written {
     color: orange;
-}
+} */
 
-.carouselButton{
+.carouselButton {
     max-height: fit-content;
     margin-top: 35%;
 }
 
-.cardBodyHead{
+.cardBodyHead {
     display: flex;
     background-color: whitesmoke;
     justify-content: space-between;
-    padding: 3% 1%;
+    padding: 3% 0;
     position: relative;
     /* display: inline-flex; */
     vertical-align: middle;
     /* margin: 0.5%; */
     border-radius: 1.5rem;
 }
-.myCardTitle{
+
+.myCardTitle {
     margin: 0 0 0 5%;
 }
-.wishlist{
+
+.wishlist {
     display: flex;
     justify-content: center;
-    margin: 2% 15%;
+    margin: 2% 5%;
     padding-top: 4px;
 }
-.wishlistInner{
+.wishlist:hover{
+    cursor: pointer;
+}
+.wishlistInner {
     color: rgb(228, 32, 32);
 }
-.pcVrtPrice{
+.shareIcon:hover{
+    cursor: pointer;
+}
+.pcVrtPrice {
     display: inline-flex;
     margin: 2% 0%;
     flex-wrap: wrap;
     opacity: 80%;
 }
-.pcVrtDiscount{
+
+.pcVrtDiscount {
     max-width: fit-content;
     margin: 0;
     display: inline-flex;
@@ -122,3 +156,100 @@
     padding: 0.5% 5%;
     margin: 2% 3%;
 }
+
+/* Popup container */
+.popupRating {
+    position: relative;
+    display: inline-flex;
+    cursor: pointer;
+  }
+  
+  /* The actual popup (appears on top) */
+  .popupRating .popupContent {
+    visibility: hidden;
+    width: 300px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 0.5rem;
+    padding: 0;
+    position: absolute;
+    z-index: 1;
+    bottom: -960%;
+    left: 50%;
+    margin-left: -80px;
+  }
+  
+  /* Popup arrow */
+  .popupRating .popupContent::before {
+    content: "";
+    position: absolute;
+    bottom: 100%;
+    right: 72%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent  #555 transparent;
+  }
+  
+  /* Toggle this class when clicking on the popup container (hide and show the popup) */
+  .popupRating .showPopup {
+    visibility: visible;
+    -webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s
+  }
+  
+  /* Add animation (fade in the popup) */
+  @-webkit-keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+  }
+  
+  @keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity:1 ;}
+  }
+
+
+.UserRatingGrid{
+    padding: 0 3%;
+}
+/* Three column layout */
+.EdgeColumn{
+    float: left;
+    width: 15%;
+    margin-top:10px;
+  }
+  .CentreColumn {
+    margin-top:10px;
+    float: left;
+    width: 70%;
+  }
+  .rightText {
+    text-align: right;
+  }
+  
+  /* The bar container */
+  .barContainer {
+    width: 100%;
+    background-color: #f1f1f1;
+    text-align: center;
+    color: white;
+  }
+  
+  /* Individual bars */
+  .bar5 {width: 60%; height: 18px; background-color: #04AA6D;}
+  .bar4 {width: 30%; height: 18px; background-color: #2196F3;}
+  .bar3 {width: 10%; height: 18px; background-color: #00bcd4;}
+  .bar2 {width: 04%; height: 18px; background-color: #ff9800;}
+  .bar1 {width: 15%; height: 18px; background-color: #f44336;}
+  
+  /* Responsive layout - make the columns stack on top of each other instead of next to each other */
+  @media (max-width: 200px) {
+    .EdgeColumn, .CentreColumn {
+      width: 100%;
+    }
+    .rightText {
+      display: none;
+    }
+  }

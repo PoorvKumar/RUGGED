@@ -1,6 +1,6 @@
 <div class="card totalCard" style="width: 16rem; height:28rem">
   <div data-bs-theme="dark">
-    <div id="carouselnum" class="carousel slide" data-bs-ride="false">
+    <div id="carouselExampleRide" class="carousel slide" data-bs-ride="false">
       <div class="carousel-inner myCarousel">
         <div class="carousel-item active">
           <img src="/Images/ProductImages/Rucksack1/image1.jpg" width="100%" height="250px" class="d-block w-100" alt="...">
@@ -24,11 +24,11 @@
           <video src="/Images/ProductImages/Rucksack1/video1.mp4" width="100%" height="250px" controls muted loop autoplay>This browser does not support HTML video.</video>
         </div>
       </div>
-      <button class="carousel-control-prev carouselButton" type="button" data-bs-target="#carouselnum" data-bs-slide="prev">
+      <button class="carousel-control-prev carouselButton" type="button" data-bs-target="#carouselExampleRide" data-bs-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="false"></span>
         <span class="visually-hidden">Previous</span>
       </button>
-      <button class="carousel-control-next carouselButton" type="button" data-bs-target="#carouselnum" data-bs-slide="next">
+      <button class="carousel-control-next carouselButton" type="button" data-bs-target="#carouselExampleRide" data-bs-slide="next">
         <span class="carousel-control-next-icon" aria-hidden="false"></span>
         <span class="visually-hidden">Next</span>
       </button>
@@ -37,25 +37,78 @@
   <div class="card-body">
     <div class="cardBodyHead">
       <h5 class="card-title myCardTitle"><a href="#" class="cardTitleInner">RuckSack</a></h5>
-      <div class="rightCompartment">
+      <div class="rightCompartment ">
+        <span class="starsRatingGreen rightCompartmentInner popupRating" onclick="popupRatingFunction()">3.8
+          <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMyIgaGVpZ2h0PSIxMiI+PHBhdGggZmlsbD0iI0ZGRiIgZD0iTTYuNSA5LjQzOWwtMy42NzQgMi4yMy45NC00LjI2LTMuMjEtMi44ODMgNC4yNTQtLjQwNEw2LjUuMTEybDEuNjkgNC4wMSA0LjI1NC40MDQtMy4yMSAyLjg4Mi45NCA0LjI2eiIvPjwvc3ZnPg==" class="innerStars">
+          <div class="popupContent" id="popupUserRating">
+            <span class="heading">User Rating</span>
+            <div class="row UserRatingGrid">
+              <div class="EdgeColumn">
+                <div>5 star</div>
+              </div>
+              <div class="CentreColumn">
+                <div class="barContainer">
+                  <div class="bar5"></div>
+                </div>
+              </div>
+              <div class="EdgeColumn rightText">
+                <div>150</div>
+              </div>
+              <div class="EdgeColumn">
+                <div>4 star</div>
+              </div>
+              <div class="CentreColumn">
+                <div class="barContainer">
+                  <div class="bar4"></div>
+                </div>
+              </div>
+              <div class="EdgeColumn rightText">
+                <div>63</div>
+              </div>
+              <div class="EdgeColumn">
+                <div>3 star</div>
+              </div>
+              <div class="CentreColumn">
+                <div class="barContainer">
+                  <div class="bar3"></div>
+                </div>
+              </div>
+              <div class="EdgeColumn rightText">
+                <div>15</div>
+              </div>
+              <div class="EdgeColumn">
+                <div>2 star</div>
+              </div>
+              <div class="CentreColumn">
+                <div class="barContainer">
+                  <div class="bar2"></div>
+                </div>
+              </div>
+              <div class="EdgeColumn rightText">
+                <div>6</div>
+              </div>
+              <div class="EdgeColumn">
+                <div>1 star</div>
+              </div>
+              <div class="CentreColumn">
+                <div class="barContainer">
+                  <div class="bar1"></div>
+                </div>
+              </div>
+              <div class="EdgeColumn rightText">
+                <div>20</div>
+              </div>
+            </div>
+          </div>
+        </span>
         <span class="wishlist rightCompartmentInner">
-          <i class="fa-solid fa-heart wishlistInner "></i>
-          <!-- <i class="fa-regular fa-heart wishlistInner"></i> -->
+          <i class="fa-regular fa-heart wishlistInner" id="heartWishlist" onclick="wishlistHeartToggleFunction(this)"></i>
+          <!-- <i class="fa-solid fa-heart wishlistInner"></i> -->
         </span>
         <span class="share rightCompartmentInner shareIcon">
           <!-- <i class="fa-solid fa-share-from-square"></i> -->
-          <i class="fa-regular fa-share-from-square"></i>
+          <i class="fa-regular fa-share-from-square" id="shareItem"></i>
         </span>
-      </div>
-    </div>
-    <div class="pcBtnGroup">
-      <div class="ratingInfo">
-        <span class="fa fa-star checked"></span>
-        <span class="fa fa-star checked"></span>
-        <span class="fa fa-star checked"></span>
-        <span class="fa fa-star"></span>
-        <span class="fa fa-star"></span>
-        <span class="fa written">3/5</span>
       </div>
     </div>
     <p class="card-text">Some quick example text ...</p>
