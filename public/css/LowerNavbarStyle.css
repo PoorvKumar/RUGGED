@@ -1,18 +1,21 @@
-.leftText{
+.leftTextNavbar{
     display: inline;
     padding: 0;
     margin: 0;
+    /* opacity: 50% !important; */
+    font-size: small;
+    color: white;
+    font-weight: bold;
 }
 .SPnavbar{
-    /* max-height: 2rem !important; */
-    /* border: 2px solid red; */
-    padding: 0 8px;
-
+    padding: 0;
+    background-color: rgb(203, 202, 202);
 }
 .SPnavbar-btn{
     max-height: 2rem !important;
     /* border: 2px solid red; */
     /* padding: 0 8px; */
     padding: 2%;
-    /* margin: 2%; */
+    margin: 2%;
+    background-color: aliceblue;
 }

@@ -1,10 +1,15 @@
 .totalCard{
     background-color: #e9ecef;
+    /* background-color: white; */
+    /* background-color:rgb(217, 227, 228); */
     border-radius: 1.5rem;
     margin: 1rem 0.5rem !important;
-    border: 2px solid grey;
+    /* border: 2px solid grey; */
     max-width: fit-content;
     display: inline-flex;
+}
+.totalCard:hover{
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
 }
 .cardWidth {
     width: 24%;
@@ -34,6 +39,7 @@
 
 .jumbotron {
     padding: 3% 1%;
+    /* background-color:whitesmoke; */
     background-color:whitesmoke;
     border-radius: 1.5rem;
     position: relative;

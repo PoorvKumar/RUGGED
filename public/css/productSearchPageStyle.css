@@ -1,36 +1,99 @@
-.mainBody{
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-evenly;
+.mainBody {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;;
+}
+body{
+  background-color: #f1f3f6;
 }
 .filtersLeft {
-    display: flex;
-    max-width: fit-content !important;
-    flex-flow: column nowrap;
-    border: 2px solid grey;
-    border-radius: 0.5rem;
-    width: 18rem !important;
-    justify-content: flex-start;
-    padding: 1%;
-    margin-top: 1% !important;
+  display: flex;
+  max-width: fit-content !important;
+  flex-flow: column nowrap;
+  /* border: 2px solid grey; */
+  border-radius: 0.5rem;
+  width: 18rem !important;
+  justify-content: flex-start;
+  padding: 1%;
+  margin-top: 1% !important;
+  background-color: white;
+  max-height: max-content;
 }
-.customerReviewTitleText ,.FiltersSubHeadingTitleText{
-    background-color: whitesmoke;
-    border-radius: 1.5rem;
+.filtersHeadingText{
+  background-color: whitesmoke;
+  padding: 1%;
 }
-.mainContent{
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-evenly;
+.customerReviewTitleText,
+.FiltersSubHeadingTitleText {
+  background-color: whitesmoke;
+  /* border-radius: 1.5rem; */
 }
-.starSelection{
+.FiltersSubHeadingTitleText{
+  font-size: medium;
+  padding: 0;
+  margin: 1px;
+}
+.filtersCategoriesText{
+  font-size: small;
+  padding: 0;
+  margin: 0;
+}
+
+.mainContent {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+  background-color: white;
+  border-radius: 0.5rem;
+  margin: 1%;
+}
+
+/* .starSelection{
     display: flex;
     max-width: fit-content;
     flex-flow: row nowrap;
     margin: 2%
+} */
+.customerRating {
+  display: inline-flex;
+  flex-flow: column nowrap;
+  /* max-width: fit-content; */
 }
-.customerRating{
-    display: inline-flex;
-    flex-flow: column nowrap;
-    /* max-width: fit-content; */
+
+.accordion {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  transition: 0.4s;
+}
+
+.activeAccordion,
+.accordion:hover {
+  background-color: #ccc;
+}
+
+.accordion:after {
+  content: '\002B';
+  color: #777;
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
+}
+
+.activeAccordion:after {
+  content: "\2212";
+}
+
+.panel {
+  padding: 0 18px;
+  background-color: white;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
 }
