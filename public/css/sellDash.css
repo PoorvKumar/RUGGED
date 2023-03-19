@@ -190,6 +190,107 @@
         color:grey;
         opacity:50%;
     }
+   
+    .recent-invoices{
+        margin-left:4%;
+        margin-top:2%;
+        margin-bottom:4%;
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+        border-radius: 8px;
+        display:grid;
+        font-size:0.9rem;
+        color: #4f546c;
+        /* margin-right:100%; */
+        background-color:#eee;
+        align-items: center;
+    }
+   td img{
+    width:36px;
+    height:36px;
+    margin-right:0.5rem;
+    border-radius: 50%;
+    vertical-align: middle;
+   }
+   table{
+    width:70vw;
+    height:40vh;
+    background-color: #fff5;
+   }
+   /* table th{
+
+   } */
+   table tbody{
+    width:95%;
+    max-height:calc(89%-0.8rem);
+    background-color: #fffb;
+    margin: 0.8rem auto;
+
+   }
+
+ @media screen and (max-width:1464px){
+    .secnav{
+       margin-left: 30%;
+    }
+}
+@media screen and (max-width:1271px){
+     .secnav{
+        margin-left: 20%;
+     }
+     .dropdown2-content{
+        width:17%;
+    }
+    .forlogo img{
+        width:100%;
+    }
+    .image{
+       margin-left:15%;
+    }
+}
+@media screen and (max-width:1220px){
+
+    .image{
+        margin-left:0%;
+     }
 
 
+}
+@media screen and (max-width:1035px){
+    .secnav{
+       margin-left: 10%;
+    }
+    .dropdown2-content{
+        width:17%;
+    }
+    .forlogo img{
+        width:100%;
+    }
+    .image{
+        margin-left:0%;
+    }
+    .linever{
+        margin:5%;
+    }
+}
+@media screen and (max-width:901px){
+    .secnav{
+       margin-left: 5%;
+    }
+    .dropdown2-content{
+        width:17%;
+    }
+    .forlogo img{
+        width:100%;
+    }
+    .image{
+        margin-left:0%;
+    }
+    .linever{
+        margin:5%;
+    }
+}
+@media screen and (max-width:400px){
+    .secnav1{
+       margin:50%;
+    }
+}
     
