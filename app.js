@@ -13,9 +13,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/index', (req, res, next) => {
   res.render('index.ejs');
 })
-app.use(sellerdashboardRoutes)
+// app.use(sellerdashboardRoutes)
 // app.use('/',(req,response)=> 
 // {
 //   response.render('LandingPage/product-card-slider.ejs');
 // });
-app.listen(3000);
+app.listen(3010);
