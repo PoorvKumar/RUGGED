@@ -10,10 +10,10 @@ app.set('view engine', 'ejs');
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', (req, res, next) => {
+app.use('/index', (req, res, next) => {
   res.render('index.ejs');
 })
-// app.use(sellerdashboardRoutes)
+app.use(sellerdashboardRoutes)
 // app.use('/',(req,response)=> 
 // {
 //   response.render('LandingPage/product-card-slider.ejs');
