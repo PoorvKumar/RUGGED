@@ -5,6 +5,6 @@ const router = express.Router();
 router.get('/Wishlist', (req, res, next) => {
     const data={products:productData.products,
         pageTitle:'KKKK'}
-    res.render('wishList.ejs',data);
+    res.render('wishList.ejs');
   });
 module.exports = router;
