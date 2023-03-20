@@ -37,9 +37,91 @@
         </div>
 
         <div class="recent invoices"></div>
+        <div class="bg">
+            <div class="btnbox">
+              <button id="prevButton"><i class="fa-solid fa-arrow-left"></i></button> 
+              <button id="nextButton"><i class="fa-solid fa-arrow-right"></i></button> 
+            </div>
+          <input id="fld" class="inp" type="text" placeholder="Search..."/>
+          </div>
+           <table id="mytable" class="table table-striped">
+            <thead>
+              <tr>
+                <th scope="col">Customer ID</th>
+                <th scope="col">Image</th>
+                <th scope="col">Customer Name</th>
+                <th scope="col">Product</th>
+                <th scope="col">Order Date</th>
+                <th scope="col">Status</th>
+                <th scope="col">Price</th>
+              </tr>
+            </thead>
+            <tbody id="tb">
+              <tr>
+                <td>1234</td>
+                <td><img src="/Images/ProductImages/Shoes/icoon-removebg-preview.png"></td>
+                <td>Aneesh</td>
+                <td>Keyboard</td>
+                <td>xyz</td>
+                <td>abc</td>
+                <td>def</td>
+              </tr>
+              <tr>
+                <td>1234</td>
+                <td><img src="/Images/ProductImages/Shoes/icoon-removebg-preview.png"></td>
+                <td>Aneesh</td>
+                <td>Keyboard</td>
+                <td>xyz</td>
+                <td>abc</td>
+                <td>def</td>
+              </tr>
+              <tr>
+                <td>1234</td>
+                <td><img src="/Images/ProductImages/Shoes/icoon-removebg-preview.png"></td>
+                <td>Aneesh</td>
+                <td>Keyboard</td>
+                <td>xyz</td>
+                <td>abc</td>
+                <td>def</td>
+              </tr>
+              <tr>
+                <td>1234</td>
+                <td><img src="/Images/ProductImages/Shoes/icoon-removebg-preview.png"></td>
+                <td>Aneesh</td>
+                <td>Keyboard</td>
+                <td>xyz</td>
+                <td>abc</td>
+                <td>def</td>
+              </tr>
+              <tr>
+                <td>1234</td>
+                <td><img src="/Images/ProductImages/Shoes/icoon-removebg-preview.png"></td>
+                <td>Aneesh</td>
+                <td>Keyboard</td>
+                <td>xyz</td>
+                <td>abc</td>
+                <td>def</td>
+              </tr>
+            </tbody>
+          </table>
 
-     </div>
-     </div>
-     <script src="/js/selldash.js"></script>
-</body>
+         </div>
+
+      </div>
+      </body>
+      <script src="/js/selldash.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
+      </script>
+      <script>
+        $(document).ready(function() {
+$("#fld").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#tb tr").filter(function() {
+        $(this).toggle($(this).text()
+        .toLowerCase().indexOf(value) > -1)
+    });
+});
+});
+
+      </script>
 </html>
