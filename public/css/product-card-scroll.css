@@ -3,6 +3,8 @@
     max-height: 100%;
     display: block;
     /* to make image fit in a block */
+    width: 10rem;
+    margin: auto;
 }
 
 .prod-line1 {
@@ -27,10 +29,28 @@
 }
 
 .prod-imag img {
-    object-fit: cover;
+    object-fit: fill;
 }
 
 .product-card {
     width: 15rem;
-    padding: 1.5rem;
+}
+
+.product-wrapper
+{
+    height: 18rem;
+}
+
+.slider-btn
+{
+    display: flex;
+    /* width: 2rem; */
+    /* height: 2rem; */
+    justify-content: center;
+    align-items: center;
+    margin: 0.5rem 0.25rem 0.5rem ;
+    /* background-color: linear-gradient(to right,  rgba(39, 166, 230, 0.9),rgba(50, 211, 206, 0.9)); */
+    /* background-color: rgb(80, 210, 242); */
+    border: 0;
+    border-radius: 0.45rem;
 }

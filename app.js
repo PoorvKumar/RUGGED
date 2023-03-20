@@ -14,7 +14,7 @@ app.use('/', (req, res, next) => {
   res.render('productSearchPage.ejs');
 })
 // app.use(sellerdashboardRoutes)
-// app.use('/',(req,response)=>
+// app.use('/',(req,response)=> 
 // {
 //   response.render('LandingPage/product-card-slider.ejs');
 // });
