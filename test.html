@@ -12,13 +12,6 @@
     />
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
-      integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <link
-      rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
       integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
       crossorigin="anonymous"
@@ -29,59 +22,46 @@
       rel="stylesheet">
       <link rel="stylesheet" href="public/css/main_navbar.css">
     <link rel="stylesheet" href="public/css/style.css">
+    <link rel="stylesheet" href="public/css/product-card-scroll.css">
     <title>Test</title>
     <style>
-      .product-card img 
+      .account-list a
       {
-        max-width: 100%;
-        max-height: 80%;
-        display: block;
-        /* to make image fit in a block */
-        /* margin-bottom: 1rem; */
-        margin: 0 auto 1rem;
+        color: black;
       }
-
-      .prod-line1
+      .wishlist a:hover
       {
+        color:rgb(20, 67, 208);
         font-weight: bold;
-        font-size: large;
-        text-align: center;
+      }
+      .account-list-popover
+      {
+        width: 50rem;
+        background-color: white ;
+        opacity: 100%;
+        border: 1pt solid black;
+        border-radius: 0.5rem;
       }
 
-      .prod-line2
+      /* .hide{
+          display: none;
+          overflow: hidden;
+          visibility: hidden;
+      } */
+
+      #sign-in-popover
       {
-        padding-top: 0.5rem;
-        color: green;
-        text-align: center;
-        font-size: medium;
+        /* z-index: 10; */
+        position: fixed;
+        right: 1rem;
+
       }
 
-      .prod-line3
+      .signin-main:hover #sign-in-popover
       {
-        padding-top: 0.25rem;
-        color: grey;
-        text-align: center;
-        font-size: medium;
-      }
-
-      .prod-imag img
-      {
-        object-fit: cover;
-      }
-
-      .prod-imag
-      {
-        max-height: 15rem;
-        min-height: 12rem;
-        margin: auto;
-      }
-
-      .product-card
-      {
-        width: 15rem;
-        min-height: 21rem;
-        max-height: 21rem;
-        padding: 1.5rem;  
+        display: block;
+        visibility: visible;
+        /*very important css popover w/o bootstrap*/
       }
     </style>
   </head>
@@ -126,13 +106,12 @@
             </div> --> <!--removed all -->
             <input
               type="search"
-              class="form-control basicAutoComplete"
+              class="form-control"
               placeholder="Search Here..."
-              autocomplete="off"
               aria-label="Search"
               onclick="overlayOn()"
               id="nav-main-searchbar"
-            /> 
+            />
             <button type="button" class="btn bg-white">
               <i class="fas fa-search"></i>
             </button>
@@ -146,9 +125,37 @@
             <div class="nav-line-1">
               <span class="small"><span class="fa fa-user"> </span> Hello! User</span>
             </div>
-            <div class="nav-line-2">Account & Lists <span class="dropdown-toggle"></span>
+            <a tabindex="0" href="#" id="account-list" class="text-white" >
+            <div class="nav-line-2 signin-main">Account & Lists <span class="dropdown-toggle"></span>
+              </a>
+              <div id="sign-in-popover" class="hide">
+                <div class="container account-list-popover d-flex flex-column p-3 align-items-center w-100 pt-0">
+                  <div class="upper-signin p-4 ">
+                    <button class="btn bg-info">
+                      Sign In!
+                    </button>
+                  </div>
+                  <div class="account-lists d-flex flex-row border-top border-dark ">
+                    <div class="wishlist d-flex flex-column px-5 py-3" style="font-weight: lighter;">
+                      <p class="mb-1 text-info" style="font-size: larger; font-weight: 550;">Your Lists</p>
+                      <a class="small" href="#" rel="noopener noreferrer">Create a WishList</a>
+                      <a class="small" href="#" rel="noopener noreferrer">Create a WishList</a>
+                      <a class="small" href="#" rel="noopener noreferrer">Create a WishList</a>
+                      <a class="small" href="#" rel="noopener noreferrer">Create a WishList</a>
+                      <a class="small" href="#" rel="noopener noreferrer">Create a WishList</a>
+                    </div>
+                    <div class="wishlist d-flex flex-column px-5 py-3" style="font-weight: lighter;">
+                      <p class="mb-1 text-info" style="font-size: larger; font-weight: 550;">Your Lists</p>
+                      <a class="small" href="#" rel="noopener noreferrer">Create a WishList</a>
+                      <a class="small" href="#" rel="noopener noreferrer">Create a WishList</a>
+                      <a class="small" href="#" rel="noopener noreferrer">Create a WishList</a>
+                      <a class="small" href="#" rel="noopener noreferrer">Create a WishList</a>
+                      <a class="small" href="#" rel="noopener noreferrer">Create a WishList</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
-            <a href="#" data-toggle="popover" data-trigger="hover" data-content="popver"></a>
           </div>
           <div class="nav-returns nav-link d-flex-inline ">
             <div class="nav-line-1">
@@ -579,14 +586,75 @@
               </div> -->
           </div>
         </div>
-  
+
   <span id="test-typed-js"></span>
+ 
+  <!--sign in popover-->
+  <!-- <div id="sign-in-popover" class="">
+    <div class="container account-list-popover d-flex flex-column p-3 align-items-center w-100">
+      <div class="upper-signin p-4 ">
+        <button class="btn bg-info">
+          Sign In!
+        </button>
+      </div>
+      <div class="account-lists d-flex flex-row border-top border-dark ">
+        <div class="wishlist d-flex flex-column px-5 py-3" style="font-weight: lighter;">
+          <p class="mb-1" style="font-size: larger; font-weight: 550;">Your Lists</p>
+          <a class="small" href="#" rel="noopener noreferrer">Create a WishList</a>
+          <a class="small" href="#" rel="noopener noreferrer">Create a WishList</a>
+          <a class="small" href="#" rel="noopener noreferrer">Create a WishList</a>
+          <a class="small" href="#" rel="noopener noreferrer">Create a WishList</a>
+          <a class="small" href="#" rel="noopener noreferrer">Create a WishList</a>
+        </div>
+        <div class="wishlist d-flex flex-column px-5 py-3" style="font-weight: lighter;">
+          <p class="mb-1" style="font-size: larger; font-weight: 550;">Your Lists</p>
+          <a class="small" href="#" rel="noopener noreferrer">Create a WishList</a>
+          <a class="small" href="#" rel="noopener noreferrer">Create a WishList</a>
+          <a class="small" href="#" rel="noopener noreferrer">Create a WishList</a>
+          <a class="small" href="#" rel="noopener noreferrer">Create a WishList</a>
+          <a class="small" href="#" rel="noopener noreferrer">Create a WishList</a>
+        </div>
+      </div>
+    </div>
+  </div> -->
+
+<div hidden >
+  <div data-name="popover-content">
+      <div class="input-group">
+      <input type="text" class="form-control form-control-sm" placeholder="Search" name="search">
+      <div class="input-group-btn">
+          <button class="btn btn-danger" type="submit">
+          <i class="bi bi-search fa fa-search"></i>
+          </button>
+      </div>
+      </div>
+  </div>
+</div>
+
+<a id="example" tabindex="0" class="btn btn-lg btn-danger" role="button" data-bs-toggle="popover"
+  title="Default: Html inside popover">Html inside popover</a>
 
     <footer>
 
     </footer>
 
-    <script src="js/script.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+      integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"
+      integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD"
+      crossorigin="anonymous"
+    ></script>
+    
+    <script src="js/script.js">
+      //popover
+      // const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]')
+      // const popoverList = [...popoverTriggerList].map(popoverTriggerEl => new bootstrap.Popover(popoverTriggerEl))
+    </script>
+
     <script src="https://kit.fontawesome.com/f6e56633d7.js" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/typed.js@2.0.132/dist/typed.umd.js"></script> <!--typed js-->
     <script>
@@ -614,11 +682,11 @@
       //   {source: searchSuggestions}
       // );
 
-      $('.basicAutoComplete').autoComplete({
-    resolverSettings: {
-        url: 'bin/autocomplete.json'
-    }
-});
+    //   $('.basicAutoComplete').autoComplete({
+    // resolverSettings: {
+    //     url: 'bin/autocomplete.json'
+    // }
+// });
 
       // $(function()
       // {
@@ -638,19 +706,7 @@
       //   );
       // });
     </script>
+
     
-    <script src="https://cdn.jsdelivr.net/gh/xcash/bootstrap-autocomplete@v2.3.7/dist/latest/bootstrap-autocomplete.min.js"></script>
-
-
-    <script
-      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
-      integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"
-      integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD"
-      crossorigin="anonymous"
-    ></script>
   </body>
 </html>

@@ -161,6 +161,8 @@
  
   .hide{
       display: none;
+      overflow: hidden;
+      visibility: hidden;
   }
  .non-empty::after{
    content: var(--cart-no);
@@ -176,3 +178,33 @@
    font-weight: normal !important;
    color:black;
  }
+
+ /*POPOVER CSS*/
+ #sign-in-popover
+  {
+    /* z-index: 10; */
+    position: fixed;
+    right: 1rem;
+
+  }
+
+  .signin-main:hover #sign-in-popover
+  {
+    display: block;
+    visibility: visible;
+    /*very important css popover w/o bootstrap*/
+  }#sign-in-popover
+  {
+    /* z-index: 10; */
+    position: fixed;
+    right: 1rem;
+
+  }
+
+  .signin-main:hover #sign-in-popover
+  {
+    display: block;
+    visibility: visible;
+    /*very important css popover w/o bootstrap
+    overrides hide class in div*/
+  }
