@@ -1,36 +1,47 @@
-:root{
-   --cart-no:'10';
- }
- .carouselMain{
-     height: 650px;
-  }
-  .slider{
-     width:300px !important;
-     background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-     opacity: 0.8;
-     box-shadow: #e73c7e;
-     
-  }
-  .card-header{
-     text-align: center;
-  }
-  .ok{
-     margin-bottom:10px;
-     margin-left:10px;
-  }
-  .carttext{
-    color:#23a6d5;
-    font-size: xx-large;
-  }
-  .container{
-    padding:2%;
-  }
-  a{
-    text-decoration: none;
-    color:black;
-  }
- 
-  /* button {
+:root {
+  --cart-no: '10';
+}
+
+body {
+  background-color: #e6eaea;
+}
+
+.carouselMain {
+  height: 650px;
+}
+
+.slider {
+  width: 300px !important;
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  opacity: 0.8;
+  box-shadow: #e73c7e;
+
+}
+
+.card-header {
+  text-align: center;
+}
+
+.ok {
+  margin-bottom: 10px;
+  margin-left: 10px;
+}
+
+.carttext {
+  color: #23a6d5;
+  font-size: xx-large;
+}
+
+.container {
+  padding: 2%;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+/* button {
  background-color: transparent;
  background-repeat: no-repeat;
  border: none;
@@ -53,34 +64,38 @@
    color:black;
    text-align: center;
  } */
- .heading{
-   text-align: center;
-   font-size: x-large;
-   padding: 1px 10px;
-   font-weight: normal !important;
-   color:rgb(2, 81, 107);
-   background-color: #ddd;
-   font-size: xx-large;
-   font-weight: bolder;
- }
- .bgclr{
-   background-color: #ddd;
- }
- .cart-wrapper{
-   overflow-y: auto;
-   max-height: 468px;
-   width:24vw;
-   background-color: #f8f8f8;
- }
- .subtotal{
-   text-align: right;
-   padding:2%;
-   margin:2%;
-   font-weight: normal !important;
-   color:black;
-   background-color: #eee;
- }
- /* .checkout, .view-cart{
+.heading {
+  text-align: center;
+  font-size: x-large;
+  padding: 1px 10px;
+  font-weight: normal !important;
+  color: rgb(2, 81, 107);
+  background-color: #ddd;
+  font-size: xx-large;
+  font-weight: bolder;
+}
+
+.bgclr {
+  background-color: #ddd;
+}
+
+.cart-wrapper {
+  overflow-y: auto;
+  max-height: 468px;
+  width: 24vw;
+  background-color: #f8f8f8;
+}
+
+.subtotal {
+  text-align: right;
+  padding: 2%;
+  margin: 2%;
+  font-weight: normal !important;
+  color: black;
+  background-color: #eee;
+}
+
+/* .checkout, .view-cart{
    width:95%;
    text-align: center;
    cursor: pointer;
@@ -95,135 +110,143 @@
    border: 2px solid rgb(42, 71, 165);
    color: rgb(42, 153, 165);
  } */
- .cv{
-   width:95%;
-   text-align: center;
-   margin:10px auto;
-   padding:10px 15px;
- }
- /* .cart-icon{
+.cv {
+  width: 95%;
+  text-align: center;
+  margin: 10px auto;
+  padding: 10px 15px;
+}
+
+/* .cart-icon{
    text-align: right;
  } */
- .cart-item{
-   display:grid;
-   grid-template-columns: 3fr 6fr 0fr;
-   padding:5% 2%;
-   border-bottom:solid 1px lightgray;  
- }
- .cart-item img{
-     width:100%;
- }
- .cart-item .details{
-     padding-left:10%;
- }
- .details:hover{
-   color:#0770cf;
-   cursor: pointer;
- }
- .cart-item h2{
-   margin-bottom:5%; 
- }
- .cart-item .price{
- display: block;
- text-align: right;
- margin-top: 3%;
-   }
-   
-  .quantity{
-      display: block;
-      margin-top:5%;
-      font-weight: 600 !important;
-   color:black;
-  } 
-  /* .quantity:hover{
+.cart-item {
+  display: grid;
+  grid-template-columns: 3fr 6fr 0fr;
+  padding: 5% 2%;
+  border-bottom: solid 1px lightgray;
+}
+
+.cart-item img {
+  width: 100%;
+}
+
+.cart-item .details {
+  padding-left: 10%;
+}
+
+.details:hover {
+  color: #0770cf;
+  cursor: pointer;
+}
+
+.cart-item h2 {
+  margin-bottom: 5%;
+}
+
+.cart-item .price {
+  display: block;
+  text-align: right;
+  margin-top: 3%;
+}
+
+.quantity {
+  display: block;
+  margin-top: 5%;
+  font-weight: 600 !important;
+  color: black;
+}
+
+/* .quantity:hover{
    color:#0770cf;
    cursor: pointer;
   } */
- 
-  .coll:hover{
-      color:#fd0202;
-      cursor: pointer;
-  }
-  .cancel{
-      text-align: right;
-  }
-  .checked {
-   color: lightblue;
- }
-  .whole-cart-window{
-      border: solid lightgray 1px;
-      border-top:none;
-      position: fixed;
-      font-weight: normal !important;
-   color:black;
-   background-color: #ddd;
-  }
- 
-  .hide{
-      display: none;
-      overflow: hidden;
-      visibility: hidden;
-  }
- .non-empty::after{
-   content: var(--cart-no);
-   font-size: 10px;
-   width:25px;
-   display: inline-block;
-   text-align: center;
-   position: relative;
-   top:-30px;
-   right:10px;
-   background-color: rgb(56, 56, 214);
-   border-radius: 50%;
-   font-weight: normal !important;
-   color:black;
- }
 
- /*SignUp account List button*/
- .account-list a
-  {
-    color: black;
-  }
-  .wishlist a:hover
-  {
-    color:rgb(20, 67, 208);
-    font-weight: bold;
-  }
-  .account-list-popover
-  {
-    width: 50rem;
-    background-color: white ;
-    opacity: 100%;
-    border: 1pt solid black;
-    border-radius: 0.5rem;
-  }
+.coll:hover {
+  color: #fd0202;
+  cursor: pointer;
+}
 
- /*POPOVER CSS*/
- #sign-in-popover
-  {
-    /* z-index: 10; */
-    position: fixed;
-    right: 1rem;
+.cancel {
+  text-align: right;
+}
 
-  }
+.checked {
+  color: lightblue;
+}
 
-  .signin-main:hover #sign-in-popover
-  {
-    display: block;
-    visibility: visible;
-    /*very important css popover w/o bootstrap*/
-  }#sign-in-popover
-  {
-    /* z-index: 10; */
-    position: fixed;
-    right: 1rem;
+.whole-cart-window {
+  border: solid lightgray 1px;
+  border-top: none;
+  position: fixed;
+  font-weight: normal !important;
+  color: black;
+  background-color: #ddd;
+}
 
-  }
+.hide {
+  display: none;
+  overflow: hidden;
+  visibility: hidden;
+}
 
-  .signin-main:hover #sign-in-popover
-  {
-    display: block;
-    visibility: visible;
-    /*very important css popover w/o bootstrap
+.non-empty::after {
+  content: var(--cart-no);
+  font-size: 10px;
+  width: 25px;
+  display: inline-block;
+  text-align: center;
+  position: relative;
+  top: -30px;
+  right: 10px;
+  background-color: rgb(56, 56, 214);
+  border-radius: 50%;
+  font-weight: normal !important;
+  color: black;
+}
+
+/*SignUp account List button*/
+.account-list a {
+  color: black;
+}
+
+.wishlist a:hover {
+  color: rgb(20, 67, 208);
+  font-weight: bold;
+}
+
+.account-list-popover {
+  width: 50rem;
+  background-color: white;
+  opacity: 100%;
+  border: 1pt solid black;
+  border-radius: 0.5rem;
+}
+
+/*POPOVER CSS*/
+#sign-in-popover {
+  /* z-index: 10; */
+  position: fixed;
+  right: 1rem;
+
+}
+
+.signin-main:hover #sign-in-popover {
+  display: block;
+  visibility: visible;
+  /*very important css popover w/o bootstrap*/
+}
+
+#sign-in-popover {
+  /* z-index: 10; */
+  position: fixed;
+  right: 1rem;
+
+}
+
+.signin-main:hover #sign-in-popover {
+  display: block;
+  visibility: visible;
+  /*very important css popover w/o bootstrap
     overrides hide class in div*/
-  }
+}
