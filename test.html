@@ -24,55 +24,9 @@
     <link rel="stylesheet" href="public/css/style.css">
     <link rel="stylesheet" href="public/css/product-card-scroll.css">
     <link rel="stylesheet" href="public/css/product-card-scroll-2.css">
+    <link rel="stylesheet" href="public/css/carousel.css">
     <title>Test</title>
     <style>
-      .img-carousel
-      {
-        height: 23rem;
-        /* background-image: url('images/test_carousel_background/03_TX_MustangIsland_Horizontal_5479and5431th_2_RGB_461a6777-3285-46f3-b8c6-174d4e8ac4a1.jpg'); */
-        background-size: cover;
-      }
-      .caro-prod-title
-      {
-        font-size: 275%;
-        right: 4rem;
-        color: #ffffff;
-        /* text-align: center; */
-      }
-      .caro-prod-tag
-      {
-        font-size: 185%;
-        color: #ffffff;
-      }
-      .caro-prod
-      {
-        position: absolute;
-        left: 7rem;
-        top: 6rem;
-        text-align: center;
-      }
-
-      .caro-prod-price
-      {
-        font-size: 150%;
-        color: #ffffff;
-        position: absolute;
-        top: 10rem;
-        right: 10rem;
-      }
-
-      a img
-      {
-        object-fit: cover;
-        width: 100%;
-      }
-
-      /* .main-page-tag
-      {
-        height: 4rem;
-        display: flex;
-        background-image: url('public/Images/icons/631d5d0903dfbe61966a8bb4a646308e.jpg');
-      } */
     </style>
   </head>
   <div id="overlay" onclick="overlayOff()"></div> <!--overlay entire page whenever needed-->
@@ -599,7 +553,7 @@
   </div>
 
     <div class="product-slider">
-      <div class="prod-category" style="background-image: url('public/Images/productSliderBG/png-transparent-cartoon-illustration-cartoon-snow-mountain-cartoon-character-blue-angle.png');">
+      <div class="prod-category" style="background-image: url('public/Images/productSliderBG/mountain.png');">
         <div class="prod-category-head text-center">Trekking Essentials</div>
         <button class="shadow">View More</button>
       </div>
@@ -744,6 +698,160 @@
             <span class="visually-hidden">Previous</span>
           </button>
           <button class="slider-btn carousel-control-next" type="button" data-bs-slide="next" data-bs-target="#prodcaro1">
+            <!-- <i class="fa fa-angle-right text-white" aria-hidden="true"></i> -->
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+
+      </div>
+    </div>
+    <div class="product-slider">
+      <div class="prod-category" style="background-image: url('public/Images/productSliderBG/skiing.jpg');">
+        <div class="prod-category-head text-center">Snow Collection</div>
+        <button class="shadow">View More</button>
+      </div>
+      <div id="prodcaro01" class="product-carousel carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="product-wrapper d-flex flex-inline justify-content-around">
+              <a href="#" class="product-card-link ">
+                <div class="product-card">
+    
+                  <div class="prod-imag">
+                    <img src="public/Images/ProductImages/Shoes/shoes-removebg-preview.png" alt="">
+                  </div>
+                  <div class="prod-line1">Product Name</div>
+                  <div class="prod-line2">Price Rs.123</div>
+                  <div class="prod-line3">Some Tagline</div>
+    
+                </div>
+              </a>
+              <a href="#" class="product-card-link ">
+                <div class="product-card">
+    
+                  <div class="prod-imag">
+                    <img src="public/Images/ProductImages/Shoes/shoes-removebg-preview.png" alt="">
+                  </div>
+                  <div class="prod-line1">Product Name</div>
+                  <div class="prod-line2">Price Rs.123</div>
+                  <div class="prod-line3">Some Tagline</div>
+    
+                </div>
+              </a>
+              <a href="#" class="product-card-link ">
+                <div class="product-card">
+    
+                  <div class="prod-imag">
+                    <img src="public/Images/ProductImages/Shoes/shoes-removebg-preview.png" alt="">
+                  </div>
+                  <div class="prod-line1">Product Name</div>
+                  <div class="prod-line2">Price Rs.123</div>
+                  <div class="prod-line3">Some Tagline</div>
+    
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="product-wrapper d-flex flex-inline justify-content-around">
+              <a href="#" class="product-card-link">
+                <div class="product-card">
+    
+                  <div class="prod-imag">
+                    <img src="public/Images/ProductImages/Shoes/search-icon-removebg-preview.png" alt="">
+                  </div>
+                  <div class="prod-line1">Product Name</div>
+                  <div class="prod-line2">Price Rs.123</div>
+                  <div class="prod-line3">Some Tagline</div>
+                </div>
+              </a>
+              <a href="#" class="product-card-link">
+                <div class="product-card">
+    
+                  <div class="prod-imag">
+                    <img src="public/Images/ProductImages/Shoes/search-icon-removebg-preview.png" alt="">
+                  </div>
+                  <div class="prod-line1">Product Name</div>
+                  <div class="prod-line2">Price Rs.123</div>
+                  <div class="prod-line3">Some Tagline</div>
+    
+                </div>
+              </a>
+              <a href="#" class="product-card-link">
+                <div class="product-card">
+    
+                  <div class="prod-imag">
+                    <img src="public/Images/ProductImages/Shoes/search-icon-removebg-preview.png" alt="">
+                  </div>
+                  <div class="prod-line1">Product Name</div>
+                  <div class="prod-line2">Price Rs.123</div>
+                  <div class="prod-line3">Some Tagline</div>
+    
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="product-wrapper d-flex flex-inline justify-content-around">
+              <a href="#" class="product-card-link">
+                <div class="product-card">
+    
+                  <div class="prod-imag">
+                    <img src="public/Images/ProductImages/Shoes/icoon-removebg-preview.png" alt="">
+                  </div>
+                  <div class="prod-line1">Product Name</div>
+                  <div class="prod-line2">Price Rs.123</div>
+                  <div class="prod-line3">Some Tagline</div>
+    
+                </div>
+              </a>
+              <a href="#" class="product-card-link">
+                <div class="product-card">
+    
+                  <div class="prod-imag">
+                    <img src="public/Images/ProductImages/Shoes/icoon-removebg-preview.png" alt="">
+                  </div>
+                  <div class="prod-line1">Product Name</div>
+                  <div class="prod-line2">Price Rs.123</div>
+                  <div class="prod-line3">Some Tagline</div>
+    
+                </div>
+              </a>
+              <a href="#" class="product-card-link">
+                <div class="product-card">
+    
+                  <div class="prod-imag">
+                    <img src="public/Images/ProductImages/Shoes/icoon-removebg-preview.png" alt="">
+                  </div>
+                  <div class="prod-line1">Product Name</div>
+                  <div class="prod-line2">Price Rs.123</div>
+                  <div class="prod-line3">Some Tagline</div>
+    
+                </div>
+              </a>
+              <a href="#" class="product-card-link">
+                <div class="product-card">
+    
+                  <div class="prod-imag">
+                    <img src="public/Images/ProductImages/Shoes/icoon-removebg-preview.png" alt="">
+                  </div>
+                  <div class="prod-line1">Product Name</div>
+                  <div class="prod-line2">Price Rs.123</div>
+                  <div class="prod-line3">Some Tagline</div>
+    
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="d-flex flex-row">
+          <button class="carousel-control-prev" type="button" data-bs-slide="prev" data-bs-target="#prodcaro01">
+            <!-- <i class="fa fa-angle-left text-white" aria-hidden="true"></i> -->
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="slider-btn carousel-control-next" type="button" data-bs-slide="next" data-bs-target="#prodcaro01">
             <!-- <i class="fa fa-angle-right text-white" aria-hidden="true"></i> -->
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Next</span>
@@ -935,22 +1043,42 @@
     <div class="carousel-inner">
       <div class="carousel-item active img-carousel">
         <a href="#">
-          <img src="public/Images/carouselImages/1(1)'.jpg" alt="">
+          <div class="caro-prod">
+            <div class="caro-prod-title">New Offers on Tents</div>
+            <div class="caro-prod-tag">Camping in Way</div>
+          </div>
+          <div class="caro-prod-price">Starting from just 99/-</div>
+          <img src="public/Images/carouselImages/secondCarousel/MOUNTAIN HIKING CAMP PE20 (1).avif">
         </a>
       </div>
       <div class="carousel-item img-carousel">
         <a href="#">
-          <img src="public/Images/carouselImages/1(1)'.jpg" alt="">
+          <div class="caro-prod">
+            <div class="caro-prod-title">Snow Equipments</div>
+            <div class="caro-prod-tag">Grabs Yours Today</div>
+          </div>
+          <div class="caro-prod-price">Starting from just 99/-</div>
+          <img src="public/Images/carouselImages/secondCarousel/WEDZE HOUSSE CHAUSSURE SKI 900 GRIS NOIR AH21.avif">
         </a>
       </div>
       <div class="carousel-item img-carousel">
         <a href="#">
-          <img src="public/Images/carouselImages/1(1)'.jpg" alt="">
+          <div class="caro-prod">
+            <div class="caro-prod-title">Snow Glasses</div>
+            <div class="caro-prod-tag">Do not let cold dry your eyes</div>
+          </div>
+          <div class="caro-prod-price">Starting from just 99/-</div>
+          <img src="public/Images/carouselImages/secondCarousel/WEDZE SKI-P JKT 180 M CAMEL AH22.avif">
         </a>
       </div>
       <div class="carousel-item img-carousel">
         <a href="#">
-          <img src="public/Images/carouselImages/1(1)'.jpg" alt="">
+          <div class="caro-prod">
+            <div class="caro-prod-title">New Hiking Collection</div>
+            <div class="caro-prod-tag">Time to Hike is Here...</div>
+          </div>
+          <div class="caro-prod-price">Starting from just 99/-</div>
+          <img src="public/Images/carouselImages/hiking collection.avif">
         </a>
       </div>
     </div>
@@ -969,11 +1097,6 @@
       <span class="carousel-control-next-icon" aria-hidden="true"></span>
       <span class="sr-only">Next</span>
     </button>
-  </div>
-
-  <div class="carousel-item">
-    <img src="images/test_carousel_background/03_TX_MustangIsland_Horizontal_5479and5431th_2_RGB_461a6777-3285-46f3-b8c6-174d4e8ac4a1.jpg" alt="" srcset="">
-    <div class="tagline"></div>
   </div>
 
 

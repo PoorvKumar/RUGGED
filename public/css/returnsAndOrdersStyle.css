@@ -1,0 +1,225 @@
+.btn-colour {
+    position: relative;
+    display: inline-block;
+    width: 28px;
+    height: 28px;
+    margin-bottom: 0;
+    border-radius: 50%;
+    box-shadow: inset 0 0 0 5px #fff, 0 0 0 1px #ced4da;
+    background-position: center;
+    background-size: cover;
+    cursor: pointer;
+    transition: border-color 0.1s;
+}
+
+.detail-quantity {
+    max-width: 5rem;
+    text-align: center;
+}
+
+.form-control {
+    display: block;
+    width: 100%;
+    padding: 0.6rem 0.75rem;
+    font-size: 0.9rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-radius: 0;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+
+.review {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.review:first-of-type {
+    padding-top: 1rem;
+}
+
+.text-center {
+    text-align: center !important;
+}
+
+.review-image {
+    display: block;
+    width: 120px;
+    max-width: 100%;
+    border-radius: 50%;
+    padding: 0.5rem;
+    margin: 0 auto 0.5rem;
+    background: #fff;
+    border: solid 1px rgba(0, 0, 0, 0.125);
+}
+
+img,
+svg {
+    vertical-align: middle;
+}
+
+user agent stylesheet img {
+    overflow-clip-margin: content-box;
+    overflow: clip;
+}
+
+.nav .nav-link {
+    color: #343a40;
+}
+
+.detail-nav-link.nav-link.active,
+.detail-nav-link.nav-link:hover,
+.detail-nav-link.nav-link:focus {
+    color: #343a40;
+    border-color: #fff #fff #343a40 !important;
+}
+
+.gradient-custom {
+    /* fallback for old browsers */
+    /* background: #cd9cf2; */
+
+    /* Chrome 10-25, Safari 5.1-6 */
+    /* background: -webkit-linear-gradient(to bottom right, rgba(205, 156, 242, 1), rgba(246, 243, 255, 1)); */
+
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: linear-gradient(to bottom right, rgba(39, 166, 230, 0.9), rgba(50, 211, 206, 0.9));
+}
+
+.gradient-custom-2 {
+    /* fallback for old browsers */
+    background: #a1c4fd;
+
+    /* Chrome 10-25, Safari 5.1-6 */
+    /* background: -webkit-linear-gradient(to right, rgba(161, 196, 253, 1), rgba(194, 233, 251, 1)); */
+
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    /* background: linear-gradient(to right, rgba(161, 196, 253, 1), rgba(194, 233, 251, 1))
+     */
+    background: linear-gradient(to right, rgba(39, 166, 230, 0.9), rgba(50, 211, 206, 0.9));
+
+}
+
+#progressbar-1 {
+    color: #455A64;
+}
+
+#progressbar-1 li {
+    list-style-type: none;
+    font-size: 13px;
+    width: 33.33%;
+    float: left;
+    position: relative;
+}
+
+#progressbar-1 #step1:before {
+    content: "1";
+    color: #fff;
+    width: 29px;
+    margin-left: 22px;
+    padding-left: 11px;
+}
+
+#progressbar-1 #step2:before {
+    content: "2";
+    color: #fff;
+    width: 29px;
+}
+
+#progressbar-1 #step3:before {
+    content: "3";
+    color: #fff;
+    width: 29px;
+    margin-right: 22px;
+    text-align: center;
+}
+
+/* #progressbar-1 li:before {
+    line-height: 29px;
+    display: block;
+    font-size: 12px;
+    background: #455A64;
+    border-radius: 50%;
+    margin: auto;
+}
+
+#progressbar-1 li:after {
+    content: '';
+    width: 121%;
+    height: 2px;
+    background: #455A64;
+    position: absolute;
+    left: 0%;
+    right: 0%;
+    top: 15px;
+    z-index: -1;
+} */
+
+#progressbar-1 li:nth-child(2):after {
+    left: 50%
+}
+
+#progressbar-1 li:nth-child(1):after {
+    left: 25%;
+    width: 121%
+}
+
+#progressbar-1 li:nth-child(3):after {
+    left: 25%;
+    width: 50%;
+}
+
+#progressbar-1 li.active:before,
+#progressbar-1 li.active:after {
+    background: #1266f1;
+}
+
+.card-stepper {
+    z-index: 0
+}
+
+.NotYetShippedClass {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.NotYetShippedInnerClass {
+    width: 100%;
+}
+
+.NotYetShippedProductCard {
+    padding: 2%;
+    /* width: 30%; */
+}
+
+/* .OrderUpperText{
+
+} */
+.orderEmp {
+    color: rgba(39, 166, 230, 0.9);
+}
+
+.progressBar {
+    opacity: 1;
+    background-color: rgba(39, 166, 230, 0.9);
+    width: 100%;
+    border-radius: 1rem;
+}
+.pb1{
+    width: 50% !important;
+}
+
+.ordersLowerArea {
+    background-color: rgba(39, 166, 230, 0.9);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}

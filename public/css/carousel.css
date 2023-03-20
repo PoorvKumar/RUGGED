@@ -35,3 +35,15 @@ a img {
     object-fit: cover;
     width: 100%;
 }
+
+.caro-prod-title:hover , .caro-prod-tag:hover
+{
+    color: black;
+    text-shadow: 2px 2px 2px rgb(19, 80, 212);
+}
+
+.caro-prod-price:hover
+{
+    color: black;
+    text-shadow: 2px 2px 2px rgb(221, 53, 15);
+}
