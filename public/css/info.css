@@ -18,12 +18,8 @@ body{
     font-size:18px;
     margin:2% 0%;
 }
-body{
-    background-color: white;
-    
-}
-.active{
-    color:rgb(222, 158, 74);
+.post-titleU:hover{
+    color:burlywood;
 }
 .activebox{
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
@@ -38,6 +34,9 @@ body{
 }
 .carousel-slides{
     display:flex;
+}
+.smallbox:hover{
+    cursor: pointer;
 }
 .carousel-inner{
     max-width: 58%;
