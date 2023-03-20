@@ -24,6 +24,48 @@
     <link rel="stylesheet" href="public/css/style.css">
     <link rel="stylesheet" href="public/css/product-card-scroll.css">
     <title>Test</title>
+    <style>
+      .img-carousel
+      {
+        height: 23rem;
+        /* background-image: url('images/test_carousel_background/03_TX_MustangIsland_Horizontal_5479and5431th_2_RGB_461a6777-3285-46f3-b8c6-174d4e8ac4a1.jpg'); */
+        background-size: cover;
+      }
+      .caro-prod-title
+      {
+        font-size: 275%;
+        right: 4rem;
+        color: #ffffff;
+        /* text-align: center; */
+      }
+      .caro-prod-tag
+      {
+        font-size: 250%;
+        color: #ffffff;
+      }
+      .caro-prod
+      {
+        position: absolute;
+        left: 7rem;
+        top: 6rem;
+        text-align: center;
+      }
+
+      .caro-prod-price
+      {
+        font-size: 150%;
+        color: #ffffff;
+        position: absolute;
+        top: 10rem;
+        right: 10rem;
+      }
+
+      a img
+      {
+        object-fit: cover;
+        width: 100%;
+      }
+    </style>
   </head>
   <div id="overlay" onclick="overlayOff()"></div> <!--overlay entire page whenever needed-->
   <body>
@@ -252,10 +294,6 @@
         </a>
       </nav>
     </header>
-
-    <div class="caro-category">
-
-    </div>
 
     <div id="header-carousel" class="carousel slide" data-bs-ride="carousel">
       <div class="carousel-inner">
@@ -618,17 +656,45 @@
 
   <div id="caro1" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner">
-      <div class="carousel-item active">
-        <img  src="images/test_carousel_background/03_TX_MustangIsland_Horizontal_5479and5431th_2_RGB_461a6777-3285-46f3-b8c6-174d4e8ac4a1.jpg" alt="" srcset="">
+      <div class="carousel-item active img-carousel">
+        <a href="#">
+          <!-- <div class="caro-prod">
+            <div class="caro-prod-title">All Play</div>
+            <div class="caro-prod-tag">Kinda Summer</div>
+          </div>
+          <div class="caro-prod-price">Starting at just <span>Rs</span> 999/- </div> -->\
+          <img src="public/Images/carouselImages/1(1)'.jpg" alt="">
+        </a>
       </div>
-      <div class="carousel-item">
-        <img  src="images/test_carousel_background/03_TX_MustangIsland_Horizontal_5479and5431th_2_RGB_461a6777-3285-46f3-b8c6-174d4e8ac4a1.jpg" alt="" srcset="">
+      <div class="carousel-item img-carousel">
+        <a href="#" class="d-flex flex-inline justify-content-between align-items-center" ">
+          <div class="caro-prod">
+            <div class="caro-prod-title">All Play</div>
+            <div class="caro-prod-tag">Kinda Summer</div>
+          </div>
+          <div class="caro-prod-price">Starting at just <span>Rs</span> 999/- </div>
+          <img src="public/Images/carouselImages/hiking-quotes-1586278882.jpg" alt="">
+        </a>
       </div>
-      <div class="carousel-item">
-        <img  src="images/test_carousel_background/03_TX_MustangIsland_Horizontal_5479and5431th_2_RGB_461a6777-3285-46f3-b8c6-174d4e8ac4a1.jpg" alt="" srcset="">
+      <div class="carousel-item img-carousel">
+        <a href="#" class="d-flex flex-inline justify-content-between align-items-center" ">
+          <div class="caro-prod">
+            <div class="caro-prod-title">All Play</div>
+            <div class="caro-prod-tag">Kinda Summer</div>
+          </div>
+          <div class="caro-prod-price">Starting at just <span>Rs</span> 999/- </div>
+          <img src="images/test_carousel_background/03_TX_MustangIsland_Horizontal_5479and5431th_2_RGB_461a6777-3285-46f3-b8c6-174d4e8ac4a1.jpg" alt="">
+        </a>
       </div>
-      <div class="carousel-item">
-        <img  src="images/test_carousel_background/03_TX_MustangIsland_Horizontal_5479and5431th_2_RGB_461a6777-3285-46f3-b8c6-174d4e8ac4a1.jpg" alt="" srcset="">
+      <div class="carousel-item img-carousel">
+        <a href="#" class="d-flex flex-inline justify-content-between align-items-center" ">
+          <div class="caro-prod">
+            <div class="caro-prod-title">All Play</div>
+            <div class="caro-prod-tag">Kinda Summer</div>
+          </div>
+          <div class="caro-prod-price">Starting at just <span>Rs</span> 999/- </div>
+          <img src="images/test_carousel_background/03_TX_MustangIsland_Horizontal_5479and5431th_2_RGB_461a6777-3285-46f3-b8c6-174d4e8ac4a1.jpg" alt="">
+        </a>
       </div>
     </div>
     <!-- <div class="carousel-indicators">

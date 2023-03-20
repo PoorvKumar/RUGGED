@@ -11,7 +11,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', (req, res, next) => {
-  res.render('productSearchPage.ejs');
+  res.render('index.ejs');
 })
 // app.use(sellerdashboardRoutes)
 // app.use('/',(req,response)=> 
