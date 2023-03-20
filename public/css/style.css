@@ -179,6 +179,25 @@
    color:black;
  }
 
+ /*SignUp account List button*/
+ .account-list a
+  {
+    color: black;
+  }
+  .wishlist a:hover
+  {
+    color:rgb(20, 67, 208);
+    font-weight: bold;
+  }
+  .account-list-popover
+  {
+    width: 50rem;
+    background-color: white ;
+    opacity: 100%;
+    border: 1pt solid black;
+    border-radius: 0.5rem;
+  }
+
  /*POPOVER CSS*/
  #sign-in-popover
   {
