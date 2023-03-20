@@ -8,34 +8,27 @@
     max-width: fit-content;
     display: inline-flex;
 }
-
 .totalCard:hover {
     box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
 }
-
 .cardWidth {
     width: 24%;
 }
-
 .myCarousel {
     border-radius: 1.5rem 1.5rem 0rem 0rem;
 }
-
 .pcButton {
     margin: 0 2%;
     border-radius: 10%;
     max-width: max-content;
 }
-
 .cardTitleInner {
     color: black;
     text-decoration: none;
 }
-
 .cardTitleInner:hover {
     color: rgb(223, 195, 152);
 }
-
 /* .pcBtnGroup {
     position: relative;
     display: flex;
@@ -43,7 +36,6 @@
     vertical-align: middle;
     margin: 3%;
 } */
-
 .rightCompartment {
     display: flex;
     flex-flow: row nowrap;
@@ -51,16 +43,13 @@
     margin-right: 2%;
     justify-content: flex-start;
 }
-
 .rightCompartmentInner {
     margin: 1%;
 }
-
 .shareIcon {
     margin-right: 12px;
     padding-right: 3px;
 }
-
 .jumbotron {
     padding: 3% 1%;
     /* background-color:whitesmoke; */
@@ -71,7 +60,6 @@
     vertical-align: middle;
     justify-content: space-evenly;
 }
-
 .starsRatingGreen {
     line-height: normal;
     display: inline-flex;
@@ -83,29 +71,24 @@
     vertical-align: middle;
     background-color: #388e3c;
 }
-
 .innerStars {
     margin: 4px 0 0 2px;
     height: 10px;
 }
-
 .mainInfoCard {
     border-radius: 15%;
     vertical-align: middle;
     margin: 0%;
     padding: 4%;
 }
-
 /* 
 .ratingInfo .written {
     color: orange;
 } */
-
 .carouselButton {
     max-height: fit-content;
     margin-top: 35%;
 }
-
 .cardBodyHead {
     display: flex;
     background-color: whitesmoke;
@@ -117,30 +100,24 @@
     /* margin: 0.5%; */
     border-radius: 1.5rem;
 }
-
 .myCardTitle {
     margin: 0 0 0 5%;
 }
-
 .wishlist {
     display: flex;
     justify-content: center;
     margin: 2% 5%;
     padding-top: 4px;
 }
-
 .wishlist:hover {
     cursor: pointer;
 }
-
 .wishlistInner {
     color: rgb(228, 32, 32);
 }
-
 .shareIcon:hover {
     cursor: pointer;
 }
-
 .pcVrtPrice {
     display: flex;
     margin: 2% 0%;
@@ -155,9 +132,7 @@
     opacity: 80%;
     font-size: 0.75rem;
     align-items: center;
-
 }
-
 .pcVrtDiscount {
     max-width: fit-content;
     margin: 0;
@@ -171,14 +146,12 @@
     padding: 2.5% 5%;
     margin: 2% 3%;
 }
-
 /* Popup container */
 .popupRating {
     position: relative;
     display: inline-flex;
     cursor: pointer;
 }
-
 /* The actual popup (appears on top) */
 .popupRating .popupContent {
     visibility: hidden;
@@ -194,7 +167,6 @@
     left: 50%;
     margin-left: -80px;
 }
-
 /* Popup arrow */
 .popupRating .popupContent::before {
     content: "";
@@ -218,7 +190,6 @@
     -webkit-animation: fadeIn 1s;
     animation: fadeIn 1s
 }
-
 /* Add animation (fade in the popup) */
 @-webkit-keyframes fadeIn {
     from {
@@ -229,7 +200,6 @@
         opacity: 1;
     }
 }
-
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -239,34 +209,27 @@
         opacity: 1;
     }
 }
-
-
 .UserRatingGrid {
     padding: 0 3%;
 }
-
 .UserRatingHeading {
     font-size: 1.5rem;
     padding: 2%;
 }
-
 /* Three column layout */
 .EdgeColumn {
     float: left;
     width: 15%;
     margin-top: 10px;
 }
-
 .CentreColumn {
     margin-top: 10px;
     float: left;
     width: 70%;
 }
-
 .rightText {
     text-align: right;
 }
-
 /* The bar container */
 .barContainer {
     width: 100%;
@@ -274,38 +237,32 @@
     text-align: center;
     color: white;
 }
-
 /* Individual bars */
 .bar5 {
     width: 60%;
     height: 18px;
     background-color: #04AA6D;
 }
-
 .bar4 {
     width: 30%;
     height: 18px;
     background-color: #2196F3;
 }
-
 .bar3 {
     width: 10%;
     height: 18px;
     background-color: #00bcd4;
 }
-
 .bar2 {
     width: 04%;
     height: 18px;
     background-color: #ff9800;
 }
-
 .bar1 {
     width: 15%;
     height: 18px;
     background-color: #f44336;
 }
-
 /* Responsive layout - make the columns stack on top of each other instead of next to each other */
 @media (max-width: 200px) {
 
