@@ -13,31 +13,32 @@
   <script src="https://kit.fontawesome.com/72fdfa8245.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="/public/css/main_navbar.css">
   <link rel="stylesheet" href="/public/css/style.css">
-
+  <link rel="stylesheet" href="/public/css/returnsAndOrdersStyle.css">
   <title>Product Page</title>
 </head>
+
 <body>
-    <header>
-        <nav class="container-fluid d-flex flex-inline navbar px-3 pt-0 pb-0 fixed-top nav-main pe-0">
-          <div class="nav-left navbar d-flex justify-content-around pt-0 ms-0">
-            <!-- <img src="LOGO/LogoMain/rugged-high-resolution-logo-color-on-transparent-background.png" alt="" class="nav-brand" width="110" height="50"> -->
-            <div class="nav-link nav-logo " id="brand-logo" style="font-size: large;">
-              <img src="/LOGO/newLOGOTest/newLOGO_no_background.png" alt="" height="65em" width="120em">
-    
+  <header>
+    <nav class="container-fluid d-flex flex-inline navbar px-3 pt-0 pb-0 fixed-top nav-main pe-0">
+      <div class="nav-left navbar d-flex justify-content-around pt-0 ms-0">
+        <!-- <img src="LOGO/LogoMain/rugged-high-resolution-logo-color-on-transparent-background.png" alt="" class="nav-brand" width="110" height="50"> -->
+        <div class="nav-link nav-logo " id="brand-logo" style="font-size: large;">
+          <img src="/LOGO/newLOGOTest/newLOGO_no_background.png" alt="" height="65em" width="120em">
+
+        </div>
+        <div class="nav-link col d-flex flex-inline nav-address">
+          <div><i class="fa fa-map-marker-alt mt-3 me-2" style="font-size: larger;"></i></div>
+          <div>
+            <div class="nav-line-1">
+              <span class="small">Hello User!</span>
             </div>
-            <div class="nav-link col d-flex flex-inline nav-address">
-              <div><i class="fa fa-map-marker-alt mt-3 me-2" style="font-size: larger;"></i></div>
-              <div>
-                <div class="nav-line-1">
-                  <span class="small">Hello User!</span>
-                </div>
-                <div class="nav-line-2">Select Your Address!</div>
-              </div>
-            </div>
+            <div class="nav-line-2">Select Your Address!</div>
           </div>
-          <div class="nav-search ">
-            <form action="" class="w-100 input-group">
-              <!-- <div class="dropdown">
+        </div>
+      </div>
+      <div class="nav-search ">
+        <form action="" class="w-100 input-group">
+          <!-- <div class="dropdown">
                   <button class="btn" type="button" data-bs-toggle="dropdown">
                     <span style="font-size: 13.5px;">All</span><span class="dropdown-toggle"> </span></button>
                   <ul class="dropdown-menu shadow" style="font-size: 13.5px;">
@@ -53,162 +54,843 @@
                 <li><a class="dropdown-item" href="#">Analytics</a></li>
               </ul>
                 </div> -->
-              <!--removed all -->
-              <input type="search" class="form-control" placeholder="Search Here..." aria-label="Search" onclick="overlayOn()" />
-              <button type="button" class="btn bg-white">
-                <i class="fas fa-search"></i>
-              </button>
-            </form>
+          <!--removed all -->
+          <input type="search" class="form-control" placeholder="Search Here..." aria-label="Search" onclick="overlayOn()" />
+          <button type="button" class="btn bg-white">
+            <i class="fas fa-search"></i>
+          </button>
+        </form>
+      </div>
+      <div class="nav-right navbar d-flex flex-row">
+        <div class="nav-wish nav-link d-flex-inline p-2">
+          WishList
+        </div>
+        <div class="nav-sign nav-link d-flex-inline ">
+          <div class="nav-line-1">
+            <span class="small">Hello! User</span>
           </div>
-          <div class="nav-right navbar d-flex flex-row">
-            <div class="nav-wish nav-link d-flex-inline p-2">
-              WishList
-            </div>
-            <div class="nav-sign nav-link d-flex-inline ">
-              <div class="nav-line-1">
-                <span class="small">Hello! User</span>
-              </div>
-              <div class="nav-line-2">Account & Lists <span class="dropdown-toggle"></span>
-              </div>
-            </div>
-            <div class="nav-returns nav-link d-flex-inline ">
-              <div class="nav-line-1">
-                <span class="small">Returns</span>
-              </div>
-              <div class="nav-line-2">&Orders</div>
-            </div>
-            <!-- <div class="nav-cart nav-link d-flex-inline p-2">
+          <div class="nav-line-2">Account & Lists <span class="dropdown-toggle"></span>
+          </div>
+        </div>
+        <div class="nav-returns nav-link d-flex-inline ">
+          <div class="nav-line-1">
+            <span class="small">Returns</span>
+          </div>
+          <div class="nav-line-2">&Orders</div>
+        </div>
+        <!-- <div class="nav-cart nav-link d-flex-inline p-2">
                         Cart
                       </div> -->
-            <!-- Cart dropover -->
-            <div class="nav-cart nav-link d-flex-inline p-2">
-              <div class="nav-line-2">
-                <a data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
-                  <!-- <span class="small">
+        <!-- Cart dropover -->
+        <div class="nav-cart nav-link d-flex-inline p-2">
+          <div class="nav-line-2">
+            <a data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
+              <!-- <span class="small">
                       <i class="fa fa-shopping-cart non-empty"
                         style="font-size:33px"></i></span> -->
-                  <span class="material-icons non-empty" style="font-size: 36px;">
-                    <!--material icon google-->
-                    shopping_cart
-                  </span>
-                </a>
-                <!--need  to change non-empty class-->
-              </div>
-              <!-- Canvas down now -->
-              <div class="offcanvas offcanvas-end " data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
-                <div class="offcanvas-header">
-                  <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Apna Cart</h5>
-                  <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                </div>
-                <div class="offcanvas-body">
-                  <!-- BigBox -->
-                  <div class="whole-cart-window">
-                    <!-- add hide class to hide cart window-->
-                    <!-- <div class="heading"><p>Your Bag</p></div> -->
-                    <div class="cart-wrapper">
-                      <div class="cart-item">
-                        <img src="/public/Images/ProductImages/Rucksack1/image1.jpg" alt="rucksack">
-                        <div class="details">
-                          <h3>RuckSack</h3>
-                          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.<br>
-                            <span class="fa fa-star"></span>
-                            <span class="fa fa-star"></span>
-                            <span class="fa fa-star"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="quantity">Quantity: 1</span>
-                            <span class="price">Price: ₹50.00</span>
-                          </p>
-                        </div>
-                        <div class="cancel"><i class="fa-regular fa-trash-can coll"></i></div>
-                      </div>
-                      <!-- item 2 -->
-                      <div class="cart-item">
-                        <img src="/public/Images/ProductImages/Rucksack1/image1.jpg" alt="Rucksack">
-                        <div class="details">
-                          <h3>Item Name2</h3>
-                          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.<br>
-                            <span class="fa fa-star"></span>
-                            <span class="fa fa-star"></span>
-                            <span class="fa fa-star"></span>
-                            <span class="fa fa-star"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="quantity">Quantity: 1</span>
-                            <span class="price">Price: ₹100.00</span>
-                          </p>
-                        </div>
-                        <div class="cancel"><i class="fa-regular fa-trash-can coll"></i></div>
-                      </div>
+              <span class="material-icons non-empty" style="font-size: 36px;">
+                <!--material icon google-->
+                shopping_cart
+              </span>
+            </a>
+            <!--need  to change non-empty class-->
+          </div>
+          <!-- Canvas down now -->
+          <div class="offcanvas offcanvas-end " data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
+            <div class="offcanvas-header">
+              <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Apna Cart</h5>
+              <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+              <!-- BigBox -->
+              <div class="whole-cart-window">
+                <!-- add hide class to hide cart window-->
+                <!-- <div class="heading"><p>Your Bag</p></div> -->
+                <div class="cart-wrapper">
+                  <div class="cart-item">
+                    <img src="/public/Images/ProductImages/Rucksack1/image1.jpg" alt="rucksack">
+                    <div class="details">
+                      <h3>RuckSack</h3>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.<br>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="quantity">Quantity: 1</span>
+                        <span class="price">Price: ₹50.00</span>
+                      </p>
                     </div>
-                    <div class="subtotal">Delivery: ₹0.00</div>
-                    <div class="subtotal">Total: ₹0.00</div>
-                    <div class="cv">
-                      <button type="button" class="btn btn-outline-secondary">View WishList</button>
-                      <button type="button" class="btn btn-primary">Checkout</button>
-                    </div>
+                    <div class="cancel"><i class="fa-regular fa-trash-can coll"></i></div>
                   </div>
-                  <!-- BigBox Finish -->
+                  <!-- item 2 -->
+                  <div class="cart-item">
+                    <img src="/public/Images/ProductImages/Rucksack1/image1.jpg" alt="Rucksack">
+                    <div class="details">
+                      <h3>Item Name2</h3>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.<br>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="quantity">Quantity: 1</span>
+                        <span class="price">Price: ₹100.00</span>
+                      </p>
+                    </div>
+                    <div class="cancel"><i class="fa-regular fa-trash-can coll"></i></div>
+                  </div>
                 </div>
-                <!-- Cart Dropover Finish -->
+                <div class="subtotal">Delivery: ₹0.00</div>
+                <div class="subtotal">Total: ₹0.00</div>
+                <div class="cv">
+                  <button type="button" class="btn btn-outline-secondary">View WishList</button>
+                  <button type="button" class="btn btn-primary">Checkout</button>
+                </div>
               </div>
+              <!-- BigBox Finish -->
             </div>
             <!-- Cart Dropover Finish -->
           </div>
-        </nav>
-        <nav class="container-fluid navbar  nav-sec navbar-color">
-          <a class="nav-item" href="#" data-bs-toggle="offcanvas" data-bs-target="#offcanvasAllSection" role="button" aria-label="allSection">
-            <i class="fa fa-bars"></i>
-            All
-          </a>
-          <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasAllSection" aria-labelledby="allSection">
-            <div class="offcanvas-header navbar-color">
-              <h4 class="offcanvas-title text-white"> <span class="fa fa-user"> </span><i> Hello User!</i> </h4>
-              <button class="btn-close text-reset" type="button" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-            </div>
-            <div class="offcanvas-body px-0">
-              <div class="container">
-                <h5 class="px-3">Trending Today</h5>
-                <ul class="list-group">
-                  <a class="list-group-item list-group-item-action border-0 px-4" href="#">First</a>
-                  <a class="list-group-item list-group-item-action border-0 px-4" href="#">Second</a>
-                  <a class="list-group-item list-group-item-action border-0 px-4" href="#">Third</a>
-                  <a class="list-group-item list-group-item-action border-0 px-4" href="#">Four</a>
-                </ul>
-                <hr>
-                <h5 class="px-3">Trending Today</h5>
-                <ul class="list-group">
-                  <a class="list-group-item list-group-item-action border-0 px-4" href="#">First</a>
-                  <a class="list-group-item list-group-item-action border-0 px-4" href="#">Second</a>
-                  <a class="list-group-item list-group-item-action border-0 px-4" href="#">Third</a>
-                  <a class="list-group-item list-group-item-action border-0 px-4" href="#">Four</a>
-                </ul>
+        </div>
+        <!-- Cart Dropover Finish -->
+      </div>
+    </nav>
+    <nav class="container-fluid navbar  nav-sec navbar-color">
+      <a class="nav-item" href="#" data-bs-toggle="offcanvas" data-bs-target="#offcanvasAllSection" role="button" aria-label="allSection">
+        <i class="fa fa-bars"></i>
+        All
+      </a>
+      <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasAllSection" aria-labelledby="allSection">
+        <div class="offcanvas-header navbar-color">
+          <h4 class="offcanvas-title text-white"> <span class="fa fa-user"> </span><i> Hello User!</i> </h4>
+          <button class="btn-close text-reset" type="button" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body px-0">
+          <div class="container">
+            <h5 class="px-3">Trending Today</h5>
+            <ul class="list-group">
+              <a class="list-group-item list-group-item-action border-0 px-4" href="#">First</a>
+              <a class="list-group-item list-group-item-action border-0 px-4" href="#">Second</a>
+              <a class="list-group-item list-group-item-action border-0 px-4" href="#">Third</a>
+              <a class="list-group-item list-group-item-action border-0 px-4" href="#">Four</a>
+            </ul>
+            <hr>
+            <h5 class="px-3">Trending Today</h5>
+            <ul class="list-group">
+              <a class="list-group-item list-group-item-action border-0 px-4" href="#">First</a>
+              <a class="list-group-item list-group-item-action border-0 px-4" href="#">Second</a>
+              <a class="list-group-item list-group-item-action border-0 px-4" href="#">Third</a>
+              <a class="list-group-item list-group-item-action border-0 px-4" href="#">Four</a>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <a class="nav-item" href="#">
+        Sell
+        </div>
+        <a class=" nav-item" href="#">
+          Best Sellers
+        </a>
+        <a class="nav-item" href="#">
+          Today's Deals
+        </a>
+        <a class="nav-item" href="#">
+          New Releases
+        </a>
+        <a class="nav-item" href="#">
+          Electronics
+        </a>
+        <a class="nav-item" href="#">
+          Fashion
+        </a>
+    </nav>
+  </header>
+  <div class="ReturnOrderMainContent">
+    <section class="main">
+      <div class="container">
+        <ul class="nav nav-tabs flex-column flex-sm-row" role="tablist">
+          <li class="nav-item" role="presentation"><a class="nav-link detail-nav-link active" data-bs-toggle="tab" href="#orders" role="tab" aria-selected="true">Orders</a></li>
+          <li class="nav-item" role="presentation"><a class="nav-link detail-nav-link" data-bs-toggle="tab" href="#BuyAgain" role="tab" aria-selected="false" tabindex="-1">Buy Again</a></li>
+          <li class="nav-item" role="presentation"><a class="nav-link detail-nav-link" data-bs-toggle="tab" href="#NotYetShipped" role="tab" aria-selected="false" tabindex="-1">Not Yet Shipped</a></li>
+          <li class="nav-item" role="presentation"><a class="nav-link detail-nav-link" data-bs-toggle="tab" href="#CancelledOrders" role="tab" aria-selected="false" tabindex="-1">Cancelled Orders</a></li>
+        </ul>
+        <div class="tab-content">
+          <div class="tab-pane px-3 active show" id="orders" role="tabpanel">
+            <section class="h-100 gradient-custom">
+              <div class="container py-5 h-100">
+                <div class="row d-flex justify-content-center align-items-center h-100">
+                  <div class="col-lg-10 col-xl-8">
+                    <div class="card" style="border-radius: 10px;">
+                      <div class="card-header px-4 py-5">
+                        <h5 class="text-muted mb-0 OrderUpperText">Thanks for your Order with us ,<span class="orderEmp">Akash</span>!</h5>
+                      </div>
+                      <div class="card-body p-4">
+                        <div class="d-flex justify-content-between align-items-center mb-4">
+                          <p class="lead fw-normal mb-0 orderEmp">Receipt</p>
+                          <p class="small text-muted mb-0">Receipt Voucher : 1KAU9-84UIL</p>
+                        </div>
+                        <div class="card shadow-0 border mb-4">
+                          <div class="card-body">
+                            <div class="row">
+                              <div class="col-md-2">
+                                <img src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Products/13.webp" class="img-fluid" alt="Phone">
+                              </div>
+                              <div class="col-md-2 text-center d-flex justify-content-center align-items-center">
+                                <p class="text-muted mb-0">Samsung Galaxy</p>
+                              </div>
+                              <div class="col-md-2 text-center d-flex justify-content-center align-items-center">
+                                <p class="text-muted mb-0 small">White</p>
+                              </div>
+                              <div class="col-md-2 text-center d-flex justify-content-center align-items-center">
+                                <p class="text-muted mb-0 small">Capacity: 64GB</p>
+                              </div>
+                              <div class="col-md-2 text-center d-flex justify-content-center align-items-center">
+                                <p class="text-muted mb-0 small">Qty: 1</p>
+                              </div>
+                              <div class="col-md-2 text-center d-flex justify-content-center align-items-center">
+                                <p class="text-muted mb-0 small">$499</p>
+                              </div>
+                            </div>
+                            <hr class="mb-4" style="background-color: #e0e0e0; opacity: 1;">
+                            <div class="row d-flex align-items-center">
+                              <div class="col-md-2">
+                                <p class="text-muted mb-0 small">Track Order</p>
+                              </div>
+                              <div class="col-md-10">
+                                <!-- <div class="progress" style="height: 6px; border-radius: 16px;">
+                                    <div class="progress-bar progressBar gradient-custom-2" role="progressbar" aria-valuenow="65"
+                                      aria-valuemin="0" aria-valuemax="100"></div>
+                                  </div> -->
+                                <div class="d-flex justify-content-around mb-1">
+                                  <p class="text-muted mt-1 mb-0 small ms-xl-5">Give Feedback</p>
+                                  <p class="text-muted mt-1 mb-0 small ms-xl-5">Return/Replace</p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="card shadow-0 border mb-4">
+                          <div class="card-body">
+                            <div class="row">
+                              <div class="col-md-2">
+                                <img src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Products/1.webp" class="img-fluid" alt="Phone">
+                              </div>
+                              <div class="col-md-2 text-center d-flex justify-content-center align-items-center">
+                                <p class="text-muted mb-0">iPad</p>
+                              </div>
+                              <div class="col-md-2 text-center d-flex justify-content-center align-items-center">
+                                <p class="text-muted mb-0 small">Pink rose</p>
+                              </div>
+                              <div class="col-md-2 text-center d-flex justify-content-center align-items-center">
+                                <p class="text-muted mb-0 small">Capacity: 32GB</p>
+                              </div>
+                              <div class="col-md-2 text-center d-flex justify-content-center align-items-center">
+                                <p class="text-muted mb-0 small">Qty: 1</p>
+                              </div>
+                              <div class="col-md-2 text-center d-flex justify-content-center align-items-center">
+                                <p class="text-muted mb-0 small">$399</p>
+                              </div>
+                            </div>
+                            <hr class="mb-4" style="background-color: #e0e0e0; opacity: 1;">
+                            <div class="row d-flex align-items-center">
+                              <div class="col-md-2">
+                                <p class="text-muted mb-0 small">Track Order</p>
+                              </div>
+                              <div class="col-md-10">
+                                <!-- <div class="progress" style="height: 6px; border-radius: 16px;">
+                                    <div class="progress-bar progressBar gradient-custom-2" role="progressbar" aria-valuenow="20"
+                                      aria-valuemin="0" aria-valuemax="100"></div>
+                                  </div> -->
+                                <div class="d-flex justify-content-around mb-1">
+                                  <p class="text-muted mt-1 mb-0 small ms-xl-5">Give Feedback</p>
+                                  <p class="text-muted mt-1 mb-0 small ms-xl-5">Return/Replace</p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="d-flex justify-content-between pt-2">
+                          <p class="fw-bold mb-0">Order Details</p>
+                          <p class="text-muted mb-0"><span class="fw-bold me-4">Total</span> $898.00</p>
+                        </div>
+
+                        <div class="d-flex justify-content-between pt-2">
+                          <p class="text-muted mb-0">Invoice Number : 788152</p>
+                          <p class="text-muted mb-0"><span class="fw-bold me-4">Discount</span> $19.00</p>
+                        </div>
+
+                        <div class="d-flex justify-content-between">
+                          <p class="text-muted mb-0">Invoice Date : 22 Dec,2019</p>
+                          <p class="text-muted mb-0"><span class="fw-bold me-4">GST 18%</span> 123</p>
+                        </div>
+
+                        <div class="d-flex justify-content-between mb-5">
+                          <p class="text-muted mb-0">Recepits Voucher : 18KU-62IIK</p>
+                          <p class="text-muted mb-0"><span class="fw-bold me-4">Delivery Charges</span> Free</p>
+                        </div>
+                      </div>
+                      <div class="card-footer border-0 px-4 py-5 ordersLowerArea">
+                        <h5 class="d-flex align-items-center justify-content-end text-white text-uppercase mb-0">Total
+                          paid: <span class="h2 mb-0 ms-2">$1040</span></h5>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+          <div class="tab-pane" id="BuyAgain" role="tabpanel">
+            <div class="row">
+              <div class="col-lg-6">
+                <table class="table text-sm">
+                  <tbody>
+                    <tr>
+                      <th class="text-uppercase fw-normal border-0">Product #</th>
+                      <td class="text-muted border-0">Lorem ipsum dolor sit amet</td>
+                    </tr>
+                    <tr>
+                      <th class="text-uppercase fw-normal ">Available packaging</th>
+                      <td class="text-muted ">LOLDuis aute irure dolor in reprehenderit</td>
+                    </tr>
+                    <tr>
+                      <th class="text-uppercase fw-normal ">Weight</th>
+                      <td class="text-muted ">dolor sit amet</td>
+                    </tr>
+                    <tr>
+                      <th class="text-uppercase fw-normal ">Sunt in culpa qui</th>
+                      <td class="text-muted ">Lorem ipsum dolor sit amet</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="col-lg-6">
+                <table class="table text-sm">
+                  <tbody>
+                    <tr>
+                      <th class="text-uppercase fw-normal border-0">Weight</th>
+                      <td class="text-muted border-0">dolor sit amet </td>
+                    </tr>
+                    <tr>
+                      <th class="text-uppercase fw-normal ">Sunt in culpa qui</th>
+                      <td class="text-muted ">Lorem ipsum dolor sit amet </td>
+                    </tr>
+                    <tr>
+                      <th class="text-uppercase fw-normal ">Product #</th>
+                      <td class="text-muted ">Lorem ipsum dolor sit amet </td>
+                    </tr>
+                    <tr>
+                      <th class="text-uppercase fw-normal ">Available packaging</th>
+                      <td class="text-muted ">LOLDuis aute irure dolor in reprehenderit </td>
+                    </tr>
+                  </tbody>
+                </table>
               </div>
             </div>
           </div>
-    
-          <a class="nav-item" href="#">
-            Sell
+          <div class="tab-pane" id="NotYetShipped" role="tabpanel">
+            <!-- <div class="row mb-5">
+              <div class="col-lg-10 col-xl-9">
+                <div class="review d-flex">
+                  <div class="flex-shrink-0 text-center me-4 me-xl-5"><img class="review-image" src="https://d19m59y37dris4.cloudfront.net/sell/2-0-1/img/person-1.jpg" alt="Han Solo"><span class="text-uppercase text-muted">Dec 2018</span></div>
+                  <div>
+                    <h5 class="mt-2 mb-1">Han Solo</h5>
+                    <div class="mb-2"><i class="fa fa-xs fa-star text-warning"></i><i class="fa fa-xs fa-star text-warning"></i><i class="fa fa-xs fa-star text-warning"></i><i class="fa fa-xs fa-star text-warning"></i><i class="fa fa-xs fa-star text-warning"></i>
+                    </div>
+                    <p class="text-muted">One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed into a horrible vermin. He lay on his armour-like back, and if he lifted his head a little he could see his brown belly, slightly domed and divided by arches into stiff sections </p>
+                  </div>
+                </div>
+                <div class="review d-flex">
+                  <div class="flex-shrink-0 text-center me-4 me-xl-5"><img class="review-image" src="https://d19m59y37dris4.cloudfront.net/sell/2-0-1/img/person-2.jpg" alt="Luke Skywalker"><span class="text-uppercase text-muted">Dec 2018</span></div>
+                  <div>
+                    <h5 class="mt-2 mb-1">Luke Skywalker</h5>
+                    <div class="mb-2"><i class="fa fa-xs fa-star text-warning"></i><i class="fa fa-xs fa-star text-warning"></i><i class="fa fa-xs fa-star text-warning"></i><i class="fa fa-xs fa-star text-warning"></i><i class="fa fa-xs fa-star text-gray-200"></i>
+                    </div>
+                    <p class="text-muted">The bedding was hardly able to cover it and seemed ready to slide off any moment. His many legs, pitifully thin compared with the size of the rest of him, waved about helplessly as he looked. "What's happened to me?" he thought. It wasn't a dream. </p>
+                  </div>
+                </div>
+                <div class="review d-flex">
+                  <div class="flex-shrink-0 text-center me-4 me-xl-5"><img class="review-image" src="https://d19m59y37dris4.cloudfront.net/sell/2-0-1/img/person-3.jpg" alt="Princess Leia"><span class="text-uppercase text-muted">Dec 2018</span></div>
+                  <div>
+                    <h5 class="mt-2 mb-1">Princess Leia</h5>
+                    <div class="mb-2"><i class="fa fa-xs fa-star text-warning"></i><i class="fa fa-xs fa-star text-warning"></i><i class="fa fa-xs fa-star text-warning"></i><i class="fa fa-xs fa-star text-gray-200"></i><i class="fa fa-xs fa-star text-gray-200"></i>
+                    </div>
+                    <p class="text-muted">His room, a proper human room although a little too small, lay peacefully between its four familiar walls. A collection of textile samples lay spread out on the table. </p>
+                  </div>
+                </div>
+                <div class="review d-flex">
+                  <div class="flex-shrink-0 text-center me-4 me-xl-5"><img class="review-image" src="https://d19m59y37dris4.cloudfront.net/sell/2-0-1/img/person-4.jpg" alt="Jabba Hut"><span class="text-uppercase text-muted">Dec 2018</span></div>
+                  <div>
+                    <h5 class="mt-2 mb-1">Jabba Hut</h5>
+                    <div class="mb-2"><i class="fa fa-xs fa-star text-warning"></i><i class="fa fa-xs fa-star text-warning"></i><i class="fa fa-xs fa-star text-warning"></i><i class="fa fa-xs fa-star text-warning"></i><i class="fa fa-xs fa-star text-warning"></i>
+                    </div>
+                    <p class="text-muted">Samsa was a travelling salesman - and above it there hung a picture that he had recently cut out of an illustrated magazine and housed in a nice, gilded frame. </p>
+                  </div>
+                </div>
+                <div class="px-3">
+                  <h5 class="text-uppercase mb-4">Leave a review</h5>
+                  <form class="form" id="contact-form" method="post" action="contact.php">
+                    <div class="row">
+                      <div class="col-sm-6">
+                        <div class="mb-4">
+                          <label class="form-label" for="name">Your name *</label>
+                          <input class="form-control" type="text" name="name" id="name" placeholder="Enter your name" required="required">
+                        </div>
+                      </div>
+                      <div class="col-sm-6">
+                        <div class="mb-4">
+                          <label class="form-label" for="rating">Your rating *</label>
+                          <select class="custom-select focus-shadow-0" name="rating" id="rating">
+                            <option value="5">★★★★★ (5/5)</option>
+                            <option value="4">★★★★☆ (4/5)</option>
+                            <option value="3">★★★☆☆ (3/5)</option>
+                            <option value="2">★★☆☆☆ (2/5)</option>
+                            <option value="1">★☆☆☆☆ (1/5)</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="mb-4">
+                      <label class="form-label" for="email">Your email *</label>
+                      <input class="form-control" type="email" name="email" id="email" placeholder="Enter your  email" required="required">
+                    </div>
+                    <div class="mb-4">
+                      <label class="form-label" for="review">Review text *</label>
+                      <textarea class="form-control" rows="4" name="review" id="review" placeholder="Enter your review" required="required"></textarea>
+                    </div>
+                    <button class="btn btn-outline-dark" type="submit">Post review</button>
+                  </form>
+                </div>
+              </div>
+            </div> -->
+            <section class="vh-25 gradient-custom-2 NotYetShippedClass">
+              <div class="container py-5 h-100 NotYetShippedInnerClass">
+                <div class="row d-flex justify-content-center align-items-center h-100">
+                  <div class="col-md-10 col-lg-8 col-xl-6 NotYetShippedProductCard">
+                    <div class="card card-stepper" style="border-radius: 16px;">
+                      <div class="card-header p-4">
+                        <div class="d-flex justify-content-between align-items-center">
+                          <div>
+                            <p class="text-muted mb-2"> Order ID <span class="fw-bold text-body">1222528743</span></p>
+                            <p class="text-muted mb-0"> Place On <span class="fw-bold text-body">12,March 2019</span> </p>
+                          </div>
+                          <div>
+                            <h6 class="mb-0"> <a href="#">View Details</a> </h6>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="card-body p-4">
+                        <div class="d-flex flex-row mb-4 pb-2">
+                          <div class="flex-fill">
+                            <h5 class="bold">Headphones Bose 35 II</h5>
+                            <p class="text-muted"> Qt: 1 item</p>
+                            <h4 class="mb-3"> $ 299 <span class="small text-muted"> via (COD) </span></h4>
+                            <p class="text-muted">Tracking Status on: <span class="text-body">11:30pm, Today</span></p>
+                          </div>
+                          <div>
+                            <img class="align-self-center img-fluid" src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Products/6.webp" width="250">
+                          </div>
+                        </div>
+                        <div class="progress" style="height: 6px; border-radius: 16px;">
+                          <div class="progress-bar progressBar gradient-custom-2 pb1" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                        <ul id="progressbar-1" class="mx-0 mt-0 mb-5 px-0 pt-0 pb-4">
+                          <!-- <li class="step0 active" id="step1"><span style="margin-left: 22px; margin-top: 12px;">PLACED</span></li>
+                          <li class="step0 active text-center" id="step2"><span>SHIPPED</span></li>
+                          <li class="step0 text-muted text-end" id="step3"><span style="margin-right: 22px;">DELIVERED</span></li> -->
+                          <li class=""><span>PLACED</span></li>
+                          <li class=" text-center"><span>SHIPPED</span></li>
+                          <li class="text-end"><span>DELIVERED</span></li>
+
+                        </ul>
+                      </div>
+                      <div class="card-footer p-4">
+                        <div class="d-flex justify-content-between">
+                          <h5 class="fw-normal mb-0"><a href="#!">Track</a></h5>
+                          <div class="border-start h-100"></div>
+                          <h5 class="fw-normal mb-0"><a href="#!">Cancel</a></h5>
+                          <div class="border-start h-100"></div>
+                          <h5 class="fw-normal mb-0"><a href="#!">Pre-pay</a></h5>
+                          <div class="border-start h-100"></div>
+                          <h5 class="fw-normal mb-0"><a href="#!" class="text-muted"><i class="fas fa-ellipsis-v"></i></a>
+                          </h5>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-10 col-lg-8 col-xl-6 NotYetShippedProductCard">
+                    <div class="card card-stepper" style="border-radius: 16px;">
+                      <div class="card-header p-4">
+                        <div class="d-flex justify-content-between align-items-center">
+                          <div>
+                            <p class="text-muted mb-2"> Order ID <span class="fw-bold text-body">1222528743</span></p>
+                            <p class="text-muted mb-0"> Place On <span class="fw-bold text-body">12,March 2019</span> </p>
+                          </div>
+                          <div>
+                            <h6 class="mb-0"> <a href="#">View Details</a> </h6>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="card-body p-4">
+                        <div class="d-flex flex-row mb-4 pb-2">
+                          <div class="flex-fill">
+                            <h5 class="bold">Headphones Bose 35 II</h5>
+                            <p class="text-muted"> Qt: 1 item</p>
+                            <h4 class="mb-3"> $ 299 <span class="small text-muted"> via (COD) </span></h4>
+                            <p class="text-muted">Tracking Status on: <span class="text-body">11:30pm, Today</span></p>
+                          </div>
+                          <div>
+                            <img class="align-self-center img-fluid" src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Products/6.webp" width="250">
+                          </div>
+                        </div>
+                        <div class="progress" style="height: 6px; border-radius: 16px;">
+                          <div class="progress-bar progressBar gradient-custom-2 pb1" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                        <ul id="progressbar-1" class="mx-0 mt-0 mb-5 px-0 pt-0 pb-4">
+                          <!-- <li class="step0 active" id="step1"><span style="margin-left: 22px; margin-top: 12px;">PLACED</span></li>
+                          <li class="step0 active text-center" id="step2"><span>SHIPPED</span></li>
+                          <li class="step0 text-muted text-end" id="step3"><span style="margin-right: 22px;">DELIVERED</span></li> -->
+                          <li class=""><span>PLACED</span></li>
+                          <li class=" text-center"><span>SHIPPED</span></li>
+                          <li class="text-end"><span>DELIVERED</span></li>
+
+                        </ul>
+                      </div>
+                      <div class="card-footer p-4">
+                        <div class="d-flex justify-content-between">
+                          <h5 class="fw-normal mb-0"><a href="#!">Track</a></h5>
+                          <div class="border-start h-100"></div>
+                          <h5 class="fw-normal mb-0"><a href="#!">Cancel</a></h5>
+                          <div class="border-start h-100"></div>
+                          <h5 class="fw-normal mb-0"><a href="#!">Pre-pay</a></h5>
+                          <div class="border-start h-100"></div>
+                          <h5 class="fw-normal mb-0"><a href="#!" class="text-muted"><i class="fas fa-ellipsis-v"></i></a>
+                          </h5>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-10 col-lg-8 col-xl-6 NotYetShippedProductCard">
+                    <div class="card card-stepper" style="border-radius: 16px;">
+                      <div class="card-header p-4">
+                        <div class="d-flex justify-content-between align-items-center">
+                          <div>
+                            <p class="text-muted mb-2"> Order ID <span class="fw-bold text-body">1222528743</span></p>
+                            <p class="text-muted mb-0"> Place On <span class="fw-bold text-body">12,March 2019</span> </p>
+                          </div>
+                          <div>
+                            <h6 class="mb-0"> <a href="#">View Details</a> </h6>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="card-body p-4">
+                        <div class="d-flex flex-row mb-4 pb-2">
+                          <div class="flex-fill">
+                            <h5 class="bold">Headphones Bose 35 II</h5>
+                            <p class="text-muted"> Qt: 1 item</p>
+                            <h4 class="mb-3"> $ 299 <span class="small text-muted"> via (COD) </span></h4>
+                            <p class="text-muted">Tracking Status on: <span class="text-body">11:30pm, Today</span></p>
+                          </div>
+                          <div>
+                            <img class="align-self-center img-fluid" src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Products/6.webp" width="250">
+                          </div>
+                        </div>
+                        <div class="progress" style="height: 6px; border-radius: 16px;">
+                          <div class="progress-bar progressBar gradient-custom-2 pb1" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                        <ul id="progressbar-1" class="mx-0 mt-0 mb-5 px-0 pt-0 pb-4">
+                          <!-- <li class="step0 active" id="step1"><span style="margin-left: 22px; margin-top: 12px;">PLACED</span></li>
+                          <li class="step0 active text-center" id="step2"><span>SHIPPED</span></li>
+                          <li class="step0 text-muted text-end" id="step3"><span style="margin-right: 22px;">DELIVERED</span></li> -->
+                          <li class=""><span>PLACED</span></li>
+                          <li class=" text-center"><span>SHIPPED</span></li>
+                          <li class="text-end"><span>DELIVERED</span></li>
+
+                        </ul>
+                      </div>
+                      <div class="card-footer p-4">
+                        <div class="d-flex justify-content-between">
+                          <h5 class="fw-normal mb-0"><a href="#!">Track</a></h5>
+                          <div class="border-start h-100"></div>
+                          <h5 class="fw-normal mb-0"><a href="#!">Cancel</a></h5>
+                          <div class="border-start h-100"></div>
+                          <h5 class="fw-normal mb-0"><a href="#!">Pre-pay</a></h5>
+                          <div class="border-start h-100"></div>
+                          <h5 class="fw-normal mb-0"><a href="#!" class="text-muted"><i class="fas fa-ellipsis-v"></i></a>
+                          </h5>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-10 col-lg-8 col-xl-6 NotYetShippedProductCard">
+                    <div class="card card-stepper" style="border-radius: 16px;">
+                      <div class="card-header p-4">
+                        <div class="d-flex justify-content-between align-items-center">
+                          <div>
+                            <p class="text-muted mb-2"> Order ID <span class="fw-bold text-body">1222528743</span></p>
+                            <p class="text-muted mb-0"> Place On <span class="fw-bold text-body">12,March 2019</span> </p>
+                          </div>
+                          <div>
+                            <h6 class="mb-0"> <a href="#">View Details</a> </h6>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="card-body p-4">
+                        <div class="d-flex flex-row mb-4 pb-2">
+                          <div class="flex-fill">
+                            <h5 class="bold">Headphones Bose 35 II</h5>
+                            <p class="text-muted"> Qt: 1 item</p>
+                            <h4 class="mb-3"> $ 299 <span class="small text-muted"> via (COD) </span></h4>
+                            <p class="text-muted">Tracking Status on: <span class="text-body">11:30pm, Today</span></p>
+                          </div>
+                          <div>
+                            <img class="align-self-center img-fluid" src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Products/6.webp" width="250">
+                          </div>
+                        </div>
+                        <div class="progress" style="height: 6px; border-radius: 16px;">
+                          <div class="progress-bar progressBar gradient-custom-2 pb1" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                        <ul id="progressbar-1" class="mx-0 mt-0 mb-5 px-0 pt-0 pb-4">
+                          <!-- <li class="step0 active" id="step1"><span style="margin-left: 22px; margin-top: 12px;">PLACED</span></li>
+                          <li class="step0 active text-center" id="step2"><span>SHIPPED</span></li>
+                          <li class="step0 text-muted text-end" id="step3"><span style="margin-right: 22px;">DELIVERED</span></li> -->
+                          <li class=""><span>PLACED</span></li>
+                          <li class=" text-center"><span>SHIPPED</span></li>
+                          <li class="text-end"><span>DELIVERED</span></li>
+
+                        </ul>
+                      </div>
+                      <div class="card-footer p-4">
+                        <div class="d-flex justify-content-between">
+                          <h5 class="fw-normal mb-0"><a href="#!">Track</a></h5>
+                          <div class="border-start h-100"></div>
+                          <h5 class="fw-normal mb-0"><a href="#!">Cancel</a></h5>
+                          <div class="border-start h-100"></div>
+                          <h5 class="fw-normal mb-0"><a href="#!">Pre-pay</a></h5>
+                          <div class="border-start h-100"></div>
+                          <h5 class="fw-normal mb-0"><a href="#!" class="text-muted"><i class="fas fa-ellipsis-v"></i></a>
+                          </h5>
+                        </div>
+                      </div>
+                    </div>
+                  </div>      
+                  <div class="col-md-10 col-lg-8 col-xl-6 NotYetShippedProductCard">
+                    <div class="card card-stepper" style="border-radius: 16px;">
+                      <div class="card-header p-4">
+                        <div class="d-flex justify-content-between align-items-center">
+                          <div>
+                            <p class="text-muted mb-2"> Order ID <span class="fw-bold text-body">1222528743</span></p>
+                            <p class="text-muted mb-0"> Place On <span class="fw-bold text-body">12,March 2019</span> </p>
+                          </div>
+                          <div>
+                            <h6 class="mb-0"> <a href="#">View Details</a> </h6>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="card-body p-4">
+                        <div class="d-flex flex-row mb-4 pb-2">
+                          <div class="flex-fill">
+                            <h5 class="bold">Headphones Bose 35 II</h5>
+                            <p class="text-muted"> Qt: 1 item</p>
+                            <h4 class="mb-3"> $ 299 <span class="small text-muted"> via (COD) </span></h4>
+                            <p class="text-muted">Tracking Status on: <span class="text-body">11:30pm, Today</span></p>
+                          </div>
+                          <div>
+                            <img class="align-self-center img-fluid" src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Products/6.webp" width="250">
+                          </div>
+                        </div>
+                        <div class="progress" style="height: 6px; border-radius: 16px;">
+                          <div class="progress-bar progressBar gradient-custom-2 pb1" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                        <ul id="progressbar-1" class="mx-0 mt-0 mb-5 px-0 pt-0 pb-4">
+                          <!-- <li class="step0 active" id="step1"><span style="margin-left: 22px; margin-top: 12px;">PLACED</span></li>
+                          <li class="step0 active text-center" id="step2"><span>SHIPPED</span></li>
+                          <li class="step0 text-muted text-end" id="step3"><span style="margin-right: 22px;">DELIVERED</span></li> -->
+                          <li class=""><span>PLACED</span></li>
+                          <li class=" text-center"><span>SHIPPED</span></li>
+                          <li class="text-end"><span>DELIVERED</span></li>
+
+                        </ul>
+                      </div>
+                      <div class="card-footer p-4">
+                        <div class="d-flex justify-content-between">
+                          <h5 class="fw-normal mb-0"><a href="#!">Track</a></h5>
+                          <div class="border-start h-100"></div>
+                          <h5 class="fw-normal mb-0"><a href="#!">Cancel</a></h5>
+                          <div class="border-start h-100"></div>
+                          <h5 class="fw-normal mb-0"><a href="#!">Pre-pay</a></h5>
+                          <div class="border-start h-100"></div>
+                          <h5 class="fw-normal mb-0"><a href="#!" class="text-muted"><i class="fas fa-ellipsis-v"></i></a>
+                          </h5>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-10 col-lg-8 col-xl-6 NotYetShippedProductCard">
+                    <div class="card card-stepper" style="border-radius: 16px;">
+                      <div class="card-header p-4">
+                        <div class="d-flex justify-content-between align-items-center">
+                          <div>
+                            <p class="text-muted mb-2"> Order ID <span class="fw-bold text-body">1222528743</span></p>
+                            <p class="text-muted mb-0"> Place On <span class="fw-bold text-body">12,March 2019</span> </p>
+                          </div>
+                          <div>
+                            <h6 class="mb-0"> <a href="#">View Details</a> </h6>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="card-body p-4">
+                        <div class="d-flex flex-row mb-4 pb-2">
+                          <div class="flex-fill">
+                            <h5 class="bold">Headphones Bose 35 II</h5>
+                            <p class="text-muted"> Qt: 1 item</p>
+                            <h4 class="mb-3"> $ 299 <span class="small text-muted"> via (COD) </span></h4>
+                            <p class="text-muted">Tracking Status on: <span class="text-body">11:30pm, Today</span></p>
+                          </div>
+                          <div>
+                            <img class="align-self-center img-fluid" src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Products/6.webp" width="250">
+                          </div>
+                        </div>
+                        <div class="progress" style="height: 6px; border-radius: 16px;">
+                          <div class="progress-bar progressBar gradient-custom-2 pb1" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                        <ul id="progressbar-1" class="mx-0 mt-0 mb-5 px-0 pt-0 pb-4">
+                          <!-- <li class="step0 active" id="step1"><span style="margin-left: 22px; margin-top: 12px;">PLACED</span></li>
+                          <li class="step0 active text-center" id="step2"><span>SHIPPED</span></li>
+                          <li class="step0 text-muted text-end" id="step3"><span style="margin-right: 22px;">DELIVERED</span></li> -->
+                          <li class=""><span>PLACED</span></li>
+                          <li class=" text-center"><span>SHIPPED</span></li>
+                          <li class="text-end"><span>DELIVERED</span></li>
+
+                        </ul>
+                      </div>
+                      <div class="card-footer p-4">
+                        <div class="d-flex justify-content-between">
+                          <h5 class="fw-normal mb-0"><a href="#!">Track</a></h5>
+                          <div class="border-start h-100"></div>
+                          <h5 class="fw-normal mb-0"><a href="#!">Cancel</a></h5>
+                          <div class="border-start h-100"></div>
+                          <h5 class="fw-normal mb-0"><a href="#!">Pre-pay</a></h5>
+                          <div class="border-start h-100"></div>
+                          <h5 class="fw-normal mb-0"><a href="#!" class="text-muted"><i class="fas fa-ellipsis-v"></i></a>
+                          </h5>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-10 col-lg-8 col-xl-6 NotYetShippedProductCard">
+                    <div class="card card-stepper" style="border-radius: 16px;">
+                      <div class="card-header p-4">
+                        <div class="d-flex justify-content-between align-items-center">
+                          <div>
+                            <p class="text-muted mb-2"> Order ID <span class="fw-bold text-body">1222528743</span></p>
+                            <p class="text-muted mb-0"> Place On <span class="fw-bold text-body">12,March 2019</span> </p>
+                          </div>
+                          <div>
+                            <h6 class="mb-0"> <a href="#">View Details</a> </h6>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="card-body p-4">
+                        <div class="d-flex flex-row mb-4 pb-2">
+                          <div class="flex-fill">
+                            <h5 class="bold">Headphones Bose 35 II</h5>
+                            <p class="text-muted"> Qt: 1 item</p>
+                            <h4 class="mb-3"> $ 299 <span class="small text-muted"> via (COD) </span></h4>
+                            <p class="text-muted">Tracking Status on: <span class="text-body">11:30pm, Today</span></p>
+                          </div>
+                          <div>
+                            <img class="align-self-center img-fluid" src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Products/6.webp" width="250">
+                          </div>
+                        </div>
+                        <div class="progress" style="height: 6px; border-radius: 16px;">
+                          <div class="progress-bar progressBar gradient-custom-2 pb1" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                        <ul id="progressbar-1" class="mx-0 mt-0 mb-5 px-0 pt-0 pb-4">
+                          <!-- <li class="step0 active" id="step1"><span style="margin-left: 22px; margin-top: 12px;">PLACED</span></li>
+                          <li class="step0 active text-center" id="step2"><span>SHIPPED</span></li>
+                          <li class="step0 text-muted text-end" id="step3"><span style="margin-right: 22px;">DELIVERED</span></li> -->
+                          <li class=""><span>PLACED</span></li>
+                          <li class=" text-center"><span>SHIPPED</span></li>
+                          <li class="text-end"><span>DELIVERED</span></li>
+
+                        </ul>
+                      </div>
+                      <div class="card-footer p-4">
+                        <div class="d-flex justify-content-between">
+                          <h5 class="fw-normal mb-0"><a href="#!">Track</a></h5>
+                          <div class="border-start h-100"></div>
+                          <h5 class="fw-normal mb-0"><a href="#!">Cancel</a></h5>
+                          <div class="border-start h-100"></div>
+                          <h5 class="fw-normal mb-0"><a href="#!">Pre-pay</a></h5>
+                          <div class="border-start h-100"></div>
+                          <h5 class="fw-normal mb-0"><a href="#!" class="text-muted"><i class="fas fa-ellipsis-v"></i></a>
+                          </h5>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+          <div class="tab-pane" id="CancelledOrders" role="tabpanel">
+            <div class="row">
+              <div class="col-lg-6">
+                <table class="table text-sm">
+                  <tbody>
+                    <tr>
+                      <th class="text-uppercase fw-normal border-0">Product #</th>
+                      <td class="text-muted border-0">Lorem ipsum dolor sit amet</td>
+                    </tr>
+                    <tr>
+                      <th class="text-uppercase fw-normal ">Available packaging</th>
+                      <td class="text-muted ">LOLDuis aute irure dolor in reprehenderit</td>
+                    </tr>
+                    <tr>
+                      <th class="text-uppercase fw-normal ">Weight</th>
+                      <td class="text-muted ">dolor sit amet</td>
+                    </tr>
+                    <tr>
+                      <th class="text-uppercase fw-normal ">Sunt in culpa qui</th>
+                      <td class="text-muted ">Lorem ipsum dolor sit amet</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="col-lg-6">
+                <table class="table text-sm">
+                  <tbody>
+                    <tr>
+                      <th class="text-uppercase fw-normal border-0">Weight</th>
+                      <td class="text-muted border-0">dolor sit amet </td>
+                    </tr>
+                    <tr>
+                      <th class="text-uppercase fw-normal ">Sunt in culpa qui</th>
+                      <td class="text-muted ">Lorem ipsum dolor sit amet </td>
+                    </tr>
+                    <tr>
+                      <th class="text-uppercase fw-normal ">Product #</th>
+                      <td class="text-muted ">Lorem ipsum dolor sit amet </td>
+                    </tr>
+                    <tr>
+                      <th class="text-uppercase fw-normal ">Available packaging</th>
+                      <td class="text-muted ">LOLDuis aute irure dolor in reprehenderit </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
             </div>
-            <a class=" nav-item" href="#">
-              Best Sellers
-            </a>
-            <a class="nav-item" href="#">
-              Today's Deals
-            </a>
-            <a class="nav-item" href="#">
-              New Releases
-            </a>
-            <a class="nav-item" href="#">
-              Electronics
-            </a>
-            <a class="nav-item" href="#">
-              Fashion
-            </a>
-        </nav>
-    </header>
-    <div class="ReturnOrderMainContent">
-        
-    </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD" crossorigin="anonymous"></script>
+
 </body>
 
 </html>
