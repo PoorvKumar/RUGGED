@@ -1,0 +1,91 @@
+.slideupper{
+    display:flex;
+    flex-direction: column;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    background-color: white;
+    margin:2%;
+}
+.leftssid{
+    display:flex;
+    flex-direction: column;
+    margin-top:1%;
+    margin-left:1%;
+    margin-right:1%;
+    margin-bottom: 0%;
+}
+.p1{
+    font-size: large;
+    font-weight:600
+}
+.p2{
+    font-size: medium;
+    font-weight:500;
+    opacity:50%;
+}
+.upperbox{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.rightside{
+    margin:2%;
+}
+.product-slider{
+    border-top:ridge 1px rgb(224, 202, 202);
+}
+.starsRatingGreen {
+    line-height: normal;
+    display: inline-flex;
+    color: #fff;
+    padding: 4px;
+    border-radius: 3px;
+    font-weight: 500;
+    font-size: 12px;
+    vertical-align: middle;
+    background-color: #388e3c;
+}
+.line-1{
+    margin-top: 2rem;
+    font-weight: bold;
+    font-size: large;
+    text-align: center;
+}
+.line-2{
+    padding-top: 0.5rem;
+    text-align: center;
+    font-size: medium;
+
+}
+.innerStars {
+    margin: 4px 0 0 2px;
+    height: 10px !important;
+    width:10px !important;
+}
+.line-3{
+    padding-top: 0.25rem;
+    color: black;
+    text-align: center;
+}
+.momtxt{
+    font-weight: 600;
+}
+.greyclr{
+    color:grey;
+    font-weight: 500;
+    margin:8px 0 0 8px;
+}
+.gclr{
+    color:grey;
+    font-weight:400;
+    margin:8px 0 0 8px;
+    font-size:medium;
+}
+.greenclr{
+    color:green;
+    font-weight: 500;
+    margin:8px 0 0 8px;
+    font-size: small;
+}
+.line1:hover{
+    color:rgb(56, 56, 214);
+}
