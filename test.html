@@ -51,8 +51,8 @@
         flex-direction: column;
         /* justify-content: center; */
         align-items: center;
-        background-image: url('public/Images/productSliderBG/png-transparent-cartoon-illustration-cartoon-snow-mountain-cartoon-character-blue-angle.png');
-        background: ;
+        /* background-image: url('public/Images/productSliderBG/png-transparent-cartoon-illustration-cartoon-snow-mountain-cartoon-character-blue-angle.png'); */
+        background-size: cover;
       }
       .product-carousel
       {
@@ -61,7 +61,7 @@
 
       .prod-category div
       {
-        color: black;
+        color: rgb(255, 255, 255);
         font-size: xx-large;
         font-weight: 400;
         min-height: 10rem;
@@ -77,10 +77,6 @@
         padding: .5rem;
         border: transparent;
         border-radius: .5rem;
-      }
-      .prod-category button:hover
-      {
-        
       }
     </style>
   </head>
@@ -343,7 +339,7 @@
     </div>
 
     <div class="product-slider">
-      <div class="prod-category">
+      <div class="prod-category" style="background-image: url('public/Images/productSliderBG/png-transparent-cartoon-illustration-cartoon-snow-mountain-cartoon-character-blue-angle.png');">
         <div class="prod-category-head text-center">Trekking Essentials</div>
         <button class="shadow">View More</button>
       </div>
@@ -498,8 +494,8 @@
     </div>
 
     <div class="product-slider">
-      <div class="prod-category">
-        <div class="prod-category-head text-center">Trekking Essentials</div>
+      <div class="prod-category" style="background-image: url('public/Images/productSliderBG/camping.jpg');">
+        <div class="prod-category-head text-center">Camping Essentials</div>
         <button class="shadow">View More</button>
       </div>
       <div id="prel" class="product-carousel carousel slide" data-bs-ride="carousel">
