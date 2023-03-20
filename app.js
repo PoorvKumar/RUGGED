@@ -18,4 +18,7 @@ app.use('/index', (req, res, next) => {
 // {
 //   response.render('LandingPage/product-card-slider.ejs');
 // });
+app.use('/',(req,res)=>{
+  res.render('productSearchPage.ejs')
+})
 app.listen(3010);
