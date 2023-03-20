@@ -1,0 +1,37 @@
+.img-carousel {
+    height: 23rem;
+    /* background-image: url('images/test_carousel_background/03_TX_MustangIsland_Horizontal_5479and5431th_2_RGB_461a6777-3285-46f3-b8c6-174d4e8ac4a1.jpg'); */
+    background-size: cover;
+}
+
+.caro-prod-title {
+    font-size: 275%;
+    right: 4rem;
+    color: #ffffff;
+    /* text-align: center; */
+}
+
+.caro-prod-tag {
+    font-size: 185%;
+    color: #ffffff;
+}
+
+.caro-prod {
+    position: absolute;
+    left: 7rem;
+    top: 6rem;
+    text-align: center;
+}
+
+.caro-prod-price {
+    font-size: 150%;
+    color: #ffffff;
+    position: absolute;
+    top: 10rem;
+    right: 10rem;
+}
+
+a img {
+    object-fit: cover;
+    width: 100%;
+}
