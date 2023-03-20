@@ -23,6 +23,7 @@
       <link rel="stylesheet" href="public/css/main_navbar.css">
     <link rel="stylesheet" href="public/css/style.css">
     <link rel="stylesheet" href="public/css/product-card-scroll.css">
+    <link rel="stylesheet" href="public/css/slider2.css">
     <title>Test</title>
     <style>
       .img-carousel
@@ -40,7 +41,7 @@
       }
       .caro-prod-tag
       {
-        font-size: 250%;
+        font-size: 185%;
         color: #ffffff;
       }
       .caro-prod
@@ -65,6 +66,13 @@
         object-fit: cover;
         width: 100%;
       }
+
+      /* .main-page-tag
+      {
+        height: 4rem;
+        display: flex;
+        background-image: url('public/Images/icons/631d5d0903dfbe61966a8bb4a646308e.jpg');
+      } */
     </style>
   </head>
   <div id="overlay" onclick="overlayOff()"></div> <!--overlay entire page whenever needed-->
@@ -299,22 +307,27 @@
       <div class="carousel-inner">
         <div class="carousel-item active">
           <a href="#">
-            <img src="public/Images/carouselImages/1(1)'.jpg" alt="">
+            <div class="caro-prod">
+              <div class="caro-prod-title">New Hiking Collection</div>
+              <div class="caro-prod-tag">Time to Hike is Here...</div>
+            </div>
+            <div class="caro-prod-price">Starting from just 99/-</div>
+            <img src="public/Images/carouselImages/hiking collection.avif">
           </a>
         </div>
         <div class="carousel-item">
           <a href="#">
-            <img src="public/Images/carouselImages/1(1)'.jpg" alt="">
+            <img src="public/Images/carouselImages/FORCLAZ SHOOTING TREK_MOUNTAIN_PEAH20 HAUTE-SAVOIE (1).avif" alt="">
           </a>
         </div>
         <div class="carousel-item">
           <a href="#">
-            <img src="public/Images/carouselImages/1(1)'.jpg" alt="">
+            <img src="public/Images/carouselImages/WEDZE PA SKI FR500 PIQUANTE NEW AH20.avif" alt="">
           </a>
         </div>
         <div class="carousel-item">
           <a href="#">
-            <img src="public/Images/carouselImages/1(1)'.jpg" alt="">
+            <img src="public/Images/carouselImages/TREK MOUNTAIN PE23 BEAUFORTAIN ALPES FRANCE.avif" alt="">
           </a>
         </div>
       </div>
@@ -328,6 +341,257 @@
         <span class="sr-only">Next</span>
       </button>
     </div>
+
+    <!-- <div class="main-page-tag d-flex flex-row justify-content-around">
+      <div class="first-tag d-flex align-items-center">
+        <img src="public/Images/icons/shield.png" alt="" style="max-width: 1.5rem;">
+        100% Secure Payments
+      </div>
+      <div class="second-tag d-flex align-items-center">
+        <img src="public/Images/icons/shield.png" alt="" style="max-width: 1.5rem;">
+        Easy Returns
+      </div>
+      <div class="third-tag d-flex align-items-center">
+        <img src="public/Images/icons/shield.png" alt="" style="max-width: 1.5rem;">
+        1000+ Product Options
+      </div>
+    </div> -->
+
+    <div class="slideupper">
+      <div class="upperbox">
+          <div class="leftssid">
+              <div class="p1">Suggested for You</div>
+              <div class="p2">Based on your Activity</div>
+          </div>
+          <div class="rightside">
+              <button type="button" class="btn  btn-info">Primary</button>
+          </div>
+      </div>
+      <div class="product-slider">
+          <div id="product-carousel" class="carousel slide" data-bs-ride="carousel">
+              <div class="carousel-inner">
+                  <div class="carousel-item active">
+                      <div class="product-wrapper d-flex flex-inline justify-content-around">
+                          <a href="#" class="product-card-link">
+                              <div class="product-card">
+                                  <div class="prod-imag">
+                                      <img src="/public/Images/ProductImages/Shoes/shoes-removebg-preview.png" alt="">
+                                  </div>
+                                  <div class="line1">Product Name,Lorem ipsum dolor sit amet consectetur.</div>
+                                  <div class="line2"><span class="starsRatingGreen">4.2<img
+                                              src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMyIgaGVpZ2h0PSIxMiI+PHBhdGggZmlsbD0iI0ZGRiIgZD0iTTYuNSA5LjQzOWwtMy42NzQgMi4yMy45NC00LjI2LTMuMjEtMi44ODMgNC4yNTQtLjQwNEw2LjUuMTEybDEuNjkgNC4wMSA0LjI1NC40MDQtMy4yMSAyLjg4Mi45NCA0LjI2eiIvPjwvc3ZnPg=="
+                                              class="innerStars"></span><span class="greyclr">(2,991)</span></div>
+                                  <div class="line3"><span class="montxt">₹499</span><span class="gclr">
+                                          ̶4̶2̶2̶9̶</span><span class="greenclr">90% off</span></div>
+                              </div>
+                          </a>
+                          <a href="#" class="product-card-link">
+                              <div class="product-card">
+                                  <div class="prod-imag">
+                                      <img src="/public/Images/ProductImages/Shoes/shoes-removebg-preview.png" alt="">
+                                  </div>
+                                  <div class="line1">Product Name,Lorem ipsum dolor sit amet consectetur.</div>
+                                  <div class="line2"><span class="starsRatingGreen">4.2<img
+                                              src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMyIgaGVpZ2h0PSIxMiI+PHBhdGggZmlsbD0iI0ZGRiIgZD0iTTYuNSA5LjQzOWwtMy42NzQgMi4yMy45NC00LjI2LTMuMjEtMi44ODMgNC4yNTQtLjQwNEw2LjUuMTEybDEuNjkgNC4wMSA0LjI1NC40MDQtMy4yMSAyLjg4Mi45NCA0LjI2eiIvPjwvc3ZnPg=="
+                                              class="innerStars"></span><span class="greyclr">(2,991)</span></div>
+                                  <div class="line3"><span class="montxt">₹499</span><span class="gclr">
+                                          ̶4̶2̶2̶9̶</span><span class="greenclr">90% off</span></div>
+                              </div>
+                          </a>
+                          <a href="#" class="product-card-link">
+                              <div class="product-card">
+                                  <div class="prod-imag">
+                                      <img src="/public/Images/ProductImages/Shoes/shoes-removebg-preview.png" alt="">
+                                  </div>
+                                  <div class="line1">Product Name,Lorem ipsum dolor sit amet consectetur.</div>
+                                  <div class="line2"><span class="starsRatingGreen">4.2<img
+                                              src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMyIgaGVpZ2h0PSIxMiI+PHBhdGggZmlsbD0iI0ZGRiIgZD0iTTYuNSA5LjQzOWwtMy42NzQgMi4yMy45NC00LjI2LTMuMjEtMi44ODMgNC4yNTQtLjQwNEw2LjUuMTEybDEuNjkgNC4wMSA0LjI1NC40MDQtMy4yMSAyLjg4Mi45NCA0LjI2eiIvPjwvc3ZnPg=="
+                                              class="innerStars"></span><span class="greyclr">(2,991)</span></div>
+                                  <div class="line3"><span class="montxt">₹499</span><span class="gclr">
+                                          ̶4̶2̶2̶9̶</span><span class="greenclr">90% off</span></div>
+                              </div>
+                          </a>
+                          <a href="#" class="product-card-link">
+                              <div class="product-card">
+                                  <div class="prod-imag">
+                                      <img src="/public/Images/ProductImages/Shoes/shoes-removebg-preview.png" alt="">
+                                  </div>
+                                  <div class="line1">Product Name,Lorem ipsum dolor sit amet consectetur.</div>
+                                  <div class="line2"><span class="starsRatingGreen">4.2<img
+                                              src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMyIgaGVpZ2h0PSIxMiI+PHBhdGggZmlsbD0iI0ZGRiIgZD0iTTYuNSA5LjQzOWwtMy42NzQgMi4yMy45NC00LjI2LTMuMjEtMi44ODMgNC4yNTQtLjQwNEw2LjUuMTEybDEuNjkgNC4wMSA0LjI1NC40MDQtMy4yMSAyLjg4Mi45NCA0LjI2eiIvPjwvc3ZnPg=="
+                                              class="innerStars"></span><span class="greyclr">(2,991)</span></div>
+                                  <div class="line3"><span class="montxt">₹499</span><span class="gclr">
+                                          ̶4̶2̶2̶9̶</span><span class="greenclr">90% off</span></div>
+                              </div>
+                          </a>
+                          <a href="#" class="product-card-link">
+                              <div class="product-card">
+                                  <div class="prod-imag">
+                                      <img src="/public/Images/ProductImages/Shoes/shoes-removebg-preview.png" alt="">
+                                  </div>
+                                  <div class="line1">Product Name,Lorem ipsum dolor sit amet consectetur.</div>
+                                  <div class="line2"><span class="starsRatingGreen">4.2<img
+                                              src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMyIgaGVpZ2h0PSIxMiI+PHBhdGggZmlsbD0iI0ZGRiIgZD0iTTYuNSA5LjQzOWwtMy42NzQgMi4yMy45NC00LjI2LTMuMjEtMi44ODMgNC4yNTQtLjQwNEw2LjUuMTEybDEuNjkgNC4wMSA0LjI1NC40MDQtMy4yMSAyLjg4Mi45NCA0LjI2eiIvPjwvc3ZnPg=="
+                                              class="innerStars"></span><span class="greyclr">(2,991)</span></div>
+                                  <div class="line3"><span class="montxt">₹499</span><span class="gclr">
+                                          ̶4̶2̶2̶9̶</span><span class="greenclr">90% off</span></div>
+                              </div>
+                          </a>
+  
+                      </div>
+                  </div>
+                  <div class="carousel-item">
+                      <div class="product-wrapper d-flex flex-inline justify-content-around">
+                          <a href="#" class="product-card-link">
+                              <div class="product-card">
+                                  <div class="prod-imag">
+                                      <img src="/public/Images/ProductImages/Shoes/shoes-removebg-preview.png" alt="">
+                                  </div>
+                                  <div class="line1">Product Name,Lorem ipsum dolor sit amet consectetur.</div>
+                                  <div class="line2"><span class="starsRatingGreen">4.2<img
+                                              src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMyIgaGVpZ2h0PSIxMiI+PHBhdGggZmlsbD0iI0ZGRiIgZD0iTTYuNSA5LjQzOWwtMy42NzQgMi4yMy45NC00LjI2LTMuMjEtMi44ODMgNC4yNTQtLjQwNEw2LjUuMTEybDEuNjkgNC4wMSA0LjI1NC40MDQtMy4yMSAyLjg4Mi45NCA0LjI2eiIvPjwvc3ZnPg=="
+                                              class="innerStars"></span><span class="greyclr">(2,991)</span></div>
+                                  <div class="line3"><span class="montxt">₹499</span><span class="gclr">
+                                          ̶4̶2̶2̶9̶</span><span class="greenclr">90% off</span></div>
+                              </div>
+                          </a>
+                          <a href="#" class="product-card-link">
+                              <div class="product-card">
+                                  <div class="prod-imag">
+                                      <img src="/public/Images/ProductImages/Shoes/shoes-removebg-preview.png" alt="">
+                                  </div>
+                                  <div class="line1">Product Name,Lorem ipsum dolor sit amet consectetur.</div>
+                                  <div class="line2"><span class="starsRatingGreen">4.2<img
+                                              src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMyIgaGVpZ2h0PSIxMiI+PHBhdGggZmlsbD0iI0ZGRiIgZD0iTTYuNSA5LjQzOWwtMy42NzQgMi4yMy45NC00LjI2LTMuMjEtMi44ODMgNC4yNTQtLjQwNEw2LjUuMTEybDEuNjkgNC4wMSA0LjI1NC40MDQtMy4yMSAyLjg4Mi45NCA0LjI2eiIvPjwvc3ZnPg=="
+                                              class="innerStars"></span><span class="greyclr">(2,991)</span></div>
+                                  <div class="line3"><span class="montxt">₹499</span><span class="gclr">
+                                          ̶4̶2̶2̶9̶</span><span class="greenclr">90% off</span></div>
+                              </div>
+                          </a>
+                          <a href="#" class="product-card-link">
+                              <div class="product-card">
+                                  <div class="prod-imag">
+                                      <img src="/public/Images/ProductImages/Shoes/shoes-removebg-preview.png" alt="">
+                                  </div>
+                                  <div class="line1">Product Name,Lorem ipsum dolor sit amet consectetur.</div>
+                                  <div class="line2"><span class="starsRatingGreen">4.2<img
+                                              src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMyIgaGVpZ2h0PSIxMiI+PHBhdGggZmlsbD0iI0ZGRiIgZD0iTTYuNSA5LjQzOWwtMy42NzQgMi4yMy45NC00LjI2LTMuMjEtMi44ODMgNC4yNTQtLjQwNEw2LjUuMTEybDEuNjkgNC4wMSA0LjI1NC40MDQtMy4yMSAyLjg4Mi45NCA0LjI2eiIvPjwvc3ZnPg=="
+                                              class="innerStars"></span><span class="greyclr">(2,991)</span></div>
+                                  <div class="line3"><span class="montxt">₹499</span><span class="gclr">
+                                          ̶4̶2̶2̶9̶</span><span class="greenclr">90% off</span></div>
+                              </div>
+                          </a>
+                          <a href="#" class="product-card-link">
+                              <div class="product-card">
+                                  <div class="prod-imag">
+                                      <img src="/public/Images/ProductImages/Shoes/shoes-removebg-preview.png" alt="">
+                                  </div>
+                                  <div class="line1">Product Name,Lorem ipsum dolor sit amet consectetur.</div>
+                                  <div class="line2"><span class="starsRatingGreen">4.2<img
+                                              src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMyIgaGVpZ2h0PSIxMiI+PHBhdGggZmlsbD0iI0ZGRiIgZD0iTTYuNSA5LjQzOWwtMy42NzQgMi4yMy45NC00LjI2LTMuMjEtMi44ODMgNC4yNTQtLjQwNEw2LjUuMTEybDEuNjkgNC4wMSA0LjI1NC40MDQtMy4yMSAyLjg4Mi45NCA0LjI2eiIvPjwvc3ZnPg=="
+                                              class="innerStars"></span><span class="greyclr">(2,991)</span></div>
+                                  <div class="line3"><span class="montxt">₹499</span><span class="gclr">
+                                          ̶4̶2̶2̶9̶</span><span class="greenclr">90% off</span></div>
+                              </div>
+                          </a>
+                          <a href="#" class="product-card-link">
+                              <div class="product-card">
+                                  <div class="prod-imag">
+                                      <img src="/public/Images/ProductImages/Shoes/shoes-removebg-preview.png" alt="">
+                                  </div>
+                                  <div class="line1">Product Name,Lorem ipsum dolor sit amet consectetur.</div>
+                                  <div class="line2"><span class="starsRatingGreen">4.2<img
+                                              src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMyIgaGVpZ2h0PSIxMiI+PHBhdGggZmlsbD0iI0ZGRiIgZD0iTTYuNSA5LjQzOWwtMy42NzQgMi4yMy45NC00LjI2LTMuMjEtMi44ODMgNC4yNTQtLjQwNEw2LjUuMTEybDEuNjkgNC4wMSA0LjI1NC40MDQtMy4yMSAyLjg4Mi45NCA0LjI2eiIvPjwvc3ZnPg=="
+                                              class="innerStars"></span><span class="greyclr">(2,991)</span></div>
+                                  <div class="line3"><span class="montxt">₹499</span><span class="gclr">
+                                          ̶4̶2̶2̶9̶</span><span class="greenclr">90% off</span></div>
+                              </div>
+                          </a>
+                      </div>
+                  </div>
+                  <div class="carousel-item">
+                      <div class="product-wrapper d-flex flex-inline justify-content-around">
+                          <a href="#" class="product-card-link">
+                              <div class="product-card">
+                                  <div class="prod-imag">
+                                      <img src="/public/Images/ProductImages/Shoes/shoes-removebg-preview.png" alt="">
+                                  </div>
+                                  <div class="line1">Product Name,Lorem ipsum dolor sit amet consectetur.</div>
+                                  <div class="line2"><span class="starsRatingGreen">4.2<img
+                                              src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMyIgaGVpZ2h0PSIxMiI+PHBhdGggZmlsbD0iI0ZGRiIgZD0iTTYuNSA5LjQzOWwtMy42NzQgMi4yMy45NC00LjI2LTMuMjEtMi44ODMgNC4yNTQtLjQwNEw2LjUuMTEybDEuNjkgNC4wMSA0LjI1NC40MDQtMy4yMSAyLjg4Mi45NCA0LjI2eiIvPjwvc3ZnPg=="
+                                              class="innerStars"></span><span class="greyclr">(2,991)</span></div>
+                                  <div class="line3"><span class="montxt">₹499</span><span class="gclr">
+                                          4̶2̶2̶9̶</span><span class="greenclr">90% off</span></div>
+                              </div>
+                          </a>
+                          <a href="#" class="product-card-link">
+                              <div class="product-card">
+                                  <div class="prod-imag">
+                                      <img src="/public/Images/ProductImages/Shoes/shoes-removebg-preview.png" alt="">
+                                  </div>
+                                  <div class="line1">Product Name,Lorem ipsum dolor sit amet consectetur.</div>
+                                  <div class="line2"><span class="starsRatingGreen">4.2<img
+                                              src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMyIgaGVpZ2h0PSIxMiI+PHBhdGggZmlsbD0iI0ZGRiIgZD0iTTYuNSA5LjQzOWwtMy42NzQgMi4yMy45NC00LjI2LTMuMjEtMi44ODMgNC4yNTQtLjQwNEw2LjUuMTEybDEuNjkgNC4wMSA0LjI1NC40MDQtMy4yMSAyLjg4Mi45NCA0LjI2eiIvPjwvc3ZnPg=="
+                                              class="innerStars"></span><span class="greyclr">(2,991)</span></div>
+                                  <div class="line3"><span class="montxt">₹499</span><span
+                                          class="gclr"><s>₹4229</s></span><span><span class="greenclr">90% off</span>
+                                  </div>
+                              </div>
+                          </a>
+                          <a href="#" class="product-card-link">
+                              <div class="product-card">
+                                  <div class="prod-imag">
+                                      <img src="/public/Images/ProductImages/Shoes/shoes-removebg-preview.png" alt="">
+                                  </div>
+                                  <div class="line1">Product Name,Lorem ipsum dolor sit amet consectetur.</div>
+                                  <div class="line2"><span class="starsRatingGreen">4.2<img
+                                              src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMyIgaGVpZ2h0PSIxMiI+PHBhdGggZmlsbD0iI0ZGRiIgZD0iTTYuNSA5LjQzOWwtMy42NzQgMi4yMy45NC00LjI2LTMuMjEtMi44ODMgNC4yNTQtLjQwNEw2LjUuMTEybDEuNjkgNC4wMSA0LjI1NC40MDQtMy4yMSAyLjg4Mi45NCA0LjI2eiIvPjwvc3ZnPg=="
+                                              class="innerStars"></span><span class="greyclr">(2,991)</span></div>
+                                  <div class="line3"><span class="montxt">₹499</span><span class="gclr">
+                                          ̶4̶2̶2̶9̶</span><span class="greenclr">90% off</span></div>
+                              </div>
+                          </a>
+                          <a href="#" class="product-card-link">
+                              <div class="product-card">
+                                  <div class="prod-imag">
+                                      <img src="/public/Images/ProductImages/Shoes/shoes-removebg-preview.png" alt="">
+                                  </div>
+                                  <div class="line1">Product Name,Lorem ipsum dolor sit amet consectetur.</div>
+                                  <div class="line2"><span class="starsRatingGreen">4.2<img
+                                              src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMyIgaGVpZ2h0PSIxMiI+PHBhdGggZmlsbD0iI0ZGRiIgZD0iTTYuNSA5LjQzOWwtMy42NzQgMi4yMy45NC00LjI2LTMuMjEtMi44ODMgNC4yNTQtLjQwNEw2LjUuMTEybDEuNjkgNC4wMSA0LjI1NC40MDQtMy4yMSAyLjg4Mi45NCA0LjI2eiIvPjwvc3ZnPg=="
+                                              class="innerStars"></span><span class="greyclr">(2,991)</span></div>
+                                  <div class="line3"><span class="montxt">₹499</span><span class="gclr">
+                                          ̶4̶2̶2̶9̶</span><span class="greenclr">90% off</span></div>
+                              </div>
+                          </a>
+                          <a href="#" class="product-card-link">
+                              <div class="product-card">
+                                  <div class="prod-imag">
+                                      <img src="/public/Images/ProductImages/Shoes/shoes-removebg-preview.png" alt="">
+                                  </div>
+                                  <div class="line1">Product Name,Lorem ipsum dolor sit amet consectetur.</div>
+                                  <div class="line2"><span class="starsRatingGreen">4.2<img
+                                              src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMyIgaGVpZ2h0PSIxMiI+PHBhdGggZmlsbD0iI0ZGRiIgZD0iTTYuNSA5LjQzOWwtMy42NzQgMi4yMy45NC00LjI2LTMuMjEtMi44ODMgNC4yNTQtLjQwNEw2LjUuMTEybDEuNjkgNC4wMSA0LjI1NC40MDQtMy4yMSAyLjg4Mi45NCA0LjI2eiIvPjwvc3ZnPg=="
+                                              class="innerStars"></span><span class="greyclr">(2,991)</span></div>
+                                  <div class="line3"><span class="montxt">₹499</span><span class="gclr"></span><span
+                                          class="greenclr">90% off</span></div>
+                              </div>
+                          </a>
+                      </div>
+                  </div>
+              </div>
+  
+              <button class="carousel-control-prev" type="button" data-bs-slide="prev" data-bs-target="#product-carousel">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-slide="next" data-bs-target="#product-carousel">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Next</span>
+              </button>
+          </div>
+      </div>
+  </div>
 
     <div class="product-slider">
       <div class="prod-category" style="background-image: url('public/Images/productSliderBG/png-transparent-cartoon-illustration-cartoon-snow-mountain-cartoon-character-blue-angle.png');">
