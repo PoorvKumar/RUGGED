@@ -1,0 +1,22 @@
+.bc{
+    background-color: #8c8deb;
+   
+}
+.bc2{
+   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+}
+body{
+   width: 600px;
+   margin-left: 200px;
+}
+
+
+
+.lo{
+background-color: aquamarine;
+}
+
+.lb{
+   background-color: rgb(188, 64, 147);
+}

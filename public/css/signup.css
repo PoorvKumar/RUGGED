@@ -1,0 +1,12 @@
+
+
+.container{
+
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    background-color: rgb(198, 211, 220); 
+    height: 500px;
+    width: 200px;
+    margin-top: 20px;
+
+}
+
