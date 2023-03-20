@@ -3,7 +3,11 @@
     flex-direction: column;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
     background-color: white;
-    margin:2%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    width: 98%;
 }
 .leftssid{
     display:flex;
@@ -26,6 +30,9 @@
     display:flex;
     flex-direction: row;
     justify-content: space-between;
+    /* border-bottom: 1pt solid black; */
+    align-items: center;
+    height: 4.25rem;
 }
 .rightside{
     margin:2%;
@@ -88,4 +95,17 @@
 }
 .line1:hover{
     color:rgb(56, 56, 214);
+}
+.product-slider2 
+{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    /* border: 1pt solid black; */
+    border: transparent;
+    background-color: white;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
 }
