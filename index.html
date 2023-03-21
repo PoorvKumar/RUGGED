@@ -1,355 +1,621 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+      integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="dist/accessible-autocomplete.min.css" />
+<script src="dist/accessible-autocomplete.min.js"></script>
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>RUGGED</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link rel="stylesheet" href="public/css/main_navbar.css">
-  <!--for main page-->
-  <link rel="stylesheet" href="public/css/style.css">
-  <link rel="stylesheet" href="public/css/product-card-scroll.css">
-  <!--for product slider-->
-  <style>
-    .nk {
-      margin-top: 12px;
-      margin-left: 12px;
-      margin-right: 12px;
-      margin-bottom: 12px;
-    }
-
-    /* .dropdown-menu {
-            background-color: rgb(60, 51, 52);
-        } */
-
-    .dropdown-menu a:hover {
-      background-color: #110e0e;
-    }
-
-    .ll {
-      margin-left: 1%;
-      margin-right: 1%;
-      margin-top: 1%;
-    }
-
-    .need {
-      margin-top: 1%;
-    }
-
-    .card:hover {
-      top: -2px;
-      display: block;
-      margin-top: -1px;
-      margin-left: -1px;
-      border-radius: 6px 6px 6px 6px;
-      transition-duration: 0.5s;
-      border-color: rgb(4, 224, 140);
-    }
-
-    a {
-      color: black;
-      text-decoration: none;
-    }
-  </style>
-</head>
-
-<body>
-  <div id="overlay" onclick="overlayOff()"></div>
-  <!--overlay entire page whenever needed-->
-  <header>
-    <nav class="container-fluid d-flex flex-inline navbar px-3 pt-0 pb-0 fixed-top nav-main px-0">
-      <div class="nav-left navbar d-flex justify-content-around pt-0 ms-0">
-        <!-- <img src="LOGO/LogoMain/rugged-high-resolution-logo-color-on-transparent-background.png" alt="" class="nav-brand" width="110" height="50"> -->
-        <div class="nav-link nav-logo " id="brand-logo" style="font-size: large;">
-          <img src="LOGO/newLOGOTest/newLOGO_no_background.png" alt="" height="65em" width="120em">
-
-        </div>
-        <div class="nav-link col d-flex flex-inline nav-address">
-          <div><i class="fa fa-map-marker-alt mt-3 me-2" style="font-size: larger;"></i></div>
-          <div>
-            <div class="nav-line-1">
-              <span class="small">Hello User!</span>
-            </div>
-            <div class="nav-line-2">Select Your Address!</div>
-          </div>
-        </div>
-      </div>
-      <div class="nav-search ">
-        <form action="" class="w-100 input-group">
-          <!-- <div class="dropdown">
-            <button class="btn" type="button" data-bs-toggle="dropdown">
-              <span style="font-size: 13.5px;">All</span><span class="dropdown-toggle"> </span></button>
-            <ul class="dropdown-menu shadow" style="font-size: 13.5px;">
-              <li class="dropdown-header">Dropdown header 1</li>
-            <li>
-            <a class="dropdown-item active" href="#" aria-current="page">Current</a>
-          </li>
-          <li><a class="dropdown-item" href="#">Inventory</a></li>
-          <li><a class="dropdown-item" href="#">Customers</a></li>
-          <li><a class="dropdown-item" href="#">Products</a></li>
-          <li><hr class="dropdown-divider" /></li>
-          <li><a class="dropdown-item" href="#">Reports</a></li>
-          <li><a class="dropdown-item" href="#">Analytics</a></li>
-        </ul>
-          </div> -->
-          <!--removed all -->
-          <input type="search" class="form-control" placeholder="Search Here..." aria-label="Search" onclick="overlayOn()" id="nav-main-searchbar" />
-          <button type="button" class="btn bg-white">
-            <i class="fas fa-search"></i>
-          </button>
-        </form>
-      </div>
-      <div class="nav-right navbar d-flex flex-row">
-        <div class="nav-wish nav-link d-flex-inline p-2 ">
-          WishList
-        </div>
-        <div class="nav-sign nav-link d-flex-inline ">
-          <div class="nav-line-1">
-            <span class="small"><span class="fa fa-user"> </span> Hello! User</span>
-          </div>
-          <a tabindex="0" href="#" id="account-list" class="text-white">
-            <div class="nav-line-2 signin-main">Account & Lists <span class="dropdown-toggle"></span>
-          </a>
-          <div id="sign-in-popover" class="hide">
-            <div class="container account-list-popover d-flex flex-column p-3 align-items-center w-100 pt-0">
-              <div class="upper-signin p-4 d-flex flex-column pb-2">
-                <button class="btn bg-info text-white">
-                  Sign In!
-                </button>
-                <span class="small text-dark" style="font-size: x-small; margin-top: 0.5rem;">New Customer? <a href="#" class="text-info">Start Here!</a> </span>
-              </div>
-              <div class="account-lists d-flex flex-row border-top border-dark">
-                <div class="wishlist d-flex flex-column px-5 py-3" style="font-weight: lighter;">
-                  <p class="mb-1 text-info" style="font-size: larger; font-weight: 550;">Your Lists</p>
-                  <a class="small" href="#" rel="noopener noreferrer">Create a WishList</a>
-                  <a class="small" href="#" rel="noopener noreferrer">Discover Your Style</a>
-                  <a class="small" href="#" rel="noopener noreferrer">Explore Experiences</a>
-                  <a class="small" href="#" rel="noopener noreferrer">RUGGED Influencer+</a>
-                </div>
-                <div class="wishlist d-flex flex-column px-5 py-3" style="font-weight: lighter;">
-                  <p class="mb-1 text-info" style="font-size: larger; font-weight: 550;">Your Account</p>
-                  <a class="small" href="#" rel="noopener noreferrer">Your Account</a>
-                  <a class="small" href="#" rel="noopener noreferrer">Your Orders</a>
-                  <a class="small" href="#" rel="noopener noreferrer">Your WishList</a>
-                  <a class="small" href="#" rel="noopener noreferrer">Your Recommendation</a>
-                  <a class="small" href="#" rel="noopener noreferrer">Membership & Subscriptions</a>
-                  <a class="small" href="#" rel="noopener noreferrer">RUGGED Influencer Account</a>
-                  <a class="small" href="#" rel="noopener noreferrer">Your Seller Account</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="nav-returns nav-link d-flex-inline ">
-        <div class="nav-line-1">
-          <span class="small">Returns</span>
-        </div>
-        <div class="nav-line-2">&Orders</div>
-      </div>
-      <!-- <div class="nav-cart nav-link d-flex-inline p-2">
-                  Cart
-                </div> -->
-      <!-- Cart dropover -->
-      <div class="nav-cart nav-link d-flex-inline p-2 ms-0">
-        <div class="nav-line-2">
-          <a data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
-            <!-- <span class="small">
-                <i class="fa fa-shopping-cart non-empty"
-                  style="font-size:33px"></i></span> -->
-            <span class="material-icons " style="font-size: 36px;">
-              <!--material icon google-->
-              shopping_cart
-            </span>
-          </a>
-          <!--need  to change non-empty class-->
-        </div>
-        <!-- Canvas down now -->
-        <div class="offcanvas offcanvas-end " data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
-          <div class="offcanvas-header">
-            <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Apna Cart</h5>
-            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-          </div>
-          <div class="offcanvas-body">
-            <!-- BigBox -->
-            <div class="whole-cart-window">
-              <!-- add hide class to hide cart window-->
-              <!-- <div class="heading"><p>Your Bag</p></div> -->
-              <div class="cart-wrapper">
-                <div class="cart-item">
-                  <img src="/Images/ProductImages/Rucksack1/image1.jpg" alt="rucksack">
-                  <div class="details">
-                    <h3>RuckSack</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.<br>
-                      <span class="fa fa-star"></span>
-                      <span class="fa fa-star"></span>
-                      <span class="fa fa-star"></span>
-                      <span class="fa fa-star checked"></span>
-                      <span class="fa fa-star checked"></span>
-                      <span class="quantity">Quantity: 1</span>
-                      <span class="price">Price: ₹50.00</span>
-                    </p>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+      <link rel="stylesheet" href="public/css/main_navbar.css">
+    <link rel="stylesheet" href="public/css/style.css">
+    <link rel="stylesheet" href="public/css/product-card-scroll.css">
+    <link rel="stylesheet" href="public/css/product-card-scroll-2.css">
+    <link rel="stylesheet" href="public/css/carousel.css">
+    <link rel="stylesheet" href="public/css/returnsAndOrdersStyle.css">
+    <title>Test</title>
+    <style>
+      
+    </style>
+  </head>
+  <div id="overlay" onclick="overlayOff()"></div> <!--overlay entire page whenever needed-->
+  <body>
+    <header>
+      <nav class="container-fluid nav-main fixed-top">
+        <div class="row">
+            <div class="col-lg-2 col-sm-2">
+                <div class="nav-link nav-logo " id="brand-logo" style="font-size: large;">
+                    <img src="LOGO/newLOGOTest/newLOGO_no_background.png" alt="" height="65em" width="120em">
                   </div>
-                  <div class="cancel"><i class="fa-regular fa-trash-can coll"></i></div>
-                </div>
-                <!-- item 2 -->
-                <div class="cart-item">
-                  <img src="/Images/ProductImages/Rucksack1/image1.jpg" alt="Rucksack">
-                  <div class="details">
-                    <h3>Item Name2</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.<br>
-                      <span class="fa fa-star"></span>
-                      <span class="fa fa-star"></span>
-                      <span class="fa fa-star"></span>
-                      <span class="fa fa-star"></span>
-                      <span class="fa fa-star checked"></span>
-                      <span class="quantity">Quantity: 1</span>
-                      <span class="price">Price: ₹100.00</span>
-                    </p>
-                  </div>
-                  <div class="cancel"><i class="fa-regular fa-trash-can coll"></i></div>
-                </div>
-              </div>
-              <div class="subtotal">Delivery: ₹0.00</div>
-              <div class="subtotal">Total: ₹0.00</div>
-              <div class="cv">
-                <button type="button" class="btn btn-outline-secondary">View WishList</button>
-                <button type="button" class="btn btn-primary">Checkout</button>
-              </div>
             </div>
-            <!-- BigBox Finish -->
-          </div>
-          <!-- Cart Dropover Finish -->
+            <div class="col-lg-6 col-md-5 col-sm-4">
+                <div class="nav-search">
+                <form action="" class="w-100 input-group">
+                    <input type="search" class="form-control" placeholder="Search Here..." aria-label="Search" onclick="overlayOn()"
+                    id="nav-main-searchbar" />
+                 <button type="button" class="btn bg-white">
+                    <i class="fas fa-search"></i>
+                  </button>
+                </form>
+              </div>
+              </div>
+            <div class="col-lg-4 col-md-5 col-sm-6">
+                <div class="right d-flex">
+                  <div class="nav-sign nav-link d-flex-inline ml-3 m-2">
+                    <div class="nav-line-1">
+                      <span class="small"><span class="fa fa-user"> </span> Hello! User</span>
+                    </div>
+                    <a tabindex="0" href="#" id="account-list" class="text-white">
+                      <div class="nav-line-2 signin-main">Account & Lists <span class="dropdown-toggle"></span>
+                    </a>
+                    <div id="sign-in-popover" class="hide">
+                      <div class="container account-list-popover d-flex flex-column p-3 align-items-center w-100 pt-0">
+                        <div class="upper-signin p-4 d-flex flex-column pb-2">
+                          <button class="btn bg-info text-white">
+                            Sign In!
+                          </button>
+                          <span class="small text-dark" style="font-size: x-small; margin-top: 0.5rem;">New Customer? <a href="#"
+                              class="text-info">Start Here!</a> </span>
+                        </div>
+                        <div class="account-lists d-flex flex-row border-top border-dark">
+                          <div class="wishlist d-flex flex-column px-4 mx-2 py-3 mt-1" style="font-weight: lighter;">
+                            <p class="mb-1 text-info" style="font-size: larger; font-weight: 550;">Your Lists</p>
+                            <a class="small" href="#" rel="noopener noreferrer">Create a WishList</a>
+                            <a class="small" href="#" rel="noopener noreferrer">Discover Your Style</a>
+                            <a class="small" href="#" rel="noopener noreferrer">Explore Experiences</a>
+                            <a class="small" href="#" rel="noopener noreferrer">RUGGED Influencer+</a>
+                          </div>
+                          <div class="wishlist d-flex flex-column px-4 mx-2 py-3 mt-1" style="font-weight: lighter;">
+                            <p class="mb-1 text-info" style="font-size: larger; font-weight: 550;">Your Account</p>
+                            <a class="small" href="#" rel="noopener noreferrer">Your Account</a>
+                            <a class="small" href="#" rel="noopener noreferrer">Your Orders</a>
+                            <a class="small" href="#" rel="noopener noreferrer">Your WishList</a>
+                            <a class="small" href="#" rel="noopener noreferrer">Your Recommendation</a>
+                            <a class="small" href="#" rel="noopener noreferrer">Membership & Subscriptions</a>
+                            <a class="small" href="#" rel="noopener noreferrer">RUGGED Influencer Account</a>
+                            <a class="small" href="#" rel="noopener noreferrer">Your Seller Account</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div></div>
+                  <div class="nav-wish nav-link d-flex-inline p-2 pt-3 m-2 ">
+                    WishList
+                  </div>
+                  <div class="nav-returns nav-link d-flex-inline p-1 m-2">
+                    <div class="nav-line-1">
+                      <span class="small">Returns</span>
+                    </div>
+                    <div class="nav-line-2">&Orders</div>
+                  </div>
+                  <div class="nav-cart nav-link d-flex-inline p-2 ms-0 ">
+                    <div class="nav-line-2">
+                      <a data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
+                        <!-- <span class="small">
+                                  <i class="fa fa-shopping-cart non-empty"
+                                    style="font-size:33px"></i></span> -->
+                        <span class="material-icons " style="font-size: 36px;"> <!--material icon google-->
+                          shopping_cart
+                        </span></a> <!--need  to change non-empty class-->
+                    </div>
+                    <!-- Canvas down now -->
+                    <div class="offcanvas offcanvas-end bgclr" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions"
+                      aria-labelledby="offcanvasWithBothOptionsLabel">
+                      <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Apna Cart</h5>
+                        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                      </div>
+                      <div class="offcanvas-body">
+                        <!-- BigBox -->
+                        <div class="whole-cart-window"><!-- add hide class to hide cart window-->
+                          <!-- <div class="heading"><p>Your Bag</p></div> -->
+                          <div class="cart-wrapper">
+                            <div class="cart-item">
+                              <img src="/Images/ProductImages/Rucksack1/image1.jpg" alt="rucksack">
+                              <div class="details">
+                                <h3>RuckSack</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.<br>
+                                  <span class="fa fa-star"></span>
+                                  <span class="fa fa-star"></span>
+                                  <span class="fa fa-star"></span>
+                                  <span class="fa fa-star checked"></span>
+                                  <span class="fa fa-star checked"></span>
+                                  <span class="quantity">Quantity: 1</span>
+                                  <span class="price">Price: ₹50.00</span>
+                                </p>
+                              </div>
+                              <div class="cancel"><i class="fa-regular fa-trash-can coll"></i></div>
+                            </div>
+                            <!-- item 2 -->
+                            <div class="cart-item">
+                              <img src="/Images/ProductImages/Rucksack1/image1.jpg" alt="Rucksack">
+                              <div class="details">
+                                <h3>Item Name2</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.<br>
+                                  <span class="fa fa-star"></span>
+                                  <span class="fa fa-star"></span>
+                                  <span class="fa fa-star"></span>
+                                  <span class="fa fa-star"></span>
+                                  <span class="fa fa-star checked"></span>
+                                  <span class="quantity">Quantity: 1</span>
+                                  <span class="price">Price: ₹100.00</span>
+                                </p>
+                              </div>
+                              <div class="cancel"><i class="fa-regular fa-trash-can coll"></i></div>
+                            </div>
+                          </div>
+                          <div class="subtotal">Delivery: ₹0.00</div>
+                          <div class="subtotal">Total: ₹0.00</div>
+                          <div class="cv">
+                            <button type="button" class="btn btn-outline-secondary">View WishList</button>
+                            <button type="button" class="btn btn-primary">Checkout</button>
+                          </div>
+                        </div>
+                        <!-- BigBox Finish -->
+                      </div>
+                      <!-- Cart Dropover Finish -->
+                    </div>
+                  </div>
+            </div>
         </div>
-      </div>
-      <!-- Cart Dropover Finish -->
-      </div>
     </nav>
-    <nav class="container-fluid navbar  nav-sec navbar-color">
-      <a class="nav-item" href="#" data-bs-toggle="offcanvas" data-bs-target="#offcanvasAllSection" role="button" aria-label="allSection">
-        <i class="fa fa-bars"></i>
-        All
-      </a>
-      <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasAllSection" aria-labelledby="allSection">
-        <div class="offcanvas-header navbar-color">
-          <h4 class="offcanvas-title text-white"> <span class="fa fa-user"> </span><i> Hello User!</i> </h4>
-          <button class="btn-close text-reset" type="button" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-        </div>
-        <div class="offcanvas-body px-0">
-          <div class="container">
-            <h5 class="px-3">Trending Today</h5>
-            <ul class="list-group">
-              <a class="list-group-item list-group-item-action border-0 px-4" href="#">First</a>
-              <a class="list-group-item list-group-item-action border-0 px-4" href="#">Second</a>
-              <a class="list-group-item list-group-item-action border-0 px-4" href="#">Third</a>
-              <a class="list-group-item list-group-item-action border-0 px-4" href="#">Four</a>
-            </ul>
-            <hr>
-            <h5 class="px-3">Trending Today</h5>
-            <ul class="list-group">
-              <a class="list-group-item list-group-item-action border-0 px-4" href="#">First</a>
-              <a class="list-group-item list-group-item-action border-0 px-4" href="#">Second</a>
-              <a class="list-group-item list-group-item-action border-0 px-4" href="#">Third</a>
-              <a class="list-group-item list-group-item-action border-0 px-4" href="#">Four</a>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <a class="nav-item" href="#">
-        Sell
-        </div>
-        <a class=" nav-item" href="#">
-          Best Sellers
+      <nav class="container-fluid navbar nav-sec navbar-color ">
+        <a class="nav-item nav-2-link" href="#" data-bs-toggle="offcanvas" data-bs-target="#offcanvasAllSection" role="button" aria-label="allSection">
+          <i class="fa fa-bars"></i>
+          All
         </a>
-        <a class="nav-item" href="#">
+          <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasAllSection" aria-labelledby="allSection">
+            <div class="offcanvas-header navbar-color">
+              <h4 class="offcanvas-title text-white"> <span class="fa fa-user"> </span><i> Hello User!</i> </h4>
+              <button class="btn-close text-reset" type="button" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body px-0">
+              <div class="container">
+                <h5 class="px-3">Trending Today</h5>
+                <ul class="list-group">
+                  <a class="list-group-item list-group-item-action border-0 px-4" href="#">First</a>
+                  <a class="list-group-item list-group-item-action border-0 px-4" href="#">Second</a>
+                  <a class="list-group-item list-group-item-action border-0 px-4" href="#">Third</a>
+                  <a class="list-group-item list-group-item-action border-0 px-4" href="#">Four</a>
+                </ul>
+                <hr>
+                <h5 class="px-3">Trending Today</h5>
+                <ul class="list-group">
+                  <a class="list-group-item list-group-item-action border-0 px-4" href="#">First</a>
+                  <a class="list-group-item list-group-item-action border-0 px-4" href="#">Second</a>
+                  <a class="list-group-item list-group-item-action border-0 px-4" href="#">Third</a>
+                  <a class="list-group-item list-group-item-action border-0 px-4" href="#">Four</a>
+                </ul>
+              </div>
+            </div>
+          </div>
+        
+        <a class="nav-item nav-2-link" href="#">
+        Become a Seller
+        </a>
+        <a class=" nav-item nav-2-link" href="#">
+          RUGGED+ Explore
+        </a>
+        <a tabindex="0" class="nav-item nav-2-link" href="#">
+          Hiking 
+        </a>
+          <div id="nav-hike" class="" style="display: none;">
+            <div class="nav-hike-menu row">
+            <div class="nav-hike-list col">
+                <p class="menu-head">TOOLS</p>
+                <ul class="list-group menu-list">
+                    <a href="#" class="list-group-item menu-item border-0 py-0">Lasers</a>
+                    <a href="#" class="list-group-item menu-item border-0 py-0">Buckle Rock</a>
+                    <a href="#" class="list-group-item menu-item border-0 py-0">Cane Stick</a>
+                    <a href="#" class="list-group-item menu-item border-0 py-0">Plier Tools</a>
+                    <a href="#" class="list-group-item menu-item border-0 py-0">Knife</a>
+                    <a href="#" class="list-group-item menu-item border-0 py-0">Multi-Tool</a>
+                    <a href="#" class="list-group-item menu-item border-0 py-0">Lighters</a>
+                    <a href="#" class="list-group-item menu-item border-0 py-0">Drones</a>
+                    <a href="#" class="list-group-item menu-item border-0 py-0">GPS Devices</a>
+                    <a href="#" class="list-group-item menu-item border-0 py-0">PLB</a>
+                </ul>
+            </div>
+            <div class="nav-hike-list col">
+                <p class="menu-head">EQUIPEMENTS</p>
+                <ul class="list-group menu-list">
+                    <a href="#" class="list-group-item menu-item border-0 py-0">First-Aid Kits</a>
+                    <a href="#" class="list-group-item menu-item border-0 py-0">Purify Straw</a>
+                    <a href="#" class="list-group-item menu-item border-0 py-0">Compass</a>
+                    <a href="#" class="list-group-item menu-item border-0 py-0">AIO Survival Kit</aa>
+                    <a href="#" class="list-group-item menu-item border-0 py-0">Sunglasses</a>
+                    <a href="#" class="list-group-item menu-item border-0 py-0">Sun-Protective Clothing</a>
+                    <a href="#" class="list-group-item menu-item border-0 py-0">Head-Lamp</a>
+                    <a href="#" class="list-group-item menu-item border-0 py-0">WaterProof Socks</a>
+                    <a href="#" class="list-group-item menu-item border-0 py-0">Ready to Eat Food Kits</a>
+                    <a href="#" class="list-group-item menu-item border-0 py-0">Emergency Shelter</a>
+                </ul>
+            </div>
+            <div class="nav-hike-list col">
+                <p class="menu-head">BOOTS</p>
+                <ul class="list-group menu-list">
+                    <a href="#" class="list-group-item menu-item border-0 py-0">Knee Boots</a>
+                    <a href="#" class="list-group-item menu-item border-0 py-0">Jack Boots</a>
+                    <a href="#" class="list-group-item menu-item border-0 py-0">Trail Shoes</a>
+                    <a href="#" class="list-group-item menu-item border-0 py-0">Lightweight</a>
+                    <a href="#" class="list-group-item menu-item border-0 py-0">Midweight</a>
+                    <a href="#" class="list-group-item menu-item border-0 py-0">Heavyweight</a>
+                    <a href="#" class="list-group-item menu-item border-0 py-0">Heavy Duty</a>
+                    <a href="#" class="list-group-item menu-item border-0 py-0">RUGGED+ Verified</a>
+                    <a href="#" class="list-group-item menu-item border-0 py-0">Influencer's Choice</a>
+                </ul>
+            </div>
+        </div>
+        </div>
+        
+        <a class="nav-item nav-2-link" href="#">
+          Trekking
+        </a>
+        <a class="nav-item nav-2-link" href="#">
+          Camping
+        </a>
+        <a class="nav-item nav-2-link" href="#">
           Today's Deals
         </a>
-        <a class="nav-item" href="#">
+        <a class="nav-item nav-2-link" href="#">
           New Releases
         </a>
-        <a class="nav-item" href="#">
-          Electronics
-        </a>
-        <a class="nav-item" href="#">
-          Fashion
-        </a>
-    </nav>
-  </header>
+      </nav>
+    </header>
 
-  <div class="slideupper">
-    <div class="upperbox">
-      <div class="leftssid">
-        <div class="p1">Suggested for You</div>
-        <div class="p2">Based on your Activity</div>
+    <div id="header-carousel" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <a href="#">
+            <div class="caro-prod">
+              <div class="caro-prod-title">New Hiking Collection</div>
+              <div class="caro-prod-tag">Time to Hike is Here...</div>
+            </div>
+            <div class="caro-prod-price">Starting from just 99/-</div>
+            <img src="public/Images/carouselImages/hiking collection.avif">
+          </a>
+        </div>
+        <div class="carousel-item">
+          <a href="#">
+            <div class="caro-prod">
+              <div class="caro-prod-title">Opening 10% Discount on Tents</div>
+              <div class="caro-prod-tag">Book Yours Now</div>
+            </div>
+            <div class="caro-prod-price">Starting from just 399/-</div>
+            <img src="public/Images/carouselImages/FORCLAZ SHOOTING TREK_MOUNTAIN_PEAH20 HAUTE-SAVOIE (1).avif" alt="">
+          </a>
+        </div>
+        <div class="carousel-item">
+          <a href="#">
+            <div class="caro-prod">
+              <div class="caro-prod-title">New Skiing Collection is Here</div>
+              <div class="caro-prod-tag">Dont't miss your chance </div>
+            </div>
+            <div class="caro-prod-price">Starting from just 399/-</div>
+            <img src="public/Images/carouselImages/WEDZE PA SKI FR500 PIQUANTE NEW AH20.avif" alt="">
+          </a>
+        </div>
+        <div class="carousel-item">
+          <a href="#">
+            <div class="caro-prod">
+              <div class="caro-prod-title">Opening 10% Discount on Tents</div>
+              <div class="caro-prod-tag">Book Yours Now</div>
+            </div>
+            <div class="caro-prod-price">At just 399/-</div>
+            <img src="public/Images/carouselImages/TREK MOUNTAIN PE23 BEAUFORTAIN ALPES FRANCE.avif" alt="">
+          </a>
+        </div>
       </div>
-      <div class="rightside upbox-view-btn ">
-        <button type="button" class="btn  btn-info text-white">View More</button>
-      </div>
+
+      <button class="carousel-control-prev" type="button" data-bs-slide="prev" data-bs-target="#header-carousel">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-slide="next" data-bs-target="#header-carousel">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </button>
     </div>
-    <div class="product-slider-2">
-      <div id="product-carousel" class="w-100 carousel slide" data-bs-ride="carousel">
+
+    <!-- <div class="main-page-tag d-flex flex-row justify-content-around">
+      <div class="first-tag d-flex align-items-center">
+        <img src="public/Images/icons/shield.png" alt="" style="max-width: 1.5rem;">
+        100% Secure Payments
+      </div>
+      <div class="second-tag d-flex align-items-center">
+        <img src="public/Images/icons/shield.png" alt="" style="max-width: 1.5rem;">
+        Easy Returns
+      </div>
+      <div class="third-tag d-flex align-items-center">
+        <img src="public/Images/icons/shield.png" alt="" style="max-width: 1.5rem;">
+        1000+ Product Options
+      </div>
+    </div> -->
+
+    <div class="slideupper">
+      <div class="upperbox">
+          <div class="leftssid">
+              <div class="p1">Suggested for You</div>
+              <div class="p2">Based on your Activity</div>
+          </div>
+          <div class="rightside upbox-view-btn ">
+              <button type="button" class="btn  btn-info text-white">View More</button>
+          </div>
+      </div>
+      <div class="product-slider-2">
+          <div id="product-carousel" class="w-100 carousel slide" data-bs-ride="carousel">
+              <div class="carousel-inner">
+                  <div class="carousel-item active">
+                      <div class="product-wrapper d-flex flex-inline justify-content-around">
+                          <a href="#" class="product-card-link">
+                              <div class="product-card">
+                                  <div class="prod-imag">
+                                      <img src="/public/Images/ProductImages/Shoes/shoes-removebg-preview.png" alt="">
+                                  </div>
+                                  <div class="line1">Product Name,Lorem ipsum dolor sit amet consectetur.</div>
+                                  <div class="line2"><span class="starsRatingGreen">4.2<img
+                                              src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMyIgaGVpZ2h0PSIxMiI+PHBhdGggZmlsbD0iI0ZGRiIgZD0iTTYuNSA5LjQzOWwtMy42NzQgMi4yMy45NC00LjI2LTMuMjEtMi44ODMgNC4yNTQtLjQwNEw2LjUuMTEybDEuNjkgNC4wMSA0LjI1NC40MDQtMy4yMSAyLjg4Mi45NCA0LjI2eiIvPjwvc3ZnPg=="
+                                              class="innerStars"></span><span class="greyclr">(2,991)</span></div>
+                                  <div class="line3"><span class="montxt">₹499</span><span
+                                          class="gclr"><s>₹4229</s></span><span><span class="greenclr">90% off</span>
+                                  </div>
+                              </div>
+                          </a>
+                          <a href="#" class="product-card-link">
+                              <div class="product-card">
+                                  <div class="prod-imag">
+                                      <img src="/public/Images/ProductImages/Shoes/shoes-removebg-preview.png" alt="">
+                                  </div>
+                                  <div class="line1">Product Name,Lorem ipsum dolor sit amet consectetur.</div>
+                                  <div class="line2"><span class="starsRatingGreen">4.2<img
+                                              src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMyIgaGVpZ2h0PSIxMiI+PHBhdGggZmlsbD0iI0ZGRiIgZD0iTTYuNSA5LjQzOWwtMy42NzQgMi4yMy45NC00LjI2LTMuMjEtMi44ODMgNC4yNTQtLjQwNEw2LjUuMTEybDEuNjkgNC4wMSA0LjI1NC40MDQtMy4yMSAyLjg4Mi45NCA0LjI2eiIvPjwvc3ZnPg=="
+                                              class="innerStars"></span><span class="greyclr">(2,991)</span></div>
+                                  <div class="line3"><span class="montxt">₹499</span><span class="gclr">
+                                          <s> ₹4229</s></span><span class="greenclr">90% off</span></div>
+                              </div>
+                          </a>
+                          <a href="#" class="product-card-link">
+                              <div class="product-card">
+                                  <div class="prod-imag">
+                                      <img src="/public/Images/ProductImages/Shoes/shoes-removebg-preview.png" alt="">
+                                  </div>
+                                  <div class="line1">Product Name,Lorem ipsum dolor sit amet consectetur.</div>
+                                  <div class="line2"><span class="starsRatingGreen">4.2<img
+                                              src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMyIgaGVpZ2h0PSIxMiI+PHBhdGggZmlsbD0iI0ZGRiIgZD0iTTYuNSA5LjQzOWwtMy42NzQgMi4yMy45NC00LjI2LTMuMjEtMi44ODMgNC4yNTQtLjQwNEw2LjUuMTEybDEuNjkgNC4wMSA0LjI1NC40MDQtMy4yMSAyLjg4Mi45NCA0LjI2eiIvPjwvc3ZnPg=="
+                                              class="innerStars"></span><span class="greyclr">(2,991)</span></div>
+                                  <div class="line3"><span class="montxt">₹499</span><span class="gclr">
+                                          <s> ₹4229</s></span><span class="greenclr">90% off</span></div>
+                              </div>
+                          </a>
+                          <a href="#" class="product-card-link">
+                              <div class="product-card">
+                                  <div class="prod-imag">
+                                      <img src="/public/Images/ProductImages/Shoes/shoes-removebg-preview.png" alt="">
+                                  </div>
+                                  <div class="line1">Product Name,Lorem ipsum dolor sit amet consectetur.</div>
+                                  <div class="line2"><span class="starsRatingGreen">4.2<img
+                                              src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMyIgaGVpZ2h0PSIxMiI+PHBhdGggZmlsbD0iI0ZGRiIgZD0iTTYuNSA5LjQzOWwtMy42NzQgMi4yMy45NC00LjI2LTMuMjEtMi44ODMgNC4yNTQtLjQwNEw2LjUuMTEybDEuNjkgNC4wMSA0LjI1NC40MDQtMy4yMSAyLjg4Mi45NCA0LjI2eiIvPjwvc3ZnPg=="
+                                              class="innerStars"></span><span class="greyclr">(2,991)</span></div>
+                                  <div class="line3"><span class="montxt">₹499</span><span class="gclr">
+                                          <s> ₹4229</s></span><span class="greenclr">90% off</span></div>
+                              </div>
+                          </a>
+                      </div>
+                  </div>
+                  <div class="carousel-item">
+                      <div class="product-wrapper d-flex flex-inline justify-content-around">
+                          <a href="#" class="product-card-link">
+                              <div class="product-card">
+                                  <div class="prod-imag">
+                                      <img src="/public/Images/ProductImages/Shoes/shoes-removebg-preview.png" alt="">
+                                  </div>
+                                  <div class="line1">Product Name,Lorem ipsum dolor sit amet consectetur.</div>
+                                  <div class="line2"><span class="starsRatingGreen">4.2<img
+                                              src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMyIgaGVpZ2h0PSIxMiI+PHBhdGggZmlsbD0iI0ZGRiIgZD0iTTYuNSA5LjQzOWwtMy42NzQgMi4yMy45NC00LjI2LTMuMjEtMi44ODMgNC4yNTQtLjQwNEw2LjUuMTEybDEuNjkgNC4wMSA0LjI1NC40MDQtMy4yMSAyLjg4Mi45NCA0LjI2eiIvPjwvc3ZnPg=="
+                                              class="innerStars"></span><span class="greyclr">(2,991)</span></div>
+                                  <div class="line3"><span class="montxt">₹499</span><span class="gclr">
+                                          <s> ₹4229</s></span><span class="greenclr">90% off</span></div>
+                              </div>
+                          </a>
+                          <a href="#" class="product-card-link">
+                              <div class="product-card">
+                                  <div class="prod-imag">
+                                      <img src="/public/Images/ProductImages/Shoes/shoes-removebg-preview.png" alt="">
+                                  </div>
+                                  <div class="line1">Product Name,Lorem ipsum dolor sit amet consectetur.</div>
+                                  <div class="line2"><span class="starsRatingGreen">4.2<img
+                                              src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMyIgaGVpZ2h0PSIxMiI+PHBhdGggZmlsbD0iI0ZGRiIgZD0iTTYuNSA5LjQzOWwtMy42NzQgMi4yMy45NC00LjI2LTMuMjEtMi44ODMgNC4yNTQtLjQwNEw2LjUuMTEybDEuNjkgNC4wMSA0LjI1NC40MDQtMy4yMSAyLjg4Mi45NCA0LjI2eiIvPjwvc3ZnPg=="
+                                              class="innerStars"></span><span class="greyclr">(2,991)</span></div>
+                                  <div class="line3"><span class="montxt">₹499</span><span
+                                          class="gclr"><s>₹4229</s></span><span><span class="greenclr">90% off</span>
+                                  </div>
+                              </div>
+                          </a>
+                          <a href="#" class="product-card-link">
+                              <div class="product-card">
+                                  <div class="prod-imag">
+                                      <img src="/public/Images/ProductImages/Shoes/shoes-removebg-preview.png" alt="">
+                                  </div>
+                                  <div class="line1">Product Name,Lorem ipsum dolor sit amet consectetur.</div>
+                                  <div class="line2"><span class="starsRatingGreen">4.2<img
+                                              src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMyIgaGVpZ2h0PSIxMiI+PHBhdGggZmlsbD0iI0ZGRiIgZD0iTTYuNSA5LjQzOWwtMy42NzQgMi4yMy45NC00LjI2LTMuMjEtMi44ODMgNC4yNTQtLjQwNEw2LjUuMTEybDEuNjkgNC4wMSA0LjI1NC40MDQtMy4yMSAyLjg4Mi45NCA0LjI2eiIvPjwvc3ZnPg=="
+                                              class="innerStars"></span><span class="greyclr">(2,991)</span></div>
+                                  <div class="line3"><span class="montxt">₹499</span><span class="gclr">
+                                          <s> ₹4229</s></span><span class="greenclr">90% off</span></div>
+                              </div>
+                          </a>
+                          <a href="#" class="product-card-link">
+                              <div class="product-card">
+                                  <div class="prod-imag">
+                                      <img src="/public/Images/ProductImages/Shoes/shoes-removebg-preview.png" alt="">
+                                  </div>
+                                  <div class="line1">Product Name,Lorem ipsum dolor sit amet consectetur.</div>
+                                  <div class="line2"><span class="starsRatingGreen">4.2<img
+                                              src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMyIgaGVpZ2h0PSIxMiI+PHBhdGggZmlsbD0iI0ZGRiIgZD0iTTYuNSA5LjQzOWwtMy42NzQgMi4yMy45NC00LjI2LTMuMjEtMi44ODMgNC4yNTQtLjQwNEw2LjUuMTEybDEuNjkgNC4wMSA0LjI1NC40MDQtMy4yMSAyLjg4Mi45NCA0LjI2eiIvPjwvc3ZnPg=="
+                                              class="innerStars"></span><span class="greyclr">(2,991)</span></div>
+                                  <div class="line3"><span class="montxt">₹499</span><span class="gclr">
+                                          <s> ₹4229</s></span><span class="greenclr">90% off</span></div>
+                              </div>
+                          </a>
+                          <a href="#" class="product-card-link">
+                              <div class="product-card">
+                                  <div class="prod-imag">
+                                      <img src="/public/Images/ProductImages/Shoes/shoes-removebg-preview.png" alt="">
+                                  </div>
+                                  <div class="line1">Product Name,Lorem ipsum dolor sit amet consectetur.</div>
+                                  <div class="line2"><span class="starsRatingGreen">4.2<img
+                                              src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMyIgaGVpZ2h0PSIxMiI+PHBhdGggZmlsbD0iI0ZGRiIgZD0iTTYuNSA5LjQzOWwtMy42NzQgMi4yMy45NC00LjI2LTMuMjEtMi44ODMgNC4yNTQtLjQwNEw2LjUuMTEybDEuNjkgNC4wMSA0LjI1NC40MDQtMy4yMSAyLjg4Mi45NCA0LjI2eiIvPjwvc3ZnPg=="
+                                              class="innerStars"></span><span class="greyclr">(2,991)</span></div>
+                                  <div class="line3"><span class="montxt">₹499</span><span class="gclr">
+                                          <s> ₹4229</s></span><span class="greenclr">90% off</span></div>
+                              </div>
+                          </a>
+                      </div>
+                  </div>
+                  <div class="carousel-item">
+                      <div class="product-wrapper d-flex flex-inline justify-content-around">
+                          <a href="#" class="product-card-link">
+                              <div class="product-card">
+                                  <div class="prod-imag">
+                                      <img src="/public/Images/ProductImages/Shoes/shoes-removebg-preview.png" alt="">
+                                  </div>
+                                  <div class="line1">Product Name,Lorem ipsum dolor sit amet consectetur.</div>
+                                  <div class="line2"><span class="starsRatingGreen">4.2<img
+                                              src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMyIgaGVpZ2h0PSIxMiI+PHBhdGggZmlsbD0iI0ZGRiIgZD0iTTYuNSA5LjQzOWwtMy42NzQgMi4yMy45NC00LjI2LTMuMjEtMi44ODMgNC4yNTQtLjQwNEw2LjUuMTEybDEuNjkgNC4wMSA0LjI1NC40MDQtMy4yMSAyLjg4Mi45NCA0LjI2eiIvPjwvc3ZnPg=="
+                                              class="innerStars"></span><span class="greyclr">(2,991)</span></div>
+                                  <div class="line3"><span class="montxt">₹499</span><span class="gclr">
+                                          <s> ₹4229</s></span><span class="greenclr">90% off</span></div>
+                              </div>
+                          </a>
+                          <a href="#" class="product-card-link">
+                              <div class="product-card">
+                                  <div class="prod-imag">
+                                      <img src="/public/Images/ProductImages/Shoes/shoes-removebg-preview.png" alt="">
+                                  </div>
+                                  <div class="line1">Product Name,Lorem ipsum dolor sit amet consectetur.</div>
+                                  <div class="line2"><span class="starsRatingGreen">4.2<img
+                                              src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMyIgaGVpZ2h0PSIxMiI+PHBhdGggZmlsbD0iI0ZGRiIgZD0iTTYuNSA5LjQzOWwtMy42NzQgMi4yMy45NC00LjI2LTMuMjEtMi44ODMgNC4yNTQtLjQwNEw2LjUuMTEybDEuNjkgNC4wMSA0LjI1NC40MDQtMy4yMSAyLjg4Mi45NCA0LjI2eiIvPjwvc3ZnPg=="
+                                              class="innerStars"></span><span class="greyclr">(2,991)</span></div>
+                                  <div class="line3"><span class="montxt">₹499</span><span
+                                          class="gclr"><s>₹4229</s></span><span><span class="greenclr">90% off</span>
+                                  </div>
+                              </div>
+                          </a>
+                          <a href="#" class="product-card-link">
+                              <div class="product-card">
+                                  <div class="prod-imag">
+                                      <img src="/public/Images/ProductImages/Shoes/shoes-removebg-preview.png" alt="">
+                                  </div>
+                                  <div class="line1">Product Name,Lorem ipsum dolor sit amet consectetur.</div>
+                                  <div class="line2"><span class="starsRatingGreen">4.2<img
+                                              src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMyIgaGVpZ2h0PSIxMiI+PHBhdGggZmlsbD0iI0ZGRiIgZD0iTTYuNSA5LjQzOWwtMy42NzQgMi4yMy45NC00LjI2LTMuMjEtMi44ODMgNC4yNTQtLjQwNEw2LjUuMTEybDEuNjkgNC4wMSA0LjI1NC40MDQtMy4yMSAyLjg4Mi45NCA0LjI2eiIvPjwvc3ZnPg=="
+                                              class="innerStars"></span><span class="greyclr">(2,991)</span></div>
+                                  <div class="line3"><span class="montxt">₹499</span><span class="gclr">
+                                          <s> ₹4229</s></span><span class="greenclr">90% off</span></div>
+                              </div>
+                          </a>
+                          <a href="#" class="product-card-link">
+                              <div class="product-card">
+                                  <div class="prod-imag">
+                                      <img src="/public/Images/ProductImages/Shoes/shoes-removebg-preview.png" alt="">
+                                  </div>
+                                  <div class="line1">Product Name,Lorem ipsum dolor sit amet consectetur.</div>
+                                  <div class="line2"><span class="starsRatingGreen">4.2<img
+                                              src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMyIgaGVpZ2h0PSIxMiI+PHBhdGggZmlsbD0iI0ZGRiIgZD0iTTYuNSA5LjQzOWwtMy42NzQgMi4yMy45NC00LjI2LTMuMjEtMi44ODMgNC4yNTQtLjQwNEw2LjUuMTEybDEuNjkgNC4wMSA0LjI1NC40MDQtMy4yMSAyLjg4Mi45NCA0LjI2eiIvPjwvc3ZnPg=="
+                                              class="innerStars"></span><span class="greyclr">(2,991)</span></div>
+                                  <div class="line3"><span class="montxt">₹499</span><span class="gclr">
+                                          <s> ₹4229</s></span><span class="greenclr">90% off</span></div>
+                              </div>
+                          </a>
+                          <a href="#" class="product-card-link">
+                              <div class="product-card">
+                                  <div class="prod-imag">
+                                      <img src="/public/Images/ProductImages/Shoes/shoes-removebg-preview.png" alt="">
+                                  </div>
+                                  <div class="line1">Product Name,Lorem ipsum dolor sit amet consectetur.</div>
+                                  <div class="line2"><span class="starsRatingGreen">4.2<img
+                                              src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMyIgaGVpZ2h0PSIxMiI+PHBhdGggZmlsbD0iI0ZGRiIgZD0iTTYuNSA5LjQzOWwtMy42NzQgMi4yMy45NC00LjI2LTMuMjEtMi44ODMgNC4yNTQtLjQwNEw2LjUuMTEybDEuNjkgNC4wMSA0LjI1NC40MDQtMy4yMSAyLjg4Mi45NCA0LjI2eiIvPjwvc3ZnPg=="
+                                              class="innerStars"></span><span class="greyclr">(2,991)</span></div>
+                                  <div class="line3"><span class="montxt">₹499</span><span class="gclr">
+                                          <s> ₹4229</s></span><span class="greenclr">90% off</span></div>
+                              </div>
+                          </a>
+                      </div>
+                  </div>
+              </div>
+
+              <button class="carousel-control-prev" type="button" data-bs-slide="prev"
+                  data-bs-target="#product-carousel">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-slide="next"
+                  data-bs-target="#product-carousel">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Next</span>
+              </button>
+          </div>
+      </div>
+  </div>
+
+    <div class="product-slider">
+      <div class="prod-category" style="background-image: url('public/Images/productSliderBG/mountain.png');">
+        <div class="prod-category-head text-center">Trekking Essentials</div>
+        <button class="shadow">View More</button>
+      </div>
+      <div id="prodcaro1" class="product-carousel carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
           <div class="carousel-item active">
             <div class="product-wrapper d-flex flex-inline justify-content-around">
-              <a href="#" class="product-card-link">
+              <a href="#" class="product-card-link ">
                 <div class="product-card">
+    
                   <div class="prod-imag">
-                    <img src="/public/Images/ProductImages/Shoes/shoes-removebg-preview.png" alt="">
+                    <img src="public/Images/ProductImages/Shoes/shoes-removebg-preview.png" alt="">
                   </div>
-                  <div class="line1">Product Name,Lorem ipsum dolor sit amet consectetur.</div>
-                  <div class="line2"><span class="starsRatingGreen">4.2<img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMyIgaGVpZ2h0PSIxMiI+PHBhdGggZmlsbD0iI0ZGRiIgZD0iTTYuNSA5LjQzOWwtMy42NzQgMi4yMy45NC00LjI2LTMuMjEtMi44ODMgNC4yNTQtLjQwNEw2LjUuMTEybDEuNjkgNC4wMSA0LjI1NC40MDQtMy4yMSAyLjg4Mi45NCA0LjI2eiIvPjwvc3ZnPg==" class="innerStars"></span><span class="greyclr">(2,991)</span></div>
-                  <div class="line3"><span class="montxt">₹499</span><span class="gclr">
-                      <s> ₹4229</s></span><span class="greenclr">90% off</span></div>
+                  <div class="prod-line1">Product Name</div>
+                  <div class="prod-line2">Price Rs.123</div>
+                  <div class="prod-line3">Some Tagline</div>
+    
                 </div>
               </a>
-              <a href="#" class="product-card-link">
+              <a href="#" class="product-card-link ">
                 <div class="product-card">
+    
                   <div class="prod-imag">
-                    <img src="/public/Images/ProductImages/Shoes/shoes-removebg-preview.png" alt="">
+                    <img src="public/Images/ProductImages/Shoes/shoes-removebg-preview.png" alt="">
                   </div>
-                  <div class="line1">Product Name,Lorem ipsum dolor sit amet consectetur.</div>
-                  <div class="line2"><span class="starsRatingGreen">4.2<img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMyIgaGVpZ2h0PSIxMiI+PHBhdGggZmlsbD0iI0ZGRiIgZD0iTTYuNSA5LjQzOWwtMy42NzQgMi4yMy45NC00LjI2LTMuMjEtMi44ODMgNC4yNTQtLjQwNEw2LjUuMTEybDEuNjkgNC4wMSA0LjI1NC40MDQtMy4yMSAyLjg4Mi45NCA0LjI2eiIvPjwvc3ZnPg==" class="innerStars"></span><span class="greyclr">(2,991)</span></div>
-                  <div class="line3"><span class="montxt">₹499</span><span class="gclr"><s>₹4229</s></span><span><span class="greenclr">90% off</span>
-                  </div>
+                  <div class="prod-line1">Product Name</div>
+                  <div class="prod-line2">Price Rs.123</div>
+                  <div class="prod-line3">Some Tagline</div>
+    
                 </div>
               </a>
-              <a href="#" class="product-card-link">
+              <a href="#" class="product-card-link ">
                 <div class="product-card">
+    
                   <div class="prod-imag">
-                    <img src="/public/Images/ProductImages/Shoes/shoes-removebg-preview.png" alt="">
+                    <img src="public/Images/ProductImages/Shoes/shoes-removebg-preview.png" alt="">
                   </div>
-                  <div class="line1">Product Name,Lorem ipsum dolor sit amet consectetur.</div>
-                  <div class="line2"><span class="starsRatingGreen">4.2<img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMyIgaGVpZ2h0PSIxMiI+PHBhdGggZmlsbD0iI0ZGRiIgZD0iTTYuNSA5LjQzOWwtMy42NzQgMi4yMy45NC00LjI2LTMuMjEtMi44ODMgNC4yNTQtLjQwNEw2LjUuMTEybDEuNjkgNC4wMSA0LjI1NC40MDQtMy4yMSAyLjg4Mi45NCA0LjI2eiIvPjwvc3ZnPg==" class="innerStars"></span><span class="greyclr">(2,991)</span></div>
-                  <div class="line3"><span class="montxt">₹499</span><span class="gclr">
-                      <s> ₹4229</s></span><span class="greenclr">90% off</span></div>
-                </div>
-              </a>
-              <a href="#" class="product-card-link">
-                <div class="product-card">
-                  <div class="prod-imag">
-                    <img src="/public/Images/ProductImages/Shoes/shoes-removebg-preview.png" alt="">
-                  </div>
-                  <div class="line1">Product Name,Lorem ipsum dolor sit amet consectetur.</div>
-                  <div class="line2"><span class="starsRatingGreen">4.2<img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMyIgaGVpZ2h0PSIxMiI+PHBhdGggZmlsbD0iI0ZGRiIgZD0iTTYuNSA5LjQzOWwtMy42NzQgMi4yMy45NC00LjI2LTMuMjEtMi44ODMgNC4yNTQtLjQwNEw2LjUuMTEybDEuNjkgNC4wMSA0LjI1NC40MDQtMy4yMSAyLjg4Mi45NCA0LjI2eiIvPjwvc3ZnPg==" class="innerStars"></span><span class="greyclr">(2,991)</span></div>
-                  <div class="line3"><span class="montxt">₹499</span><span class="gclr">
-                      <s> ₹4229</s></span><span class="greenclr">90% off</span></div>
-                </div>
-              </a>
-              <a href="#" class="product-card-link">
-                <div class="product-card">
-                  <div class="prod-imag">
-                    <img src="/public/Images/ProductImages/Shoes/shoes-removebg-preview.png" alt="">
-                  </div>
-                  <div class="line1">Product Name,Lorem ipsum dolor sit amet consectetur.</div>
-                  <div class="line2"><span class="starsRatingGreen">4.2<img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMyIgaGVpZ2h0PSIxMiI+PHBhdGggZmlsbD0iI0ZGRiIgZD0iTTYuNSA5LjQzOWwtMy42NzQgMi4yMy45NC00LjI2LTMuMjEtMi44ODMgNC4yNTQtLjQwNEw2LjUuMTEybDEuNjkgNC4wMSA0LjI1NC40MDQtMy4yMSAyLjg4Mi45NCA0LjI2eiIvPjwvc3ZnPg==" class="innerStars"></span><span class="greyclr">(2,991)</span></div>
-                  <div class="line3"><span class="montxt">₹499</span><span class="gclr">
-                      <s> ₹4229</s></span><span class="greenclr">90% off</span></div>
+                  <div class="prod-line1">Product Name</div>
+                  <div class="prod-line2">Price Rs.123</div>
+                  <div class="prod-line3">Some Tagline</div>
+    
                 </div>
               </a>
             </div>
@@ -358,57 +624,37 @@
             <div class="product-wrapper d-flex flex-inline justify-content-around">
               <a href="#" class="product-card-link">
                 <div class="product-card">
+    
                   <div class="prod-imag">
-                    <img src="/public/Images/ProductImages/Shoes/shoes-removebg-preview.png" alt="">
+                    <img src="public/Images/ProductImages/Shoes/search-icon-removebg-preview.png" alt="">
                   </div>
-                  <div class="line1">Product Name,Lorem ipsum dolor sit amet consectetur.</div>
-                  <div class="line2"><span class="starsRatingGreen">4.2<img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMyIgaGVpZ2h0PSIxMiI+PHBhdGggZmlsbD0iI0ZGRiIgZD0iTTYuNSA5LjQzOWwtMy42NzQgMi4yMy45NC00LjI2LTMuMjEtMi44ODMgNC4yNTQtLjQwNEw2LjUuMTEybDEuNjkgNC4wMSA0LjI1NC40MDQtMy4yMSAyLjg4Mi45NCA0LjI2eiIvPjwvc3ZnPg==" class="innerStars"></span><span class="greyclr">(2,991)</span></div>
-                  <div class="line3"><span class="montxt">₹499</span><span class="gclr">
-                      <s> ₹4229</s></span><span class="greenclr">90% off</span></div>
+                  <div class="prod-line1">Product Name</div>
+                  <div class="prod-line2">Price Rs.123</div>
+                  <div class="prod-line3">Some Tagline</div>
                 </div>
               </a>
               <a href="#" class="product-card-link">
                 <div class="product-card">
+    
                   <div class="prod-imag">
-                    <img src="/public/Images/ProductImages/Shoes/shoes-removebg-preview.png" alt="">
+                    <img src="public/Images/ProductImages/Shoes/search-icon-removebg-preview.png" alt="">
                   </div>
-                  <div class="line1">Product Name,Lorem ipsum dolor sit amet consectetur.</div>
-                  <div class="line2"><span class="starsRatingGreen">4.2<img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMyIgaGVpZ2h0PSIxMiI+PHBhdGggZmlsbD0iI0ZGRiIgZD0iTTYuNSA5LjQzOWwtMy42NzQgMi4yMy45NC00LjI2LTMuMjEtMi44ODMgNC4yNTQtLjQwNEw2LjUuMTEybDEuNjkgNC4wMSA0LjI1NC40MDQtMy4yMSAyLjg4Mi45NCA0LjI2eiIvPjwvc3ZnPg==" class="innerStars"></span><span class="greyclr">(2,991)</span></div>
-                  <div class="line3"><span class="montxt">₹499</span><span class="gclr"><s>₹4229</s></span><span><span class="greenclr">90% off</span>
-                  </div>
+                  <div class="prod-line1">Product Name</div>
+                  <div class="prod-line2">Price Rs.123</div>
+                  <div class="prod-line3">Some Tagline</div>
+    
                 </div>
               </a>
               <a href="#" class="product-card-link">
                 <div class="product-card">
+    
                   <div class="prod-imag">
-                    <img src="/public/Images/ProductImages/Shoes/shoes-removebg-preview.png" alt="">
+                    <img src="public/Images/ProductImages/Shoes/search-icon-removebg-preview.png" alt="">
                   </div>
-                  <div class="line1">Product Name,Lorem ipsum dolor sit amet consectetur.</div>
-                  <div class="line2"><span class="starsRatingGreen">4.2<img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMyIgaGVpZ2h0PSIxMiI+PHBhdGggZmlsbD0iI0ZGRiIgZD0iTTYuNSA5LjQzOWwtMy42NzQgMi4yMy45NC00LjI2LTMuMjEtMi44ODMgNC4yNTQtLjQwNEw2LjUuMTEybDEuNjkgNC4wMSA0LjI1NC40MDQtMy4yMSAyLjg4Mi45NCA0LjI2eiIvPjwvc3ZnPg==" class="innerStars"></span><span class="greyclr">(2,991)</span></div>
-                  <div class="line3"><span class="montxt">₹499</span><span class="gclr">
-                      <s> ₹4229</s></span><span class="greenclr">90% off</span></div>
-                </div>
-              </a>
-              <a href="#" class="product-card-link">
-                <div class="product-card">
-                  <div class="prod-imag">
-                    <img src="/public/Images/ProductImages/Shoes/shoes-removebg-preview.png" alt="">
-                  </div>
-                  <div class="line1">Product Name,Lorem ipsum dolor sit amet consectetur.</div>
-                  <div class="line2"><span class="starsRatingGreen">4.2<img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMyIgaGVpZ2h0PSIxMiI+PHBhdGggZmlsbD0iI0ZGRiIgZD0iTTYuNSA5LjQzOWwtMy42NzQgMi4yMy45NC00LjI2LTMuMjEtMi44ODMgNC4yNTQtLjQwNEw2LjUuMTEybDEuNjkgNC4wMSA0LjI1NC40MDQtMy4yMSAyLjg4Mi45NCA0LjI2eiIvPjwvc3ZnPg==" class="innerStars"></span><span class="greyclr">(2,991)</span></div>
-                  <div class="line3"><span class="montxt">₹499</span><span class="gclr">
-                      <s> ₹4229</s></span><span class="greenclr">90% off</span></div>
-                </div>
-              </a>
-              <a href="#" class="product-card-link">
-                <div class="product-card">
-                  <div class="prod-imag">
-                    <img src="/public/Images/ProductImages/Shoes/shoes-removebg-preview.png" alt="">
-                  </div>
-                  <div class="line1">Product Name,Lorem ipsum dolor sit amet consectetur.</div>
-                  <div class="line2"><span class="starsRatingGreen">4.2<img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMyIgaGVpZ2h0PSIxMiI+PHBhdGggZmlsbD0iI0ZGRiIgZD0iTTYuNSA5LjQzOWwtMy42NzQgMi4yMy45NC00LjI2LTMuMjEtMi44ODMgNC4yNTQtLjQwNEw2LjUuMTEybDEuNjkgNC4wMSA0LjI1NC40MDQtMy4yMSAyLjg4Mi45NCA0LjI2eiIvPjwvc3ZnPg==" class="innerStars"></span><span class="greyclr">(2,991)</span></div>
-                  <div class="line3"><span class="montxt">₹499</span><span class="gclr">
-                      <s> ₹4229</s></span><span class="greenclr">90% off</span></div>
+                  <div class="prod-line1">Product Name</div>
+                  <div class="prod-line2">Price Rs.123</div>
+                  <div class="prod-line3">Some Tagline</div>
+    
                 </div>
               </a>
             </div>
@@ -417,484 +663,1451 @@
             <div class="product-wrapper d-flex flex-inline justify-content-around">
               <a href="#" class="product-card-link">
                 <div class="product-card">
+    
                   <div class="prod-imag">
-                    <img src="/public/Images/ProductImages/Shoes/shoes-removebg-preview.png" alt="">
+                    <img src="public/Images/ProductImages/Shoes/icoon-removebg-preview.png" alt="">
                   </div>
-                  <div class="line1">Product Name,Lorem ipsum dolor sit amet consectetur.</div>
-                  <div class="line2"><span class="starsRatingGreen">4.2<img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMyIgaGVpZ2h0PSIxMiI+PHBhdGggZmlsbD0iI0ZGRiIgZD0iTTYuNSA5LjQzOWwtMy42NzQgMi4yMy45NC00LjI2LTMuMjEtMi44ODMgNC4yNTQtLjQwNEw2LjUuMTEybDEuNjkgNC4wMSA0LjI1NC40MDQtMy4yMSAyLjg4Mi45NCA0LjI2eiIvPjwvc3ZnPg==" class="innerStars"></span><span class="greyclr">(2,991)</span></div>
-                  <div class="line3"><span class="montxt">₹499</span><span class="gclr">
-                      <s> ₹4229</s></span><span class="greenclr">90% off</span></div>
+                  <div class="prod-line1">Product Name</div>
+                  <div class="prod-line2">Price Rs.123</div>
+                  <div class="prod-line3">Some Tagline</div>
+    
                 </div>
               </a>
               <a href="#" class="product-card-link">
                 <div class="product-card">
+    
                   <div class="prod-imag">
-                    <img src="/public/Images/ProductImages/Shoes/shoes-removebg-preview.png" alt="">
+                    <img src="public/Images/ProductImages/Shoes/icoon-removebg-preview.png" alt="">
                   </div>
-                  <div class="line1">Product Name,Lorem ipsum dolor sit amet consectetur.</div>
-                  <div class="line2"><span class="starsRatingGreen">4.2<img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMyIgaGVpZ2h0PSIxMiI+PHBhdGggZmlsbD0iI0ZGRiIgZD0iTTYuNSA5LjQzOWwtMy42NzQgMi4yMy45NC00LjI2LTMuMjEtMi44ODMgNC4yNTQtLjQwNEw2LjUuMTEybDEuNjkgNC4wMSA0LjI1NC40MDQtMy4yMSAyLjg4Mi45NCA0LjI2eiIvPjwvc3ZnPg==" class="innerStars"></span><span class="greyclr">(2,991)</span></div>
-                  <div class="line3"><span class="montxt">₹499</span><span class="gclr"><s>₹4229</s></span><span><span class="greenclr">90% off</span>
-                  </div>
+                  <div class="prod-line1">Product Name</div>
+                  <div class="prod-line2">Price Rs.123</div>
+                  <div class="prod-line3">Some Tagline</div>
+    
                 </div>
               </a>
               <a href="#" class="product-card-link">
                 <div class="product-card">
+    
                   <div class="prod-imag">
-                    <img src="/public/Images/ProductImages/Shoes/shoes-removebg-preview.png" alt="">
+                    <img src="public/Images/ProductImages/Shoes/icoon-removebg-preview.png" alt="">
                   </div>
-                  <div class="line1">Product Name,Lorem ipsum dolor sit amet consectetur.</div>
-                  <div class="line2"><span class="starsRatingGreen">4.2<img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMyIgaGVpZ2h0PSIxMiI+PHBhdGggZmlsbD0iI0ZGRiIgZD0iTTYuNSA5LjQzOWwtMy42NzQgMi4yMy45NC00LjI2LTMuMjEtMi44ODMgNC4yNTQtLjQwNEw2LjUuMTEybDEuNjkgNC4wMSA0LjI1NC40MDQtMy4yMSAyLjg4Mi45NCA0LjI2eiIvPjwvc3ZnPg==" class="innerStars"></span><span class="greyclr">(2,991)</span></div>
-                  <div class="line3"><span class="montxt">₹499</span><span class="gclr">
-                      <s> ₹4229</s></span><span class="greenclr">90% off</span></div>
+                  <div class="prod-line1">Product Name</div>
+                  <div class="prod-line2">Price Rs.123</div>
+                  <div class="prod-line3">Some Tagline</div>
+    
                 </div>
               </a>
               <a href="#" class="product-card-link">
                 <div class="product-card">
+    
                   <div class="prod-imag">
-                    <img src="/public/Images/ProductImages/Shoes/shoes-removebg-preview.png" alt="">
+                    <img src="public/Images/ProductImages/Shoes/icoon-removebg-preview.png" alt="">
                   </div>
-                  <div class="line1">Product Name,Lorem ipsum dolor sit amet consectetur.</div>
-                  <div class="line2"><span class="starsRatingGreen">4.2<img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMyIgaGVpZ2h0PSIxMiI+PHBhdGggZmlsbD0iI0ZGRiIgZD0iTTYuNSA5LjQzOWwtMy42NzQgMi4yMy45NC00LjI2LTMuMjEtMi44ODMgNC4yNTQtLjQwNEw2LjUuMTEybDEuNjkgNC4wMSA0LjI1NC40MDQtMy4yMSAyLjg4Mi45NCA0LjI2eiIvPjwvc3ZnPg==" class="innerStars"></span><span class="greyclr">(2,991)</span></div>
-                  <div class="line3"><span class="montxt">₹499</span><span class="gclr">
-                      <s> ₹4229</s></span><span class="greenclr">90% off</span></div>
-                </div>
-              </a>
-              <a href="#" class="product-card-link">
-                <div class="product-card">
-                  <div class="prod-imag">
-                    <img src="/public/Images/ProductImages/Shoes/shoes-removebg-preview.png" alt="">
-                  </div>
-                  <div class="line1">Product Name,Lorem ipsum dolor sit amet consectetur.</div>
-                  <div class="line2"><span class="starsRatingGreen">4.2<img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMyIgaGVpZ2h0PSIxMiI+PHBhdGggZmlsbD0iI0ZGRiIgZD0iTTYuNSA5LjQzOWwtMy42NzQgMi4yMy45NC00LjI2LTMuMjEtMi44ODMgNC4yNTQtLjQwNEw2LjUuMTEybDEuNjkgNC4wMSA0LjI1NC40MDQtMy4yMSAyLjg4Mi45NCA0LjI2eiIvPjwvc3ZnPg==" class="innerStars"></span><span class="greyclr">(2,991)</span></div>
-                  <div class="line3"><span class="montxt">₹499</span><span class="gclr">
-                      <s> ₹4229</s></span><span class="greenclr">90% off</span></div>
+                  <div class="prod-line1">Product Name</div>
+                  <div class="prod-line2">Price Rs.123</div>
+                  <div class="prod-line3">Some Tagline</div>
+    
                 </div>
               </a>
             </div>
           </div>
         </div>
+        <div class="d-flex flex-row">
+          <button class="carousel-control-prev" type="button" data-bs-slide="prev" data-bs-target="#prodcaro1">
+            <!-- <i class="fa fa-angle-left text-white" aria-hidden="true"></i> -->
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="slider-btn carousel-control-next" type="button" data-bs-slide="next" data-bs-target="#prodcaro1">
+            <!-- <i class="fa fa-angle-right text-white" aria-hidden="true"></i> -->
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
 
-        <button class="carousel-control-prev" type="button" data-bs-slide="prev" data-bs-target="#product-carousel">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="sr-only">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-slide="next" data-bs-target="#product-carousel">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="sr-only">Next</span>
-        </button>
+      </div>
+    </div>
+    <div class="product-slider">
+      <div class="prod-category" style="background-image: url('public/Images/productSliderBG/skiing.jpg');">
+        <div class="prod-category-head text-center">Snow Collection</div>
+        <button class="shadow">View More</button>
+      </div>
+      <div id="prodcaro01" class="product-carousel carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="product-wrapper d-flex flex-inline justify-content-around">
+              <a href="#" class="product-card-link ">
+                <div class="product-card">
+    
+                  <div class="prod-imag">
+                    <img src="public/Images/ProductImages/Shoes/shoes-removebg-preview.png" alt="">
+                  </div>
+                  <div class="prod-line1">Product Name</div>
+                  <div class="prod-line2">Price Rs.123</div>
+                  <div class="prod-line3">Some Tagline</div>
+    
+                </div>
+              </a>
+              <a href="#" class="product-card-link ">
+                <div class="product-card">
+    
+                  <div class="prod-imag">
+                    <img src="public/Images/ProductImages/Shoes/shoes-removebg-preview.png" alt="">
+                  </div>
+                  <div class="prod-line1">Product Name</div>
+                  <div class="prod-line2">Price Rs.123</div>
+                  <div class="prod-line3">Some Tagline</div>
+    
+                </div>
+              </a>
+              <a href="#" class="product-card-link ">
+                <div class="product-card">
+    
+                  <div class="prod-imag">
+                    <img src="public/Images/ProductImages/Shoes/shoes-removebg-preview.png" alt="">
+                  </div>
+                  <div class="prod-line1">Product Name</div>
+                  <div class="prod-line2">Price Rs.123</div>
+                  <div class="prod-line3">Some Tagline</div>
+    
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="product-wrapper d-flex flex-inline justify-content-around">
+              <a href="#" class="product-card-link">
+                <div class="product-card">
+    
+                  <div class="prod-imag">
+                    <img src="public/Images/ProductImages/Shoes/search-icon-removebg-preview.png" alt="">
+                  </div>
+                  <div class="prod-line1">Product Name</div>
+                  <div class="prod-line2">Price Rs.123</div>
+                  <div class="prod-line3">Some Tagline</div>
+                </div>
+              </a>
+              <a href="#" class="product-card-link">
+                <div class="product-card">
+    
+                  <div class="prod-imag">
+                    <img src="public/Images/ProductImages/Shoes/search-icon-removebg-preview.png" alt="">
+                  </div>
+                  <div class="prod-line1">Product Name</div>
+                  <div class="prod-line2">Price Rs.123</div>
+                  <div class="prod-line3">Some Tagline</div>
+    
+                </div>
+              </a>
+              <a href="#" class="product-card-link">
+                <div class="product-card">
+    
+                  <div class="prod-imag">
+                    <img src="public/Images/ProductImages/Shoes/search-icon-removebg-preview.png" alt="">
+                  </div>
+                  <div class="prod-line1">Product Name</div>
+                  <div class="prod-line2">Price Rs.123</div>
+                  <div class="prod-line3">Some Tagline</div>
+    
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="product-wrapper d-flex flex-inline justify-content-around">
+              <a href="#" class="product-card-link">
+                <div class="product-card">
+    
+                  <div class="prod-imag">
+                    <img src="public/Images/ProductImages/Shoes/icoon-removebg-preview.png" alt="">
+                  </div>
+                  <div class="prod-line1">Product Name</div>
+                  <div class="prod-line2">Price Rs.123</div>
+                  <div class="prod-line3">Some Tagline</div>
+    
+                </div>
+              </a>
+              <a href="#" class="product-card-link">
+                <div class="product-card">
+    
+                  <div class="prod-imag">
+                    <img src="public/Images/ProductImages/Shoes/icoon-removebg-preview.png" alt="">
+                  </div>
+                  <div class="prod-line1">Product Name</div>
+                  <div class="prod-line2">Price Rs.123</div>
+                  <div class="prod-line3">Some Tagline</div>
+    
+                </div>
+              </a>
+              <a href="#" class="product-card-link">
+                <div class="product-card">
+    
+                  <div class="prod-imag">
+                    <img src="public/Images/ProductImages/Shoes/icoon-removebg-preview.png" alt="">
+                  </div>
+                  <div class="prod-line1">Product Name</div>
+                  <div class="prod-line2">Price Rs.123</div>
+                  <div class="prod-line3">Some Tagline</div>
+    
+                </div>
+              </a>
+              <a href="#" class="product-card-link">
+                <div class="product-card">
+    
+                  <div class="prod-imag">
+                    <img src="public/Images/ProductImages/Shoes/icoon-removebg-preview.png" alt="">
+                  </div>
+                  <div class="prod-line1">Product Name</div>
+                  <div class="prod-line2">Price Rs.123</div>
+                  <div class="prod-line3">Some Tagline</div>
+    
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="d-flex flex-row">
+          <button class="carousel-control-prev" type="button" data-bs-slide="prev" data-bs-target="#prodcaro01">
+            <!-- <i class="fa fa-angle-left text-white" aria-hidden="true"></i> -->
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="slider-btn carousel-control-next" type="button" data-bs-slide="next" data-bs-target="#prodcaro01">
+            <!-- <i class="fa fa-angle-right text-white" aria-hidden="true"></i> -->
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="product-slider">
+      <div class="prod-category" style="background-image: url('public/Images/productSliderBG/camping.jpg');">
+        <div class="prod-category-head text-center">Camping Essentials</div>
+        <button class="shadow">View More</button>
+      </div>
+      <div id="prel" class="product-carousel carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="product-wrapper d-flex flex-inline justify-content-around">
+              <a href="#" class="product-card-link ">
+                <div class="product-card">
+    
+                  <div class="prod-imag">
+                    <img src="public/Images/ProductImages/Shoes/shoes-removebg-preview.png" alt="">
+                  </div>
+                  <div class="prod-line1">Product Name</div>
+                  <div class="prod-line2">Price Rs.123</div>
+                  <div class="prod-line3">Some Tagline</div>
+    
+                </div>
+              </a>
+              <a href="#" class="product-card-link ">
+                <div class="product-card">
+    
+                  <div class="prod-imag">
+                    <img src="public/Images/ProductImages/Shoes/shoes-removebg-preview.png" alt="">
+                  </div>
+                  <div class="prod-line1">Product Name</div>
+                  <div class="prod-line2">Price Rs.123</div>
+                  <div class="prod-line3">Some Tagline</div>
+    
+                </div>
+              </a>
+              <a href="#" class="product-card-link ">
+                <div class="product-card">
+    
+                  <div class="prod-imag">
+                    <img src="public/Images/ProductImages/Shoes/shoes-removebg-preview.png" alt="">
+                  </div>
+                  <div class="prod-line1">Product Name</div>
+                  <div class="prod-line2">Price Rs.123</div>
+                  <div class="prod-line3">Some Tagline</div>
+    
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="product-wrapper d-flex flex-inline justify-content-around">
+              <a href="#" class="product-card-link">
+                <div class="product-card">
+    
+                  <div class="prod-imag">
+                    <img src="public/Images/ProductImages/Shoes/search-icon-removebg-preview.png" alt="">
+                  </div>
+                  <div class="prod-line1">Product Name</div>
+                  <div class="prod-line2">Price Rs.123</div>
+                  <div class="prod-line3">Some Tagline</div>
+                </div>
+              </a>
+              <a href="#" class="product-card-link">
+                <div class="product-card">
+    
+                  <div class="prod-imag">
+                    <img src="public/Images/ProductImages/Shoes/search-icon-removebg-preview.png" alt="">
+                  </div>
+                  <div class="prod-line1">Product Name</div>
+                  <div class="prod-line2">Price Rs.123</div>
+                  <div class="prod-line3">Some Tagline</div>
+    
+                </div>
+              </a>
+              <a href="#" class="product-card-link">
+                <div class="product-card">
+    
+                  <div class="prod-imag">
+                    <img src="public/Images/ProductImages/Shoes/search-icon-removebg-preview.png" alt="">
+                  </div>
+                  <div class="prod-line1">Product Name</div>
+                  <div class="prod-line2">Price Rs.123</div>
+                  <div class="prod-line3">Some Tagline</div>
+    
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="product-wrapper d-flex flex-inline justify-content-around">
+              <a href="#" class="product-card-link">
+                <div class="product-card">
+    
+                  <div class="prod-imag">
+                    <img src="public/Images/ProductImages/Shoes/icoon-removebg-preview.png" alt="">
+                  </div>
+                  <div class="prod-line1">Product Name</div>
+                  <div class="prod-line2">Price Rs.123</div>
+                  <div class="prod-line3">Some Tagline</div>
+    
+                </div>
+              </a>
+              <a href="#" class="product-card-link">
+                <div class="product-card">
+    
+                  <div class="prod-imag">
+                    <img src="public/Images/ProductImages/Shoes/icoon-removebg-preview.png" alt="">
+                  </div>
+                  <div class="prod-line1">Product Name</div>
+                  <div class="prod-line2">Price Rs.123</div>
+                  <div class="prod-line3">Some Tagline</div>
+    
+                </div>
+              </a>
+              <a href="#" class="product-card-link">
+                <div class="product-card">
+    
+                  <div class="prod-imag">
+                    <img src="public/Images/ProductImages/Shoes/icoon-removebg-preview.png" alt="">
+                  </div>
+                  <div class="prod-line1">Product Name</div>
+                  <div class="prod-line2">Price Rs.123</div>
+                  <div class="prod-line3">Some Tagline</div>
+    
+                </div>
+              </a>
+              <a href="#" class="product-card-link">
+                <div class="product-card">
+    
+                  <div class="prod-imag">
+                    <img src="public/Images/ProductImages/Shoes/icoon-removebg-preview.png" alt="">
+                  </div>
+                  <div class="prod-line1">Product Name</div>
+                  <div class="prod-line2">Price Rs.123</div>
+                  <div class="prod-line3">Some Tagline</div>
+    
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="d-flex flex-row">
+          <button class="carousel-control-prev" type="button" data-bs-slide="prev" data-bs-target="#prel">
+            <!-- <i class="fa fa-angle-left text-white" aria-hidden="true"></i> -->
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="slider-btn carousel-control-next" type="button" data-bs-slide="next" data-bs-target="#prel">
+            <!-- <i class="fa fa-angle-right text-white" aria-hidden="true"></i> -->
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+  <!-- <a href="#" class="product-card-link">
+    <div class="product-card">
+        <div class="prod-imag">
+          <img src="public/Images/ProductImages/Shoes/shoes-removebg-preview.png" alt="">
+        </div>
+        <div class="prod-line1">Product Name</div>
+        <div class="prod-line2">Price Rs.123</div>
+        <div class="prod-line3">Some Tagline</div>
+    </div>
+  </a>
+  <a href="#" class="product-card-link">
+    <div class="product-card">
+        <div class="prod-imag">
+          <img src="public/Images/ProductImages/Shoes/icoon-removebg-preview.png" alt="">
+        </div>
+        <div class="d-flex flex-column ">
+        <div class="prod-line1">Product Name</div>
+        <div class="prod-line2">Price Rs.123</div>
+        <div class="prod-line3">Some Tagline</div>
+      </div>
+    </div>
+  </a> -->
+
+  <div id="caro1" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active img-carousel">
+        <a href="#">
+          <div class="caro-prod">
+            <div class="caro-prod-title">New Offers on Tents</div>
+            <div class="caro-prod-tag">Camping in Way</div>
+          </div>
+          <div class="caro-prod-price">Starting from just 99/-</div>
+          <img src="public/Images/carouselImages/secondCarousel/MOUNTAIN HIKING CAMP PE20 (1).avif">
+        </a>
+      </div>
+      <div class="carousel-item img-carousel">
+        <a href="#">
+          <div class="caro-prod">
+            <div class="caro-prod-title">Snow Equipments</div>
+            <div class="caro-prod-tag">Grabs Yours Today</div>
+          </div>
+          <div class="caro-prod-price">Starting from just 99/-</div>
+          <img src="public/Images/carouselImages/secondCarousel/WEDZE HOUSSE CHAUSSURE SKI 900 GRIS NOIR AH21.avif">
+        </a>
+      </div>
+      <div class="carousel-item img-carousel">
+        <a href="#">
+          <div class="caro-prod">
+            <div class="caro-prod-title">Snow Glasses</div>
+            <div class="caro-prod-tag">Do not let cold dry your eyes</div>
+          </div>
+          <div class="caro-prod-price">Starting from just 99/-</div>
+          <img src="public/Images/carouselImages/secondCarousel/WEDZE SKI-P JKT 180 M CAMEL AH22.avif">
+        </a>
+      </div>
+      <div class="carousel-item img-carousel">
+        <a href="#">
+          <div class="caro-prod">
+            <div class="caro-prod-title">New Hiking Collection</div>
+            <div class="caro-prod-tag">Time to Hike is Here...</div>
+          </div>
+          <div class="caro-prod-price">Starting from just 99/-</div>
+          <img src="public/Images/carouselImages/hiking collection.avif">
+        </a>
+      </div>
+    </div>
+    <!-- <div class="carousel-indicators">
+      <button type="button" data-bs-target="caro1" data-bs-slide-to="0" class="active" aria-current="true"></button>
+      <button type="button" data-bs-target="caro1" data-bs-slide-to="1"></button>
+      <button type="button" data-bs-target="caro1" data-bs-slide-to="2"></button>
+      <button type="button" data-bs-target="caro1" data-bs-slide-to="3"></button>
+    </div> -->
+
+    <button class="carousel-control-prev" type="button" data-bs-slide="prev" data-bs-target="#caro1">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-slide="next" data-bs-target="#caro1">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </button>
+  </div>
+
+  <hr>
+  <hr>
+
+  <div class="container bg-white mt-5">
+    <ul class="nav nav-tabs flex-column flex-sm-row" role="tablist">
+      <li class="nav-item" role="presentation"><a class="nav-link detail-nav-link active" data-bs-toggle="tab" href="#orders" role="tab" aria-selected="true">Orders</a></li>
+      <li class="nav-item" role="presentation"><a class="nav-link detail-nav-link" data-bs-toggle="tab" href="#BuyAgain" role="tab" aria-selected="false" tabindex="-1">Buy Again</a></li>
+      <li class="nav-item" role="presentation"><a class="nav-link detail-nav-link" data-bs-toggle="tab" href="#NotYetShipped" role="tab" aria-selected="false" tabindex="-1">Not Yet Shipped</a></li>
+      <li class="nav-item" role="presentation"><a class="nav-link detail-nav-link" data-bs-toggle="tab" href="#CancelledOrders" role="tab" aria-selected="false" tabindex="-1">Cancelled Orders</a></li>
+    </ul>
+    <div class="tab-content">
+      <div class="tab-pane px-3 active show" id="orders" role="tabpanel">
+        <section class="h-100 gradient-custom">
+          <div class="container py-5 h-100">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+              <div class="col-lg-10 col-xl-8">
+                <div class="card" style="border-radius: 10px;">
+                  <div class="card-header px-4 py-5">
+                    <h5 class="text-muted mb-0 OrderUpperText">Thanks for your Order with us ,<span class="orderEmp">Akash</span>!</h5>
+                  </div>
+                  <div class="card-body p-4">
+                    <div class="d-flex justify-content-between align-items-center mb-4">
+                      <p class="lead fw-normal mb-0 orderEmp">Receipt</p>
+                      <p class="small text-muted mb-0">Receipt Voucher : 1KAU9-84UIL</p>
+                    </div>
+                    <div class="card shadow-0 border mb-4">
+                      <div class="card-body">
+                        <div class="row">
+                          <div class="col-md-2">
+                            <img src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Products/13.webp" class="img-fluid" alt="Phone">
+                          </div>
+                          <div class="col-md-2 text-center d-flex justify-content-center align-items-center">
+                            <p class="text-muted mb-0">Samsung Galaxy</p>
+                          </div>
+                          <div class="col-md-2 text-center d-flex justify-content-center align-items-center">
+                            <p class="text-muted mb-0 small">White</p>
+                          </div>
+                          <div class="col-md-2 text-center d-flex justify-content-center align-items-center">
+                            <p class="text-muted mb-0 small">Capacity: 64GB</p>
+                          </div>
+                          <div class="col-md-2 text-center d-flex justify-content-center align-items-center">
+                            <p class="text-muted mb-0 small">Qty: 1</p>
+                          </div>
+                          <div class="col-md-2 text-center d-flex justify-content-center align-items-center">
+                            <p class="text-muted mb-0 small">$499</p>
+                          </div>
+                        </div>
+                        <hr class="mb-4" style="background-color: #e0e0e0; opacity: 1;">
+                        <div class="row d-flex align-items-center">
+                          <div class="col-md-2">
+                            <p class="text-muted mb-0 small">Track Order</p>
+                          </div>
+                          <div class="col-md-10">
+                            <!-- <div class="progress" style="height: 6px; border-radius: 16px;">
+                                <div class="progress-bar progressBar gradient-custom-2" role="progressbar" aria-valuenow="65"
+                                  aria-valuemin="0" aria-valuemax="100"></div>
+                              </div> -->
+                            <div class="d-flex justify-content-around mb-1">
+                              <p class="text-muted mt-1 mb-0 small ms-xl-5">Give Feedback</p>
+                              <p class="text-muted mt-1 mb-0 small ms-xl-5">Return/Replace</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card shadow-0 border mb-4">
+                      <div class="card-body">
+                        <div class="row">
+                          <div class="col-md-2">
+                            <img src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Products/1.webp" class="img-fluid" alt="Phone">
+                          </div>
+                          <div class="col-md-2 text-center d-flex justify-content-center align-items-center">
+                            <p class="text-muted mb-0">iPad</p>
+                          </div>
+                          <div class="col-md-2 text-center d-flex justify-content-center align-items-center">
+                            <p class="text-muted mb-0 small">Pink rose</p>
+                          </div>
+                          <div class="col-md-2 text-center d-flex justify-content-center align-items-center">
+                            <p class="text-muted mb-0 small">Capacity: 32GB</p>
+                          </div>
+                          <div class="col-md-2 text-center d-flex justify-content-center align-items-center">
+                            <p class="text-muted mb-0 small">Qty: 1</p>
+                          </div>
+                          <div class="col-md-2 text-center d-flex justify-content-center align-items-center">
+                            <p class="text-muted mb-0 small">$399</p>
+                          </div>
+                        </div>
+                        <hr class="mb-4" style="background-color: #e0e0e0; opacity: 1;">
+                        <div class="row d-flex align-items-center">
+                          <div class="col-md-2">
+                            <p class="text-muted mb-0 small">Track Order</p>
+                          </div>
+                          <div class="col-md-10">
+                            <!-- <div class="progress" style="height: 6px; border-radius: 16px;">
+                                <div class="progress-bar progressBar gradient-custom-2" role="progressbar" aria-valuenow="20"
+                                  aria-valuemin="0" aria-valuemax="100"></div>
+                              </div> -->
+                            <div class="d-flex justify-content-around mb-1">
+                              <p class="text-muted mt-1 mb-0 small ms-xl-5">Give Feedback</p>
+                              <p class="text-muted mt-1 mb-0 small ms-xl-5">Return/Replace</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="d-flex justify-content-between pt-2">
+                      <p class="fw-bold mb-0">Order Details</p>
+                      <p class="text-muted mb-0"><span class="fw-bold me-4">Total</span> $898.00</p>
+                    </div>
+
+                    <div class="d-flex justify-content-between pt-2">
+                      <p class="text-muted mb-0">Invoice Number : 788152</p>
+                      <p class="text-muted mb-0"><span class="fw-bold me-4">Discount</span> $19.00</p>
+                    </div>
+
+                    <div class="d-flex justify-content-between">
+                      <p class="text-muted mb-0">Invoice Date : 22 Dec,2019</p>
+                      <p class="text-muted mb-0"><span class="fw-bold me-4">GST 18%</span> 123</p>
+                    </div>
+
+                    <div class="d-flex justify-content-between mb-5">
+                      <p class="text-muted mb-0">Recepits Voucher : 18KU-62IIK</p>
+                      <p class="text-muted mb-0"><span class="fw-bold me-4">Delivery Charges</span> Free</p>
+                    </div>
+                  </div>
+                  <div class="card-footer border-0 px-4 py-5 ordersLowerArea">
+                    <h5 class="d-flex align-items-center justify-content-end text-white text-uppercase mb-0">Total
+                      paid: <span class="h2 mb-0 ms-2">$1040</span></h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+      <div class="tab-pane" id="BuyAgain" role="tabpanel">
+        <div class="ll gradient-custom">
+          <div class="need">
+            <div class="row row-cols-1 row-cols-md-4 g-4">
+              <div class="col">
+                <div class="card h-70">
+                  <a href="#"><img src="/public/Images/ProductImages/Rucksack2/Rucksack2_image7.jpg" class="card-img-top" alt="Skyscrapers" />
+                    <div class="card-body">
+                      <h5 class="card-title">Name</h5>
+                      <div class="cover">
+                      <div class="btn btn-warning">Add to cart</div>
+                      <div class="btn btn-success">Buy Now</div>
+                    </div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card h-70">
+                  <a href="#"><img src="/public/Images/ProductImages/Rucksack2/Rucksack2_image7.jpg" class="card-img-top" alt="Skyscrapers" />
+                    <div class="card-body">
+                      <h5 class="card-title">Name</h5>
+                      <div class="cover">
+                      <div class="btn btn-warning">Add to cart</div>
+                      <div class="btn btn-success">Buy Now</div>
+                    </div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card h-70">
+                  <a href="#"><img src="/public/Images/ProductImages/Rucksack2/Rucksack2_image7.jpg" class="card-img-top" alt="Skyscrapers" />
+                    <div class="card-body">
+                      <h5 class="card-title">Name</h5>
+                      <div class="cover">
+                      <div class="btn btn-warning">Add to cart</div>
+                      <div class="btn btn-success">Buy Now</div>
+                    </div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card h-70">
+                  <a href="#"><img src="/public/Images/ProductImages/Rucksack2/Rucksack2_image7.jpg" class="card-img-top" alt="Skyscrapers" />
+                    <div class="card-body">
+                      <h5 class="card-title">Name</h5>
+                      <div class="cover">
+                      <div class="btn btn-warning">Add to cart</div>
+                      <div class="btn btn-success">Buy Now</div>
+                    </div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="need">
+            <div class="row row-cols-1 row-cols-md-4 g-4">
+              <div class="col">
+                <div class="card h-70">
+                  <a href="#"><img src="/public/Images/ProductImages/Rucksack2/Rucksack2_image7.jpg" class="card-img-top" alt="Skyscrapers" />
+                    <div class="card-body">
+                      <h5 class="card-title">Name</h5>
+                      <div class="cover">
+                      <div class="btn btn-warning">Add to cart</div>
+                      <div class="btn btn-success">Buy Now</div>
+                    </div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card h-70">
+                  <a href="#"><img src="/public/Images/ProductImages/Rucksack2/Rucksack2_image7.jpg" class="card-img-top" alt="Skyscrapers" />
+                    <div class="card-body">
+                      <h5 class="card-title">Name</h5>
+                      <div class="cover">
+                      <div class="btn btn-warning">Add to cart</div>
+                      <div class="btn btn-success">Buy Now</div>
+                    </div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card h-70">
+                  <a href="#"><img src="/public/Images/ProductImages/Rucksack2/Rucksack2_image7.jpg" class="card-img-top" alt="Skyscrapers" />
+                    <div class="card-body">
+                      <h5 class="card-title">Name</h5>
+                      <div class="cover">
+                      <div class="btn btn-warning">Add to cart</div>
+                      <div class="btn btn-success">Buy Now</div>
+                    </div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card h-70">
+                  <a href="#"><img src="/public/Images/ProductImages/Rucksack2/Rucksack2_image7.jpg" class="card-img-top" alt="Skyscrapers" />
+                    <div class="card-body">
+                      <h5 class="card-title">Name</h5>
+                      <div class="cover">
+                      <div class="btn btn-warning">Add to cart</div>
+                      <div class="btn btn-success">Buy Now</div>
+                    </div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="tab-pane" id="NotYetShipped" role="tabpanel">
+        <!-- <div class="row mb-5">
+          <div class="col-lg-10 col-xl-9">
+            <div class="review d-flex">
+              <div class="flex-shrink-0 text-center me-4 me-xl-5"><img class="review-image" src="https://d19m59y37dris4.cloudfront.net/sell/2-0-1/img/person-1.jpg" alt="Han Solo"><span class="text-uppercase text-muted">Dec 2018</span></div>
+              <div>
+                <h5 class="mt-2 mb-1">Han Solo</h5>
+                <div class="mb-2"><i class="fa fa-xs fa-star text-warning"></i><i class="fa fa-xs fa-star text-warning"></i><i class="fa fa-xs fa-star text-warning"></i><i class="fa fa-xs fa-star text-warning"></i><i class="fa fa-xs fa-star text-warning"></i>
+                </div>
+                <p class="text-muted">One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed into a horrible vermin. He lay on his armour-like back, and if he lifted his head a little he could see his brown belly, slightly domed and divided by arches into stiff sections </p>
+              </div>
+            </div>
+            <div class="review d-flex">
+              <div class="flex-shrink-0 text-center me-4 me-xl-5"><img class="review-image" src="https://d19m59y37dris4.cloudfront.net/sell/2-0-1/img/person-2.jpg" alt="Luke Skywalker"><span class="text-uppercase text-muted">Dec 2018</span></div>
+              <div>
+                <h5 class="mt-2 mb-1">Luke Skywalker</h5>
+                <div class="mb-2"><i class="fa fa-xs fa-star text-warning"></i><i class="fa fa-xs fa-star text-warning"></i><i class="fa fa-xs fa-star text-warning"></i><i class="fa fa-xs fa-star text-warning"></i><i class="fa fa-xs fa-star text-gray-200"></i>
+                </div>
+                <p class="text-muted">The bedding was hardly able to cover it and seemed ready to slide off any moment. His many legs, pitifully thin compared with the size of the rest of him, waved about helplessly as he looked. "What's happened to me?" he thought. It wasn't a dream. </p>
+              </div>
+            </div>
+            <div class="review d-flex">
+              <div class="flex-shrink-0 text-center me-4 me-xl-5"><img class="review-image" src="https://d19m59y37dris4.cloudfront.net/sell/2-0-1/img/person-3.jpg" alt="Princess Leia"><span class="text-uppercase text-muted">Dec 2018</span></div>
+              <div>
+                <h5 class="mt-2 mb-1">Princess Leia</h5>
+                <div class="mb-2"><i class="fa fa-xs fa-star text-warning"></i><i class="fa fa-xs fa-star text-warning"></i><i class="fa fa-xs fa-star text-warning"></i><i class="fa fa-xs fa-star text-gray-200"></i><i class="fa fa-xs fa-star text-gray-200"></i>
+                </div>
+                <p class="text-muted">His room, a proper human room although a little too small, lay peacefully between its four familiar walls. A collection of textile samples lay spread out on the table. </p>
+              </div>
+            </div>
+            <div class="review d-flex">
+              <div class="flex-shrink-0 text-center me-4 me-xl-5"><img class="review-image" src="https://d19m59y37dris4.cloudfront.net/sell/2-0-1/img/person-4.jpg" alt="Jabba Hut"><span class="text-uppercase text-muted">Dec 2018</span></div>
+              <div>
+                <h5 class="mt-2 mb-1">Jabba Hut</h5>
+                <div class="mb-2"><i class="fa fa-xs fa-star text-warning"></i><i class="fa fa-xs fa-star text-warning"></i><i class="fa fa-xs fa-star text-warning"></i><i class="fa fa-xs fa-star text-warning"></i><i class="fa fa-xs fa-star text-warning"></i>
+                </div>
+                <p class="text-muted">Samsa was a travelling salesman - and above it there hung a picture that he had recently cut out of an illustrated magazine and housed in a nice, gilded frame. </p>
+              </div>
+            </div>
+            <div class="px-3">
+              <h5 class="text-uppercase mb-4">Leave a review</h5>
+              <form class="form" id="contact-form" method="post" action="contact.php">
+                <div class="row">
+                  <div class="col-sm-6">
+                    <div class="mb-4">
+                      <label class="form-label" for="name">Your name *</label>
+                      <input class="form-control" type="text" name="name" id="name" placeholder="Enter your name" required="required">
+                    </div>
+                  </div>
+                  <div class="col-sm-6">
+                    <div class="mb-4">
+                      <label class="form-label" for="rating">Your rating *</label>
+                      <select class="custom-select focus-shadow-0" name="rating" id="rating">
+                        <option value="5">★★★★★ (5/5)</option>
+                        <option value="4">★★★★☆ (4/5)</option>
+                        <option value="3">★★★☆☆ (3/5)</option>
+                        <option value="2">★★☆☆☆ (2/5)</option>
+                        <option value="1">★☆☆☆☆ (1/5)</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <div class="mb-4">
+                  <label class="form-label" for="email">Your email *</label>
+                  <input class="form-control" type="email" name="email" id="email" placeholder="Enter your  email" required="required">
+                </div>
+                <div class="mb-4">
+                  <label class="form-label" for="review">Review text *</label>
+                  <textarea class="form-control" rows="4" name="review" id="review" placeholder="Enter your review" required="required"></textarea>
+                </div>
+                <button class="btn btn-outline-dark" type="submit">Post review</button>
+              </form>
+            </div>
+          </div>
+        </div> -->
+        <section class="vh-25 gradient-custom-2 NotYetShippedClass">
+          <div class="container py-5 h-100 NotYetShippedInnerClass">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+              <div class="col-md-10 col-lg-8 col-xl-6 NotYetShippedProductCard">
+                <div class="card card-stepper" style="border-radius: 16px;">
+                  <div class="card-header p-4">
+                    <div class="d-flex justify-content-between align-items-center">
+                      <div>
+                        <p class="text-muted mb-2"> Order ID <span class="fw-bold text-body">1222528743</span></p>
+                        <p class="text-muted mb-0"> Place On <span class="fw-bold text-body">12,March 2019</span> </p>
+                      </div>
+                      <div>
+                        <h6 class="mb-0"> <a href="#">View Details</a> </h6>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card-body p-4">
+                    <div class="d-flex flex-row mb-4 pb-2">
+                      <div class="flex-fill">
+                        <h5 class="bold">Headphones Bose 35 II</h5>
+                        <p class="text-muted"> Qt: 1 item</p>
+                        <h4 class="mb-3"> $ 299 <span class="small text-muted"> via (COD) </span></h4>
+                        <p class="text-muted">Tracking Status on: <span class="text-body">11:30pm, Today</span></p>
+                      </div>
+                      <div>
+                        <img class="align-self-center img-fluid" src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Products/6.webp" width="250">
+                      </div>
+                    </div>
+                    <div class="progress" style="height: 6px; border-radius: 16px;">
+                      <div class="progress-bar progressBar gradient-custom-2 pb1" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                    <ul id="progressbar-1" class="mx-0 mt-0 mb-5 px-0 pt-0 pb-4">
+                      <!-- <li class="step0 active" id="step1"><span style="margin-left: 22px; margin-top: 12px;">PLACED</span></li>
+                      <li class="step0 active text-center" id="step2"><span>SHIPPED</span></li>
+                      <li class="step0 text-muted text-end" id="step3"><span style="margin-right: 22px;">DELIVERED</span></li> -->
+                      <li class=""><span>PLACED</span></li>
+                      <li class=" text-center"><span>SHIPPED</span></li>
+                      <li class="text-end"><span>DELIVERED</span></li>
+
+                    </ul>
+                  </div>
+                  <div class="card-footer p-4">
+                    <div class="d-flex justify-content-between">
+                      <h5 class="fw-normal mb-0"><a href="#!">Track</a></h5>
+                      <div class="border-start h-100"></div>
+                      <h5 class="fw-normal mb-0"><a href="#!">Cancel</a></h5>
+                      <div class="border-start h-100"></div>
+                      <h5 class="fw-normal mb-0"><a href="#!">Pre-pay</a></h5>
+                      <div class="border-start h-100"></div>
+                      <h5 class="fw-normal mb-0"><a href="#!" class="text-muted"><i class="fas fa-ellipsis-v"></i></a>
+                      </h5>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-10 col-lg-8 col-xl-6 NotYetShippedProductCard">
+                <div class="card card-stepper" style="border-radius: 16px;">
+                  <div class="card-header p-4">
+                    <div class="d-flex justify-content-between align-items-center">
+                      <div>
+                        <p class="text-muted mb-2"> Order ID <span class="fw-bold text-body">1222528743</span></p>
+                        <p class="text-muted mb-0"> Place On <span class="fw-bold text-body">12,March 2019</span> </p>
+                      </div>
+                      <div>
+                        <h6 class="mb-0"> <a href="#">View Details</a> </h6>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card-body p-4">
+                    <div class="d-flex flex-row mb-4 pb-2">
+                      <div class="flex-fill">
+                        <h5 class="bold">Headphones Bose 35 II</h5>
+                        <p class="text-muted"> Qt: 1 item</p>
+                        <h4 class="mb-3"> $ 299 <span class="small text-muted"> via (COD) </span></h4>
+                        <p class="text-muted">Tracking Status on: <span class="text-body">11:30pm, Today</span></p>
+                      </div>
+                      <div>
+                        <img class="align-self-center img-fluid" src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Products/6.webp" width="250">
+                      </div>
+                    </div>
+                    <div class="progress" style="height: 6px; border-radius: 16px;">
+                      <div class="progress-bar progressBar gradient-custom-2 pb1" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                    <ul id="progressbar-1" class="mx-0 mt-0 mb-5 px-0 pt-0 pb-4">
+                      <!-- <li class="step0 active" id="step1"><span style="margin-left: 22px; margin-top: 12px;">PLACED</span></li>
+                      <li class="step0 active text-center" id="step2"><span>SHIPPED</span></li>
+                      <li class="step0 text-muted text-end" id="step3"><span style="margin-right: 22px;">DELIVERED</span></li> -->
+                      <li class=""><span>PLACED</span></li>
+                      <li class=" text-center"><span>SHIPPED</span></li>
+                      <li class="text-end"><span>DELIVERED</span></li>
+
+                    </ul>
+                  </div>
+                  <div class="card-footer p-4">
+                    <div class="d-flex justify-content-between">
+                      <h5 class="fw-normal mb-0"><a href="#!">Track</a></h5>
+                      <div class="border-start h-100"></div>
+                      <h5 class="fw-normal mb-0"><a href="#!">Cancel</a></h5>
+                      <div class="border-start h-100"></div>
+                      <h5 class="fw-normal mb-0"><a href="#!">Pre-pay</a></h5>
+                      <div class="border-start h-100"></div>
+                      <h5 class="fw-normal mb-0"><a href="#!" class="text-muted"><i class="fas fa-ellipsis-v"></i></a>
+                      </h5>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-10 col-lg-8 col-xl-6 NotYetShippedProductCard">
+                <div class="card card-stepper" style="border-radius: 16px;">
+                  <div class="card-header p-4">
+                    <div class="d-flex justify-content-between align-items-center">
+                      <div>
+                        <p class="text-muted mb-2"> Order ID <span class="fw-bold text-body">1222528743</span></p>
+                        <p class="text-muted mb-0"> Place On <span class="fw-bold text-body">12,March 2019</span> </p>
+                      </div>
+                      <div>
+                        <h6 class="mb-0"> <a href="#">View Details</a> </h6>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card-body p-4">
+                    <div class="d-flex flex-row mb-4 pb-2">
+                      <div class="flex-fill">
+                        <h5 class="bold">Headphones Bose 35 II</h5>
+                        <p class="text-muted"> Qt: 1 item</p>
+                        <h4 class="mb-3"> $ 299 <span class="small text-muted"> via (COD) </span></h4>
+                        <p class="text-muted">Tracking Status on: <span class="text-body">11:30pm, Today</span></p>
+                      </div>
+                      <div>
+                        <img class="align-self-center img-fluid" src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Products/6.webp" width="250">
+                      </div>
+                    </div>
+                    <div class="progress" style="height: 6px; border-radius: 16px;">
+                      <div class="progress-bar progressBar gradient-custom-2 pb1" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                    <ul id="progressbar-1" class="mx-0 mt-0 mb-5 px-0 pt-0 pb-4">
+                      <!-- <li class="step0 active" id="step1"><span style="margin-left: 22px; margin-top: 12px;">PLACED</span></li>
+                      <li class="step0 active text-center" id="step2"><span>SHIPPED</span></li>
+                      <li class="step0 text-muted text-end" id="step3"><span style="margin-right: 22px;">DELIVERED</span></li> -->
+                      <li class=""><span>PLACED</span></li>
+                      <li class=" text-center"><span>SHIPPED</span></li>
+                      <li class="text-end"><span>DELIVERED</span></li>
+
+                    </ul>
+                  </div>
+                  <div class="card-footer p-4">
+                    <div class="d-flex justify-content-between">
+                      <h5 class="fw-normal mb-0"><a href="#!">Track</a></h5>
+                      <div class="border-start h-100"></div>
+                      <h5 class="fw-normal mb-0"><a href="#!">Cancel</a></h5>
+                      <div class="border-start h-100"></div>
+                      <h5 class="fw-normal mb-0"><a href="#!">Pre-pay</a></h5>
+                      <div class="border-start h-100"></div>
+                      <h5 class="fw-normal mb-0"><a href="#!" class="text-muted"><i class="fas fa-ellipsis-v"></i></a>
+                      </h5>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-10 col-lg-8 col-xl-6 NotYetShippedProductCard">
+                <div class="card card-stepper" style="border-radius: 16px;">
+                  <div class="card-header p-4">
+                    <div class="d-flex justify-content-between align-items-center">
+                      <div>
+                        <p class="text-muted mb-2"> Order ID <span class="fw-bold text-body">1222528743</span></p>
+                        <p class="text-muted mb-0"> Place On <span class="fw-bold text-body">12,March 2019</span> </p>
+                      </div>
+                      <div>
+                        <h6 class="mb-0"> <a href="#">View Details</a> </h6>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card-body p-4">
+                    <div class="d-flex flex-row mb-4 pb-2">
+                      <div class="flex-fill">
+                        <h5 class="bold">Headphones Bose 35 II</h5>
+                        <p class="text-muted"> Qt: 1 item</p>
+                        <h4 class="mb-3"> $ 299 <span class="small text-muted"> via (COD) </span></h4>
+                        <p class="text-muted">Tracking Status on: <span class="text-body">11:30pm, Today</span></p>
+                      </div>
+                      <div>
+                        <img class="align-self-center img-fluid" src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Products/6.webp" width="250">
+                      </div>
+                    </div>
+                    <div class="progress" style="height: 6px; border-radius: 16px;">
+                      <div class="progress-bar progressBar gradient-custom-2 pb1" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                    <ul id="progressbar-1" class="mx-0 mt-0 mb-5 px-0 pt-0 pb-4">
+                      <!-- <li class="step0 active" id="step1"><span style="margin-left: 22px; margin-top: 12px;">PLACED</span></li>
+                      <li class="step0 active text-center" id="step2"><span>SHIPPED</span></li>
+                      <li class="step0 text-muted text-end" id="step3"><span style="margin-right: 22px;">DELIVERED</span></li> -->
+                      <li class=""><span>PLACED</span></li>
+                      <li class=" text-center"><span>SHIPPED</span></li>
+                      <li class="text-end"><span>DELIVERED</span></li>
+
+                    </ul>
+                  </div>
+                  <div class="card-footer p-4">
+                    <div class="d-flex justify-content-between">
+                      <h5 class="fw-normal mb-0"><a href="#!">Track</a></h5>
+                      <div class="border-start h-100"></div>
+                      <h5 class="fw-normal mb-0"><a href="#!">Cancel</a></h5>
+                      <div class="border-start h-100"></div>
+                      <h5 class="fw-normal mb-0"><a href="#!">Pre-pay</a></h5>
+                      <div class="border-start h-100"></div>
+                      <h5 class="fw-normal mb-0"><a href="#!" class="text-muted"><i class="fas fa-ellipsis-v"></i></a>
+                      </h5>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-10 col-lg-8 col-xl-6 NotYetShippedProductCard">
+                <div class="card card-stepper" style="border-radius: 16px;">
+                  <div class="card-header p-4">
+                    <div class="d-flex justify-content-between align-items-center">
+                      <div>
+                        <p class="text-muted mb-2"> Order ID <span class="fw-bold text-body">1222528743</span></p>
+                        <p class="text-muted mb-0"> Place On <span class="fw-bold text-body">12,March 2019</span> </p>
+                      </div>
+                      <div>
+                        <h6 class="mb-0"> <a href="#">View Details</a> </h6>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card-body p-4">
+                    <div class="d-flex flex-row mb-4 pb-2">
+                      <div class="flex-fill">
+                        <h5 class="bold">Headphones Bose 35 II</h5>
+                        <p class="text-muted"> Qt: 1 item</p>
+                        <h4 class="mb-3"> $ 299 <span class="small text-muted"> via (COD) </span></h4>
+                        <p class="text-muted">Tracking Status on: <span class="text-body">11:30pm, Today</span></p>
+                      </div>
+                      <div>
+                        <img class="align-self-center img-fluid" src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Products/6.webp" width="250">
+                      </div>
+                    </div>
+                    <div class="progress" style="height: 6px; border-radius: 16px;">
+                      <div class="progress-bar progressBar gradient-custom-2 pb1" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                    <ul id="progressbar-1" class="mx-0 mt-0 mb-5 px-0 pt-0 pb-4">
+                      <!-- <li class="step0 active" id="step1"><span style="margin-left: 22px; margin-top: 12px;">PLACED</span></li>
+                      <li class="step0 active text-center" id="step2"><span>SHIPPED</span></li>
+                      <li class="step0 text-muted text-end" id="step3"><span style="margin-right: 22px;">DELIVERED</span></li> -->
+                      <li class=""><span>PLACED</span></li>
+                      <li class=" text-center"><span>SHIPPED</span></li>
+                      <li class="text-end"><span>DELIVERED</span></li>
+
+                    </ul>
+                  </div>
+                  <div class="card-footer p-4">
+                    <div class="d-flex justify-content-between">
+                      <h5 class="fw-normal mb-0"><a href="#!">Track</a></h5>
+                      <div class="border-start h-100"></div>
+                      <h5 class="fw-normal mb-0"><a href="#!">Cancel</a></h5>
+                      <div class="border-start h-100"></div>
+                      <h5 class="fw-normal mb-0"><a href="#!">Pre-pay</a></h5>
+                      <div class="border-start h-100"></div>
+                      <h5 class="fw-normal mb-0"><a href="#!" class="text-muted"><i class="fas fa-ellipsis-v"></i></a>
+                      </h5>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-10 col-lg-8 col-xl-6 NotYetShippedProductCard">
+                <div class="card card-stepper" style="border-radius: 16px;">
+                  <div class="card-header p-4">
+                    <div class="d-flex justify-content-between align-items-center">
+                      <div>
+                        <p class="text-muted mb-2"> Order ID <span class="fw-bold text-body">1222528743</span></p>
+                        <p class="text-muted mb-0"> Place On <span class="fw-bold text-body">12,March 2019</span> </p>
+                      </div>
+                      <div>
+                        <h6 class="mb-0"> <a href="#">View Details</a> </h6>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card-body p-4">
+                    <div class="d-flex flex-row mb-4 pb-2">
+                      <div class="flex-fill">
+                        <h5 class="bold">Headphones Bose 35 II</h5>
+                        <p class="text-muted"> Qt: 1 item</p>
+                        <h4 class="mb-3"> $ 299 <span class="small text-muted"> via (COD) </span></h4>
+                        <p class="text-muted">Tracking Status on: <span class="text-body">11:30pm, Today</span></p>
+                      </div>
+                      <div>
+                        <img class="align-self-center img-fluid" src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Products/6.webp" width="250">
+                      </div>
+                    </div>
+                    <div class="progress" style="height: 6px; border-radius: 16px;">
+                      <div class="progress-bar progressBar gradient-custom-2 pb1" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                    <ul id="progressbar-1" class="mx-0 mt-0 mb-5 px-0 pt-0 pb-4">
+                      <!-- <li class="step0 active" id="step1"><span style="margin-left: 22px; margin-top: 12px;">PLACED</span></li>
+                      <li class="step0 active text-center" id="step2"><span>SHIPPED</span></li>
+                      <li class="step0 text-muted text-end" id="step3"><span style="margin-right: 22px;">DELIVERED</span></li> -->
+                      <li class=""><span>PLACED</span></li>
+                      <li class=" text-center"><span>SHIPPED</span></li>
+                      <li class="text-end"><span>DELIVERED</span></li>
+
+                    </ul>
+                  </div>
+                  <div class="card-footer p-4">
+                    <div class="d-flex justify-content-between">
+                      <h5 class="fw-normal mb-0"><a href="#!">Track</a></h5>
+                      <div class="border-start h-100"></div>
+                      <h5 class="fw-normal mb-0"><a href="#!">Cancel</a></h5>
+                      <div class="border-start h-100"></div>
+                      <h5 class="fw-normal mb-0"><a href="#!">Pre-pay</a></h5>
+                      <div class="border-start h-100"></div>
+                      <h5 class="fw-normal mb-0"><a href="#!" class="text-muted"><i class="fas fa-ellipsis-v"></i></a>
+                      </h5>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-10 col-lg-8 col-xl-6 NotYetShippedProductCard">
+                <div class="card card-stepper" style="border-radius: 16px;">
+                  <div class="card-header p-4">
+                    <div class="d-flex justify-content-between align-items-center">
+                      <div>
+                        <p class="text-muted mb-2"> Order ID <span class="fw-bold text-body">1222528743</span></p>
+                        <p class="text-muted mb-0"> Place On <span class="fw-bold text-body">12,March 2019</span> </p>
+                      </div>
+                      <div>
+                        <h6 class="mb-0"> <a href="#">View Details</a> </h6>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card-body p-4">
+                    <div class="d-flex flex-row mb-4 pb-2">
+                      <div class="flex-fill">
+                        <h5 class="bold">Headphones Bose 35 II</h5>
+                        <p class="text-muted"> Qt: 1 item</p>
+                        <h4 class="mb-3"> $ 299 <span class="small text-muted"> via (COD) </span></h4>
+                        <p class="text-muted">Tracking Status on: <span class="text-body">11:30pm, Today</span></p>
+                      </div>
+                      <div>
+                        <img class="align-self-center img-fluid" src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Products/6.webp" width="250">
+                      </div>
+                    </div>
+                    <div class="progress" style="height: 6px; border-radius: 16px;">
+                      <div class="progress-bar progressBar gradient-custom-2 pb1" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                    <ul id="progressbar-1" class="mx-0 mt-0 mb-5 px-0 pt-0 pb-4">
+                      <!-- <li class="step0 active" id="step1"><span style="margin-left: 22px; margin-top: 12px;">PLACED</span></li>
+                      <li class="step0 active text-center" id="step2"><span>SHIPPED</span></li>
+                      <li class="step0 text-muted text-end" id="step3"><span style="margin-right: 22px;">DELIVERED</span></li> -->
+                      <li class=""><span>PLACED</span></li>
+                      <li class=" text-center"><span>SHIPPED</span></li>
+                      <li class="text-end"><span>DELIVERED</span></li>
+
+                    </ul>
+                  </div>
+                  <div class="card-footer p-4">
+                    <div class="d-flex justify-content-between">
+                      <h5 class="fw-normal mb-0"><a href="#!">Track</a></h5>
+                      <div class="border-start h-100"></div>
+                      <h5 class="fw-normal mb-0"><a href="#!">Cancel</a></h5>
+                      <div class="border-start h-100"></div>
+                      <h5 class="fw-normal mb-0"><a href="#!">Pre-pay</a></h5>
+                      <div class="border-start h-100"></div>
+                      <h5 class="fw-normal mb-0"><a href="#!" class="text-muted"><i class="fas fa-ellipsis-v"></i></a>
+                      </h5>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+      <div class="tab-pane" id="CancelledOrders" role="tabpanel">
+        <div class="row">
+          <div class="col-lg-6">
+            <table class="table text-sm">
+              <tbody>
+                <tr>
+                  <th class="text-uppercase fw-normal border-0">Product #</th>
+                  <td class="text-muted border-0">Lorem ipsum dolor sit amet</td>
+                </tr>
+                <tr>
+                  <th class="text-uppercase fw-normal ">Available packaging</th>
+                  <td class="text-muted ">LOLDuis aute irure dolor in reprehenderit</td>
+                </tr>
+                <tr>
+                  <th class="text-uppercase fw-normal ">Weight</th>
+                  <td class="text-muted ">dolor sit amet</td>
+                </tr>
+                <tr>
+                  <th class="text-uppercase fw-normal ">Sunt in culpa qui</th>
+                  <td class="text-muted ">Lorem ipsum dolor sit amet</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="col-lg-6">
+            <table class="table text-sm">
+              <tbody>
+                <tr>
+                  <th class="text-uppercase fw-normal border-0">Weight</th>
+                  <td class="text-muted border-0">dolor sit amet </td>
+                </tr>
+                <tr>
+                  <th class="text-uppercase fw-normal ">Sunt in culpa qui</th>
+                  <td class="text-muted ">Lorem ipsum dolor sit amet </td>
+                </tr>
+                <tr>
+                  <th class="text-uppercase fw-normal ">Product #</th>
+                  <td class="text-muted ">Lorem ipsum dolor sit amet </td>
+                </tr>
+                <tr>
+                  <th class="text-uppercase fw-normal ">Available packaging</th>
+                  <td class="text-muted ">LOLDuis aute irure dolor in reprehenderit </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
       </div>
     </div>
   </div>
-  <div class="product-slider">
-    <div class="prod-category" style="background-image: url('public/Images/productSliderBG/png-transparent-cartoon-illustration-cartoon-snow-mountain-cartoon-character-blue-angle.png');">
-      <div class="prod-category-head text-center">Trekking Essentials</div>
-      <button class="shadow">View More</button>
+
+  
+  <div class="nav-hike hide">
+    <div class="nav-hike-menu row">
+    <div class="nav-hike-list col">
+        <p class="menu-head">TOOLS</p>
+        <ul class="list-group menu-list">
+            <a href="#" class="list-group-item menu-item border-0 py-0">Lasers</a>
+            <a href="#" class="list-group-item menu-item border-0 py-0">Buckle Rock</a>
+            <a href="#" class="list-group-item menu-item border-0 py-0">Cane Stick</a>
+            <a href="#" class="list-group-item menu-item border-0 py-0">Plier Tools</a>
+            <a href="#" class="list-group-item menu-item border-0 py-0">Knife</a>
+            <a href="#" class="list-group-item menu-item border-0 py-0">Multi-Tool</a>
+            <a href="#" class="list-group-item menu-item border-0 py-0">Lighters</a>
+            <a href="#" class="list-group-item menu-item border-0 py-0">Drones</a>
+            <a href="#" class="list-group-item menu-item border-0 py-0">GPS Devices</a>
+            <a href="#" class="list-group-item menu-item border-0 py-0">PLB</a>
+        </ul>
     </div>
-    <div id="prodcaro1" class="product-carousel carousel slide" data-bs-ride="carousel">
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <div class="product-wrapper d-flex flex-inline justify-content-around">
-            <a href="#" class="product-card-link ">
-              <div class="product-card">
-
-                <div class="prod-imag">
-                  <img src="public/Images/ProductImages/Shoes/shoes-removebg-preview.png" alt="">
-                </div>
-                <div class="prod-line1">Product Name</div>
-                <div class="prod-line2">Price Rs.123</div>
-                <div class="prod-line3">Some Tagline</div>
-
-              </div>
-            </a>
-            <a href="#" class="product-card-link ">
-              <div class="product-card">
-
-                <div class="prod-imag">
-                  <img src="public/Images/ProductImages/Shoes/shoes-removebg-preview.png" alt="">
-                </div>
-                <div class="prod-line1">Product Name</div>
-                <div class="prod-line2">Price Rs.123</div>
-                <div class="prod-line3">Some Tagline</div>
-
-              </div>
-            </a>
-            <a href="#" class="product-card-link ">
-              <div class="product-card">
-
-                <div class="prod-imag">
-                  <img src="public/Images/ProductImages/Shoes/shoes-removebg-preview.png" alt="">
-                </div>
-                <div class="prod-line1">Product Name</div>
-                <div class="prod-line2">Price Rs.123</div>
-                <div class="prod-line3">Some Tagline</div>
-
-              </div>
-            </a>
-          </div>
-        </div>
-        <div class="carousel-item">
-          <div class="product-wrapper d-flex flex-inline justify-content-around">
-            <a href="#" class="product-card-link">
-              <div class="product-card">
-
-                <div class="prod-imag">
-                  <img src="public/Images/ProductImages/Shoes/search-icon-removebg-preview.png" alt="">
-                </div>
-                <div class="prod-line1">Product Name</div>
-                <div class="prod-line2">Price Rs.123</div>
-                <div class="prod-line3">Some Tagline</div>
-              </div>
-            </a>
-            <a href="#" class="product-card-link">
-              <div class="product-card">
-
-                <div class="prod-imag">
-                  <img src="public/Images/ProductImages/Shoes/search-icon-removebg-preview.png" alt="">
-                </div>
-                <div class="prod-line1">Product Name</div>
-                <div class="prod-line2">Price Rs.123</div>
-                <div class="prod-line3">Some Tagline</div>
-
-              </div>
-            </a>
-            <a href="#" class="product-card-link">
-              <div class="product-card">
-
-                <div class="prod-imag">
-                  <img src="public/Images/ProductImages/Shoes/search-icon-removebg-preview.png" alt="">
-                </div>
-                <div class="prod-line1">Product Name</div>
-                <div class="prod-line2">Price Rs.123</div>
-                <div class="prod-line3">Some Tagline</div>
-
-              </div>
-            </a>
-          </div>
-        </div>
-        <div class="carousel-item">
-          <div class="product-wrapper d-flex flex-inline justify-content-around">
-            <a href="#" class="product-card-link">
-              <div class="product-card">
-
-                <div class="prod-imag">
-                  <img src="public/Images/ProductImages/Shoes/icoon-removebg-preview.png" alt="">
-                </div>
-                <div class="prod-line1">Product Name</div>
-                <div class="prod-line2">Price Rs.123</div>
-                <div class="prod-line3">Some Tagline</div>
-
-              </div>
-            </a>
-            <a href="#" class="product-card-link">
-              <div class="product-card">
-
-                <div class="prod-imag">
-                  <img src="public/Images/ProductImages/Shoes/icoon-removebg-preview.png" alt="">
-                </div>
-                <div class="prod-line1">Product Name</div>
-                <div class="prod-line2">Price Rs.123</div>
-                <div class="prod-line3">Some Tagline</div>
-
-              </div>
-            </a>
-            <a href="#" class="product-card-link">
-              <div class="product-card">
-
-                <div class="prod-imag">
-                  <img src="public/Images/ProductImages/Shoes/icoon-removebg-preview.png" alt="">
-                </div>
-                <div class="prod-line1">Product Name</div>
-                <div class="prod-line2">Price Rs.123</div>
-                <div class="prod-line3">Some Tagline</div>
-
-              </div>
-            </a>
-            <a href="#" class="product-card-link">
-              <div class="product-card">
-
-                <div class="prod-imag">
-                  <img src="public/Images/ProductImages/Shoes/icoon-removebg-preview.png" alt="">
-                </div>
-                <div class="prod-line1">Product Name</div>
-                <div class="prod-line2">Price Rs.123</div>
-                <div class="prod-line3">Some Tagline</div>
-
-              </div>
-            </a>
-          </div>
-        </div>
-      </div>
-      <div class="d-flex flex-row">
-        <button class="carousel-control-prev" type="button" data-bs-slide="prev" data-bs-target="#prodcaro1">
-          <!-- <i class="fa fa-angle-left text-white" aria-hidden="true"></i> -->
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="slider-btn carousel-control-next" type="button" data-bs-slide="next" data-bs-target="#prodcaro1">
-          <!-- <i class="fa fa-angle-right text-white" aria-hidden="true"></i> -->
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
-      </div>
-
+    <div class="nav-hike-list col">
+        <p class="menu-head">EQUIPEMENTS</p>
+        <ul class="list-group menu-list">
+            <a href="#" class="list-group-item menu-item border-0 py-0">First-Aid Kits</a>
+            <a href="#" class="list-group-item menu-item border-0 py-0">Purify Straw</a>
+            <a href="#" class="list-group-item menu-item border-0 py-0">Compass</a>
+            <a href="#" class="list-group-item menu-item border-0 py-0">AIO Survival Kit</aa>
+            <a href="#" class="list-group-item menu-item border-0 py-0">Sunglasses</a>
+            <a href="#" class="list-group-item menu-item border-0 py-0">Sun-Protective Clothing</a>
+            <a href="#" class="list-group-item menu-item border-0 py-0">Head-Lamp</a>
+            <a href="#" class="list-group-item menu-item border-0 py-0">WaterProof Socks</a>
+            <a href="#" class="list-group-item menu-item border-0 py-0">Ready to Eat Food Kits</a>
+            <a href="#" class="list-group-item menu-item border-0 py-0">Emergency Shelter</a>
+        </ul>
     </div>
-  </div>
-
-  <div class="product-slider">
-    <div class="prod-category" style="background-image: url('public/Images/productSliderBG/camping.jpg');">
-      <div class="prod-category-head text-center">Camping Essentials</div>
-      <button class="shadow">View More</button>
+    <div class="nav-hike-list col">
+        <p class="menu-head">BOOTS</p>
+        <ul class="list-group menu-list">
+            <a href="#" class="list-group-item menu-item border-0 py-0">Knee Boots</a>
+            <a href="#" class="list-group-item menu-item border-0 py-0">Jack Boots</a>
+            <a href="#" class="list-group-item menu-item border-0 py-0">Trail Shoes</a>
+            <a href="#" class="list-group-item menu-item border-0 py-0">Lightweight</a>
+            <a href="#" class="list-group-item menu-item border-0 py-0">Midweight</a>
+            <a href="#" class="list-group-item menu-item border-0 py-0">Heavyweight</a>
+            <a href="#" class="list-group-item menu-item border-0 py-0">Heavy Duty</a>
+            <a href="#" class="list-group-item menu-item border-0 py-0">RUGGED+ Verified</a>
+            <a href="#" class="list-group-item menu-item border-0 py-0">Influencer's Choice</a>
+        </ul>
     </div>
-    <div id="prel" class="product-carousel carousel slide" data-bs-ride="carousel">
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <div class="product-wrapper d-flex flex-inline justify-content-around">
-            <a href="#" class="product-card-link ">
-              <div class="product-card">
+</div>
+</div>
 
-                <div class="prod-imag">
-                  <img src="public/Images/ProductImages/Shoes/shoes-removebg-preview.png" alt="">
-                </div>
-                <div class="prod-line1">Product Name</div>
-                <div class="prod-line2">Price Rs.123</div>
-                <div class="prod-line3">Some Tagline</div>
+  <span id="test-typed-js"></span>
 
-              </div>
-            </a>
-            <a href="#" class="product-card-link ">
-              <div class="product-card">
-
-                <div class="prod-imag">
-                  <img src="public/Images/ProductImages/Shoes/shoes-removebg-preview.png" alt="">
-                </div>
-                <div class="prod-line1">Product Name</div>
-                <div class="prod-line2">Price Rs.123</div>
-                <div class="prod-line3">Some Tagline</div>
-
-              </div>
-            </a>
-            <a href="#" class="product-card-link ">
-              <div class="product-card">
-
-                <div class="prod-imag">
-                  <img src="public/Images/ProductImages/Shoes/shoes-removebg-preview.png" alt="">
-                </div>
-                <div class="prod-line1">Product Name</div>
-                <div class="prod-line2">Price Rs.123</div>
-                <div class="prod-line3">Some Tagline</div>
-
-              </div>
-            </a>
-          </div>
-        </div>
-        <div class="carousel-item">
-          <div class="product-wrapper d-flex flex-inline justify-content-around">
-            <a href="#" class="product-card-link">
-              <div class="product-card">
-
-                <div class="prod-imag">
-                  <img src="public/Images/ProductImages/Shoes/search-icon-removebg-preview.png" alt="">
-                </div>
-                <div class="prod-line1">Product Name</div>
-                <div class="prod-line2">Price Rs.123</div>
-                <div class="prod-line3">Some Tagline</div>
-              </div>
-            </a>
-            <a href="#" class="product-card-link">
-              <div class="product-card">
-
-                <div class="prod-imag">
-                  <img src="public/Images/ProductImages/Shoes/search-icon-removebg-preview.png" alt="">
-                </div>
-                <div class="prod-line1">Product Name</div>
-                <div class="prod-line2">Price Rs.123</div>
-                <div class="prod-line3">Some Tagline</div>
-
-              </div>
-            </a>
-            <a href="#" class="product-card-link">
-              <div class="product-card">
-
-                <div class="prod-imag">
-                  <img src="public/Images/ProductImages/Shoes/search-icon-removebg-preview.png" alt="">
-                </div>
-                <div class="prod-line1">Product Name</div>
-                <div class="prod-line2">Price Rs.123</div>
-                <div class="prod-line3">Some Tagline</div>
-
-              </div>
-            </a>
-          </div>
-        </div>
-        <div class="carousel-item">
-          <div class="product-wrapper d-flex flex-inline justify-content-around">
-            <a href="#" class="product-card-link">
-              <div class="product-card">
-
-                <div class="prod-imag">
-                  <img src="public/Images/ProductImages/Shoes/icoon-removebg-preview.png" alt="">
-                </div>
-                <div class="prod-line1">Product Name</div>
-                <div class="prod-line2">Price Rs.123</div>
-                <div class="prod-line3">Some Tagline</div>
-
-              </div>
-            </a>
-            <a href="#" class="product-card-link">
-              <div class="product-card">
-
-                <div class="prod-imag">
-                  <img src="public/Images/ProductImages/Shoes/icoon-removebg-preview.png" alt="">
-                </div>
-                <div class="prod-line1">Product Name</div>
-                <div class="prod-line2">Price Rs.123</div>
-                <div class="prod-line3">Some Tagline</div>
-
-              </div>
-            </a>
-            <a href="#" class="product-card-link">
-              <div class="product-card">
-
-                <div class="prod-imag">
-                  <img src="public/Images/ProductImages/Shoes/icoon-removebg-preview.png" alt="">
-                </div>
-                <div class="prod-line1">Product Name</div>
-                <div class="prod-line2">Price Rs.123</div>
-                <div class="prod-line3">Some Tagline</div>
-
-              </div>
-            </a>
-            <a href="#" class="product-card-link">
-              <div class="product-card">
-
-                <div class="prod-imag">
-                  <img src="public/Images/ProductImages/Shoes/icoon-removebg-preview.png" alt="">
-                </div>
-                <div class="prod-line1">Product Name</div>
-                <div class="prod-line2">Price Rs.123</div>
-                <div class="prod-line3">Some Tagline</div>
-
-              </div>
-            </a>
-          </div>
-        </div>
+  <footer class="text-center text-lg-start text-dark w-100 pe-0 mt-4" style="background-color: rgb(15, 110, 169)">
+    <!-- Section: Social media -->
+    <section class="d-flex justify-content-between p-4 text-white" style="background-color: rgb(108, 175, 208);">
+      <!-- Left -->
+      <div class="me-5">
+        <span>Get connected with us on social networks:</span>
+  
       </div>
-      <div class="d-flex flex-row">
-        <button class="carousel-control-prev" type="button" data-bs-slide="prev" data-bs-target="#prel">
-          <!-- <i class="fa fa-angle-left text-white" aria-hidden="true"></i> -->
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="slider-btn carousel-control-next" type="button" data-bs-slide="next" data-bs-target="#prel">
-          <!-- <i class="fa fa-angle-right text-white" aria-hidden="true"></i> -->
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
+      <!-- Left -->
+  
+      <!-- Right -->
+      <div>
+        <a href="" class="text-white me-4">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="" class="text-white me-4">
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a href="" class="text-white me-4">
+          <i class="fab fa-google"></i>
+        </a>
+        <a href="" class="text-white me-4">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="" class="text-white me-4">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="" class="text-white me-4">
+          <i class="fab fa-github"></i>
+        </a>
       </div>
-
+      <!-- Right -->
+    </section>
+    <!-- Section: Social media -->
+  
+    <!-- Section: Links  -->
+    <section class="" style="color:white">
+      <div class="container text-center text-md-start mt-5">
+        <!-- Grid row -->
+        <div class="row mt-3">
+          <!-- Grid column -->
+          <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+            <!-- Content -->
+            <h6 class="text-uppercase fw-bold">RUGGED</h6>
+            <hr class="mb-4 mt-0 d-inline-block mx-auto" style="width: 60px; background-color: #ffffff; height: 2px" />
+            <p>
+              Here you can use rows and columns to organize your footer
+              content. Lorem ipsum dolor sit amet, consectetur adipisicing
+              elit.
+            </p>
+          </div>
+          <!-- Grid column -->
+  
+          <!-- Grid column -->
+          <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4" style="color:white">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold">Products</h6>
+            <hr class="mb-4 mt-0 d-inline-block mx-auto" style="width: 60px; background-color: #ffffff; height: 2px" />
+            <p>
+              <a href="#!" class="text-white">MDBootstrap</a>
+            </p>
+            <p>
+              <a href="#!" class="text-white">MDWordPress</a>
+            </p>
+            <p>
+              <a href="#!" class="text-white">BrandFlow</a>
+            </p>
+            <p>
+              <a href="#!" class="text-white">Bootstrap Angular</a>
+            </p>
+          </div>
+          <!-- Grid column -->
+  
+          <!-- Grid column -->
+          <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold">Useful links</h6>
+            <hr class="mb-4 mt-0 d-inline-block mx-auto" style="width: 60px; background-color: #ffffff; height: 2px" />
+            <p>
+              <a href="#!" class="text-white">Your Account</a>
+            </p>
+            <p>
+              <a href="#!" class="text-white">Become an Affiliate</a>
+            </p>
+            <p>
+              <a href="#!" class="text-white">Shipping Rates</a>
+            </p>
+            <p>
+              <a href="#!" class="text-white">Help</a>
+            </p>
+          </div>
+          <!-- Grid column -->
+  
+          <!-- Grid column -->
+          <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold">Contact</h6>
+            <hr class="mb-4 mt-0 d-inline-block mx-auto" style="width: 60px; background-color: #ffffff; height: 2px" />
+            <p><i class="fas fa-home mr-3"></i> New York, NY 10012, US</p>
+            <p><i class="fas fa-envelope mr-3"></i> info@example.com</p>
+            <p><i class="fas fa-phone mr-3"></i> + 01 234 567 88</p>
+            <p><i class="fas fa-print mr-3"></i> + 01 234 567 89</p>
+          </div>
+          <!-- Grid column -->
+        </div>
+        <!-- Grid row -->
+      </div>
+    </section>
+    <!-- Section: Links  -->
+  
+    <!-- Copyright -->
+    <div class="text-center p-3 text-white" style="background-color: rgba(0, 0, 0, 0.2)">
+      Copyright © 2023
+      <a class="text-white" href="localhost:3000/">Rugged.com</a> All rights reserved.
     </div>
-  </div>
-  <main class="ll">
-    <div class="need">
-      <div class="row row-cols-1 row-cols-md-4 g-4">
-        <div class="col">
-          <div class="card h-70">
-            <a href="#"><img src="/LOGO/LOGO1/rugged-high-resolution-logo-black-on-white-background.png" class="card-img-top" alt="Hollywood Sign on The Hill" />
-              <div class="card-body">
-                <h5 class="card-title">Name</h5>
-                <p class="card-text">
-                  Price
-                </p>
-              </div>
-            </a>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card h-70">
-            <a href="#"><img src="/LOGO/LOGO2/rugged-high-resolution-logo-white-on-black-background.png" class="card-img-top" alt="Palm Springs Road" />
-              <div class="card-body">
-                <h5 class="card-title">Name</h5>
-                <p class="card-text">Price</p>
-              </div>
-            </a>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card h-70">
-            <a href="#"><img src="/LOGO/LOGO3/rugged-high-resolution-logo-black-on-white-background.png" class="card-img-top" alt="Los Angeles Skyscrapers" />
-              <div class="card-body">
-                <h5 class="card-title">Name</h5>
-                <p class="card-text">Price</p>
-              </div>
-            </a>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card h-70">
-            <a href="#"><img src="/LOGO/LOGO3/rugged-high-resolution-logo-black-on-white-background.png" class="card-img-top" alt="Skyscrapers" />
-              <div class="card-body">
-                <h5 class="card-title">Name</h5>
-                <p class="card-text">
-                  Price
-                </p>
-              </div>
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="need">
-      <div class="row row-cols-1 row-cols-md-4 g-4">
-        <div class="col">
-          <div class="card h-70">
-            <a href="#"><img src="/LOGO/LOGO1/rugged-high-resolution-logo-black-on-white-background.png" class="card-img-top" alt="Hollywood Sign on The Hill" />
-              <div class="card-body">
-                <h5 class="card-title">Name</h5>
-                <p class="card-text">
-                  Price
-                </p>
-              </div>
-            </a>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card h-70">
-            <a href="#"><img src="/LOGO/LOGO2/rugged-high-resolution-logo-white-on-black-background.png" class="card-img-top" alt="Palm Springs Road" />
-              <div class="card-body">
-                <h5 class="card-title">Name</h5>
-                <p class="card-text">Price</p>
-              </div>
-            </a>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card h-70">
-            <a href="#"><img src="/LOGO/LOGO3/rugged-high-resolution-logo-black-on-white-background.png" class="card-img-top" alt="Los Angeles Skyscrapers" />
-              <div class="card-body">
-                <h5 class="card-title">Name</h5>
-                <p class="card-text">Price</p>
-              </div>
-            </a>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card h-70">
-            <a href="#"><img src="/LOGO/LOGO3/rugged-high-resolution-logo-black-on-white-background.png" class="card-img-top" alt="Skyscrapers" />
-              <div class="card-body">
-                <h5 class="card-title">Name</h5>
-                <p class="card-text">
-                  Price
-                </p>
-              </div>
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </main>
-  <footer></footer>
+    <!-- Copyright -->
+  </footer>
 
-  <script src="/js/script.js"></script>
-</body>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+      integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"
+      integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD"
+      crossorigin="anonymous"
+    ></script>
+    
+    <script src="js/script.js">
+      //popover
+      // const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]')
+      // const popoverList = [...popoverTriggerList].map(popoverTriggerEl => new bootstrap.Popover(popoverTriggerEl))
+    </script>
 
+    <script src="https://kit.fontawesome.com/f6e56633d7.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/typed.js@2.0.132/dist/typed.umd.js"></script> <!--typed js-->
+    <script>
+      // var typed = new Typed('#nav-main-searchbar', {
+      //   strings: ['This is a JavaScript library', 'This is an ES6 module'],
+      //   smartBackspace: true, // Default value
+      //   attr: null
+      // });
+      // $(function () {
+      //   $('[data-toggle="popover"]').popover()
+      // });
+
+      // var searchSuggestions=
+      // [
+      //   "shoes",
+      //   "cycle",
+      //   "electric lighter",
+      //   "tent",
+      //   "compass",
+      //   "torch",
+      //   "boat"
+      // ];
+
+      // $('#nav-main-search').autocomplete(
+      //   {source: searchSuggestions}
+      // );
+
+    //   $('.basicAutoComplete').autoComplete({
+    // resolverSettings: {
+    //     url: 'bin/autocomplete.json'
+    // }
+// });
+
+      // $(function()
+      // {
+      //   var searchSuggestions=
+      //   [
+      //     "shoes",
+      //     "cycle",
+      //     "electric lighter",
+      //     "tent",
+      //     "compass",
+      //     "torch",
+      //     "boat"
+      //   ];
+
+      //   $('#nav-main-search').autocomplete(
+      //     {source: searchSuggestions}
+      //   );
+      // });
+    </script>
+
+    
+  </body>
 </html>
