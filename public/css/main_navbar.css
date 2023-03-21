@@ -125,13 +125,14 @@
     border: 1pt solid black;
 }
 
-.nav-hike {
+#nav-hike {
     width: fit-content;
     position: fixed;
-    top: 3rem;
+    top: 7rem;
     left: 25%;
-    z-index: 10;
 }
+
+
 
 .nav-hike-list {
     padding-left: 2rem;
@@ -158,10 +159,7 @@
     background-color: rgb(73, 226, 219);
 }
 
-.nav-2-hiking:hover #nav-hike {
-    display: block;
-    visibility: visible;
-}
+
 
 .main-menu {
     font-weight: bold !important;
@@ -180,4 +178,9 @@
     margin-right: 2rem;
     padding-top: 0;
     padding-bottom: 0;
+}
+
+a:hover + #nav-hike
+{
+    display: block;
 }

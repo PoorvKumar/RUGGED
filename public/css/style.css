@@ -226,19 +226,6 @@ a {
 /*POPOVER CSS*/
 #sign-in-popover {
   /* z-index: 10; */
-  position: absolute;
-  right: 50% ;
-
-}
-
-.signin-main:hover #sign-in-popover {
-  display: block;
-  visibility: visible;
-  /*very important css popover w/o bootstrap*/
-}
-
-#sign-in-popover {
-  /* z-index: 10; */
   position: fixed;
   right: 10rem;
 
