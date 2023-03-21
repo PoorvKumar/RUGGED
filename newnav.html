@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/72fdfa8245.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="/public/css/main_navbar.css">
+  <link rel="stylesheet" href="/public/css/style.css">
+  <link rel="stylesheet" href="/public/css/LowerNavbarStyle.css">
+  <link rel="stylesheet" href="/public/css/productCardStyle.css">
+  <link rel="stylesheet" href="/public/css/productSearchPageStyle.css">
+
+  <script src="/public/js/productCard.js"></script>
+  <title>Test</title>
+</head>
+
+<body>
+    <nav class="container-fluid nav-main">
+        <div class="row">
+            <div class="col-lg-2 col-sm-2">
+                <div class="nav-link nav-logo " id="brand-logo" style="font-size: large;">
+                    <img src="LOGO/newLOGOTest/newLOGO_no_background.png" alt="" height="65em" width="120em">
+                  </div>
+            </div>
+            <div class="col-lg-6 col-md-5 col-sm-4">
+                <div class="nav-search">
+                <form action="" class="w-100 input-group">
+                    <input type="search" class="form-control" placeholder="Search Here..." aria-label="Search" onclick="overlayOn()"
+                    id="nav-main-searchbar" />
+                 <button type="button" class="btn bg-white">
+                    <i class="fas fa-search"></i>
+                  </button>
+                </form>
+              </div>
+              </div>
+            <div class="col-lg-4 col-md-5 col-sm-6">
+                <div class="right d-flex">
+                  <div class="nav-sign nav-link d-flex-inline ml-3 m-2">
+                    <div class="nav-line-1">
+                      <span class="small"><span class="fa fa-user"> </span> Hello! User</span>
+                    </div>
+                    <a tabindex="0" href="#" id="account-list" class="text-white">
+                      <div class="nav-line-2 signin-main">Account & Lists <span class="dropdown-toggle"></span>
+                    </a>
+                    <div id="sign-in-popover" class="hide">
+                      <div class="container account-list-popover d-flex flex-column p-3 align-items-center w-100 pt-0">
+                        <div class="upper-signin p-4 d-flex flex-column pb-2">
+                          <button class="btn bg-info text-white">
+                            Sign In!
+                          </button>
+                          <span class="small text-dark" style="font-size: x-small; margin-top: 0.5rem;">New Customer? <a href="#"
+                              class="text-info">Start Here!</a> </span>
+                        </div>
+                        <div class="account-lists d-flex flex-row border-top border-dark">
+                          <div class="wishlist d-flex flex-column px-4 mx-2 py-3 mt-1" style="font-weight: lighter;">
+                            <p class="mb-1 text-info" style="font-size: larger; font-weight: 550;">Your Lists</p>
+                            <a class="small" href="#" rel="noopener noreferrer">Create a WishList</a>
+                            <a class="small" href="#" rel="noopener noreferrer">Discover Your Style</a>
+                            <a class="small" href="#" rel="noopener noreferrer">Explore Experiences</a>
+                            <a class="small" href="#" rel="noopener noreferrer">RUGGED Influencer+</a>
+                          </div>
+                          <div class="wishlist d-flex flex-column px-4 mx-2 py-3 mt-1" style="font-weight: lighter;">
+                            <p class="mb-1 text-info" style="font-size: larger; font-weight: 550;">Your Account</p>
+                            <a class="small" href="#" rel="noopener noreferrer">Your Account</a>
+                            <a class="small" href="#" rel="noopener noreferrer">Your Orders</a>
+                            <a class="small" href="#" rel="noopener noreferrer">Your WishList</a>
+                            <a class="small" href="#" rel="noopener noreferrer">Your Recommendation</a>
+                            <a class="small" href="#" rel="noopener noreferrer">Membership & Subscriptions</a>
+                            <a class="small" href="#" rel="noopener noreferrer">RUGGED Influencer Account</a>
+                            <a class="small" href="#" rel="noopener noreferrer">Your Seller Account</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div></div>
+                  <div class="nav-wish nav-link d-flex-inline p-2 pt-3 m-2 ">
+                    WishList
+                  </div>
+                  <div class="nav-returns nav-link d-flex-inline p-1 m-2">
+                    <div class="nav-line-1">
+                      <span class="small">Returns</span>
+                    </div>
+                    <div class="nav-line-2">&Orders</div>
+                  </div>
+                  <div class="nav-cart nav-link d-flex-inline p-2 ms-0 ">
+                    <div class="nav-line-2">
+                      <a data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
+                        <!-- <span class="small">
+                                  <i class="fa fa-shopping-cart non-empty"
+                                    style="font-size:33px"></i></span> -->
+                        <span class="material-icons " style="font-size: 36px;"> <!--material icon google-->
+                          shopping_cart
+                        </span></a> <!--need  to change non-empty class-->
+                    </div>
+                    <!-- Canvas down now -->
+                    <div class="offcanvas offcanvas-end bgclr" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions"
+                      aria-labelledby="offcanvasWithBothOptionsLabel">
+                      <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Apna Cart</h5>
+                        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                      </div>
+                      <div class="offcanvas-body">
+                        <!-- BigBox -->
+                        <div class="whole-cart-window"><!-- add hide class to hide cart window-->
+                          <!-- <div class="heading"><p>Your Bag</p></div> -->
+                          <div class="cart-wrapper">
+                            <div class="cart-item">
+                              <img src="/Images/ProductImages/Rucksack1/image1.jpg" alt="rucksack">
+                              <div class="details">
+                                <h3>RuckSack</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.<br>
+                                  <span class="fa fa-star"></span>
+                                  <span class="fa fa-star"></span>
+                                  <span class="fa fa-star"></span>
+                                  <span class="fa fa-star checked"></span>
+                                  <span class="fa fa-star checked"></span>
+                                  <span class="quantity">Quantity: 1</span>
+                                  <span class="price">Price: ₹50.00</span>
+                                </p>
+                              </div>
+                              <div class="cancel"><i class="fa-regular fa-trash-can coll"></i></div>
+                            </div>
+                            <!-- item 2 -->
+                            <div class="cart-item">
+                              <img src="/Images/ProductImages/Rucksack1/image1.jpg" alt="Rucksack">
+                              <div class="details">
+                                <h3>Item Name2</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.<br>
+                                  <span class="fa fa-star"></span>
+                                  <span class="fa fa-star"></span>
+                                  <span class="fa fa-star"></span>
+                                  <span class="fa fa-star"></span>
+                                  <span class="fa fa-star checked"></span>
+                                  <span class="quantity">Quantity: 1</span>
+                                  <span class="price">Price: ₹100.00</span>
+                                </p>
+                              </div>
+                              <div class="cancel"><i class="fa-regular fa-trash-can coll"></i></div>
+                            </div>
+                          </div>
+                          <div class="subtotal">Delivery: ₹0.00</div>
+                          <div class="subtotal">Total: ₹0.00</div>
+                          <div class="cv">
+                            <button type="button" class="btn btn-outline-secondary">View WishList</button>
+                            <button type="button" class="btn btn-primary">Checkout</button>
+                          </div>
+                        </div>
+                        <!-- BigBox Finish -->
+                      </div>
+                      <!-- Cart Dropover Finish -->
+                    </div>
+                  </div>
+
+            </div>
+
+
+
+
+        </div>
+    </nav>
