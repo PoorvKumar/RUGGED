@@ -1,10 +1,10 @@
 var express = require('express');
 var path = require('path');
-var ejs=require('ejs')
+var ejs=require('ejs');
 
 var app = express();
 const sellerdashboardRoutes=require('./routes/sellerDashboardRoutes');
-const influencerBlogRoutes=require('./routes/influencerBlogPageRoutes');
+const influencerBlogRoutes=require('./routes/blogPost');
 const wishlistroute=require('./routes/wishlistRoutes');
 const productPageRoutes=require('./routes/productPage');
 const productSearchPage=require('./routes/productSearchpage');
