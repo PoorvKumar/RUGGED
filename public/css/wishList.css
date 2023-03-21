@@ -365,21 +365,13 @@ border-radius: 6px;
 .i2:hover{
   background-color: #eee;
 }
-.invitebtn{
-  display:flex;
-  font-weight: normal;
-  border:ridge 1px grey;
-  border-radius: 30px;
-  font-size: smaller;
-  padding-left:10px;
-  padding-right:10px;
+.slideupper{
+  background-color: #eee !important;
 }
-.plus{
-   font-size: larger;
-   margin:2%;
-   margin-right:10px;
+.hg{
+  height:fit-content;
+  margin:6% -5% 6% -5%;
 }
-.invite{
-  font-size:20px;
-  margin-top:8px;
+.wisbtn{
+  margin:2%;
 }

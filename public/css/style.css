@@ -76,7 +76,7 @@ a {
 }
 
 .bgclr {
-  background-color: #ddd;
+  background-color: #ddd !important;
 }
 
 .cart-wrapper {
