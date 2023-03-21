@@ -1,8 +1,8 @@
-url1='/public/Images/carouselImge/joel-jasmin-forestbird-znoL1m6MD_k-unsplash.jpg'
-url2='/public/Images/carouselImge/sebastien-goldberg-BKLHxgbYFDI-unsplash.jpg'
-url3='/public/Images/carouselImge/simon-english-48nerZQCHgo-unsplash.jpg'
-url4='/public/Images/carouselImge/toomas-tartes-Yizrl9N_eDA-unsplash.jpg'
-url5='/public/Images/carouselImge/usman-omar-Q-zdaa-tVq4-unsplash.jpg'
+url1='Images/carouselImge/joel-jasmin-forestbird-znoL1m6MD_k-unsplash.jpg'
+url2='Images/carouselImge/sebastien-goldberg-BKLHxgbYFDI-unsplash.jpg'
+url3='Images/carouselImge/simon-english-48nerZQCHgo-unsplash.jpg'
+url4='Images/carouselImge/toomas-tartes-Yizrl9N_eDA-unsplash.jpg'
+url5='Images/carouselImge/usman-omar-Q-zdaa-tVq4-unsplash.jpg'
 const ele1=document.getElementById("1")
 const ele2=document.getElementById("2")
 const ele3=document.getElementById("3")
