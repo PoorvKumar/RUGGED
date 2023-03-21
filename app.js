@@ -5,7 +5,11 @@ var ejs=require('ejs')
 var app = express();
 const sellerdashboardRoutes=require('./routes/sellerDashboardRoutes')
 const influencerBlogRoutes=require('./routes/influencerBlogPageRoutes')
-const sellerPortal=require('./routes/sellerPortal');
+const wishlistroute=require('./routes/wishlistRoutes')
+const productPageRoutes=require('./routes/productPage')
+const productSearchPage=require('./routes/productSearchpage')
+const returnsOrderPage=require('./routes/returnsAndorder')
+const dashboardUserPage=require('./routes/dashboardUser')
 const index=require('./routes/index.js')
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -17,9 +21,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 //   res.render('index.ejs');
 // })
 app.use(index);
-app.use(influencerBlogRoutes);
-app.use(sellerdashboardRoutes);
-app.use(sellerPortal);
+app.use(influencerBlogRoutes)
+app.use(sellerdashboardRoutes)
 // app.use('/',(req,response)=> 
 // {
 //   response.render('LandingPage/product-card-slider.ejs');
