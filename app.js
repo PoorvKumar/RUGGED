@@ -22,8 +22,14 @@ app.use(express.static(path.join(__dirname, 'public')));
 //   res.render('index.ejs');
 // })
 app.use(index);
-app.use(influencerBlogRoutes)
-app.use(sellerdashboardRoutes)
+app.use(influencerBlogRoutes);
+app.use(sellerdashboardRoutes);
+app.use(dashboardUserPage);
+app.use(sellerPortal);
+app.use(productPageRoutes);
+app.use(productSearchPage);
+app.use(returnsOrderPage);
+app.use(wishlistroute);
 // app.use('/',(req,response)=> 
 // {
 //   response.render('LandingPage/product-card-slider.ejs');
