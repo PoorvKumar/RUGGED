@@ -40,7 +40,7 @@ user agent stylesheet img {
     overflow: clip;
 }
 
-.nav .nav-link {
+.detail-nav-link {
     color: #343a40;
 }
 
@@ -48,7 +48,7 @@ user agent stylesheet img {
 .detail-nav-link.nav-link:hover,
 .detail-nav-link.nav-link:focus {
     color: #343a40;
-    border-color: #fff #fff #343a40 !important;
+    border-color: #fff #fff #181b1e !important;
 }
 
 .gradient-custom {
