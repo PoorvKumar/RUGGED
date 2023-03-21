@@ -17,6 +17,8 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <link rel="stylesheet" href="dist/accessible-autocomplete.min.css" />
+<script src="dist/accessible-autocomplete.min.js"></script>
 
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
@@ -27,6 +29,14 @@
     <link rel="stylesheet" href="public/css/carousel.css">
     <title>Test</title>
     <style>
+      .nav-2-link
+      {
+        max-height: fit-content;
+        padding-top: 0;
+        padding-bottom: 0;
+        margin-left: 4rem;
+        margin-right: 4rem;
+      }
     </style>
   </head>
   <div id="overlay" onclick="overlayOff()"></div> <!--overlay entire page whenever needed-->
@@ -205,8 +215,8 @@
           <!-- Cart Dropover Finish -->
         </div>
       </nav>
-      <nav class="container-fluid navbar  nav-sec navbar-color">
-        <a class="nav-item" href="#" data-bs-toggle="offcanvas" data-bs-target="#offcanvasAllSection" role="button" aria-label="allSection">
+      <nav class="container-fluid navbar nav-sec navbar-color ">
+        <a class="nav-item nav-2-link" href="#" data-bs-toggle="offcanvas" data-bs-target="#offcanvasAllSection" role="button" aria-label="allSection">
           <i class="fa fa-bars"></i>
           All
         </a>
@@ -236,22 +246,22 @@
             </div>
           </div>
         
-        <a class="nav-item" href="#">
+        <a class="nav-item nav-2-link" href="#">
         Sell
-        </div>
-        <a class=" nav-item" href="#">
+        </a>
+        <a class=" nav-item nav-2-link" href="#">
           Best Sellers
         </a>
-        <a class="nav-item" href="#">
+        <a class="nav-item nav-2-link" href="#">
           Today's Deals
         </a>
-        <a class="nav-item" href="#">
+        <a class="nav-item nav-2-link" href="#">
           New Releases
         </a>
-        <a class="nav-item" href="#">
+        <a class="nav-item nav-2-link" href="#">
           Electronics
         </a>
-        <a class="nav-item" href="#">
+        <a class="nav-item nav-2-link" href="#">
           Fashion
         </a>
       </nav>
@@ -1097,6 +1107,149 @@
       <span class="carousel-control-next-icon" aria-hidden="true"></span>
       <span class="sr-only">Next</span>
     </button>
+  </div>
+
+  <hr>
+  <hr>
+
+  <div class="dropdown-menu dropdown-menu-animated megamenu py-lg-0 show" data-bs-popper="static">
+    <div class="row">
+      <div class="col-lg-9">
+        <div class="row p-3 pe-lg-0 ps-lg-5 pt-lg-5">
+          <div class="col-lg-3">
+            <!-- Megamenu list-->
+            <h6 class="text-uppercase">Homepage</h6>
+            <ul class="list list-unstyled">
+              <li class="list-item"><a class="megamenu-list-link" href="index.html">Fullscreen home + Lookbook   </a></li>
+              <li class="list-item"><a class="megamenu-list-link" href="index2.html">Split-screen home   </a></li>
+              <li class="list-item"><a class="megamenu-list-link" href="index3.html">Classic home   </a></li>
+              <li class="list-item"><a class="megamenu-list-link" href="index4.html">Parallax sections  <span class="badge bg-warning ms-1">New</span>   </a></li>
+              <li class="list-item"><a class="megamenu-list-link" href="index5.html">Slider + Broken grid  <span class="badge bg-warning ms-1">New</span>   </a></li>
+            </ul>
+            <!-- Megamenu list-->
+            <h6 class="text-uppercase">Shop</h6>
+            <ul class="list list-unstyled">
+              <li class="list-item"><a class="megamenu-list-link" href="category.html">Category - left sidebar   </a></li>
+              <li class="list-item"><a class="megamenu-list-link" href="category-right.html">Category - right sidebar   </a></li>
+              <li class="list-item"><a class="megamenu-list-link" href="category-no-sidebar.html">Category - no sidebar   </a></li>
+              <li class="list-item"><a class="megamenu-list-link" href="category-full.html">Category - full width   </a></li>
+              <li class="list-item"><a class="megamenu-list-link" href="category-masonry.html">Category - masonry items   </a></li>
+              <li class="list-item"><a class="megamenu-list-link" href="category-banner.html">Category - w/ banner   </a></li>
+              <li class="list-item"><a class="megamenu-list-link" href="detail.html">Product detail   </a></li>
+              <li class="list-item"><a class="megamenu-list-link" href="detail-2.html">Product detail - v.2   </a></li>
+              <li class="list-item"><a class="megamenu-list-link" href="detail-3.html">Product detail - v.3 <span class="badge bg-warning ms-1">New</span>   </a></li>
+            </ul>
+          </div>
+          <div class="col-lg-3">
+            <!-- Megamenu list-->
+            <h6 class="text-uppercase">Order process</h6>
+            <ul class="list list-unstyled">
+              <li class="list-item"><a class="megamenu-list-link" href="cart.html">Shopping cart   </a></li>
+              <li class="list-item"><a class="megamenu-list-link" href="cart-2.html">Shopping cart - v. 2 <span class="badge bg-warning ms-1">New</span>   </a></li>
+              <li class="list-item"><a class="megamenu-list-link" href="checkout1.html">Checkout 1 - Address   </a></li>
+              <li class="list-item"><a class="megamenu-list-link" href="checkout2.html">Checkout 2 - Delivery   </a></li>
+              <li class="list-item"><a class="megamenu-list-link" href="checkout3.html">Checkout 3 - Payment   </a></li>
+              <li class="list-item"><a class="megamenu-list-link" href="checkout4.html">Checkout 4 - Review     </a></li>
+              <li class="list-item"><a class="megamenu-list-link" href="checkout5.html">Checkout 5 - Confirmation   </a></li>
+            </ul>
+            <!-- Megamenu list-->
+            <h6 class="text-uppercase">Blog</h6>
+            <ul class="list list-unstyled">
+              <li class="list-item"><a class="megamenu-list-link" href="blog.html">Blog   </a></li>
+              <li class="list-item"><a class="megamenu-list-link" href="post.html">Post   </a></li>
+            </ul>
+          </div>
+          <div class="col-lg-3">
+            <!-- Megamenu list-->
+            <h6 class="text-uppercase">Pages</h6>
+            <ul class="list list-unstyled">
+              <li class="list-item"><a class="megamenu-list-link" href="about.html">About us <span class="badge bg-warning ms-1">New</span>   </a></li>
+              <li class="list-item"><a class="megamenu-list-link" href="about-2.html">About us v.2 <span class="badge bg-warning ms-1">New</span>   </a></li>
+              <li class="list-item"><a class="megamenu-list-link" href="contact.html">Contact   </a></li>
+              <li class="list-item"><a class="megamenu-list-link" href="contact-2.html">Contact v.2   </a></li>
+              <li class="list-item"><a class="megamenu-list-link" href="text.html">Text page   </a></li>
+              <li class="list-item"><a class="megamenu-list-link" href="faq.html">F.A.Q.s   </a></li>
+              <li class="list-item"><a class="megamenu-list-link" href="coming-soon.html">Coming soon   </a></li>
+            </ul>
+            <!-- Megamenu list-->
+            <h6 class="text-uppercase">Customer</h6>
+            <ul class="list list-unstyled">
+              <li class="list-item"><a class="megamenu-list-link" href="customer-login.html">Login/sign up   </a></li>
+              <li class="list-item"><a class="megamenu-list-link" href="customer-orders.html">Orders   </a></li>
+              <li class="list-item"><a class="megamenu-list-link" href="customer-order.html">Order detail   </a></li>
+              <li class="list-item"><a class="megamenu-list-link" href="customer-addresses.html">Addresses   </a></li>
+              <li class="list-item"><a class="megamenu-list-link" href="customer-account.html">Profile   </a></li>
+            </ul>
+          </div>
+          <div class="col-lg-3">
+            <!-- Megamenu list-->
+            <h6 class="text-uppercase">Documentation</h6>
+            <ul class="list list-unstyled">
+              <li class="list-item"><a class="megamenu-list-link" href="docs/docs-introduction.html">Introduction   </a></li>
+              <li class="list-item"><a class="megamenu-list-link" href="docs/docs-directory-structure.html">Directory structure   </a></li>
+              <li class="list-item"><a class="megamenu-list-link" href="docs/docs-gulp.html">Gulp   </a></li>
+              <li class="list-item"><a class="megamenu-list-link" href="docs/docs-customizing-css.html">Customizing CSS   </a></li>
+              <li class="list-item"><a class="megamenu-list-link" href="docs/docs-credits.html">Credits   </a></li>
+              <li class="list-item"><a class="megamenu-list-link" href="docs/docs-changelog.html">Changelog   </a></li>
+            </ul>
+            <!-- Megamenu list-->
+            <h6 class="text-uppercase">Components</h6>
+            <ul class="list list-unstyled">
+              <li class="list-item"><a class="megamenu-list-link" href="docs/components-bootstrap.html">Bootstrap   </a></li>
+              <li class="list-item"><a class="megamenu-list-link" href="docs/components-sell.html">Theme   </a></li>
+              <li class="list-item"><a class="megamenu-list-link" href="component-variants/header.html">Header variants <span class="badge bg-warning ms-1">New</span>   </a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="row megamenu-services d-none d-lg-flex">
+          <div class="col-xl-3 col-lg-6 d-flex">
+            <div class="megamenu-services-item">
+              <svg class="svg-icon megamenu-services-icon">
+                <use xlink:href="#delivery-time-1"> </use>
+              </svg>
+              <div>
+                <h6 class="text-uppercase">Free shipping &amp; return</h6>
+                <p class="mb-0 text-muted text-sm">Free Shipping over $300</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-3 col-lg-6 d-flex">
+            <div class="megamenu-services-item">
+              <svg class="svg-icon megamenu-services-icon">
+                <use xlink:href="#money-1"> </use>
+              </svg>
+              <div>
+                <h6 class="text-uppercase">Money back guarantee</h6>
+                <p class="mb-0 text-muted text-sm">30 Days Money Back</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-3 col-lg-6 d-flex">
+            <div class="megamenu-services-item">
+              <svg class="svg-icon megamenu-services-icon">
+                <use xlink:href="#customer-support-1"> </use>
+              </svg>
+              <div>
+                <h6 class="text-uppercase">020-800-456-747</h6>
+                <p class="mb-0 text-muted text-sm">24/7 Available Support</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-3 col-lg-6 d-flex">
+            <div class="megamenu-services-item">
+              <svg class="svg-icon megamenu-services-icon">
+                <use xlink:href="#secure-payment-1"> </use>
+              </svg>
+              <div>
+                <h6 class="text-uppercase">Secure Payment</h6>
+                <p class="mb-0 text-muted text-sm">Secure Payment</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 d-none d-lg-block position-relative"><img class="bg-image" src="https://d19m59y37dris4.cloudfront.net/sell/2-0-1/img/megamenu.jpg" alt=""></div>
+    </div>
   </div>
 
 
