@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+      integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="dist/accessible-autocomplete.min.css" />
+<script src="dist/accessible-autocomplete.min.js"></script>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+      <link rel="stylesheet" href="/css/main_navbar.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/product-card-scroll.css">
+    <link rel="stylesheet" href="/css/product-card-scroll-2.css">
+    <link rel="stylesheet" href="/css/carousel.css">
+    <link rel="stylesheet" href="/css/sellerPortal.css">
+    <title>Test</title>
+    <style>
+      
+    </style>
+  </head>
+  <div id="overlay" onclick="overlayOff()"></div> <!--overlay entire page whenever needed-->
+  <body>
+    <header>
+        <%- include('partials/Navbars/nav1.ejs') %>
+      <nav class="d-flex justify-content-between sell-nav">
+        <div class="sell-title h2 ms-3">Welcome to RUGGED Seller Portal!</div>
+        <div class="sell-sign">
+            <button class="btn shadow" >Seller Portal</button>
+            <button class="btn shadow">SignIn</button>
+        </div>
+    </nav>
+      </header>
+
+      <div class="container-fluid justify-content-center mb-5 d-flex mt-4 bg-white  ms-4">
+        <div class="">
+        <div class="c2"> Become a Seller <br> on  RUGGED</div>
+        <div class="c1">Expand your Business Today by Selling on RUGGED</div>
+        <button class="sell-btn btn btn-info mt-5 ms-4">Start Selling</button>
+        </div>
+        <div>
+        <img src="../public/Images/sellerPage/1.jpg" alt="" style="margin-left: 10rem;">
+    </div>
+      </div>
+
+    <div class="container-fluid justify-content-center d-flex flex-column align-items-center mb-4">
+        <div class="c2 d-flex text-center mb-5">Why Sell on RUGGED?</div>
+        <div class="d-flex flex-inline mt-2 ">
+            <div class="card ms-4 me-4">
+                <div class="card-body sell-card">
+                    <h5 class="card-title mb-4 pb-4" style="font-size: 150%; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;"><b>Sell on Rugged</b> </h5>
+                    <p class="card-text text-secondary mb-4">Join our family of 1000+ businesses who sell on RUGGED. Sell your products on India's top Camping Website</p>
+                    <a href="#" class="btn btn-info fixed">Become seller on Rugged</a>
+                </div>
+            </div>
+            <div class="card ms-4 me-4">
+                <div class="card-body sell-card">
+                    <h5 class="card-title mb-3" style="font-size: 150%; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;"><b>Benefits of selling on RUGGED</b> </h5>
+                    <p class="card-text text-secondary mb-4">Put your products in front of over 300 million customers worldwide and deliver to 100% of India's serviceable pincodes.</p>
+                    <a href="#" class="btn btn-info fixed">Become seller on Rugged</a>
+                </div>
+            </div>
+            <div class="card ms-4 me-4">
+                <div class="card-body sell-card">
+                    <h5 class="card-title mb-4" style="font-size: 150%; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;"><b>Fees & Payment</b> </h5>
+                    <p class="card-text text-secondary mb-3">RUGGED ensures your payments are deposited directly in your bank account within 7-14 days. Check pricing and payment cycles here:</p>
+                    <a href="#" class="btn btn-info fixed">Become seller on Rugged</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <%- include('partials/Navbars/footer.ejs') %>
+    
+        <script
+          src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+          integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+          crossorigin="anonymous"
+        ></script>
+        <script
+          src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"
+          integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD"
+          crossorigin="anonymous"
+        ></script>
+        
+        <script src="../js/script.js">
+          //popover
+          // const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]')
+          // const popoverList = [...popoverTriggerList].map(popoverTriggerEl => new bootstrap.Popover(popoverTriggerEl))
+        </script>
+    
+        <script src="https://kit.fontawesome.com/f6e56633d7.js" crossorigin="anonymous"></script>
+        <script src="https://unpkg.com/typed.js@2.0.132/dist/typed.umd.js"></script> <!--typed js-->
+    
+        
+      </body>
+    </html>
+    

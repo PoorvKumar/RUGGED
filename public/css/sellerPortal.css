@@ -1,0 +1,54 @@
+body
+{
+    background-color: white;
+}
+
+
+.sell-nav
+{
+    margin-top: 72.5px !important;
+    background: linear-gradient(to right, rgba(39, 166, 230, 0.9), rgba(50, 211, 206, 0.9));
+    height: 4.5rem;
+    width: 100% !important;
+    align-items: center;
+    color: white;
+    font-style: italic;
+}
+
+.sell-sign .btn
+{
+    color: white;
+    background-color: rgba(50, 211, 206, 0.9);
+    margin-right: 2rem;
+}
+
+.sell-card
+{
+    width: 15rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    height: 20rem;
+}
+
+.card:hover {
+    z-index: 1;
+    box-shadow: 0px 8px 50px rgb(0, 0, 0, 0.2);
+    transform: scale(1);
+}
+
+.sell-btn
+{
+    color: white;
+}
+
+.c1
+{
+    color: 393838;
+    font-size: 125%;
+}
+
+.c2 {
+    font-size: 300%;
+    color: #393838;
+    font-weight: 900;
+}
