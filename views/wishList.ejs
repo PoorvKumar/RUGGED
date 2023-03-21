@@ -12,8 +12,10 @@
 
   <link rel="stylesheet" href="/css/style.css">
   <link rel="stylesheet" href="/css/main_navbar.css">
-  <link rel="stylesheet" href="/css/LowerNavbarStyle.css">
+  <!-- <link rel="stylesheet" href="/css/LowerNavbarStyle.css"> -->
   <link rel="stylesheet" href="/css/wishList.css">
+  <link rel="stylesheet" href="/css/product-card-scroll.css">
+  <link rel="stylesheet" href="/css/product-card-scroll-2.css">
 
   <script src="https://kit.fontawesome.com/72fdfa8245.js" crossorigin="anonymous"></script>
 
@@ -29,7 +31,7 @@
   <header>
 <%- include('partials/Navbars/nav1.ejs') %>
 <%- include('partials/Navbars/nav2.ejs') %>
-<%- include('partials/Navbars/nav3.ejs') %>
+<!-- <%- include('partials/Navbars/nav3.ejs') %> -->
   </header>
 <main>
 <div class="container-just-below-nav">
@@ -39,6 +41,13 @@
     </div>
     <div class="hc-2">
         <div class="hvc-1">
+          <ul>
+            <li>ListName1<div class="private-list">Private</div></li>
+            <li>ListName1<div class="private-list">Private</div></li>
+            <li>ListName1<div class="private-list">Private</div></li>
+            <li>ListName1<div class="private-list">Private</div></li>
+          </ul>
+  
         </div>
         <div class="hvc-2">
             <%-include('partials/wishList/horizontalCard.ejs') %>
@@ -47,30 +56,61 @@
             <%-include('partials/wishList/horizontalCard.ejs') %>
         </div>
     </div>
-    <div class="hc-3">
-        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner mr">
-              <div class="carousel-item active">
-                <div class="card-wrapper container-sm d-flex justify-content-around">
-                    <%-include('partials/wishList/verticleCardCarousel.ejs') %>
-                    <%-include('partials/wishList/verticleCardCarousel.ejs') %>
-                    <%-include('partials/wishList/verticleCardCarousel.ejs') %>
-                    <%-include('partials/wishList/verticleCardCarousel.ejs') %>
-                    <%-include('partials/wishList/verticleCardCarousel.ejs') %>
-                </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-              <span class="carousel-control-prev-icon placeprev" aria-hidden="true"></span>
-              <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-              <span class="carousel-control-next-icon placenext" aria-hidden="true"></span>
-              <span class="visually-hidden">Next</span>
-            </button>
-        </div>
-    </div>
-</div>
-</div>
-</main>
-<footer></footer>
+    <div class="slideupper">
+      <div class="upperbox">
+          <div class="leftssid">
+              <div class="p1">Suggested for You</div>
+              <div class="p2">Based on your Activity</div>
+          </div>
+          <div class="rightside upbox-view-btn ">
+              <button type="button" class="btn  btn-info text-white">View More</button>
+          </div>
+      </div>
+      <div class="product-slider-2">
+          <div id="product-carousel" class="w-100 carousel slide" data-bs-ride="carousel">
+              <div class="carousel-inner">
+                  <div class="carousel-item active">
+                      <div class="product-wrapper d-flex flex-inline justify-content-around">
+                        <%-include('partials/wishList/verticleCardCarousel.ejs') %>
+                        <%-include('partials/wishList/verticleCardCarousel.ejs') %>
+                        <%-include('partials/wishList/verticleCardCarousel.ejs') %>
+                        <%-include('partials/wishList/verticleCardCarousel.ejs') %>
+                        <%-include('partials/wishList/verticleCardCarousel.ejs') %>
+                      </div>
+                  </div>
+                  <div class="carousel-item">
+                    <div class="product-wrapper d-flex flex-inline justify-content-around">
+                        <%-include('partials/wishList/verticleCardCarousel.ejs') %>
+                        <%-include('partials/wishList/verticleCardCarousel.ejs') %>
+                        <%-include('partials/wishList/verticleCardCarousel.ejs') %>
+                        <%-include('partials/wishList/verticleCardCarousel.ejs') %>
+                        <%-include('partials/wishList/verticleCardCarousel.ejs') %>
+                    </div>
+                    </div>
+                    <div class="carousel-item">
+                      <div class="product-wrapper d-flex flex-inline justify-content-around">
+                        <%-include('partials/wishList/verticleCardCarousel.ejs') %>
+                        <%-include('partials/wishList/verticleCardCarousel.ejs') %>
+                        <%-include('partials/wishList/verticleCardCarousel.ejs') %>
+                        <%-include('partials/wishList/verticleCardCarousel.ejs') %>
+                        <%-include('partials/wishList/verticleCardCarousel.ejs') %>
+                      </div>
+                      </div>
+                    </div>
+                    <button class="carousel-control-prev hg" type="button" data-bs-slide="prev"
+                  data-bs-target="#product-carousel">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Previous</span>
+              </button>
+              <button class="carousel-control-next hg" type="button" data-bs-slide="next"
+                  data-bs-target="#product-carousel">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Next</span>
+              </button>
+          </div>
+      </div>
+  </div>
+  </div>
+  </main>  
 </body>
+</html>
