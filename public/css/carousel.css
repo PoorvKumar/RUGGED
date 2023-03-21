@@ -18,8 +18,8 @@
 
 .caro-prod {
     position: absolute;
-    left: 7rem;
-    top: 6rem;
+    left: 7%;
+    top: 21%;
     text-align: center;
 }
 
@@ -27,8 +27,8 @@
     font-size: 150%;
     color: #ffffff;
     position: absolute;
-    top: 10rem;
-    right: 10rem;
+    top: 45%;
+    right: 10%;
 }
 
 a img {
@@ -38,12 +38,12 @@ a img {
 
 .caro-prod-title:hover , .caro-prod-tag:hover
 {
-    color: black;
-    text-shadow: 2px 2px 2px rgb(19, 80, 212);
+    color: rgb(31, 176, 220);
+    text-shadow: 2px 2px 2px rgb(60, 75, 209);
 }
 
 .caro-prod-price:hover
 {
-    color: black;
-    text-shadow: 2px 2px 2px rgb(221, 53, 15);
+    color: rgb(31, 176, 220);
+    text-shadow: 2px 2px 2px rgb(60, 75, 209);
 }
