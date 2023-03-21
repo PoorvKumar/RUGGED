@@ -3,14 +3,15 @@ var path = require('path');
 var ejs=require('ejs')
 
 var app = express();
-const sellerdashboardRoutes=require('./routes/sellerDashboardRoutes')
-const influencerBlogRoutes=require('./routes/influencerBlogPageRoutes')
-const wishlistroute=require('./routes/wishlistRoutes')
-const productPageRoutes=require('./routes/productPage')
-const productSearchPage=require('./routes/productSearchpage')
-const returnsOrderPage=require('./routes/returnsAndorder')
-const dashboardUserPage=require('./routes/dashboardUser')
-const index=require('./routes/index.js')
+const sellerdashboardRoutes=require('./routes/sellerDashboardRoutes');
+const influencerBlogRoutes=require('./routes/influencerBlogPageRoutes');
+const wishlistroute=require('./routes/wishlistRoutes');
+const productPageRoutes=require('./routes/productPage');
+const productSearchPage=require('./routes/productSearchpage');
+const returnsOrderPage=require('./routes/returnsAndorder');
+const dashboardUserPage=require('./routes/dashboardUser');
+const sellerPortal=require('./routes/sellerPortal');
+const index=require('./routes/index.js');
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
