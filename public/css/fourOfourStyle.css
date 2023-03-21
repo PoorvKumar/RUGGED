@@ -1,14 +1,23 @@
-.four-0-four-image{
-    display: block;
-    margin: 60px auto;
+.notFound{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    flex-flow: row nowrap;
 }
-
-.four-0-four-msg{
-    text-align: center;
-    text-transform: capitalize;
-    color: #383838;
+.textcontainerouter{
+    display: flex;
+    flex-flow: column nowrap;
+    /* padding: 3% 5% 3% 5%; */
 }
-
-.four-0-four-msg a{
-    color: #383838;
+.textcontainer{
+    display: flex;
+    color: black !important;
+    /* font-size: large; */
+    font-size: 3rem;
+    font-weight: 600;
+}
+.imageclass{
+    display: flex;
+    /* justify-content: center;
+    align-items: center; */
 }
