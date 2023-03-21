@@ -3,12 +3,9 @@
 
 <link rel="stylesheet" href="/public/css/signup.css">
 
-
 <head>
 	<div>
-
 	</div>
-
 	<meta charset="utf-8">
 	<title>Sign Up Form</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -16,17 +13,11 @@
 </head>
 
 <body >
-
 	<div class="container " >
-
 		<div class="row">
 			<div class="col-md-6 offset-md-3 ">
-
 				<h1 class="text-center">Sign Up</h1>
 				<hr>
-				
-
-
 				<form class="">
 					<div class="form-group">
 						<label for="name">Name</label>
@@ -49,7 +40,6 @@
 
 					<button type="submit" class="btn btn-success btn-block" onclick="confirmPassword()">Sign Up</button>
 				</form>
-
 			</div>
 		</div>
 	</div>
@@ -58,41 +48,24 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 
-
 	<script>
 		function confirmPassword() {
 			const password = document.getElementById("password").value;
 			const confirmPassword = document.getElementById("confirm_password").value;
-
-
-
 			if (password == " ") {
 				alert("password can not be empty");
-
 			}
 			else if (confirmPassword == " ") {
-
 				alert("please enter confirm password ");
-
 			}
-
-
 			else if (password != confirmPassword) {
 				alert("password did not match");
 			}
 			else {
-
 				return 0;
 			}
-
-
 		}
-
-
 	</script>
-
-
-
 </body>
 
 </html>

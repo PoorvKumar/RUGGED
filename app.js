@@ -21,9 +21,9 @@ app.use(sellerdashboardRoutes)
 //   response.render('LandingPage/product-card-slider.ejs');
 // });
 
-app.use('/',(req,res)=>{
-  res.render('index.ejs')
-});
+// app.use('/',(req,res)=>{
+//   res.render('index.ejs')
+// });
 app.use('/returnsAndOrders',(req,res)=>{
   res.render('returnsAndOrders.ejs')
 });
@@ -43,4 +43,4 @@ app.use('/influencerBlog',(req,res)=>{
   res.render('influencerBlog.ejs')
 });
 
-app.listen(3010);
+app.listen(3000);
