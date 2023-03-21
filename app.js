@@ -5,7 +5,7 @@ var ejs=require('ejs');
 var app = express();
 const sellerdashboardRoutes=require('./routes/sellerDashboardRoutes');
 const influencerBlogRoutes=require('./routes/blogPost');
-const wishlistroute=require('./routes/wishlistRoutes');
+const wishlistroute=require('./routes/wishlist');
 const productPageRoutes=require('./routes/productPage');
 const productSearchPage=require('./routes/productSearchpage');
 const returnsOrderPage=require('./routes/returnsAndorder');
@@ -21,7 +21,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 // app.use('/index', (req, res, next) => {
 //   res.render('index.ejs');
 // })
-app.use(index);
+app.use(index);``
 app.use(influencerBlogRoutes);
 app.use(sellerdashboardRoutes);
 app.use(dashboardUserPage);
