@@ -20,7 +20,27 @@ app.use(sellerdashboardRoutes)
 // {
 //   response.render('LandingPage/product-card-slider.ejs');
 // });
+
 app.use('/',(req,res)=>{
+  res.render('index.ejs')
+});
+app.use('/returnsAndOrders',(req,res)=>{
   res.render('returnsAndOrders.ejs')
-})
+});
+app.use('/productPage',(req,res)=>{
+  res.render('productPage.ejs')
+});
+app.use('/productSearchPage',(req,res)=>{
+  res.render('productSearchPage.ejs')
+});
+app.use('/sellerDashboard',(req,res)=>{
+  res.render('sellerDashboard.ejs')
+});
+app.use('/wishList',(req,res)=>{
+  res.render('wishList.ejs')
+});
+app.use('/influencerBlog',(req,res)=>{
+  res.render('influencerBlog.ejs')
+});
+
 app.listen(3010);
