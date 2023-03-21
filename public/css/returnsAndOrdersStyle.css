@@ -223,3 +223,44 @@ user agent stylesheet img {
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
 }
+
+.nk {
+  margin-top: 12px;
+  margin-left: 12px;
+  margin-right: 12px;
+  margin-bottom: 12px;
+}
+
+.dropdown-menu a:hover {
+  background-color: #110e0e;
+}
+
+.ll {
+  margin-left: 1%;
+  margin-right: 1%;
+  margin-top: 1%;
+  padding: 2%;
+}
+
+.need {
+  margin-top: 1%;
+}
+
+.card:hover {
+  top: -2px;
+  display: block;
+  margin-top: -1px;
+  margin-left: -1px;
+  border-radius: 6px 6px 6px 6px;
+  transition-duration: 0.5s;
+  border-color: rgb(4, 224, 140);
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+.cover{
+    display: flex;
+    justify-content: space-between;
+}

@@ -20,7 +20,7 @@ app.use(sellerdashboardRoutes)
 // {
 //   response.render('LandingPage/product-card-slider.ejs');
 // });
-// app.use('/',(req,res)=>{
-//   res.render('productSearchPage.ejs')
-// })
+app.use('/',(req,res)=>{
+  res.render('returnsAndOrders.ejs')
+})
 app.listen(3010);
