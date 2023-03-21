@@ -17,7 +17,7 @@
   <link rel="stylesheet" href="css/product-card-scroll.css">
   <link rel="stylesheet" href="css/product-card-scroll-2.css">
   <link rel="stylesheet" href="css/carousel.css">
-  <title></title>
+  <title><%=title%></title>
 </head>
 
 <body>
@@ -300,6 +300,17 @@
       //popover
       // const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]')
       // const popoverList = [...popoverTriggerList].map(popoverTriggerEl => new bootstrap.Popover(popoverTriggerEl))
+        </script>
+
+        <script>
+          function overlayOn()
+          {
+              document.getElementById("overlay").style.display = "block";
+          }
+          function overlayOff()
+          {
+              document.getElementById("overlay").style.display = "none";
+          }
         </script>
 
         <script src="https://kit.fontawesome.com/f6e56633d7.js" crossorigin="anonymous"></script>
