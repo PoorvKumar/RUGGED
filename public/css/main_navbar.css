@@ -64,7 +64,8 @@
     margin-top: 72.5px !important;
     height: 36.75px !important;
     width: 100%;
-    display: inline-block;
+    display: flex;
+    justify-content: space-around;
 }
 
 .nav-item {
@@ -171,4 +172,12 @@
     max-width: fit-content;
     height: 6.78%;
     margin-inline: 5px;
+}
+
+.nav-2-link
+{
+    margin-left: 2rem;
+    margin-right: 2rem;
+    padding-top: 0;
+    padding-bottom: 0;
 }
