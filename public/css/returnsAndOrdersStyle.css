@@ -1,40 +1,7 @@
-.btn-colour {
-    position: relative;
-    display: inline-block;
-    width: 28px;
-    height: 28px;
-    margin-bottom: 0;
-    border-radius: 50%;
-    box-shadow: inset 0 0 0 5px #fff, 0 0 0 1px #ced4da;
-    background-position: center;
-    background-size: cover;
-    cursor: pointer;
-    transition: border-color 0.1s;
-}
-
 .detail-quantity {
     max-width: 5rem;
     text-align: center;
 }
-
-.form-control {
-    display: block;
-    width: 100%;
-    padding: 0.6rem 0.75rem;
-    font-size: 0.9rem;
-    font-weight: 400;
-    line-height: 1.5;
-    color: #212529;
-    background-color: #fff;
-    background-clip: padding-box;
-    border: 1px solid #ced4da;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    border-radius: 0;
-    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-}
-
 
 .review {
     padding-top: 2rem;
@@ -142,27 +109,6 @@ user agent stylesheet img {
     margin-right: 22px;
     text-align: center;
 }
-
-/* #progressbar-1 li:before {
-    line-height: 29px;
-    display: block;
-    font-size: 12px;
-    background: #455A64;
-    border-radius: 50%;
-    margin: auto;
-}
-
-#progressbar-1 li:after {
-    content: '';
-    width: 121%;
-    height: 2px;
-    background: #455A64;
-    position: absolute;
-    left: 0%;
-    right: 0%;
-    top: 15px;
-    z-index: -1;
-} */
 
 #progressbar-1 li:nth-child(2):after {
     left: 50%
