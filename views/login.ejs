@@ -45,8 +45,8 @@
         <form action="/login" method="post">
           <div class='subtitle'>Welcome to Rugged</div>
           <div class='input-fields'>
-            <input type='email' name="email" placeholder='Email' class='input-line full-width'></input>
-            <input type='password' name="password" placeholder='Password' class='input-line full-width'></input>
+            <input type='email' name="email" placeholder='Email' class='input-line full-width'>
+            <input type='password' name="password" placeholder='Password' class='input-line full-width'>
 
           </div>
           <div class="highlight"><span><i class="fa-brands fa-facebook"></i></span>
@@ -56,6 +56,11 @@
           </div>
           <button type="submit" class='ghost-round full-width mg'>Login</button>
         </form>
+        <br>
+        <br>
+        <div class="btn btn-danger disabled" style="background-color: red;">
+          <%=data%>
+        </div>
       </div>
     </div>
 
