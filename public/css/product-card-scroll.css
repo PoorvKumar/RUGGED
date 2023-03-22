@@ -85,6 +85,11 @@ body {
     width: 86% !important;
 }
 
+.prod-category-head
+{
+    text-shadow: 2px 2px black;
+}
+
 .prod-category div {
     color: rgb(255, 255, 255);
     font-size: xx-large;
