@@ -30,6 +30,8 @@ const index = require("./routes/index.js");
 const login = require("./routes/login");
 const signup = require("./routes/signup");
 const logout = require("./routes/logout");
+const aboutus=require("./routes/aboutUsRoutes")
+const contactus=require('./routes/contactUs')
 // app.use('/index', (req, res, next) => {
 //   res.render('index.ejs');
 // })
@@ -189,4 +191,6 @@ app.use(wishlistroute);
 app.use(login);
 app.use(signup);
 app.use(logout);
+app.use(aboutus)
+app.use(contactus)
 app.listen(3000);
