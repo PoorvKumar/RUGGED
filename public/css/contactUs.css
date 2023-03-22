@@ -1,0 +1,67 @@
+.about-page {
+	margin: 0 auto;
+	max-width: 800px;
+}
+
+.header {
+	background-color: #F8F8F8;
+	padding: 20px;
+	text-align: center;
+}
+
+.form {
+	padding: 20px;
+	background-color: #FFFFFF;
+	box-shadow: 0px 0px 10px #E0E0E0;
+	margin-bottom: 20px;
+}
+
+.footer {
+	background-color: #F8F8F8;
+	padding: 20px;
+	text-align: center;
+}
+
+h1, h2, p {
+	margin: 0;
+}
+
+form {
+	display: flex;
+	flex-direction: column;
+}
+
+label {
+	margin-top: 10px;
+	font-weight: bold;
+}
+
+input, select, textarea {
+	margin-bottom: 10px;
+	padding: 5px;
+	border-radius: 5px;
+	border: none;
+}
+
+button {
+	background-color: #29abfc;
+	text-align:center;
+	width: 100px;
+	color: #FFFFFF;
+	padding: 10px;
+	border-radius: 5px;
+	border: none;
+	cursor: pointer;
+}
+
+button:hover {
+	background-color: #003097;
+}
+
+input[type="file"] {
+	margin-top: 10px;
+}
+
+textarea {
+	resize: vertical;
+}

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Contact Us Form</title>
+	<link rel="stylesheet" type="text/css" href="/css/contactUs.css">
+</head>
+<body>
+	<header>
+		<%- include('partials/Navbars/nav1.ejs') %>
+		<%- include('partials/Navbars/nav2.ejs') %>
+	</header>
+	<div class="about-page">
+		<div class="header">
+			<h1>Contact Us</h1>
+		</div>
+		<div class="form">
+			<h3>
+				Looking for more information you can sublmit your details here along with the query, our support team will contact you as soon as possible.
+			</h3>
+			<form>
+				<label for="name">Name:</label>
+				<input type="text" id="name" name="name" required>
+
+				<label for="email">Email:</label>
+				<input type="email" id="email" name="email" required>
+				
+				<label for="phn">Phn:</label>
+				<input type="text" id="phn" name="phn" required>
+
+				<label for="description">Description:</label>
+				<textarea id="description" name="description" maxlength="250"></textarea>
+
+				<button type="submit">Submit</button>
+			</form>
+		</div>
+	</div>
+</body>
+</html>
