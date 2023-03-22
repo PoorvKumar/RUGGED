@@ -23,7 +23,7 @@
           <div class="right d-flex">
             <div class="nav-sign nav-link d-flex-inline ml-3 m-2">
               <div class="nav-line-1">
-                <span class="small"><span class="fa fa-user"> </span> Hello! User</span>
+                <span class="small"><span class="fa fa-user"> </span> Hello! <%= data.name %>'s</span>
               </div>
               <a tabindex="0" href="/login" id="account-list" class="text-white">
                 <div class="nav-line-2 signin-main">Account & Lists <span class="dropdown-toggle"></span>
@@ -82,7 +82,7 @@
               <div class="offcanvas offcanvas-end bgclr" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions"
                 aria-labelledby="offcanvasWithBothOptionsLabel">
                 <div class="offcanvas-header">
-                  <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Apna Cart</h5>
+                  <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel"><%= data.name %>'s Cart</h5>
                   <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                 </div>
                 <div class="offcanvas-body">

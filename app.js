@@ -29,7 +29,7 @@ const sellerPortal=require('./routes/sellerPortal');
 const index=require('./routes/index.js');
 const login=require('./routes/login');
 const signup=require('./routes/signup');
-
+const logout=require('./routes/logout')
 // app.use('/index', (req, res, next) => {
 //   res.render('index.ejs');
 // })
@@ -53,7 +53,7 @@ app.post('/login',(req,res)=>{
     let user = [];
         email=req.body.email;
         // email.toLowerCase();
-        var sql = "SELECT * FROM Customer WHERE Email_ID = ?";
+        var sql = "SELECT * FROM Customer WHERE email = ?";
         db.all(sql, email, function(err, rows) {
             if (err){
                 res.status(400).json({"error": err.message})
@@ -63,17 +63,15 @@ app.post('/login',(req,res)=>{
             rows.forEach(function (row) {
                 user.push(row);                
             })
-    if(req.body.email==user[0].Email_ID && req.body.password==user[0].Passwrord){
+    if(req.body.email==user[0].email && req.body.password==user[0].password){
         // req.session.user=currentUser;
-        res.redirect('/');
+        req.session.user=user[0]
+        res.redirect('/')
     }
     else{
         res.end("Invalid Username or Password");
     }
 });
-});
-db.each('select * from customer',(err,rows)=>{
-    console.log(rows);
 });
 
 //using routes
@@ -88,5 +86,5 @@ app.use(returnsOrderPage);
 app.use(wishlistroute);
 app.use(login);
 app.use(signup);
-
+app.use(logout)
 app.listen(3000);
