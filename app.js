@@ -28,7 +28,7 @@ const dashboardUserPage=require('./routes/dashboardUser');
 const sellerPortal=require('./routes/sellerPortal');
 const index=require('./routes/index.js');
 const login=require('./routes/login');
-
+const signup=require('./routes/signup');
 
 // app.use('/index', (req, res, next) => {
 //   res.render('index.ejs');
@@ -51,10 +51,10 @@ app.use(session({
 }));
 app.post('/login',(req,res)=>{
     let user = [];
-        currentUser=req.body;
-        currentUser.Email.toLowerCase();
+        email=req.body.email;
+        // email.toLowerCase();
         var sql = "SELECT * FROM Customer WHERE Email_ID = ?";
-        db.all(sql, curretnUSer.Email, function(err, rows) {
+        db.all(sql, email, function(err, rows) {
             if (err){
                 res.status(400).json({"error": err.message})
                 return;
@@ -64,7 +64,7 @@ app.post('/login',(req,res)=>{
                 user.push(row);                
             })
     if(req.body.email==user[0].Email_ID && req.body.password==user[0].Passwrord){
-        req.session.user=currentUser;
+        // req.session.user=currentUser;
         res.redirect('/');
     }
     else{
@@ -87,5 +87,6 @@ app.use(productSearchPage);
 app.use(returnsOrderPage);
 app.use(wishlistroute);
 app.use(login);
+app.use(signup);
 
 app.listen(3000);
