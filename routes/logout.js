@@ -5,7 +5,7 @@ var router = express.Router();
 router.get('/logout', function(req, res, next) {
   req.session.destroy()
    const val={
-    name: 'User'
+    firstname: 'User'
    }
    res.render('index',{data:val})
 })

@@ -9,7 +9,7 @@ router.get('/', function(req, res, next) {
 }
 else{
    const val={
-    name: 'User'
+    firstname: 'User'
    }
    res.render('index',{data:val})
 }
