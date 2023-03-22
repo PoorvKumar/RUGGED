@@ -30,8 +30,6 @@ const index = require("./routes/index.js");
 const login = require("./routes/login");
 const signup = require("./routes/signup");
 const logout = require("./routes/logout");
-const prodSearchCaro=require('./routes/productSearchPageCaro');
-
 // app.use('/index', (req, res, next) => {
 //   res.render('index.ejs');
 // })
@@ -54,6 +52,31 @@ app.use(
     saveUninitialized: true,
   })
 );
+// app.post('/login',(req,res)=>{
+//     let user = [];
+//         var email=req.body.email;
+//         // email.toLowerCase();
+//         var sql = "SELECT * FROM Customer WHERE email = ?";
+//         db.all(sql, email, function(err, rows) {
+//             if (err){
+//                 res.status(400).json({"error": err.message})
+//                 return;
+//             }
+
+//             rows.forEach(function (row) {
+//                 user.push(row);
+//             })
+//     if(req.body.email==user[0].email && req.body.password==user[0].password){
+//         // req.session.user=currentUser;
+//         req.session.user=user[0]
+//         res.redirect('/')
+//     }
+//     else{
+//         res.end("Invalid Username or Password");
+
+//     }
+// });
+// });
 
 app.post("/login", (req, res, next) => {
   let sql = `SELECT * FROM customer WHERE email = "${req.body.email}" AND password = "${req.body.password}"`;
@@ -115,6 +138,47 @@ app.post("/signup", (req, res) => {
     });
   });
 });
+app.post("/dashboardUser", (req, res) => {
+  var val = req.body;
+  var cust = req.session.user.id;
+  var update = `update customer set firstname=?,lastname=?,phone=?,email=?,password=?,addressline1=?,addressline2=?,state=?,country=? where id=?`;
+  db.run(
+    update,
+    [
+      req.body.First,
+      req.body.Last,
+      req.body.Phone,
+      req.body.email,
+      req.body.password,
+      req.body.Address,
+      req.body.AddressAlt,
+      req.body.state,
+      req.body.country,
+      cust,
+    ],
+    (err) => {
+      if (err) {
+        console.error(err.message);
+        res.status(400).send("Error while updating");
+      } else {
+        res.redirect("/dashboardUser");
+      }
+    }
+  );
+});
+app.post("/dashboardUser",(req,res)=>{
+   userID=req.session.user.id
+  const del=`delete from customer where id=?`
+  db.run(del,userID,(err)=>{
+    if(err){
+      console.error(err.message);
+      res.status(400).send("Error while deleting");
+    }else{
+      res.session.destroy()
+      res.redirect("/")
+    }
+  })
+})
 //using routes
 app.use(index);
 app.use(influencerBlogRoutes);
@@ -128,7 +192,4 @@ app.use(wishlistroute);
 app.use(login);
 app.use(signup);
 app.use(logout);
-app.use(prodSearchCaro);
-
-
 app.listen(3000);
