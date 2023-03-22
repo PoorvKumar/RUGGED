@@ -151,4 +151,4 @@ app.use(wishlistroute);
 app.use(login);
 app.use(signup);
 app.use(logout);
-app.listen(3020);
+app.listen(3000);
