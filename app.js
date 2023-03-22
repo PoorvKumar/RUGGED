@@ -27,42 +27,33 @@ app.use(bodyparser.urlencoded({extended:true}))
 //   res.render('index.ejs');
 // })
 //==============================================================
-let db = new sqlite3.Database('/project.db',(err) => {
-    if (err) {
-      // Cannot open database
-      console.error(err.message)
-      throw err
-    }else{
-        console.log('Connected to the SQLite database.')}})
+let db = new sqlite3.Database('./database/project.db')
 app.use(session({
     secret:'secret',
     resave:false,
     saveUninitialized:true
 }))
-// app.post('/login',(req,res)=>{
-//     let user = [];
-//         Email=req.body.email
-//         var sql = `SELECT * FROM Customer WHERE email_id = ?`;
-//         db.all(sql, Email, function(err, rows) {
-//             if (err){
-//                 res.status(400).json({"error": err.message})
-//                 return;
-//             }
+app.post('/login',(req,res)=>{
+    let user = [];
+        Email=req.body.email
+        var sql = "SELECT * FROM Customer WHERE Email_ID = ?";
+        db.all(sql, Email, function(err, rows) {
+            if (err){
+                res.status(400).json({"error": err.message})
+                return;
+            }
 
-//             rows.forEach(function (row) {
-//                 user.push(row);                
-//             })
-//     if(req.body.password==user[0].password){
-//         req.session.user=req.body.email
-//         res.redirect('/Blogpost')
-//     }
-//     else{
-//         res.end("Invallid "+user[0].email_id)
-//     }
-// })
-// })
-db.each('select * from customer',(err,rows)=>{
-    console.log(rows.password)
+            rows.forEach(function (row) {
+                user.push(row);                
+            })
+    if(req.body.email==user[0].Email_ID && req.body.password==user[0].Passwrord){
+        req.session.user=req.body.email
+        res.redirect('/Blogpost')
+    }
+    else{
+        res.end("Invalid")
+    }
+})
 })
 app.use(influencerBlogRoutes);
 app.use(sellerdashboardRoutes);
