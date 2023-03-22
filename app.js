@@ -86,11 +86,12 @@ app.post('/login', (req, res, next) => {
         }
         if (!rows) {
             res.status(400);
-            res.send('Invalid username or password');
+            res.send('User not Registered');
             return
         }
         rows.forEach((row) => {
-            if (row.username === req.body.username && row.password === req.body.password) {
+            if (row.email === req.body.email && row.password === req.body.password) {
+                req.session.user=row;
                 x = 1;
             }
             else {
@@ -101,9 +102,9 @@ app.post('/login', (req, res, next) => {
         if (x === 1) {
             res.redirect('/');
         }
-        else { res.render('login.ejs' ,{data:"Invalid login credentials.",title:"Login Portal"}); }
-    })
-})
+        else { res.render('login.ejs' ,{data:"Invalid email or password",title:"Login Portal"}); }
+    });
+});
 
     //using routes
     app.use(index);
@@ -117,5 +118,5 @@ app.post('/login', (req, res, next) => {
     app.use(wishlistroute);
     app.use(login);
     app.use(signup);
-    app.use(logout)
+    app.use(logout);
     app.listen(3000);
