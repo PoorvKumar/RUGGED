@@ -51,10 +51,9 @@ app.use(session({
 }));
 app.post('/login',(req,res)=>{
     let user = [];
-        currentUser=req.body;
-        currentUser.Email.toLowerCase();
+        Email=req.body.email
         var sql = "SELECT * FROM Customer WHERE Email_ID = ?";
-        db.all(sql, curretnUSer.Email, function(err, rows) {
+        db.all(sql, Email, function(err, rows) {
             if (err){
                 res.status(400).json({"error": err.message})
                 return;
@@ -64,11 +63,11 @@ app.post('/login',(req,res)=>{
                 user.push(row);                
             })
     if(req.body.email==user[0].Email_ID && req.body.password==user[0].Passwrord){
-        req.session.user=currentUser;
-        res.redirect('/');
+        req.session.user=req.body.email
+        res.redirect('/Blogpost')
     }
     else{
-        res.end("Invalid Username or Password");
+        res.end("Invalid")
     }
 });
 });
