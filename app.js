@@ -90,7 +90,7 @@ app.post('/login', (req, res, next) => {
             return
         }
         rows.forEach((row) => {
-            if (row.username === req.body.username && row.password === req.body.password) {
+            if (row.email === req.body.email && row.password === req.body.password) {
                 x = 1;
             }
             else {
