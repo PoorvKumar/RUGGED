@@ -30,9 +30,6 @@ const index = require("./routes/index.js");
 const login = require("./routes/login");
 const signup = require("./routes/signup");
 const logout = require("./routes/logout");
-const productsearchCaro=require('./routes/productSearchPageCaro');
-const aboutUsRoutes = require("./routes/aboutUsRoutes");
-const contactUsRoutes = require("./routes/contactUs");
 // app.use('/index', (req, res, next) => {
 //   res.render('index.ejs');
 // })
@@ -144,7 +141,7 @@ app.post("/signup", (req, res) => {
 app.post("/dashboardUser", (req, res) => {
   var val = req.body;
   var cust = req.session.user.id;
-  var update = `update customer set firstname=?,lastname=?,phone=?,email=?,password=?,addressline1=?,addressline2=?,state=?,country=? where id=?`;
+  var update = `update customer set firstname=?,lastname=?,phone=?,email=?,addressline1=?,addressline2=? where id=?`;
   db.run(
     update,
     [
@@ -152,11 +149,8 @@ app.post("/dashboardUser", (req, res) => {
       req.body.Last,
       req.body.Phone,
       req.body.email,
-      req.body.password,
       req.body.Address,
       req.body.AddressAlt,
-      req.body.state,
-      req.body.country,
       cust,
     ],
     (err) => {
@@ -172,12 +166,12 @@ app.post("/dashboardUser", (req, res) => {
 app.post("/dashboardUser",(req,res)=>{
    userID=req.session.user.id
   const del=`delete from customer where id=?`
-  db.run(del,userID,(err)=>{
+  db.run(del,[userID],(err)=>{
     if(err){
       console.error(err.message);
       res.status(400).send("Error while deleting");
     }else{
-      res.session.destroy()
+      req.session.destroy()
       res.redirect("/")
     }
   })
@@ -195,8 +189,4 @@ app.use(wishlistroute);
 app.use(login);
 app.use(signup);
 app.use(logout);
-app.use(productsearchCaro);
-app.use(aboutUsRoutes);
-app.use(contactUsRoutes);
-
 app.listen(3000);
