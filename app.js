@@ -30,7 +30,7 @@ const index = require("./routes/index.js");
 const login = require("./routes/login");
 const signup = require("./routes/signup");
 const logout = require("./routes/logout");
-const productsearchCaro=require('./routes/productSearchPageCaro');
+const prodSearchCaro=require('./routes/productSearchPageCaro');
 // app.use('/index', (req, res, next) => {
 //   res.render('index.ejs');
 // })
