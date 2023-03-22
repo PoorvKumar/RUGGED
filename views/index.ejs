@@ -17,7 +17,10 @@
   <link rel="stylesheet" href="css/product-card-scroll.css">
   <link rel="stylesheet" href="css/product-card-scroll-2.css">
   <link rel="stylesheet" href="css/carousel.css">
-  <title><%=title%></title>
+  <link rel="stylesheet" href="/css/productCardStyle.css">
+  <title>
+    <%=title%>
+  </title>
 </head>
 
 <body>
@@ -81,8 +84,7 @@
     </button>
   </div>
   <div class="product-slider">
-    <div class="prod-category"
-      style="background-image: url('/Images/productSliderBG/mountain.png');">
+    <div class="prod-category" style="background-image: url('/Images/productSliderBG/mountain.png');">
       <div class="prod-category-head text-center">Trekking Essentials</div>
       <button class="shadow">View More</button>
     </div>
@@ -176,145 +178,241 @@
 
     </div>
   </div>
-  <%- include('partials/LandingPage/product-slider-2.ejs') %>
-    <%- include('partials/LandingPage/product-slider.ejs') %>
-      <!-- <%- include('partials/LandingPage/carousel.ejs') %> -->
-      <div id="caro1" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner">
-          <div class="carousel-item active img-carousel">
-            <a href="#">
-              <div class="caro-prod">
-                <div class="caro-prod-title">New Offers on Tents</div>
-                <div class="caro-prod-tag">Camping in Way</div>
-              </div>
-              <div class="caro-prod-price">Starting from just 99/-</div>
-              <img src="Images/carouselImages/secondCarousel/MOUNTAIN HIKING CAMP PE20 (1).avif">
-            </a>
+
+  <div id="caro1" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active img-carousel">
+        <a href="#">
+          <div class="caro-prod">
+            <div class="caro-prod-title">New Offers on Tents</div>
+            <div class="caro-prod-tag">Camping in Way</div>
           </div>
-          <div class="carousel-item img-carousel">
-            <a href="#">
-              <div class="caro-prod">
-                <div class="caro-prod-title">Snow Equipments</div>
-                <div class="caro-prod-tag">Grabs Yours Today</div>
-              </div>
-              <div class="caro-prod-price">Starting from just 99/-</div>
-              <img src="Images/carouselImages/secondCarousel/WEDZE HOUSSE CHAUSSURE SKI 900 GRIS NOIR AH21.avif">
-            </a>
+          <div class="caro-prod-price">Starting from just 99/-</div>
+          <img src="Images/carouselImages/secondCarousel/MOUNTAIN HIKING CAMP PE20 (1).avif">
+        </a>
+      </div>
+      <div class="carousel-item img-carousel">
+        <a href="#">
+          <div class="caro-prod">
+            <div class="caro-prod-title">Snow Equipments</div>
+            <div class="caro-prod-tag">Grabs Yours Today</div>
           </div>
-          <div class="carousel-item img-carousel">
-            <a href="#">
-              <div class="caro-prod">
-                <div class="caro-prod-title">Snow Glasses</div>
-                <div class="caro-prod-tag">Do not let cold dry your eyes</div>
-              </div>
-              <div class="caro-prod-price">Starting from just 99/-</div>
-              <img src="Images/carouselImages/secondCarousel/WEDZE SKI-P JKT 180 M CAMEL AH22.avif">
-            </a>
+          <div class="caro-prod-price">Starting from just 99/-</div>
+          <img src="Images/carouselImages/secondCarousel/WEDZE HOUSSE CHAUSSURE SKI 900 GRIS NOIR AH21.avif">
+        </a>
+      </div>
+      <div class="carousel-item img-carousel">
+        <a href="#">
+          <div class="caro-prod">
+            <div class="caro-prod-title">Snow Glasses</div>
+            <div class="caro-prod-tag">Do not let cold dry your eyes</div>
           </div>
-          <div class="carousel-item img-carousel">
-            <a href="#">
-              <div class="caro-prod">
-                <div class="caro-prod-title">New Hiking Collection</div>
-                <div class="caro-prod-tag">Time to Hike is Here...</div>
-              </div>
-              <div class="caro-prod-price">Starting from just 99/-</div>
-              <img src="Images/carouselImages/hiking collection.avif">
-            </a>
+          <div class="caro-prod-price">Starting from just 99/-</div>
+          <img src="Images/carouselImages/secondCarousel/WEDZE SKI-P JKT 180 M CAMEL AH22.avif">
+        </a>
+      </div>
+      <div class="carousel-item img-carousel">
+        <a href="#">
+          <div class="caro-prod">
+            <div class="caro-prod-title">New Hiking Collection</div>
+            <div class="caro-prod-tag">Time to Hike is Here...</div>
+          </div>
+          <div class="caro-prod-price">Starting from just 99/-</div>
+          <img src="Images/carouselImages/hiking collection.avif">
+        </a>
+      </div>
+    </div>
+    <!-- <div class="carousel-indicators">
+          <button type="button" data-bs-target="caro1" data-bs-slide-to="0" class="active" aria-current="true"></button>
+          <button type="button" data-bs-target="caro1" data-bs-slide-to="1"></button>
+          <button type="button" data-bs-target="caro1" data-bs-slide-to="2"></button>
+          <button type="button" data-bs-target="caro1" data-bs-slide-to="3"></button>
+        </div> -->
+
+    <button class="carousel-control-prev" type="button" data-bs-slide="prev" data-bs-target="#caro1">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-slide="next" data-bs-target="#caro1">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </button>
+  </div>
+
+  <div class="product-slider">
+    <div class="prod-category" style="background-image: url('/Images/productSliderBG/skiing.jpg');">
+      <div class="prod-category-head text-center">Snow Essentials</div>
+      <button class="shadow">View More</button>
+    </div>
+    <div id="prodslid2" class="product-carousel carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <div class="product-wrapper d-flex flex-inline justify-content-around">
+            <%- include('partials/LandingPage/product-card-slider.ejs') %>
+              <%- include('partials/LandingPage/product-card-slider.ejs') %>
+                <%- include('partials/LandingPage/product-card-slider.ejs') %>
+                  <%- include('partials/LandingPage/product-card-slider.ejs') %>
           </div>
         </div>
-        <!-- <div class="carousel-indicators">
-            <button type="button" data-bs-target="caro1" data-bs-slide-to="0" class="active" aria-current="true"></button>
-            <button type="button" data-bs-target="caro1" data-bs-slide-to="1"></button>
-            <button type="button" data-bs-target="caro1" data-bs-slide-to="2"></button>
-            <button type="button" data-bs-target="caro1" data-bs-slide-to="3"></button>
-          </div> -->
+        <div class="carousel-item">
+          <div class="product-wrapper d-flex flex-inline justify-content-around">
+            <%- include('partials/LandingPage/product-card-slider.ejs') %>
+              <%- include('partials/LandingPage/product-card-slider.ejs') %>
+                <%- include('partials/LandingPage/product-card-slider.ejs') %>
+                  <%- include('partials/LandingPage/product-card-slider.ejs') %>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="product-wrapper d-flex flex-inline justify-content-around">
+            <%- include('partials/LandingPage/product-card-slider.ejs') %>
+              <%- include('partials/LandingPage/product-card-slider.ejs') %>
+                <%- include('partials/LandingPage/product-card-slider.ejs') %>
+                  <%- include('partials/LandingPage/product-card-slider.ejs') %>
+          </div>
+        </div>
+      </div>
+      <div class="d-flex flex-row">
+        <button class="carousel-control-prev" type="button" data-bs-slide="prev" data-bs-target="#prodslid2">
+          <!-- <i class="fa fa-angle-left text-white" aria-hidden="true"></i> -->
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="slider-btn carousel-control-next" type="button" data-bs-slide="next" data-bs-target="#prodslid2">
+          <!-- <i class="fa fa-angle-right text-white" aria-hidden="true"></i> -->
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
 
-        <button class="carousel-control-prev" type="button" data-bs-slide="prev" data-bs-target="#caro1">
+    </div>
+  </div>
+
+  <div class="slideupper">
+    <div class="upperbox">
+      <div class="leftssid">
+        <div class="p1">Suggested for You</div>
+        <div class="p2">Based on your Activity</div>
+      </div>
+      <div class="rightside upbox-view-btn ">
+        <button type="button" class="btn  btn-info text-white">View More</button>
+      </div>
+    </div>
+    <div class="product-slider-2">
+      <div id="product-carousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="product-wrapper d-flex flex-inline justify-content-around">
+              <%- include('partials/LandingPage/product-card-slider-2.ejs') %>
+                <%- include('partials/LandingPage/product-card-slider-2.ejs') %>
+                  <%- include('partials/LandingPage/product-card-slider-2.ejs') %>
+                    <%- include('partials/LandingPage/product-card-slider-2.ejs') %>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="product-wrapper d-flex flex-inline justify-content-around">
+              <%- include('partials/LandingPage/product-card-slider-2.ejs') %>
+                <%- include('partials/LandingPage/product-card-slider-2.ejs') %>
+                  <%- include('partials/LandingPage/product-card-slider-2.ejs') %>
+                    <%- include('partials/LandingPage/product-card-slider-2.ejs') %>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="product-wrapper d-flex flex-inline justify-content-around">
+              <%- include('partials/LandingPage/product-card-slider-2.ejs') %>
+                <%- include('partials/LandingPage/product-card-slider-2.ejs') %>
+                  <%- include('partials/LandingPage/product-card-slider-2.ejs') %>
+                    <%- include('partials/LandingPage/product-card-slider-2.ejs') %>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-slide="prev" data-bs-target="#product-carousel">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
           <span class="sr-only">Previous</span>
         </button>
-        <button class="carousel-control-next" type="button" data-bs-slide="next" data-bs-target="#caro1">
+        <button class="carousel-control-next" type="button" data-bs-slide="next" data-bs-target="#product-carousel">
           <span class="carousel-control-next-icon" aria-hidden="true"></span>
           <span class="sr-only">Next</span>
         </button>
       </div>
-      <div class="slideupper">
-        <div class="upperbox">
-          <div class="leftssid">
-            <div class="p1">Suggested for You</div>
-            <div class="p2">Based on your Activity</div>
-          </div>
-          <div class="rightside upbox-view-btn ">
-            <button type="button" class="btn  btn-info text-white">View More</button>
-          </div>
-        </div>
-        <div class="product-slider-2">
-          <div id="product-carousel" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner">
-              <div class="carousel-item active">
-                <div class="product-wrapper d-flex flex-inline justify-content-around">
-                  <%- include('partials/LandingPage/product-card-slider-2.ejs') %>
-                    <%- include('partials/LandingPage/product-card-slider-2.ejs') %>
-                      <%- include('partials/LandingPage/product-card-slider-2.ejs') %>
-                        <%- include('partials/LandingPage/product-card-slider-2.ejs') %>
-                </div>
-              </div>
-              <div class="carousel-item">
-                <div class="product-wrapper d-flex flex-inline justify-content-around">
-                  <%- include('partials/LandingPage/product-card-slider-2.ejs') %>
-                    <%- include('partials/LandingPage/product-card-slider-2.ejs') %>
-                      <%- include('partials/LandingPage/product-card-slider-2.ejs') %>
-                        <%- include('partials/LandingPage/product-card-slider-2.ejs') %>
-                </div>
-              </div>
-              <div class="carousel-item">
-                <div class="product-wrapper d-flex flex-inline justify-content-around">
-                  <%- include('partials/LandingPage/product-card-slider-2.ejs') %>
-                    <%- include('partials/LandingPage/product-card-slider-2.ejs') %>
-                      <%- include('partials/LandingPage/product-card-slider-2.ejs') %>
-                        <%- include('partials/LandingPage/product-card-slider-2.ejs') %>
-                </div>
-              </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-slide="prev" data-bs-target="#product-carousel">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="sr-only">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-slide="next" data-bs-target="#product-carousel">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="sr-only">Next</span>
-            </button>
-          </div>
-        </div>
+    </div>
+  </div>
+
+  <div class="slideupper">
+    <div class="upperbox">
+      <div class="leftssid">
+        <div class="p1">Suggested for You</div>
+        <div class="p2">Based on your Activity</div>
       </div>
-      <%- include('partials/Navbars/footer.ejs') %>
+      <div class="rightside upbox-view-btn ">
+        <button type="button" class="btn  btn-info text-white">View More</button>
+      </div>
+    </div>
+    <div class="product-slider-2">
+      <div id="product-carousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="product-wrapper d-flex flex-inline justify-content-around">
+              <%- include('partials/LandingPage/product-card-slider-2.ejs') %>
+                <%- include('partials/LandingPage/product-card-slider-2.ejs') %>
+                  <%- include('partials/LandingPage/product-card-slider-2.ejs') %>
+                    <%- include('partials/LandingPage/product-card-slider-2.ejs') %>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="product-wrapper d-flex flex-inline justify-content-around">
+              <%- include('partials/LandingPage/product-card-slider-2.ejs') %>
+                <%- include('partials/LandingPage/product-card-slider-2.ejs') %>
+                  <%- include('partials/LandingPage/product-card-slider-2.ejs') %>
+                    <%- include('partials/LandingPage/product-card-slider-2.ejs') %>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="product-wrapper d-flex flex-inline justify-content-around">
+              <%- include('partials/LandingPage/product-card-slider-2.ejs') %>
+                <%- include('partials/LandingPage/product-card-slider-2.ejs') %>
+                  <%- include('partials/LandingPage/product-card-slider-2.ejs') %>
+                    <%- include('partials/LandingPage/product-card-slider-2.ejs') %>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-slide="prev" data-bs-target="#product-carousel">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-slide="next" data-bs-target="#product-carousel">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </button>
+      </div>
+    </div>
+  </div>
 
-        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
-          integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
-          crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"
-          integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD"
-          crossorigin="anonymous"></script>
+  <!-- <%- include('partials/LandingPage/product-slider-2.ejs') %> -->
 
-        <script src="/js/script.js">
+
+  <!-- <%- include('partials/LandingPage/carousel.ejs') %> -->
+
+
+  <%- include('partials/Navbars/footer.ejs') %>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+      integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+      crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"
+      integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD"
+      crossorigin="anonymous"></script>
+
+    <script src="/js/script.js">
       //popover
       // const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]')
       // const popoverList = [...popoverTriggerList].map(popoverTriggerEl => new bootstrap.Popover(popoverTriggerEl))
-        </script>
+    </script>
 
-        <script>
-          function overlayOn()
-          {
-              document.getElementById("overlay").style.display = "block";
-          }
-          function overlayOff()
-          {
-              document.getElementById("overlay").style.display = "none";
-          }
-        </script>
+    <script>
+    </script>
 
-        <script src="https://kit.fontawesome.com/f6e56633d7.js" crossorigin="anonymous"></script>
-        <script src="https://unpkg.com/typed.js@2.0.132/dist/typed.umd.js"></script>
+    <script src="https://kit.fontawesome.com/f6e56633d7.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/typed.js@2.0.132/dist/typed.umd.js"></script>
 
 </body>
 
