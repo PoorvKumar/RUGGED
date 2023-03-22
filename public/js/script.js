@@ -10,3 +10,8 @@ function overlayOff()
 //popover
 // const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]')
 // const popoverList = [...popoverTriggerList].map(popoverTriggerEl => new bootstrap.Popover(popoverTriggerEl))
+
+//cart functions
+//Add to cart
+
+//Remove from Cart
