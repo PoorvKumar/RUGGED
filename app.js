@@ -30,6 +30,8 @@ const index = require("./routes/index.js");
 const login = require("./routes/login");
 const signup = require("./routes/signup");
 const logout = require("./routes/logout");
+const prodSearchCaro=require('./routes/productSearchPageCaro');
+
 // app.use('/index', (req, res, next) => {
 //   res.render('index.ejs');
 // })
@@ -52,31 +54,6 @@ app.use(
     saveUninitialized: true,
   })
 );
-// app.post('/login',(req,res)=>{
-//     let user = [];
-//         var email=req.body.email;
-//         // email.toLowerCase();
-//         var sql = "SELECT * FROM Customer WHERE email = ?";
-//         db.all(sql, email, function(err, rows) {
-//             if (err){
-//                 res.status(400).json({"error": err.message})
-//                 return;
-//             }
-
-//             rows.forEach(function (row) {
-//                 user.push(row);
-//             })
-//     if(req.body.email==user[0].email && req.body.password==user[0].password){
-//         // req.session.user=currentUser;
-//         req.session.user=user[0]
-//         res.redirect('/')
-//     }
-//     else{
-//         res.end("Invalid Username or Password");
-
-//     }
-// });
-// });
 
 app.post("/login", (req, res, next) => {
   let sql = `SELECT * FROM customer WHERE email = "${req.body.email}" AND password = "${req.body.password}"`;
@@ -151,4 +128,7 @@ app.use(wishlistroute);
 app.use(login);
 app.use(signup);
 app.use(logout);
+app.use(prodSearchCaro);
+
+
 app.listen(3000);
