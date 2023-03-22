@@ -1,0 +1,5 @@
+Woodland Camel Trekking Shoes
+price 4595
+discount 50%
+price 2297
+available for sizes 6,7,8,9,10.
