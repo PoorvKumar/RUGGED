@@ -166,19 +166,20 @@ app.post("/dashboardUser", (req, res) => {
     }
   );
 });
-app.post("/dashboardUser",(req,res)=>{
-   userID=req.session.user.id
-  const del=`delete from customer where id=?`
-  db.run(del,[userID],(err)=>{
-    if(err){
-      console.error(err.message);
-      res.status(400).send("Error while deleting");
-    }else{
-      req.session.destroy()
-      res.redirect("/")
-    }
-  })
-})
+app.get('/delete', function(req, res, next) {
+  var userID=req.session.user.id
+var del=`delete from customer where id=?`
+db.run(del,[userID],(err)=>{
+  if(err){
+    console.error(err.message);
+    res.status(400).send("Error while deleting");
+  }else{
+req.session.destroy()
+ const val={
+  firstname: 'User'
+ }
+ res.render('index',{data:val})
+}})})
 //using routes
 app.use(index);
 app.use(influencerBlogRoutes);
@@ -195,6 +196,5 @@ app.use(logout);
 app.use(aboutus)
 app.use(contactus)
 app.use(productcardcaro)
-
 
 app.listen(3000);
