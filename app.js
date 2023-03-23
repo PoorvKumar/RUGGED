@@ -81,6 +81,7 @@ app.use(
 // });
 // });
 
+//login implementation
 app.post("/login", (req, res, next) => {
   let sql = `SELECT * FROM customer WHERE email = "${req.body.email}" AND password = "${req.body.password}"`;
   var x;
@@ -114,6 +115,8 @@ app.post("/login", (req, res, next) => {
     }
   });
 });
+
+//signup implementation
 app.post("/signup", (req, res) => {
   firstname = req.body.First;
   lastname = req.body.Last;
@@ -141,10 +144,12 @@ app.post("/signup", (req, res) => {
     });
   });
 });
+
+//update user info dashboard
 app.post("/dashboardUser", (req, res) => {
   var val = req.body;
   var cust = req.session.user.id;
-  var update = `update customer set firstname=?,lastname=?,phone=?,email=?,addressline1=?,addressline2=? where id=?`;
+  var update = `update customer set firstname=?,lastname=?,phone=?,email=?,addressline1=?,addressline2=?,state=?,country=? where id=?`;
   db.run(
     update,
     [
@@ -154,6 +159,8 @@ app.post("/dashboardUser", (req, res) => {
       req.body.email,
       req.body.Address,
       req.body.AddressAlt,
+      req.body.state,
+      req.body.country,
       cust,
     ],
     (err) => {
@@ -166,6 +173,8 @@ app.post("/dashboardUser", (req, res) => {
     }
   );
 });
+
+//delete user implementation
 app.get('/delete', function(req, res, next) {
   var userID=req.session.user.id
 var del=`delete from customer where id=?`
@@ -180,6 +189,7 @@ req.session.destroy()
  }
  res.render('index',{data:val})
 }})})
+
 //using routes
 app.use(index);
 app.use(influencerBlogRoutes);
