@@ -1,18 +1,18 @@
 .hc-1{
     margin-top:4%;
     margin-left:3%;
-    background-color: #ddd;
+    background-color: rgb(143, 222, 232);
     margin-right: 3%;
     padding-top:10px;
     padding-bottom:4px;
     padding-left:10px;
     padding-right:10px;
-    box-shadow:0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+    /* box-shadow:0 2.8px 2.2px rgba(0, 0, 0, 0.034),
                0 6.7px 5.3px rgba(0, 0, 0, 0.048),
                0 12.5px 10px rgba(0, 0, 0, 0.06),
                0 22.3px 17.9px rgba(0, 0, 0, 0.072),
                0 41.8px 33.4px rgba(0, 0, 0, 0.086),
-               0 100px 80px rgba(0, 0, 0, 0.12);
+               0 100px 80px rgba(0, 0, 0, 0.12); */
     border-radius: 10px;
 }
 .hc-1 ul{
@@ -25,8 +25,8 @@
     padding-bottom: 0px;
 }
 .hc-1 ul li{
-    margin-right:3%;
-    color:black;
+    margin-right:5%;
+    color:whitesmoke;
 }
 .hc-1 ul li:hover{
     color: rgb(110, 120, 120);
@@ -34,7 +34,7 @@
     /* border-bottom: ridge 5px rgb(69, 126, 125); */
 }
 .hc-2{
-  background-color: #ddd;
+  background-color: rgb(215, 232, 234);;
   margin:3%;
   padding: 4px 4px;
   display: flex;
@@ -69,11 +69,13 @@
                height:25rem;
 }
 .hvc-1{
+  background-color: #ddd;
     width:18rem;
     height:40rem;
     margin:2%;
     margin-top:3%;
-    box-shadow: 0.5rem 0.5rem 0.5rem #ccc,-0.5rem -0.5rem 0.5rem #ccc;
+    /* box-shadow: 0.5rem 0.5rem 0.5rem #ccc,-0.5rem -0.5rem 0.5rem #ccc; */
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     border-radius: 10px;
 }
 .hvc-2{
@@ -81,7 +83,8 @@
     width:65rem;
     height:40rem;
     margin: 3%;
-    box-shadow:  0.5rem 0.5rem 0.5rem #ccc,-0.5rem -0.5rem 0.5rem #ccc;    
+    /* box-shadow:  0.5rem 0.5rem 0.5rem #ccc,-0.5rem -0.5rem 0.5rem #ccc;     */
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     border-radius: 10px;
 }
 .hvc-1 ul{
@@ -119,7 +122,6 @@
     /* background-color: grey; */
     cursor: pointer;
     color:rgb(134, 166, 168);
-    text-decoration: underline;
     box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
 }
 .pcHzMain{
@@ -229,19 +231,6 @@
   }
   
   /* The bar container */
-  .bar-container {
-    width: 100%;
-    background-color: #f1f1f1;
-    text-align: center;
-    color: white;
-  }
-  
-  /* Individual bars */
-  .bar-5 {width: 60%; height: 18px; background-color: #04AA6D;}
-  .bar-4 {width: 30%; height: 18px; background-color: #2196F3;}
-  .bar-3 {width: 10%; height: 18px; background-color: #00bcd4;}
-  .bar-2 {width: 4%; height: 18px; background-color: #ff9800;}
-  .bar-1 {width: 15%; height: 18px; background-color: #f44336;}
   
   /* Responsive layout - make the columns stack on top of each other instead of next to each other */
   @media (max-width: 400px) {
@@ -286,7 +275,7 @@
     padding-top: 2px;
     padding-bottom: 2px;
  }
- .nopersonRated{
+ /* .nopersonRated{
     max-width: fit-content;
     margin: 0;
     display: inline-flex;
@@ -298,7 +287,7 @@
     padding: 2%;
     margin-left: 10%;
     font-size: 7px;
-  }
+  } */
   .pricetag{
     max-width: fit-content;
     margin: 0;
@@ -329,14 +318,14 @@
     cursor: pointer;
     text-decoration: underline;
   }
-  .btntxt:hover{
+  /* .btntxt:hover{
      background-color:#23b1d5;
      border-color: #23d5ab;
   }
   .btntxt:focus{
     background-color:#0d94b6;
     border-color: #23d5ab;
-  }
+  } */
   .placeprev{
     margin-right:180px;
   }

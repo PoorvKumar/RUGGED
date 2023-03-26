@@ -106,7 +106,8 @@ hr{border: 0;
     text-align: center;
 }
 .post-side-area{
-    max-width: 70%;
+    max-width: 100%;
+    
 }
 .one-social-info i{
     margin:3%;
@@ -116,4 +117,52 @@ hr{border: 0;
 }
 .lpst-content{
     margin:2% 0% 2% 8%;
+}
+@media(max-width:900px){
+      .thumnail img{
+          width:250px;
+          height:250px;
+      }
+      .post-meta{
+        font-size: smaller;
+      }
+      .post-date{
+        font-size: small;
+      }
+      .post-title h4{
+        font-size: medium;
+      }
+      .post-data,.read-more{
+        font-size: medium;
+      }
+      .surrbox,.carousel-content{
+        font-size:10px
+      }
+      .surrbox,.carousel-content h2{
+        font-size: 10px;
+      }
+}
+@media(max-width:600px){
+    .thumnail img{
+        width:150px;
+        height:150px;
+    }
+    .post-date{
+        font-size: smaller;
+      }
+    .post-title h4{
+        font-size: small;
+      }
+      .post-meta{
+        font-size: smaller;
+      }
+      .post-data,.read-more{
+        font-size: small;
+      }
+      .surrbox,.carousel-content{
+        font-size:5px
+      }
+      .surrbox,.carousel-content h2{
+        font-size: 5px;
+      }
 }
