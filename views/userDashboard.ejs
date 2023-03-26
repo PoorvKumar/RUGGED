@@ -110,13 +110,14 @@
                   <h6 class="mb-4">Edit your personal information and address.</h6>
                   <div class="row g-3">
                     <form action="/dashboardUser" method="post">
-                      <div class="col-sm-6"><label class="form-label">First Name</label> <input type="text" name="First" class="form-control" placeholder="First Name" fdprocessedid="2gr5gh"></div>
-                      <div class="col-sm-6"><label class="form-label">Last Name</label> <input type="text" name="Last" class="form-control" placeholder="Last Name" fdprocessedid="d19o4"></div>
-                      <div class="col-sm-6"><label class="form-label">Phone</label> <input type="text" name="Phone" class="form-control" placeholder="Phone" fdprocessedid="p42fci"></div>
-                      <div class="col-sm-6"><label class="form-label">Email</label> <input type="text" name="email" class="form-control" placeholder="Email" fdprocessedid="265oqb"></div>
-                      <div class="col-sm-12"><label class="form-label">Address Line 1</label> <input type="text" name="Address" class="form-control" placeholder="Address Line 1" fdprocessedid="71wsid"></div>
-                      <div class="col-sm-12"><label class="form-label">Address Line 2</label> <input type="text" name="AddressAlt" class="form-control" placeholder="Address Line 2" fdprocessedid="su6iq67"></div>
-                      <div class="col-sm-6"><label class="form-label">State</label> <select class="state" name="state" class="form-select" fdprocessedid="tf1qt4">
+                      <div class="col-sm-6"><label class="form-label">First Name</label> <input type="text" name="First" class="form-control" value=<%=data.firstname %> fdprocessedid="2gr5gh"></div>
+                      <div class="col-sm-6"><label class="form-label">Last Name</label> <input type="text" name="Last" class="form-control" value=<%=data.lastname %> fdprocessedid="d19o4"></div>
+                      <div class="col-sm-6"><label class="form-label">Phone</label> <input type="text" name="Phone" class="form-control" value=<%=data.phone %> fdprocessedid="p42fci"></div>
+                      <div class="col-sm-6"><label class="form-label">Email</label> <input type="text" name="email" class="form-control" value=<%=data.email %> fdprocessedid="265oqb"></div>
+                      <div class="col-sm-12"><label class="form-label">Address Line 1</label> <input type="text" name="Address" class="form-control" value=<%=data.addressline1 %> fdprocessedid="71wsid"></div>
+                      <div class="col-sm-12"><label class="form-label">Address Line 2</label> <input type="text" name="AddressAlt" class="form-control" value=<%=data.addressline2 %> fdprocessedid="su6iq67"></div>
+                      <div class="col-sm-6"><label class="form-label">State</label>
+                        <select class="state" name="state" class="form-select" fdprocessedid="tf1qt4">
                           <option>Andhra Pradesh</option>
                           <option>Arunachal Pradesh</option>
                           <option>Assam</option>
@@ -145,9 +146,11 @@
                           <option>Tripura</option>
                           <option>Uttar Pradesh</option>
                           <option>West Bengal</option>
-                        </select></div>
-                      <div class="col-sm-6"><label class="form-label">Country</label> <select class="country" name="country" class="form-select" fdprocessedid="sgudf">
-                          <option>India</option>
+                        </select>
+                      </div>
+                      <div class="col-sm-6"><label class="form-label">Country</label>
+                        <select class="country" name="country" class="form-select" fdprocessedid="sgudf">
+                          <option selected>India</option>
                           <option>Other</option>
                         </select>
                       </div>
