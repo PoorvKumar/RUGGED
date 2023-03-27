@@ -30,9 +30,9 @@ const index = require("./routes/index.js");
 const login = require("./routes/login");
 const signup = require("./routes/signup");
 const logout = require("./routes/logout");
-const aboutus=require("./routes/aboutUsRoutes")
-const contactus=require('./routes/contactUs')
-const productcardcaro=require('./routes/productSearchPageCaro')
+const aboutus = require("./routes/aboutUsRoutes")
+const contactus = require('./routes/contactUs')
+const productcardcaro = require('./routes/productSearchPageCaro')
 // app.use('/index', (req, res, next) => {
 //   res.render('index.ejs');
 // })
@@ -55,31 +55,6 @@ app.use(
     saveUninitialized: true,
   })
 );
-// app.post('/login',(req,res)=>{
-//     let user = [];
-//         var email=req.body.email;
-//         // email.toLowerCase();
-//         var sql = "SELECT * FROM Customer WHERE email = ?";
-//         db.all(sql, email, function(err, rows) {
-//             if (err){
-//                 res.status(400).json({"error": err.message})
-//                 return;
-//             }
-
-//             rows.forEach(function (row) {
-//                 user.push(row);
-//             })
-//     if(req.body.email==user[0].email && req.body.password==user[0].password){
-//         // req.session.user=currentUser;
-//         req.session.user=user[0]
-//         res.redirect('/')
-//     }
-//     else{
-//         res.end("Invalid Username or Password");
-
-//     }
-// });
-// });
 
 //login implementation
 app.post("/login", (req, res, next) => {
@@ -175,20 +150,21 @@ app.post("/dashboardUser", (req, res) => {
 });
 
 //delete user implementation
-app.get('/delete', function(req, res, next) {
-  var userID=req.session.user.id
-var del=`delete from customer where id=?`
-db.run(del,[userID],(err)=>{
-  if(err){
-    console.error(err.message);
-    res.status(400).send("Error while deleting");
-  }else{
-req.session.destroy()
- const val={
-  firstname: 'User'
- }
- res.render('index',{data:val})
-}})})
+app.get('/delete', function (req, res, next) {
+  var userID = req.session.user.id
+  var del = `delete from customer where id=?`
+  db.run(del, [userID], (err) => {
+    if (err) {
+      console.error(err.message);
+      res.status(400).send("Error while deleting");
+    }
+    else {
+      req.session.destroy()
+      const val = { firstname: 'User' }
+      res.render('index', { data: val })
+    }
+  });
+});
 
 //using routes
 app.use(index);

@@ -476,3 +476,9 @@ user agent stylesheet img {
   color: #343a40;
   border-color: #fff #fff #343a40 !important;
 }
+
+@media (max-width: 992px) {
+  .LeftColumn{
+    display: none;
+  }
+}
