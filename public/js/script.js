@@ -13,9 +13,3 @@ function overlayOff()
 
 //cart functions
 //Add to cart
-
-//Remove from Cart
-function removefromCart()
-{
-    $('')
-}
