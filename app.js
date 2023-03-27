@@ -148,6 +148,11 @@ app.post("/signup", (req, res) => {
 //update user info dashboard
 app.post("/dashboardUser", (req, res) => {
   var val = req.body;
+  var user=req.session.user
+  if(!user){
+    res.redirect('/login')
+  }
+  else{
   var cust = req.session.user.id;
   var update = `update customer set firstname=?,lastname=?,phone=?,email=?,addressline1=?,addressline2=?,state=?,country=? where id=?`;
   db.run(
@@ -171,11 +176,16 @@ app.post("/dashboardUser", (req, res) => {
         res.redirect("/dashboardUser");
       }
     }
-  );
+  );}
 });
 
 //delete user implementation
 app.get('/delete', function(req, res, next) {
+var user=req.session.user
+if(!user){
+      res.redirect('/login')
+}
+else{
   var userID=req.session.user.id
 var del=`delete from customer where id=?`
 db.run(del,[userID],(err)=>{
@@ -188,7 +198,8 @@ req.session.destroy()
   firstname: 'User'
  }
  res.render('index',{data:val})
-}})})
+}})}
+})
 
 //using routes
 app.use(index);
