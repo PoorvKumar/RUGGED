@@ -1,37 +1,73 @@
-const getDb = require("../utilities/databasemon").getDb;
-class Product {
-  constructor(title, price, description, discount, imageURL) {
-    this.title = title;
-    this.price = price;
-    this.description = description;
-    this.discount = discount;
-    this.imageURL = imageURL;
-  }
-  save() {
-    const db = getDb();
-    return db.collection("products")
-      .insertOne(this)
-      .then((result) => {
-        console.log(result);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  }
-  static fetchAll() {
-    const db = getDb();
-    return db
-      .collection('products')
-      .find()
-      .toArray()
-      .then(products => {
-        console.log(products);
-        return products;
-      })
-      .catch(err => {
-        console.log(err);
-      });
-  }
-}
-
-module.exports = Product;
+const mongoose=require('mongoose')
+const Schema=mongoose.Schema
+const product=new Schema({
+  _id:{
+    type:String,
+    required:true
+  },
+  name:{
+    type:String,
+    required:true
+  },
+  price:{
+    type:Number,
+    required:true
+  },
+  description:{
+    type:String,
+    required:true
+  },
+  company:{
+    type:String,
+    required:true
+  },
+  discount:{
+    type:Number,
+    required:true
+  },
+  dimension:{
+    type:String,
+    required:true
+  },
+  weight:{
+    type:String,
+    required:true
+  },
+  colors:{
+    type:String,
+    required:true
+  },
+  brand:{
+    type:String,
+    required:true
+  },
+  tags:{
+    type:String,
+    required:true
+  },
+  categories:{
+    type:String,
+    required:true
+  },
+  photos:{
+    type:String,
+    required:true
+  },
+  table:{
+    type:String,
+    required:true
+  },
+  reviewID:{
+    type:String,
+    required:true
+  },
+  quantity:{
+    type:Number,
+    required:true
+  },
+  sellerID:{
+    type:String,
+    required:true
+  },
+})
+module.exports=mongoose.model('Product',product)

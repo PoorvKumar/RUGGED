@@ -2,10 +2,9 @@ const express = require("express");
 const app = express();
 const path = require("path");
 const ejs = require("ejs");
-const mongoConnect=require('./utilities/databasemon').mongoConnect
 const bodyparser = require("body-parser"); //body-parser
 const session = require("express-session"); //express-session
-
+const mongoose = require("mongoose");
 const sqlite3 = require("sqlite3").verbose(); //sqlite3
 
 // const dbh=new sqlite3.Database('./database/project.db');
@@ -30,11 +29,11 @@ const index = require("./routes/index.js");
 const login = require("./routes/login");
 const signup = require("./routes/signup");
 const logout = require("./routes/logout");
-const aboutus = require("./routes/aboutUsRoutes")
-const contactus = require('./routes/contactUs')
-const productcardcaro = require('./routes/productSearchPageCaro')
-const sellerRoutes=require('./routes/sellerRoutes')
-const userRoutes=require('./routes/userRoutes')
+const aboutus = require("./routes/aboutUsRoutes");
+const contactus = require("./routes/contactUs");
+const productcardcaro = require("./routes/productSearchPageCaro");
+const sellerRoutes = require("./routes/sellerRoutes");
+const userRoutes = require("./routes/userRoutes");
 // app.use('/index', (req, res, next) => {
 //   res.render('index.ejs');
 // })
@@ -125,58 +124,59 @@ app.post("/signup", (req, res) => {
 //update user info dashboard
 app.post("/dashboardUser", (req, res) => {
   var val = req.body;
-  var user=req.session.user
-  if(!user){
-    res.redirect('/login')
-  }
-  else{
-  var cust = req.session.user.id;
-  var update = `update customer set firstname=?,lastname=?,phone=?,email=?,addressline1=?,addressline2=?,state=?,country=? where id=?`;
-  db.run(
-    update,
-    [
-      req.body.First,
-      req.body.Last,
-      req.body.Phone,
-      req.body.email,
-      req.body.Address,
-      req.body.AddressAlt,
-      req.body.state,
-      req.body.country,
-      cust,
-    ],
-    (err) => {
-      if (err) {
-        console.error(err.message);
-        res.status(400).send("Error while updating");
-      } else {
-        res.redirect("/dashboardUser");
+  var user = req.session.user;
+  if (!user) {
+    res.redirect("/login");
+  } else {
+    var cust = req.session.user.id;
+    var update = `update customer set firstname=?,lastname=?,phone=?,email=?,addressline1=?,addressline2=?,state=?,country=? where id=?`;
+    db.run(
+      update,
+      [
+        req.body.First,
+        req.body.Last,
+        req.body.Phone,
+        req.body.email,
+        req.body.Address,
+        req.body.AddressAlt,
+        req.body.state,
+        req.body.country,
+        cust,
+      ],
+      (err) => {
+        if (err) {
+          console.error(err.message);
+          res.status(400).send("Error while updating");
+        } else {
+          res.redirect("/dashboardUser");
+        }
       }
-    }
-  );}
+    );
+  }
 });
 
 //delete user implementation
-app.get('/delete', function(req, res, next) {
-var user=req.session.user
-if(!user){
-      res.redirect('/login')
-}
-else{
-  var userID=req.session.user.id
-var del=`delete from customer where id=?`
-db.run(del,[userID],(err)=>{
-  if(err){
-    console.error(err.message);
-    res.status(400).send("Error while deleting");
-  }else{
-req.session.destroy()
- const val={
-  firstname: 'User'
- }
- res.render('index',{data:val})
-}})}
-})
+app.get("/delete", function (req, res, next) {
+  var user = req.session.user;
+  if (!user) {
+    res.redirect("/login");
+  } else {
+    var userID = req.session.user.id;
+    var del = `delete from customer where id=?`;
+    db.run(del, [userID], (err) => {
+      if (err) {
+        console.error(err.message);
+        res.status(400).send("Error while deleting");
+      } else {
+        req.session.destroy();
+        const val = {
+          firstname: "User",
+        };
+        res.render("index", { data: val });
+      }
+    });
+  }
+});
 
 //using routes
 app.use(index);
@@ -191,17 +191,22 @@ app.use(wishlistroute);
 app.use(login);
 app.use(signup);
 app.use(logout);
-app.use(aboutus)
-app.use(contactus)
-app.use(productcardcaro)
-
+app.use(aboutus);
+app.use(contactus);
+app.use(productcardcaro);
 
 // -----NewRoutes-------------
-app.use(sellerRoutes)
-app.use(userRoutes)
+app.use(sellerRoutes);
+app.use(userRoutes);
 
 //----------------------------
-mongoConnect(client=>{
-  console.log(client)
-  app.listen(3000);
-})
+mongoose
+  .connect(
+    "mongodb+srv://dk:12345@clusterdk.wqwk67b.mongodb.net/dataabcd?retryWrites=true&w=majority"
+  )
+  .then((result) => {
+    app.listen(3000);
+  })
+  .catch((err) => {
+    console.log(err);
+  });
