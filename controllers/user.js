@@ -1,6 +1,6 @@
 const Product=require('../models/product')
 exports.getwishList=(req,res,next)=>{
-    Product.fetchAll()
+    Product.find()
     .then(products=>{
         res.render('wishList',{
             product:products,
