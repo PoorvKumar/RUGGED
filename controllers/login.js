@@ -55,3 +55,30 @@ router.post("/api/login", async (req, res) => {
       }    
   });
   module.exports=router;
+  //---------------------------------------------------
+  const { MongoClient } = require('mongodb');
+
+const url = 'mongodb://localhost:27017';
+const dbName = 'mydatabase';
+const username = 'myuser';
+const password = 'mypassword';
+
+MongoClient.connect(url, { useNewUrlParser: true }, (err, client) => {
+  if (err) throw err;
+
+  const db = client.db(dbName);
+  
+  db.authenticate(username, password)
+    .then(() => {
+      console.log('Authentication successful');
+      // Perform database operations here
+    })
+    .catch((err) => {
+      console.error('Authentication failed:', err);
+    })
+    .finally(() => {
+      client.close();
+    });
+});
+
+  //---------------------------------------------------

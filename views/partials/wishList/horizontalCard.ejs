@@ -5,7 +5,7 @@
       </div>
       <div class="col-md-4">
         <div class="card-body">
-            <a href="#" class="linkitem"><b>RuckSackLorem, ipsum dolor sit amet consectetur adipisicing elit</b></a><br>
+            <a href="#" class="linkitem"><b><%= products.description %></b></a><br>
             <div class="pcHzLimitedTimeDeal">Limited Time Deal</div>
           <!-- <p class="card-text HzSampleTxt">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p> -->
           <div class="">
@@ -16,8 +16,8 @@
               <span class="fa fa-star"></span>
               <span class="fa fa-star checked"></span>
             </div>
-            <span class="pcHzPrice">₹2500</span><span class="pcHzPrice"> M.R.P</span>
-            <span class="pcHzDiscount">50% off</span>
+            <span class="pcHzPrice">₹<%= products.price%></span><span class="pcHzPrice"> M.R.P</span>
+            <span class="pcHzDiscount"><%= products.discount%>% off</span>
           </div>
         </div>
       </div>

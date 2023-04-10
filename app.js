@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 const path = require("path");
 const ejs = require("ejs");
-
+const mongoConnect=require('./utilities/databasemon').mongoConnect
 const bodyparser = require("body-parser"); //body-parser
 const session = require("express-session"); //express-session
 
@@ -33,6 +33,8 @@ const logout = require("./routes/logout");
 const aboutus = require("./routes/aboutUsRoutes")
 const contactus = require('./routes/contactUs')
 const productcardcaro = require('./routes/productSearchPageCaro')
+const sellerRoutes=require('./routes/sellerRoutes')
+const userRoutes=require('./routes/userRoutes')
 // app.use('/index', (req, res, next) => {
 //   res.render('index.ejs');
 // })
@@ -193,4 +195,13 @@ app.use(aboutus)
 app.use(contactus)
 app.use(productcardcaro)
 
-app.listen(3000);
+
+// -----NewRoutes-------------
+app.use(sellerRoutes)
+app.use(userRoutes)
+
+//----------------------------
+mongoConnect(client=>{
+  console.log(client)
+  app.listen(3000);
+})

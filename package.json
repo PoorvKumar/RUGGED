@@ -13,6 +13,7 @@
     "express-session": "^1.17.3",
     "http-errors": "~1.6.3",
     "jade": "^0.29.0",
+    "mongodb": "^5.2.0",
     "morgan": "~1.9.1",
     "sqlite3": "^5.1.6"
   }
