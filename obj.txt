@@ -1,0 +1,99 @@
+{
+    _id:shoe_14556131
+    Name:
+    company:
+    discount:
+    price:
+    weight:
+    dimensions:
+    colors:
+    Desciption:
+    Brand:
+    tags:
+    Categories:["sports","hiking"]
+    photos:[]
+    table:
+    reviewID:
+    Quantity:
+    SellerID:
+    RuggedVerrified:
+}
+
+{
+    reviewID:
+    reviews:
+            {
+                custID:
+                productId:
+                IndividualReviewID:
+                remark:
+                desc:
+                photos:
+                rating:
+            }
+}
+
+{
+    SellerId:
+    Name:
+    PhoneNo:
+    email:
+    username:
+    password:
+    address:
+    orgsnisationName:
+
+}
+
+{
+    CustomerID:
+    Name:
+    PhoneNo:
+    email:
+    username:
+    password:
+    address:
+
+}
+
+{
+    InfluencerID:
+    Name:
+    PhoneNo:
+    email:
+    username:
+    password:
+    address:
+
+}
+
+{
+    AdminId:
+    Name:
+    PhoneNo:
+    email:
+    username:
+    password:
+    address:
+
+}
+
+All database COmplete
+All project Pages Complete
+Filtering must
+Dynamic in Nature
+All functionalities should be dynamic in Nature
+MongoDB Atlas
+
+
+Implementation not required
+Payment Pages
+Chat
+
+
+
+
+
+
+
+
