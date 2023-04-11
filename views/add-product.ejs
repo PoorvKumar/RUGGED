@@ -28,43 +28,97 @@
     <%- include('partials/Navbars/nav1.ejs') %>
       <%- include('partials/Navbars/nav2.ejs') %>
   </header>
-  <main>
-    <div class="row">
-      <div class="col-3">
-    
-    
+  <main class="main">
+
+    <div class="row rrr">
+
+      <div class="col-4">
       </div>
-    <div class="col-9">
-      <form action="/add-product" method="POST">
-        <h1>Fill in Product Details</h1>
-        <div class="input-container">
-          <input name="name" id="name1" class="input" type="text" pattern=".+" required />
-          <label class="label" for="name1">Product Name</label>
-        </div>
-        <div class="input-container">
-          <input name="price" id="name2" class="input" type="text" pattern=".+" required />
-          <label class="label" for="name2">Price</label>
-        </div>
-        <div class="input-container">
-          <input name="discount" id="name3" class="input" type="text" pattern=".+" required />
-          <label class="label" for="name3">Discount</label>
-        </div>
-        <div class="input-container">
-          <input name="imageurl" id="name4" class="input" type="text" pattern=".+" required />
-          <label class="label" for="name4">Image URL</label>
-        </div>
-        <div class="input-container">
-          <input name="description" id="name5" class="input" type="text" pattern=".+" required />
-          <label class="label" for="name5">Description</label>
-        </div>
-        <button type="submit" class="btn btn-outline-info btn-fr">Submit</button>
-      </form>
-    
-    
+
+      <div class="col-8">
+        <form action="">
+          <h1 class="h1k">Fill in Product Details</h1>
+
+          <div class="row">
+            <div class="col-6">
+
+              <div class="input-container">
+                <input name="name" id="name1" class="input" type="text" pattern=".+" required />
+                <label class="label" for="name1">Product Name</label>
+              </div>
+              <div class="input-container">
+                <input name="price" id="name2" class="input" type="text" pattern=".+" required />
+                <label class="label" for="name2">Price</label>
+              </div>
+              <div class="input-container">
+                <input name="description" id="name3" class="input" type="text" pattern=".+" required />
+                <label class="label" for="name3">Description</label>
+              </div>
+              <div class="input-container">
+                <input name="discount" id="name4" class="input" type="text" pattern=".+" required />
+                <label class="label" for="name4">Discount</label>
+              </div>
+              <div class="input-container">
+                <input name="company" id="name5" class="input" type="text" pattern=".+" required />
+                <label class="label" for="name5">Company</label>
+              </div>
+              <div class="input-container">
+                <input name="dimension" id="name6" class="input" type="text" pattern=".+" required />
+                <label class="label" for="name6">Dimension</label>
+              </div>
+              <div class="input-container">
+                <input name="weight" id="name7" class="input" type="text" pattern=".+" required />
+                <label class="label" for="name7">Weight</label>
+              </div>
+            </div>
+
+            <div class="col-6">
+              <div class="input-container">
+                <input name="colors" id="name8" class="input" type="text" pattern=".+" required />
+                <label class="label" for="name8">Colors</label>
+              </div>
+              <div class="input-container">
+                <input name="brand" id="name9" class="input" type="text" pattern=".+" required />
+                <label class="label" for="name9">Brand</label>
+              </div>
+              <div class="input-container">
+                <input name="tags" id="name10" class="input" type="text" pattern=".+" required />
+                <label class="label" for="name10">Tags</label>
+              </div>
+              <div class="input-container">
+                <input name="categories" id="name11" class="input" type="text" pattern=".+" required />
+                <label class="label" for="name11">Categories</label>
+              </div>
+
+              <div class="input-container">
+                <input name="imageurl" id="name12" class="input" type="text" pattern=".+" required />
+                <label class="label" for="name12">Image URL</label>
+              </div>
+
+              <div class="input-container">
+                <input name="table" id="name13" class="input" type="text" pattern=".+" required />
+                <label class="label" for="name13">Table</label>
+              </div>
+              <div class="input-container">
+                <input name="quantity" id="name14" class="input" type="text" pattern=".+" required />
+                <label class="label" for="name14">Quantity</label>
+              </div>
+              
+
+            </div>
+
+            <button type="submit" class="btn btn-info btn-fr">Submit</button>
+          </div>
+
+        </form>
+      </div>
+
+
+
+
     </div>
-    
-    </div>
-    
+
+
     
     </main>
 
