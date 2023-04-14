@@ -12,9 +12,10 @@ body {
 }
 
 header {
-	background-color: #333;
+	background-color:#29abfc;
 	color: #fff;
-	padding: 10px;
+	padding: 20px;
+
 }
 
 nav ul {
@@ -45,6 +46,13 @@ main {
 section {
 	margin-bottom: 40px;
 }
+a{
+	padding: 1rem;
+	background-color: #29abfc;
+	text-decoration: none;
+	
+	color: white;
+}
 
 h1 {
 	font-size: 32px;
@@ -65,8 +73,15 @@ p {
 }
 
 footer {
-	background-color: #333;
+	background-color:#29abfc;
 	color: #fff;
 	padding: 10px;
 	text-align: center;
 }
+.back{
+	color:aqua;
+	display :block;
+	float :right;
+
+}
+

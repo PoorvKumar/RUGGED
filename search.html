@@ -18,13 +18,90 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <style>
+        .search-area {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: #fff;
+            z-index: 9999;
+        }
+
+        .search-area .search-area-form {
+            width: 100%;
+            max-width: 700px;
+            margin: 20px;
+        }
+
+        .search-area .search-area-input {
+            width: 100%;
+            padding: 1rem 0;
+            border: none;
+            border-bottom: 1px solid #aaa;
+            outline: none;
+            background: none;
+            font-size: 1.2em;
+            font-weight: 300;
+        }
+
+        .search-area .search-area-button {
+            position: absolute;
+            right: 0;
+            bottom: 15px;
+            cursor: pointer;
+            border: none;
+            outline: none;
+            background: none;
+        }
+
+        .search-area .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 40px;
+            cursor: pointer;
+            color: #555;
+        }
+
+        .search-area .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 40px;
+            cursor: pointer;
+            color: #555;
+        }
+        </style>
 </head>
 <body>
-    <div class="search-box">
-        <form action="/product" method="get">
-            
-        </form>
-    </div>    
+    <!-- <div class="row">
+		<div class="col-xs-4 col-xs-offset-4">
+			<div class="floating-label-group">
+			<input type="text" id="username" class="form-control" autocomplete="off" autofocus required />
+				<label class="floating-label">Username</label>
+			</div>
+		
+			<div class="floating-label-group">
+			<input type="password" id="password" class="form-control" autocomplete="off" required />
+			<label class="floating-label">Password</label>
+			</div>
+		</div>
+	</div>   -->
+    <div class="search-area-wrapper" style="display: block;">
+        <div class="search-area d-flex align-items-center justify-content-center">
+          <div class="close-btn">
+            <span class="fa fa-close"></span>
+          </div>
+          <form class="search-area-form" action="#">
+            <div class="mb-4 position-relative">
+              <input class="search-area-input" type="search" name="q" id="searchForm" placeholder="What are you looking for?">
+              <button class="search-area-button" type="submit">
+                <span class="fa fa-search"></span>
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
     <script
       src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
       integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
