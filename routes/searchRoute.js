@@ -8,15 +8,15 @@ router.get('/search', (req, res) => {
     const searchTerm = req.query.q;
 
     // Query MongoDB for products matching the search term
-    Product.find({ name: { $regex: searchTerm, $options: 'i' } }, (err, products) => {
-        if (err) {
+    Product.find({ name: { $regex: searchTerm, $options: 'i' } })
+        .then(products => {
+            res.json(products);
+        })
+        .catch(err => {
             console.error(err);
             res.status(500).send('Server Error');
             return;
-        }
-
-        res.json(products);
-    });
+        });
 });
 
 module.exports=router;

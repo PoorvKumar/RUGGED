@@ -65,5 +65,6 @@ const product=new Schema({
   sellerID:{
     type:String
   },
-})
-module.exports=mongoose.model('Product',product)
+});
+
+module.exports=mongoose.model('Product',product);

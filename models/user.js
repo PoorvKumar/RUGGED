@@ -26,4 +26,4 @@ const user=new Schema({
     }
 });
 
-module.exports=mongoose.model('User',user)
+module.exports=mongoose.model('User',user);
