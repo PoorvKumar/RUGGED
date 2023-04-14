@@ -38,7 +38,7 @@ const contactus = require("./routes/contactUs");
 const productcardcaro = require("./routes/productSearchPageCaro");
 const sellerRoutes = require("./routes/sellerRoutes");
 const userRoutes = require("./routes/userRoutes");
-const authenticationRoutes=require('./routes/authentication')
+const authRoutes=require('./routes/authRoute')
 const indexRoutes=require('./routes/indexRoutes')
 // app.use('/index', (req, res, next) => {
 //   res.render('index.ejs');
@@ -204,7 +204,7 @@ app.use(productcardcaro);
 // -----NewRoutes-------------
 app.use(sellerRoutes);
 app.use(userRoutes);
-app.use(authenticationRoutes);
+app.use(authRoutes);
 app.use(indexRoutes)
 //----------------------------
 mongoose
@@ -213,6 +213,7 @@ mongoose
   )
   
   .then((result) => {
+    console.log("Server started...");
     app.listen(3000);
   })
   .catch((err) => {
