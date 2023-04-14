@@ -1,0 +1,121 @@
+.div1{
+    height: 20%;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    
+
+}
+body{
+    background-color:#dbe3e5;
+}
+.btn1{
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: 80%;
+    border-radius: 30px;
+    background-color: rgb(174, 191, 202);
+    padding: 10px;
+    color: whitesmoke;
+}
+
+.img1{
+    height: 400px;
+    width : 400px;
+    margin-top: 80px;
+    margin-left: 80px;    
+}
+
+
+.p1{
+    margin-top: 60px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    width: 38%;
+    text-align: center;
+     margin-left: 5%;
+     margin-top: 4%;
+    background-color: blue;
+    color: whitesmoke;
+}
+
+.h1{
+    margin-top: 60px;
+    font-size:50px;
+    margin-left: 5%;
+}
+
+.p2{
+    margin-left: 8%;
+    font-size:20px;
+    margin-top: 8%;
+
+}
+.btn2{
+    border-radius: 30px;
+    background-color: rgb(94, 165, 208);
+    padding: 10px;
+    color: whitesmoke;
+    margin-left: 10%;
+    margin-top: 10%;
+}
+
+.btn3{
+    border-radius: 20px;
+    margin-left: 20px;
+
+}
+
+.h2{
+    margin-left: 5%;
+    font-size:40px ;
+
+}
+
+ .h3{
+
+    color: rgb(77, 157, 194);
+    margin-right: 20px;
+}
+
+.p3{
+    margin-top: 2%;
+}
+
+.h4{
+    margin-top: 8%;
+    margin-left: 5%;
+    font-size:40px ;
+}
+
+.row{
+    height: 60%;
+}
+
+.box{
+    margin-left:10% ;
+    margin-top: 40px;
+    height: 60%;
+    width: 20%;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    padding-top: 2%;
+    padding-bottom:3%;
+    background-color: rgb(238, 233, 233);
+}
+
+.h6{
+    text-align: center;
+    font-size: 20px;
+}
+
+
+.img2{
+    height: 40%;
+    width: 40%;
+    margin-left: 40%;
+}
+
+.row2{
+    height: 300px;
+margin-top: 5%;
+background-color: whitesmoke;
+padding-top: 2%;
+}
