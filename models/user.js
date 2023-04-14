@@ -23,13 +23,7 @@ const user=new Schema({
     },
     address:{
         type:String
-    },
-    cart:
-    {
-        type:subSchema,
-        default:{}
-    },
-    order
+    }
+});
 
-})
 module.exports=mongoose.model('User',user)

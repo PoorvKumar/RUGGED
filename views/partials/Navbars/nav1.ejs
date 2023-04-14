@@ -9,16 +9,16 @@
             </div>
       </div>
       <div class="col-lg-6 col-md-5 col-sm-4">
-          <div class="nav-search">
-          <form action="/productsearch" method="get" class="input-group">
-              <input type="search" class="form-control" placeholder="Search Here..." aria-label="Search" onclick="overlayOn()"
+        <div class="nav-search">
+          <form action="/search" method="get" class="input-group" id="searchForm">
+            <input type="search" class="form-control" name="q" placeholder="Search Here..." aria-label="Search" onclick="overlayOn()"
               id="nav-main-searchbar" />
-           <button type="button" class="btn bg-white">
+            <button type="submit" class="btn bg-white">
               <i class="fas fa-search"></i>
             </button>
           </form>
         </div>
-        </div>
+      </div>
       <div class="col-lg-4 col-md-5 col-sm-6">
           <div class="right d-flex">
             <div class="nav-sign nav-link d-flex-inline ml-3 m-2">

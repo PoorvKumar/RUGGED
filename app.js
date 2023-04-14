@@ -38,8 +38,9 @@ const contactus = require("./routes/contactUs");
 const productcardcaro = require("./routes/productSearchPageCaro");
 const sellerRoutes = require("./routes/sellerRoutes");
 const userRoutes = require("./routes/userRoutes");
-const authRoutes=require('./routes/authRoute')
-const indexRoutes=require('./routes/indexRoutes')
+const authRoutes=require('./routes/authRoute');
+const indexRoutes=require('./routes/indexRoutes');
+const searchRoute=require("./routes/searchRoute");
 // app.use('/index', (req, res, next) => {
 //   res.render('index.ejs');
 // })
@@ -206,12 +207,15 @@ app.use(sellerRoutes);
 app.use(userRoutes);
 app.use(authRoutes);
 app.use(indexRoutes)
+
+//Search Route
+app.use(searchRoute);
+
 //----------------------------
 mongoose
   .connect(
     "mongodb+srv://divyankkhajuria:12345@rugged-cluster.fdpaj0y.mongodb.net/RUGGED?retryWrites=true&w=majority"
   )
-  
   .then((result) => {
     console.log("Server started...");
     app.listen(3000);
