@@ -1,7 +1,11 @@
 const mongoose=require('mongoose')
 const Schema=mongoose.Schema
 const user=new Schema({
-    name:{
+    firstname:{
+        type:String,
+        required:true
+    },
+    lastname:{
         type:String,
         required:true
     },
@@ -13,15 +17,19 @@ const user=new Schema({
         type:String,
         required:true
     },
-    username:{
-        type:String
-    },
     password:{
         type:String,
         required:true
     },
     address:{
         type:String
-    }
+    },
+    cart:
+    {
+        type:subSchema,
+        default:{}
+    },
+    order
+
 })
 module.exports=mongoose.model('User',user)
