@@ -1,10 +1,9 @@
 const mongoose=require('mongoose')
 const Schema=mongoose.Schema
 const product=new Schema({
-  _id:{
-    type:String,
-    required:true
-  },
+  // _id:{
+  //   type:String
+  // },
   name:{
     type:String,
     required:true
@@ -50,24 +49,21 @@ const product=new Schema({
     required:true
   },
   photos:{
-    type:String,
-    required:true
+    type:String
   },
   table:{
     type:String,
     required:true
   },
   reviewID:{
-    type:String,
-    required:true
+    type:String
   },
   quantity:{
     type:Number,
     required:true
   },
   sellerID:{
-    type:String,
-    required:true
+    type:String
   },
 })
 module.exports=mongoose.model('Product',product)

@@ -4,7 +4,8 @@ exports.getwishList=(req,res,next)=>{
     .then(products=>{
         res.render('wishList',{
             product:products,
-            pgTTL:'wishList'
+            pgTTL:'wishList',
+            isLoggedin:req.session.isLoggedin
         })
     })
 }

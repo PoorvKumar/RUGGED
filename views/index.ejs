@@ -25,7 +25,11 @@
 
 <body>
   <header>
-    <%- include('partials/Navbars/nav1.ejs') %>
+    <% if (isLoggedin){ %>
+    <%- include('partials/Navbars/nav1.ejs',{user:user}) %>
+    <% }else{ %>
+      <%- include('partials/Navbars/nav1.ejs') %>
+      <% } %>
       <%- include('partials/Navbars/nav2.ejs') %>
         <!-- <%- include('partials/Navbars/nav3.ejs') %> -->
   </header>

@@ -1,7 +1,8 @@
 const Product=require('../models/product')
 exports.getAddProduct = (req, res, next) => {
     res.render('add-product', {
-      pageTitle: 'Add Product'
+      pageTitle: 'Add Product',
+      isLoggedin:req.session.isLoggedin
     });
   };
  exports.postAddProduct = (req, res, next) => {
@@ -16,7 +17,7 @@ exports.getAddProduct = (req, res, next) => {
     const brand = req.body.brand;
     const tags = req.body.tags;
     const categories = req.body.categories;
-    const photos = req.body.photos;
+    const photos = req.body.imageurl;
     const table = req.body.table;
     const quantity = req.body.quantity;
     const product = new Product({
