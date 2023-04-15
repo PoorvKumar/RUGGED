@@ -11,8 +11,9 @@
 
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <script src="https://kit.fontawesome.com/72fdfa8245.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="/public/css/main_navbar.css">
+
   <link rel="stylesheet" href="/public/css/style.css">
+  <link rel="stylesheet" href="/public/css/main_navbar.css">
   <link rel="stylesheet" href="/public/css/LowerNavbarStyle.css">
   <link rel="stylesheet" href="/public/css/productCardStyle.css">
   <link rel="stylesheet" href="/public/css/productSearchPageStyle.css">
@@ -21,197 +22,259 @@
   <title>Test</title>
 </head>
 
-<div id="overlay" onclick="overlayOff()"></div>
-<!--overlay entire page whenever needed-->
-
 <body>
   <header>
-    <nav class="container-fluid d-flex flex-inline navbar px-3 pt-0 pb-0 fixed-top nav-main pe-0">
-      <div class="nav-left navbar d-flex justify-content-around pt-0 ms-0">
-        <!-- <img src="LOGO/LogoMain/rugged-high-resolution-logo-color-on-transparent-background.png" alt="" class="nav-brand" width="110" height="50"> -->
-        <div class="nav-link nav-logo " id="brand-logo" style="font-size: large;">
-          <img src="/LOGO/newLOGOTest/newLOGO_no_background.png" alt="" height="65em" width="120em">
-
-        </div>
-        <div class="nav-link col d-flex flex-inline nav-address">
-          <div><i class="fa fa-map-marker-alt mt-3 me-2" style="font-size: larger;"></i></div>
-          <div>
-            <div class="nav-line-1">
-              <span class="small">Hello User!</span>
-            </div>
-            <div class="nav-line-2">Select Your Address!</div>
-          </div>
-        </div>
-      </div>
-      <div class="nav-search ">
-        <form action="" class="w-100 input-group">
-          <!-- <div class="dropdown">
-              <button class="btn" type="button" data-bs-toggle="dropdown">
-                <span style="font-size: 13.5px;">All</span><span class="dropdown-toggle"> </span></button>
-              <ul class="dropdown-menu shadow" style="font-size: 13.5px;">
-                <li class="dropdown-header">Dropdown header 1</li>
-              <li>
-              <a class="dropdown-item active" href="#" aria-current="page">Current</a>
-            </li>
-            <li><a class="dropdown-item" href="#">Inventory</a></li>
-            <li><a class="dropdown-item" href="#">Customers</a></li>
-            <li><a class="dropdown-item" href="#">Products</a></li>
-            <li><hr class="dropdown-divider" /></li>
-            <li><a class="dropdown-item" href="#">Reports</a></li>
-            <li><a class="dropdown-item" href="#">Analytics</a></li>
-          </ul>
-            </div> -->
-          <!--removed all -->
-          <input type="search" class="form-control" placeholder="Search Here..." aria-label="Search" onclick="overlayOn()" />
-          <button type="button" class="btn bg-white">
-            <i class="fas fa-search"></i>
-          </button>
-        </form>
-      </div>
-      <div class="nav-right navbar d-flex flex-row">
-        <div class="nav-wish nav-link d-flex-inline p-2">
-          WishList
-        </div>
-        <div class="nav-sign nav-link d-flex-inline ">
-          <div class="nav-line-1">
-            <span class="small">Hello! User</span>
-          </div>
-          <div class="nav-line-2">Account & Lists <span class="dropdown-toggle"></span>
-          </div>
-        </div>
-        <div class="nav-returns nav-link d-flex-inline ">
-          <div class="nav-line-1">
-            <span class="small">Returns</span>
-          </div>
-          <div class="nav-line-2">&Orders</div>
-        </div>
-        <!-- <div class="nav-cart nav-link d-flex-inline p-2">
-                    Cart
-                  </div> -->
-        <!-- Cart dropover -->
-        <div class="nav-cart nav-link d-flex-inline p-2">
-          <div class="nav-line-2">
-            <a data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
-              <!-- <span class="small">
-                  <i class="fa fa-shopping-cart non-empty"
-                    style="font-size:33px"></i></span> -->
-              <span class="material-icons non-empty" style="font-size: 36px;">
-                <!--material icon google-->
-                shopping_cart
-              </span>
+    <div id="overlay" onclick="overlayOff()"></div>
+    <!--overlay entire page whenever needed-->
+    <nav class="container-fluid nav-main fixed-top">
+      <div class="row">
+        <div class="col-lg-2 col-sm-2">
+          <div class="nav-link nav-logo " id="brand-logo" style="font-size: large;">
+            <a href="/">
+              <img src="LOGO/newLOGOTest/newLOGO_no_background.png" alt="" height="65em" width="120em">
             </a>
-            <!--need  to change non-empty class-->
           </div>
-          <!-- Canvas down now -->
-          <div class="offcanvas offcanvas-end " data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
-            <div class="offcanvas-header">
-              <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Apna Cart</h5>
-              <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-            </div>
-            <div class="offcanvas-body">
-              <!-- BigBox -->
-              <div class="whole-cart-window">
-                <!-- add hide class to hide cart window-->
-                <!-- <div class="heading"><p>Your Bag</p></div> -->
-                <div class="cart-wrapper">
-                  <div class="cart-item">
-                    <img src="/public/Images/ProductImages/Rucksack1/image1.jpg" alt="rucksack">
-                    <div class="details">
-                      <h3>RuckSack</h3>
-                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.<br>
-                        <span class="fa fa-star"></span>
-                        <span class="fa fa-star"></span>
-                        <span class="fa fa-star"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="quantity">Quantity: 1</span>
-                        <span class="price">Price: ₹50.00</span>
-                      </p>
-                    </div>
-                    <div class="cancel"><i class="fa-regular fa-trash-can coll"></i></div>
+        </div>
+        <div class="col-lg-6 col-md-5 col-sm-4">
+          <div class="nav-search">
+            <form action="/productsearch" method="get" class="input-group">
+              <input type="search" class="form-control" placeholder="Search Here..." aria-label="Search" onclick="overlayOn()" id="nav-main-searchbar" />
+              <button type="button" class="btn bg-white">
+                <i class="fas fa-search"></i>
+              </button>
+            </form>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-5 col-sm-6">
+          <div class="right d-flex">
+            <div class="nav-sign nav-link d-flex-inline ml-3 m-2">
+              <div class="nav-line-1">
+                <span class="small"><span class="fa fa-user"> </span> Hello!</span>
+              </div>
+              <a tabindex="0" href="/login" id="account-list" class="text-white">
+                <div class="nav-line-2 signin-main">Account & Lists <span class="dropdown-toggle"></span>
+              </a>
+              <div id="sign-in-popover" class="hide">
+                <div class="container account-list-popover d-flex flex-column p-3 align-items-center w-100 pt-0">
+                  <div class="upper-signin p-4 d-flex flex-column pb-2">
+                    <button class="btn bg-info text-white">
+                      <a href="/login" style="color: white;"> Sign In! </a>
+                    </button>
+                    <span class="small text-dark" style="font-size: x-small; margin-top: 0.5rem;">New Customer? <a href="/signup" class="text-info">Start Here!</a> </span>
                   </div>
-                  <!-- item 2 -->
-                  <div class="cart-item">
-                    <img src="/public/Images/ProductImages/Rucksack1/image1.jpg" alt="Rucksack">
-                    <div class="details">
-                      <h3>Item Name2</h3>
-                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.<br>
-                        <span class="fa fa-star"></span>
-                        <span class="fa fa-star"></span>
-                        <span class="fa fa-star"></span>
-                        <span class="fa fa-star"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="quantity">Quantity: 1</span>
-                        <span class="price">Price: ₹100.00</span>
-                      </p>
+                  <div class="account-lists d-flex flex-row border-top border-dark">
+                    <div class="wishlist d-flex flex-column px-4 mx-2 py-3 mt-1" style="font-weight: lighter;">
+                      <p class="mb-1 text-info" style="font-size: larger; font-weight: 550;">Your Lists</p>
+                      <a class="small" href="/wishlist" rel="noopener noreferrer">Create a WishList</a>
+                      <a class="small" href="#" rel="noopener noreferrer">Discover Your Style</a>
+                      <a class="small" href="/blogPost" rel="noopener noreferrer">Explore Experiences</a>
+                      <a class="small" href="/blogPost" rel="noopener noreferrer">RUGGED Influencer+</a>
                     </div>
-                    <div class="cancel"><i class="fa-regular fa-trash-can coll"></i></div>
+                    <div class="wishlist d-flex flex-column px-4 mx-2 py-3 mt-1" style="font-weight: lighter;">
+                      <p class="mb-1 text-info" style="font-size: larger; font-weight: 550;">Your Account</p>
+                      <a class="small" href="/dashboardUser" rel="noopener noreferrer">Your Account</a>
+                      <a class="small" href="/returnsAndOrder" rel="noopener noreferrer">Your Orders</a>
+                      <a class="small" href="/wishlist" rel="noopener noreferrer">Your WishList</a>
+                      <a class="small" href="#" rel="noopener noreferrer">Your Recommendation</a>
+                      <a class="small" href="/blogPost" rel="noopener noreferrer">Membership & Subscriptions</a>
+                      <a class="small" href="#" rel="noopener noreferrer">RUGGED Influencer Account</a>
+                      <a class="small" href="/dashboardSeller" rel="noopener noreferrer">Your Seller Account</a>
+                    </div>
                   </div>
-                </div>
-                <div class="subtotal">Delivery: ₹0.00</div>
-                <div class="subtotal">Total: ₹0.00</div>
-                <div class="cv">
-                  <button type="button" class="btn btn-outline-secondary">View WishList</button>
-                  <button type="button" class="btn btn-primary">Checkout</button>
                 </div>
               </div>
-              <!-- BigBox Finish -->
             </div>
-            <!-- Cart Dropover Finish -->
+          </div>
+          <div class="nav-wish nav-link d-flex-inline p-2 pt-3 m-2 ">
+            <a href="/wishList" style="color: white;"> WishList </a>
+          </div>
+          <div class="nav-returns nav-link d-flex-inline p-1 m-2">
+            <div class="nav-line-1">
+              <span class="small">Returns</span>
+            </div>
+            <div class="nav-line-2"><a href="/returnsAndOrder" style="color: white;"> &Orders </a></div>
+          </div>
+          <div class="nav-cart nav-link d-flex-inline p-2 ms-0 ">
+            <div class="nav-line-2">
+              <a data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
+                <!-- <span class="small">
+                            <i class="fa fa-shopping-cart non-empty"
+                              style="font-size:33px"></i></span> -->
+                <span class="material-icons " style="font-size: 36px;">
+                  <!--material icon google-->
+                  shopping_cart
+                </span>
+              </a>
+              <!--need  to change non-empty class-->
+            </div>
+            <!-- Canvas down now -->
+            <div class="offcanvas offcanvas-end bgclr" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
+              <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">s Cart</h5>
+                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+              </div>
+              <div class="offcanvas-body">
+                <!-- BigBox -->
+                <div class="whole-cart-window">
+                  <!-- add hide class to hide cart window-->
+                  <!-- <div class="heading"><p>Your Bag</p></div> -->
+                  <div class="cart-wrapper">
+                    <div class="cart-item" id="cart-item-1">
+                      <img src="/Images/ProductImages/Rucksack1/image1.jpg" alt="rucksack">
+                      <div class="details">
+                        <h3>RuckSack</h3>
+                        <p>RuckSack for Trekking...<br>
+                          <span class="fa fa-star"></span>
+                          <span class="fa fa-star"></span>
+                          <span class="fa fa-star"></span>
+                          <span class="fa fa-star checked"></span>
+                          <span class="fa fa-star checked"></span>
+                          <span class="quantity">Quantity: 2</span>
+                          <span class="price">Price: ₹500.00</span>
+                        </p>
+                      </div>
+                      <div class="cancel"><i class="fa-regular fa-trash-can coll"></i></div>
+                    </div>
+                    <!-- item 2 -->
+                    <div class="cart-item">
+                      <img src="/Images/ProductImages/Rucksack1/image1.jpg" alt="Rucksack">
+                      <div class="details">
+                        <h3>RuckSack 2</h3>
+                        <p>RuckSack for trekking...<br>
+                          <span class="fa fa-star"></span>
+                          <span class="fa fa-star"></span>
+                          <span class="fa fa-star"></span>
+                          <span class="fa fa-star"></span>
+                          <span class="fa fa-star checked"></span>
+                          <span class="quantity">Quantity: 1</span>
+                          <span class="price">Price: ₹1000.00</span>
+                        </p>
+                      </div>
+                      <div class="cancel"><i class="fa-regular fa-trash-can coll"></i></div>
+                    </div>
+                  </div>
+                  <div class="subtotal">Delivery: ₹200.00</div>
+                  <div class="subtotal">Total: ₹2200.00</div>
+                  <div class="cv">
+                    <button type="button" class="btn btn-outline-secondary">View WishList</button>
+                    <button type="button" class="btn btn-primary">Checkout</button>
+                  </div>
+                </div>
+                <!-- BigBox Finish -->
+              </div>
+              <!-- Cart Dropover Finish -->
+            </div>
           </div>
         </div>
-        <!-- Cart Dropover Finish -->
       </div>
     </nav>
-    <nav class="container-fluid navbar  nav-sec navbar-color">
-      <a class="nav-item" href="#" data-bs-toggle="offcanvas" data-bs-target="#offcanvasAllSection" role="button" aria-label="allSection">
+    <nav class="container-fluid navbar nav-sec navbar-color ">
+      <a class="nav-item nav-2-link" href="#" data-bs-toggle="offcanvas" data-bs-target="#offcanvasAllSection" role="button" aria-label="allSection">
         <i class="fa fa-bars"></i>
         All
       </a>
       <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasAllSection" aria-labelledby="allSection">
         <div class="offcanvas-header navbar-color">
-          <h4 class="offcanvas-title text-white"> <span class="fa fa-user"> </span><i> Hello User!</i> </h4>
+          <h4 class="offcanvas-title text-white"> <span class="fa fa-user"> </span><i> Hello</i> </h4>
           <button class="btn-close text-reset" type="button" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
         <div class="offcanvas-body px-0">
           <div class="container">
             <h5 class="px-3">Trending Today</h5>
             <ul class="list-group">
-              <a class="list-group-item list-group-item-action border-0 px-4" href="#">First</a>
-              <a class="list-group-item list-group-item-action border-0 px-4" href="#">Second</a>
-              <a class="list-group-item list-group-item-action border-0 px-4" href="#">Third</a>
-              <a class="list-group-item list-group-item-action border-0 px-4" href="#">Four</a>
+              <a class="list-group-item list-group-item-action border-0 px-4" href="#">Best Seller</a>
+              <a class="list-group-item list-group-item-action border-0 px-4" href="#">New releases</a>
+              <a class="list-group-item list-group-item-action border-0 px-4" href="/blogPost">RUGGED+ Influencers</a>
             </ul>
             <hr>
-            <h5 class="px-3">Trending Today</h5>
+            <h5 class="px-3">Shop by Category</h5>
             <ul class="list-group">
-              <a class="list-group-item list-group-item-action border-0 px-4" href="#">First</a>
-              <a class="list-group-item list-group-item-action border-0 px-4" href="#">Second</a>
-              <a class="list-group-item list-group-item-action border-0 px-4" href="#">Third</a>
-              <a class="list-group-item list-group-item-action border-0 px-4" href="#">Four</a>
+              <a class="list-group-item list-group-item-action border-0 px-4" href="#">Hiking</a>
+              <a class="list-group-item list-group-item-action border-0 px-4" href="#">Camping</a>
+              <a class="list-group-item list-group-item-action border-0 px-4" href="#">Trekking</a>
+              <a class="list-group-item list-group-item-action border-0 px-4" href="#">Mountaineering</a>
+            </ul>
+            <hr>
+            <h5 class="px-3">Help & Settings</h5>
+            <ul class="list-group">
+              <a class="list-group-item list-group-item-action border-0 px-4" href="/dashboardUser">Your Account</a>
+              <a class="list-group-item list-group-item-action border-0 px-4" href="/">Customer Service</a>
+              <a class="list-group-item list-group-item-action border-0 px-4" href="/logout">Sign Out</a>
             </ul>
           </div>
         </div>
       </div>
 
-      <a class="nav-item" href="#">
-        Sell
+      <a class="nav-item nav-2-link" href="/sellerPortal">
+        Become a Seller
+      </a>
+      <a class=" nav-item nav-2-link" href="/blogPost">
+        RUGGED+ Explore
+      </a>
+      <a tabindex="0" class="nav-item nav-2-link" href="/productPage">
+        Hiking
+      </a>
+      <div id="nav-hike" class="" style="display: none;">
+        <div class="nav-hike-menu row">
+          <div class="nav-hike-list col">
+            <p class="menu-head">TOOLS</p>
+            <ul class="list-group menu-list">
+              <a href="#" class="list-group-item menu-item border-0 py-0">Lasers</a>
+              <a href="#" class="list-group-item menu-item border-0 py-0">Buckle Rock</a>
+              <a href="#" class="list-group-item menu-item border-0 py-0">Cane Stick</a>
+              <a href="#" class="list-group-item menu-item border-0 py-0">Plier Tools</a>
+              <a href="#" class="list-group-item menu-item border-0 py-0">Knife</a>
+              <a href="#" class="list-group-item menu-item border-0 py-0">Multi-Tool</a>
+              <a href="#" class="list-group-item menu-item border-0 py-0">Lighters</a>
+              <a href="#" class="list-group-item menu-item border-0 py-0">Drones</a>
+              <a href="#" class="list-group-item menu-item border-0 py-0">GPS Devices</a>
+              <a href="#" class="list-group-item menu-item border-0 py-0">PLB</a>
+            </ul>
+          </div>
+          <div class="nav-hike-list col">
+            <p class="menu-head">EQUIPEMENTS</p>
+            <ul class="list-group menu-list">
+              <a href="#" class="list-group-item menu-item border-0 py-0">First-Aid Kits</a>
+              <a href="#" class="list-group-item menu-item border-0 py-0">Purify Straw</a>
+              <a href="#" class="list-group-item menu-item border-0 py-0">Compass</a>
+              <a href="#" class="list-group-item menu-item border-0 py-0">AIO Survival Kit</aa>
+                <a href="#" class="list-group-item menu-item border-0 py-0">Sunglasses</a>
+                <a href="#" class="list-group-item menu-item border-0 py-0">Sun-Protective Clothing</a>
+                <a href="#" class="list-group-item menu-item border-0 py-0">Head-Lamp</a>
+                <a href="#" class="list-group-item menu-item border-0 py-0">WaterProof Socks</a>
+                <a href="#" class="list-group-item menu-item border-0 py-0">Ready to Eat Food Kits</a>
+                <a href="#" class="list-group-item menu-item border-0 py-0">Emergency Shelter</a>
+            </ul>
+          </div>
+          <div class="nav-hike-list col">
+            <p class="menu-head">BOOTS</p>
+            <ul class="list-group menu-list">
+              <a href="#" class="list-group-item menu-item border-0 py-0">Knee Boots</a>
+              <a href="#" class="list-group-item menu-item border-0 py-0">Jack Boots</a>
+              <a href="#" class="list-group-item menu-item border-0 py-0">Trail Shoes</a>
+              <a href="#" class="list-group-item menu-item border-0 py-0">Lightweight</a>
+              <a href="#" class="list-group-item menu-item border-0 py-0">Midweight</a>
+              <a href="#" class="list-group-item menu-item border-0 py-0">Heavyweight</a>
+              <a href="#" class="list-group-item menu-item border-0 py-0">Heavy Duty</a>
+              <a href="#" class="list-group-item menu-item border-0 py-0">RUGGED+ Verified</a>
+              <a href="#" class="list-group-item menu-item border-0 py-0">Influencer's Choice</a>
+            </ul>
+          </div>
         </div>
-        <a class=" nav-item" href="#">
-          Best Sellers
-        </a>
-        <a class="nav-item" href="#">
-          Today's Deals
-        </a>
-        <a class="nav-item" href="#">
-          New Releases
-        </a>
-        <a class="nav-item" href="#">
-          Electronics
-        </a>
-        <a class="nav-item" href="#">
-          Fashion
-        </a>
+      </div>
+
+      <a class="nav-item nav-2-link" href="/productPage">
+        Trekking
+      </a>
+      <a class="nav-item nav-2-link" href="/productPage">
+        Camping
+      </a>
+      <a class="nav-item nav-2-link" href="/productPage">
+        Today's Deals
+      </a>
+      <a class="nav-item nav-2-link" href="/productPage">
+        New Releases
+      </a>
     </nav>
     <nav class="navbar bg-body-tertiary SPnavbar">
       <div class="container-fluid SPnavbar">
@@ -232,6 +295,7 @@
     </nav>
   </header>
   <div class="mainBody row w-100">
+
     <div class="filtersLeft col-3 h-50">
       <h4 class="filtersHeadingText">Filters</h4>
       <div class="categoriesText">
@@ -244,7 +308,7 @@
         <p class="filtersCategoriesText"> Portable Computer Bags & Sleeves</p>
         <p class="filtersCategoriesText"> Laptop Backpacks</p>
       </div>
-      <!-- <p>In this example we have added a "plus" sign to each button. When the user clicks on the button, the "plus" sign is replaced with a "minus" sign.</p> -->
+      <p>In this example we have added a "plus" sign to each button. When the user clicks on the button, the "plus" sign is replaced with a "minus" sign.</p>
       <button class="accordion">Customer Rating</button>
       <div class="panel">
         <div class="customerRating">
@@ -282,7 +346,6 @@
       </div>
       <button class="accordion">Brands</button>
       <div class="panel">
-        <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p> -->
         <div class="form-check">
           <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
           <label class="form-check-label" for="defaultCheck1">
@@ -335,7 +398,6 @@
       </div>
       <button class="accordion">Offers</button>
       <div class="panel">
-        <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p> -->
         <div class="form-check">
           <input class="form-check-input" type="checkbox" value="" id="offerCheck1">
           <label class="form-check-label" for="OfferCheck1">
@@ -369,10 +431,20 @@
       </div>
       <button class="accordion">Price</button>
       <div class="panel">
-        <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p> -->
-        <label for="customRange3" class="form-label"></label>
-        <input type="range" class="form-range" min="0" max="5000" step="500" id="customRange3">
-
+        <a class="d-lg-none block-toggler" data-bs-toggle="collapse" href="#priceFilterMenu" aria-expanded="false" aria-controls="priceFilterMenu">
+          Filter by price
+        </a>
+        <div class="expand-lg collapse" id="priceFilterMenu">
+          <h6 class="sidebar-heading d-none d-lg-block"></h6>
+          <div class="mt-4 mt-lg-0 noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" id="slider-snap">
+          </div>
+          <div class="nouislider-values">
+            <div class="min">From $<span id="slider-snap-value-lower">40.00</span></div>
+            <div class="max">To $<span id="slider-snap-value-upper">110.00</span></div>
+            <input class="slider-snap-input" type="hidden" name="pricefrom" id="slider-snap-input-lower" value="40">
+            <input class="slider-snap-input" type="hidden" name="priceto" id="slider-snap-input-upper" value="110">
+          </div>
+        </div>
       </div>
       <button class="accordion">Influencers Choice</button>
       <div class="panel">
@@ -393,44 +465,30 @@
         </div>
       </div>
       <button class="accordion">Colour</button>
-      <div class="panel">
-        <div class="form-check">
-          <input class="form-check-input" type="checkbox" value="" id="colour1">
-          <label class="form-check-label" for="colour1">
-            Colour1
-          </label>
+      <div class="panel"><a class="d-lg-none block-toggler" data-bs-toggle="collapse" href="#colourFilterMenu" aria-expanded="false" aria-controls="colourFilterMenu">Filter by colour</a>
+        <div class="expand-lg collapse" id="colourFilterMenu">
+          <h6 class="sidebar-heading d-none d-lg-block"></h6>
+          <div class="mt-4 mt-lg-0">
+            <ul class="list-inline mb-0 colours-wrapper">
+              <li class="list-inline-item">
+                <label class="btn-colour" for="colour_sidebar_Blue" style="background-color: #668cb9" data-allow-multiple=""> </label>
+                <input class="visually-hidden" type="checkbox" name="colour" value="value_sidebar_Blue" id="colour_sidebar_Blue">
+              </li>
+              <li class="list-inline-item">
+                <label class="btn-colour" for="colour_sidebar_White" style="background-color: #fff" data-allow-multiple=""> </label>
+                <input class="visually-hidden" type="checkbox" name="colour" value="value_sidebar_White" id="colour_sidebar_White">
+              </li>
+              <li class="list-inline-item">
+                <label class="btn-colour" for="colour_sidebar_Violet" style="background-color: #8b6ea4" data-allow-multiple=""> </label>
+                <input class="visually-hidden" type="checkbox" name="colour" value="value_sidebar_Violet" id="colour_sidebar_Violet">
+              </li>
+              <li class="list-inline-item">
+                <label class="btn-colour" for="colour_sidebar_Red" style="background-color: #dd6265" data-allow-multiple=""> </label>
+                <input class="visually-hidden" type="checkbox" name="colour" value="value_sidebar_Red" id="colour_sidebar_Red">
+              </li>
+            </ul>
+          </div>
         </div>
-        <div class="form-check">
-          <input class="form-check-input" type="checkbox" value="" id="colour2">
-          <label class="form-check-label" for="colour2">
-            Colour2
-          </label>
-        </div>
-        <div class="form-check">
-          <input class="form-check-input" type="checkbox" value="" id="colour3">
-          <label class="form-check-label" for="colour3">
-            Colour3
-          </label>
-        </div>
-        <div class="form-check">
-          <input class="form-check-input" type="checkbox" value="" id="colour4">
-          <label class="form-check-label" for="colour4">
-            Colour4
-          </label>
-        </div>
-        <div class="form-check">
-          <input class="form-check-input" type="checkbox" value="" id="colour5">
-          <label class="form-check-label" for="colour5">
-            Colour5
-          </label>
-        </div>
-        <div class="form-check">
-          <input class="form-check-input" type="checkbox" value="" id="colour6">
-          <label class="form-check-label" for="colour6">
-            Colour6
-          </label>
-        </div>
-
       </div>
       <button class="accordion">Availability</button>
       <div class="panel">
@@ -442,515 +500,105 @@
         </div>
       </div>
     </div>
+    <!-- <div class="filtersLeft col-3">
+      <div class="products-grid">
+        <div class="sidebar">
+          <div class="sidebar-block"><a class="d-lg-none block-toggler" data-bs-toggle="collapse" href="#brandFilterMenu" aria-expanded="true" aria-controls="brandFilterMenu">Filter by brand</a>
+            <div class="expand-lg collapse show" id="brandFilterMenu">
+              <h6 class="sidebar-heading d-none d-lg-block">Brands</h6>
+              <form class="mt-4 mt-lg-0" action="#">
+                <div class="mb-1">
+                  <div class="form-check">
+                    <input class="form-check-input" id="brand0" type="checkbox" name="clothes-brand" checked="">
+                    <label class="form-check-label" for="brand0">Calvin Klein <small>(18)</small></label>
+                  </div>
+                </div>
+                <div class="mb-1">
+                  <div class="form-check">
+                    <input class="form-check-input" id="brand1" type="checkbox" name="clothes-brand" checked="">
+                    <label class="form-check-label" for="brand1">Levi Strauss <small>(30)</small></label>
+                  </div>
+                </div>
+                <div class="mb-1">
+                  <div class="form-check">
+                    <input class="form-check-input" id="brand2" type="checkbox" name="clothes-brand">
+                    <label class="form-check-label" for="brand2">Hugo Boss <small>(120)</small></label>
+                  </div>
+                </div>
+                <div class="mb-1">
+                  <div class="form-check">
+                    <input class="form-check-input" id="brand3" type="checkbox" name="clothes-brand">
+                    <label class="form-check-label" for="brand3">Tomi Hilfiger <small>(70)</small></label>
+                  </div>
+                </div>
+                <div class="mb-1">
+                  <div class="form-check">
+                    <input class="form-check-input" id="brand4" type="checkbox" name="clothes-brand">
+                    <label class="form-check-label" for="brand4">Tom Ford <small>(110)</small></label>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+          <div class="sidebar-block"> <a class="d-lg-none block-toggler" data-bs-toggle="collapse" href="#sizeFilterMenu" aria-expanded="false" aria-controls="sizeFilterMenu">Filter by size</a>
+            <div class="expand-lg collapse" id="sizeFilterMenu">
+              <h6 class="sidebar-heading d-none d-lg-block">Size </h6>
+              <form class="mt-4 mt-lg-0" action="#">
+                <div class="mb-1">
+                  <div class="form-check">
+                    <input class="form-check-input" id="size0" type="radio" name="size" checked="">
+                    <label class="form-check-label" for="size0">Small</label>
+                  </div>
+                </div>
+                <div class="mb-1">
+                  <div class="form-check">
+                    <input class="form-check-input" id="size1" type="radio" name="size">
+                    <label class="form-check-label" for="size1">Medium</label>
+                  </div>
+                </div>
+                <div class="mb-1">
+                  <div class="form-check">
+                    <input class="form-check-input" id="size2" type="radio" name="size">
+                    <label class="form-check-label" for="size2">Large</label>
+                  </div>
+                </div>
+                <div class="mb-1">
+                  <div class="form-check">
+                    <input class="form-check-input" id="size3" type="radio" name="size">
+                    <label class="form-check-label" for="size3">X-Large</label>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> -->
     <div class="mainContent col-9">
       <div class="card totalCard" style="width: 16rem; height:28rem">
         <div data-bs-theme="dark">
-          <div id="carousel1" class="carousel slide" data-bs-ride="false">
-            <div class="carousel-inner myCarousel">
-              <div class="carousel-item active">
-                <img src="/public/Images/ProductImages/Rucksack1/image1.jpg" width="100%" height="250px" class="d-block w-100" alt="...">
-              </div>
-              <div class="carousel-item">
-                <img src="/public/Images/ProductImages/Rucksack1/image2.jpg" width="100%" height="250px" class="d-block w-100" alt="...">
-              </div>
-              <div class="carousel-item">
-                <img src="/public/Images/ProductImages/Rucksack1/image3.jpg" width="100%" height="250px" class="d-block w-100" alt="...">
-              </div>
-              <div class="carousel-item">
-                <img src="/public/Images/ProductImages/Rucksack1/image4.jpg" width="100%" height="250px" class="d-block w-100" alt="...">
-              </div>
-              <div class="carousel-item">
-                <img src="/public/Images/ProductImages/Rucksack1/image5.jpg" width="100%" height="250px" class="d-block w-100" alt="...">
-              </div>
-              <div class="carousel-item">
-                <img src="/public/Images/ProductImages/Rucksack1/image6.jpg" width="100%" height="250px" class="d-block w-100" alt="...">
-              </div>
-              <div class="carousel-item">
-                <video src="/public/Images/ProductImages/Rucksack1/video1.mp4" width="100%" height="250px" controls muted loop autoplay>This browser does not support HTML video.</video>
-              </div>
-            </div>
-            <button class="carousel-control-prev carouselButton" type="button" data-bs-target="#carousel1" data-bs-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="false"></span>
-              <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next carouselButton" type="button" data-bs-target="#carousel1" data-bs-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="false"></span>
-              <span class="visually-hidden">Next</span>
-            </button>
-          </div>
-        </div>
-        <div class="card-body">
-          <div class="cardBodyHead">
-            <h5 class="card-title myCardTitle"><a href="#" class="cardTitleInner">RuckSack</a></h5>
-            <div class="rightCompartment ">
-              <span class="starsRatingGreen rightCompartmentInner popupRating" onclick="popupRatingFunction()">3.8
-                <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMyIgaGVpZ2h0PSIxMiI+PHBhdGggZmlsbD0iI0ZGRiIgZD0iTTYuNSA5LjQzOWwtMy42NzQgMi4yMy45NC00LjI2LTMuMjEtMi44ODMgNC4yNTQtLjQwNEw2LjUuMTEybDEuNjkgNC4wMSA0LjI1NC40MDQtMy4yMSAyLjg4Mi45NCA0LjI2eiIvPjwvc3ZnPg==" class="innerStars">
-                <div class="popupContent" id="popupUserRating1">
-                  <span class="heading">User Rating</span>
-                  <div class="row UserRatingGrid">
-                    <div class="EdgeColumn">
-                      <div>5 star</div>
-                    </div>
-                    <div class="CentreColumn">
-                      <div class="barContainer">
-                        <div class="bar5"></div>
-                      </div>
-                    </div>
-                    <div class="EdgeColumn rightText">
-                      <div>150</div>
-                    </div>
-                    <div class="EdgeColumn">
-                      <div>4 star</div>
-                    </div>
-                    <div class="CentreColumn">
-                      <div class="barContainer">
-                        <div class="bar4"></div>
-                      </div>
-                    </div>
-                    <div class="EdgeColumn rightText">
-                      <div>63</div>
-                    </div>
-                    <div class="EdgeColumn">
-                      <div>3 star</div>
-                    </div>
-                    <div class="CentreColumn">
-                      <div class="barContainer">
-                        <div class="bar3"></div>
-                      </div>
-                    </div>
-                    <div class="EdgeColumn rightText">
-                      <div>15</div>
-                    </div>
-                    <div class="EdgeColumn">
-                      <div>2 star</div>
-                    </div>
-                    <div class="CentreColumn">
-                      <div class="barContainer">
-                        <div class="bar2"></div>
-                      </div>
-                    </div>
-                    <div class="EdgeColumn rightText">
-                      <div>6</div>
-                    </div>
-                    <div class="EdgeColumn">
-                      <div>1 star</div>
-                    </div>
-                    <div class="CentreColumn">
-                      <div class="barContainer">
-                        <div class="bar1"></div>
-                      </div>
-                    </div>
-                    <div class="EdgeColumn rightText">
-                      <div>20</div>
-                    </div>
-                  </div>
-                </div>
-              </span>
-              <span class="wishlist rightCompartmentInner">
-                <i class="fa-regular fa-heart wishlistInner" id="heartWishlist" onclick="wishlistHeartToggleFunction(this)"></i>
-                <!-- <i class="fa-solid fa-heart wishlistInner"></i> -->
-              </span>
-              <span class="share rightCompartmentInner shareIcon">
-                <!-- <i class="fa-solid fa-share-from-square"></i> -->
-                <i class="fa-regular fa-share-from-square" id="shareItem"></i>
-              </span>
-            </div>
-          </div>
-
-
-          <p class="card-text">Some quick example text ...</p>
-        </div>
-        <div class="jumbotron">
-          <span class="pcVrtPrice">₹2500 M.R.P</span>
-          <span class="pcVrtDiscount">50% off</span>
-        </div>
-      </div>
-      <div class="card totalCard" style="width: 16rem; height:28rem">
-        <div data-bs-theme="dark">
-          <div id="carousel2" class="carousel slide" data-bs-ride="false">
-            <div class="carousel-inner myCarousel">
-              <div class="carousel-item active">
-                <img src="/public/Images/ProductImages/Rucksack1/image1.jpg" width="100%" height="250px" class="d-block w-100" alt="...">
-              </div>
-              <div class="carousel-item">
-                <img src="/public/Images/ProductImages/Rucksack1/image2.jpg" width="100%" height="250px" class="d-block w-100" alt="...">
-              </div>
-              <div class="carousel-item">
-                <img src="/public/Images/ProductImages/Rucksack1/image3.jpg" width="100%" height="250px" class="d-block w-100" alt="...">
-              </div>
-              <div class="carousel-item">
-                <img src="/public/Images/ProductImages/Rucksack1/image4.jpg" width="100%" height="250px" class="d-block w-100" alt="...">
-              </div>
-              <div class="carousel-item">
-                <img src="/public/Images/ProductImages/Rucksack1/image5.jpg" width="100%" height="250px" class="d-block w-100" alt="...">
-              </div>
-              <div class="carousel-item">
-                <img src="/public/Images/ProductImages/Rucksack1/image6.jpg" width="100%" height="250px" class="d-block w-100" alt="...">
-              </div>
-              <div class="carousel-item">
-                <video src="/public/Images/ProductImages/Rucksack1/video1.mp4" width="100%" height="250px" controls muted loop autoplay>This browser does not support HTML video.</video>
-              </div>
-            </div>
-            <button class="carousel-control-prev carouselButton" type="button" data-bs-target="#carousel2" data-bs-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="false"></span>
-              <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next carouselButton" type="button" data-bs-target="#carousel2" data-bs-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="false"></span>
-              <span class="visually-hidden">Next</span>
-            </button>
-          </div>
-        </div>
-        <div class="card-body">
-          <div class="cardBodyHead">
-            <h5 class="card-title myCardTitle"><a href="#" class="cardTitleInner">RuckSack</a></h5>
-            <div class="rightCompartment ">
-              <span class="starsRatingGreen rightCompartmentInner popupRating" onclick="popupRatingFunction()">3.8
-                <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMyIgaGVpZ2h0PSIxMiI+PHBhdGggZmlsbD0iI0ZGRiIgZD0iTTYuNSA5LjQzOWwtMy42NzQgMi4yMy45NC00LjI2LTMuMjEtMi44ODMgNC4yNTQtLjQwNEw2LjUuMTEybDEuNjkgNC4wMSA0LjI1NC40MDQtMy4yMSAyLjg4Mi45NCA0LjI2eiIvPjwvc3ZnPg==" class="innerStars">
-                <div class="popupContent" id="popupUserRating2">
-                  <span class="heading">User Rating</span>
-                  <div class="row UserRatingGrid">
-                    <div class="EdgeColumn">
-                      <div>5 star</div>
-                    </div>
-                    <div class="CentreColumn">
-                      <div class="barContainer">
-                        <div class="bar5"></div>
-                      </div>
-                    </div>
-                    <div class="EdgeColumn rightText">
-                      <div>150</div>
-                    </div>
-                    <div class="EdgeColumn">
-                      <div>4 star</div>
-                    </div>
-                    <div class="CentreColumn">
-                      <div class="barContainer">
-                        <div class="bar4"></div>
-                      </div>
-                    </div>
-                    <div class="EdgeColumn rightText">
-                      <div>63</div>
-                    </div>
-                    <div class="EdgeColumn">
-                      <div>3 star</div>
-                    </div>
-                    <div class="CentreColumn">
-                      <div class="barContainer">
-                        <div class="bar3"></div>
-                      </div>
-                    </div>
-                    <div class="EdgeColumn rightText">
-                      <div>15</div>
-                    </div>
-                    <div class="EdgeColumn">
-                      <div>2 star</div>
-                    </div>
-                    <div class="CentreColumn">
-                      <div class="barContainer">
-                        <div class="bar2"></div>
-                      </div>
-                    </div>
-                    <div class="EdgeColumn rightText">
-                      <div>6</div>
-                    </div>
-                    <div class="EdgeColumn">
-                      <div>1 star</div>
-                    </div>
-                    <div class="CentreColumn">
-                      <div class="barContainer">
-                        <div class="bar1"></div>
-                      </div>
-                    </div>
-                    <div class="EdgeColumn rightText">
-                      <div>20</div>
-                    </div>
-                  </div>
-                </div>
-              </span>
-              <span class="wishlist rightCompartmentInner">
-                <i class="fa-regular fa-heart wishlistInner" id="heartWishlist" onclick="wishlistHeartToggleFunction(this)"></i>
-                <!-- <i class="fa-solid fa-heart wishlistInner"></i> -->
-              </span>
-              <span class="share rightCompartmentInner shareIcon">
-                <!-- <i class="fa-solid fa-share-from-square"></i> -->
-                <i class="fa-regular fa-share-from-square" id="shareItem"></i>
-              </span>
-            </div>
-          </div>
-          <p class="card-text">Some quick example text ...</p>
-        </div>
-        <div class="jumbotron">
-          <span class="pcVrtPrice">₹2500 M.R.P</span>
-          <span class="pcVrtDiscount">50% off</span>
-        </div>
-      </div>
-      <div class="card totalCard" style="width: 16rem; height:28rem">
-        <div data-bs-theme="dark">
-          <div id="carousel3" class="carousel slide" data-bs-ride="false">
-            <div class="carousel-inner myCarousel">
-              <div class="carousel-item active">
-                <img src="/public/Images/ProductImages/Rucksack1/image1.jpg" width="100%" height="250px" class="d-block w-100" alt="...">
-              </div>
-              <div class="carousel-item">
-                <img src="/public/Images/ProductImages/Rucksack1/image2.jpg" width="100%" height="250px" class="d-block w-100" alt="...">
-              </div>
-              <div class="carousel-item">
-                <img src="/public/Images/ProductImages/Rucksack1/image3.jpg" width="100%" height="250px" class="d-block w-100" alt="...">
-              </div>
-              <div class="carousel-item">
-                <img src="/public/Images/ProductImages/Rucksack1/image4.jpg" width="100%" height="250px" class="d-block w-100" alt="...">
-              </div>
-              <div class="carousel-item">
-                <img src="/public/Images/ProductImages/Rucksack1/image5.jpg" width="100%" height="250px" class="d-block w-100" alt="...">
-              </div>
-              <div class="carousel-item">
-                <img src="/public/Images/ProductImages/Rucksack1/image6.jpg" width="100%" height="250px" class="d-block w-100" alt="...">
-              </div>
-              <div class="carousel-item">
-                <video src="/public/Images/ProductImages/Rucksack1/video1.mp4" width="100%" height="250px" controls muted loop autoplay>This browser does not support HTML video.</video>
-              </div>
-            </div>
-            <button class="carousel-control-prev carouselButton" type="button" data-bs-target="#carousel3" data-bs-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="false"></span>
-              <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next carouselButton" type="button" data-bs-target="#carousel3" data-bs-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="false"></span>
-              <span class="visually-hidden">Next</span>
-            </button>
-          </div>
-        </div>
-        <div class="card-body">
-          <div class="cardBodyHead">
-            <h5 class="card-title myCardTitle"><a href="#" class="cardTitleInner">RuckSack</a></h5>
-            <div class="rightCompartment ">
-              <span class="starsRatingGreen rightCompartmentInner popupRating" onclick="popupRatingFunction()">3.8
-                <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMyIgaGVpZ2h0PSIxMiI+PHBhdGggZmlsbD0iI0ZGRiIgZD0iTTYuNSA5LjQzOWwtMy42NzQgMi4yMy45NC00LjI2LTMuMjEtMi44ODMgNC4yNTQtLjQwNEw2LjUuMTEybDEuNjkgNC4wMSA0LjI1NC40MDQtMy4yMSAyLjg4Mi45NCA0LjI2eiIvPjwvc3ZnPg==" class="innerStars">
-                <div class="popupContent" id="popupUserRating3">
-                  <span class="heading">User Rating</span>
-                  <div class="row UserRatingGrid">
-                    <div class="EdgeColumn">
-                      <div>5 star</div>
-                    </div>
-                    <div class="CentreColumn">
-                      <div class="barContainer">
-                        <div class="bar5"></div>
-                      </div>
-                    </div>
-                    <div class="EdgeColumn rightText">
-                      <div>150</div>
-                    </div>
-                    <div class="EdgeColumn">
-                      <div>4 star</div>
-                    </div>
-                    <div class="CentreColumn">
-                      <div class="barContainer">
-                        <div class="bar4"></div>
-                      </div>
-                    </div>
-                    <div class="EdgeColumn rightText">
-                      <div>63</div>
-                    </div>
-                    <div class="EdgeColumn">
-                      <div>3 star</div>
-                    </div>
-                    <div class="CentreColumn">
-                      <div class="barContainer">
-                        <div class="bar3"></div>
-                      </div>
-                    </div>
-                    <div class="EdgeColumn rightText">
-                      <div>15</div>
-                    </div>
-                    <div class="EdgeColumn">
-                      <div>2 star</div>
-                    </div>
-                    <div class="CentreColumn">
-                      <div class="barContainer">
-                        <div class="bar2"></div>
-                      </div>
-                    </div>
-                    <div class="EdgeColumn rightText">
-                      <div>6</div>
-                    </div>
-                    <div class="EdgeColumn">
-                      <div>1 star</div>
-                    </div>
-                    <div class="CentreColumn">
-                      <div class="barContainer">
-                        <div class="bar1"></div>
-                      </div>
-                    </div>
-                    <div class="EdgeColumn rightText">
-                      <div>20</div>
-                    </div>
-                  </div>
-                </div>
-              </span>
-              <span class="wishlist rightCompartmentInner">
-                <i class="fa-regular fa-heart wishlistInner" id="heartWishlist" onclick="wishlistHeartToggleFunction(this)"></i>
-                <!-- <i class="fa-solid fa-heart wishlistInner"></i> -->
-              </span>
-              <span class="share rightCompartmentInner shareIcon">
-                <!-- <i class="fa-solid fa-share-from-square"></i> -->
-                <i class="fa-regular fa-share-from-square" id="shareItem"></i>
-              </span>
-            </div>
-          </div>
-
-
-          <p class="card-text">Some quick example text ...</p>
-        </div>
-        <div class="jumbotron">
-          <span class="pcVrtPrice">₹2500 M.R.P</span>
-          <span class="pcVrtDiscount">50% off</span>
-        </div>
-      </div>
-      <div class="card totalCard" style="width: 16rem; height:28rem">
-        <div data-bs-theme="dark">
-          <div id="carousel4" class="carousel slide" data-bs-ride="false">
-            <div class="carousel-inner myCarousel">
-              <div class="carousel-item active">
-                <img src="/public/Images/ProductImages/Rucksack1/image1.jpg" width="100%" height="250px" class="d-block w-100" alt="...">
-              </div>
-              <div class="carousel-item">
-                <img src="/public/Images/ProductImages/Rucksack1/image2.jpg" width="100%" height="250px" class="d-block w-100" alt="...">
-              </div>
-              <div class="carousel-item">
-                <img src="/public/Images/ProductImages/Rucksack1/image3.jpg" width="100%" height="250px" class="d-block w-100" alt="...">
-              </div>
-              <div class="carousel-item">
-                <img src="/public/Images/ProductImages/Rucksack1/image4.jpg" width="100%" height="250px" class="d-block w-100" alt="...">
-              </div>
-              <div class="carousel-item">
-                <img src="/public/Images/ProductImages/Rucksack1/image5.jpg" width="100%" height="250px" class="d-block w-100" alt="...">
-              </div>
-              <div class="carousel-item">
-                <img src="/public/Images/ProductImages/Rucksack1/image6.jpg" width="100%" height="250px" class="d-block w-100" alt="...">
-              </div>
-              <div class="carousel-item">
-                <video src="/public/Images/ProductImages/Rucksack1/video1.mp4" width="100%" height="250px" controls muted loop autoplay>This browser does not support HTML video.</video>
-              </div>
-            </div>
-            <button class="carousel-control-prev carouselButton" type="button" data-bs-target="#carousel4" data-bs-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="false"></span>
-              <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next carouselButton" type="button" data-bs-target="#carousel4" data-bs-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="false"></span>
-              <span class="visually-hidden">Next</span>
-            </button>
-          </div>
-        </div>
-        <div class="card-body">
-          <div class="cardBodyHead">
-            <h5 class="card-title myCardTitle"><a href="#" class="cardTitleInner">RuckSack</a></h5>
-            <div class="rightCompartment ">
-              <span class="starsRatingGreen rightCompartmentInner popupRating" onclick="popupRatingFunction()">3.8
-                <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMyIgaGVpZ2h0PSIxMiI+PHBhdGggZmlsbD0iI0ZGRiIgZD0iTTYuNSA5LjQzOWwtMy42NzQgMi4yMy45NC00LjI2LTMuMjEtMi44ODMgNC4yNTQtLjQwNEw2LjUuMTEybDEuNjkgNC4wMSA0LjI1NC40MDQtMy4yMSAyLjg4Mi45NCA0LjI2eiIvPjwvc3ZnPg==" class="innerStars">
-                <div class="popupContent" id="popupUserRating4">
-                  <span class="heading">User Rating</span>
-                  <div class="row UserRatingGrid">
-                    <div class="EdgeColumn">
-                      <div>5 star</div>
-                    </div>
-                    <div class="CentreColumn">
-                      <div class="barContainer">
-                        <div class="bar5"></div>
-                      </div>
-                    </div>
-                    <div class="EdgeColumn rightText">
-                      <div>150</div>
-                    </div>
-                    <div class="EdgeColumn">
-                      <div>4 star</div>
-                    </div>
-                    <div class="CentreColumn">
-                      <div class="barContainer">
-                        <div class="bar4"></div>
-                      </div>
-                    </div>
-                    <div class="EdgeColumn rightText">
-                      <div>63</div>
-                    </div>
-                    <div class="EdgeColumn">
-                      <div>3 star</div>
-                    </div>
-                    <div class="CentreColumn">
-                      <div class="barContainer">
-                        <div class="bar3"></div>
-                      </div>
-                    </div>
-                    <div class="EdgeColumn rightText">
-                      <div>15</div>
-                    </div>
-                    <div class="EdgeColumn">
-                      <div>2 star</div>
-                    </div>
-                    <div class="CentreColumn">
-                      <div class="barContainer">
-                        <div class="bar2"></div>
-                      </div>
-                    </div>
-                    <div class="EdgeColumn rightText">
-                      <div>6</div>
-                    </div>
-                    <div class="EdgeColumn">
-                      <div>1 star</div>
-                    </div>
-                    <div class="CentreColumn">
-                      <div class="barContainer">
-                        <div class="bar1"></div>
-                      </div>
-                    </div>
-                    <div class="EdgeColumn rightText">
-                      <div>20</div>
-                    </div>
-                  </div>
-                </div>
-              </span>
-              <span class="wishlist rightCompartmentInner">
-                <i class="fa-regular fa-heart wishlistInner" id="heartWishlist" onclick="wishlistHeartToggleFunction(this)"></i>
-                <!-- <i class="fa-solid fa-heart wishlistInner"></i> -->
-              </span>
-              <span class="share rightCompartmentInner shareIcon">
-                <!-- <i class="fa-solid fa-share-from-square"></i> -->
-                <i class="fa-regular fa-share-from-square" id="shareItem"></i>
-              </span>
-            </div>
-          </div>
-          <p class="card-text">Some quick example text ...</p>
-        </div>
-        <div class="jumbotron">
-          <span class="pcVrtPrice">₹2500 M.R.P</span>
-          <span class="pcVrtDiscount">50% off</span>
-        </div>
-      </div>
-      <div class="card totalCard" style="width: 16rem; height:28rem">
-        <div data-bs-theme="dark">
           <div id="carouselExampleRide" class="carousel slide" data-bs-ride="false">
             <div class="carousel-inner myCarousel">
               <div class="carousel-item active">
-                <img src="/public/Images/ProductImages/Rucksack1/image1.jpg" width="100%" height="250px" class="d-block w-100" alt="...">
+                <img src="/Images/ProductImages/Rucksack1/image1.jpg" width="100%" height="250px" class="d-block w-100" alt="...">
               </div>
               <div class="carousel-item">
-                <img src="/public/Images/ProductImages/Rucksack1/image2.jpg" width="100%" height="250px" class="d-block w-100" alt="...">
+                <img src="/Images/ProductImages/Rucksack1/image2.jpg" width="100%" height="250px" class="d-block w-100" alt="...">
               </div>
               <div class="carousel-item">
-                <img src="/public/Images/ProductImages/Rucksack1/image3.jpg" width="100%" height="250px" class="d-block w-100" alt="...">
+                <img src="/Images/ProductImages/Rucksack1/image3.jpg" width="100%" height="250px" class="d-block w-100" alt="...">
               </div>
               <div class="carousel-item">
-                <img src="/public/Images/ProductImages/Rucksack1/image4.jpg" width="100%" height="250px" class="d-block w-100" alt="...">
+                <img src="/Images/ProductImages/Rucksack1/image4.jpg" width="100%" height="250px" class="d-block w-100" alt="...">
               </div>
               <div class="carousel-item">
-                <img src="/public/Images/ProductImages/Rucksack1/image5.jpg" width="100%" height="250px" class="d-block w-100" alt="...">
+                <img src="/Images/ProductImages/Rucksack1/image5.jpg" width="100%" height="250px" class="d-block w-100" alt="...">
               </div>
               <div class="carousel-item">
-                <img src="/public/Images/ProductImages/Rucksack1/image6.jpg" width="100%" height="250px" class="d-block w-100" alt="...">
+                <img src="/Images/ProductImages/Rucksack1/image6.jpg" width="100%" height="250px" class="d-block w-100" alt="...">
               </div>
               <div class="carousel-item">
-                <video src="/public/Images/ProductImages/Rucksack1/video1.mp4" width="100%" height="250px" controls muted loop autoplay>This browser does not support HTML video.</video>
+                <video src="/Images/ProductImages/Rucksack1/video1.mp4" width="100%" height="250px" controls muted loop autoplay>This browser does not support HTML video.</video>
               </div>
             </div>
             <button class="carousel-control-prev carouselButton" type="button" data-bs-target="#carouselExampleRide" data-bs-slide="prev">
@@ -965,11 +613,11 @@
         </div>
         <div class="card-body">
           <div class="cardBodyHead">
-            <h5 class="card-title myCardTitle"><a href="#" class="cardTitleInner">RuckSack</a></h5>
+            <h5 class="card-title myCardTitle"><a href="/productPage" class="cardTitleInner">RuckSack</a></h5>
             <div class="rightCompartment ">
               <span class="starsRatingGreen rightCompartmentInner popupRating" onclick="popupRatingFunction()">3.8
                 <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMyIgaGVpZ2h0PSIxMiI+PHBhdGggZmlsbD0iI0ZGRiIgZD0iTTYuNSA5LjQzOWwtMy42NzQgMi4yMy45NC00LjI2LTMuMjEtMi44ODMgNC4yNTQtLjQwNEw2LjUuMTEybDEuNjkgNC4wMSA0LjI1NC40MDQtMy4yMSAyLjg4Mi45NCA0LjI2eiIvPjwvc3ZnPg==" class="innerStars">
-                <div class="popupContent" id="popupUserRating5">
+                <div class="popupContent" id="popupUserRating">
                   <span class="heading">User Rating</span>
                   <div class="row UserRatingGrid">
                     <div class="EdgeColumn">
@@ -1040,12 +688,15 @@
               </span>
             </div>
           </div>
-
-
+          <img src="/Images/Verrification/rugged-verified-high-resolution-color-logo-slim.png" alt="..." class="RuggedVerified">
           <p class="card-text">Some quick example text ...</p>
         </div>
+
         <div class="jumbotron">
-          <span class="pcVrtPrice">₹2500 M.R.P</span>
+          <span class="pcVrtpriceCOmplete">
+            <div class="pcVrtOriginalPrice"><s>₹5000</s></div>
+            <div class="pcVrtPrice">₹2500 M.R.P</div>
+          </span>
           <span class="pcVrtDiscount">50% off</span>
         </div>
       </div>
@@ -1054,25 +705,25 @@
           <div id="carouselExampleRide" class="carousel slide" data-bs-ride="false">
             <div class="carousel-inner myCarousel">
               <div class="carousel-item active">
-                <img src="/public/Images/ProductImages/Rucksack1/image1.jpg" width="100%" height="250px" class="d-block w-100" alt="...">
+                <img src="/Images/ProductImages/Rucksack1/image1.jpg" width="100%" height="250px" class="d-block w-100" alt="...">
               </div>
               <div class="carousel-item">
-                <img src="/public/Images/ProductImages/Rucksack1/image2.jpg" width="100%" height="250px" class="d-block w-100" alt="...">
+                <img src="/Images/ProductImages/Rucksack1/image2.jpg" width="100%" height="250px" class="d-block w-100" alt="...">
               </div>
               <div class="carousel-item">
-                <img src="/public/Images/ProductImages/Rucksack1/image3.jpg" width="100%" height="250px" class="d-block w-100" alt="...">
+                <img src="/Images/ProductImages/Rucksack1/image3.jpg" width="100%" height="250px" class="d-block w-100" alt="...">
               </div>
               <div class="carousel-item">
-                <img src="/public/Images/ProductImages/Rucksack1/image4.jpg" width="100%" height="250px" class="d-block w-100" alt="...">
+                <img src="/Images/ProductImages/Rucksack1/image4.jpg" width="100%" height="250px" class="d-block w-100" alt="...">
               </div>
               <div class="carousel-item">
-                <img src="/public/Images/ProductImages/Rucksack1/image5.jpg" width="100%" height="250px" class="d-block w-100" alt="...">
+                <img src="/Images/ProductImages/Rucksack1/image5.jpg" width="100%" height="250px" class="d-block w-100" alt="...">
               </div>
               <div class="carousel-item">
-                <img src="/public/Images/ProductImages/Rucksack1/image6.jpg" width="100%" height="250px" class="d-block w-100" alt="...">
+                <img src="/Images/ProductImages/Rucksack1/image6.jpg" width="100%" height="250px" class="d-block w-100" alt="...">
               </div>
               <div class="carousel-item">
-                <video src="/public/Images/ProductImages/Rucksack1/video1.mp4" width="100%" height="250px" controls muted loop autoplay>This browser does not support HTML video.</video>
+                <video src="/Images/ProductImages/Rucksack1/video1.mp4" width="100%" height="250px" controls muted loop autoplay>This browser does not support HTML video.</video>
               </div>
             </div>
             <button class="carousel-control-prev carouselButton" type="button" data-bs-target="#carouselExampleRide" data-bs-slide="prev">
@@ -1087,11 +738,11 @@
         </div>
         <div class="card-body">
           <div class="cardBodyHead">
-            <h5 class="card-title myCardTitle"><a href="#" class="cardTitleInner">RuckSack</a></h5>
+            <h5 class="card-title myCardTitle"><a href="/productPage" class="cardTitleInner">RuckSack</a></h5>
             <div class="rightCompartment ">
               <span class="starsRatingGreen rightCompartmentInner popupRating" onclick="popupRatingFunction()">3.8
                 <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMyIgaGVpZ2h0PSIxMiI+PHBhdGggZmlsbD0iI0ZGRiIgZD0iTTYuNSA5LjQzOWwtMy42NzQgMi4yMy45NC00LjI2LTMuMjEtMi44ODMgNC4yNTQtLjQwNEw2LjUuMTEybDEuNjkgNC4wMSA0LjI1NC40MDQtMy4yMSAyLjg4Mi45NCA0LjI2eiIvPjwvc3ZnPg==" class="innerStars">
-                <div class="popupContent" id="popupUserRating6">
+                <div class="popupContent" id="popupUserRating">
                   <span class="heading">User Rating</span>
                   <div class="row UserRatingGrid">
                     <div class="EdgeColumn">
@@ -1162,10 +813,15 @@
               </span>
             </div>
           </div>
+          <img src="/Images/Verrification/rugged-verified-high-resolution-color-logo-slim.png" alt="..." class="RuggedVerified">
           <p class="card-text">Some quick example text ...</p>
         </div>
+
         <div class="jumbotron">
-          <span class="pcVrtPrice">₹2500 M.R.P</span>
+          <span class="pcVrtpriceCOmplete">
+            <div class="pcVrtOriginalPrice"><s>₹5000</s></div>
+            <div class="pcVrtPrice">₹2500 M.R.P</div>
+          </span>
           <span class="pcVrtDiscount">50% off</span>
         </div>
       </div>
@@ -1174,25 +830,25 @@
           <div id="carouselExampleRide" class="carousel slide" data-bs-ride="false">
             <div class="carousel-inner myCarousel">
               <div class="carousel-item active">
-                <img src="/public/Images/ProductImages/Rucksack1/image1.jpg" width="100%" height="250px" class="d-block w-100" alt="...">
+                <img src="/Images/ProductImages/Rucksack1/image1.jpg" width="100%" height="250px" class="d-block w-100" alt="...">
               </div>
               <div class="carousel-item">
-                <img src="/public/Images/ProductImages/Rucksack1/image2.jpg" width="100%" height="250px" class="d-block w-100" alt="...">
+                <img src="/Images/ProductImages/Rucksack1/image2.jpg" width="100%" height="250px" class="d-block w-100" alt="...">
               </div>
               <div class="carousel-item">
-                <img src="/public/Images/ProductImages/Rucksack1/image3.jpg" width="100%" height="250px" class="d-block w-100" alt="...">
+                <img src="/Images/ProductImages/Rucksack1/image3.jpg" width="100%" height="250px" class="d-block w-100" alt="...">
               </div>
               <div class="carousel-item">
-                <img src="/public/Images/ProductImages/Rucksack1/image4.jpg" width="100%" height="250px" class="d-block w-100" alt="...">
+                <img src="/Images/ProductImages/Rucksack1/image4.jpg" width="100%" height="250px" class="d-block w-100" alt="...">
               </div>
               <div class="carousel-item">
-                <img src="/public/Images/ProductImages/Rucksack1/image5.jpg" width="100%" height="250px" class="d-block w-100" alt="...">
+                <img src="/Images/ProductImages/Rucksack1/image5.jpg" width="100%" height="250px" class="d-block w-100" alt="...">
               </div>
               <div class="carousel-item">
-                <img src="/public/Images/ProductImages/Rucksack1/image6.jpg" width="100%" height="250px" class="d-block w-100" alt="...">
+                <img src="/Images/ProductImages/Rucksack1/image6.jpg" width="100%" height="250px" class="d-block w-100" alt="...">
               </div>
               <div class="carousel-item">
-                <video src="/public/Images/ProductImages/Rucksack1/video1.mp4" width="100%" height="250px" controls muted loop autoplay>This browser does not support HTML video.</video>
+                <video src="/Images/ProductImages/Rucksack1/video1.mp4" width="100%" height="250px" controls muted loop autoplay>This browser does not support HTML video.</video>
               </div>
             </div>
             <button class="carousel-control-prev carouselButton" type="button" data-bs-target="#carouselExampleRide" data-bs-slide="prev">
@@ -1207,11 +863,11 @@
         </div>
         <div class="card-body">
           <div class="cardBodyHead">
-            <h5 class="card-title myCardTitle"><a href="#" class="cardTitleInner">RuckSack</a></h5>
+            <h5 class="card-title myCardTitle"><a href="/productPage" class="cardTitleInner">RuckSack</a></h5>
             <div class="rightCompartment ">
               <span class="starsRatingGreen rightCompartmentInner popupRating" onclick="popupRatingFunction()">3.8
                 <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMyIgaGVpZ2h0PSIxMiI+PHBhdGggZmlsbD0iI0ZGRiIgZD0iTTYuNSA5LjQzOWwtMy42NzQgMi4yMy45NC00LjI2LTMuMjEtMi44ODMgNC4yNTQtLjQwNEw2LjUuMTEybDEuNjkgNC4wMSA0LjI1NC40MDQtMy4yMSAyLjg4Mi45NCA0LjI2eiIvPjwvc3ZnPg==" class="innerStars">
-                <div class="popupContent" id="popupUserRating7">
+                <div class="popupContent" id="popupUserRating">
                   <span class="heading">User Rating</span>
                   <div class="row UserRatingGrid">
                     <div class="EdgeColumn">
@@ -1282,12 +938,15 @@
               </span>
             </div>
           </div>
-
-
+          <img src="/Images/Verrification/rugged-verified-high-resolution-color-logo-slim.png" alt="..." class="RuggedVerified">
           <p class="card-text">Some quick example text ...</p>
         </div>
+
         <div class="jumbotron">
-          <span class="pcVrtPrice">₹2500 M.R.P</span>
+          <span class="pcVrtpriceCOmplete">
+            <div class="pcVrtOriginalPrice"><s>₹5000</s></div>
+            <div class="pcVrtPrice">₹2500 M.R.P</div>
+          </span>
           <span class="pcVrtDiscount">50% off</span>
         </div>
       </div>
@@ -1296,25 +955,25 @@
           <div id="carouselExampleRide" class="carousel slide" data-bs-ride="false">
             <div class="carousel-inner myCarousel">
               <div class="carousel-item active">
-                <img src="/public/Images/ProductImages/Rucksack1/image1.jpg" width="100%" height="250px" class="d-block w-100" alt="...">
+                <img src="/Images/ProductImages/Rucksack1/image1.jpg" width="100%" height="250px" class="d-block w-100" alt="...">
               </div>
               <div class="carousel-item">
-                <img src="/public/Images/ProductImages/Rucksack1/image2.jpg" width="100%" height="250px" class="d-block w-100" alt="...">
+                <img src="/Images/ProductImages/Rucksack1/image2.jpg" width="100%" height="250px" class="d-block w-100" alt="...">
               </div>
               <div class="carousel-item">
-                <img src="/public/Images/ProductImages/Rucksack1/image3.jpg" width="100%" height="250px" class="d-block w-100" alt="...">
+                <img src="/Images/ProductImages/Rucksack1/image3.jpg" width="100%" height="250px" class="d-block w-100" alt="...">
               </div>
               <div class="carousel-item">
-                <img src="/public/Images/ProductImages/Rucksack1/image4.jpg" width="100%" height="250px" class="d-block w-100" alt="...">
+                <img src="/Images/ProductImages/Rucksack1/image4.jpg" width="100%" height="250px" class="d-block w-100" alt="...">
               </div>
               <div class="carousel-item">
-                <img src="/public/Images/ProductImages/Rucksack1/image5.jpg" width="100%" height="250px" class="d-block w-100" alt="...">
+                <img src="/Images/ProductImages/Rucksack1/image5.jpg" width="100%" height="250px" class="d-block w-100" alt="...">
               </div>
               <div class="carousel-item">
-                <img src="/public/Images/ProductImages/Rucksack1/image6.jpg" width="100%" height="250px" class="d-block w-100" alt="...">
+                <img src="/Images/ProductImages/Rucksack1/image6.jpg" width="100%" height="250px" class="d-block w-100" alt="...">
               </div>
               <div class="carousel-item">
-                <video src="/public/Images/ProductImages/Rucksack1/video1.mp4" width="100%" height="250px" controls muted loop autoplay>This browser does not support HTML video.</video>
+                <video src="/Images/ProductImages/Rucksack1/video1.mp4" width="100%" height="250px" controls muted loop autoplay>This browser does not support HTML video.</video>
               </div>
             </div>
             <button class="carousel-control-prev carouselButton" type="button" data-bs-target="#carouselExampleRide" data-bs-slide="prev">
@@ -1329,11 +988,11 @@
         </div>
         <div class="card-body">
           <div class="cardBodyHead">
-            <h5 class="card-title myCardTitle"><a href="#" class="cardTitleInner">RuckSack</a></h5>
+            <h5 class="card-title myCardTitle"><a href="/productPage" class="cardTitleInner">RuckSack</a></h5>
             <div class="rightCompartment ">
               <span class="starsRatingGreen rightCompartmentInner popupRating" onclick="popupRatingFunction()">3.8
                 <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMyIgaGVpZ2h0PSIxMiI+PHBhdGggZmlsbD0iI0ZGRiIgZD0iTTYuNSA5LjQzOWwtMy42NzQgMi4yMy45NC00LjI2LTMuMjEtMi44ODMgNC4yNTQtLjQwNEw2LjUuMTEybDEuNjkgNC4wMSA0LjI1NC40MDQtMy4yMSAyLjg4Mi45NCA0LjI2eiIvPjwvc3ZnPg==" class="innerStars">
-                <div class="popupContent" id="popupUserRating8">
+                <div class="popupContent" id="popupUserRating">
                   <span class="heading">User Rating</span>
                   <div class="row UserRatingGrid">
                     <div class="EdgeColumn">
@@ -1404,10 +1063,515 @@
               </span>
             </div>
           </div>
+          <img src="/Images/Verrification/rugged-verified-high-resolution-color-logo-slim.png" alt="..." class="RuggedVerified">
           <p class="card-text">Some quick example text ...</p>
         </div>
+
         <div class="jumbotron">
-          <span class="pcVrtPrice">₹2500 M.R.P</span>
+          <span class="pcVrtpriceCOmplete">
+            <div class="pcVrtOriginalPrice"><s>₹5000</s></div>
+            <div class="pcVrtPrice">₹2500 M.R.P</div>
+          </span>
+          <span class="pcVrtDiscount">50% off</span>
+        </div>
+      </div>
+      <div class="card totalCard" style="width: 16rem; height:28rem">
+        <div data-bs-theme="dark">
+          <div id="carouselExampleRide" class="carousel slide" data-bs-ride="false">
+            <div class="carousel-inner myCarousel">
+              <div class="carousel-item active">
+                <img src="/Images/ProductImages/Rucksack1/image1.jpg" width="100%" height="250px" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="/Images/ProductImages/Rucksack1/image2.jpg" width="100%" height="250px" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="/Images/ProductImages/Rucksack1/image3.jpg" width="100%" height="250px" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="/Images/ProductImages/Rucksack1/image4.jpg" width="100%" height="250px" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="/Images/ProductImages/Rucksack1/image5.jpg" width="100%" height="250px" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="/Images/ProductImages/Rucksack1/image6.jpg" width="100%" height="250px" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item">
+                <video src="/Images/ProductImages/Rucksack1/video1.mp4" width="100%" height="250px" controls muted loop autoplay>This browser does not support HTML video.</video>
+              </div>
+            </div>
+            <button class="carousel-control-prev carouselButton" type="button" data-bs-target="#carouselExampleRide" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="false"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next carouselButton" type="button" data-bs-target="#carouselExampleRide" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="false"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="cardBodyHead">
+            <h5 class="card-title myCardTitle"><a href="/productPage" class="cardTitleInner">RuckSack</a></h5>
+            <div class="rightCompartment ">
+              <span class="starsRatingGreen rightCompartmentInner popupRating" onclick="popupRatingFunction()">3.8
+                <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMyIgaGVpZ2h0PSIxMiI+PHBhdGggZmlsbD0iI0ZGRiIgZD0iTTYuNSA5LjQzOWwtMy42NzQgMi4yMy45NC00LjI2LTMuMjEtMi44ODMgNC4yNTQtLjQwNEw2LjUuMTEybDEuNjkgNC4wMSA0LjI1NC40MDQtMy4yMSAyLjg4Mi45NCA0LjI2eiIvPjwvc3ZnPg==" class="innerStars">
+                <div class="popupContent" id="popupUserRating">
+                  <span class="heading">User Rating</span>
+                  <div class="row UserRatingGrid">
+                    <div class="EdgeColumn">
+                      <div>5 star</div>
+                    </div>
+                    <div class="CentreColumn">
+                      <div class="barContainer">
+                        <div class="bar5"></div>
+                      </div>
+                    </div>
+                    <div class="EdgeColumn rightText">
+                      <div>150</div>
+                    </div>
+                    <div class="EdgeColumn">
+                      <div>4 star</div>
+                    </div>
+                    <div class="CentreColumn">
+                      <div class="barContainer">
+                        <div class="bar4"></div>
+                      </div>
+                    </div>
+                    <div class="EdgeColumn rightText">
+                      <div>63</div>
+                    </div>
+                    <div class="EdgeColumn">
+                      <div>3 star</div>
+                    </div>
+                    <div class="CentreColumn">
+                      <div class="barContainer">
+                        <div class="bar3"></div>
+                      </div>
+                    </div>
+                    <div class="EdgeColumn rightText">
+                      <div>15</div>
+                    </div>
+                    <div class="EdgeColumn">
+                      <div>2 star</div>
+                    </div>
+                    <div class="CentreColumn">
+                      <div class="barContainer">
+                        <div class="bar2"></div>
+                      </div>
+                    </div>
+                    <div class="EdgeColumn rightText">
+                      <div>6</div>
+                    </div>
+                    <div class="EdgeColumn">
+                      <div>1 star</div>
+                    </div>
+                    <div class="CentreColumn">
+                      <div class="barContainer">
+                        <div class="bar1"></div>
+                      </div>
+                    </div>
+                    <div class="EdgeColumn rightText">
+                      <div>20</div>
+                    </div>
+                  </div>
+                </div>
+              </span>
+              <span class="wishlist rightCompartmentInner">
+                <i class="fa-regular fa-heart wishlistInner" id="heartWishlist" onclick="wishlistHeartToggleFunction(this)"></i>
+                <!-- <i class="fa-solid fa-heart wishlistInner"></i> -->
+              </span>
+              <span class="share rightCompartmentInner shareIcon">
+                <!-- <i class="fa-solid fa-share-from-square"></i> -->
+                <i class="fa-regular fa-share-from-square" id="shareItem"></i>
+              </span>
+            </div>
+          </div>
+          <img src="/Images/Verrification/rugged-verified-high-resolution-color-logo-slim.png" alt="..." class="RuggedVerified">
+          <p class="card-text">Some quick example text ...</p>
+        </div>
+
+        <div class="jumbotron">
+          <span class="pcVrtpriceCOmplete">
+            <div class="pcVrtOriginalPrice"><s>₹5000</s></div>
+            <div class="pcVrtPrice">₹2500 M.R.P</div>
+          </span>
+          <span class="pcVrtDiscount">50% off</span>
+        </div>
+      </div>
+      <div class="card totalCard" style="width: 16rem; height:28rem">
+        <div data-bs-theme="dark">
+          <div id="carouselExampleRide" class="carousel slide" data-bs-ride="false">
+            <div class="carousel-inner myCarousel">
+              <div class="carousel-item active">
+                <img src="/Images/ProductImages/Rucksack1/image1.jpg" width="100%" height="250px" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="/Images/ProductImages/Rucksack1/image2.jpg" width="100%" height="250px" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="/Images/ProductImages/Rucksack1/image3.jpg" width="100%" height="250px" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="/Images/ProductImages/Rucksack1/image4.jpg" width="100%" height="250px" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="/Images/ProductImages/Rucksack1/image5.jpg" width="100%" height="250px" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="/Images/ProductImages/Rucksack1/image6.jpg" width="100%" height="250px" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item">
+                <video src="/Images/ProductImages/Rucksack1/video1.mp4" width="100%" height="250px" controls muted loop autoplay>This browser does not support HTML video.</video>
+              </div>
+            </div>
+            <button class="carousel-control-prev carouselButton" type="button" data-bs-target="#carouselExampleRide" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="false"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next carouselButton" type="button" data-bs-target="#carouselExampleRide" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="false"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="cardBodyHead">
+            <h5 class="card-title myCardTitle"><a href="/productPage" class="cardTitleInner">RuckSack</a></h5>
+            <div class="rightCompartment ">
+              <span class="starsRatingGreen rightCompartmentInner popupRating" onclick="popupRatingFunction()">3.8
+                <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMyIgaGVpZ2h0PSIxMiI+PHBhdGggZmlsbD0iI0ZGRiIgZD0iTTYuNSA5LjQzOWwtMy42NzQgMi4yMy45NC00LjI2LTMuMjEtMi44ODMgNC4yNTQtLjQwNEw2LjUuMTEybDEuNjkgNC4wMSA0LjI1NC40MDQtMy4yMSAyLjg4Mi45NCA0LjI2eiIvPjwvc3ZnPg==" class="innerStars">
+                <div class="popupContent" id="popupUserRating">
+                  <span class="heading">User Rating</span>
+                  <div class="row UserRatingGrid">
+                    <div class="EdgeColumn">
+                      <div>5 star</div>
+                    </div>
+                    <div class="CentreColumn">
+                      <div class="barContainer">
+                        <div class="bar5"></div>
+                      </div>
+                    </div>
+                    <div class="EdgeColumn rightText">
+                      <div>150</div>
+                    </div>
+                    <div class="EdgeColumn">
+                      <div>4 star</div>
+                    </div>
+                    <div class="CentreColumn">
+                      <div class="barContainer">
+                        <div class="bar4"></div>
+                      </div>
+                    </div>
+                    <div class="EdgeColumn rightText">
+                      <div>63</div>
+                    </div>
+                    <div class="EdgeColumn">
+                      <div>3 star</div>
+                    </div>
+                    <div class="CentreColumn">
+                      <div class="barContainer">
+                        <div class="bar3"></div>
+                      </div>
+                    </div>
+                    <div class="EdgeColumn rightText">
+                      <div>15</div>
+                    </div>
+                    <div class="EdgeColumn">
+                      <div>2 star</div>
+                    </div>
+                    <div class="CentreColumn">
+                      <div class="barContainer">
+                        <div class="bar2"></div>
+                      </div>
+                    </div>
+                    <div class="EdgeColumn rightText">
+                      <div>6</div>
+                    </div>
+                    <div class="EdgeColumn">
+                      <div>1 star</div>
+                    </div>
+                    <div class="CentreColumn">
+                      <div class="barContainer">
+                        <div class="bar1"></div>
+                      </div>
+                    </div>
+                    <div class="EdgeColumn rightText">
+                      <div>20</div>
+                    </div>
+                  </div>
+                </div>
+              </span>
+              <span class="wishlist rightCompartmentInner">
+                <i class="fa-regular fa-heart wishlistInner" id="heartWishlist" onclick="wishlistHeartToggleFunction(this)"></i>
+                <!-- <i class="fa-solid fa-heart wishlistInner"></i> -->
+              </span>
+              <span class="share rightCompartmentInner shareIcon">
+                <!-- <i class="fa-solid fa-share-from-square"></i> -->
+                <i class="fa-regular fa-share-from-square" id="shareItem"></i>
+              </span>
+            </div>
+          </div>
+          <img src="/Images/Verrification/rugged-verified-high-resolution-color-logo-slim.png" alt="..." class="RuggedVerified">
+          <p class="card-text">Some quick example text ...</p>
+        </div>
+
+        <div class="jumbotron">
+          <span class="pcVrtpriceCOmplete">
+            <div class="pcVrtOriginalPrice"><s>₹5000</s></div>
+            <div class="pcVrtPrice">₹2500 M.R.P</div>
+          </span>
+          <span class="pcVrtDiscount">50% off</span>
+        </div>
+      </div>
+      <div class="card totalCard" style="width: 16rem; height:28rem">
+        <div data-bs-theme="dark">
+          <div id="carouselExampleRide" class="carousel slide" data-bs-ride="false">
+            <div class="carousel-inner myCarousel">
+              <div class="carousel-item active">
+                <img src="/Images/ProductImages/Rucksack1/image1.jpg" width="100%" height="250px" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="/Images/ProductImages/Rucksack1/image2.jpg" width="100%" height="250px" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="/Images/ProductImages/Rucksack1/image3.jpg" width="100%" height="250px" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="/Images/ProductImages/Rucksack1/image4.jpg" width="100%" height="250px" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="/Images/ProductImages/Rucksack1/image5.jpg" width="100%" height="250px" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="/Images/ProductImages/Rucksack1/image6.jpg" width="100%" height="250px" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item">
+                <video src="/Images/ProductImages/Rucksack1/video1.mp4" width="100%" height="250px" controls muted loop autoplay>This browser does not support HTML video.</video>
+              </div>
+            </div>
+            <button class="carousel-control-prev carouselButton" type="button" data-bs-target="#carouselExampleRide" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="false"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next carouselButton" type="button" data-bs-target="#carouselExampleRide" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="false"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="cardBodyHead">
+            <h5 class="card-title myCardTitle"><a href="/productPage" class="cardTitleInner">RuckSack</a></h5>
+            <div class="rightCompartment ">
+              <span class="starsRatingGreen rightCompartmentInner popupRating" onclick="popupRatingFunction()">3.8
+                <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMyIgaGVpZ2h0PSIxMiI+PHBhdGggZmlsbD0iI0ZGRiIgZD0iTTYuNSA5LjQzOWwtMy42NzQgMi4yMy45NC00LjI2LTMuMjEtMi44ODMgNC4yNTQtLjQwNEw2LjUuMTEybDEuNjkgNC4wMSA0LjI1NC40MDQtMy4yMSAyLjg4Mi45NCA0LjI2eiIvPjwvc3ZnPg==" class="innerStars">
+                <div class="popupContent" id="popupUserRating">
+                  <span class="heading">User Rating</span>
+                  <div class="row UserRatingGrid">
+                    <div class="EdgeColumn">
+                      <div>5 star</div>
+                    </div>
+                    <div class="CentreColumn">
+                      <div class="barContainer">
+                        <div class="bar5"></div>
+                      </div>
+                    </div>
+                    <div class="EdgeColumn rightText">
+                      <div>150</div>
+                    </div>
+                    <div class="EdgeColumn">
+                      <div>4 star</div>
+                    </div>
+                    <div class="CentreColumn">
+                      <div class="barContainer">
+                        <div class="bar4"></div>
+                      </div>
+                    </div>
+                    <div class="EdgeColumn rightText">
+                      <div>63</div>
+                    </div>
+                    <div class="EdgeColumn">
+                      <div>3 star</div>
+                    </div>
+                    <div class="CentreColumn">
+                      <div class="barContainer">
+                        <div class="bar3"></div>
+                      </div>
+                    </div>
+                    <div class="EdgeColumn rightText">
+                      <div>15</div>
+                    </div>
+                    <div class="EdgeColumn">
+                      <div>2 star</div>
+                    </div>
+                    <div class="CentreColumn">
+                      <div class="barContainer">
+                        <div class="bar2"></div>
+                      </div>
+                    </div>
+                    <div class="EdgeColumn rightText">
+                      <div>6</div>
+                    </div>
+                    <div class="EdgeColumn">
+                      <div>1 star</div>
+                    </div>
+                    <div class="CentreColumn">
+                      <div class="barContainer">
+                        <div class="bar1"></div>
+                      </div>
+                    </div>
+                    <div class="EdgeColumn rightText">
+                      <div>20</div>
+                    </div>
+                  </div>
+                </div>
+              </span>
+              <span class="wishlist rightCompartmentInner">
+                <i class="fa-regular fa-heart wishlistInner" id="heartWishlist" onclick="wishlistHeartToggleFunction(this)"></i>
+                <!-- <i class="fa-solid fa-heart wishlistInner"></i> -->
+              </span>
+              <span class="share rightCompartmentInner shareIcon">
+                <!-- <i class="fa-solid fa-share-from-square"></i> -->
+                <i class="fa-regular fa-share-from-square" id="shareItem"></i>
+              </span>
+            </div>
+          </div>
+          <img src="/Images/Verrification/rugged-verified-high-resolution-color-logo-slim.png" alt="..." class="RuggedVerified">
+          <p class="card-text">Some quick example text ...</p>
+        </div>
+
+        <div class="jumbotron">
+          <span class="pcVrtpriceCOmplete">
+            <div class="pcVrtOriginalPrice"><s>₹5000</s></div>
+            <div class="pcVrtPrice">₹2500 M.R.P</div>
+          </span>
+          <span class="pcVrtDiscount">50% off</span>
+        </div>
+      </div>
+      <div class="card totalCard" style="width: 16rem; height:28rem">
+        <div data-bs-theme="dark">
+          <div id="carouselExampleRide" class="carousel slide" data-bs-ride="false">
+            <div class="carousel-inner myCarousel">
+              <div class="carousel-item active">
+                <img src="/Images/ProductImages/Rucksack1/image1.jpg" width="100%" height="250px" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="/Images/ProductImages/Rucksack1/image2.jpg" width="100%" height="250px" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="/Images/ProductImages/Rucksack1/image3.jpg" width="100%" height="250px" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="/Images/ProductImages/Rucksack1/image4.jpg" width="100%" height="250px" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="/Images/ProductImages/Rucksack1/image5.jpg" width="100%" height="250px" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="/Images/ProductImages/Rucksack1/image6.jpg" width="100%" height="250px" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item">
+                <video src="/Images/ProductImages/Rucksack1/video1.mp4" width="100%" height="250px" controls muted loop autoplay>This browser does not support HTML video.</video>
+              </div>
+            </div>
+            <button class="carousel-control-prev carouselButton" type="button" data-bs-target="#carouselExampleRide" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="false"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next carouselButton" type="button" data-bs-target="#carouselExampleRide" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="false"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="cardBodyHead">
+            <h5 class="card-title myCardTitle"><a href="/productPage" class="cardTitleInner">RuckSack</a></h5>
+            <div class="rightCompartment ">
+              <span class="starsRatingGreen rightCompartmentInner popupRating" onclick="popupRatingFunction()">3.8
+                <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMyIgaGVpZ2h0PSIxMiI+PHBhdGggZmlsbD0iI0ZGRiIgZD0iTTYuNSA5LjQzOWwtMy42NzQgMi4yMy45NC00LjI2LTMuMjEtMi44ODMgNC4yNTQtLjQwNEw2LjUuMTEybDEuNjkgNC4wMSA0LjI1NC40MDQtMy4yMSAyLjg4Mi45NCA0LjI2eiIvPjwvc3ZnPg==" class="innerStars">
+                <div class="popupContent" id="popupUserRating">
+                  <span class="heading">User Rating</span>
+                  <div class="row UserRatingGrid">
+                    <div class="EdgeColumn">
+                      <div>5 star</div>
+                    </div>
+                    <div class="CentreColumn">
+                      <div class="barContainer">
+                        <div class="bar5"></div>
+                      </div>
+                    </div>
+                    <div class="EdgeColumn rightText">
+                      <div>150</div>
+                    </div>
+                    <div class="EdgeColumn">
+                      <div>4 star</div>
+                    </div>
+                    <div class="CentreColumn">
+                      <div class="barContainer">
+                        <div class="bar4"></div>
+                      </div>
+                    </div>
+                    <div class="EdgeColumn rightText">
+                      <div>63</div>
+                    </div>
+                    <div class="EdgeColumn">
+                      <div>3 star</div>
+                    </div>
+                    <div class="CentreColumn">
+                      <div class="barContainer">
+                        <div class="bar3"></div>
+                      </div>
+                    </div>
+                    <div class="EdgeColumn rightText">
+                      <div>15</div>
+                    </div>
+                    <div class="EdgeColumn">
+                      <div>2 star</div>
+                    </div>
+                    <div class="CentreColumn">
+                      <div class="barContainer">
+                        <div class="bar2"></div>
+                      </div>
+                    </div>
+                    <div class="EdgeColumn rightText">
+                      <div>6</div>
+                    </div>
+                    <div class="EdgeColumn">
+                      <div>1 star</div>
+                    </div>
+                    <div class="CentreColumn">
+                      <div class="barContainer">
+                        <div class="bar1"></div>
+                      </div>
+                    </div>
+                    <div class="EdgeColumn rightText">
+                      <div>20</div>
+                    </div>
+                  </div>
+                </div>
+              </span>
+              <span class="wishlist rightCompartmentInner">
+                <i class="fa-regular fa-heart wishlistInner" id="heartWishlist" onclick="wishlistHeartToggleFunction(this)"></i>
+                <!-- <i class="fa-solid fa-heart wishlistInner"></i> -->
+              </span>
+              <span class="share rightCompartmentInner shareIcon">
+                <!-- <i class="fa-solid fa-share-from-square"></i> -->
+                <i class="fa-regular fa-share-from-square" id="shareItem"></i>
+              </span>
+            </div>
+          </div>
+          <img src="/Images/Verrification/rugged-verified-high-resolution-color-logo-slim.png" alt="..." class="RuggedVerified">
+          <p class="card-text">Some quick example text ...</p>
+        </div>
+
+        <div class="jumbotron">
+          <span class="pcVrtpriceCOmplete">
+            <div class="pcVrtOriginalPrice"><s>₹5000</s></div>
+            <div class="pcVrtPrice">₹2500 M.R.P</div>
+          </span>
           <span class="pcVrtDiscount">50% off</span>
         </div>
       </div>
@@ -1426,10 +1590,46 @@
       </li>
     </ul>
   </nav>
+  <!-- jQuery-->
+  <!-- <script src="https://d19m59y37dris4.cloudfront.net/sell/2-0-1/vendor/jquery/jquery.min.js"></script> -->
+  <!-- Bootstrap JavaScript Bundle (Popper.js included)-->
+  <!-- <script src="https://d19m59y37dris4.cloudfront.net/sell/2-0-1/vendor/bootstrap/js/bootstrap.bundle.min.js"></script> -->
+<script src="../public/js/PriceSlider.js"></script>
+  <script>
+    var snapSlider = document.getElementById('slider-snap');
+
+    noUiSlider.create(snapSlider, {
+      start: [40, 110],
+      snap: false,
+      connect: true,
+      step: 1,
+      range: {
+        'min': 0,
+        'max': 250
+      }
+    });
+    var snapValues = [
+      document.getElementById('slider-snap-value-lower'),
+      document.getElementById('slider-snap-value-upper')
+    ];
+    var inputValues = [
+      document.getElementById('slider-snap-input-lower'),
+      document.getElementById('slider-snap-input-upper')
+    ];
+    snapSlider.noUiSlider.on('update', function(values, handle) {
+      snapValues[handle].innerHTML = values[handle];
+    });
+
+    snapSlider.noUiSlider.on('change', function(values, handle) {
+      inputValues[handle].value = values[handle];
+    });
+  </script>
+
   <script src="js/script.js"></script>
   <script src="/public/js/productSearchPageJS.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD" crossorigin="anonymous"></script>
+
 </body>
 
 </html>
