@@ -15,15 +15,15 @@
 			<h3>
 				Looking for more information you can sublmit your details here along with the query, our support team will contact you as soon as possible.
 			</h3>
-			<form>
-				<label for="name">Name:</label>
-				<input type="text" id="name" name="name" required>
+			<form id="contactForm" action ="/index.ejs">
+				<label for="name" id="namelabel">Name:</label>
+				<input type="text" id="name" name="name" onkeyup="validatefirstname()" required>
 
-				<label for="email">Email:</label>
-				<input type="email" id="email" name="email" required>
+				<label for="email" id="emaillabel">Email:</label>
+				<input type="email" id="email" name="email" onkeyup="validateEmail()" required>
 				
-				<label for="phn">Phn:</label>
-				<input type="text" id="phn" name="phn" required>
+				<label for="phn" id="phnlabel">Phn:</label>
+				<input type="text" id="phn" name="phn" onkeyup="validateMobileNumber()" required>
 
 				<label for="description">Description:</label>
 				<textarea id="description" name="description" maxlength="250"></textarea>
@@ -32,5 +32,7 @@
 			</form>
 		</div>
 	</div>
+	<script src="/js/contactForm.js"></script>
 </body>
+<a href="/">Go Back</a>
 </html>
