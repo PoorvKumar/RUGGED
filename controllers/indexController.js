@@ -24,7 +24,7 @@ exports.getLandingpage=(req,res,next)=>{
                     prod:products3
                 })
             }
-
+            
     })
     .catch(err=>{
         console.log(err)
@@ -37,6 +37,4 @@ exports.getLandingpage=(req,res,next)=>{
     .catch(err=>{
         console.log(err)
     })
-
-      
 }
