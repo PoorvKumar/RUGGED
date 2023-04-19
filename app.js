@@ -38,6 +38,8 @@ const authRoutes=require('./routes/authRoute');
 const indexRoutes=require('./routes/indexRoutes');
 const searchRoute=require("./routes/searchRoute");
 const productRoutes=require("./routes/productRoutes");
+const filteringRoute = require("./routes/filterRoute");
+
 // app.use('/index', (req, res, next) => {
 //   res.render('index.ejs');
 // })
@@ -208,6 +210,11 @@ app.use(productRoutes);
 
 //Search Route
 app.use(searchRoute);
+
+
+// Filters Route
+app.use(filteringRoute);
+
 
 //----------------------------
 mongoose

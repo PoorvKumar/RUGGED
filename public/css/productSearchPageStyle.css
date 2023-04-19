@@ -16,7 +16,7 @@ body{
   justify-content: flex-start;
   padding: 1%;
   margin-top: 1% !important;
-  background-color: white;
+  /* background-color: white; */
   max-height: max-content;
 }
 .filtersHeadingText{
@@ -61,7 +61,7 @@ body{
 }
 
 .accordion {
-  background-color: #eee;
+  background-color: transparent;
   color: #444;
   cursor: pointer;
   padding: 18px;
@@ -92,7 +92,7 @@ body{
 
 .panel {
   padding: 0 18px;
-  background-color: white;
+  background-color: transparent;
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.2s ease-out;

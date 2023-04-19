@@ -22,11 +22,14 @@
   <title>Search page</title>
 </head>
 <div id="overlay" onclick="overlayOff()"></div>
-<!--overlay entire page whenever needed-->
 
 <body>
   <header>
+    <% if (isLoggedin){ %>
+    <%- include('partials/Navbars/nav1.ejs',{user:user}) %>
+    <% }else{ %>
     <%- include('partials/Navbars/nav1.ejs') %>
+    <% } %>
     <%- include('partials/Navbars/nav2.ejs') %>
     <%- include('partials/Navbars/nav3.ejs') %>
   </header>
@@ -43,199 +46,192 @@
         <p class="filtersCategoriesText"> Portable Computer Bags & Sleeves</p>
         <p class="filtersCategoriesText"> Laptop Backpacks</p>
       </div>
-      <button class="accordion">Customer Rating</button>
-      <div class="panel">
-        <div class="customerRating">
-          <div class="form-check starSelection">
-            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault5">
-            <label class="form-check-label" for="flexRadioDefault5">
-              5★ & above
-            </label>
-          </div>
-          <div class="form-check starSelection">
-            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault4">
-            <label class="form-check-label" for="flexRadioDefault4">
-              4★ & above
-            </label>
-          </div>
-          <div class="form-check starSelection">
-            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3">
-            <label class="form-check-label" for="flexRadioDefault3">
-              3★ & above
-            </label>
-          </div>
-          <div class="form-check starSelection">
-            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
-            <label class="form-check-label" for="flexRadioDefault2">
-              2★ & above
-            </label>
-          </div>
-          <div class="form-check starSelection">
-            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-            <label class="form-check-label" for="flexRadioDefault1">
-              1★ & above
-            </label>
+      <form action="/filterCustomerRating" method="get">
+        <button type="submit" class="btn btn-secondary">Apply filters</button>
+        <div class="accordion">Customer Rating</div>
+        <div class="panel">
+          <div class="customerRating">
+            <div class="form-check starSelection">
+              <input class="form-check-input" type="radio" name="customerRating" id="5stars" value="5"><label class="form-check-label" for="5stars"> 5★ & above</label>
+            </div>
+            <div class="form-check starSelection">
+              <input class="form-check-input" type="radio" name="customerRating" id="4stars" value="4"><label class="form-check-label" for="4stars"> 4★ & above</label>
+            </div>
+            <div class="form-check starSelection">
+              <input class="form-check-input" type="radio" name="customerRating" id="3stars" value="3"><label class="form-check-label" for="3stars"> 3★ & above</label>
+            </div>
+            <div class="form-check starSelection">
+              <input class="form-check-input" type="radio" name="customerRating" id="2stars" value="2"><label class="form-check-label" for="2stars"> 2★ & above</label>
+            </div>
+            <div class="form-check starSelection">
+              <input class="form-check-input" type="radio" name="customerRating" id="1stars" value="1"><label class="form-check-label" for="1stars"> 1★ & above</label>
+            </div>
+            <div class="form-check starSelection">
+              <input class="form-check-input" type="radio" name="customerRating" id="0stars" value="0"><label class="form-check-label" for="0stars"> 0★ & above</label>
+            </div>
           </div>
         </div>
-      </div>
-      <button class="accordion">Brands</button>
-      <div class="panel">
-        <div class="form-check">
-          <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-          <label class="form-check-label" for="defaultCheck1">
-            Brand1
-          </label>
-        </div>
-        <div class="form-check">
-          <input class="form-check-input" type="checkbox" value="" id="defaultCheck2">
-          <label class="form-check-label" for="defaultCheck2">
-            Brand2
-          </label>
-        </div>
-        <div class="form-check">
-          <input class="form-check-input" type="checkbox" value="" id="defaultCheck3">
-          <label class="form-check-label" for="defaultCheck3">
-            Brand3
-          </label>
-        </div>
-        <div class="form-check">
-          <input class="form-check-input" type="checkbox" value="" id="defaultCheck4">
-          <label class="form-check-label" for="defaultCheck4">
-            Brand4
-          </label>
-        </div>
-        <div class="form-check">
-          <input class="form-check-input" type="checkbox" value="" id="defaultCheck5">
-          <label class="form-check-label" for="defaultCheck5">
-            Brand5
-          </label>
-        </div>
-        <div class="form-check">
-          <input class="form-check-input" type="checkbox" value="" id="defaultCheck6">
-          <label class="form-check-label" for="defaultCheck6">
-            Brand6
-          </label>
-        </div>
-        <div class="form-check">
-          <input class="form-check-input" type="checkbox" value="" id="defaultCheck7">
-          <label class="form-check-label" for="defaultCheck7">
-            Brand7
-          </label>
-        </div>
-        <div class="form-check">
-          <input class="form-check-input" type="checkbox" value="" id="defaultCheck8">
-          <label class="form-check-label" for="defaultCheck8">
-            Brand8
-          </label>
-        </div>
+        <div class="accordion">Brands</div>
+        <div class="panel">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="Brand1" name="brandSelected" id="defaultCheck1">
+            <label class="form-check-label" for="defaultCheck1">
+              Brand1
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="Brand2" name="brandSelected" id="defaultCheck2">
+            <label class="form-check-label" for="defaultCheck2">
+              Brand2
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="Brand3" name="brandSelected" id="defaultCheck3">
+            <label class="form-check-label" for="defaultCheck3">
+              Brand3
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="Brand4" name="brandSelected" id="defaultCheck4">
+            <label class="form-check-label" for="defaultCheck4">
+              Brand4
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="Brand5" name="brandSelected" id="defaultCheck5">
+            <label class="form-check-label" for="defaultCheck5">
+              Brand5
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="Brand6" name="brandSelected" id="defaultCheck6">
+            <label class="form-check-label" for="defaultCheck6">
+              Brand6
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="Brand7" name="brandSelected" id="defaultCheck7">
+            <label class="form-check-label" for="defaultCheck7">
+              Brand7
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="Brand8" name="brandSelected" id="defaultCheck8">
+            <label class="form-check-label" for="defaultCheck8">
+              Brand8
+            </label>
+          </div>
 
-      </div>
-      <button class="accordion">Offers</button>
-      <div class="panel">
-        <div class="form-check">
-          <input class="form-check-input" type="checkbox" value="" id="offerCheck1">
-          <label class="form-check-label" for="OfferCheck1">
-            Buy More Save More
-          </label>
         </div>
-        <div class="form-check">
-          <input class="form-check-input" type="checkbox" value="" id="offerCheck2">
-          <label class="form-check-label" for="OfferCheck2">
-            More than 50% off
-          </label>
-        </div>
-        <div class="form-check">
-          <input class="form-check-input" type="checkbox" value="" id="offerCheck3">
-          <label class="form-check-label" for="OfferCheck3">
-            TOday's special deals
-          </label>
-        </div>
-        <div class="form-check">
-          <input class="form-check-input" type="checkbox" value="" id="offerCheck4">
-          <label class="form-check-label" for="OfferCheck4">
-            Promoted by Influencers
-          </label>
-        </div>
-        <div class="form-check">
-          <input class="form-check-input" type="checkbox" value="" id="offerCheck5">
-          <label class="form-check-label" for="OfferCheck5">
-            Bulk Orders
-          </label>
-        </div>
-      </div>
-      <button class="accordion">Price</button>
-      <div class="panel">
-        <a class="d-lg-none block-toggler" data-bs-toggle="collapse" href="#priceFilterMenu" aria-expanded="false" aria-controls="priceFilterMenu">
-          Filter by price
-        </a>
-        <div class="expand-lg collapse" id="priceFilterMenu">
-          <h6 class="sidebar-heading d-none d-lg-block"></h6>
-          <div class="mt-4 mt-lg-0 noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" id="slider-snap">
+        <div class="accordion">Offers</div>
+        <div class="panel">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="offer1" id="offerCheck1" name="offerSelected">
+            <label class="form-check-label" for="OfferCheck1">
+              Buy More Save More
+            </label>
           </div>
-          <div class="nouislider-values">
-            <div class="min">From $<span id="slider-snap-value-lower">40.00</span></div>
-            <div class="max">To $<span id="slider-snap-value-upper">110.00</span></div>
-            <input class="slider-snap-input" type="hidden" name="pricefrom" id="slider-snap-input-lower" value="40">
-            <input class="slider-snap-input" type="hidden" name="priceto" id="slider-snap-input-upper" value="110">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="offer2" id="offerCheck2" name="offerSelected">
+            <label class="form-check-label" for="OfferCheck2">
+              More than 50% off
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="offer3" id="offerCheck3" name="offerSelected">
+            <label class="form-check-label" for="OfferCheck3">
+              TOday's special deals
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="offer4" id="offerCheck4" name="offerSelected">
+            <label class="form-check-label" for="OfferCheck4">
+              Promoted by Influencers
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="offer5" id="offerCheck5" name="offerSelected">
+            <label class="form-check-label" for="OfferCheck5">
+              Bulk Orders
+            </label>
           </div>
         </div>
-      </div>
-      <button class="accordion">Influencers Choice</button>
-      <div class="panel">
-        <div class="form-check">
-          <input class="form-check-input" type="checkbox" value="" id="InfluencersChoice">
-          <label class="form-check-label" for="InfluencersChoice">
-            Influencers Choice
-          </label>
-        </div>
-      </div>
-      <button class="accordion">Rugged Verified</button>
-      <div class="panel">
-        <div class="form-check">
-          <input class="form-check-input" type="checkbox" value="" id="RuggedVerrified">
-          <label class="form-check-label" for="RuggedVerrified">
-            Include only Rugged Verrified
-          </label>
-        </div>
-      </div>
-      <button class="accordion">Colour</button>
-      <div class="panel"><a class="d-lg-none block-toggler" data-bs-toggle="collapse" href="#colourFilterMenu" aria-expanded="false" aria-controls="colourFilterMenu">Filter by colour</a>
-        <div class="expand-lg collapse" id="colourFilterMenu">
-          <h6 class="sidebar-heading d-none d-lg-block"></h6>
-          <div class="mt-4 mt-lg-0">
-            <ul class="list-inline mb-0 colours-wrapper">
-              <li class="list-inline-item">
-                <label class="btn-colour" for="colour_sidebar_Blue" style="background-color: #668cb9" data-allow-multiple=""> </label>
-                <input class="visually-hidden" type="checkbox" name="colour" value="value_sidebar_Blue" id="colour_sidebar_Blue">
-              </li>
-              <li class="list-inline-item">
-                <label class="btn-colour" for="colour_sidebar_White" style="background-color: #fff" data-allow-multiple=""> </label>
-                <input class="visually-hidden" type="checkbox" name="colour" value="value_sidebar_White" id="colour_sidebar_White">
-              </li>
-              <li class="list-inline-item">
-                <label class="btn-colour" for="colour_sidebar_Violet" style="background-color: #8b6ea4" data-allow-multiple=""> </label>
-                <input class="visually-hidden" type="checkbox" name="colour" value="value_sidebar_Violet" id="colour_sidebar_Violet">
-              </li>
-              <li class="list-inline-item">
-                <label class="btn-colour" for="colour_sidebar_Red" style="background-color: #dd6265" data-allow-multiple=""> </label>
-                <input class="visually-hidden" type="checkbox" name="colour" value="value_sidebar_Red" id="colour_sidebar_Red">
-              </li>
-            </ul>
+        <div class="accordion">Price</div>
+        <div class="panel">
+          <a class="d-lg-none block-toggler" data-bs-toggle="collapse" href="#priceFilterMenu" aria-expanded="false" aria-controls="priceFilterMenu">
+            Filter by price
+          </a>
+          <div class="expand-lg collapse" id="priceFilterMenu">
+            <h6 class="sidebar-heading d-none d-lg-block"></h6>
+            <div class="mt-4 mt-lg-0 noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" id="slider-snap">
+            </div>
+            <div class="nouislider-values">
+              <div class="min">From $<span id="slider-snap-value-lower">40.00</span></div>
+              <div class="max">To $<span id="slider-snap-value-upper">110.00</span></div>
+              <input class="slider-snap-input" type="hidden" name="pricefrom" id="slider-snap-input-lower" value="40">
+              <input class="slider-snap-input" type="hidden" name="priceto" id="slider-snap-input-upper" value="110">
+            </div>
           </div>
         </div>
-      </div>
-      <button class="accordion">Availability</button>
-      <div class="panel">
-        <div class="form-check">
-          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-          <label class="form-check-label" for="flexCheckDefault">
-            Include out of Stock
-          </label>
+        <div class="accordion">Influencers Choice</div>
+        <div class="panel">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" name="InfluencersChoice" id="InfluencersChoice">
+            <label class="form-check-label" for="InfluencersChoice">
+              Influencers Choice
+            </label>
+          </div>
         </div>
-      </div>
+        <div class="accordion">Rugged Verified</div>
+        <div class="panel">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="RuggedVerrified" name="RuggedVerrified">
+            <label class="form-check-label" for="RuggedVerrified">
+              Include only Rugged Verrified
+            </label>
+          </div>
+        </div>
+        <div class="accordion">Colour</div>
+        <div class="panel"><a class="d-lg-none block-toggler" data-bs-toggle="collapse" href="#colourFilterMenu" aria-expanded="false" aria-controls="colourFilterMenu">Filter by colour</a>
+          <div class="expand-lg collapse" id="colourFilterMenu">
+            <h6 class="sidebar-heading d-none d-lg-block"></h6>
+            <div class="mt-4 mt-lg-0">
+              <ul class="list-inline mb-0 colours-wrapper">
+                <li class="list-inline-item">
+                  <label class="btn-colour" for="colour_sidebar_Blue" style="background-color: #668cb9" data-allow-multiple=""> </label>
+                  <input class="visually-hidden" type="checkbox" name="colour" value="blue" id="colour_sidebar_Blue">
+                </li>
+                <li class="list-inline-item">
+                  <label class="btn-colour" for="colour_sidebar_White" style="background-color: #fff" data-allow-multiple=""> </label>
+                  <input class="visually-hidden" type="checkbox" name="colour" value="white" id="colour_sidebar_White">
+                </li>
+                <li class="list-inline-item">
+                  <label class="btn-colour" for="colour_sidebar_Violet" style="background-color: #8b6ea4" data-allow-multiple=""> </label>
+                  <input class="visually-hidden" type="checkbox" name="colour" value="violet" id="colour_sidebar_Violet">
+                </li>
+                <li class="list-inline-item">
+                  <label class="btn-colour" for="colour_sidebar_Red" style="background-color: #dd6265" data-allow-multiple=""> </label>
+                  <input class="visually-hidden" type="checkbox" name="colour" value="red" id="colour_sidebar_Red">
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="accordion">Availability</div>
+        <div class="panel">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" name="availability" id="flexCheckDefault">
+            <label class="form-check-label" for="flexCheckDefault">
+              Include out of Stock
+            </label>
+          </div>
+        </div>
+      </form>
     </div>
     <div class="mainContent col-9">
-      <%- include('partials/productCard.ejs') %>
+      <% for( let index = 0; index < productsData.length; index++ ) { %>
+      <%- include('partials/productCardSearch.ejs',{productData:productsData[index]}) %>
+      <% } %>
     </div>
     <nav aria-label="Page navigation example">
   </div>
