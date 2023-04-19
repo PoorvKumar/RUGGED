@@ -48,6 +48,7 @@
       </div>
       <form action="/filterCustomerRating" method="get">
         <button type="submit" class="btn btn-secondary">Apply filters</button>
+        <input type="hidden" name="q" value="<%=searchTerm %>">
         <div class="accordion">Customer Rating</div>
         <div class="panel">
           <div class="customerRating">
@@ -166,10 +167,10 @@
             <div class="mt-4 mt-lg-0 noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" id="slider-snap">
             </div>
             <div class="nouislider-values">
-              <div class="min">From $<span id="slider-snap-value-lower">40.00</span></div>
-              <div class="max">To $<span id="slider-snap-value-upper">110.00</span></div>
-              <input class="slider-snap-input" type="hidden" name="pricefrom" id="slider-snap-input-lower" value="40">
-              <input class="slider-snap-input" type="hidden" name="priceto" id="slider-snap-input-upper" value="110">
+              <div class="min">From $<span id="slider-snap-value-lower">0.00</span></div>
+              <div class="max">To $<span id="slider-snap-value-upper">50000.00</span></div>
+              <input class="slider-snap-input" type="hidden" name="pricefrom" id="slider-snap-input-lower" value="0">
+              <input class="slider-snap-input" type="hidden" name="priceto" id="slider-snap-input-upper" value="50000">
             </div>
           </div>
         </div>
@@ -255,13 +256,13 @@
     var snapSlider = document.getElementById('slider-snap');
 
     noUiSlider.create(snapSlider, {
-      start: [40, 1105],
+      start: [0, 50000],
       snap: false,
       connect: true,
       step: 1,
       range: {
         'min': 0,
-        'max': 2500
+        'max': 50000
       }
     });
     var snapValues = [
