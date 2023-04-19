@@ -1,1 +1,25 @@
 signup in login page
+search product(almost done) filter product , product page ejs
+cart wishlist
+order & returns 
+influencer blogPost
+user rating div change to bootstrap dropdown with grid
+review system -> customer influencer
+seller model && statistics (nowe Table data && total earning) charts later 
+influencer dashboard -> 
+
+middleware for user/influencer seller dashboard like login 
+
+routes for other pages in controller
+
+Core Funciton -> Search , Filter , Order Return Add to cart/wishlist remove from cart/wishlist 
+
+USE CASES -> user (login signup , update , delete) wishlist cart search filter (CRUD)
+          -> influencer
+          -> seller 
+          -> admin
+
+//if(time_permits)
+//{
+//    //admin dashboard
+//}

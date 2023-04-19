@@ -6,35 +6,21 @@ exports.getAddProduct = (req, res, next) => {
     });
   };
  exports.postAddProduct = (req, res, next) => {
-    const name = req.body.name;
-    const price = req.body.price;
-    const description = req.body.description;
-    const discount = req.body.discount;
-    const company = req.body.company;
-    const dimension = req.body.dimension;
-    const weight = req.body.weight;
-    const colors = req.body.colors;
-    const brand = req.body.brand;
-    const tags = req.body.tags;
-    const categories = req.body.categories;
-    const photos = req.body.imageurl;
-    const table = req.body.table;
-    const quantity = req.body.quantity;
     const product = new Product({
-      name:name,
-      price:price,
-      description:description,
-      discount:discount,
-      company:company,
-      dimension:dimension,
-      weight:weight,
-      colors:colors,
-      brand:brand,
-      tags:tags,
-      categories:categories,
-      photos:photos,
-      table:table,
-      quantity:quantity
+      name:req.body.name,
+      price:req.body.price,
+      description:req.body.description,
+      discount:req.body.discount,
+      company:req.body.company,
+      dimension:req.body.dimension,
+      weight:req.body.weight,
+      colors:req.body.colors,
+      brand:req.body.brand,
+      tags:req.body.tags,
+      categories:req.body.categories,
+      photos:req.body.imageurl,
+      table:req.body.table,
+      quantity:req.body.quantity
       });
     product
       .save()
