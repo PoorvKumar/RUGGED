@@ -57,7 +57,6 @@ exports.getSignup = (req, res, next) => {
 exports.postSignup = (req, res, next) => {
   firstname = req.body.First;
   lastname = req.body.Last;
-  username = firstname + " " + lastname;
   phone = req.body.Phone;
   email = req.body.email;
   password = req.body.password;
@@ -72,7 +71,8 @@ exports.postSignup = (req, res, next) => {
         .hash(password, 13)
         .then((pass) => {
           const person = new user({
-            name: username,
+            firstname: firstname,
+            lastname: lastname,
             phoneno: phone,
             email: email,
             password: pass,
