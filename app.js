@@ -37,6 +37,7 @@ const userRoutes = require("./routes/userRoutes");
 const authRoutes=require('./routes/authRoute');
 const indexRoutes=require('./routes/indexRoutes');
 const searchRoute=require("./routes/searchRoute");
+const productRoutes=require("./routes/productRoutes");
 // app.use('/index', (req, res, next) => {
 //   res.render('index.ejs');
 // })
@@ -203,6 +204,7 @@ app.use(sellerRoutes);
 app.use(userRoutes);
 app.use(authRoutes);
 app.use(indexRoutes)
+app.use(productRoutes);
 
 //Search Route
 app.use(searchRoute);
