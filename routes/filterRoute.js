@@ -4,7 +4,9 @@ const router=express.Router();
 const Product=require("../models/product");
 
 router.get('/filterCustomerRating', (req, res) => {
-    const searchTerm = req.query.q;
+    // using search term and passing it ahead
+    const searchTerm = String(req.query.q);
+    console.log(searchTerm);
     // rating
     const customerRating = req.query.customerRating;
     // brands
@@ -23,11 +25,12 @@ router.get('/filterCustomerRating', (req, res) => {
     // available
     const avl = req.query.availability;
 
+
     Product.find({ name: { $regex: searchTerm, $options: 'i' }, })
         .then(products => {
             // res.json(products);
             console.log(products);
-            res.render('productSearchPage.ejs',{productsData:products, data:req.session.user,searchTerm:searchTerm,isLoggedin:false});
+            res.render('productSearchPage.ejs',{productsData:products, user:req.session.user,isLoggedin:req.session.isLoggedin,searchTerm:searchTerm});
         })
         .catch(err => {
             console.error(err);

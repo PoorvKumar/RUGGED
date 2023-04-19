@@ -8,7 +8,7 @@ exports.searchRes= (req, res) => {
         .then(products => {
             // res.json(products);
             // console.log(products);
-            res.render("productSearchPage",{ productsData:products , isLoggedin:req.session.isLoggedin , user:req.session.user  });
+            res.render("productSearchPage",{ productsData:products , isLoggedin:req.session.isLoggedin,user:req.session.user,searchTerm:searchTerm});
 
         })
         .catch(err => {
