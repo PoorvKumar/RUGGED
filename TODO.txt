@@ -19,6 +19,8 @@ USE CASES -> user (login signup , update , delete) wishlist cart search filter (
           -> seller 
           -> admin
 
+//Pagination for product search page
+
 //if(time_permits)
 //{
 //    //admin dashboard
