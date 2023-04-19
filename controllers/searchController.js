@@ -6,7 +6,8 @@ exports.searchRes= (req, res) => {
     // Query MongoDB for products matching the search term
     Product.find({ name: { $regex: searchTerm, $options: 'i' } })
         .then(products => {
-            res.json(products);
+            // res.json(products);
+            res.render("productSearchPage",{ products:products });
 
         })
         .catch(err => {
