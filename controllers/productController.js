@@ -12,6 +12,6 @@ exports.getProductInfo=(req,res)=>
             console.log(err);
         }
         //Render Product Page with Data
-        res.render('productPage',{ product:product , user:req.session.user , isLoggedin:req.session.isLogedin });
+        res.render('productPage',{ product:product , user:req.session.user , isLoggedin:req.session.isLoggedin });
     })
 }
