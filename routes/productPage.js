@@ -3,9 +3,9 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/productPage', function(req, res, next) {
-  const data=req.session.user
+  // const data=req.session.user
   if(data){
-  res.render('productPage',{data:data} );
+  res.render('productPage',{user:req.session.user , isLoggedin } );
 }
 else{
    const val={
