@@ -5,7 +5,8 @@ exports.getwishList=(req,res,next)=>{
         res.render('wishList',{
             product:products,
             pgTTL:'wishList',
-            isLoggedin:req.session.isLoggedin
+            isLoggedin:req.session.isLoggedin,
+            user:req.session.user
         })
     })
 }
