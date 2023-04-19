@@ -21,14 +21,14 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use(bodyparser.urlencoded({ extended: true }));
 
 //routing
-const sellerdashboardRoutes = require("./routes/sellerDashboardRoutes");
+// const sellerdashboardRoutes = require("./routes/sellerDashboardRoutes");
 const influencerBlogRoutes = require("./routes/blogPost");
 const wishlistroute = require("./routes/wishlist");
 const productPageRoutes = require("./routes/productPage");
 const productSearchPage = require("./routes/productSearchpage");
 const returnsOrderPage = require("./routes/returnsAndorder");
 const dashboardUserPage = require("./routes/dashboardUser");
-const sellerPortal = require("./routes/sellerPortal");
+// const sellerPortal = require("./routes/sellerPortal");
 const aboutus = require("./routes/aboutUsRoutes");
 const contactus = require("./routes/contactUs");
 const productcardcaro = require("./routes/productSearchPageCaro");
@@ -185,13 +185,13 @@ app.use(
 //using routes
 // app.use(index);
 app.use(influencerBlogRoutes);
-app.use(sellerdashboardRoutes);
+// app.use(sellerdashboardRoutes);
 app.use(dashboardUserPage);
-app.use(sellerPortal);
+// app.use(sellerPortal);
 app.use(productPageRoutes);
 app.use(productSearchPage);
 app.use(returnsOrderPage);
-app.use(wishlistroute);
+// app.use(wishlistroute);
 // app.use(login);
 // app.use(signup);
 // app.use(logout);
