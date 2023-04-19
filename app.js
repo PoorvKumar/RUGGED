@@ -29,7 +29,6 @@ const productSearchPage = require("./routes/productSearchpage");
 const returnsOrderPage = require("./routes/returnsAndorder");
 const dashboardUserPage = require("./routes/dashboardUser");
 const sellerPortal = require("./routes/sellerPortal");
-const index = require("./routes/index");
 const login = require("./routes/login");
 const signup = require("./routes/signup");
 const logout = require("./routes/logout");
