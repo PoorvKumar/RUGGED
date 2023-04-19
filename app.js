@@ -21,25 +21,17 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use(bodyparser.urlencoded({ extended: true }));
 
 //routing
-const sellerdashboardRoutes = require("./routes/sellerDashboardRoutes");
-const influencerBlogRoutes = require("./routes/blogPost");
-const wishlistroute = require("./routes/wishlist");
-const productPageRoutes = require("./routes/productPage");
-const productSearchPage = require("./routes/productSearchpage");
-const returnsOrderPage = require("./routes/returnsAndorder");
-const dashboardUserPage = require("./routes/dashboardUser");
-const sellerPortal = require("./routes/sellerPortal");
-const aboutus = require("./routes/aboutUsRoutes");
-const contactus = require("./routes/contactUs");
-const productcardcaro = require("./routes/productSearchPageCaro");
-const sellerRoutes = require("./routes/sellerRoutes");
-const userRoutes = require("./routes/userRoutes");
-const authRoutes=require('./routes/authRoute');
-const indexRoutes=require('./routes/indexRoutes');
-const searchRoute=require("./routes/searchRoute");
-const productRoutes=require("./routes/productRoutes");
+// const sellerdashboardRoutes = require("./routes/sellerDashboardRoutes");
+// const influencerBlogRoutes = require("./routes/blogPost");
+// const productPageRoutes = require("./routes/productPage");
+// const productSearchPage = require("./routes/productSearchpage");
+// const returnsOrderPage = require("./routes/returnsAndorder");
+// const dashboardUserPage = require("./routes/dashboardUser");
+// const sellerPortal = require("./routes/sellerPortal");
+// const aboutus = require("./routes/aboutUsRoutes");
+// const contactus = require("./routes/contactUs");
+// const productcardcaro = require("./routes/productSearchPageCaro");
 const filteringRoute = require("./routes/filterRoute");
-
 // app.use('/index', (req, res, next) => {
 //   res.render('index.ejs');
 // })
@@ -54,6 +46,14 @@ const filteringRoute = require("./routes/filterRoute");
 //     console.log("Connected to the SQLite database.");
 //   }
 // });
+
+// new Routes
+const sellerRoutes = require("./routes/sellerRoutes");
+const userRoutes = require("./routes/userRoutes");
+const authRoutes=require('./routes/authRoute');
+const indexRoutes=require('./routes/indexRoutes');
+const searchRoute=require("./routes/searchRoute");
+const productRoutes=require("./routes/productRoutes");
 
 app.use(
   session({
@@ -186,20 +186,20 @@ app.use(
 // });
 //using routes
 // app.use(index);
-app.use(influencerBlogRoutes);
-app.use(sellerdashboardRoutes);
-app.use(dashboardUserPage);
-app.use(sellerPortal);
-app.use(productPageRoutes);
-app.use(productSearchPage);
-app.use(returnsOrderPage);
-app.use(wishlistroute);
+// app.use(influencerBlogRoutes);
+// app.use(sellerdashboardRoutes);
+// app.use(dashboardUserPage);
+// app.use(sellerPortal);
+// app.use(productPageRoutes);
+// app.use(productSearchPage);
+// app.use(returnsOrderPage);
+// app.use(wishlistroute);
 // app.use(login);
 // app.use(signup);
 // app.use(logout);
-app.use(aboutus);
-app.use(contactus);
-app.use(productcardcaro);
+// app.use(aboutus);
+// app.use(contactus);
+// app.use(productcardcaro);
 
 // -----NewRoutes-------------
 app.use(sellerRoutes);

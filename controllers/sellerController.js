@@ -47,3 +47,15 @@ exports.getAddProduct = (req, res, next) => {
         console.log(err);
       });
   };
+  exports.getsellerdashBoard=(req,res,next)=>{
+    res.render('sellerDashboard',{
+      pageTitle:'SellerDashboard',
+      isLoggedin:req.session.isLoggedin,
+    })
+  }
+  exports.getsellerPortal=(req,res,next)=>{
+    res.render('sellerPortal',{
+      pageTitle:'SellerDashboard',
+      isLoggedin:req.session.isLoggedin,
+    })
+  }
