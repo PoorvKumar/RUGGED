@@ -1,4 +1,5 @@
-const Product=require('../models/product')
+const Product=require('../models/product');
+
 exports.getwishList=(req,res,next)=>{
     Product.find()
     .then(products=>{
@@ -10,3 +11,11 @@ exports.getwishList=(req,res,next)=>{
         })
     })
 }
+
+exports.getUserDashboard=(req,res)=>
+{
+    const userId=req.params.id;
+    console.log(userId);
+    res.render('userDashboard',{ pgTTL:'User DashBoard', user:req.session.user, isLoggedin: req.session.isLoggedin });
+}
+

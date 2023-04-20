@@ -15,7 +15,7 @@
   <link rel="stylesheet" href="/css/style.css">
   <link rel="stylesheet" href="/css/returnsAndOrdersStyle.css">
   <link rel="stylesheet" href="/css/userDashboardStyle.css">
-  <title>User Dashboard</title>
+  <title><%= pgTTL %></title>
 </head>
 
 <body>
@@ -33,20 +33,20 @@
             <div class="col-lg-4 col-xxl-3">
               <div class="card mt-n9 p-4 d-lg-none d-flex flex-row mb-4 shadow">
                 <div class="lh-sm pe-3">
-                  <h5 class="mb-0 fs-lg"><%=data.firstname%> <%=data.lastname%></h5><span class="fs-sm">@<%=data.firstname%><%=data.lastname%></span>
+                  <h5 class="mb-0 fs-lg"><%=user.firstname%> <%=user.lastname%></h5><span class="fs-sm">@<%=user.firstname%><%=user.lastname%></span>
                 </div>
                 <div class="ms-auto"><a class="btn btn-primary icon-md p-0" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample"><i class="fi-menu fs-xl lh-1"></i></a></div>
               </div>
               <div class="offcanvas-lg offcanvas-end" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel" style="--bs-offcanvas-width: 300px;">
                 <div class="offcanvas-header border-bottom">
-                  <h5 class="offcanvas-title" id="offcanvasExampleLabel"><%=data.firstname%> <%=data.lastname%></h5><button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#offcanvasExample" aria-label="Close"></button>
+                  <h5 class="offcanvas-title" id="offcanvasExampleLabel"><%=user.firstname%> <%=user.lastname%></h5><button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#offcanvasExample" aria-label="Close"></button>
                 </div>
                 <div class="offcanvas-body">
                   <div class="card shadow margin w-100">
                     <div class="p-2"><img class="rounded w-100" src="/Images/ProductImages/Rucksack2/Rucksack2_image1.jpg" title="" alt=""></div>
                     <div class="card-body border-bottom">
                       <div class="text-center">
-                        <h5 class="mb-0"><%=data.firstname%> <%=data.lastname%></h5><span>@<%=data.firstname%><%=data.lastname%></span>
+                        <h5 class="mb-0"><%=user.firstname%> <%=user.lastname%></h5><span>@<%=user.firstname%><%=user.lastname%></span>
                         <div class="pt-3"><a class="btn btn-outline-primary w-100" href="#">Go to Dashboard</a></div>
                       </div>
                     </div>
@@ -110,12 +110,12 @@
                   <h6 class="mb-4">Edit your personal information and address.</h6>
                   <div class="row g-3">
                     <form action="/dashboardUser" method="post">
-                      <div class="col-sm-6"><label class="form-label">First Name</label> <input type="text" name="First" class="form-control" value=<%=data.firstname %> fdprocessedid="2gr5gh"></div>
-                      <div class="col-sm-6"><label class="form-label">Last Name</label> <input type="text" name="Last" class="form-control" value=<%=data.lastname %> fdprocessedid="d19o4"></div>
-                      <div class="col-sm-6"><label class="form-label">Phone</label> <input type="text" name="Phone" class="form-control" value=<%=data.phone %> fdprocessedid="p42fci"></div>
-                      <div class="col-sm-6"><label class="form-label">Email</label> <input type="text" name="email" class="form-control" value=<%=data.email %> fdprocessedid="265oqb"></div>
-                      <div class="col-sm-12"><label class="form-label">Address Line 1</label> <input type="text" name="Address" class="form-control" value=<%=data.addressline1 %> fdprocessedid="71wsid"></div>
-                      <div class="col-sm-12"><label class="form-label">Address Line 2</label> <input type="text" name="AddressAlt" class="form-control" value=<%=data.addressline2 %> fdprocessedid="su6iq67"></div>
+                      <div class="col-sm-6"><label class="form-label">First Name</label> <input type="text" name="First" class="form-control" value=<%=user.firstname %>></div>
+                      <div class="col-sm-6"><label class="form-label">Last Name</label> <input type="text" name="Last" class="form-control" value=<%=user.lastname %>></div>
+                      <div class="col-sm-6"><label class="form-label">Phone</label> <input type="text" name="Phone" class="form-control" value=<%=user.phoneno %>></div>
+                      <div class="col-sm-6"><label class="form-label">Email</label> <input type="text" name="email" class="form-control" value=<%=user.email %>></div>
+                      <div class="col-sm-12"><label class="form-label">Address Line 1</label> <input type="text" name="Address" class="form-control"></div>
+                      <div class="col-sm-12"><label class="form-label">Address Line 2</label> <input type="text" name="AddressAlt" class="form-control"></div>
                       <div class="col-sm-6"><label class="form-label">State</label>
                         <select class="state" name="state" class="form-select" fdprocessedid="tf1qt4">
                           <option>Andhra Pradesh</option>
@@ -123,6 +123,7 @@
                           <option>Assam</option>
                           <option>Bihar</option>
                           <option>Chhattisgarh</option>
+                          <option>Delhi</option>
                           <option>Goa</option>
                           <option>Gujarat</option>
                           <option>Haryana</option>
