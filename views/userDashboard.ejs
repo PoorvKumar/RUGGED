@@ -96,7 +96,7 @@
                       </div>
                     </div>
                     <div class="col-md-5 d-flex align-self-center justify-content-md-end">
-                      <a class="btn btn-outline-primary btn-sm me-3 col" href="#"></i><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-upload me-1" viewBox="0 0 16 16">
+                      <a class="btn btn-outline-primary btn-sm me-3 col" href="/update"></i><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-upload me-1" viewBox="0 0 16 16">
                           <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z" />
                           <path d="M7.646 1.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 2.707V11.5a.5.5 0 0 1-1 0V2.707L5.354 4.854a.5.5 0 1 1-.708-.708l3-3z" />
                         </svg>Update</a>
@@ -109,7 +109,7 @@
                   <hr class="my-4">
                   <h6 class="mb-4">Edit your personal information and address.</h6>
                   <div class="row g-3">
-                    <form action="/dashboardUser" method="post">
+                    <form action="/userDashboard?id=<%=user._id%>" method="post">
                       <div class="col-sm-6"><label class="form-label">First Name</label> <input type="text" name="First" class="form-control" value=<%=user.firstname %>></div>
                       <div class="col-sm-6"><label class="form-label">Last Name</label> <input type="text" name="Last" class="form-control" value=<%=user.lastname %>></div>
                       <div class="col-sm-6"><label class="form-label">Phone</label> <input type="text" name="Phone" class="form-control" value=<%=user.phoneno %>></div>
@@ -117,7 +117,7 @@
                       <div class="col-sm-12"><label class="form-label">Address Line 1</label> <input type="text" name="Address" class="form-control"></div>
                       <div class="col-sm-12"><label class="form-label">Address Line 2</label> <input type="text" name="AddressAlt" class="form-control"></div>
                       <div class="col-sm-6"><label class="form-label">State</label>
-                        <select class="state" name="state" class="form-select" fdprocessedid="tf1qt4">
+                        <select class="state" name="state" class="form-select">
                           <option>Andhra Pradesh</option>
                           <option>Arunachal Pradesh</option>
                           <option>Assam</option>
@@ -150,13 +150,13 @@
                         </select>
                       </div>
                       <div class="col-sm-6"><label class="form-label">Country</label>
-                        <select class="country" name="country" class="form-select" fdprocessedid="sgudf">
+                        <select class="country" name="country" class="form-select">
                           <option selected>India</option>
                           <option>Other</option>
                         </select>
                       </div>
                   </div>
-                  <div class="d-flex pt-5"><button type="submit" class="btn btn-primary me-3" fdprocessedid="jszttd">Save Changes</button> <button type="reset" class="btn btn-link" fdprocessedid="wytnx9">Cancel</button></div>
+                  <div class="d-flex pt-5"><button type="submit" class="btn btn-primary me-3">Save Changes</button> <button type="reset" class="btn btn-link">Cancel</button></div>
                   </form>
                 </div>
               </div>
