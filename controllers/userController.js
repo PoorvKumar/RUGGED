@@ -48,3 +48,31 @@ exports.updateUserPost=(req,res)=>
             res.status(500).send("EError Updating user");
         });
 }
+
+exports.deleteUser = (req, res) => 
+{
+    const userId = req.query.id;
+    // console.log(userId);
+    // const updatedUserData=req.body;
+
+    User.findOneAndDelete({_id:userId})
+        .then(() => 
+        {
+            req.session.destroy((err) => 
+            {
+                if(err)
+                {
+                    console.log(err);
+                }
+                else
+                {
+                    res.redirect("/");
+                }
+            });
+        })
+        .catch(err => 
+        {
+            console.error(err); 
+            res.status(500).send("Error Deleting user");
+        });
+}

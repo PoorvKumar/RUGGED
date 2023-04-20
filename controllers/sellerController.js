@@ -43,5 +43,6 @@ exports.getAddProduct = (req, res, next) => {
     res.render('sellerPortal',{
       pageTitle:'SellerDashboard',
       isLoggedin:req.session.isLoggedin,
+      user:req.session.user
     })
   }
