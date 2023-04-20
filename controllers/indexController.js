@@ -15,14 +15,26 @@ exports.getLandingpage=(req,res,next)=>{
                 pageTitle:'RUGGED',
                 isLoggedin:req.session.isLoggedin,
                 prod:products2
-            })}
-            else{
-                res.render('index',{
-                    pageTitle:'RUGGED',
-                    isLoggedin:req.session.isLoggedin,
-                    user:req.session.user,
-                    prod:products3
-                })
+              })}
+              else{
+        req.user
+        .populate('cart.item.productID')
+        .then(user => {
+          const cartproducts = user.cart.item;
+                    // console.log(cartproducts)
+                    res.render('index',{
+                        pageTitle:'RUGGED',
+                        isLoggedin:req.session.isLoggedin,
+                        user:req.session.user,
+                        prod:products3,
+                        cartprod:cartproducts,
+                        cartquantity:10
+                    })
+                }
+                
+            )
+            .catch(err => console.log(err));
+
             }
             
     })

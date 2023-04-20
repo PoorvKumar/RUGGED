@@ -1,9 +1,23 @@
 const Product=require('../models/product')
 exports.getAddProduct = (req, res, next) => {
+  if(req.session.isLoggedin){
+  req.user
+  .populate("cart.item.productID")
+  .then((user) => {
+    const cartproducts = user.cart.item;
+    res.render('add-product', {
+      pageTitle: 'Add Product',
+      isLoggedin:req.session.isLoggedin,
+      cartprod:cartproducts
+    });
+  })
+  .catch((err) => console.log(err));}
+  else{
     res.render('add-product', {
       pageTitle: 'Add Product',
       isLoggedin:req.session.isLoggedin
     });
+  }
   };
  exports.postAddProduct = (req, res, next) => {
     const product = new Product({
@@ -27,22 +41,51 @@ exports.getAddProduct = (req, res, next) => {
       .then(result => {
         // console.log(result);
         console.log('Created Product');
-        res.redirect('add-product');
+        res.redirect('/add-product');
       })
       .catch(err => {
         console.log(err);
       });
   };
   exports.getsellerdashBoard=(req,res,next)=>{
+    if(req.session.isLoggedin){
+    req.user
+  .populate("cart.item.productID")
+  .then((user) => {
+    const cartproducts = user.cart.item;
+    res.render('sellerDashboard',{
+      pageTitle:'SellerDashboard',
+      isLoggedin:req.session.isLoggedin,
+      cartprod:cartproducts
+    })
+  })
+  .catch((err) => console.log(err));}
+  else{
     res.render('sellerDashboard',{
       pageTitle:'SellerDashboard',
       isLoggedin:req.session.isLoggedin,
     })
   }
+  }
   exports.getsellerPortal=(req,res,next)=>{
+    if(req.session.isLoggedin){
+    req.user
+    .populate("cart.item.productID")
+    .then((user) => {
+      const cartproducts = user.cart.item;
+    res.render('sellerPortal',{
+      pageTitle:'SellerDashboard',
+      isLoggedin:req.session.isLoggedin,
+      user:req.session.user,
+      cartprod:cartproducts
+    })
+  })
+  .catch((err) => console.log(err));}
+  else{
     res.render('sellerPortal',{
       pageTitle:'SellerDashboard',
       isLoggedin:req.session.isLoggedin,
       user:req.session.user
     })
+  }
   }

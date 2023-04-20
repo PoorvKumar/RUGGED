@@ -103,27 +103,32 @@
             </div>
             <div class="offcanvas-body">
               <!-- BigBox -->
+              <% if(isLoggedin) { %>
               <div class="whole-cart-window"><!-- add hide class to hide cart window-->
                 <!-- <div class="heading"><p>Your Bag</p></div> -->
                 <div class="cart-wrapper">
+                  <% if (cartprod.length > 0) { %>
+                    <% for (let p of cartprod) { %>
                   <div class="cart-item" id="cart-item-1">
                     <img src="/Images/ProductImages/Rucksack1/image1.jpg" alt="rucksack">
                     <div class="details">
-                      <h3>RuckSack</h3>
-                      <p>RuckSack for Trekking...<br>
+                      <h3><%= p.productID.name %></h3>
+                      <p><%= p.productID.description %><br>
                         <span class="fa fa-star"></span>
                         <span class="fa fa-star"></span>
                         <span class="fa fa-star"></span>
                         <span class="fa fa-star checked"></span>
                         <span class="fa fa-star checked"></span>
-                        <span class="quantity">Quantity: 2</span>
-                        <span class="price">Price: ₹500.00</span>
+                        <span class="quantity">Quantity: <%= p.quantity %></span>
+                        <span class="price">Price: ₹<%= p.productID.price %>.00</span>
                       </p>
                     </div>
                     <div class="cancel"><i class="fa-regular fa-trash-can coll"></i></div>
                   </div>
+                  <% } %>
+                  <% } %>
                   <!-- item 2 -->
-                  <div class="cart-item">
+                  <!-- <div class="cart-item">
                     <img src="/Images/ProductImages/Rucksack1/image1.jpg" alt="Rucksack">
                     <div class="details">
                       <h3>RuckSack 2</h3>
@@ -138,7 +143,7 @@
                       </p>
                     </div>
                     <div class="cancel"><i class="fa-regular fa-trash-can coll"></i></div>
-                  </div>
+                  </div> -->
                 </div>
                 <div class="subtotal">Delivery: ₹200.00</div>
                 <div class="subtotal">Total: ₹2200.00</div>
@@ -147,6 +152,7 @@
                   <button type="button" class="btn btn-primary">Checkout</button>
                 </div>
               </div>
+              <% } %>
               <!-- BigBox Finish -->
             </div>
             <!-- Cart Dropover Finish -->

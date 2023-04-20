@@ -6,11 +6,12 @@ const bodyparser = require("body-parser"); //body-parser
 const session = require("express-session"); //express-session
 const mongoose = require("mongoose");
 const mongodbsessionStore=require('connect-mongodb-session')(session)
-const user = require("./models/user");
+// const user = require("./models/user");
 const sessionStore=new mongodbsessionStore({
   uri:"mongodb+srv://divyankkhajuria:12345@rugged-cluster.fdpaj0y.mongodb.net/RUGGED?retryWrites=true&w=majority",
   collection:'session',
 })
+const User = require("./models/user");
 // const dbh=new sqlite3.Database('./database/project.db');
 
 // view engine setup
@@ -184,6 +185,20 @@ app.use(
 //     });
 //   }
 // });
+//-----------------------
+app.use((req, res, next) => {
+  if (!req.session.user) return next();
+
+  const user = req.session.user;
+  User
+    .findById(user._id)
+    .then(user => {
+      req.user = user;
+      next();
+    })
+    .catch(error => console.log(error));
+});
+//-----------------------
 //using routes
 // app.use(index);
 // app.use(influencerBlogRoutes);

@@ -103,7 +103,10 @@
             </div>
           </div>
           <div class="lowerButtons">
-            <button type="button" class="btn btn-warning btn-lg">Add to Cart</button>
+            <form action="/addtoCart" method="POST">
+            <button type="submit" class="btn btn-warning btn-lg">Add to Cart</button>
+            <input type="hidden" name="productId" value="<%= products._id %>">
+            </form>
             <button type="button" class="btn btn-success btn-lg">Buy Now</button>
           </div>
         </div>
