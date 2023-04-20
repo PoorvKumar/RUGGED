@@ -123,7 +123,12 @@
                         <span class="price">Price: ₹<%= p.productID.price %>.00</span>
                       </p>
                     </div>
+                    <form action="/deletefromCart" method="POST">
+                      <button type="submit">
                     <div class="cancel"><i class="fa-regular fa-trash-can coll"></i></div>
+                    </button>
+                    <input type="hidden" name="productID" value="<%= p.productID._id %>">
+                    </form>
                   </div>
                   <% } %>
                   <% } %>

@@ -114,3 +114,12 @@ exports.postAddtoCart = (req, res, next) => {
       res.redirect("/");
     });
 };
+exports.postDeleteCart=(req,res,next)=>{
+    const prodId = req.body.productID;
+    req.user
+      .removeFromCart(prodId)
+      .then(result => {
+        res.redirect('/');
+      })
+      .catch(err => console.log(err));
+}
