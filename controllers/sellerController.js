@@ -56,7 +56,8 @@ exports.getAddProduct = (req, res, next) => {
     res.render('sellerDashboard',{
       pageTitle:'SellerDashboard',
       isLoggedin:req.session.isLoggedin,
-      cartprod:cartproducts
+      cartprod:cartproducts,
+      user:req.session.user
     })
   })
   .catch((err) => console.log(err));}

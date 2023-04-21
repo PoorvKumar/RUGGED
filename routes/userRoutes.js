@@ -14,4 +14,6 @@ router.post('/createwishList',userController.postcreatewishList)
 router.post('/addProductToWishlistDefault',userController.postaddproductinDefaultList)
 router.post('/deleteProductFromwishList',userController.postdeleteproductfromwishList)
 router.post('/deletewishList',userController.postdeletewishList)
+router.get('/influencerDash',userController.getInfluencerDash);
+
 module.exports=router

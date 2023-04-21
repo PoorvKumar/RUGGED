@@ -203,3 +203,12 @@ exports.postdeletewishList = (req, res, next) => {
     })
     .catch((err) => console.log(err));
 };
+
+exports.getInfluencerDash=(req,res)=>
+{
+  res.render("influencerDashboard", {
+    pgTTL: "User DashBoard",
+    user: req.session.user,
+    isLoggedin: req.session.isLoggedin
+  });
+}

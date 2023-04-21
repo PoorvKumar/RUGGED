@@ -24,15 +24,16 @@
     integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
     crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <link rel="stylesheet" href="/css/sellDash.css">
+  <link rel="stylesheet" href="/css/influencerDash.css">
 
 </head>
 
 <body>
   <div class="outer">
-    <%- include('partials/sellerDashboard/leftbar.ejs') %>
+    <%- include('partials/influencerDashboard/sidenav.ejs') %>
+    
       <div class="navpluscards">
-        <%- include('partials/sellerDashboard/sellerdashnavbar.ejs') %>
+        <%- include('partials/influencerDashboard/main_nav.ejs') %>
           <div class="revenuecards">
             <%- include('partials/sellerDashboard/smallCard.ejs') %>
               <%- include('partials/sellerDashboard/smallCard.ejs') %>

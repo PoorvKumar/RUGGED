@@ -1,22 +1,24 @@
 <div class="nav">
-  <div class="firnav">Wecome,Back Name  <i class="fa-solid fa-hands-clapping"></i></div>
+  <div class="firnav">Wecome Back, <%= user.firstname %>    <i class="fa-solid fa-hands-clapping"></i></div>
   <div class="secnav"><div class="search-box">
-    <button class="btn-search"><i class="fas fa-search"></i></button>
-    <input type="text" class="input-search" placeholder="Type to Search...">
+    <!-- <button class="btn-search"><i class="fas fa-search"></i></button> -->
+    <input type="text" class="form-control" placeholder="Type to Search...">
   </div></div>
-  <div class="secnav1">|</div>
-  <div class="thinav"><i class="fa-regular fa-bell"></i></div>
-  <div class="fornav"><i class="fa-regular fa-comment"></i></div>
-  <div class="fivnav"><img src="/Images/ProductImages/Shoes/icoon-removebg-preview.png" width="36px" height="36px"></div>
+  <!-- <div class="secnav1">|</div> -->
+  <a class="thinav"><i class="fa-regular fa-bell"></i></a>
+  <a class="fornav"><i class="fa-regular fa-comment"></i></a>
+  <a class="fivnav"><img src="/Images/ProductImages/Shoes/icoon-removebg-preview.png" width="36px" height="36px"></a>
   <div class="dropdown show">
       <a class="btn btn-light dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        Name
+        <%= user.firstname %>
       </a>
     
       <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-        <a class="dropdown-item" href="#">Action</a>
-        <a class="dropdown-item" href="#">Another action</a>
-        <a class="dropdown-item" href="#">Something else here</a>
+        <a class="dropdown-item" href="/addSellerProduct">Add Product</a>
+        <a class="dropdown-item" href="/addSellerProduct">Change Product</a>
+        <a class="dropdown-item" href="/addSellerProduct">View Orders</a>
+        <a class="dropdown-item" href="/dashboardSeller">Account Summary</a>
+        <a class="dropdown-item" href="#">Past Performance</a>
       </div>
     </div>
 </div>
