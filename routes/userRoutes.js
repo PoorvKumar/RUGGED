@@ -12,6 +12,7 @@ router.post('/addtoCart',userController.postAddtoCart)
 router.post('/deletefromCart',userController.postDeleteCart)
 router.post('/createwishList',userController.postcreatewishList)
 router.post('/addProductToWishlistDefault',userController.postaddproductinDefaultList)
+router.post('/addtorandomwishList',userController.postaddproductinrandomList)
 router.post('/deleteProductFromwishList',userController.postdeleteproductfromwishList)
 router.post('/deletewishList',userController.postdeletewishList)
 module.exports=router
