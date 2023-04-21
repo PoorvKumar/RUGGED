@@ -43,10 +43,11 @@
     <div class="hc-2">
         <div class="hvc-1">
           <ul>
-            <li>ListName1<div class="private-list">Private</div></li>
-            <li>ListName1<div class="private-list">Private</div></li>
-            <li>ListName1<div class="private-list">Private</div></li>
-            <li>ListName1<div class="private-list">Private</div></li>
+            <% if(wishLists.length >0) { %>
+            <% for(let wishList of wishLists) {%>
+            <li><a href="/wishList?wname=<%= wishList.name %>"><%= wishList.name %><div class="private-list">Private</div></a></li>
+            <% } %>
+            <% } %>
           </ul>
   
         </div>

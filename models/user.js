@@ -35,9 +35,25 @@ const user = new Schema({
         quantity: { type: Number, required: true },
       },
     ],
+  },
+  wishList: {
+    lists: [
+      {
+        item: [
+          {
+            productID: {
+              type: Schema.Types.ObjectId,
+              ref: "Product",
+              required: true,
+            },
+          }
+        ],
+        name: { type: String, required: true },
+      }
+    ]
   }
 });
-user.methods.addToCart =function(product){
+user.methods.addToCart = function (product) {
   //Checking if product is already in the cart
   const productidx = this.cart.item.findIndex((cartProduct) => {
     return cartProduct.productID.toString() === product._id.toString();
@@ -55,13 +71,84 @@ user.methods.addToCart =function(product){
   }
   this.cart = { item: updatedCart };
   return this.save();
-
 };
-user.methods.removeFromCart = function(productID) {
-  const updatedCart = this.cart.item.filter(item => {
+user.methods.removeFromCart = function (productID) {
+  const updatedCart = this.cart.item.filter((item) => {
     return item.productID.toString() !== productID.toString();
   });
   this.cart.item = updatedCart;
   return this.save();
 };
+user.methods.createWishList=function (listName) {
+  const listidx = this.wishList.lists.findIndex((list) => {
+    return list.name.toString() === listName.toString();
+  });
+  if(listidx<0){
+     this.wishList.lists.push({
+      name:listName,
+      item:[]
+     })
+  }
+  else{
+    //List already there
+  }
+  return this.save()
+}
+user.methods.addProductinWishList= function (product) {
+  const productidx = this.wishList.lists[0].item.findIndex((ListProduct) => {
+    return ListProduct.productID.toString() === product._id.toString();
+  });
+  console.log(productidx)
+  if(productidx<0){
+     this.wishList.lists[0].item.push({
+      productID:product._id
+     })
+  }
+  else{
+    //product already in wishList
+  }
+  return this.save()
+}
+user.methods.addProducttorandomWishList = function (product,listName) {
+   const listidx=this.wishList.lists.findIndex((List)=>{
+    return List.name.toString()===listName
+   })
+   if(listidx>=0){
+    const productidx=this.wishList.lists[listidx].item.findIndex((ListProduct)=>{
+      return ListProduct.productId.toString()=== product._id.toString()
+    })
+    if(productidx<0){
+        this.wishList.lists[listidx].item.push({
+          productID:product._id
+        })
+    }
+    else{
+      //Product already exists
+    }
+   }
+   else{
+    //List donot exist
+   }
+   return this.save()
+}
+user.methods.deleteProductfromwishList = function(listName,productId){
+  const listidx=this.wishList.lists.findIndex((List)=>{
+    return List.name.toString()===listName.toString()
+   })
+   console.log(listidx)
+   if(listidx>=0){
+    const updatedwishList=this.wishList.lists[listidx].item.filter((item)=>{
+      return item.productID.toString() !== productId.toString();
+    })
+    this.wishList.lists[listidx].item = updatedwishList
+   }
+   return this.save()
+}
+user.methods.deletewishList = function(listName){
+    const updatedList=this.wishList.lists.filter((list)=>{
+      return list.name.toString() !==listName.toString()
+    })
+    this.wishList.lists=updatedList
+    return this.save()
+}
 module.exports = mongoose.model("User", user);

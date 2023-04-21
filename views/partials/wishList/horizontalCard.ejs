@@ -5,7 +5,7 @@
       </div>
       <div class="col-md-4">
         <div class="card-body">
-            <a href="#" class="linkitem"><b><%= products.description %></b></a><br>
+            <a href="#" class="linkitem"><b><%= products.productID.name %></b></a><br>
             <div class="pcHzLimitedTimeDeal">Limited Time Deal</div>
           <!-- <p class="card-text HzSampleTxt">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p> -->
           <div class="">
@@ -16,8 +16,8 @@
               <span class="fa fa-star"></span>
               <span class="fa fa-star checked"></span>
             </div>
-            <span class="pcHzPrice">₹<%= products.price%></span><span class="pcHzPrice"> M.R.P</span>
-            <span class="pcHzDiscount"><%= products.discount%>% off</span>
+            <span class="pcHzPrice">₹<%= products.productID.price%></span><span class="pcHzPrice"> M.R.P</span>
+            <span class="pcHzDiscount"><%= products.productID.discount%>% off</span>
           </div>
         </div>
       </div>
@@ -25,10 +25,17 @@
         <div class="card-body">
           <div class="pcBtnGroup">
             <p class="headingJr">Item added on 12 March</p>
-            <button type="button" class="btn btn-warning pcButton1">Add to Cart</button>
+            <form action="/addtoCart" method="POST">
+            <button type="submit" class="btn btn-warning pcButton1">Add to Cart</button>
+            <input type="hidden" name="productID" value="<%= products.productID._id %>">
+            </form>
             <div class="pcBtnsc">
             <button type="button" class="btn btn-sm btn-outline-primary btn-sm pcButton2">Move</button>
-            <button type="button" class="btn btn-sm btn-outline-danger pcButton3">Delete</button>
+            <form action="/deleteProductFromwishList" method="POST">
+            <button type="submit" class="btn btn-sm btn-outline-danger pcButton3">Delete</button>
+            <input type="hidden" name="listName" value="<%= currentList %>">
+            <input type="hidden" name="productID" value="<%= products.productID._id %>">
+            </form>
            <p class="headingk"> <a href="#">Add comments,quantity</a></p>
             </div>
           </div>

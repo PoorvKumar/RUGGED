@@ -10,4 +10,8 @@ router.post('/userDashboard',userController.updateUserPost);
 router.get('/deleteUser',userController.deleteUser);
 router.post('/addtoCart',userController.postAddtoCart)
 router.post('/deletefromCart',userController.postDeleteCart)
+router.post('/createwishList',userController.postcreatewishList)
+router.post('/addProductToWishlistDefault',userController.postaddproductinDefaultList)
+router.post('/deleteProductFromwishList',userController.postdeleteproductfromwishList)
+router.post('/deletewishList',userController.postdeletewishList)
 module.exports=router

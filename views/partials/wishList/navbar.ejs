@@ -27,8 +27,31 @@
 
     </li>
     <li>Your Friends</li>
-    <li>Create List</li>
-    <li>Print List</li>
+    <li>
+      <div class="dropdown">
+        <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Create List
+        </button>
+        <form class="dropdown-menu p-4" action="/createwishList" method="POST">
+          <div class="form-group">
+            <label for="exampleDropdownFormEmail2">List Name</label>
+            <div class="form-check">
+            </div>
+            <input type="text" name="listName" class="form-control" id="exampleDropdownFormEmail2" placeholder="Abc..">
+          </div>
+          <div class="form-check">
+          </div>
+          <button type="submit" class="btn btn-primary">Create</button>
+        </form>
+      </div>
+
+    </li>
+    <li><form action="/deletewishList" method="POST">
+      <button type="submit" class="btn btn-info">
+        Delete
+      </button>
+      <input type="hidden" name="listName" value="<%= currentList %>">
+    </form></li>
   </ul>
 
 <!-- nav finish -->
