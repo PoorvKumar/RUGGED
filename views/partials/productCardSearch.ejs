@@ -1,6 +1,6 @@
 <div class="card totalCard" style="width: 16rem; height:28rem">
   <div data-bs-theme="dark">
-    <div id="<%= productData._id %>" class="carousel slide" data-bs-ride="false">
+    <div id="carousel<%= productData._id %>" class="carousel slide" data-bs-ride="false">
       <div class="carousel-inner myCarousel">
         <div class="carousel-item active">
           <img src=<%=productData.imageurl%> width="100%" height="250px" class="d-block w-100" alt="...">
@@ -24,11 +24,11 @@
           <video src="/Images/ProductImages/Rucksack1/video1.mp4" width="100%" height="250px" controls muted loop autoplay>This browser does not support HTML video.</video>
         </div> -->
       </div>
-      <button class="carousel-control-prev carouselButton" type="button" data-bs-target="#<%= productData._id %>" data-bs-slide="prev">
+      <button class="carousel-control-prev carouselButton" type="button" data-bs-target="#carousel<%= productData._id %>" data-bs-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="false"></span>
         <span class="visually-hidden">Previous</span>
       </button>
-      <button class="carousel-control-next carouselButton" type="button" data-bs-target="#<%= productData._id %>" data-bs-slide="next">
+      <button class="carousel-control-next carouselButton" type="button" data-bs-target="#carousel<%= productData._id %>" data-bs-slide="next">
         <span class="carousel-control-next-icon" aria-hidden="false"></span>
         <span class="visually-hidden">Next</span>
       </button>
@@ -38,9 +38,9 @@
     <div class="cardBodyHead">
       <h5 class="card-title myCardTitle"><a href="/product?id=<%= productData._id %>" class="cardTitleInner"><%=productData.name%></a></h5>
       <div class="rightCompartment ">
-        <span class="starsRatingGreen rightCompartmentInner popupRating" onclick="popupRatingFunction()">3.8
-          <!-- <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMyIgaGVpZ2h0PSIxMiI+PHBhdGggZmlsbD0iI0ZGRiIgZD0iTTYuNSA5LjQzOWwtMy42NzQgMi4yMy45NC00LjI2LTMuMjEtMi44ODMgNC4yNTQtLjQwNEw2LjUuMTEybDEuNjkgNC4wMSA0LjI1NC40MDQtMy4yMSAyLjg4Mi45NCA0LjI2eiIvPjwvc3ZnPg==" class="innerStars"> -->
-          <div class="popupContent" id="popupUserRating">
+        <span class="starsRatingGreen rightCompartmentInner popupRating" onclick="popupRatingFunction('<%=productData._id%>')">3.8
+          <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMyIgaGVpZ2h0PSIxMiI+PHBhdGggZmlsbD0iI0ZGRiIgZD0iTTYuNSA5LjQzOWwtMy42NzQgMi4yMy45NC00LjI2LTMuMjEtMi44ODMgNC4yNTQtLjQwNEw2LjUuMTEybDEuNjkgNC4wMSA0LjI1NC40MDQtMy4yMSAyLjg4Mi45NCA0LjI2eiIvPjwvc3ZnPg==" class="innerStars">
+          <div class="popupContent" id=<%=productData._id%>>
             <span class="heading">User Rating</span>
             <div class="row UserRatingGrid">
               <div class="EdgeColumn">
