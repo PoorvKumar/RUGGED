@@ -176,9 +176,10 @@ exports.postaddproductinDefaultList = (req, res, next) => {
 exports.postaddproductinrandomList = (req, res, next) => {
   const listName = req.body.listName;
   const prodId = req.body.productID;
+  console.log(prodId)
   Product.findById(prodId)
     .then((product) => {
-      return req.user.addProducttorandomWishList(product);
+      return req.user.addProducttorandomWishList(product,listName);
     })
     .then((result) => {
       res.redirect("/wishList");
