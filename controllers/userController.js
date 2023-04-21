@@ -110,7 +110,7 @@ exports.updateUserPost = (req, res) => {
 };
 
 exports.deleteUser = (req, res) => {
-  const userId = req.query.id;
+  const userId = req.user._id;
   // console.log(userId);
   // const updatedUserData=req.body;
 
