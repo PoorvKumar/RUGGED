@@ -1,4 +1,5 @@
-const { Int32 } = require('mongodb')
+// const { Int32 } = require('mongodb')
+const { Int32 } = require('mongodb');
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 const product = new Schema({
@@ -23,20 +24,20 @@ const product = new Schema({
   },
   dimension: {
     length: {
-      type: Int32,
+      type: Number,
       required: true
     },
     width: {
-      type: Int32,
+      type: Number,
       required: true
     },
     height: {
-      type: Int32,
+      type: Number,
       required: true
     },
   },
-  weight: {
-    type: String,
+  weightInKg: {
+    type: Number,
     required: true
   },
   colors: {
@@ -84,7 +85,7 @@ const product = new Schema({
         }
       ],
       rating: {
-        type: Int32,
+        type: Number,
         required: true
       },
       description: {
@@ -97,7 +98,8 @@ const product = new Schema({
     required: true
   },
   sellerID: {
-    type: String
+    type: String,
+    required:true,
   },
   ruggedVerrified: {
     type: String,
@@ -123,12 +125,12 @@ product.methods.getRatingArrayandAverageRating = (product) => {
   ratingArray: [
     {
       stars: {
-        type: Int32,
+        type: Number,
         min: 0,
         max: 5
       },
       numberOfPeople: {
-        type: Int32,
+        type: Number,
       },
     }
   ];

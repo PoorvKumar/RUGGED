@@ -10,8 +10,10 @@ router.get('/filterCustomerRating', (req, res) => {
     const customerRating = req.query.customerRating;
     const brands = req.query.brandSelected;
     const offerSelected = req.query.offerSelected;
-    const priceLL = req.query.pricefrom;
-    const priceUL = req.query.priceto;
+    const priceLL = Number(req.query.pricefrom);
+    const priceUL = Number(req.query.priceto);
+    console.log(priceLL);
+    console.log(priceUL);
     const influencersChoice = req.query.InfluencersChoice;
     const ruggerVerified = req.query.RuggedVerrified;
     const colorSelected = req.query.colour;
@@ -20,11 +22,8 @@ router.get('/filterCustomerRating', (req, res) => {
 
     Product.find({ name: { $regex: searchTerm, $options: 'i' }, })
         .then(products => {
-            // res.json(products);
-            // console.log(products);
-            // products.filter({price:{$gt:priceLL,$lt:priceUL},rating:{$gt:customerRating},colors:clr,quantity:{$gt:1},RuggedVerrified:rv,influencersChoice:ic,brands:brands,offerApplied:offerSelected});
             const priceFilter = (product) => {
-                let priceAfterDiscount = product.price*(1-product.discount);
+                let priceAfterDiscount = product.price*(1-(product.discount*0.01));
                 return (priceAfterDiscount > priceLL && priceAfterDiscount < priceUL);
             };
             const customerRatingFilter = (product) => {
@@ -88,7 +87,7 @@ router.get('/filterCustomerRating', (req, res) => {
             if (true) {
                 products=products.filter(priceFilter);
             }
-            
+            // console.log(products);
             res.render('productSearchPage.ejs', { productsData: products, user: req.session.user, isLoggedin: req.session.isLoggedin, searchTerm: searchTerm });
         })
         .catch(err => {

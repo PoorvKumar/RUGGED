@@ -43,6 +43,7 @@
         <p class="filtersCategoriesText"> Laptop Backpacks</p>
       </div>
       <form action="/filterCustomerRating" method="get">
+        <input type="hidden" name="q" value="<%= searchTerm %>">
         <button type="submit" class="btn btn-secondary">Apply filters</button>
         <div class="accordion">Customer Rating</div>
         <div class="panel">
