@@ -2,7 +2,7 @@
     display: inline;
     padding: 0;
     margin: 0;
-    /* opacity: 50% !important; */
+    opacity: 50% !important;
     font-size: small;
     color: white;
     font-weight: bold;
@@ -13,9 +13,8 @@
 }
 .SPnavbar-btn{
     max-height: 2rem !important;
-    /* border: 2px solid red; */
-    /* padding: 0 8px; */
+
     padding: 2%;
-    margin: 2%;
+    margin: 2% 5% 2% 2%;
     background-color: aliceblue;
 }
