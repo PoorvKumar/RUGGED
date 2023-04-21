@@ -51,7 +51,7 @@ router.get('/filterCustomerRating', (req, res) => {
                 return product.offerApplied[j] === offerSelected[index];
             };
             const influencersChoiceFilter = (product) => {
-                if (influencersChoice === true) {
+                if (influencersChoice === "on") {
                     return product.influencersNameChoice.length > 0;
                 }
                 return product;
@@ -72,16 +72,16 @@ router.get('/filterCustomerRating', (req, res) => {
             if (offerSelected) {
                 products = products.filter(offerFilter);
             }
-            if (influencersChoice) {
+            if (influencersChoice==="on") {
                 products = products.filter(influencersChoiceFilter);
             }
-            if (ruggerVerified) {
+            if (ruggerVerified==="on") {
                 products = products.filter(ruggedVerrifiedFilter);
             }
             if (colorSelected) {
                 products = products.filter(colorFilter);
             }
-            if (availability) {
+            if (availability==="on") {
                 products = products.filter(availabilityFilter);
             }
             if (true) {

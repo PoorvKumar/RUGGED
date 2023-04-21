@@ -163,7 +163,7 @@
     padding: 0;
     position: absolute;
     z-index: 1;
-    bottom: -1000%;
+    bottom: -800%;
     left: 50%;
     margin-left: -80px;
 }

@@ -99,7 +99,7 @@ const product = new Schema({
   },
   sellerID: {
     type: String,
-    required:true,
+    required: true,
   },
   ruggedVerrified: {
     type: String,
@@ -121,7 +121,7 @@ const product = new Schema({
   ]
 });
 
-product.methods.getRatingArrayandAverageRating = (product) => {
+product.methods.getRatingArray = (product) => {
   ratingArray: [
     {
       stars: {
@@ -137,7 +137,26 @@ product.methods.getRatingArrayandAverageRating = (product) => {
   for (let index = 0; index < product.reviewsArray.length; index++) {
     ratingArray[product.reviewsArray[index].rating].numberOfPeople = ratingArray[product.reviewsArray[index].rating].numberOfPeople + 1;
   }
+  return ratingArray;
 
+};
+
+product.methods.getAverageRating = (product) => {
+  ratingArray: [
+    {
+      stars: {
+        type: Number,
+        min: 0,
+        max: 5
+      },
+      numberOfPeople: {
+        type: Number,
+      },
+    }
+  ];
+  for (let index = 0; index < product.reviewsArray.length; index++) {
+    ratingArray[product.reviewsArray[index].rating].numberOfPeople = ratingArray[product.reviewsArray[index].rating].numberOfPeople + 1;
+  }
   let averageRating = 0;
   let sum = 0;
   let totalNumOfPeople = 0;
@@ -146,11 +165,9 @@ product.methods.getRatingArrayandAverageRating = (product) => {
     sum = sum + (ratingArray[index2].stars + ratingArray[index2].numberOfPeople);
   }
   averageRating = float(sum / totalNumOfPeople);
-  
-  return ratingArray,averageRating;
+  return averageRating;
 
-};
-
+}
 
 
 
