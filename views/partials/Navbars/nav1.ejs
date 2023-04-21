@@ -30,7 +30,7 @@
                   <%=user.firstname%>
                     <% }else{%>User<% } %></span>
             </div>
-            <a tabindex="0" href="/login" id="account-list" class="text-white">
+            <a tabindex="0" href="/<% isLoggedin?'/':'/login'%>" id="account-list" class="text-white">
               <div class="nav-line-2 signin-main">Account & Lists <span class="dropdown-toggle"></span>
             </a>
             <div id="sign-in-popover" class="hide">
