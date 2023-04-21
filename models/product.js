@@ -1,3 +1,4 @@
+const { Int32 } = require('mongodb')
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 const product = new Schema({
@@ -16,18 +17,23 @@ const product = new Schema({
     type: String,
     required: true
   },
-  // company:{
-  //   type:String,
-  //   required:true
-  // },
   discount: {
     type: Number,
     required: true
   },
   dimension: {
-    // should have length,breadth and height
-    type: String,
-    required: true
+    length: {
+      type: Int32,
+      required: true
+    },
+    width: {
+      type: Int32,
+      required: true
+    },
+    height: {
+      type: Int32,
+      required: true
+    },
   },
   weight: {
     type: String,
@@ -41,16 +47,10 @@ const product = new Schema({
     type: String,
     required: true
   },
-  // only one tags or categories should be present
   tags: {
     type: String,
     required: true
   },
-  categories: {
-    type: String,
-    required: true
-  },
-  // photos should be an array of image urls
   photosURLS: [{
     photoURL: {
       type: String
@@ -60,13 +60,38 @@ const product = new Schema({
     type: String,
     required: true
   },
-  // rather than review id we should have entire review document here.
-  // it should consist of no. of 5 star, 4 star, 3 star , 2 star , 1 star, and 0 star reviews. 
-  // it should also consist of average no. of stars as review.
-  // it should also have an array of documents consisting of individual reviews.
-  reviewsID: {
-    type: String
-  },
+  // reviewID: {
+  //     type: Schema.Types.ObjectId,
+  //     ref: "Reviews",
+  //     required: true
+  // },
+  // review:{
+  reviewsArray: [
+    {
+      userID: {
+        type: Schema.Types.ObjectId,
+        ref: "User",
+        required: true,
+      },
+      title: {
+        type: String,
+      },
+      photoURLS: [
+        {
+          photoURL: {
+            type: String,
+          }
+        }
+      ],
+      rating: {
+        type: Int32,
+        required: true
+      },
+      description: {
+        type: String,
+      }
+    }
+  ],
   quantity: {
     type: Number,
     required: true
@@ -74,7 +99,57 @@ const product = new Schema({
   sellerID: {
     type: String
   },
-  
+  ruggedVerrified: {
+    type: String,
+    required: true
+  },
+  offers: [
+    {
+      type: String
+    }
+  ],
+  influencersNameChoice: [
+    {
+      influencerID: {
+        type: Schema.Types.ObjectId,
+        ref: "Influencer",
+        required: true,
+      },
+    }
+  ]
 });
+
+product.methods.getRatingArrayandAverageRating = (product) => {
+  ratingArray: [
+    {
+      stars: {
+        type: Int32,
+        min: 0,
+        max: 5
+      },
+      numberOfPeople: {
+        type: Int32,
+      },
+    }
+  ];
+  for (let index = 0; index < product.reviewsArray.length; index++) {
+    ratingArray[product.reviewsArray[index].rating].numberOfPeople = ratingArray[product.reviewsArray[index].rating].numberOfPeople + 1;
+  }
+
+  let averageRating = 0;
+  let sum = 0;
+  let totalNumOfPeople = 0;
+  for (let index2 = 0; index2 < ratingArray.length; index2++) {
+    totalNumOfPeople = totalNumOfPeople + ratingArray[index2].numberOfPeople;
+    sum = sum + (ratingArray[index2].stars + ratingArray[index2].numberOfPeople);
+  }
+  averageRating = float(sum / totalNumOfPeople);
+  
+  return ratingArray,averageRating;
+
+};
+
+
+
 
 module.exports = mongoose.model('Product', product);

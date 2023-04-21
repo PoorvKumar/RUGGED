@@ -1,6 +1,6 @@
 <div class="card totalCard" style="width: 16rem; height:28rem">
   <div data-bs-theme="dark">
-    <div id="carouselExampleRide" class="carousel slide" data-bs-ride="false">
+    <div id="<%= productData._id %>" class="carousel slide" data-bs-ride="false">
       <div class="carousel-inner myCarousel">
         <div class="carousel-item active">
           <img src=<%=productData.imageurl%> width="100%" height="250px" class="d-block w-100" alt="...">
@@ -24,11 +24,11 @@
           <video src="/Images/ProductImages/Rucksack1/video1.mp4" width="100%" height="250px" controls muted loop autoplay>This browser does not support HTML video.</video>
         </div>
       </div>
-      <button class="carousel-control-prev carouselButton" type="button" data-bs-target="#carouselExampleRide" data-bs-slide="prev">
+      <button class="carousel-control-prev carouselButton" type="button" data-bs-target="#<%= productData._id %>" data-bs-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="false"></span>
         <span class="visually-hidden">Previous</span>
       </button>
-      <button class="carousel-control-next carouselButton" type="button" data-bs-target="#carouselExampleRide" data-bs-slide="next">
+      <button class="carousel-control-next carouselButton" type="button" data-bs-target="#<%= productData._id %>" data-bs-slide="next">
         <span class="carousel-control-next-icon" aria-hidden="false"></span>
         <span class="visually-hidden">Next</span>
       </button>
@@ -103,14 +103,15 @@
         </span>
         <span class="wishlist rightCompartmentInner">
           <i class="fa-regular fa-heart wishlistInner" id="heartWishlist" onclick="wishlistHeartToggleFunction(this)"></i>
-
         </span>
         <span class="share rightCompartmentInner shareIcon">
           <i class="fa-regular fa-share-from-square" id="shareItem"></i>
         </span>
       </div>
     </div>
-    <img src="/Images/Verrification/rugged-verified-high-resolution-color-logo-slim.png" alt="..." class="RuggedVerified">
+    <% if (productData.ruggedVerrified==="true") { %>
+      <img src="/Images/Verrification/rugged-verified-high-resolution-color-logo-slim.png" alt="..." class="RuggedVerified">
+    <% } %>
     <p class="card-text"><%=productData.description%></p>
   </div>
 
