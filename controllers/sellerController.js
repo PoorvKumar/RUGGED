@@ -7,6 +7,7 @@ exports.getAddProduct = (req, res, next) => {
     const cartproducts = user.cart.item;
     res.render('add-product', {
       pageTitle: 'Add Product',
+      user: req.session.user,
       isLoggedin:req.session.isLoggedin,
       cartprod:cartproducts
     });
@@ -15,6 +16,7 @@ exports.getAddProduct = (req, res, next) => {
   else{
     res.render('add-product', {
       pageTitle: 'Add Product',
+      user: { firstname: "User" },
       isLoggedin:req.session.isLoggedin
     });
   }
@@ -64,6 +66,7 @@ exports.getAddProduct = (req, res, next) => {
   else{
     res.render('sellerDashboard',{
       pageTitle:'SellerDashboard',
+      user: { firstname: "User" },
       isLoggedin:req.session.isLoggedin,
     })
   }
@@ -85,8 +88,8 @@ exports.getAddProduct = (req, res, next) => {
   else{
     res.render('sellerPortal',{
       pageTitle:'SellerDashboard',
-      isLoggedin:req.session.isLoggedin,
-      user:req.session.user
+      user: { firstname: "User" },
+      isLoggedin:req.session.isLoggedin
     })
   }
   }

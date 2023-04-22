@@ -50,7 +50,7 @@ exports.searchRes = (req, res) => {
         res.render("productSearchPage", {
           productsData: products,
           isLoggedin: req.session.isLoggedin,
-          user: req.session.user,
+          user: { firstname: "User" },
           searchTerm: searchTerm,
           productsRatingArray: productsRatingArray,
         });

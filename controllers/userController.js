@@ -50,8 +50,8 @@ exports.getwishList = (req, res, next) => {
         res.render("wishList", {
           product: products,
           pgTTL: "wishList",
-          isLoggedin: req.session.isLoggedin,
-          user: req.session.user,
+          user: { firstname: "User" },
+          isLoggedin: req.session.isLoggedin
         });
       }
     })
@@ -79,7 +79,7 @@ exports.getUserDashboard = (req, res) => {
   } else {
     res.render("userDashboard", {
       pgTTL: "User DashBoard",
-      user: req.session.user,
+      user: { firstname: "User" },
       isLoggedin: req.session.isLoggedin,
     });
   }
