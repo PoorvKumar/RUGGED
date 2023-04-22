@@ -56,6 +56,7 @@ const authRoutes=require('./routes/authRoute');
 const indexRoutes=require('./routes/indexRoutes');
 const searchRoute=require("./routes/searchRoute");
 const productRoutes=require("./routes/productRoutes");
+const adminRoutes=require("./routes/adminRoutes");
 
 app.use(
   session({
@@ -218,6 +219,7 @@ app.use((req, res, next) => {
 // app.use(productcardcaro);
 
 // -----NewRoutes-------------
+app.use(adminRoutes);
 app.use(sellerRoutes);
 app.use(userRoutes);
 app.use(influencerRoutes);
