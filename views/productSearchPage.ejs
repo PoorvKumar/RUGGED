@@ -44,8 +44,9 @@
       </div>
       <form action="/filterProducts" method="get">
         <input type="hidden" name="q" value="<%= searchTerm %>">
-        <button type="submit" class="btn btn-info applyFilters mt-4 mb-4">Apply filters</button>
-        <div class="accordion">Customer Rating</div>
+        <button type="submit" class="btn btn-info ms-1 mt-4 ">Apply filters</button>
+        <button type="reset" class="btn btn-info mt-4">Clear Filters</button>
+        <div class="accordion mt-4">Customer Rating</div>
         <div class="panel">
           <div class="customerRating">
             <div class="form-check starSelection">
