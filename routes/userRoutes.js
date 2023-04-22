@@ -5,10 +5,10 @@ const authMiddleware=require("../middleware/authMiddleware");
 const complaintController=require("../controllers/complaintsController");
 const router=express.Router();
 
-router.get('/wishList',authMiddleware,userController.getwishList);
+router.get('/wishList',userController.getwishList);
 router.get('/userDashboard',authMiddleware,userController.getUserDashboard);
 router.post('/userDashboard',userController.updateUserPost);
-router.get('/deleteUser',userController.deleteUser);
+router.get('/deleteUser',authMiddleware,userController.deleteUser);
 router.post('/addtoCart',userController.postAddtoCart)
 router.post('/deletefromCart',userController.postDeleteCart)
 router.post('/createwishList',userController.postcreatewishList)
