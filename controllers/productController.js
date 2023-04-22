@@ -53,7 +53,7 @@ exports.getProductInfo = (req, res) => {
           productRating: productsRatingArray[0],
           user: req.session.user,
           isLoggedin: req.session.isLoggedin,
-          pgTitle: products.name,
+          pgTitle: product.name,
         });
       }
     })
@@ -138,7 +138,7 @@ function getProductsRatingArray(products) {
       productsRatingArray[index].ratingArray[product.reviewsArray[j].rating]++;
     }
   }
-  console.log(productsRatingArray);
+  // console.log(productsRatingArray);
   return productsRatingArray;
 }
 function getAverageRating(product) {
@@ -310,8 +310,6 @@ exports.postSingleProductOrder = (req, res, next) => {
     })
     .catch((err) => console.log(err));
 };
-
-
 exports.postReview = (req, res) => {
 
   // let custName = req.body.name;

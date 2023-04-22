@@ -1,4 +1,4 @@
-<div class="card totalCard" style="width: 18rem; height:28rem">
+<div class="card totalCard" style="width: 16rem; height:30rem">
   <div data-bs-theme="dark">
     <div id="carousel<%= productData._id %>" class="carousel slide" data-bs-ride="false">
       <div class="carousel-inner myCarousel">
@@ -110,7 +110,7 @@
     <% if (productData.ruggedVerrified==="true") { %>
       <img src="/Images/Verrification/rugged-verified-high-resolution-color-logo-slim.png" alt="Rugged Verrified" class="RuggedVerified">
     <% } %>
-    <p class="card-text"><%=productData.description%></p>
+    <p class="card-text"><%=productData.description.substring(0,50)+" ..."%></p>
   </div>
   <div class="jumbotron">
     <span class="pcVrtpriceCOmplete">
