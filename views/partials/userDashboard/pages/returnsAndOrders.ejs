@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/72fdfa8245.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="/css/main_navbar.css">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/returnsAndOrdersStyle.css">
+  <title>Returns and Orders</title>
+</head>
+
+<body>
+  <header>
+    <%- include('partials/Navbars/nav1.ejs') %>
+    <%- include('partials/Navbars/nav2.ejs') %>
+  </header>
+  <div class="ReturnOrderMainContent">
+    <section class="main">
+      <div class="container bg-white mt-5">
+        <ul class="nav nav-tabs flex-column flex-sm-row" role="tablist">
+          <li class="nav-item" role="presentation"><a class="nav-link detail-nav-link active" data-bs-toggle="tab" href="#orders" role="tab" aria-selected="true">Orders</a></li>
+          <li class="nav-item" role="presentation"><a class="nav-link detail-nav-link" data-bs-toggle="tab" href="#BuyAgain" role="tab" aria-selected="false" tabindex="-1">Buy Again</a></li>
+          <li class="nav-item" role="presentation"><a class="nav-link detail-nav-link" data-bs-toggle="tab" href="#NotYetShipped" role="tab" aria-selected="false" tabindex="-1">Not Yet Shipped</a></li>
+          <li class="nav-item" role="presentation"><a class="nav-link detail-nav-link" data-bs-toggle="tab" href="#CancelledOrders" role="tab" aria-selected="false" tabindex="-1">Cancelled Orders</a></li>
+        </ul>
+        <div class="tab-content">
+          <div class="tab-pane px-3 active show" id="orders" role="tabpanel">
+            <%- include('partials/returnsAndOrders/orders.ejs') %>
+          </div>
+          <div class="tab-pane" id="BuyAgain" role="tabpanel">
+            <%- include('partials/returnsAndOrders/buyAgain.ejs') %>
+          </div>
+          <div class="tab-pane" id="NotYetShipped" role="tabpanel">
+            <%- include('partials/returnsAndOrders/notYetShipped.ejs') %>
+          </div>
+          <div class="tab-pane" id="CancelledOrders" role="tabpanel">
+            <%- include('partials/returnsAndOrders/cancelledOrders.ejs') %>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+  <%- include('partials/Navbars/footer.ejs') %>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD" crossorigin="anonymous"></script>
+</body>
+
+</html>

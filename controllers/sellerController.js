@@ -93,7 +93,6 @@ exports.getAddProduct = (req, res, next) => {
     })
   }
   }
-
   exports.SellerGetProduct=(req,res)=>
   {
     res.render('partials/sellerDashboard/pages/product.ejs',
@@ -103,7 +102,6 @@ exports.getAddProduct = (req, res, next) => {
       pageTitle: "Influencer Dash | Product Page"
     });
   }
-
 exports.SellerGetAddProduct=(req,res)=>
 {
   res.render('partials/sellerDashboard/pages/addproduct.ejs',
@@ -113,7 +111,6 @@ exports.SellerGetAddProduct=(req,res)=>
     pageTitle: "Influencer Dash | Add Product Page"
   });
 }
-
 exports.sellerAddProduct=(req,res)=>
 {
   let dPrice=req.body.price*(1-0.01*req.body.discount);

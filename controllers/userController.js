@@ -1,6 +1,6 @@
 const Product = require("../models/product");
 const User = require("../models/user");
-
+const Order = require("../models/orders");
 exports.getwishList = (req, res, next) => {
   Product.find()
     .then((products) => {
@@ -44,9 +44,8 @@ exports.getwishList = (req, res, next) => {
               .catch((err) => console.log(err));
           })
           .catch((err) => console.log(err));
-      } 
-      else 
-      {
+      }
+      else {
         res.render("wishList", {
           product: products,
           pgTTL: "wishList",
@@ -60,8 +59,6 @@ exports.getwishList = (req, res, next) => {
     });
 };
 exports.getUserDashboard = (req, res) => {
-  // const userId=req.params.id;
-  // console.log(userId);
   if (req.session.isLoggedin) {
     req.user
       .populate("cart.item.productID")
@@ -82,6 +79,28 @@ exports.getUserDashboard = (req, res) => {
       isLoggedin: req.session.isLoggedin,
     });
   }
+};
+exports.getUserDashboardReturnsAndOrders = (req, res, next) => {
+  req.user.populate("cart.item.productID").then((user) => {
+    const cartproducts = user.cart.item;
+    Order.find({ "user.userId": req.user._id })
+      .then((orders) => {
+        Order.find({ "user.userId": req.user._id, Status: "Not Shipped" })
+          .then((notshippedOrders) => {
+            Order.find({ "user.userId": req.user._id, Status: "Placed" })
+              .then((buyAgain) => {
+                res.render("returnsAndOrders", {
+                  isLoggedin: req.session.isLoggedin,
+                  cartprod: cartproducts,
+                  orders: orders,
+                  user: req.session.user,
+                  notshippedOrders: notshippedOrders,
+                  buyAgain: buyAgain,
+                });
+              }).catch((err) => console.log(err));
+          }).catch((err) => console.log(err));
+      }).catch((err) => console.log(err));
+  }).catch((err) => console.log(err));
 };
 exports.updateUserPost = (req, res) => {
   const userId = req.query.id;
@@ -178,7 +197,7 @@ exports.postaddproductinrandomList = (req, res, next) => {
   console.log(prodId)
   Product.findById(prodId)
     .then((product) => {
-      return req.user.addProducttorandomWishList(product,listName);
+      return req.user.addProducttorandomWishList(product, listName);
     })
     .then((result) => {
       res.redirect("/wishList");
