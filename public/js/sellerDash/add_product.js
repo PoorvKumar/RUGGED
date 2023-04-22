@@ -11,6 +11,21 @@ const imagesInput = document.getElementById('producImages');
 const productTags = document.getElementById('productTags');
 const colors = document.getElementById('colors');
 
+function showError(input, message) {
+  const formControl = input.parentElement;
+  formControl.classList.remove('valid');
+  formControl.classList.add('invalid');
+  const error = formControl.querySelector('.error-message');
+  error.innerText = message;
+}
+
+function showSuccess(input) {
+  const formControl = input.parentElement;
+  formControl.classList.remove('invalid');
+  formControl.classList.add('valid');
+  const error = formControl.querySelector('.error-message');
+}
+
 form.addEventListener('submit', function(event) {
   event.preventDefault();
 
@@ -101,17 +116,4 @@ form.addEventListener('submit', function(event) {
   }
 });
 
-function showError(input, message) {
-  const formControl = input.parentElement;
-  formControl.classList.remove('valid');
-  formControl.classList.add('invalid');
-  const error = formControl.querySelector('.error-message');
-  error.innerText = message;
-}
 
-function showSuccess(input) {
-  const formControl = input.parentElement;
-  formControl.classList.remove('invalid');
-  formControl.classList.add('valid');
-  const error = formControl.querySelector('.error-message');
-}

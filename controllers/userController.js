@@ -44,7 +44,9 @@ exports.getwishList = (req, res, next) => {
               .catch((err) => console.log(err));
           })
           .catch((err) => console.log(err));
-      } else {
+      } 
+      else 
+      {
         res.render("wishList", {
           product: products,
           pgTTL: "wishList",
@@ -205,11 +207,3 @@ exports.postdeletewishList = (req, res, next) => {
     .catch((err) => console.log(err));
 };
 
-exports.getInfluencerDash=(req,res)=>
-{
-  res.render("influencerDashboard", {
-    pageTitle: "Influencer DashBoard",
-    user: req.session.user,
-    isLoggedin: req.session.isLoggedin
-  });
-}

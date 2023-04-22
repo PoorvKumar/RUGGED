@@ -51,6 +51,7 @@ const filteringRoute = require("./routes/filterRoute");
 // new Routes
 const sellerRoutes = require("./routes/sellerRoutes");
 const userRoutes = require("./routes/userRoutes");
+const influencerRoutes=require("./routes/influencerRoutes");
 const authRoutes=require('./routes/authRoute');
 const indexRoutes=require('./routes/indexRoutes');
 const searchRoute=require("./routes/searchRoute");
@@ -219,6 +220,7 @@ app.use((req, res, next) => {
 // -----NewRoutes-------------
 app.use(sellerRoutes);
 app.use(userRoutes);
+app.use(influencerRoutes);
 app.use(authRoutes);
 app.use(indexRoutes)
 app.use(productRoutes);
