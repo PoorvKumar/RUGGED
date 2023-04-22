@@ -2,6 +2,7 @@ const path = require('path');
 const express = require('express');
 const userController=require('../controllers/userController');
 const authMiddleware=require("../middleware/authMiddleware");
+const complaintController=require("../controllers/complaintsController");
 const router=express.Router();
 
 router.get('/wishList',authMiddleware,userController.getwishList);
@@ -15,5 +16,9 @@ router.post('/addProductToWishlistDefault',userController.postaddproductinDefaul
 router.post('/addtorandomwishList',userController.postaddproductinrandomList)
 router.post('/deleteProductFromwishList',userController.postdeleteproductfromwishList)
 router.post('/deletewishList',userController.postdeletewishList)
+
+router.get('/contact',complaintController.getContactUs);
+router.get('/aboutus',complaintController.getAboutUs);
+router.post('/contact',complaintController.postComplaints);
 
 module.exports=router

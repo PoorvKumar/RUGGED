@@ -29,12 +29,13 @@ function startWithalphabet(Name) {
 }
 
 function userLength(Name) {
-    if (!(Name.value.length >= 3 && Name.value.length <= 20)) {
-        return false;
-    }
-    else {
-        return true;
-    }
+    // if (!(Name.value.length >= 3 && Name.value.length <= 20)) {
+    //     return false;
+    // }
+    // else {
+    //     return true;
+    // }
+    return (Name.value.length >= 3 && Name.value.length <= 20);
 }
 
 function validatefirstname() {
@@ -42,13 +43,6 @@ function validatefirstname() {
     if (!startWithalphabet(firstname)) {
         firstname.style.outlineColor = "red";
         namelabel.innerHTML = "Title:Title should start with alphabet";
-        namelabel.style.color="red"
-        
-    }
-    else if (!userLength(firstname)) {
-        namelabel.innerHTML = "";
-        namelabel.style.outlineColor = "red";
-        namelabel.innerHTML = "Title:Title should contain atleast 3 characters atmost 20";
         namelabel.style.color="red"
         
     }

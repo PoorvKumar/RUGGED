@@ -17,7 +17,7 @@
 				Looking for more information you can sublmit your details here along with the query, our support team will contact you as soon as possible.
 			</h3>
 			<form id="contactForm" action ="/contact" method="post">
-				<label for="name" id="namelabel">Tiltle of Complaint:</label>
+				<label for="name" id="namelabel">Title:</label>
 				<input type="text" id="title" name="title" onkeyup="validatefirstname()" required>
 
 				<label for="email" id="emaillabel">Email:</label>
@@ -27,7 +27,7 @@
 				<input type="text" id="phn" name="phn" onkeyup="validateMobileNumber()" required>
 
 				<label for="description">Description:</label>
-				<textarea id="description" name="description" maxlength="250"></textarea>
+				<textarea id="description" name="description" maxlength="250" rows="4"></textarea>
 
 				<button type="submit">Submit</button>
 			</form>
