@@ -363,7 +363,7 @@
                 <% if (isLoggedin) { %>
                 <div class="px-3">
                   <h5 class="text-uppercase mb-4">Leave a review</h5>
-                  <form class="form" id="contact-form" method="post" action="/postReview">
+                  <form class="form" id="contact-form" method="post" action="/product?id=<%=productData._id%>">
                     <div class="row">
                       <div class="col-sm-6">
                         <div class="mb-4">
@@ -398,7 +398,7 @@
                       <label class="form-label" for="review">Your Review</label>
                       <textarea class="form-control" rows="4" name="review" id="review" placeholder="Enter your review" required="required"></textarea>
                     </div>
-                    <input type="hidden" name="productInfo" value="<%=productData%>">
+                    <input type="hidden" name="productID" value=<%=productData._id%>>
                     <button class="btn btn-outline-dark" type="submit">Post review</button>
                   </form>
                 </div>

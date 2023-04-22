@@ -290,11 +290,11 @@ exports.postCancelOrder = (req, res, next) => {
 };
 exports.postSingleProductOrder = (req, res, next) => {
   prodId = req.body.productID;
-  val=req.body.items
+  val = req.body.items
   console.log(val)
-  Product.find({_id:prodId})
+  Product.find({ _id: prodId })
     .then((products) => {
-     var products=[{quantity:1,product:products[0]}]
+      var products = [{ quantity: 1, product: products[0] }]
       const order = new Order({
         products: products,
         user: {
@@ -305,7 +305,7 @@ exports.postSingleProductOrder = (req, res, next) => {
         Status: "Not Shipped",
       });
       return order.save();
-    }).then(result=>{
+    }).then(result => {
       res.redirect("/returnsAndOrder")
     })
     .catch((err) => console.log(err));
@@ -314,34 +314,32 @@ exports.postSingleProductOrder = (req, res, next) => {
 
 exports.postReview = (req, res) => {
 
-  let custName = req.body.name;
+  // let custName = req.body.name;
   let ratingvalue = req.body.ratingval;
   let reviewTitle = req.body.reviewTitle;
   let reviewImageURL = req.body.reviewImageURL;
   let reviewText = req.body.review;
-  let productInfo = req.body.productInfo;
-
-  Product.findOneAndUpdate({ _id: productInfo._id}).then((result) => {
-    result.reviewsArray.push({
-      userID: req.session.user._id.toString(),
+  // let productID = req.body.productID;
+  // console.log(productID);
+  let pid = req.query.id;
+  let uid = req.user._id;
+  let ra;
+  Product.findById({ _id: pid }).then((result) => {
+    ra = result.reviewsArray;
+    ra.push({
+      userID: uid,
       title: reviewTitle,
       photoURLS: [reviewImageURL],
       rating: ratingvalue,
       description: reviewText,
     });
-    console.log("updated");
+    Product.findByIdAndUpdate(pid, { reviewsArray: ra }, { new: true }).then((result) => {
+    }).catch((error) => {
+      if (error) { console.error(error); }
+    });;
+
   }).catch((err) => {
     if (err) { console.error(err); }
   });
-
-  // console.log(custName);
-  // console.log(ratingvalue);
-  // console.log(reviewTitle);
-  // console.log(reviewImageURL);
-  // console.log(reviewText);
-  // console.log(productInfo);
-  // console.log(req.session.user._id);
-
-
 
 };
