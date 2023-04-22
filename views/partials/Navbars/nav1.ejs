@@ -107,6 +107,7 @@
               <div class="whole-cart-window"><!-- add hide class to hide cart window-->
                 <!-- <div class="heading"><p>Your Bag</p></div> -->
                 <div class="cart-wrapper">
+                  <% total=0 %>
                   <% if (cartprod.length > 0) { %>
                     <% for (let p of cartprod) { %>
                   <div class="cart-item" id="cart-item-1">
@@ -121,6 +122,7 @@
                         <span class="fa fa-star checked"></span>
                         <span class="quantity">Quantity: <%= p.quantity %></span>
                         <span class="price">Price: ₹<%= p.productID.price %>.00</span>
+                        <% total+=p.productID.price %>
                       </p>
                     </div>
                     <form action="/deletefromCart" method="POST">
@@ -130,7 +132,6 @@
                     <input type="hidden" name="productID" value="<%= p.productID._id %>">
                     </form>
                   </div>
-                  <% } %>
                   <% } %>
                   <!-- item 2 -->
                   <!-- <div class="cart-item">
@@ -150,15 +151,18 @@
                     <div class="cancel"><i class="fa-regular fa-trash-can coll"></i></div>
                   </div> -->
                 </div>
-                <div class="subtotal">Delivery: ₹200.00</div>
-                <div class="subtotal">Total: ₹2200.00</div>
+                <div class="subtotal">Delivery: ₹<%= 0.1*total   %></div>
+                <div class="subtotal">Total: ₹<%= total %></div>
                 <div class="cv">
-                  <button type="button" class="btn btn-outline-secondary">View WishList</button>
+                  <form action="/wishList" method="GET">
+                  <button type="submit" class="btn btn-outline-secondary">View WishList</button>
+                  </form>
                   <form action="/placeorder" method="POST">
-                  <button type="submit" class="btn btn-primary">Checkout</button>
+                    <button type="submit" class="btn btn-primary">Checkout</button>
                   </form>
                 </div>
               </div>
+              <% } %>
               <% } %>
               <!-- BigBox Finish -->
             </div>

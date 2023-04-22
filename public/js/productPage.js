@@ -25,3 +25,6 @@ function selectOption(option) {
 //   $('.dropdown-menu a').click(function(){
 //     $('#dropdownMenuButton').text($(this).text());
 //   });
+// const input = document.getElementById('bx');
+// const selectedValue = input.value;
+// document.getElementById('need').value=selectedValue

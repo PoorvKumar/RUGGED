@@ -47,7 +47,10 @@
             <div class="d-flex justify-content-between">
               <h5 class="fw-normal mb-0"><a href="#!">Track</a></h5>
               <div class="border-start h-100"></div>
-              <h5 class="fw-normal mb-0"><a href="#!">Cancel</a></h5>
+              <form action="/CancelOrder" method="POST" id="rt">
+              <h5 class="fw-normal mb-0"><a href="#" onclick="document.getElementById('rt').submit();">Cancel</a></h5>
+              <input type="hidden" name="ordercancel" value="<%= order._id %>">
+              </form>
               <div class="border-start h-100"></div>
               <h5 class="fw-normal mb-0"><a href="#!">Pre-pay</a></h5>
               <div class="border-start h-100"></div>
