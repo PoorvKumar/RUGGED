@@ -59,7 +59,6 @@ exports.getwishList = (req, res, next) => {
       console.error(err);
     });
 };
-
 exports.getUserDashboard = (req, res) => {
   // const userId=req.params.id;
   // console.log(userId);
@@ -68,8 +67,8 @@ exports.getUserDashboard = (req, res) => {
       .populate("cart.item.productID")
       .then((user) => {
         const cartproducts = user.cart.item;
-        res.render("userDashboard", {
-          pgTTL: "User DashBoard",
+        res.render("userDashboard2", {
+          pageTitle: "User DashBoard",
           user: req.session.user,
           isLoggedin: req.session.isLoggedin,
           cartprod: cartproducts
@@ -77,14 +76,13 @@ exports.getUserDashboard = (req, res) => {
       })
       .catch((err) => console.log(err));
   } else {
-    res.render("userDashboard", {
-      pgTTL: "User DashBoard",
-      user: req.session.user,
+    res.render("userDashboard2", {
+      pageTitle: "User DashBoard",
+      // user: req.session.user,
       isLoggedin: req.session.isLoggedin,
     });
   }
 };
-
 exports.updateUserPost = (req, res) => {
   const userId = req.query.id;
   // const updatedUserData=req.body;
@@ -110,7 +108,6 @@ exports.updateUserPost = (req, res) => {
       res.status(500).send("EError Updating user");
     });
 };
-
 exports.deleteUser = (req, res) => {
   const userId = req.user._id;
   // console.log(userId);
