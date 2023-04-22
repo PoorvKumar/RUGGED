@@ -63,12 +63,6 @@ const product = new Schema({
   table: {
     type: String
   },
-  // reviewID: {
-  //     type: Schema.Types.ObjectId,
-  //     ref: "Reviews",
-  //     required: true
-  // },
-  // review:{
   reviewsArray: [
     {
       userID: {
@@ -123,54 +117,50 @@ const product = new Schema({
   ]
 });
 
-product.methods.getRatingArray = (product) => {
-  ratingArray: [
-    {
-      stars: {
-        type: Number,
-        min: 0,
-        max: 5
-      },
-      numberOfPeople: {
-        type: Number,
-      },
-    }
-  ];
-  for (let index = 0; index < product.reviewsArray.length; index++) {
-    ratingArray[product.reviewsArray[index].rating].numberOfPeople = ratingArray[product.reviewsArray[index].rating].numberOfPeople + 1;
-  }
-  return ratingArray;
+// product.methods.getRatingArray = (product) => {
+//   ratingArray: [
+//     {
+//       stars: {
+//         type: Number,
+//         min: 0,
+//         max: 5
+//       },
+//       numberOfPeople: {
+//         type: Number,
+//       },
+//     }
+//   ];
+//   for (let index = 0; index < product.reviewsArray.length; index++) {
+//     ratingArray[product.reviewsArray[index].rating].numberOfPeople = ratingArray[product.reviewsArray[index].rating].numberOfPeople + 1;
+//   }
+//   return ratingArray;
+// };
 
-};
-
-product.methods.getAverageRating = (product) => {
-  ratingArray: [
-    {
-      stars: {
-        type: Number,
-        min: 0,
-        max: 5
-      },
-      numberOfPeople: {
-        type: Number,
-      },
-    }
-  ];
-  for (let index = 0; index < product.reviewsArray.length; index++) {
-    ratingArray[product.reviewsArray[index].rating].numberOfPeople = ratingArray[product.reviewsArray[index].rating].numberOfPeople + 1;
-  }
-  let averageRating = 0;
-  let sum = 0;
-  let totalNumOfPeople = 0;
-  for (let index2 = 0; index2 < ratingArray.length; index2++) {
-    totalNumOfPeople = totalNumOfPeople + ratingArray[index2].numberOfPeople;
-    sum = sum + (ratingArray[index2].stars + ratingArray[index2].numberOfPeople);
-  }
-  averageRating = float(sum / totalNumOfPeople);
-  return averageRating;
-
-}
-
-
+// product.methods.getAverageRating = (product) => {
+//   ratingArray: [
+//     {
+//       stars: {
+//         type: Number,
+//         min: 0,
+//         max: 5
+//       },
+//       numberOfPeople: {
+//         type: Number,
+//       },
+//     }
+//   ];
+//   for (let index = 0; index < product.reviewsArray.length; index++) {
+//     ratingArray[product.reviewsArray[index].rating].numberOfPeople = ratingArray[product.reviewsArray[index].rating].numberOfPeople + 1;
+//   }
+//   let averageRating = 0;
+//   let sum = 0;
+//   let totalNumOfPeople = 0;
+//   for (let index2 = 0; index2 < ratingArray.length; index2++) {
+//     totalNumOfPeople = totalNumOfPeople + ratingArray[index2].numberOfPeople;
+//     sum = sum + (ratingArray[index2].stars + ratingArray[index2].numberOfPeople);
+//   }
+//   averageRating = float(sum / totalNumOfPeople);
+//   return averageRating;
+// }
 
 module.exports = mongoose.model('Product', product);

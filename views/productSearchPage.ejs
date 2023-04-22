@@ -42,9 +42,9 @@
         <p class="filtersCategoriesText"> Portable Computer Bags & Sleeves</p>
         <p class="filtersCategoriesText"> Laptop Backpacks</p>
       </div>
-      <form action="/filterCustomerRating" method="get">
+      <form action="/filterProducts" method="get">
         <input type="hidden" name="q" value="<%= searchTerm %>">
-        <button type="submit" class="btn btn-secondary">Apply filters</button>
+        <button type="submit" class="btn btn-secondary applyFilters">Apply filters</button>
         <div class="accordion">Customer Rating</div>
         <div class="panel">
           <div class="customerRating">
@@ -227,7 +227,7 @@
     </div>
     <div class="mainContent col-9">
       <% for( let index = 0; index < productsData.length; index++ ) { %>
-      <%- include('partials/productCardSearch.ejs',{productData:productsData[index]}) %>
+      <%- include('partials/productCardSearch.ejs',{productData:productsData[index],productRating:productsRatingArray[index+1],}) %>
       <% } %>
     </div>
     <nav aria-label="Page navigation example">
