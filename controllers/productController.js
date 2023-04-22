@@ -4,7 +4,7 @@ exports.getProductInfo = (req, res) => {
   // const productId=req.params.productId;
   const productId = req.query.id;
   function getProductsRatingArray(products) {
-    productsRatingArray = [
+    let productsRatingArray = [
       // {
       //   productID: String,
       //   ratingArray: [],
