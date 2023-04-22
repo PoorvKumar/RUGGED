@@ -7,6 +7,7 @@
 <body>
 	<header>
 	</header>
+	
 	<div class="about-page">
 		<div class="header">
 			<h1>Contact Us</h1>
@@ -15,9 +16,9 @@
 			<h3>
 				Looking for more information you can sublmit your details here along with the query, our support team will contact you as soon as possible.
 			</h3>
-			<form id="contactForm" action ="/index.ejs">
-				<label for="name" id="namelabel">Name:</label>
-				<input type="text" id="name" name="name" onkeyup="validatefirstname()" required>
+			<form id="contactForm" action ="/contact" method="post">
+				<label for="name" id="namelabel">Tiltle of Complaint:</label>
+				<input type="text" id="title" name="title" onkeyup="validatefirstname()" required>
 
 				<label for="email" id="emaillabel">Email:</label>
 				<input type="email" id="email" name="email" onkeyup="validateEmail()" required>

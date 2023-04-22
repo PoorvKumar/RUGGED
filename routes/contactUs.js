@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 
-/* GET home page. */
+/* GET contact page. */
 router.get('/contact', function (req, res, next) {
     const data = req.session.user
     if (data) {

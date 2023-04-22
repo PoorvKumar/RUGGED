@@ -1,7 +1,7 @@
 
 const form = document.querySelector("#contactForm");
 const submit = document.querySelector("#btn-submit");
-const firstname = document.querySelector("#name");
+const firstname = document.querySelector("#title");
 
 const email = document.querySelector("#email");
 
@@ -41,19 +41,19 @@ function validatefirstname() {
 
     if (!startWithalphabet(firstname)) {
         firstname.style.outlineColor = "red";
-        namelabel.innerHTML = "Name:Name should start with alphabet";
+        namelabel.innerHTML = "Title:Title should start with alphabet";
         namelabel.style.color="red"
         
     }
     else if (!userLength(firstname)) {
         namelabel.innerHTML = "";
         namelabel.style.outlineColor = "red";
-        namelabel.innerHTML = "Name:Name should contain atleast 3 characters atmost 20";
+        namelabel.innerHTML = "Title:Title should contain atleast 3 characters atmost 20";
         namelabel.style.color="red"
         
     }
     else {
-        namelabel.innerHTML = "Name:";
+        namelabel.innerHTML = "Title of Complaint:";
         firstname.style.outlineColor = "green";
         namelabel.style.color="black"
 
