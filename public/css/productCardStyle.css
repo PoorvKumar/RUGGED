@@ -165,14 +165,14 @@
     z-index: 1;
     bottom: -800%;
     left: 50%;
-    margin-left: -80px;
+    margin-left: -160px;
 }
 /* Popup arrow */
 .popupRating .popupContent::before {
     content: "";
     position: absolute;
     bottom: 100%;
-    right: 72%;
+    right: 45%;
     margin-left: -5px;
     border-width: 5px;
     border-style: solid;
@@ -264,7 +264,7 @@
     background-color: #f44336;
 }
 /* Responsive layout - make the columns stack on top of each other instead of next to each other */
-@media (max-width: 200px) {
+@media (max-width: 210px) {
 
     .EdgeColumn,
     .CentreColumn {

@@ -154,7 +154,7 @@
         width:20%;
         box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
         /* background: radial-gradient(780px at 37.8% 100.3%, rgb(19, 55, 115) 2.2%, rgb(32, 7, 80) 20.2%, rgb(27, 88, 111) 58.6%, rgb(115, 88, 44) 75%, rgb(99, 19, 90) 89.6%, rgb(12, 51, 76) 96.1%); */
-        background: linear-gradient(to left, rgba(39, 166, 230, 0.9), rgba(50, 211, 206, 0.9));
+        background: linear-gradient(to right, rgba(229, 75, 240, 0.944), rgba(49, 113, 192, 0.9));
     }
     .forlogo{
         margin-top:15%;

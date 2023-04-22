@@ -56,7 +56,8 @@ exports.getAddProduct = (req, res, next) => {
     res.render('sellerDashboard',{
       pageTitle:'SellerDashboard',
       isLoggedin:req.session.isLoggedin,
-      cartprod:cartproducts
+      cartprod:cartproducts,
+      user:req.session.user
     })
   })
   .catch((err) => console.log(err));}
@@ -89,3 +90,57 @@ exports.getAddProduct = (req, res, next) => {
     })
   }
   }
+
+  exports.SellerGetProduct=(req,res)=>
+  {
+    res.render('partials/sellerDashboard/pages/product.ejs',
+    {
+      user:req.session.user,
+      isLoggedin:req.session.isLoggedin,
+      pageTitle: "Influencer Dash | Product Page"
+    });
+  }
+
+exports.SellerGetAddProduct=(req,res)=>
+{
+  res.render('partials/sellerDashboard/pages/addproduct.ejs',
+  {
+    user:req.session.user,
+    isLoggedin:req.session.isLoggedin,
+    pageTitle: "Influencer Dash | Add Product Page"
+  });
+}
+
+exports.sellerAddProduct=(req,res)=>
+{
+  let dPrice=req.body.price*(1-0.01*req.body.discount);
+  const product=new Product(
+    {
+      sellerID:req.user.id,
+      name:req.body.name,
+      shortDescription:req.body.shortDesc,
+      categories:req.body.cate, //array
+      brand:req.body.brand,
+      price:req.body.price,
+      quantity:req.body.stockQuantity,
+      discount:req.body.discount,
+      discountedPrice:dPrice,
+      description:req.body.description,
+      imageurl:req.body.imageurl, //array
+      tags:req.body.tags, //array
+      colors: req.body.colors //array
+    }
+  );
+
+  product.save()
+  .then(result=>
+    {
+      console.log("Product Added Successfully...");
+      res.redirect('/dashboardSeller/products');
+    })
+    .catch(err=>
+    {
+      console.error(err);
+    res.status(500).send("Server Error");
+    });
+}

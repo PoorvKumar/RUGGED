@@ -12,13 +12,13 @@ exports.getProductInfo = (req, res) => {
           .populate("cart.item.productID")
           .then((user) => {
             const cartproducts = user.cart.item;
-            console.log(products);
             res.render("productPage", {
               products: products,
               user: req.session.user,
               isLoggedin: req.session.isLoggedin,
               pgTitle: products.name,
-              cartprod:cartproducts
+              cartprod: cartproducts,
+              wishList: req.user.wishList.lists,
             });
           })
           .catch((err) => console.log(err));
@@ -27,7 +27,7 @@ exports.getProductInfo = (req, res) => {
           products: products,
           user: req.session.user,
           isLoggedin: req.session.isLoggedin,
-          pgTitle: products.name
+          pgTitle: products.name,
         });
       }
     })
@@ -37,3 +37,21 @@ exports.getProductInfo = (req, res) => {
       return;
     });
 };
+exports.getOrderDetails = (req, res, next) => {
+  req.user
+    .populate("cart.item.productID")
+    .then((user) => {
+      const cartproducts = user.cart.item;
+      res.render("returnsAndOrders", {
+        isLoggedin: req.session.isLoggedin,
+        cartprod: cartproducts,
+        user: req.session.user,
+      });
+    })
+    .catch((err) => console.log(err));
+};
+
+// exports.postProductSeller=(req,res)=>
+// {
+
+// }

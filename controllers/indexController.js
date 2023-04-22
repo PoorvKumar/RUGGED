@@ -13,6 +13,7 @@ exports.getLandingpage=(req,res,next)=>{
         if(!req.session.isLoggedin){
             res.render('index',{
                 pageTitle:'RUGGED',
+                user:req.session.user,
                 isLoggedin:req.session.isLoggedin,
                 prod:products2
               })}

@@ -46,6 +46,10 @@ const user = new Schema({
               ref: "Product",
               required: true,
             },
+            date:{
+              type: Date,
+              default: Date.now
+            } 
           }
         ],
         name: { type: String, required: true },
@@ -111,11 +115,11 @@ user.methods.addProductinWishList= function (product) {
 }
 user.methods.addProducttorandomWishList = function (product,listName) {
    const listidx=this.wishList.lists.findIndex((List)=>{
-    return List.name.toString()===listName
+    return List.name.toString()===listName.toString()
    })
    if(listidx>=0){
     const productidx=this.wishList.lists[listidx].item.findIndex((ListProduct)=>{
-      return ListProduct.productId.toString()=== product._id.toString()
+      return ListProduct.productID.toString()=== product._id.toString()
     })
     if(productidx<0){
         this.wishList.lists[listidx].item.push({
@@ -125,10 +129,10 @@ user.methods.addProducttorandomWishList = function (product,listName) {
     else{
       //Product already exists
     }
-   }
-   else{
+  }
+  else{
     //List donot exist
-   }
+  }
    return this.save()
 }
 user.methods.deleteProductfromwishList = function(listName,productId){

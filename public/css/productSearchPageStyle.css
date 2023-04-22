@@ -3,8 +3,8 @@
   display: flex;
   flex-flow: row wrap;
   justify-content: space-evenly;
-  /* background-color: white;*/
-  background: linear-gradient(to top left, rgba(39, 166, 230, 0.9), rgba(50, 211, 206, 0.9));
+  background-color: white;
+  /* background: linear-gradient(to top left, rgba(39, 166, 230, 0.9), rgba(50, 211, 206, 0.9)); */
 
   /* padding: 1%; */
   /* margin: 0.5% 0.5% 0.5% 0%; */
@@ -24,9 +24,9 @@ body{
   margin: 0 0 0 2% ;
   padding: 1%;
   margin-top: 1% !important;
-  /* background-color: white; */
+  background-color: white;
   max-height: max-content;
-  background: linear-gradient(to bottom right, rgba(39, 166, 230, 0.9), rgba(50, 211, 206, 0.9));
+  /* background: linear-gradient(to bottom right, rgba(39, 166, 230, 0.9), rgba(50, 211, 206, 0.9)); */
   box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
 
 }
@@ -41,15 +41,17 @@ body{
 }
 .FiltersSubHeadingTitleText{
   font-size: medium;
-  padding: 0;
-  margin: 1px;
+  padding: 1%;
+  margin: 1%;
 }
 .filtersCategoriesText{
+  padding: 1%;
+  margin: 1%;
   font-size: small;
-  padding: 0;
-  margin: 0;
 }
-
+.applyFilters{
+  margin-left: 30%;
+}
 .mainContent {
   display: flex;
   flex-flow: row wrap;
@@ -73,7 +75,7 @@ body{
 
 .accordion {
   background-color: transparent;
-  color: #444;
+  /* color: #444; */
   cursor: pointer;
   padding: 18px;
   width: 100%;
@@ -83,12 +85,13 @@ body{
   font-size: 15px;
   transition: 0.4s;
   font-weight: bold;
-  color: whitesmoke;
+  color: black;
 }
 
 .activeAccordion,
 .accordion:hover {
   background: linear-gradient(to left, rgba(39, 166, 230, 0.9), rgba(50, 211, 206, 0.9));
+  /* background: transparent; */
 }
 
 .accordion:after {

@@ -24,13 +24,13 @@
       <div class="col-md-4">
         <div class="card-body">
           <div class="pcBtnGroup">
-            <p class="headingJr">Item added on 12 March</p>
+            <p class="headingJr">Item added on <%=products.date %></p>
             <form action="/addtoCart" method="POST">
             <button type="submit" class="btn btn-warning pcButton1">Add to Cart</button>
             <input type="hidden" name="productID" value="<%= products.productID._id %>">
             </form>
             <div class="pcBtnsc">
-            <button type="button" class="btn btn-sm btn-outline-primary btn-sm pcButton2">Move</button>
+            <!-- <button type="button" class="btn btn-sm btn-outline-primary btn-sm pcButton2">Move</button> -->
             <form action="/deleteProductFromwishList" method="POST">
             <button type="submit" class="btn btn-sm btn-outline-danger pcButton3">Delete</button>
             <input type="hidden" name="listName" value="<%= currentList %>">

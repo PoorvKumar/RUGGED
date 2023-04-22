@@ -44,7 +44,9 @@ exports.getwishList = (req, res, next) => {
               .catch((err) => console.log(err));
           })
           .catch((err) => console.log(err));
-      } else {
+      } 
+      else 
+      {
         res.render("wishList", {
           product: products,
           pgTTL: "wishList",
@@ -176,9 +178,10 @@ exports.postaddproductinDefaultList = (req, res, next) => {
 exports.postaddproductinrandomList = (req, res, next) => {
   const listName = req.body.listName;
   const prodId = req.body.productID;
+  console.log(prodId)
   Product.findById(prodId)
     .then((product) => {
-      return req.user.addProducttorandomWishList(product);
+      return req.user.addProducttorandomWishList(product,listName);
     })
     .then((result) => {
       res.redirect("/wishList");
@@ -203,3 +206,4 @@ exports.postdeletewishList = (req, res, next) => {
     })
     .catch((err) => console.log(err));
 };
+

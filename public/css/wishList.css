@@ -219,9 +219,9 @@
   }
   
   /* Place text to the right */
-  .right {
+  /* .right {
     text-align: right;
-  }
+  } */
   
   /* Clear floats after the columns */
   .row:after {
