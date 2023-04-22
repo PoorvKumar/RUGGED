@@ -19,36 +19,13 @@ exports.postComplaints = (req, res, next) => {
     complain.save()
     .then(()=>
     {
-      if (!req.session.isLoggedin) 
+      res.redirect('/');
+    })
+    .catch(err=>
       {
-        res.render('index', {
-          pageTitle: 'RUGGED',
-          user: req.session.user,
-          isLoggedin: req.session.isLoggedin,
-          // prod: products2
-        });
-      }
-      else 
-      {
-        req.user
-          .populate('cart.item.productID')
-          .then(user => {
-            const cartproducts = user.cart.item;
-            // console.log(cartproducts)
-            res.render('index', {
-              pageTitle: 'RUGGED',
-              isLoggedin: req.session.isLoggedin,
-              user: req.session.user,
-              cartprod: cartproducts,
-              cartquantity: 10
-            });
-          }
-    
-          )
-          .catch(err => console.log(err));
-    
-      }
-    });
+        console.error(err);
+        res.status(500).send("Server Error");
+      })
 }
 
 exports.getContactUs=(req,res)=>
