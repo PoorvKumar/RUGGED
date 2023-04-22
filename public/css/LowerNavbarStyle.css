@@ -4,8 +4,9 @@
     margin: 0;
     opacity: 50% !important;
     font-size: small;
-    color: white;
+    color: black;
     font-weight: bold;
+    margin-left: 1rem;
 }
 .SPnavbar{
     padding: 0;
@@ -16,5 +17,6 @@
 
     padding: 2%;
     margin: 2% 5% 2% 2%;
-    background-color: aliceblue;
+    background-color: transparent;
+    font-size: small;
 }
