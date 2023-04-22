@@ -19,7 +19,7 @@ exports.getBlogPost=(req,res)=>
             res.render('influencerBlog', 
             {
                 pageTitle: 'BlogPost',
-                user: req.session.user,
+                user: { firstname: "User "},
                 isLoggedin: req.session.isLoggedin,
                 post:posts
             })
