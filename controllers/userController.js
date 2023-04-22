@@ -208,7 +208,7 @@ exports.postdeletewishList = (req, res, next) => {
 exports.getInfluencerDash=(req,res)=>
 {
   res.render("influencerDashboard", {
-    pgTTL: "User DashBoard",
+    pageTitle: "Influencer DashBoard",
     user: req.session.user,
     isLoggedin: req.session.isLoggedin
   });

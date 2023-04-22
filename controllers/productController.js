@@ -50,3 +50,8 @@ exports.getOrderDetails = (req, res, next) => {
     })
     .catch((err) => console.log(err));
 };
+
+// exports.postProductSeller=(req,res)=>
+// {
+
+// }

@@ -18,27 +18,30 @@ const product = new Schema({
     type: String,
     required: true
   },
+  shortDescription: {
+    type: String,
+    required: true
+  },
   discount: {
     type: Number,
     required: true
   },
+  discountedPrice: {
+    type: Number
+  },
   dimension: {
     length: {
       type: Number,
-      required: true
     },
     width: {
       type: Number,
-      required: true
     },
     height: {
       type: Number,
-      required: true
     },
   },
   weightInKg: {
     type: Number,
-    required: true
   },
   colors: {
     type: String,
@@ -52,14 +55,13 @@ const product = new Schema({
     type: String,
     required: true
   },
-  photosURLS: [{
-    photoURL: {
+  imagesURL: [{
+    imageURL: {
       type: String
     }
   }],
   table: {
-    type: String,
-    required: true
+    type: String
   },
   // reviewID: {
   //     type: Schema.Types.ObjectId,
@@ -103,7 +105,7 @@ const product = new Schema({
   },
   ruggedVerrified: {
     type: String,
-    required: true
+    // required: true
   },
   offers: [
     {
@@ -115,7 +117,7 @@ const product = new Schema({
       influencerID: {
         type: Schema.Types.ObjectId,
         ref: "Influencer",
-        required: true,
+        // required: true,
       },
     }
   ]
