@@ -64,7 +64,6 @@ exports.getProductInfo = (req, res) => {
       return;
     });
 };
-
 exports.getOrderDetails = (req, res, next) => {
   req.user
     .populate("cart.item.productID")
@@ -92,7 +91,6 @@ exports.getOrderDetails = (req, res, next) => {
     })
     .catch((err) => console.log(err));
 };
-
 exports.postOrder = (req, res, next) => {
   req.user
     .populate("cart.item.productID")
@@ -121,49 +119,47 @@ exports.postOrder = (req, res, next) => {
     })
     .catch((err) => console.log(err));
 };
-
 function getProductsRatingArray(products) {
-    productsRatingArray = [
+  productsRatingArray = [
+    {
+      productID: String,
+      ratingArray: [],
+    },
+  ];
+  for (let index = 0; index < products.length; index++) {
+    productsRatingArray.push(
       {
-        productID: String,
-        ratingArray: [],
-      },
-    ];
-    for (let index = 0; index < products.length; index++) {
-      productsRatingArray.push(
-        {
-          productID: products[index]._id.toString(),
-          ratingArray: [0, 0, 0, 0, 0, 0]
-        }
-      );
-    }
-    for (let index = 0; index < products.length; index++) {
-      let product = products[index];
-      let prai = productsRatingArray[index];
-      for (let j = 0; j < product.reviewsArray.length; j++) {
-        prai.ratingArray[product.reviewsArray[j].rating] = prai.ratingArray[product.reviewsArray[j].rating] + 1;
+        productID: products[index]._id.toString(),
+        ratingArray: [0, 0, 0, 0, 0, 0]
       }
+    );
+  }
+  for (let index = 0; index < products.length; index++) {
+    let product = products[index];
+    let prai = productsRatingArray[index];
+    for (let j = 0; j < product.reviewsArray.length; j++) {
+      prai.ratingArray[product.reviewsArray[j].rating] = prai.ratingArray[product.reviewsArray[j].rating] + 1;
     }
-    return productsRatingArray;
+  }
+  return productsRatingArray;
 };
 function getAverageRating(product) {
-    let ratingArray = [0, 0, 0, 0, 0, 0];
-    for (let index = 0; index < product.reviewsArray.length; index++) {
-      ratingArray[product.reviewsArray[index].rating] = ratingArray[product.reviewsArray[index].rating] + 1;
-    }
-    let averageRating = 0;
-    let sum = 0;
-    let totalNumOfPeople = 0;
-    for (let index2 = 0; index2 < ratingArray.length; index2++) {
-      totalNumOfPeople = totalNumOfPeople + ratingArray[index2];
-      sum = sum + (index2 * ratingArray[index2]);
-    }
-    if (totalNumOfPeople === 0) {
-      totalNumOfPeople = 1;
-    }
-    averageRating = (sum / totalNumOfPeople);
-    console.log(averageRating);
-    return averageRating;
+  let ratingArray = [0, 0, 0, 0, 0, 0];
+  for (let index = 0; index < product.reviewsArray.length; index++) {
+    ratingArray[product.reviewsArray[index].rating] = ratingArray[product.reviewsArray[index].rating] + 1;
+  }
+  let averageRating = 0;
+  let sum = 0;
+  let totalNumOfPeople = 0;
+  for (let index2 = 0; index2 < ratingArray.length; index2++) {
+    totalNumOfPeople = totalNumOfPeople + ratingArray[index2];
+    sum = sum + (index2 * ratingArray[index2]);
+  }
+  if (totalNumOfPeople === 0) {
+    totalNumOfPeople = 1;
+  }
+  averageRating = (sum / totalNumOfPeople);
+  return averageRating;
 };
 exports.getFilter = (req, res) => {
   const searchTerm = String(req.query.q);
@@ -276,4 +272,38 @@ exports.getFilter = (req, res) => {
       res.status(500).send('Server Error');
       return;
     });
+};
+
+exports.postReview = (req, res) => {
+
+  let custName = req.body.name;
+  let ratingvalue = req.body.ratingval;
+  let reviewTitle = req.body.reviewTitle;
+  let reviewImageURL = req.body.reviewImageURL;
+  let reviewText = req.body.review;
+  let productInfo = req.body.productInfo;
+
+  Product.findOneAndUpdate({ _id: productInfo._id}).then((result) => {
+    result.reviewsArray.push({
+      userID: req.session.user._id.toString(),
+      title: reviewTitle,
+      photoURLS: [reviewImageURL],
+      rating: ratingvalue,
+      description: reviewText,
+    });
+    console.log("updated");
+  }).catch((err) => {
+    if (err) { console.error(err); }
+  });
+
+  // console.log(custName);
+  // console.log(ratingvalue);
+  // console.log(reviewTitle);
+  // console.log(reviewImageURL);
+  // console.log(reviewText);
+  // console.log(productInfo);
+  // console.log(req.session.user._id);
+
+
+
 };

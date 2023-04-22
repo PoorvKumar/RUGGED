@@ -64,7 +64,7 @@ const product = new Schema({
       userID: {
         type: Schema.Types.ObjectId,
         ref: "User",
-        required: true,
+        // required: true,
       },
       title: {
         type: String,
@@ -72,7 +72,6 @@ const product = new Schema({
       photoURLS: [],
       rating: {
         type: Number,
-        required: true
       },
       description: {
         type: String,

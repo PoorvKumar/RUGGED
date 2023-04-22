@@ -77,7 +77,9 @@
               <button type="submit" class="btn btn-warning btn-lg">Add to Cart</button>
               <input type="hidden" name="productID" value="<%= productData._id %>">
             </form>
-            <button type="button" class="btn btn-success btn-lg ">Buy Now</button>
+            <form action="/buynow" method="post">
+              <button type="submit" class="btn btn-success btn-lg ">Buy Now</button>
+            </form>
           </div>
         </div>
         <div class="col-xs-12 col-sm-6 col-md-7 col-lg-7  MyBorder RightColumn">
@@ -170,7 +172,7 @@
                       <% if(wishList.length>0){ %>
                       <% for(let list of wishList){ %>
                       <a class="dropdown-item" href="#" onclick="selectOption('<%= list.name %>')"><%= list.name %></a>
-                      <input type="hidden" name="productID" value="<%= products._id %>">
+                      <input type="hidden" name="productID" value="<%= productData._id %>">
                       <% } %>
                       <% } %>
                       <% } %>
@@ -218,29 +220,27 @@
             <img src="/Images/services/premiumQuality.png" class="serviceInner w-25" alt="Premium Quality Assurance">
             <% } %>
           </div>
-          <form action="/buynow">
+          <form action="/buynow" name="buyNowForm">
             <div class="row">
-
               <% if (productData.size.length>0) { %>
               <div class="col-sm-6 col-lg-12 detail-option mb-3">
                 <h6 class="">Size <span>(required)</span></h6>
-                <% for( let index = 0; index < productData.size.length.length; index++ ) { %>
-                  <label class="btn btn-sm btn-outline-secondary detail-option-btn-label" for="size_<%=index%>"> <%=productData.size[index]%>
-                    <input class="visually-hidden" type="radio" name="size" value="value_<%=index%>" id="size_<%=index%>" required="">
-                  </label>                
+                <% for( let index = 0; index < productData.size.length; index++ ) { %>
+                <label class="btn btn-sm btn-outline-secondary detail-option-btn-label" for="size_<%=index%>"><%=productData.size[index]%>
+                  <input class="visually-hidden" type="radio" name="size" value="value_<%=index%>" id="size_<%=index%>" required="">
+                </label>
                 <% } %>
               </div>
               <% } %>
-
               <% if (productData.type.length>0) { %>
-                <div class="col-sm-6 col-lg-12 detail-option mb-3">
-                  <h6 class="">Type <span>(required)</span></h6>
-                  <% for( let index = 0; index < productData.type.length; index++ ) { %>
-                    <label class="btn btn-sm btn-outline-secondary detail-option-btn-label" for="material_<%=index%>"> <%=productData.type[index]%>
-                      <input class="visually-hidden" type="radio" name="material" value="value_<%=index%>" id="material_<%=index%>" required="">
-                    </label>                  
-                  <% } %>
-                </div>               
+              <div class="col-sm-6 col-lg-12 detail-option mb-3">
+                <h6 class="">Type <span>(required)</span></h6>
+                <% for( let index = 0; index < productData.type.length; index++ ) { %>
+                <label class="btn btn-sm btn-outline-secondary detail-option-btn-label" for="material_<%=index%>"> <%=productData.type[index]%>
+                  <input class="visually-hidden" type="radio" name="material" value="value_<%=index%>" id="material_<%=index%>" required="">
+                </label>
+                <% } %>
+              </div>
               <% } %>
               <!-- colors option select -->
               <!-- <div class="col-12 detail-option mb-3">
@@ -341,62 +341,65 @@
                   max5=5;
                 } %>
                 <% for( let index = 0; index < max5; index++ ) { %>
-                  <div class="review d-flex">
-                    <div class="flex-shrink-0 text-center me-4 me-xl-5"><img class="review-image" src=<%= productData.reviewsArray[index].photoURLS[1] %> alt="..."><span class="text-uppercase text-muted"></span></div>
-                    <div>
-                      <h5 class="mt-2 mb-1"><%=productData.reviewsArray[index].userID%></h5>
-                      <div class="mb-2">
-                      <% for( let j = 0; j < productData.reviews; j++ ) { %>
-                        <i class="fa fa-xs fa-star text-warning"></i>
+                <div class="review d-flex">
+                  <div class="flex-shrink-0 text-center me-4 me-xl-5"><img class="review-image" src=<%= productData.reviewsArray[index].photoURLS[0] %> alt="..."><span class="text-uppercase text-muted"></span></div>
+                  <div>
+                    <h5 class="mt-2 mb-1"><%=productData.reviewsArray[index].userID%></h5>
+                    <div class="mb-2">
+                      <% for( let j = 0; j < productData.reviewsArray[index].rating; j++ ) { %>
+                      <i class="fa fa-xs fa-star text-warning"></i>
                       <% } %>
-                      <% for( let j = 0; j < 5-productData.reviews; j++ ) { %>
-                        <i class="fa fa-xs fa-star text-gray-200"></i>
+                      <% for( let j = 0; j < 5-productData.reviewsArray[index].rating; j++ ) { %>
+                      <i class="fa fa-xs fa-star text-gray-200"></i>
                       <% } %>
-                      </div>
-                      <h6 class="mt-2 mb-1"><%= productData.reviewsArray[index].title %></h6>
-                      <p class="text-muted"><%= productData.reviewsArray[index].description %></p>
                     </div>
+                    <h6 class="mt-2 mb-1"><%= productData.reviewsArray[index].title %></h6>
+                    <p class="text-muted"><%= productData.reviewsArray[index].description %></p>
                   </div>
+                </div>
                 <% } %>
                 <% if (isLoggedin) { %>
-                  <div class="px-3">
-                    <h5 class="text-uppercase mb-4">Leave a review</h5>
-                    <form class="form" id="contact-form" method="post" action="/post-review">
-                      <div class="row">
-                        <div class="col-sm-6">
-                          <div class="mb-4">
-                            <label class="form-label" for="name">Your Name</label>
-                            <input class="form-control" type="text" name="name" id="name" placeholder="Enter your name" required="required">
-                          </div>
-                        </div>
-                        <div class="col-sm-6">
-                          <div class="mb-4">
-                            <label class="form-label" for="rating">Your rating</label>
-                            <select class="custom-select focus-shadow-0" name="rating" id="rating">
-                              <option value="5">★★★★★ (5/5)</option>
-                              <option value="4">★★★★☆ (4/5)</option>
-                              <option value="3">★★★☆☆ (3/5)</option>
-                              <option value="2">★★☆☆☆ (2/5)</option>
-                              <option value="1">★☆☆☆☆ (1/5)</option>
-                            </select>
-                          </div>
+                <div class="px-3">
+                  <h5 class="text-uppercase mb-4">Leave a review</h5>
+                  <form class="form" id="contact-form" method="post" action="/postReview">
+                    <div class="row">
+                      <div class="col-sm-6">
+                        <div class="mb-4">
+                          <label class="form-label" for="name">Your Name</label>
+                          <input class="form-control" type="text" name="name" id="name" placeholder="Enter your name" required="required">
                         </div>
                       </div>
-                      <div class="mb-4">
-                        <label class="form-label" for="reviewTitle">Title</label>
-                        <input class="form-control" type="text" name="reviewTitle" id="reviewTitle" placeholder="Enter your Review Title" required="required">
+                      <div class="col-sm-6">
+                        <div class="mb-4">
+                          <label class="form-label" for="ratingval">Your rating</label>
+                          <input id="ratingval" type="hidden">
+                          <select class="custom-select focus-shadow-0" name="ratingval" id="ratingval">
+                            <option value="5">★★★★★ (5/5)</option>
+                            <option value="4">★★★★☆ (4/5)</option>
+                            <option value="3">★★★☆☆ (3/5)</option>
+                            <option value="2">★★☆☆☆ (2/5)</option>
+                            <option value="1">★☆☆☆☆ (1/5)</option>
+                            <option value="0">☆☆☆☆☆ (0/5)</option>
+                          </select></input>
+                        </div>
                       </div>
-                      <div class="mb-4">
-                        <label class="form-label" for="reviewImageURL">Image URL</label>
-                        <input class="form-control" type="text" name="reviewImageURL" id="reviewImageURL" placeholder="Enter Images of your item">
-                      </div>
-                      <div class="mb-4">
-                        <label class="form-label" for="review">Your Review</label>
-                        <textarea class="form-control" rows="4" name="review" id="review" placeholder="Enter your review" required="required"></textarea>
-                      </div>
-                      <button class="btn btn-outline-dark" type="submit">Post review</button>
-                    </form>
-                  </div>                 
+                    </div>
+                    <div class="mb-4">
+                      <label class="form-label" for="reviewTitle">Title</label>
+                      <input class="form-control" type="text" name="reviewTitle" id="reviewTitle" placeholder="Enter your Review Title" required="required">
+                    </div>
+                    <div class="mb-4">
+                      <label class="form-label" for="reviewImageURL">Image URL</label>
+                      <input class="form-control" type="text" name="reviewImageURL" id="reviewImageURL" placeholder="Enter Images of your item">
+                    </div>
+                    <div class="mb-4">
+                      <label class="form-label" for="review">Your Review</label>
+                      <textarea class="form-control" rows="4" name="review" id="review" placeholder="Enter your review" required="required"></textarea>
+                    </div>
+                    <input type="hidden" name="productInfo" value="<%=productData%>">
+                    <button class="btn btn-outline-dark" type="submit">Post review</button>
+                  </form>
+                </div>
                 <% } %>
               </div>
             </div>
