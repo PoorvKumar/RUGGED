@@ -155,4 +155,8 @@ user.methods.deletewishList = function(listName){
     this.wishList.lists=updatedList
     return this.save()
 }
+user.methods.emptyCart = function(){
+  this.cart={items:[]}
+  return this.save()
+}
 module.exports = mongoose.model("User", user);

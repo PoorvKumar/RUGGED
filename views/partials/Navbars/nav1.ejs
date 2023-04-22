@@ -154,7 +154,9 @@
                 <div class="subtotal">Total: ₹2200.00</div>
                 <div class="cv">
                   <button type="button" class="btn btn-outline-secondary">View WishList</button>
-                  <button type="button" class="btn btn-primary">Checkout</button>
+                  <form action="/placeorder" method="POST">
+                  <button type="submit" class="btn btn-primary">Checkout</button>
+                  </form>
                 </div>
               </div>
               <% } %>
