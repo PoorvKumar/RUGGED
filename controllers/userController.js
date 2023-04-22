@@ -72,7 +72,7 @@ exports.getUserDashboard = (req, res) => {
           pgTTL: "User DashBoard",
           user: req.session.user,
           isLoggedin: req.session.isLoggedin,
-          cartprod: cartproducts,
+          cartprod: cartproducts
         });
       })
       .catch((err) => console.log(err));
