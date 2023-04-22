@@ -8,4 +8,5 @@ const authMiddleware=require("../middleware/authMiddleware");
 router.get('/product',productController.getProductInfo);
 router.get('/returnsAndOrder',authMiddleware,productController.getOrderDetails)
 router.post('/placeorder',productController.postOrder)
+router.post('/CancelOrder',productController.postCancelOrder)
 module.exports=router;

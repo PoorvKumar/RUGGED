@@ -32,5 +32,8 @@ const order = new Schema(
   }
 }
 );
-
+order.methods.CancelOrder= function(){
+    this.Status="Cancel"
+    return this.save()
+}
 module.exports=mongoose.model('Order',order);

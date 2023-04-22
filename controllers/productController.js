@@ -108,7 +108,7 @@ exports.postOrder = (req, res, next) => {
             lastname: req.user.lastname,
             userId: req.user._id,
           },
-          Status: "Placed",
+          Status: "Not Shipped",
         });
         return order.save();
       }
@@ -276,4 +276,17 @@ exports.getFilter = (req, res) => {
       res.status(500).send('Server Error');
       return;
     });
+};
+exports.postCancelOrder = (req, res, next) => {
+  var orderid=req.body.ordercancel
+  Order.findById(orderid).then(order=>{
+  req.order=order
+  req.order
+    .CancelOrder()
+    .then((result) => {
+      res.redirect("/");
+    })
+    .catch((err) => console.log(err));
+  })
+  .catch((err) => console.log(err));
 };
