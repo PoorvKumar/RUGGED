@@ -46,6 +46,10 @@ const user = new Schema({
               ref: "Product",
               required: true,
             },
+            date:{
+              type: Date,
+              default: Date.now
+            } 
           }
         ],
         name: { type: String, required: true },

@@ -139,6 +139,8 @@
               </span>
               <span class="wishlist rightCompartmentInner">
                <!--  -->
+               <form action="/addtorandomwishList" method="POST" id="lidrp">
+                 <input type="hidden" id="selectedOption" name="listName" value="">
                <div class="dropdown">
                 <button class="btn btn-sm btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   <% if(isLoggedin){ %>
@@ -152,19 +154,16 @@
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                   <% if(isLoggedin){ %>
                   <% if(wishList.length>0){ %>
-                  <% for(let list of wishList){ %>
-                  <form action="/addtorandomwishList" method="POST" id="lidrp">
-                  <select name="mySelect" class="form-select" aria-label="Select an option">
-                    <a class="dropdown-item" href="#" onclick="document.getElementById('lidrp').submit()" value="<%= list.name %>"><%= list.name %></a>
-                  </select>
-                  <input type="hidden" name="listName" value="<%= list.name %>">
-                <input type="hidden" name="productID" value="<%= products._id %>">
-                  </form>
-                  <% } %>
-                  <% } %>
-                  <% } %>
-                </div>
+                    <% for(let list of wishList){ %>
+                    <a class="dropdown-item" href="#" onclick="selectOption('<%= list.name %>')"><%= list.name %></a>
+                    <input type="hidden" name="productID" value="<%= products._id %>">
+                <% } %>
+                <% } %>
+                <% } %>
               </div>
+            </div>
+            <button type="submit" class="btn btn-sm btn-outline-secondary" style="text-align: center;">Go</button>
+          </form>
                <!--  -->
                 <!-- <i class="fa-solid fa-heart wishlistInner"></i> -->
               </span>
