@@ -1,7 +1,7 @@
 .hc-1{
     margin-top:4%;
     margin-left:3%;
-    background-color: rgb(143, 222, 232);
+    background: rgb(99 210 240);
     margin-right: 3%;
     padding-top:10px;
     padding-bottom:4px;
@@ -69,10 +69,11 @@
                height:25rem;
 }
 .hvc-1{
-  background-color: #ddd;
+  /* background: linear-gradient(to left, rgba(39, 166, 230, 0.9), rgba(50, 211, 206, 0.9)); */
+  background: rgb(99 210 240);
     width:18rem;
     height:40rem;
-    margin:2%;
+    margin:1%;
     margin-top:3%;
     /* box-shadow: 0.5rem 0.5rem 0.5rem #ccc,-0.5rem -0.5rem 0.5rem #ccc; */
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
@@ -83,6 +84,7 @@
     width:65rem;
     height:40rem;
     margin: 3%;
+    background: rgb(99 210 240);
     /* box-shadow:  0.5rem 0.5rem 0.5rem #ccc,-0.5rem -0.5rem 0.5rem #ccc;     */
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     border-radius: 10px;
@@ -96,15 +98,18 @@
 }
 .hvc-1 ul li{
     display:flex;
-    flex-wrap: wrap;
     flex-direction: row;
     margin:1%;
-    padding:6%;
+    padding:1%;
     /* padding-left:10%; */
-    color:Black;
+    color:whitesmoke;
+    background-color: rgba(27, 167, 237, 0.668);
     font-weight: bold;
     border-radius: 10px;
     text-align: center;
+}
+.active{
+  background: linear-gradient(to left, rgba(39, 166, 230, 0.9), rgba(50, 211, 206, 0.9));
 }
 .private-list{
     font-size:10px;
@@ -121,7 +126,7 @@
 .hvc-1 ul li:hover{
     /* background-color: grey; */
     cursor: pointer;
-    color:rgb(134, 166, 168);
+    background: linear-gradient(to left, rgba(39, 166, 230, 0.9), rgba(50, 211, 206, 0.9)); 
     box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
 }
 .pcHzMain{

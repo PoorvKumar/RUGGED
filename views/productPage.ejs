@@ -77,7 +77,11 @@
               <button type="submit" class="btn btn-warning btn-lg">Add to Cart</button>
               <input type="hidden" name="productID" value="<%= productData._id %>">
             </form>
-            <button type="button" class="btn btn-success btn-lg ">Buy Now</button>
+            <form action="/buynow" method="POST">
+            <button type="submit" class="btn btn-success btn-lg ">Buy Now</button>
+            <input type="hidden" name="productID" value="<%= productData._id %>">
+            <input type="hidden" name="noofitems" id="need" value="">
+            </form>
           </div>
         </div>
         <div class="col-xs-12 col-sm-6 col-md-7 col-lg-7  MyBorder RightColumn">
@@ -170,7 +174,7 @@
                       <% if(wishList.length>0){ %>
                       <% for(let list of wishList){ %>
                       <a class="dropdown-item" href="#" onclick="selectOption('<%= list.name %>')"><%= list.name %></a>
-                      <input type="hidden" name="productID" value="<%= products._id %>">
+                      <input type="hidden" name="productID" value="<%= productData._id %>">
                       <% } %>
                       <% } %>
                       <% } %>
@@ -266,7 +270,7 @@
               </div> -->
               <div class="col-12 col-lg-6 detail-option mb-5">
                 <label class="fw-bold">Number of Items <span>(required)</span></label>
-                <input class="form-control detail-quantity" name="items" type="number" value="1">
+                <input class="form-control detail-quantity" id="bx" name="items" type="number" value="1">
               </div>
             </div>
           </form>

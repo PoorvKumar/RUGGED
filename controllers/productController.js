@@ -11,22 +11,21 @@ exports.getProductInfo = (req, res) => {
       },
     ];
     for (let index = 0; index < products.length; index++) {
-      productsRatingArray.push(
-        {
-          productID: products[index]._id.toString(),
-          ratingArray: [0, 0, 0, 0, 0, 0]
-        }
-      );
+      productsRatingArray.push({
+        productID: products[index]._id.toString(),
+        ratingArray: [0, 0, 0, 0, 0, 0],
+      });
     }
     for (let index = 0; index < products.length; index++) {
       let product = products[index];
       let prai = productsRatingArray[index];
       for (let j = 0; j < product.reviewsArray.length; j++) {
-        prai.ratingArray[product.reviewsArray[j].rating] = prai.ratingArray[product.reviewsArray[j].rating] + 1;
+        prai.ratingArray[product.reviewsArray[j].rating] =
+          prai.ratingArray[product.reviewsArray[j].rating] + 1;
       }
     }
     return productsRatingArray;
-  };
+  }
   //fetch data from database using productId
   Product.findById(productId)
     .then((product) => {
@@ -74,16 +73,17 @@ exports.getOrderDetails = (req, res, next) => {
         .then((orders) => {
           Order.find({ "user.userId": req.user._id, Status: "Not Shipped" })
             .then((notshippedOrders) => {
-              Order.find({ 'user.userId': req.user._id, Status: "Placed" }).then(buyAgain => {
-                res.render("returnsAndOrders", {
-                  isLoggedin: req.session.isLoggedin,
-                  cartprod: cartproducts,
-                  orders: orders,
-                  user: req.session.user,
-                  notshippedOrders: notshippedOrders,
-                  buyAgain: buyAgain
-                });
-              })
+              Order.find({ "user.userId": req.user._id, Status: "Placed" })
+                .then((buyAgain) => {
+                  res.render("returnsAndOrders", {
+                    isLoggedin: req.session.isLoggedin,
+                    cartprod: cartproducts,
+                    orders: orders,
+                    user: req.session.user,
+                    notshippedOrders: notshippedOrders,
+                    buyAgain: buyAgain,
+                  });
+                })
                 .catch((err) => console.log(err));
             })
             .catch((err) => console.log(err));
@@ -123,48 +123,48 @@ exports.postOrder = (req, res, next) => {
 };
 
 function getProductsRatingArray(products) {
-    productsRatingArray = [
-      {
-        productID: String,
-        ratingArray: [],
-      },
-    ];
-    for (let index = 0; index < products.length; index++) {
-      productsRatingArray.push(
-        {
-          productID: products[index]._id.toString(),
-          ratingArray: [0, 0, 0, 0, 0, 0]
-        }
-      );
+  productsRatingArray = [
+    {
+      productID: String,
+      ratingArray: [],
+    },
+  ];
+  for (let index = 0; index < products.length; index++) {
+    productsRatingArray.push({
+      productID: products[index]._id.toString(),
+      ratingArray: [0, 0, 0, 0, 0, 0],
+    });
+  }
+  for (let index = 0; index < products.length; index++) {
+    let product = products[index];
+    let prai = productsRatingArray[index];
+    for (let j = 0; j < product.reviewsArray.length; j++) {
+      prai.ratingArray[product.reviewsArray[j].rating] =
+        prai.ratingArray[product.reviewsArray[j].rating] + 1;
     }
-    for (let index = 0; index < products.length; index++) {
-      let product = products[index];
-      let prai = productsRatingArray[index];
-      for (let j = 0; j < product.reviewsArray.length; j++) {
-        prai.ratingArray[product.reviewsArray[j].rating] = prai.ratingArray[product.reviewsArray[j].rating] + 1;
-      }
-    }
-    return productsRatingArray;
-};
+  }
+  return productsRatingArray;
+}
 function getAverageRating(product) {
-    let ratingArray = [0, 0, 0, 0, 0, 0];
-    for (let index = 0; index < product.reviewsArray.length; index++) {
-      ratingArray[product.reviewsArray[index].rating] = ratingArray[product.reviewsArray[index].rating] + 1;
-    }
-    let averageRating = 0;
-    let sum = 0;
-    let totalNumOfPeople = 0;
-    for (let index2 = 0; index2 < ratingArray.length; index2++) {
-      totalNumOfPeople = totalNumOfPeople + ratingArray[index2];
-      sum = sum + (index2 * ratingArray[index2]);
-    }
-    if (totalNumOfPeople === 0) {
-      totalNumOfPeople = 1;
-    }
-    averageRating = (sum / totalNumOfPeople);
-    console.log(averageRating);
-    return averageRating;
-};
+  let ratingArray = [0, 0, 0, 0, 0, 0];
+  for (let index = 0; index < product.reviewsArray.length; index++) {
+    ratingArray[product.reviewsArray[index].rating] =
+      ratingArray[product.reviewsArray[index].rating] + 1;
+  }
+  let averageRating = 0;
+  let sum = 0;
+  let totalNumOfPeople = 0;
+  for (let index2 = 0; index2 < ratingArray.length; index2++) {
+    totalNumOfPeople = totalNumOfPeople + ratingArray[index2];
+    sum = sum + index2 * ratingArray[index2];
+  }
+  if (totalNumOfPeople === 0) {
+    totalNumOfPeople = 1;
+  }
+  averageRating = sum / totalNumOfPeople;
+  console.log(averageRating);
+  return averageRating;
+}
 exports.getFilter = (req, res) => {
   const searchTerm = String(req.query.q);
   const customerRating = req.query.customerRating;
@@ -177,14 +177,14 @@ exports.getFilter = (req, res) => {
   const colorSelected = req.query.colour;
   const availability = req.query.availability;
 
-  Product.find({ name: { $regex: searchTerm, $options: 'i' }, })
-    .then(products => {
+  Product.find({ name: { $regex: searchTerm, $options: "i" } })
+    .then((products) => {
       const priceFilter = (product) => {
-        let priceAfterDiscount = product.price * (1 - (product.discount * 0.01));
-        return (priceAfterDiscount > priceLL && priceAfterDiscount < priceUL);
+        let priceAfterDiscount = product.price * (1 - product.discount * 0.01);
+        return priceAfterDiscount > priceLL && priceAfterDiscount < priceUL;
       };
       const customerRatingFilter = (product) => {
-        return (getAverageRating(product) >= customerRating)
+        return getAverageRating(product) >= customerRating;
       };
       const brandFilter = (product) => {
         let index = 0;
@@ -245,7 +245,7 @@ exports.getFilter = (req, res) => {
         products = products.filter(priceFilter);
       }
       if (customerRating) {
-        products = products.filter(customerRatingFilter)
+        products = products.filter(customerRatingFilter);
       }
       const productsRatingArray = getProductsRatingArray(products);
       if (req.session.isLoggedin) {
@@ -253,13 +253,13 @@ exports.getFilter = (req, res) => {
           .populate("cart.item.productID")
           .then((user) => {
             const cartproducts = user.cart.item;
-            res.render('productSearchPage.ejs', {
+            res.render("productSearchPage.ejs", {
               productsData: products,
               user: req.session.user,
               isLoggedin: req.session.isLoggedin,
               searchTerm: searchTerm,
               productsRatingArray: productsRatingArray,
-              cartprod: cartproducts
+              cartprod: cartproducts,
             });
           })
           .catch((err) => console.log(err));
@@ -271,22 +271,45 @@ exports.getFilter = (req, res) => {
         });
       }
     })
-    .catch(err => {
+    .catch((err) => {
       console.error(err);
-      res.status(500).send('Server Error');
+      res.status(500).send("Server Error");
       return;
     });
 };
 exports.postCancelOrder = (req, res, next) => {
-  var orderid=req.body.ordercancel
-  Order.findById(orderid).then(order=>{
-  req.order=order
-  req.order
-    .CancelOrder()
-    .then((result) => {
-      res.redirect("/");
+  var orderid = req.body.ordercancel;
+  Order.findById(orderid)
+    .then((order) => {
+      req.order = order;
+      req.order
+        .CancelOrder()
+        .then((result) => {
+          res.redirect("/");
+        })
+        .catch((err) => console.log(err));
     })
     .catch((err) => console.log(err));
-  })
-  .catch((err) => console.log(err));
+};
+exports.postSingleProductOrder = (req, res, next) => {
+  prodId = req.body.productID;
+  val=req.body.items
+  console.log(val)
+  Product.find({_id:prodId})
+    .then((products) => {
+     var products=[{quantity:1,product:products[0]}]
+      const order = new Order({
+        products: products,
+        user: {
+          firstname: req.user.firstname,
+          lastname: req.user.lastname,
+          userId: req.user._id,
+        },
+        Status: "Not Shipped",
+      });
+      return order.save();
+    }).then(result=>{
+      res.redirect("/returnsAndOrder")
+    })
+    .catch((err) => console.log(err));
 };
