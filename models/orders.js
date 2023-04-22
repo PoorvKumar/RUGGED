@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 const order = new Schema(
-  [ {products: [
+  {products: [
     {
       product: { type: Object, required: true },
       quantity: { type: Number, required: true }
@@ -31,7 +31,6 @@ const order = new Schema(
     required:true,
   }
 }
-]
 );
 
 module.exports=mongoose.model('Order',order);

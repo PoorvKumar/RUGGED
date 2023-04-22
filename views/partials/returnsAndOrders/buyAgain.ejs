@@ -1,5 +1,67 @@
 <div class="ll gradient-custom">
+  <% if (buyAgain.length > 0) { %>
+    <% buyAgain.forEach(order => { %>
   <div class="need">
+    <div class="row row-cols-1 row-cols-md-4 g-4">
+      <% order.products.forEach(p => { %>
+      <div class="col">
+        <div class="card h-70">
+          <a href="#"><img src="/Images/ProductImages/Rucksack2/Rucksack2_image7.jpg" class="card-img-top" alt="Skyscrapers" />
+            <div class="card-body">
+              <h5 class="card-title"><%= p.product.name %></h5>
+              <div class="cover">
+                <div class="btn btn-warning">Add to cart</div>
+                <div class="btn btn-success">Buy Now</div>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+      <% }); %>
+      <!-- <div class="col">
+        <div class="card h-70">
+          <a href="#"><img src="/Images/ProductImages/Rucksack2/Rucksack2_image7.jpg" class="card-img-top" alt="Skyscrapers" />
+            <div class="card-body">
+              <h5 class="card-title">Name</h5>
+              <div class="cover">
+                <div class="btn btn-warning">Add to cart</div>
+                <div class="btn btn-success">Buy Now</div>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card h-70">
+          <a href="#"><img src="/Images/ProductImages/Rucksack2/Rucksack2_image7.jpg" class="card-img-top" alt="Skyscrapers" />
+            <div class="card-body">
+              <h5 class="card-title">Name</h5>
+              <div class="cover">
+                <div class="btn btn-warning">Add to cart</div>
+                <div class="btn btn-success">Buy Now</div>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card h-70">
+          <a href="#"><img src="/Images/ProductImages/Rucksack2/Rucksack2_image7.jpg" class="card-img-top" alt="Skyscrapers" />
+            <div class="card-body">
+              <h5 class="card-title">Name</h5>
+              <div class="cover">
+                <div class="btn btn-warning">Add to cart</div>
+                <div class="btn btn-success">Buy Now</div>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div> -->
+    </div>
+  </div>
+    <% }); %>
+    <% } %>
+  <!-- <div class="need">
     <div class="row row-cols-1 row-cols-md-4 g-4">
       <div class="col">
         <div class="card h-70">
@@ -54,61 +116,5 @@
         </div>
       </div>
     </div>
-  </div>
-  <div class="need">
-    <div class="row row-cols-1 row-cols-md-4 g-4">
-      <div class="col">
-        <div class="card h-70">
-          <a href="#"><img src="/Images/ProductImages/Rucksack2/Rucksack2_image7.jpg" class="card-img-top" alt="Skyscrapers" />
-            <div class="card-body">
-              <h5 class="card-title">Name</h5>
-              <div class="cover">
-                <div class="btn btn-warning">Add to cart</div>
-                <div class="btn btn-success">Buy Now</div>
-              </div>
-            </div>
-          </a>
-        </div>
-      </div>
-      <div class="col">
-        <div class="card h-70">
-          <a href="#"><img src="/Images/ProductImages/Rucksack2/Rucksack2_image7.jpg" class="card-img-top" alt="Skyscrapers" />
-            <div class="card-body">
-              <h5 class="card-title">Name</h5>
-              <div class="cover">
-                <div class="btn btn-warning">Add to cart</div>
-                <div class="btn btn-success">Buy Now</div>
-              </div>
-            </div>
-          </a>
-        </div>
-      </div>
-      <div class="col">
-        <div class="card h-70">
-          <a href="#"><img src="/Images/ProductImages/Rucksack2/Rucksack2_image7.jpg" class="card-img-top" alt="Skyscrapers" />
-            <div class="card-body">
-              <h5 class="card-title">Name</h5>
-              <div class="cover">
-                <div class="btn btn-warning">Add to cart</div>
-                <div class="btn btn-success">Buy Now</div>
-              </div>
-            </div>
-          </a>
-        </div>
-      </div>
-      <div class="col">
-        <div class="card h-70">
-          <a href="#"><img src="/Images/ProductImages/Rucksack2/Rucksack2_image7.jpg" class="card-img-top" alt="Skyscrapers" />
-            <div class="card-body">
-              <h5 class="card-title">Name</h5>
-              <div class="cover">
-                <div class="btn btn-warning">Add to cart</div>
-                <div class="btn btn-success">Buy Now</div>
-              </div>
-            </div>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
+  </div> -->
 </div>
