@@ -76,6 +76,7 @@
   color: #fff;
   padding: 4px;
   border-radius: 3px;
+  max-height: 25px;
   font-weight: 500;
   font-size: 12px;
   vertical-align: middle;

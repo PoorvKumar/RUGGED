@@ -16,7 +16,7 @@
   <link rel="stylesheet" href="/css/productPage.css">
   <!-- <script src="/public/js"></script> -->
   <script src="/js/productPage.js"></script>
-  <title><%= products.pgTitle %></title>
+  <title><%= pgTitle %></title>
 </head>
 
 <body>
@@ -31,72 +31,42 @@
           <ul>
             <li class="productImageLi">
               <div class="productImage">
-                <img src="/Images/ProductImages/Rucksack2/Rucksack2_image1.jpg" alt="Product" class="ProductImageInner" onclick="ChangeMainPhotoTO(this)">
+                <img src=<%=productData.imagesURL[0]%> alt="Product" class="ProductImageInner" onclick="ChangeMainPhotoTO('productData.imagesURL[0].imageURL')">
               </div>
             </li>
+            <% for( let index = 1; index < productData.imagesURL.length; index++ ) { %>
             <li class="productImageLi">
               <div class="productImage">
-                <img src="/Images/ProductImages/Rucksack2/Rucksack2_image2.jpg" alt="Product" class="ProductImageInner" onclick="ChangeMainPhotoTO(this)">
+                <img src=<%=productData.imagesURL[index]%> alt="Product" class="ProductImageInner" onclick="ChangeMainPhotoTO('productData.imagesURL[index].imageURL')">
               </div>
             </li>
-            <li class="productImageLi">
-              <div class="productImage">
-                <img src="/Images/ProductImages/Rucksack2/Rucksack2_image3.jpg" alt="Product" class="ProductImageInner" onclick="ChangeMainPhotoTO(this)">
-              </div>
-            </li>
-            <li class="productImageLi">
-              <div class="productImage">
-                <img src="/Images/ProductImages/Rucksack2/Rucksack2_image4.jpg" alt="Product" class="ProductImageInner" onclick="ChangeMainPhotoTO(this)">
-              </div>
-            </li>
-            <li class="productImageLi">
-              <div class="productImage">
-                <img src="/Images/ProductImages/Rucksack2/Rucksack2_image5.jpg" alt="Product" class="ProductImageInner" onclick="ChangeMainPhotoTO(this)">
-              </div>
-            </li>
-            <li class="productImageLi">
-              <div class="productImage">
-                <img src="/Images/ProductImages/Rucksack2/Rucksack2_image6.jpg" alt="Product" class="ProductImageInner" onclick="ChangeMainPhotoTO(this)">
-              </div>
-            </li>
+            <% } %>
           </ul>
         </div>
         <div class="col-xs-12 col-sm-6 col-md-5 col-lg-4 MyBorder">
           <div class="productCarousel" data-bs-theme="dark">
-            <div id="carouselExampleIndicators" class="carousel slide">
+            <div id="carouselID2" class="carousel slide">
               <div class="carousel-indicators">
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4" aria-label="Slide 5"></button>
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="5" aria-label="Slide 6"></button>
+                <button type="button" data-bs-target="#carouselID2" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <% for( let index = 1; index < productData.imagesURL.length; index++ ) { %>
+                <button type="button" data-bs-target="#carouselID2" data-bs-slide-to=<%=index%> aria-label="Slide <%= index+1 %>"></button>
+                <% } %>
               </div>
               <div class="carousel-inner">
                 <div class="carousel-item active">
-                  <img src="/Images/ProductImages/Rucksack2/Rucksack2_image1.jpg" class="d-block w-100" alt="...">
+                  <img src=<%= productData.imagesURL[0] %> class="d-block w-100" alt="image0">
                 </div>
+                <% for( let index = 0; index < productData.imagesURL.length; index++ ) { %>
                 <div class="carousel-item">
-                  <img src="/Images/ProductImages/Rucksack2/Rucksack2_image2.jpg" class="d-block w-100" alt="...">
+                  <img src=<%=productData.imagesURL[index]%> class="d-block w-100" alt="image<%= index %>">
                 </div>
-                <div class="carousel-item">
-                  <img src="/Images/ProductImages/Rucksack2/Rucksack2_image3.jpg" class="d-block w-100" alt="...">
-                </div>
-                <div class="carousel-item">
-                  <img src="/Images/ProductImages/Rucksack2/Rucksack2_image4.jpg" class="d-block w-100" alt="...">
-                </div>
-                <div class="carousel-item">
-                  <img src="/Images/ProductImages/Rucksack2/Rucksack2_image5.jpg" class="d-block w-100" alt="...">
-                </div>
-                <div class="carousel-item">
-                  <img src="/Images/ProductImages/Rucksack2/Rucksack2_image6.jpg" class="d-block w-100" alt="...">
-                </div>
+                <% } %>
               </div>
-              <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+              <button class="carousel-control-prev" type="button" data-bs-target="#carouselID2" data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Previous</span>
               </button>
-              <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+              <button class="carousel-control-next" type="button" data-bs-target="#carouselID2" data-bs-slide="next">
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Next</span>
               </button>
@@ -104,121 +74,176 @@
           </div>
           <div class="lowerButtons">
             <form action="/addtoCart" method="POST">
-            <button type="submit" class="btn btn-warning btn-lg">Add to Cart</button>
-            <input type="hidden" name="productID" value="<%= products._id %>">
+              <button type="submit" class="btn btn-warning btn-lg">Add to Cart</button>
+              <input type="hidden" name="productID" value="<%= productData._id %>">
             </form>
             <button type="button" class="btn btn-success btn-lg ">Buy Now</button>
           </div>
         </div>
         <div class="col-xs-12 col-sm-6 col-md-7 col-lg-7  MyBorder RightColumn">
           <div class="UpperContent">
-            <div class="brandName">Brand Name</div>
+            <div class="brandName"><%=productData.brand%></div>
             <div class="rightCompartment ">
-              <span class="starsRatingGreen rightCompartmentInner popupRating" onclick="popupRatingFunction()">3.8
+              <% var totalNumberofPeople = productRating.ratingArray[5]+productRating.ratingArray[4]+productRating.ratingArray[3]+productRating.ratingArray[2]+productRating.ratingArray[1] ;
+              if(totalNumberofPeople===0){
+                totalNumberofPeople=1;
+              };%>
+              <span class="starsRatingGreen rightCompartmentInner popupRating" onclick="popupRatingFunction('<%=productData._id%>')"><%=((productRating.ratingArray[5]*5 +productRating.ratingArray[4]*4 +productRating.ratingArray[3]*3 + productRating.ratingArray[2]*2 + productRating.ratingArray[1]*1)/(totalNumberofPeople))%>
                 <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMyIgaGVpZ2h0PSIxMiI+PHBhdGggZmlsbD0iI0ZGRiIgZD0iTTYuNSA5LjQzOWwtMy42NzQgMi4yMy45NC00LjI2LTMuMjEtMi44ODMgNC4yNTQtLjQwNEw2LjUuMTEybDEuNjkgNC4wMSA0LjI1NC40MDQtMy4yMSAyLjg4Mi45NCA0LjI2eiIvPjwvc3ZnPg==" class="innerStars">
                 <div class="popupContent" id="popupUserRating">
                   <span class="heading">User Rating</span>
                   <div class="row UserRatingGrid">
-                    <div class="EdgeColumn"><div>5 star</div></div>
-                    <div class="CentreColumn"><div class="barContainer"><div class="bar5"></div></div></div>
-                    <div class="EdgeColumn rightText"><div>150</div></div>
-                    <div class="EdgeColumn"><div>4 star</div></div>
-                    <div class="CentreColumn"><div class="barContainer"><div class="bar4"></div></div></div>
-                    <div class="EdgeColumn rightText"><div>63</div></div>
-                    <div class="EdgeColumn"><div>3 star</div></div>
-                    <div class="CentreColumn"><div class="barContainer"><div class="bar3"></div></div></div>
-                    <div class="EdgeColumn rightText"><div>15</div></div>
-                    <div class="EdgeColumn"><div>2 star</div></div>
-                    <div class="CentreColumn"><div class="barContainer"><div class="bar2"></div></div></div>
-                    <div class="EdgeColumn rightText"><div>6</div></div>
-                    <div class="EdgeColumn"><div>1 star</div></div>
-                    <div class="CentreColumn"><div class="barContainer"><div class="bar1"></div></div></div>
-                    <div class="EdgeColumn rightText"><div>20</div></div>
+                    <div class="EdgeColumn">
+                      <div>5 star</div>
+                    </div>
+                    <div class="CentreColumn">
+                      <div class="barContainer">
+                        <div class="bar5"></div>
+                      </div>
+                    </div>
+                    <div class="EdgeColumn rightText">
+                      <div><%=productRating.ratingArray[5]%></div>
+                    </div>
+                    <div class="EdgeColumn">
+                      <div>4 star</div>
+                    </div>
+                    <div class="CentreColumn">
+                      <div class="barContainer">
+                        <div class="bar4"></div>
+                      </div>
+                    </div>
+                    <div class="EdgeColumn rightText">
+                      <div><%=productRating.ratingArray[4]%></div>
+                    </div>
+                    <div class="EdgeColumn">
+                      <div>3 star</div>
+                    </div>
+                    <div class="CentreColumn">
+                      <div class="barContainer">
+                        <div class="bar3"></div>
+                      </div>
+                    </div>
+                    <div class="EdgeColumn rightText">
+                      <div><%=productRating.ratingArray[3]%></div>
+                    </div>
+                    <div class="EdgeColumn">
+                      <div>2 star</div>
+                    </div>
+                    <div class="CentreColumn">
+                      <div class="barContainer">
+                        <div class="bar2"></div>
+                      </div>
+                    </div>
+                    <div class="EdgeColumn rightText">
+                      <div><%=productRating.ratingArray[2]%></div>
+                    </div>
+                    <div class="EdgeColumn">
+                      <div>1 star</div>
+                    </div>
+                    <div class="CentreColumn">
+                      <div class="barContainer">
+                        <div class="bar1"></div>
+                      </div>
+                    </div>
+                    <div class="EdgeColumn rightText">
+                      <div><%=productRating.ratingArray[1]%></div>
+                    </div>
                   </div>
                 </div>
               </span>
               <span class="wishlist rightCompartmentInner">
-               <!--  -->
-               <form action="/addtorandomwishList" method="POST" id="lidrp">
-                 <input type="hidden" id="selectedOption" name="listName" value="">
-               <div class="dropdown">
-                <button class="btn btn-sm btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <% if(isLoggedin){ %>
-                 <% if(wishList.length>0){ %>
-                  ---Choose List---
-                  <% }else{ %>
-                    No wishList
-                    <% } %>
-                    <% } %>
-                </button>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                  <% if(isLoggedin){ %>
-                  <% if(wishList.length>0){ %>
-                    <% for(let list of wishList){ %>
-                    <a class="dropdown-item" href="#" onclick="selectOption('<%= list.name %>')"><%= list.name %></a>
-                    <input type="hidden" name="productID" value="<%= products._id %>">
-                <% } %>
-                <% } %>
-                <% } %>
-              </div>
-            </div>
-            <button type="submit" class="btn btn-sm btn-outline-secondary" style="text-align: center;">Go</button>
-          </form>
-               <!--  -->
+                <!--  -->
+                <form action="/addtorandomwishList" method="POST" id="lidrp">
+                  <input type="hidden" id="selectedOption" name="listName" value="">
+                  <div class="dropdown">
+                    <button class="btn btn-sm btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      <% if(isLoggedin){ %>
+                      <% if(wishList.length>0){ %>
+                      ---Choose List---
+                      <% }else{ %>
+                      No wishList
+                      <% } %>
+                      <% } %>
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                      <% if(isLoggedin){ %>
+                      <% if(wishList.length>0){ %>
+                      <% for(let list of wishList){ %>
+                      <a class="dropdown-item" href="#" onclick="selectOption('<%= list.name %>')"><%= list.name %></a>
+                      <input type="hidden" name="productID" value="<%= products._id %>">
+                      <% } %>
+                      <% } %>
+                      <% } %>
+                    </div>
+                  </div>
+                  <button type="submit" class="btn btn-sm btn-outline-secondary" style="text-align: center;">Go</button>
+                </form>
+                <!--  -->
                 <!-- <i class="fa-solid fa-heart wishlistInner"></i> -->
               </span>
               <span class="share rightCompartmentInner shareIcon">
-                <!-- <i class="fa-solid fa-share-from-square"></i> -->
                 <i class="fa-regular fa-share-from-square" id="shareItem"></i>
               </span>
             </div>
           </div>
           <div class="productNameAndVerified">
-            <h3>Rucksack 2</h3>
-            <img src="/Images/Verrification/rugged-verified-high-resolution-color-logo-slim.png" alt="" class="RuggedVerified">
+            <h3><%= productData.name %></h3>
+            <% if (productData.ruggedVerrified==="true") { %>
+            <img src="/Images/Verrification/rugged-verified-high-resolution-color-logo-slim.png" alt="Rugged Verrified" class="RuggedVerified">
+            <% } %>
           </div>
           <hr>
           <div class="ourPrice">Discounted Price</div>
           <div class="priceOuter">
             <div class="discountedPriceNumber">
-              <h2>$1,245</h2>
+              <h2> ₹<%=productData.price*(1-(productData.discount*0.01))%></h2>
             </div>
-            <div class="originalPrice"><s> $5,500</s></div>
-            <div class="percentOff">77% Off</div>
+            <div class="originalPrice"><s> ₹<%= productData.price %></s></div>
+            <div class="percentOff"><%= productData.discount %>% Off</div>
           </div>
           <div class="text">Inclusive of all Taxes.</div>
-          <div class="Emi">Emi starts at 426 per month.<a href="" class="emiLink">EMI details</a></div>
+          <div class="Emi">Emi starts at ₹<%=(productData.price*(1-(productData.discount*0.01))/24)%> per month for 24 months.<a href="" class="emiLink">EMI details</a></div>
           <hr>
           <div class="services" data-bs-theme="dark">
-            <img src="/Images/services/freeDelivery.webp" class="serviceInner w-25" alt="...">
-            <img src="/Images/services/returnPolicy.webp" class="serviceInner w-25" alt="...">
-            <img src="/Images/services/cashOnDelivery.webp" class="serviceInner w-25" alt="...">
-            <img src="/Images/services/premiumQuality.png" class="serviceInner w-25" alt="...">
+            <% if (productData.services[0]===1) { %>
+            <img src="/Images/services/freeDelivery.webp" class="serviceInner w-25" alt="Free Delivery">
+            <% } %>
+            <% if (productData.services[1]===1) { %>
+            <img src="/Images/services/returnPolicy.webp" class="serviceInner w-25" alt="30 Days Return Policy">
+            <% } %>
+            <% if (productData.services[2]===1) { %>
+            <img src="/Images/services/cashOnDelivery.webp" class="serviceInner w-25" alt="Cash On Delivery">
+            <% } %>
+            <% if (productData.services[3]===1) { %>
+            <img src="/Images/services/premiumQuality.png" class="serviceInner w-25" alt="Premium Quality Assurance">
+            <% } %>
           </div>
-          <form action="#">
+          <form action="/buynow">
             <div class="row">
+
+              <% if (productData.size.length>0) { %>
               <div class="col-sm-6 col-lg-12 detail-option mb-3">
                 <h6 class="">Size <span>(required)</span></h6>
-                <label class="btn btn-sm btn-outline-secondary detail-option-btn-label" for="size_0"> Small
-                  <input class="visually-hidden" type="radio" name="size" value="value_0" id="size_0" required="">
-                </label>
-                <label class="btn btn-sm btn-outline-secondary detail-option-btn-label" for="size_1"> Medium
-                  <input class="visually-hidden" type="radio" name="size" value="value_1" id="size_1" required="">
-                </label>
-                <label class="btn btn-sm btn-outline-secondary detail-option-btn-label" for="size_2"> Large
-                  <input class="visually-hidden" type="radio" name="size" value="value_2" id="size_2" required="">
-                </label>
+                <% for( let index = 0; index < productData.size.length.length; index++ ) { %>
+                  <label class="btn btn-sm btn-outline-secondary detail-option-btn-label" for="size_<%=index%>"> <%=productData.size[index]%>
+                    <input class="visually-hidden" type="radio" name="size" value="value_<%=index%>" id="size_<%=index%>" required="">
+                  </label>                
+                <% } %>
               </div>
-              <div class="col-sm-6 col-lg-12 detail-option mb-3">
-                <h6 class="">Type <span>(required)</span></h6>
-                <label class="btn btn-sm btn-outline-secondary detail-option-btn-label" for="material_0"> Hoodie
-                  <input class="visually-hidden" type="radio" name="material" value="value_0" id="material_0" required="">
-                </label>
-                <label class="btn btn-sm btn-outline-secondary detail-option-btn-label" for="material_1"> College
-                  <input class="visually-hidden" type="radio" name="material" value="value_1" id="material_1" required="">
-                </label>
-              </div>
-              <div class="col-12 detail-option mb-3">
+              <% } %>
+
+              <% if (productData.type.length>0) { %>
+                <div class="col-sm-6 col-lg-12 detail-option mb-3">
+                  <h6 class="">Type <span>(required)</span></h6>
+                  <% for( let index = 0; index < productData.type.length; index++ ) { %>
+                    <label class="btn btn-sm btn-outline-secondary detail-option-btn-label" for="material_<%=index%>"> <%=productData.type[index]%>
+                      <input class="visually-hidden" type="radio" name="material" value="value_<%=index%>" id="material_<%=index%>" required="">
+                    </label>                  
+                  <% } %>
+                </div>               
+              <% } %>
+              <!-- colors option select -->
+              <!-- <div class="col-12 detail-option mb-3">
                 <h6 class="">Colour <span>(required)</span></h6>
                 <ul class="list-inline mb-0 colours-wrapper">
                   <li class="list-inline-item">
@@ -238,9 +263,9 @@
                     <input class="visually-hidden" type="radio" name="colour" value="value_Red" id="colour_Red" required="">
                   </li>
                 </ul>
-              </div>
+              </div> -->
               <div class="col-12 col-lg-6 detail-option mb-5">
-                <label class="fw-bold">Items <span>(required)</span></label>
+                <label class="fw-bold">Number of Items <span>(required)</span></label>
                 <input class="form-control detail-quantity" name="items" type="number" value="1">
               </div>
             </div>
@@ -251,14 +276,14 @@
     <section class="main">
       <div class="container">
         <ul class="nav nav-tabs flex-column flex-sm-row" role="tablist">
-          <li class="nav-item" role="presentation"><a class="nav-link detail-nav-link active" data-bs-toggle="tab" href="#description" role="tab" aria-selected="true">products.description</a></li>
+          <li class="nav-item" role="presentation"><a class="nav-link detail-nav-link active" data-bs-toggle="tab" href="#description" role="tab" aria-selected="true">Description</a></li>
           <li class="nav-item" role="presentation"><a class="nav-link detail-nav-link" data-bs-toggle="tab" href="#additional-information" role="tab" aria-selected="false" tabindex="-1">Additional Information</a></li>
           <li class="nav-item" role="presentation"><a class="nav-link detail-nav-link" data-bs-toggle="tab" href="#reviews" role="tab" aria-selected="false" tabindex="-2">Reviews</a></li>
         </ul>
         <div class="tab-content">
           <div class="tab-pane px-3 active show" id="description" role="tabpanel">
-            <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. LOLUt enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. LOLDuis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. LOLUt enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. LOLDuis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <p class="text-muted"><%=productData.shortDescription%></p>
+            <p class="text-muted"><%=productData.description%></p>
           </div>
           <div class="tab-pane" id="additional-information" role="tabpanel">
             <div class="row">
@@ -267,19 +292,19 @@
                   <tbody>
                     <tr>
                       <th class="text-uppercase fw-normal border-0">Product #</th>
-                      <td class="text-muted border-0">Lorem ipsum dolor sit amet</td>
+                      <td class="text-muted border-0"><%= productData._id %></td>
                     </tr>
                     <tr>
-                      <th class="text-uppercase fw-normal ">Available packaging</th>
-                      <td class="text-muted ">LOLDuis aute irure dolor in reprehenderit</td>
+                      <th class="text-uppercase fw-normal ">Dimensions</th>
+                      <td class="text-muted ">(Length*Width*Height)<%= productData.dimension.length %>*<%= productData.dimension.width %>*<%= productData.dimension.height %></td>
                     </tr>
                     <tr>
-                      <th class="text-uppercase fw-normal ">Weight</th>
-                      <td class="text-muted ">dolor sit amet</td>
+                      <th class="text-uppercase fw-normal ">Weight(in KG)</th>
+                      <td class="text-muted "><%= productData.weightInKg %></td>
                     </tr>
                     <tr>
-                      <th class="text-uppercase fw-normal ">Sunt in culpa qui</th>
-                      <td class="text-muted ">Lorem ipsum dolor sit amet</td>
+                      <th class="text-uppercase fw-normal ">Colour</th>
+                      <td class="text-muted "><%= productData.colors %></td>
                     </tr>
                   </tbody>
                 </table>
@@ -288,12 +313,12 @@
                 <table class="table text-sm">
                   <tbody>
                     <tr>
-                      <th class="text-uppercase fw-normal border-0">Weight</th>
-                      <td class="text-muted border-0">dolor sit amet </td>
+                      <th class="text-uppercase fw-normal border-0">Seller</th>
+                      <td class="text-muted border-0"><%= productData.sellerID %> </td>
                     </tr>
                     <tr>
-                      <th class="text-uppercase fw-normal ">Sunt in culpa qui</th>
-                      <td class="text-muted ">Lorem ipsum dolor sit amet </td>
+                      <th class="text-uppercase fw-normal ">Country of Origin</th>
+                      <td class="text-muted "><%=productData.CountryOfOrigin%></td>
                     </tr>
                     <tr>
                       <th class="text-uppercase fw-normal ">Product #</th>
@@ -311,76 +336,68 @@
           <div class="tab-pane" id="reviews" role="tabpanel">
             <div class="row mb-5">
               <div class="col-lg-10 col-xl-9">
-                <div class="review d-flex">
-                  <div class="flex-shrink-0 text-center me-4 me-xl-5"><img class="review-image" src="https://d19m59y37dris4.cloudfront.net/sell/2-0-1/img/person-1.jpg" alt="Han Solo"><span class="text-uppercase text-muted">Dec 2018</span></div>
-                  <div>
-                    <h5 class="mt-2 mb-1">Han Solo</h5>
-                    <div class="mb-2"><i class="fa fa-xs fa-star text-warning"></i><i class="fa fa-xs fa-star text-warning"></i><i class="fa fa-xs fa-star text-warning"></i><i class="fa fa-xs fa-star text-warning"></i><i class="fa fa-xs fa-star text-warning"></i>
+                <% let max5 = productData.reviewsArray.length
+                if(max5>5){
+                  max5=5;
+                } %>
+                <% for( let index = 0; index < max5; index++ ) { %>
+                  <div class="review d-flex">
+                    <div class="flex-shrink-0 text-center me-4 me-xl-5"><img class="review-image" src=<%= productData.reviewsArray[index].photoURLS[1] %> alt="..."><span class="text-uppercase text-muted"></span></div>
+                    <div>
+                      <h5 class="mt-2 mb-1"><%=productData.reviewsArray[index].userID%></h5>
+                      <div class="mb-2">
+                      <% for( let j = 0; j < productData.reviews; j++ ) { %>
+                        <i class="fa fa-xs fa-star text-warning"></i>
+                      <% } %>
+                      <% for( let j = 0; j < 5-productData.reviews; j++ ) { %>
+                        <i class="fa fa-xs fa-star text-gray-200"></i>
+                      <% } %>
+                      </div>
+                      <h6 class="mt-2 mb-1"><%= productData.reviewsArray[index].title %></h6>
+                      <p class="text-muted"><%= productData.reviewsArray[index].description %></p>
                     </div>
-                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni, tenetur iusto voluptas illum vitae animi maxime, dolorem rerum sit reiciendis, repellendus repellat adipisci dolorum. Sapiente error itaque impedit praesentium obcaecati!</p>
                   </div>
-                </div>
-                <div class="review d-flex">
-                  <div class="flex-shrink-0 text-center me-4 me-xl-5"><img class="review-image" src="https://d19m59y37dris4.cloudfront.net/sell/2-0-1/img/person-2.jpg" alt="Luke Skywalker"><span class="text-uppercase text-muted">Dec 2018</span></div>
-                  <div>
-                    <h5 class="mt-2 mb-1">Luke Skywalker</h5>
-                    <div class="mb-2"><i class="fa fa-xs fa-star text-warning"></i><i class="fa fa-xs fa-star text-warning"></i><i class="fa fa-xs fa-star text-warning"></i><i class="fa fa-xs fa-star text-warning"></i><i class="fa fa-xs fa-star text-gray-200"></i>
-                    </div>
-                    <p class="text-muted">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laboriosam obcaecati fuga reiciendis, dolore suscipit hic nostrum, ipsam illo aperiam consequatur molestias a, libero nulla. Maxime vitae doloremque distinctio nobis ipsam?</p>
-                  </div>
-                </div>
-                <div class="review d-flex">
-                  <div class="flex-shrink-0 text-center me-4 me-xl-5"><img class="review-image" src="https://d19m59y37dris4.cloudfront.net/sell/2-0-1/img/person-3.jpg" alt="Princess Leia"><span class="text-uppercase text-muted">Dec 2018</span></div>
-                  <div>
-                    <h5 class="mt-2 mb-1">Princess Leia</h5>
-                    <div class="mb-2"><i class="fa fa-xs fa-star text-warning"></i><i class="fa fa-xs fa-star text-warning"></i><i class="fa fa-xs fa-star text-warning"></i><i class="fa fa-xs fa-star text-gray-200"></i><i class="fa fa-xs fa-star text-gray-200"></i>
-                    </div>
-                    <p class="text-muted">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum quas vero mollitia obcaecati possimus repellendus, aperiam atque eaque, fuga distinctio nobis iste dolores maxime ratione ipsum debitis repellat expedita iure!</p>
-                  </div>
-                </div>
-                <div class="review d-flex">
-                  <div class="flex-shrink-0 text-center me-4 me-xl-5"><img class="review-image" src="https://d19m59y37dris4.cloudfront.net/sell/2-0-1/img/person-4.jpg" alt="Jabba Hut"><span class="text-uppercase text-muted">Dec 2018</span></div>
-                  <div>
-                    <h5 class="mt-2 mb-1">Jabba Hut</h5>
-                    <div class="mb-2"><i class="fa fa-xs fa-star text-warning"></i><i class="fa fa-xs fa-star text-warning"></i><i class="fa fa-xs fa-star text-warning"></i><i class="fa fa-xs fa-star text-warning"></i><i class="fa fa-xs fa-star text-warning"></i>
-                    </div>
-                    <p class="text-muted">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quam maiores sed iure culpa obcaecati laudantium tempora quae consequuntur reiciendis, blanditiis velit expedita repellat minus optio! Deserunt iste est sint eum!</p>
-                  </div>
-                </div>
-                <div class="px-3">
-                  <h5 class="text-uppercase mb-4">Leave a review</h5>
-                  <form class="form" id="contact-form" method="post" action="contact.php">
-                    <div class="row">
-                      <div class="col-sm-6">
-                        <div class="mb-4">
-                          <label class="form-label" for="name">Your name *</label>
-                          <input class="form-control" type="text" name="name" id="name" placeholder="Enter your name" required="required">
+                <% } %>
+                <% if (isLoggedin) { %>
+                  <div class="px-3">
+                    <h5 class="text-uppercase mb-4">Leave a review</h5>
+                    <form class="form" id="contact-form" method="post" action="/post-review">
+                      <div class="row">
+                        <div class="col-sm-6">
+                          <div class="mb-4">
+                            <label class="form-label" for="name">Your Name</label>
+                            <input class="form-control" type="text" name="name" id="name" placeholder="Enter your name" required="required">
+                          </div>
+                        </div>
+                        <div class="col-sm-6">
+                          <div class="mb-4">
+                            <label class="form-label" for="rating">Your rating</label>
+                            <select class="custom-select focus-shadow-0" name="rating" id="rating">
+                              <option value="5">★★★★★ (5/5)</option>
+                              <option value="4">★★★★☆ (4/5)</option>
+                              <option value="3">★★★☆☆ (3/5)</option>
+                              <option value="2">★★☆☆☆ (2/5)</option>
+                              <option value="1">★☆☆☆☆ (1/5)</option>
+                            </select>
+                          </div>
                         </div>
                       </div>
-                      <div class="col-sm-6">
-                        <div class="mb-4">
-                          <label class="form-label" for="rating">Your rating *</label>
-                          <select class="custom-select focus-shadow-0" name="rating" id="rating">
-                            <option value="5">★★★★★ (5/5)</option>
-                            <option value="4">★★★★☆ (4/5)</option>
-                            <option value="3">★★★☆☆ (3/5)</option>
-                            <option value="2">★★☆☆☆ (2/5)</option>
-                            <option value="1">★☆☆☆☆ (1/5)</option>
-                          </select>
-                        </div>
+                      <div class="mb-4">
+                        <label class="form-label" for="reviewTitle">Title</label>
+                        <input class="form-control" type="text" name="reviewTitle" id="reviewTitle" placeholder="Enter your Review Title" required="required">
                       </div>
-                    </div>
-                    <div class="mb-4">
-                      <label class="form-label" for="email">Your email *</label>
-                      <input class="form-control" type="email" name="email" id="email" placeholder="Enter your  email" required="required">
-                    </div>
-                    <div class="mb-4">
-                      <label class="form-label" for="review">Review text *</label>
-                      <textarea class="form-control" rows="4" name="review" id="review" placeholder="Enter your review" required="required"></textarea>
-                    </div>
-                    <button class="btn btn-outline-dark" type="submit">Post review</button>
-                  </form>
-                </div>
+                      <div class="mb-4">
+                        <label class="form-label" for="reviewImageURL">Image URL</label>
+                        <input class="form-control" type="text" name="reviewImageURL" id="reviewImageURL" placeholder="Enter Images of your item">
+                      </div>
+                      <div class="mb-4">
+                        <label class="form-label" for="review">Your Review</label>
+                        <textarea class="form-control" rows="4" name="review" id="review" placeholder="Enter your review" required="required"></textarea>
+                      </div>
+                      <button class="btn btn-outline-dark" type="submit">Post review</button>
+                    </form>
+                  </div>                 
+                <% } %>
               </div>
             </div>
           </div>

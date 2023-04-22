@@ -3,26 +3,13 @@
     <div id="carousel<%= productData._id %>" class="carousel slide" data-bs-ride="false">
       <div class="carousel-inner myCarousel">
         <div class="carousel-item active">
-          <img src=<%=productData.imageurl%> width="100%" height="250px" class="d-block w-100" alt="...">
+          <img src=<%=productData.imagesURL[0]%> width="100%" height="250px" class="d-block w-100" alt="image0">
         </div>
-        <div class="carousel-item">
-          <img src=<%=productData.imageurl%> width="100%" height="250px" class="d-block w-100" alt="...">
-        </div>
-        <div class="carousel-item">
-          <img src=<%=productData.imageurl%> width="100%" height="250px" class="d-block w-100" alt="...">
-        </div>
-        <div class="carousel-item">
-          <img src=<%=productData.imageurl%> width="100%" height="250px" class="d-block w-100" alt="...">
-        </div>
-        <div class="carousel-item">
-          <img src=<%=productData.imageurl%> width="100%" height="250px" class="d-block w-100" alt="...">
-        </div>
-        <div class="carousel-item">
-          <img src=<%=productData.imageurl%> width="100%" height="250px" class="d-block w-100" alt="...">
-        </div>
-        <!-- <div class="carousel-item">
-          <video src="/Images/ProductImages/Rucksack1/video1.mp4" width="100%" height="250px" controls muted loop autoplay>This browser does not support HTML video.</video>
-        </div> -->
+        <% for( let index = 1; index < productData.imagesURL.length; index++ ) { %>
+          <div class="carousel-item">
+            <img src=<%=productData.imagesURL[index]%> width="100%" height="250px" class="d-block w-100" alt="image<%= index %>">
+          </div>
+        <% } %>
       </div>
       <button class="carousel-control-prev carouselButton" type="button" data-bs-target="#carousel<%= productData._id %>" data-bs-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="false"></span>
@@ -120,11 +107,10 @@
       </div>
     </div>
     <% if (productData.ruggedVerrified==="true") { %>
-      <img src="/Images/Verrification/rugged-verified-high-resolution-color-logo-slim.png" alt="..." class="RuggedVerified">
+      <img src="/Images/Verrification/rugged-verified-high-resolution-color-logo-slim.png" alt="Rugged Verrified" class="RuggedVerified">
     <% } %>
     <p class="card-text"><%=productData.description%></p>
   </div>
-
   <div class="jumbotron">
     <span class="pcVrtpriceCOmplete">
       <div class="pcVrtOriginalPrice"><s>₹<%=productData.price%></s></div>

@@ -37,7 +37,6 @@ exports.searchRes = (req, res) => {
           .then((user) => {
             const cartproducts = user.cart.item;
             // res.json(products);
-            // console.log(products);
             res.render("productSearchPage", {
               productsData: products,
               isLoggedin: req.session.isLoggedin,
