@@ -19,7 +19,7 @@
               <div class="card-body">
                 <div class="row">
                   <div class="col-md-2">
-                    <img src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Products/13.webp" class="img-fluid" alt="Phone">
+                    <img src=<%=p.product.imagesURL[0]%> class="img-fluid" alt="Phone">
                   </div>
                   <div class="col-md-2 text-center d-flex justify-content-center align-items-center">
                     <p class="text-muted mb-0"><%= p.product.name %></p>
@@ -42,7 +42,7 @@
                 <hr class="mb-4" style="background-color: #e0e0e0; opacity: 1;">
                 <div class="row d-flex align-items-center">
                   <div class="col-md-2">
-                    <p class="text-muted mb-0 small">Track Order</p>
+                    <!-- <p class="text-muted mb-0 small">Track Order</p> -->
                   </div>
                   <div class="col-md-10">
                     <!-- <div class="progress" style="height: 6px; border-radius: 16px;">

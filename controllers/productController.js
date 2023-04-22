@@ -5,10 +5,10 @@ exports.getProductInfo = (req, res) => {
   const productId = req.query.id;
   function getProductsRatingArray(products) {
     productsRatingArray = [
-      {
-        productID: String,
-        ratingArray: [],
-      },
+      // {
+      //   productID: String,
+      //   ratingArray: [],
+      // },
     ];
     for (let index = 0; index < products.length; index++) {
       productsRatingArray.push({
@@ -38,7 +38,7 @@ exports.getProductInfo = (req, res) => {
             const cartproducts = user.cart.item;
             res.render("productPage", {
               productData: product,
-              productRating: productsRatingArray[1],
+              productRating: productsRatingArray[0],
               user: req.session.user,
               isLoggedin: req.session.isLoggedin,
               pgTitle: product.name,
@@ -50,7 +50,7 @@ exports.getProductInfo = (req, res) => {
       } else {
         res.render("productPage", {
           productData: product,
-          productRating: productsRatingArray[1],
+          productRating: productsRatingArray[0],
           user: req.session.user,
           isLoggedin: req.session.isLoggedin,
           pgTitle: products.name,
@@ -121,10 +121,10 @@ exports.postOrder = (req, res, next) => {
 };
 function getProductsRatingArray(products) {
   productsRatingArray = [
-    {
-      productID: String,
-      ratingArray: [],
-    },
+    // {
+    //   productID: String,
+    //   ratingArray: [],
+    // },
   ];
   for (let index = 0; index < products.length; index++) {
     productsRatingArray.push({
@@ -134,12 +134,11 @@ function getProductsRatingArray(products) {
   }
   for (let index = 0; index < products.length; index++) {
     let product = products[index];
-    let prai = productsRatingArray[index];
     for (let j = 0; j < product.reviewsArray.length; j++) {
-      prai.ratingArray[product.reviewsArray[j].rating] =
-        prai.ratingArray[product.reviewsArray[j].rating] + 1;
+      productsRatingArray[index].ratingArray[product.reviewsArray[j].rating]++;
     }
   }
+  console.log(productsRatingArray);
   return productsRatingArray;
 }
 function getAverageRating(product) {
@@ -159,7 +158,7 @@ function getAverageRating(product) {
     totalNumOfPeople = 1;
   }
   averageRating = sum / totalNumOfPeople;
-  console.log(averageRating);
+  // console.log(averageRating);
   return averageRating;
 }
 exports.getFilter = (req, res) => {
@@ -265,6 +264,7 @@ exports.getFilter = (req, res) => {
           pgTTL: "User DashBoard",
           user: req.session.user,
           isLoggedin: req.session.isLoggedin,
+          productsRatingArray: productsRatingArray,
         });
       }
     })

@@ -4,29 +4,27 @@ exports.searchRes = (req, res) => {
   const searchTerm = req.query.q;
   function getProductsRatingArray(products) {
     productsRatingArray = [
-      {
-        productID: String,
-        ratingArray: [],
-      },
+      // {
+      //   productID: String,
+      //   ratingArray: [],
+      // },
     ];
     for (let index = 0; index < products.length; index++) {
-      // console.log(products[index]._id.toString());
-      productsRatingArray.push(
-        {
-          productID: products[index]._id.toString(),
-          ratingArray: [0, 0, 0, 0, 0, 0]
-        }
-      );
+      productsRatingArray.push({
+        productID: products[index]._id.toString(),
+        ratingArray: [0, 0, 0, 0, 0, 0],
+      });
     }
     for (let index = 0; index < products.length; index++) {
       let product = products[index];
       let prai = productsRatingArray[index];
       for (let j = 0; j < product.reviewsArray.length; j++) {
-        prai.ratingArray[product.reviewsArray[j].rating] = prai.ratingArray[product.reviewsArray[j].rating] + 1;
+        prai.ratingArray[product.reviewsArray[j].rating] =
+          prai.ratingArray[product.reviewsArray[j].rating] + 1;
       }
     }
     return productsRatingArray;
-  };
+  }
   // Query MongoDB for products matching the search term
   Product.find({ name: { $regex: searchTerm, $options: "i" } })
     .then((products) => {

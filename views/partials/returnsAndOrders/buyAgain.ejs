@@ -6,7 +6,7 @@
       <% order.products.forEach(p => { %>
       <div class="col">
         <div class="card h-70">
-          <a href="#"><img src="/Images/ProductImages/Rucksack2/Rucksack2_image7.jpg" class="card-img-top" alt="Skyscrapers" />
+          <a href="#"><img src=<%=p.product.imagesURL[0]%> class="card-img-top" alt="Skyscrapers" />
             <div class="card-body">
               <h5 class="card-title"><%= p.product.name %></h5>
               <div class="cover">

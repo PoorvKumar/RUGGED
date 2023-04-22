@@ -25,12 +25,13 @@
     <div class="cardBodyHead">
       <h5 class="card-title myCardTitle"><a href="/product?id=<%= productData._id %>" class="cardTitleInner"><%=productData.name%></a></h5>
       <div class="rightCompartment ">
-        <% var totalNumberofPeople = productRating.ratingArray[5]+productRating.ratingArray[4]+productRating.ratingArray[3]+productRating.ratingArray[2]+productRating.ratingArray[1] ;
+        <% let totalNumberofPeople = productRating.ratingArray[5]+productRating.ratingArray[4]+productRating.ratingArray[3]+productRating.ratingArray[2]+productRating.ratingArray[1] ;
+        let sum = productRating.ratingArray[5]*5 +productRating.ratingArray[4]*4 +productRating.ratingArray[3]*3 + productRating.ratingArray[2]*2 + productRating.ratingArray[1]*1;
         if(totalNumberofPeople===0){
           totalNumberofPeople=1;
         }
         %>
-        <span class="starsRatingGreen rightCompartmentInner popupRating" onclick="popupRatingFunction('<%=productData._id%>')"><%=((productRating.ratingArray[5]*5 +productRating.ratingArray[4]*4 +productRating.ratingArray[3]*3 + productRating.ratingArray[2]*2 + productRating.ratingArray[1]*1)/(totalNumberofPeople))%>
+        <span class="starsRatingGreen rightCompartmentInner popupRating" onclick="popupRatingFunction('<%=productData._id%>')"><%=(sum/(totalNumberofPeople))%>
           <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMyIgaGVpZ2h0PSIxMiI+PHBhdGggZmlsbD0iI0ZGRiIgZD0iTTYuNSA5LjQzOWwtMy42NzQgMi4yMy45NC00LjI2LTMuMjEtMi44ODMgNC4yNTQtLjQwNEw2LjUuMTEybDEuNjkgNC4wMSA0LjI1NC40MDQtMy4yMSAyLjg4Mi45NCA0LjI2eiIvPjwvc3ZnPg==" class="innerStars">
           <div class="popupContent" id=<%=productData._id%>>
             <span class="heading">User Rating</span>
