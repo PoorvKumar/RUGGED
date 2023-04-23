@@ -40,11 +40,11 @@
     <div class="row justify-content-center">
       <div class="col-lg-8 col-md-10 col-sm-12">
         <div class="blog-post-area">
-          <%- include('partials/influencerBlogPage/blogPosts.ejs') %>
-            <%- include('partials/influencerBlogPage/blogPosts.ejs') %>
-              <%- include('partials/influencerBlogPage/blogPosts.ejs') %>
-                <%- include('partials/influencerBlogPage/blogPosts.ejs') %>
-                  <%- include('partials/influencerBlogPage/blogPosts.ejs') %>
+          <% if(blogposts.length>0){ %>
+          <% for(let p of blogposts){ %>
+          <%- include('partials/influencerBlogPage/blogPosts.ejs',{p:p}) %>
+          <% } %>
+          <% } %>
         </div>
         <%- include('partials/influencerBlogPage/paginate.ejs') %>
       </div>
@@ -74,11 +74,11 @@
             <div class="one-title">
               <h6>______________Latest Posts______________</h6>
             </div>
-            <%- include('partials/influencerBlogPage/postBlogContents.ejs') %>
-              <%- include('partials/influencerBlogPage/postBlogContents.ejs') %>
-                <%- include('partials/influencerBlogPage/postBlogContents.ejs') %>
-                  <%- include('partials/influencerBlogPage/postBlogContents.ejs') %>
-                    <%- include('partials/influencerBlogPage/postBlogContents.ejs') %>
+            <% if(influencer.posts.length>0){ %>
+              <% for(let i=influencer.posts.length-1;i>0;i--){ %>
+            <%- include('partials/influencerBlogPage/postBlogContents.ejs',{post:influencer.posts[i]}) %>
+               <% } %>
+               <% } %>
                       ___________________________________________
           </div>
 

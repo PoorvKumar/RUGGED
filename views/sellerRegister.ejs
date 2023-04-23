@@ -1,0 +1,78 @@
+<DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/sellerRegister.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/e65b955383.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/gh/hung1001/font-awesome-pro-v6@44659d9/css/all.min.css" rel="stylesheet"
+        type="text/css" />
+    <title><%= pageTitle %></title>
+</head>
+<body>
+    <div class="registerCard">
+        <div class="img-container">
+            <img src="/Images/Login/loginimg.jpg" alt="" style="object-fit: cover;">
+        </div>
+        <div class="form-container">
+            <h1>
+                <div class='welcome'>
+                    <div class="loader" style="font-size: larger;">
+                      <span>R</span>
+                      <span>e</span>
+                      <span>g</span>
+                      <span>i</span>
+                      <span>s</span>
+                      <span>t</span>
+                      <span>e</span><br><br>
+                      <span>S</span>
+                      <span>e</span>
+                      <span>l</span>
+                      <span>l</span>
+                      <span>e</span>
+                      <span>r</span>
+
+                    </div>
+                  </div>
+            </h1>
+<form action="/sellerRegister" method="POST" id="regForm" onsubmit="validateForm()">
+    <div class="firstnamediv posirel">
+        <i class="fa-regular fa-user"></i>
+        <input type="text" name="companyname" id="companyname" placeholder="Company Name" onkeyup="validatecompanyname()">
+        <span class="error"></span>
+    </div>
+    <div class="firstnamediv posirel">
+        <i class="fa-regular fa-user"></i>
+        <input type="text" name="gstno" id="gstnumber" placeholder="GST Number" onkeyup="validategstno()">
+        <span class="error"></span>
+    </div>
+    <div class="passdiv posirel">
+        <i class="fa-regular fa-eye"></i>
+        <input type="text" name="" id="accountnumber" placeholder="Account Number" onkeyup="validateaccountno()">
+        <span class="error"></span>
+    </div>
+    <div class="passdiv posirel">
+        <i class="fa-regular fa-eye"></i>
+        <input type="text" name="accountno" id="accountnumber1" placeholder="Retype Account Number" onkeyup="checkAccountno() ">
+        <span class="error"></span>
+    </div>
+    <div class="cnf-passdiv posirel">
+        <i class="fa-regular fa-eye"></i>
+        <input type="password" name="password" id="pass" placeholder="Verify Password" onkeyup="validatePassword()">
+        <span class="error"></span>
+    </div>
+    <button type="submit" id="btn-submit">SUBMIT</button>
+</form>
+<br>
+    <a href="/"  class="btn btn-sm btn-info"> Go to Main Page </a>
+</div>
+</div>
+<script src="/js/sellerRegister.js"></script>
+</body>
+
+</html>

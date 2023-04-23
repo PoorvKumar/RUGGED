@@ -6,7 +6,18 @@ const Influencer=new Schema(
         userId:
         {
             type: Schema.Types.ObjectId,
-            require: true
+            required: true,
+            ref:'User'
+        },
+        firstname:
+        {
+            type:String,
+            required:true
+        },
+        lastname:
+        {
+            type:String,
+            required:true
         },
         posts:
         [
@@ -20,6 +31,15 @@ const Influencer=new Schema(
                 {
                     type: String,
                     require: true
+                },
+                imageURL:
+                {
+                    type:String,
+                    default:"/LOGO/newLOGOTest/newLOGO_no_background.png"
+                },
+                date:{
+                    type:Date,
+                    default:Date.now()
                 }
             }
         ]

@@ -55,6 +55,12 @@ const user = new Schema({
         name: { type: String, required: true },
       }
     ]
+  },
+  isSeller:{
+    type:Boolean
+  },
+  isInfluencer:{
+    type:Boolean
   }
 });
 user.methods.addToCart = function (product) {
@@ -157,6 +163,10 @@ user.methods.deletewishList = function(listName){
 }
 user.methods.emptyCart = function(){
   this.cart={items:[]}
+  return this.save()
+}
+user.methods.isSellerfunc =function(){
+  this.isSeller=true
   return this.save()
 }
 module.exports = mongoose.model("User", user);

@@ -10,5 +10,6 @@ router.get('/sellerPortal',sellerController.getsellerPortal);
 router.get('/dashboardSeller/products',authMiddleware,sellerController.SellerGetProduct);
 router.get('/dashboardSeller/addproducts',authMiddleware,sellerController.SellerGetAddProduct);
 router.post("/dashboardSeller/addproducts",sellerController.sellerAddProduct);
-
+router.get('/sellerRegister',sellerController.SellerGetRegister)
+router.post('/sellerRegister',sellerController.SellerPostRegister)
 module.exports=router

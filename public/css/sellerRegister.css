@@ -1,0 +1,217 @@
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+.d-none{
+    display: none;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-image: url("/Images/Login/bg-login.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+input{
+    display: block;
+    border:none;
+    width:80%;
+    margin: 1.5rem auto 0rem auto;
+    padding:0.8rem 1rem 0.7rem 1rem;
+    border-radius: 1rem;
+}
+
+/* ::-ms-reveal {
+    background-color: black;
+    border: 1px solid transparent;
+    border-radius: 50%;
+    box-shadow: 0 0 3px currentColor;
+} */
+
+
+input:focus{
+    outline-color:#7fa6e4;
+}
+
+.registerCard{  
+    display: grid;
+    max-width: 800px;
+    border-radius: 1rem;
+    grid-template-columns:0.8fr 0.9fr;
+}
+
+.img-container img{
+    display: block;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    border-top-left-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+} 
+
+.posirel{
+    position: relative;
+}
+
+.form-container{
+  padding: 1rem;
+  border-top-right-radius: 1rem;
+  text-align: center;
+  border-bottom-right-radius: 1rem;
+  /* background-color: #84d3d3; */
+  background: linear-gradient(to right, rgba(39, 166, 230, 0.9), rgba(50, 211, 206, 0.9));
+}
+
+
+.form-container h1{
+    margin:0rem 1rem;
+    color:#34568b;
+    padding: 2rem 0;
+}
+
+.error{
+    width: 100%;
+    margin-top: 5px;
+    display:block;
+    position: absolute;
+    font-size: 13px;
+    color:red;
+}
+
+
+#regForm button {
+     margin:2rem 1rem;
+     border-radius: 1rem;
+     width:80%;
+     padding:1rem 1rem 0.9rem 1rem;
+     background-color: #0b78c6;
+     border:none;
+     color:white;
+}
+
+
+i{
+    position: absolute;
+    top:30%;
+    right:15%;
+}
+
+@media screen and (max-width:850px) {
+
+
+    .registerCard{
+        display: flex;
+        flex-direction: column;
+        padding: 1rem 1rem;
+    }
+
+    .img-container img{
+        display: none;
+    }
+
+    .form-container h1{
+        padding: 2rem;
+    }
+
+    .form-container form{
+        margin: 0 auto;
+    }
+
+    .form-container{
+        padding-left: 0;
+        min-width: 350px;
+        border-radius: 1rem;
+    }
+    input{
+        width: 80%;
+    }
+    .error{
+        font-size: 12px;
+    }
+}
+.loader {
+	perspective: 1000px;
+	-webkit-perspective: 1000px;
+  }
+  
+  .loader>span {
+	display: inline-block;
+	color: #fff;
+	transform-style: preserve-3d;
+	transform-origin: 0 100%;
+	animation: anim 3s infinite linear;
+  }
+  
+  .loader>span:nth-child(even) {
+	color: #0a4e9c;
+  }
+  
+  .loader>span:nth-child(2) {
+	animation-delay: 0.2s;
+  }
+  
+  .loader>span:nth-child(3) {
+	animation-delay: 0.4s;
+  }
+  
+  .loader>span:nth-child(4) {
+	animation-delay: 0.6s;
+  }
+  
+  .loader>span:nth-child(5) {
+	animation-delay: 0.8s;
+  }
+  
+  .loader>span:nth-child(6) {
+	animation-delay: 1s;
+  }
+  
+  .loader>span:nth-child(7) {
+	animation-delay: 1.2s;
+  }
+  
+  .loader>span:nth-child(8) {
+	animation-delay: 1.4s;
+  }
+  
+  .loader>span:nth-child(9) {
+	animation-delay: 1.6s;
+  }
+  
+  .loader>span:nth-child(10) {
+	animation-delay: 1.8s;
+  }
+  
+  .loader>span:nth-child(11) {
+	animation-delay: 2s;
+  }
+  
+  .loader>span:nth-child(12) {
+	animation-delay: 2.2s;
+  }
+  
+  .loader>span:nth-child(13) {
+	animation-delay: 2.4s;
+  }
+  
+  .loader>span:nth-child(14) {
+	animation-delay: 2.6s;
+  }
+  
+  @keyframes anim {
+	35% {
+	  transform: rotateX(360deg);
+	}
+  
+	100% {
+	  transform: rotateX(360deg);
+	}
+  }

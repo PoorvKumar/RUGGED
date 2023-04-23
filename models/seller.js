@@ -3,7 +3,36 @@ const Schema=mongoose.Schema;
 
 const Seller=new Schema(
     {
-        //statistics
+        userId:
+        {
+            type: Schema.Types.ObjectId,
+            required: true,
+            ref:'User'
+        },
+        gst:{
+            type:String,
+            required:true
+        },
+        accountNumber:{
+            type:String,
+            required:true
+        },
+        companyname:{
+            type:String,
+             required:true
+        },
+        products:[
+            {
+                productId:{
+                    type: Schema.Types.ObjectId,
+                    ref:'Product'
+                },
+                Revenue:{
+                   type:Number,
+                }
+            }
+        ]
         
     }
 )
+module.exports = mongoose.model('Seller', Seller);

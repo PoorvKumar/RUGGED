@@ -40,8 +40,11 @@
       <nav class="d-flex justify-content-between sell-nav">
         <div class="sell-title h2 ms-3">Welcome to RUGGED Seller Portal!</div>
         <div class="sell-sign">
-            <button class="btn shadow" ><a href="/" style="color: white;"> Seller Portal </a></button>
-            <button class="btn shadow"> <a href="/signup" style="color: white;"> SignIn </a></button>
+          <% if(user.isSeller){ %>
+            <button class="btn shadow" ><a href="/dashboardSeller" style="color: white;"> Seller Portal </a></button>
+            <% } else{ %>
+            <button class="btn shadow"> <a href="/sellerRegister" style="color: white;"> SignIn </a></button>
+            <% } %>
         </div>
     </nav>
       </header>
@@ -50,7 +53,11 @@
         <div class="">
         <div class="c2"> Become a Seller <br> on  RUGGED</div>
         <div class="c1">Expand your Business Today by Selling on RUGGED</div>
-        <button class="sell-btn btn btn-info mt-5 ms-4"> <a href="/" style="color: white;"> Start Selling </a></button> <!--will use api to set up gstn number-->
+        <% if(!user.isSeller){ %>
+        <button class="sell-btn btn btn-info mt-5 ms-4"> <a href="/sellerRegister" style="color: white;"> Start Selling </a></button> <!--will use api to set up gstn number-->
+        <% } else {%>
+          <button class="sell-btn btn btn-info mt-5 ms-4"> <a href="/dashboardSeller" style="color: white;"> Start Selling </a></button>
+          <% } %>
         </div>
         <div>
         <img src="/Images/sellerPage/1.jpg" alt="" style="margin-left: 10rem;">

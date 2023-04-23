@@ -30,15 +30,32 @@ exports.getBlogPost=(req,res)=>
                 .then(user => 
                 {
                     const cartproducts = user.cart.item;
-                    // console.log(cartproducts)
-                    res.render('influencerBlog', {
-                        pageTitle: 'BlogPost',
-                        isLoggedin: req.session.isLoggedin,
-                        user: req.session.user,
-                        posts:posts,
-                        cartprod:cartproducts,
-                    })
+                Influencer.findOne({userId:req.user._id}).then(result=>{
+                    Influencer.find().then(blogposts=>{
+                            res.render('influencerBlog', {
+                                pageTitle: 'BlogPost',
+                                isLoggedin: req.session.isLoggedin,
+                                user: req.session.user,
+                                posts:posts,
+                                cartprod:cartproducts,
+                                influencer:result,
+                                blogposts:blogposts.reverse()
+
+                            })
+                        })
+                    .catch(err => 
+                        {
+                            console.log(err);
+                            // res.status(500).send("Server Error");
+                        });
                 })
+                .catch(err => 
+                    {
+                        console.log(err);
+                        // res.status(500).send("Server Error");
+                    });
+    
+            })
                 .catch(err => 
                 {
                     console.log(err);
