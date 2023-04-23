@@ -89,7 +89,7 @@ exports.deleteUser = (req, res) => {
   // console.log(userId);
   // const updatedUserData=req.body;
 
-  User.findOneAndDelete({ _id: userId })
+  User.findByIdAndDelete({ _id: userId })
     .then(() => {
       req.session.destroy((err) => {
         if (err) {
