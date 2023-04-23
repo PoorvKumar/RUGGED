@@ -52,13 +52,6 @@ user agent stylesheet img {
 }
 
 .gradient-custom {
-    /* fallback for old browsers */
-    /* background: #cd9cf2; */
-
-    /* Chrome 10-25, Safari 5.1-6 */
-    /* background: -webkit-linear-gradient(to bottom right, rgba(205, 156, 242, 1), rgba(246, 243, 255, 1)); */
-
-    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     background: linear-gradient(to bottom right, rgba(39, 166, 230, 0.9), rgba(50, 211, 206, 0.9));
 }
 
@@ -66,12 +59,6 @@ user agent stylesheet img {
     /* fallback for old browsers */
     background: #a1c4fd;
 
-    /* Chrome 10-25, Safari 5.1-6 */
-    /* background: -webkit-linear-gradient(to right, rgba(161, 196, 253, 1), rgba(194, 233, 251, 1)); */
-
-    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    /* background: linear-gradient(to right, rgba(161, 196, 253, 1), rgba(194, 233, 251, 1))
-     */
     background: linear-gradient(to right, rgba(39, 166, 230, 0.9), rgba(50, 211, 206, 0.9));
 
 }
@@ -144,12 +131,8 @@ user agent stylesheet img {
 
 .NotYetShippedProductCard {
     padding: 2%;
-    /* width: 30%; */
 }
 
-/* .OrderUpperText{
-
-} */
 .orderEmp {
     color: rgba(39, 166, 230, 0.9);
 }
