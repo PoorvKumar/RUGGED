@@ -6,29 +6,36 @@ const product = new Schema({
   // _id:{
   //   type:String
   // },
+  
   name: {
     type: String,
     required: true
   },
+
   price: {
     type: Number,
     required: true
   },
+
   description: {
     type: String,
     required: true
   },
+
   shortDescription: {
     type: String,
     required: true
   },
+
   discount: {
     type: Number,
     required: true
   },
+
   discountedPrice: {
     type: Number
   },
+
   dimension: {
     length: {
       type: Number,
@@ -40,28 +47,31 @@ const product = new Schema({
       type: Number,
     },
   },
+
   weightInKg: {
     type: Number,
   },
+
   colors: {
     type: String,
     required: true
   },
+
   brand: {
     type: String,
     required: true
   },
+
   tags: [],
-  // {
-  //   type: String,
-  //   required: true
-  // },
+
   imagesURL: [{
-    type:String
+    type: String
   }],
+
   table: {
     type: String
   },
+
   reviewsArray: [
     {
       userID: {
@@ -81,36 +91,45 @@ const product = new Schema({
       }
     }
   ],
+
   quantity: {
     type: Number,
     required: true
   },
+
   sellerID: {
     type: Schema.Types.ObjectId,
     required: true,
-    ref:'User'
+    ref: 'User'
   },
+
   ruggedVerrified: {
     type: String,
     // required: true
   },
+
   offers: [
     {
       type: String
     }
   ],
+
   //services[0]=free delivery
   //services[1]=30 Days Return Policy
   //services[2]=Cash On Delivery
   //services[3]=Premium Quality Assurance
-  services:[],
+  services: [],
+
   // sizes from 0 to n
-  size:[],
+  size: [],
+
   // string types
-  type:[],
-  categories:[{
-    type:String
+  type: [],
+
+  categories: [{
+    type: String
   }],
+
   influencersNameChoice: [
     {
       influencerID: {
@@ -120,8 +139,9 @@ const product = new Schema({
       },
     }
   ],
-  CountryOfOrigin:{
-    type:String
+
+  CountryOfOrigin: {
+    type: String
   }
 });
 

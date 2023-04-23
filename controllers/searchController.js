@@ -28,6 +28,14 @@ exports.searchRes = (req, res) => {
   }
 
   // Query MongoDB for products matching the search term
+
+  // {$or:
+  //   [ 
+  //     { name: { $regex: searchTerm, $options: "i" } }, 
+  //     { categories: { $in: [{ $regex: searchTerm, $options: "i" }] } },
+  //     { tags: { $in: [{ $regex: searchTerm, $options: "i" }] } }
+  // ]}
+
   Product.find({ name: { $regex: searchTerm, $options: "i" } })
     .then((products) => {
       const productsRatingArray = getProductsRatingArray(products);
