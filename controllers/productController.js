@@ -260,11 +260,12 @@ exports.getFilter = (req, res) => {
           })
           .catch((err) => console.log(err));
       } else {
-        res.render("userDashboard", {
-          pgTTL: "User DashBoard",
+        res.render("productSearchPage.ejs", {
+          pgTTL: "Products",
           user: req.session.user,
           isLoggedin: req.session.isLoggedin,
           productsRatingArray: productsRatingArray,
+          searchTerm: searchTerm
         });
       }
     })
