@@ -28,6 +28,13 @@
 
 /*  */
 /*  */
+
+.adminDash
+{
+    margin-top: 2rem;
+    margin-left: 5vw;
+}
+
 .search-box{
     width: fit-content;
     height: fit-content;
@@ -239,66 +246,6 @@
         font-size: 20px;
         font-weight: 700;
     }
-    .revenuecards{
-        display: flex;
-        margin-top:3%;
-        margin-left:2%;
-    }
-    .graphs{
-        display:flex;
-        margin-top:1%;
-    }
-    .graph1{
-        width:33%;
-        height:100%;
-        padding: 2%;
-        margin-left:4%;
-        /* box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px; */
-        border-radius: 8px;
-        box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
-    }
-    .graph2{
-        width:33%;
-        height:100%;
-        padding: 2%;
-        /* box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px; */
-       margin-left:4%;
-       margin-right:2%;
-       border-radius: 8px;
-       box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
-    }
-    .graph1:hover{
-        box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-        cursor:pointer
-    }
-    .graph2:hover{
-        box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-        cursor:pointer;
-    }
-    .uppercard{
-        display:flex;
-        width:100%;
-        height:50%;
-    }
-    .linever{
-        width:2%;
-        height:85%;
-        background-color: blueviolet;
-        margin:9%;
-        border-radius: 8px;
-    }
-    .revenuecards1{
-        width:22%;
-        height:8rem;;
-        /* box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px; */
-        margin:2%;
-        border-radius: 8px;
-        box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
-    }
-    .revenuecards1:hover{
-        box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-        cursor: pointer;
-    }
     .heading{
         margin-top:25%;
         font-weight: 500;
@@ -338,15 +285,6 @@
         background-color:#eee;
         align-items: center;
     }
-   td img{
-    width:36px;
-    height:36px;
-    border-radius: 50%;
-    text-align: center;
-   }
-   table tr:hover{
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-   }
    .bg{
     display:flex;
    }

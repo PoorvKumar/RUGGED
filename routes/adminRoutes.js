@@ -6,5 +6,6 @@ const complaintController=require("../controllers/complaintsController");
 const router=express.Router();
 
 router.get('/admin',adminMiddleware,authMiddleware,adminController.getAdminPage);
+router.get('/deleteThisUser',adminMiddleware,authMiddleware,adminController.deleteAUserAdmin);
 
 module.exports=router;

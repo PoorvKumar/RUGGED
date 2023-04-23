@@ -24,3 +24,19 @@ exports.getAdminPage=(req,res)=>
             res.status(500).send("Server Error");
         })
 }
+
+exports.deleteAUserAdmin=(req,res)=>
+{
+    const customerId=req.query.customerID;
+
+    User.findByIdAndDelete({_id:customerId})
+    .then(()=>
+    {
+        res.redirect("/admin");
+    })
+    .catch(err=>
+        {
+            console.error(err);
+            res.status(500).send("Server Error");
+        })
+}
