@@ -39,18 +39,18 @@
                 <tr>
                   <th>Name</th>
                   <th>Email</th>
-                  <th>Address</th>
+                  <th>Phone</th>
                   <th></th>
                 </tr>
               </thead>
               <tbody>
-                <%for(let i=0; i<customers.length; i++) {%>
+                <%for(let i=0; i<sellers.length; i++) {%>
                   <tr>
-                    <td><%= customers[i].firstname %> <%=customers[i].lastname %></td>
-                    <td><%= customers[i].email %></td>
-                    <td><%= customers[i].address %></td>
+                    <td><%= sellers[i].firstname %> <%=sellers[i].lastname %></td>
+                    <td><%= sellers[i].email %></td>
+                    <td><%= sellers[i].phoneno %></td>
                     <td>
-                      <a class="btn btn-info" href="/deleteThisUser?customerID=<%=customers[i]._id%>">Delete User</a>
+                      <a class="btn btn-info" href="/admin/sellers/removeSeller?userID=<%=sellers[i]._id%>">Ban Seller</a>
                     </td>
                   </tr>
                 <%}%>

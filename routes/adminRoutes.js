@@ -12,5 +12,7 @@ router.get('/admin/complaints',adminMiddleware,authMiddleware,adminController.ge
 router.get('/admin/complaints/resolved',adminMiddleware,authMiddleware,adminController.resolveComplaintAdmin);
 router.get('/admin/influencers',adminMiddleware,authMiddleware,adminController.getInfluencersInfo);
 router.get('/admin/influencers/removeInfluencer',adminMiddleware,authMiddleware,adminController.removeInfluencerAdmin);
+router.get('/admin/sellers',adminMiddleware,authMiddleware,adminController.getSellersInfo);
+router.get('/admin/sellers/removeSeller',adminMiddleware,authMiddleware,adminController.removeSellerAdmin);
 
 module.exports=router;

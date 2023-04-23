@@ -38,6 +38,8 @@
               <thead>
                 <tr>
                   <th>Name</th>
+                  <th>Email</th>
+                  <th>Phone</th>
                   <th></th>
                 </tr>
               </thead>
@@ -45,8 +47,14 @@
                 <%for(let i=0; i<influencers.length; i++) {%>
                   <tr>
                     <td><%= influencers[i].firstname %> <%=influencers[i].lastname %></td>
+                    <td><%= influencers[i].email %></td>
+                    <td><%= influencers[i].phoneno %></td>
                     <td>
-                      <a class="btn btn-info" href="/removeInfluencer?userID=<%=influencers[i].userId%>">Remove Influencer</a>
+                        <!-- <form action="/admin/influencers/removeInfluencer" method="get">
+                            <input type="hidden" value="<%=influencers[i]._id%>" name="i">
+                            <button class="btn btn-info" type="submit">Remove Influencer</button>
+                        </form> -->
+                      <a class="btn btn-info" href="/admin/influencers/removeInfluencer?userID=<%=influencers[i]._id%>">Remove Influencer</a>
                     </td>
                   </tr>
                 <%}%>

@@ -108,6 +108,145 @@
         </div>
       </div>
   </div>
-  <script src="./js/influencerDash/add_product.js"></script>
+  <!-- <script src="./js/sellerDash/add_product.js"></script> -->
+  <script>
+    const form = document.getElementById('form');
+form.addEventListener('submit', function (event) {
+  event.preventDefault();
+
+  const productName = document.getElementById('productName').value;
+  const productShortDescription = document.getElementById('productShortDescription').value;
+  const productCategory = document.getElementById('productCategory').value;
+  const productBrand = document.getElementById('productBrand').value;
+  const productPrice = document.getElementById('productPrice').value;
+  const stockQuantity = document.getElementById('stockQuantity').value;
+  const discountPercentage = document.getElementById('discountPercentage').value;
+  const productDescription = document.getElementById('productDescription').value;
+  const productTags = document.getElementById('productTags').value;
+  const colors = document.getElementById('colors').value;
+  
+ 
+if (productName === '') {
+    showError('Please enter a product name.', 'productName');
+    return;
+  } 
+  
+
+if (!/^[a-zA-Z]+$/.test(productName)) {
+    showError('Product name should start with alphabets', 'productName');
+    return;
+  }
+  
+
+  
+  if (productShortDescription === '') {
+    showError('Please enter a short description.', 'productShortDescription');
+    return;
+  }
+  
+  
+if (!/^[a-zA-Z]+$/.test(productName)) {
+    showError('Product name should start with alphabets and end with numbers.', 'productName');
+    return;
+  }
+  
+
+
+
+
+  if (productCategory === '') {
+    showError('Please select a category.', 'productCategory');
+    return;
+  }
+
+  if (!/^[a-zA-Z]+$/.test(productCategory)) {
+    showError('Product Categorry  should start with alphabets', 'productCategory');
+    return;
+  }
+  
+  if (productBrand === '') {
+    showError('Please enter a brand name.', 'productBrand');
+    return;
+  }
+  
+  if (productPrice === '') {
+    showError('Please enter a price.', 'productPrice');
+    return;
+  }
+
+  if (isNaN(productPrice)) {
+    showError('Please enter a valid number.', 'productPrice');
+    return;
+  }
+  
+  if (stockQuantity === '') {
+    showError('Please enter the stock quantity.', 'stockQuantity');
+    return;
+  }
+  
+
+
+if (productDescription.trim() === '' || productDescription.length < 10) {
+    showError('Please enter a product description with at least 10 characters.', 'productDescription');
+    return;
+  }
+  
+
+  if (productTags.trim() === '' || !productTags.includes(',')) {
+    showError('Please enter at least one product tag (separated by commas).', 'productTags');
+    return;
+  }
+  
+
+  if (colors.trim() === '' || !colors.includes(',')) {
+    showError('Please enter at least one product color (separated by commas).', 'colors');
+    return;
+  }
+  
+
+
+
+  if (isNaN(productPrice) || isNaN(discountPercentage)) {
+    showError('Please enter a valid number for the price and discount percentage.', 'productPrice');
+    return;
+  }
+  
+if (!/^\d+$/.test(stockQuantity) || !/^\d+$/.test(discountPercentage)) {
+    showError('Please enter a positive integer for the stock quantity and discount percentage.');
+    return;
+  }
+  
+  
+  if (discountPercentage < 0 || discountPercentage > 100) {
+    showError('Please enter a discount percentage between 0 and 100.', 'discountPercentage');
+    return;
+  }
+  
+
+
+  alert('Form submitted successfully!');
+  form.submit();
+  
+});
+
+
+function showError(message, inputName) {
+    const input = document.getElementById(inputName);
+    const errorDiv = input.parentElement.querySelector('.error');
+    if (!errorDiv) {
+      const errorDiv = document.createElement('div');
+      errorDiv.className = 'error';
+      errorDiv.style.color = 'red';
+      errorDiv.appendChild(document.createTextNode(message));
+      input.parentElement.appendChild(errorDiv);
+      setTimeout(() => {
+        errorDiv.remove();
+      }, 5000);
+    } else {
+      errorDiv.textContent = message;
+    }
+  }
+
+  </script>
 </body>
 </html>
