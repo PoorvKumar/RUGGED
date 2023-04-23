@@ -51,3 +51,31 @@ exports.getLandingpage=(req,res,next)=>{
         console.log(err)
     })
 }
+exports.getnewpage = (req,res,next)=>{
+    if(!req.session.isLoggedin){
+        res.render('newpage',{
+            pageTitle:'RUGGED',
+            user:{firstname:"User"},
+            isLoggedin:req.session.isLoggedin,
+          })}
+          else{
+    req.user
+    .populate('cart.item.productID')
+    .then(user => {
+      const cartproducts = user.cart.item;
+                // console.log(cartproducts)
+                res.render('newpage',{
+                    pageTitle:'RUGGED',
+                    isLoggedin:req.session.isLoggedin,
+                    user:req.session.user,
+                    prod:products3,
+                    cartprod:cartproducts,
+                    cartquantity:10
+                })
+            }
+            
+        )
+        .catch(err => console.log(err));
+
+}
+}

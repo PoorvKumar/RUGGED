@@ -53,7 +53,6 @@ app.use((req, res, next) => {
     })
     .catch((error) => console.log(error));
 });
-
 // -----NewRoutes-------------
 app.use(adminRoutes);
 app.use(sellerRoutes);
