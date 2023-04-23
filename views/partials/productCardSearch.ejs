@@ -1,3 +1,4 @@
+<a href="/product?id=<%= productData._id %>" class="cardTitleInner">
 <div class="card totalCard" style="width: 16rem; height:30rem">
   <div data-bs-theme="dark">
     <div id="carousel<%= productData._id %>" class="carousel slide" data-bs-ride="false">
@@ -23,7 +24,7 @@
   </div>
   <div class="card-body">
     <div class="cardBodyHead">
-      <h5 class="card-title myCardTitle"><a href="/product?id=<%= productData._id %>" class="cardTitleInner"><%=productData.name%></a></h5>
+      <h5 class="card-title myCardTitle"><%=productData.name%></h5>
       <div class="rightCompartment ">
         <% let totalNumberofPeople = productRating.ratingArray[5]+productRating.ratingArray[4]+productRating.ratingArray[3]+productRating.ratingArray[2]+productRating.ratingArray[1] ;
         let sum = productRating.ratingArray[5]*5 +productRating.ratingArray[4]*4 +productRating.ratingArray[3]*3 + productRating.ratingArray[2]*2 + productRating.ratingArray[1]*1;
@@ -120,3 +121,4 @@
     <span class="pcVrtDiscount"><%=productData.discount%>% off</span>
   </div>
 </div>
+</a>
