@@ -9,5 +9,6 @@ router.get('/admin',adminMiddleware,authMiddleware,adminController.getAdminPage)
 router.get('/deleteThisUser',adminMiddleware,authMiddleware,adminController.deleteAUserAdmin);
 router.get('/admin/orderHistoryAdmin',adminMiddleware,authMiddleware,adminController.getOrdersInfo);
 router.get('/admin/complaints',adminMiddleware,authMiddleware,adminController.getComplaintsAdmin);
+router.get('/admin/complaints/resolved',adminMiddleware,authMiddleware,adminController.resolveComplaintAdmin);
 
 module.exports=router;

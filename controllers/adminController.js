@@ -80,3 +80,19 @@ exports.getComplaintsAdmin=(req,res)=>
                 res.status(500).send("Server Error");
             })
 }
+
+exports.resolveComplaintAdmin=(req,res)=>
+{
+    const complaintId=req.query.complaintID;
+
+    Complaints.findByIdAndUpdate({_id:complaintId},{ resolved: true},{ new: true })
+    .then(result=>
+        {
+            res.redirect("/admin/complaints");
+        })
+    .catch(err=>
+        {
+            console.error(err);
+            res.status(500).send("Server Error");
+        })
+}

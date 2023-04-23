@@ -45,6 +45,7 @@
                   <th>Description</th>
                   <th>Status</th>
                   <th></th>
+                  <th></th>
                 </tr>
               </thead>
               <tbody>
@@ -58,6 +59,9 @@
                             <td><%=complaints[i].description%></td>
                             <td>
                             <a class="btn btn-info" href="/admin">Reply</a>
+                            </td>
+                            <td>
+                              <a href="/admin/complaints/resolved?complaintID=<%=complaints[i]._id%>" class="btn btn-info">Resolved</a>
                             </td>
                         </tr>
                     <%}%>                  
