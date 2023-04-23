@@ -61,3 +61,22 @@ exports.getOrdersInfo=(req,res)=>
         })
 }
 
+exports.getComplaintsAdmin=(req,res)=>
+{
+    Complaints.find()
+    .then(result=>
+        {
+            res.render('./partials/adminDashBoard/pages/complaints.ejs',
+            {
+                pageTitle: "Complaints History",
+                user: req.session.user,
+                isLoggedin: req.session.isLoggedin,
+                complaints: result
+            });
+        })
+        .catch(err=>
+            {
+                console.error(err);
+                res.status(500).send("Server Error");
+            })
+}
