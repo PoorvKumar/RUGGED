@@ -166,7 +166,7 @@ exports.getUserDashboard = (req, res) => {
       .populate("cart.item.productID")
       .then((user) => {
         const cartproducts = user.cart.item;
-        res.render("userDashboard2", {
+        res.render("userDashboard", {
           pageTitle: "User DashBoard",
           user: req.session.user,
           isLoggedin: req.session.isLoggedin,
@@ -175,7 +175,7 @@ exports.getUserDashboard = (req, res) => {
       })
       .catch((err) => console.log(err));
   } else {
-    res.render("userDashboard2", {
+    res.render("userDashboard", {
       pgTTL: "User DashBoard",
       user: req.session.user,
       isLoggedin: req.session.isLoggedin,
@@ -202,7 +202,7 @@ exports.postUserDashboard = (req, res) => {
     })
     .catch((err) => {
       console.error(err);
-      res.status(500).send("EError Updating user");
+      res.status(500).send("Error Updating user");
     });
 };
 

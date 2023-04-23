@@ -2,175 +2,131 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= pageTitle %></title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+    integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="/css/sellDash.css">
 
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <script src="https://kit.fontawesome.com/72fdfa8245.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="/css/main_navbar.css">
-  <link rel="stylesheet" href="/css/style.css">
-  <link rel="stylesheet" href="/css/returnsAndOrdersStyle.css">
-  <link rel="stylesheet" href="/css/userDashboardStyle.css">
-  <title><%= pgTTL %></title>
 </head>
 
 <body>
-  <header>
-    <%- include('partials/Navbars/nav1.ejs') %>
-    <%- include('partials/Navbars/nav2.ejs') %>
-  </header>
-  <div>
-    <div class="bg-primary bg-cover bg-no-repeat py-8 py-lg-12 card-img-top" style="background-image: url('/Images/ProductImages/Miscellenaeous/backgroundImage1.png');">.</div>
-    <div class="bg-gray-100 pb-6">
-      <div class="container">
-        <div class="px-3 px-md-4">
-          <div class="row">
-            <!-- User Menu -->
-            <div class="col-lg-4 col-xxl-3">
-              <div class="card mt-n9 p-4 d-lg-none d-flex flex-row mb-4 shadow">
-                <div class="lh-sm pe-3">
-                  <h5 class="mb-0 fs-lg"><%=user.firstname%> <%=user.lastname%></h5><span class="fs-sm">@<%=user.firstname%><%=user.lastname%></span>
-                </div>
-                <div class="ms-auto"><a class="btn btn-primary icon-md p-0" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample"><i class="fi-menu fs-xl lh-1"></i></a></div>
+  <div class="outer">
+    <%- include('partials/userDashboard/navAndLeftbar/leftbar.ejs') %>
+      <div class="navpluscards">
+        <%- include('partials/userDashboard/navAndLeftbar/userdashnavbar.ejs') %>
+          <div class="col-sm-10 ms-5">
+            <div class="card userInfoClass shadow mb-4 mt-5">
+              <div class="card-body p-4">
+                <h5 class="mb-1">Profile Details</h5>
+                <p class="m-0">You have full control to manage your own account setting.</p>
               </div>
-              <div class="offcanvas-lg offcanvas-end" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel" style="--bs-offcanvas-width: 300px;">
-                <div class="offcanvas-header border-bottom">
-                  <h5 class="offcanvas-title" id="offcanvasExampleLabel"><%=user.firstname%> <%=user.lastname%></h5><button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#offcanvasExample" aria-label="Close"></button>
-                </div>
-                <div class="offcanvas-body">
-                  <div class="card shadow margin w-100">
-                    <div class="p-2"><img class="rounded w-100" src="/Images/ProductImages/Rucksack2/Rucksack2_image1.jpg" title="" alt=""></div>
-                    <div class="card-body border-bottom">
-                      <div class="text-center">
-                        <h5 class="mb-0"><%=user.firstname%> <%=user.lastname%></h5><span>@<%=user.firstname%><%=user.lastname%></span>
-                        <div class="pt-3"><a class="btn btn-outline-primary w-100" href="#">Go to Dashboard</a></div>
-                      </div>
-                    </div>
-                    <div class="card-body border-bottom">
-                      <h6 class="fs-sm letter-spacing-2 mb-3 text-body fw-400">SUBSCRIPTION</h6>
-                      <ul class="list-unstyled cd-menu-link mb-0">
-                        <li><a href="account-download.html"><i class="bi-download"></i> My Download</a></li>
-                        <li><a href="account-subscriptions.html"><i class="bi-house-door"></i> My Subscriptions</a></li>
-                        <li><a href="account-billing-info.html"><i class="bi-receipt-cutoff"></i> Billing Info</a></li>
-                        <li><a href="account-payment-methods.html"><i class="bi-credit-card"></i> Payment</a></li>
-                        <li><a href="account-invoice.html"><i class="bi-pie-chart"></i> Invoice</a></li>
-                      </ul>
-                    </div>
-                    <div class="card-body">
-                      <h6 class="fs-sm letter-spacing-2 mb-3 text-body fw-400">ACCOUNT SETTINGS</h6>
-                      <ul class="list-unstyled cd-menu-link mb-0">
-                        <li><a href="account-edit-profile.html" class="active"><i class="bi-house-door"></i> Edit Profile</a></li>
-                        <li><a href="account-security.html"><i class="bi-shield-check"></i> Security</a></li>
-                        <li><a href="account-social-profile.html"><i class="bi-arrow-repeat"></i> Social Profile</a></li>
-                        <li><a href="account-notification.html"><i class="bi-bell"></i> Notifications</a></li>
-                        <li><a href="account-privacy.html"><i class="bi-lock"></i> Profile Privacy</a></li>
-                        <li><a href="account-delete.html"><i class="bi-trash"></i> Delete Profile</a></li>
-                        <li><a href="account-linked.html"><i class="bi-person"></i> Linked Accounts</a></li>
-                        <li><a href="account-login.html"><i class="bi-power"></i> Sign Out</a></li>
-                      </ul>
-                    </div>
+            </div>
+            <div class="card shadow">
+              <div class="card-body p-lg-4">
+                <div class="row gy-3">
+                  
+                  <div class="col-md-5 d-flex align-self-center justify-content-md-end">
+                    <a href="/deleteUser" class="btn btn-outline-danger btn-sm col">
+                      <i class="fa fa-trash"></i> Delete</a>
                   </div>
                 </div>
-              </div>
-            </div><!-- User Info -->
-            <div class="col-lg-8 col-xxl-9">
-              <div class="card userInfoClass shadow mb-4">
-                <div class="card-body p-4">
-                  <h5 class="mb-1">Profile Details</h5>
-                  <p class="m-0">You have full control to manage your own account setting.</p>
-                </div>
-              </div>
-              <div class="card shadow">
-                <div class="card-body p-lg-4">
-                  <div class="row gy-3">
-                    <div class="col-md-7">
-                      <div class="d-flex align-items-center">
-                        <div class="avatar-lg"><img class="avatar-img rounded" src="assets/img/avatar-2.jpg" title="" alt=""></div>
-                        <div class="ps-3">
-                          <h6 class="m-0">Update Avatar</h6><span class="fs-sm">PNG, JPG max size 5mb.</span>
-                        </div>
-                      </div>
+                <hr class="my-4">
+                <h6 class="mb-4">Edit your personal information and address.</h6>
+                <div class="row g-3">
+                  <form action="/userDashboard?id=<%=user._id%>" method="post">
+                    <div class="row mb-2">
+                      <div class="col-sm-6"><label class="form-label">First Name</label> <input type="text" name="First"
+                          class="form-control" value=<%=user.firstname %>></div>
+                      <div class="col-sm-6"><label class="form-label">Last Name</label> <input type="text" name="Last" class="form-control"
+                          value=<%=user.lastname %>></div>
                     </div>
-                    <div class="col-md-5 d-flex align-self-center justify-content-md-end">
-                      <a class="btn btn-outline-primary btn-sm me-3 col" href="/update"></i><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-upload me-1" viewBox="0 0 16 16">
-                          <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z" />
-                          <path d="M7.646 1.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 2.707V11.5a.5.5 0 0 1-1 0V2.707L5.354 4.854a.5.5 0 1 1-.708-.708l3-3z" />
-                        </svg>Update</a>
-                      <a href="/deleteUser" class="btn btn-outline-danger btn-sm col"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash me-1" viewBox="0 0 16 16">
-                          <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z" />
-                          <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z" />
-                        </svg> Delete</a>
-                    </div>
-                  </div>
-                  <hr class="my-4">
-                  <h6 class="mb-4">Edit your personal information and address.</h6>
-                  <div class="row g-3">
-                    <form action="/userDashboard?id=<%=user._id%>" method="post">
-                      <div class="col-sm-6"><label class="form-label">First Name</label> <input type="text" name="First" class="form-control" value=<%=user.firstname %>></div>
-                      <div class="col-sm-6"><label class="form-label">Last Name</label> <input type="text" name="Last" class="form-control" value=<%=user.lastname %>></div>
+                    <div class="row mb-2">
                       <div class="col-sm-6"><label class="form-label">Phone</label> <input type="text" name="Phone" class="form-control" value=<%=user.phoneno %>></div>
-                      <div class="col-sm-6"><label class="form-label">Email</label> <input type="text" name="email" class="form-control" value=<%=user.email %>></div>
-                      <div class="col-sm-12"><label class="form-label">Address Line 1</label> <input type="text" name="Address" class="form-control"></div>
-                      <div class="col-sm-12"><label class="form-label">Address Line 2</label> <input type="text" name="AddressAlt" class="form-control"></div>
-                      <div class="col-sm-6"><label class="form-label">State</label>
-                        <select class="state" name="state" class="form-select">
-                          <option>Andhra Pradesh</option>
-                          <option>Arunachal Pradesh</option>
-                          <option>Assam</option>
-                          <option>Bihar</option>
-                          <option>Chhattisgarh</option>
-                          <option>Delhi</option>
-                          <option>Goa</option>
-                          <option>Gujarat</option>
-                          <option>Haryana</option>
-                          <option>Himachal Pradesh</option>
-                          <option>Jammu and Kashmir</option>
-                          <option>Jharkhand</option>
-                          <option>Karnataka</option>
-                          <option>Kerala</option>
-                          <option>Madhya Pradesh</option>
-                          <option>Maharashtra</option>
-                          <option>Manipur</option>
-                          <option>Meghalaya</option>
-                          <option>Mizoram</option>
-                          <option>Nagaland</option>
-                          <option>Odisha</option>
-                          <option>Punjab</option>
-                          <option>Rajasthan</option>
-                          <option>Sikkim</option>
-                          <option>Tamil Nadu</option>
-                          <option>Telangana</option>
-                          <option>Tripura</option>
-                          <option>Uttar Pradesh</option>
-                          <option>West Bengal</option>
-                        </select>
-                      </div>
-                      <div class="col-sm-6"><label class="form-label">Country</label>
-                        <select class="country" name="country" class="form-select">
-                          <option selected>India</option>
-                          <option>Other</option>
-                        </select>
-                      </div>
-                  </div>
-                  <div class="d-flex pt-5"><button type="submit" class="btn btn-primary me-3">Save Changes</button> <button type="reset" class="btn btn-link">Cancel</button></div>
-                  </form>
+                    <div class="col-sm-6"><label class="form-label">Email</label> <input type="text" name="email" class="form-control" value=<%=user.email %>></div>
+                    </div>
+                    <div class="col-sm-8 mb-2"><label class="form-label">Address Line 1</label> <input type="text" name="Address" value="<%=user.address%>" class="form-control"></div>
+                    <div class="col-sm-8 mb-3"><label class="form-label">Address Line 2</label> <input type="text" name="AddressAlt" value="<%=user.addressAlt%>" class="form-control"></div>
+                    <div class="col-sm-6 mb-2"><label class="form-label">State</label>
+                      <select class="state" name="state" class="form-select">
+                        <option>Andhra Pradesh</option>
+                        <option>Arunachal Pradesh</option>
+                        <option>Assam</option>
+                        <option>Bihar</option>
+                        <option>Chhattisgarh</option>
+                        <option>Delhi</option>
+                        <option>Goa</option>
+                        <option>Gujarat</option>
+                        <option>Haryana</option>
+                        <option>Himachal Pradesh</option>
+                        <option>Jammu and Kashmir</option>
+                        <option>Jharkhand</option>
+                        <option>Karnataka</option>
+                        <option>Kerala</option>
+                        <option>Madhya Pradesh</option>
+                        <option>Maharashtra</option>
+                        <option>Manipur</option>
+                        <option>Meghalaya</option>
+                        <option>Mizoram</option>
+                        <option>Nagaland</option>
+                        <option>Odisha</option>
+                        <option>Punjab</option>
+                        <option>Rajasthan</option>
+                        <option>Sikkim</option>
+                        <option>Tamil Nadu</option>
+                        <option>Telangana</option>
+                        <option>Tripura</option>
+                        <option>Uttar Pradesh</option>
+                        <option>West Bengal</option>
+                      </select>
+                    </div>
+                    <div class="col-sm-6"><label class="form-label">Country</label>
+                      <select class="country" name="country" class="form-select">
+                        <option selected>India</option>
+                        <option>Other</option>
+                      </select>
+                    </div>
                 </div>
+                <div class="d-flex pt-5"><button type="submit" class="btn btn-info me-3">Save Changes</button> <button type="reset" class="btn btn-info">Reset</button></div>
+                </form>
               </div>
             </div>
           </div>
-        </div>
       </div>
-    </div>
   </div>
-
-  <%- include('partials/Navbars/footer.ejs') %>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD" crossorigin="anonymous"></script>
-
 </body>
+<script src="/js/selldash.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
+</script>
+<script>
+  $(document).ready(function () {
+    $("#fld").on("keyup", function () {
+      var value = $(this).val().toLowerCase();
+      $("#tb tr").filter(function () {
+        $(this).toggle($(this).text()
+          .toLowerCase().indexOf(value) > -1)
+      });
+    });
+  });
+
+</script>
 
 </html>
