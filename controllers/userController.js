@@ -196,7 +196,7 @@ exports.getUserDashboard = (req, res) => {
       })
       .catch((err) => console.log(err));
   } else {
-    res.render("userDashboard", {
+    res.render("userDashboard2", {
       pgTTL: "User DashBoard",
       user: req.session.user,
       isLoggedin: req.session.isLoggedin,
@@ -210,9 +210,8 @@ exports.getUserDashboardReturnsAndOrders = (req, res, next) => {
         .then((notshippedOrders) => {
           Order.find({ "user.userId": req.user._id, Status: "Placed" })
             .then((buyAgain) => {
-              res.render("returnsAndOrders", {
+              res.render("partials/userDashboard/pages/returnsAndOrders", {
                 isLoggedin: req.session.isLoggedin,
-
                 orders: orders,
                 user: req.session.user,
                 notshippedOrders: notshippedOrders,
