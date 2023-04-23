@@ -7,10 +7,20 @@ const Complaints=require('../models/complaints');
 
 exports.getAdminPage=(req,res)=>
 {
-    res.render('admin',
-    { 
-        pageTitle: "Admin DashBoard",
-        user: req.session.user,
-        isLoggedin: req.session.isLogged
-     });
+    User.find()
+    .then(result=>
+        {
+            res.render('admin',
+            { 
+                pageTitle: "Admin DashBoard",
+                user: req.session.user,
+                isLoggedin: req.session.isLogged,
+                customers:result
+            });
+        })
+    .catch(err=>
+        {
+            console.error(err);
+            res.status(500).send("Server Error");
+        })
 }

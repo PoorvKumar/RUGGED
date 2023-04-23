@@ -52,19 +52,25 @@
                     <div class="wishlist d-flex flex-column px-4 mx-2 py-3 mt-1" style="font-weight: lighter;">
                       <p class="mb-1 text-info" style="font-size: larger; font-weight: 550;">Your Lists</p>
                       <a class="small" href="/wishlist" rel="noopener noreferrer">Create a WishList</a>
-                      <a class="small" href="#" rel="noopener noreferrer">Discover Your Style</a>
+                      <a class="small" href="/wishlist" rel="noopener noreferrer">Discover Your Style</a>
                       <a class="small" href="/blogPost" rel="noopener noreferrer">Explore Experiences</a>
-                      <a class="small" href="/blogPost" rel="noopener noreferrer">RUGGED Influencer+</a>
+                      <a class="small" href="/blogPost" rel="noopener noreferrer">RUGGED+ BlogPost</a>
                     </div>
                     <div class="wishlist d-flex flex-column px-4 mx-2 py-3 mt-1" style="font-weight: lighter;">
                       <p class="mb-1 text-info" style="font-size: larger; font-weight: 550;">Your Account</p>
                       <a class="small" href="/userDashboard?id=<%=user._id%>" rel="noopener noreferrer">Your Account</a>
                       <a class="small" href="/returnsAndOrder" rel="noopener noreferrer">Your Orders</a>
                       <a class="small" href="/wishlist" rel="noopener noreferrer">Your WishList</a>
-                      <a class="small" href="#" rel="noopener noreferrer">Your Recommendation</a>
-                      <a class="small" href="/blogPost" rel="noopener noreferrer">Membership & Subscriptions</a>
-                      <a class="small" href="/influencerDash" rel="noopener noreferrer">RUGGED Influencer Account</a>
-                      <a class="small" href="/dashboardSeller" rel="noopener noreferrer">Your Seller Account</a>
+                      <a class="small" href="/returnsAndOrder#BuyAgain" rel="noopener noreferrer">Your Recommendation</a>
+                      <% if(user.isInfluencer) { %>
+                        <a class="small" href="/influencerDash" rel="noopener noreferrer">Influencer Dashboard</a>
+                      <%}%>
+                      <% if(user.isSeller) { %>
+                        <a class="small" href="/dashboardSeller" rel="noopener noreferrer">Seller Dashboard</a>
+                      <%}%>
+                      <% if(user.isAdmin) { %>
+                        <a class="small" href="/admin" rel="noopener noreferrer">Admin Dashboard</a>
+                      <%}%>
                     </div>
                   </div>
                   <% } %>
