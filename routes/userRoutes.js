@@ -7,7 +7,7 @@ const router=express.Router();
 
 router.get('/wishList',authMiddleware,userController.getwishList);
 //user dashboard routes
-router.post('/userDashboard',userController.postUserDashboard);
+router.post('/userDashboard',authMiddleware,userController.postUserDashboard);
 router.get('/userDashboard',authMiddleware,userController.getUserDashboard);
 router.get('/userDashboard/ReturnsAndOrders',authMiddleware,userController.getUserDashboardReturnsAndOrders);
 router.get('/userDashboard/Following',authMiddleware,userController.getUserDashboardFollowing);
