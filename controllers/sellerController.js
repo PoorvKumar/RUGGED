@@ -171,7 +171,7 @@ exports.sellerAddProduct = (req, res) => {
     discount: req.body.discount,
     discountedPrice: dPrice,
     description: req.body.description,
-    imageurl: imgurl, //array
+    imageURL: imgurl, //array
     tags: tgs, //array
     colors: req.body.colors, 
   });
