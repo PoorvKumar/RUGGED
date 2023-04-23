@@ -1,6 +1,9 @@
 const Product = require("../models/product");
 const User = require("../models/user");
 const Order = require("../models/orders");
+const bcrypt = require("bcryptjs");
+const user = require("../models/user");
+
 exports.getwishList = (req, res, next) => {
   Product.find()
     .then((products) => {
@@ -241,24 +244,77 @@ exports.getUserDashboardFollowing = (req, res, next) => {
     }).catch((err) => console.log(err));
 };
 exports.getUserDashboardChangePassword = (req, res, next) => {
-
-  Order.find({ "user.userId": req.user._id })
-    .then((orders) => {
-      Order.find({ "user.userId": req.user._id, Status: "Not Shipped" })
-        .then((notshippedOrders) => {
-          Order.find({ "user.userId": req.user._id, Status: "Placed" })
-            .then((buyAgain) => {
-              res.render("partials/userDashboard/pages/changePassword", {
-                isLoggedin: req.session.isLoggedin,
-                // cartprod: cartproducts,
-                orders: orders,
-                user: req.session.user,
-                notshippedOrders: notshippedOrders,
-                buyAgain: buyAgain,
+  if (req.session.isLoggedin) {
+    res.render("partials/userDashboard/pages/changePassword", {
+      pageTitle: "Change Password",
+      user: req.session.user,
+      isLoggedin: req.session.isLoggedin,
+      didChangePassword:"",
+    });
+  };
+};
+exports.postUserDashboardChangePassword = (req,res,next)=>{
+  const oldPass = req.body.oldPassword;
+  const newPass = req.body.newPassword;
+  const confirmNewPass = req.body.confirmNewPassword;
+  const uid = req.query.id;
+  user.findOne({ _id: uid })
+    .then((usercollection) => {
+      return bcrypt
+        .compare(oldPass, usercollection.password)
+        .then((check) => {
+          if (check) {
+            // req.session.isLoggedin = true;
+            // req.session.user = usercollection;
+            // return req.session.save((err) => {
+            //   console.log(err);
+            //   res.redirect("/");
+            // });
+            if(newPass===confirmNewPass)
+            {
+              return bcrypt
+              .hash(newPass,13)
+              .then((pass)=>{
+                user.findByIdAndUpdate(uid,{password:pass},{ new: true }).then((result)=>{
+                  res.render("partials/userDashboard/pages/changePassword", {
+                    pageTitle: "Change Password",
+                    user: req.session.user,
+                    isLoggedin: req.session.isLoggedin,
+                    didChangePassword:"Password was Successfully changed."
+                  });
+                });
               });
-            }).catch((err) => console.log(err));
-        }).catch((err) => console.log(err));
-    }).catch((err) => console.log(err));
+            }
+            else{
+              res.render("partials/userDashboard/pages/changePassword", {
+                pageTitle: "Change Password",
+                user: req.session.user,
+                isLoggedin: req.session.isLoggedin,
+                didChangePassword:"Password was not changed. Please ensure that new password and confirm new password are the same."
+              });
+            }
+          };
+          res.render("partials/userDashboard/pages/changePassword", {
+            pageTitle: "Change Password",
+            user: req.session.user,
+            isLoggedin: req.session.isLoggedin,
+            didChangePassword:"Password was not changed. Please ensure that old password is correct."
+          });
+        })
+        .catch((err) => {
+          console.log(err);
+          res.render("partials/userDashboard/pages/changePassword", {
+            pageTitle: "Change Password",
+            user: req.session.user,
+            isLoggedin: req.session.isLoggedin,
+            didChangePassword:"Password was not changed. Some error occured. Please try again. If error persists then contact our customer care."
+          });
+        });
+    })
+    .catch((err) => {
+      //error while find operation
+      console.log(err);
+    });
 };
 exports.getUserDashboardRuggedPlusMembership = (req, res, next) => {
   Order.find({ "user.userId": req.user._id })
@@ -278,5 +334,8 @@ exports.getUserDashboardRuggedPlusMembership = (req, res, next) => {
             }).catch((err) => console.log(err));
         }).catch((err) => console.log(err));
     }).catch((err) => console.log(err));
+
+};
+exports.postUserDashboardRuggedPlusMembership = (req,res,next)=>{
 
 };

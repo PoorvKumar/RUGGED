@@ -13,6 +13,9 @@ router.get('/userDashboard/ReturnsAndOrders',authMiddleware,userController.getUs
 router.get('/userDashboard/Following',authMiddleware,userController.getUserDashboardFollowing);
 router.get('/userDashboard/ChangePassword',authMiddleware,userController.getUserDashboardChangePassword);
 router.get('/userDashboard/RuggedPlusMembership',authMiddleware,userController.getUserDashboardRuggedPlusMembership);
+router.post('/userDashboard/ChangePassword',authMiddleware,userController.postUserDashboardChangePassword);
+router.post('/userDashboard/RuggedPlusMembership',authMiddleware,userController.postUserDashboardRuggedPlusMembership);
+
 // 
 router.get('/deleteUser',authMiddleware,userController.deleteUser);
 router.post('/addtoCart',userController.postAddtoCart)
