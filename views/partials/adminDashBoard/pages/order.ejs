@@ -54,7 +54,10 @@
                             <td><%= orders[i].Status %></td>
                             <td><%= orders[i].user.firstname %></td>
                             <td>
-                            <a class="btn btn-info" href="/admin">Ship Order</a>
+                              <form action="/shipOrder" method="POST" id="shpordr">
+                            <a class="btn btn-info" href="#" onclick="document.getElementById('shpordr').submit();">Ship Order</a>
+                            <input type="hidden" name="ordership" value="<%= orders[i]._id  %>">
+                            </form>
                             </td>
                         </tr>
                     <%}%>                  
@@ -102,7 +105,7 @@
               </thead>
               <tbody>
                 <%for(let i=0; i<orders.length; i++) { %>
-                    <%if(orders[i].Status=="Not Shipped") {%>
+                    <%if(orders[i].Status=="Cancel") {%>
                         <tr>
                             <td><%= orders[i]._id %></td>
                             <td><%= orders[i].Status %></td>

@@ -11,4 +11,5 @@ router.post('/placeorder',productController.postOrder)
 router.post('/buynow',productController.postSingleProductOrder)
 router.post('/CancelOrder',productController.postCancelOrder)
 router.post('/product',productController.postReview)
+router.post('/shipOrder',productController.postShipOrder)
 module.exports=router;

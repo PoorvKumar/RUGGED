@@ -36,4 +36,8 @@ order.methods.CancelOrder= function(){
     this.Status="Cancel"
     return this.save()
 }
+order.methods.ShipOrder = function (){
+       this.Status="Placed"
+       return this.save()
+}
 module.exports=mongoose.model('Order',order);

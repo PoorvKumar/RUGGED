@@ -288,6 +288,20 @@ exports.postCancelOrder = (req, res, next) => {
     })
     .catch((err) => console.log(err));
 };
+exports.postShipOrder = (req, res, next) => {
+  var orderid = req.body.ordership;
+  Order.findById(orderid)
+    .then((order) => {
+      req.order = order;
+      req.order
+        .ShipOrder()
+        .then((result) => {
+          res.redirect('/admin/orderHistoryAdmin');
+        })
+        .catch((err) => console.log(err));
+    })
+    .catch((err) => console.log(err));
+};
 exports.postSingleProductOrder = (req, res, next) => {
   prodId = req.body.productID;
   val = req.body.items
