@@ -480,7 +480,7 @@
     color: whitesmoke;
     background-color: brown;
     padding: 1%;
-    margin: 0%;
+    margin: 4%;
     font-size: 7px;
 }
 .pcHzMain .linkitem:hover{
@@ -551,3 +551,31 @@
     height:54rem;
     overflow-y: auto;
   }
+  .right {
+    display: none;
+  }
+.fa{
+  font-size: 15px;
+}
+.pcBtnGroup{
+  max-width: fit-content;
+  margin: 0;
+  display: inline-flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  margin-left: 40%;
+}
+.pcBtnsc{
+  margin-top:10%;
+  margin-left:25%;
+}
+.pcButton1{
+    padding-left:50px;
+    padding-right: 50px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    margin-left:-10px;
+ }
+ .pcHzRating{
+    margin:0%;
+ }
