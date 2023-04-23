@@ -225,23 +225,18 @@ exports.getUserDashboardReturnsAndOrders = (req, res, next) => {
     }).catch((err) => console.log(err));
 };
 exports.getUserDashboardFollowing = (req, res, next) => {
-  Order.find({ "user.userId": req.user._id })
-    .then((orders) => {
-      Order.find({ "user.userId": req.user._id, Status: "Not Shipped" })
-        .then((notshippedOrders) => {
-          Order.find({ "user.userId": req.user._id, Status: "Placed" })
-            .then((buyAgain) => {
-              res.render("partials/userDashboard/pages/following", {
-                isLoggedin: req.session.isLoggedin,
 
-                orders: orders,
-                user: req.session.user,
-                notshippedOrders: notshippedOrders,
-                buyAgain: buyAgain,
-              });
-            }).catch((err) => console.log(err));
-        }).catch((err) => console.log(err));
-    }).catch((err) => console.log(err));
+  User.findById(req.user.id).then((result) => {
+    res.render("partials/userDashboard/pages/following",{
+      user:req.session.user,
+      isLoggedin: req.session.isLoggedin,
+      isRuggedPlusMember:result.isRuggedPlus
+    });
+  }).catch((err) => {
+  if (err) {
+    console.error(err);
+  }  
+  });
 };
 
 exports.getUserDashboardChangePassword = (req, res, next) => {
