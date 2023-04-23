@@ -204,8 +204,8 @@
           </div>
           <div class="text">Inclusive of all Taxes.</div>
           <% 
-            let emiPerMonthList = (productData.price*(1-(productData.discount*0.01))/24).toString().split('.');
-            let emiPerMonth = emiPerMonthList[0]+"."+emiPerMonthList[1].substring(0,2);
+            let emiPerMonthList = (productData.price*(1-(productData.discount*0.01))/24)  ;
+            let emiPerMonth = emiPerMonthList[0]+"."+emiPerMonthList[1];
           %>
           <div class="Emi">Emi starts at ₹<%=emiPerMonth%> per month for 24 months.<a href="" class="emiLink">EMI details</a></div>
           <hr>

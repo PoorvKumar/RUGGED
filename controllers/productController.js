@@ -219,12 +219,12 @@ exports.getFilter = (req, res) => {
         return product.quantity > 1;
       };
 
-      if (brands.length > 0) {
-        products = products.filter(brandFilter);
-      }
-      if (offerSelected.length > 0) {
-        products = products.filter(offerFilter);
-      }
+      // if (brands.length > 0) {
+      //   products = products.filter(brandFilter);
+      // }
+      // if (offerSelected.length > 0) {
+      //   products = products.filter(offerFilter);
+      // }
       if (influencersChoice === "on") {
         products = products.filter(influencersChoiceFilter);
       }

@@ -96,3 +96,49 @@ exports.resolveComplaintAdmin=(req,res)=>
             res.status(500).send("Server Error");
         })
 }
+
+exports.getInfluencersInfo=(req,res)=>
+{
+    User.find({ isInfluencer: true })
+    .then(result=>
+        {
+            res.render("./partials/adminDashBoard/pages/influencers.ejs",
+            {
+                pageTitle: "Influencers Info",
+                user: req.session.user,
+                issLoggedin: req.session.isLoggedin,
+                influencers: result
+            })
+        })
+    .catch(err=>
+        {
+            console.error(err);
+            res.status(500).send("Server Error");
+        })
+}
+
+exports.removeInfluencerAdmin=(req,res)=>
+{
+    const userId=req.query.userID;
+
+    Influencer.findByIdAndDelete({ userId:userId })
+    .then(result=>
+        {
+            User.findByIdAndUpdate({ _id: userId },{ isInfluencer: false },{ new: true })
+            .then(()=>
+            {
+                res.redirect('/admin/influencers');
+            })
+            .catch(err=>
+                {
+                    console.error(err);
+                    res.status(500).send("Server Error");
+                })
+        })
+    .catch(err=>
+        {
+            console.error(err);
+            res.status(500).send("Server Error");
+        })
+}
+
