@@ -6,9 +6,14 @@ const complaintController=require("../controllers/complaintsController");
 const router=express.Router();
 
 router.get('/wishList',authMiddleware,userController.getwishList);
-router.get('/userDashboard',authMiddleware,userController.getUserDashboard);
 router.post('/userDashboard',userController.updateUserPost);
+//user dashboard routes
+router.get('/userDashboard',authMiddleware,userController.getUserDashboard);
 router.get('/userDashboard/ReturnsAndOrders',authMiddleware,userController.getUserDashboardReturnsAndOrders);
+router.get('/userDashboard/Following',authMiddleware,userController.getUserDashboardFollowing);
+router.get('/userDashboard/ChangePassword',authMiddleware,userController.getUserDashboardChangePassword);
+router.get('/userDashboard/RuggedPlusMembership',authMiddleware,userController.getUserDashboardRuggedPlusMembership);
+// 
 router.get('/deleteUser',authMiddleware,userController.deleteUser);
 router.post('/addtoCart',userController.postAddtoCart)
 router.post('/deletefromCart',userController.postDeleteCart)

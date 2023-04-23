@@ -58,50 +58,7 @@ exports.getwishList = (req, res, next) => {
       console.error(err);
     });
 };
-exports.getUserDashboard = (req, res) => {
-  if (req.session.isLoggedin) {
-    req.user
-      .populate("cart.item.productID")
-      .then((user) => {
-        const cartproducts = user.cart.item;
-        res.render("userDashboard2", {
-          pageTitle: "User DashBoard",
-          user: req.session.user,
-          isLoggedin: req.session.isLoggedin,
-          cartprod: cartproducts
-        });
-      })
-      .catch((err) => console.log(err));
-  } else {
-    res.render("userDashboard", {
-      pgTTL: "User DashBoard",
-      user: req.session.user,
-      isLoggedin: req.session.isLoggedin,
-    });
-  }
-};
-exports.getUserDashboardReturnsAndOrders = (req, res, next) => {
-  req.user.populate("cart.item.productID").then((user) => {
-    const cartproducts = user.cart.item;
-    Order.find({ "user.userId": req.user._id })
-      .then((orders) => {
-        Order.find({ "user.userId": req.user._id, Status: "Not Shipped" })
-          .then((notshippedOrders) => {
-            Order.find({ "user.userId": req.user._id, Status: "Placed" })
-              .then((buyAgain) => {
-                res.render("returnsAndOrders", {
-                  isLoggedin: req.session.isLoggedin,
-                  cartprod: cartproducts,
-                  orders: orders,
-                  user: req.session.user,
-                  notshippedOrders: notshippedOrders,
-                  buyAgain: buyAgain,
-                });
-              }).catch((err) => console.log(err));
-          }).catch((err) => console.log(err));
-      }).catch((err) => console.log(err));
-  }).catch((err) => console.log(err));
-};
+
 exports.updateUserPost = (req, res) => {
   const userId = req.query.id;
   // const updatedUserData=req.body;
@@ -223,3 +180,104 @@ exports.postdeletewishList = (req, res, next) => {
     .catch((err) => console.log(err));
 };
 
+// User Dashboard Controllers
+exports.getUserDashboard = (req, res) => {
+  if (req.session.isLoggedin) {
+    req.user
+      .populate("cart.item.productID")
+      .then((user) => {
+        const cartproducts = user.cart.item;
+        res.render("userDashboard2", {
+          pageTitle: "User DashBoard",
+          user: req.session.user,
+          isLoggedin: req.session.isLoggedin,
+          cartprod: cartproducts
+        });
+      })
+      .catch((err) => console.log(err));
+  } else {
+    res.render("userDashboard", {
+      pgTTL: "User DashBoard",
+      user: req.session.user,
+      isLoggedin: req.session.isLoggedin,
+    });
+  }
+};
+exports.getUserDashboardReturnsAndOrders = (req, res, next) => {
+  Order.find({ "user.userId": req.user._id })
+    .then((orders) => {
+      Order.find({ "user.userId": req.user._id, Status: "Not Shipped" })
+        .then((notshippedOrders) => {
+          Order.find({ "user.userId": req.user._id, Status: "Placed" })
+            .then((buyAgain) => {
+              res.render("returnsAndOrders", {
+                isLoggedin: req.session.isLoggedin,
+
+                orders: orders,
+                user: req.session.user,
+                notshippedOrders: notshippedOrders,
+                buyAgain: buyAgain,
+              });
+            }).catch((err) => console.log(err));
+        }).catch((err) => console.log(err));
+    }).catch((err) => console.log(err));
+};
+exports.getUserDashboardFollowing = (req, res, next) => {
+  Order.find({ "user.userId": req.user._id })
+    .then((orders) => {
+      Order.find({ "user.userId": req.user._id, Status: "Not Shipped" })
+        .then((notshippedOrders) => {
+          Order.find({ "user.userId": req.user._id, Status: "Placed" })
+            .then((buyAgain) => {
+              res.render("partials/userDashboard/pages/following", {
+                isLoggedin: req.session.isLoggedin,
+
+                orders: orders,
+                user: req.session.user,
+                notshippedOrders: notshippedOrders,
+                buyAgain: buyAgain,
+              });
+            }).catch((err) => console.log(err));
+        }).catch((err) => console.log(err));
+    }).catch((err) => console.log(err));
+};
+exports.getUserDashboardChangePassword = (req, res, next) => {
+
+  Order.find({ "user.userId": req.user._id })
+    .then((orders) => {
+      Order.find({ "user.userId": req.user._id, Status: "Not Shipped" })
+        .then((notshippedOrders) => {
+          Order.find({ "user.userId": req.user._id, Status: "Placed" })
+            .then((buyAgain) => {
+              res.render("partials/userDashboard/pages/changePassword", {
+                isLoggedin: req.session.isLoggedin,
+                // cartprod: cartproducts,
+                orders: orders,
+                user: req.session.user,
+                notshippedOrders: notshippedOrders,
+                buyAgain: buyAgain,
+              });
+            }).catch((err) => console.log(err));
+        }).catch((err) => console.log(err));
+    }).catch((err) => console.log(err));
+};
+exports.getUserDashboardRuggedPlusMembership = (req, res, next) => {
+  Order.find({ "user.userId": req.user._id })
+    .then((orders) => {
+      Order.find({ "user.userId": req.user._id, Status: "Not Shipped" })
+        .then((notshippedOrders) => {
+          Order.find({ "user.userId": req.user._id, Status: "Placed" })
+            .then((buyAgain) => {
+              res.render("partials/userDashboard/pages/ruggedPlusMembership", {
+                isLoggedin: req.session.isLoggedin,
+                // cartprod: cartproducts,
+                orders: orders,
+                user: req.session.user,
+                notshippedOrders: notshippedOrders,
+                buyAgain: buyAgain,
+              });
+            }).catch((err) => console.log(err));
+        }).catch((err) => console.log(err));
+    }).catch((err) => console.log(err));
+
+};
