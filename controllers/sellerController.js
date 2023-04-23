@@ -97,7 +97,7 @@ exports.getsellerPortal = (req, res, next) => {
 };
 exports.SellerGetProduct = (req, res) => {
   if(req.user.isSeller){
-    Product.find({sellerId:req.user._id}).then(products=>{
+    Product.find({sellerID:req.user._id}).then(products=>{
       res.render("partials/sellerDashboard/pages/product.ejs", {
         user: req.session.user,
         isLoggedin: req.session.isLoggedin,
@@ -157,20 +157,23 @@ exports.SellerGetAddProduct = (req, res) => {
 };
 exports.sellerAddProduct = (req, res) => {
   let dPrice = req.body.price * (1 - 0.01 * req.body.discount);
+  categories=String(req.body.cate).split(',')
+  imgurl=String(req.body.imageurl).split(',')
+  tgs=String(req.body.tags).split(',')
   const product = new Product({
-    sellerID: req.user.id,
+    sellerID: req.user._id,
     name: req.body.name,
     shortDescription: req.body.shortDesc,
-    categories: req.body.cate, //array
+    categories: categories, //array
     brand: req.body.brand,
     price: req.body.price,
     quantity: req.body.stockQuantity,
     discount: req.body.discount,
     discountedPrice: dPrice,
     description: req.body.description,
-    imageurl: req.body.imageurl, //array
-    tags: req.body.tags, //array
-    colors: req.body.colors, //array
+    imageURL: imgurl, //array
+    tags: tgs, //array
+    colors: req.body.colors, 
   });
 
 

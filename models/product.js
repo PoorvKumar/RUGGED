@@ -56,7 +56,9 @@ const product = new Schema({
   //   type: String,
   //   required: true
   // },
-  imagesURL: [],
+  imagesURL: [{
+    type:String
+  }],
   table: {
     type: String
   },
@@ -84,8 +86,9 @@ const product = new Schema({
     required: true
   },
   sellerID: {
-    type: String,
+    type: Schema.Types.ObjectId,
     required: true,
+    ref:'User'
   },
   ruggedVerrified: {
     type: String,
@@ -105,6 +108,9 @@ const product = new Schema({
   size:[],
   // string types
   type:[],
+  categories:[{
+    type:String
+  }],
   influencersNameChoice: [
     {
       influencerID: {
