@@ -35,4 +35,8 @@ const Seller=new Schema(
         
     }
 )
+Seller.methods.addproduct = function(product){
+    this.products.push(product)
+    return this.save()
+}
 module.exports = mongoose.model('Seller', Seller);

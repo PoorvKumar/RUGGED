@@ -436,4 +436,118 @@
        margin:50%;
     }
 }
-    
+
+
+
+.pcHzMain{
+    /* max-width:; */
+    max-height: 280px;
+    background-color: #eee;
+}
+.pcHzMain:hover{
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+  cursor: pointer;
+}
+
+.HzSampleTxt{
+    margin: 0;
+}
+.pcHzPrice{
+    display: inline-flex;
+    margin: 0;
+    flex-wrap: wrap;
+    opacity: 80%;
+}
+.pcHzDiscount{
+    max-width: fit-content;
+    margin: 0;
+    display: inline-flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    border-radius: 5%;
+    background-color: royalblue;
+    color: whitesmoke;
+    padding: 0.5%;
+    margin: 2% 3%;
+}
+.pcHzLimitedTimeDeal{
+    max-width: fit-content;
+    margin: 0;
+    display: inline-flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    border-radius: 2%;
+    color: whitesmoke;
+    background-color: brown;
+    padding: 1%;
+    margin: 0%;
+    font-size: 7px;
+}
+.pcHzMain .linkitem:hover{
+    color:#0770cf;
+}
+* {
+    box-sizing: border-box;
+  }
+  
+  /* body {
+    font-family: Arial;
+    margin: 0 auto; 
+    max-width: 75%;
+    padding: 20px;
+  } */
+  
+  .headingk {
+    font-size: 13px;
+    opacity: 90%;
+    margin-top:10%;
+  }
+  .headingk:hover{
+    text-decoration: underline;
+    opacity:50%;
+  }
+  .headingJr{
+    font-size: 15px;
+    opacity: 80%;
+
+  }
+  
+  .fa {
+    font-size: 25px;
+  }
+  
+  .checked {
+    color: lightblue; 
+  }
+  
+  /* Three column layout */
+  .side {
+    float: left;
+    width: 15%;
+    margin-top: 10px;
+  }
+  
+  .middle {
+    float: left;
+    width: 70%;
+    margin-top: 10px;
+  }
+  
+  /* Place text to the right */
+  /* .right {
+    text-align: right;
+  } */
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  .middleneed{
+    margin:1%;
+    padding:2%;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    height:54rem;
+    overflow-y: auto;
+  }

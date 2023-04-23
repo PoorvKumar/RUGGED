@@ -45,7 +45,6 @@ exports.postAddProduct = (req, res, next) => {
     .save()
     .then((result) => {
       // console.log(result);
-      console.log("Created Product");
       res.redirect("/add-product");
     })
     .catch((err) => {
@@ -97,11 +96,18 @@ exports.getsellerPortal = (req, res, next) => {
   }
 };
 exports.SellerGetProduct = (req, res) => {
-  res.render("partials/sellerDashboard/pages/product.ejs", {
-    user: req.session.user,
-    isLoggedin: req.session.isLoggedin,
-    pageTitle: "Influencer Dash | Product Page",
-  });
+  if(req.user.isSeller){
+    Product.find({sellerId:req.user._id}).then(products=>{
+      res.render("partials/sellerDashboard/pages/product.ejs", {
+        user: req.session.user,
+        isLoggedin: req.session.isLoggedin,
+        pageTitle: "Product Page",
+        products:products
+      });
+    }).catch(err=>{
+      console.log(err)
+    })
+}
 };
 exports.SellerGetRegister = (req, res) => {
   res.render("sellerRegister", {
@@ -167,10 +173,11 @@ exports.sellerAddProduct = (req, res) => {
     colors: req.body.colors, //array
   });
 
+
   product
     .save()
     .then((result) => {
-      console.log("Product Added Successfully...");
+      Product
       res.redirect("/dashboardSeller/products");
     })
     .catch((err) => {
