@@ -219,10 +219,10 @@ exports.getFilter = (req, res) => {
         return product.quantity > 1;
       };
 
-      if (brands) {
+      if (brands.length>0) {
         products = products.filter(brandFilter);
       }
-      if (offerSelected) {
+      if (offerSelected.length>0) {
         products = products.filter(offerFilter);
       }
       if (influencersChoice === "on") {
@@ -240,7 +240,7 @@ exports.getFilter = (req, res) => {
       if (true) {
         products = products.filter(priceFilter);
       }
-      if (customerRating) {
+      if (customerRating>=0) {
         products = products.filter(customerRatingFilter);
       }
       const productsRatingArray = getProductsRatingArray(products);
