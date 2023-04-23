@@ -1,6 +1,21 @@
-ChangeMainPhotoTO(photo)
+function ChangeMainPhotoTo(photoIndex,totalLength)
 {
+    let id1;
+    let id2;
+    for (let index = 0; index < totalLength; index++) {
+        id1 = "carouselPhoto"+index.toString();
+        id2 = "bottomButton"+index.toString();
+        document.getElementById(id1).classList.remove("active");
+        document.getElementById(id2).classList.remove("active");
+        document.getElementById(id2).ariaCurrent=false;
+    }
 
+    id3 = "carouselPhoto"+photoIndex.toString();
+    id4 = "bottomButton"+photoIndex.toString();
+    // console.log(id1);
+    document.getElementById(id3).classList.add("active");
+    document.getElementById(id4).classList.add("active");
+    document.getElementById(id4).ariaCurrent=true;
 }
 
 function wishlistHeartToggleFunction(passedHeart) {

@@ -219,10 +219,10 @@ exports.getFilter = (req, res) => {
         return product.quantity > 1;
       };
 
-      if (brands.length>0) {
+      if (brands.length > 0) {
         products = products.filter(brandFilter);
       }
-      if (offerSelected.length>0) {
+      if (offerSelected.length > 0) {
         products = products.filter(offerFilter);
       }
       if (influencersChoice === "on") {
@@ -240,7 +240,7 @@ exports.getFilter = (req, res) => {
       if (true) {
         products = products.filter(priceFilter);
       }
-      if (customerRating>=0) {
+      if (customerRating >= 0) {
         products = products.filter(customerRatingFilter);
       }
       const productsRatingArray = getProductsRatingArray(products);
@@ -321,9 +321,11 @@ exports.postReview = (req, res) => {
   // console.log(productID);
   let pid = req.query.id;
   let uid = req.user._id;
+  // let cartproducts = req.body.cartProducts;
+  // console.log(cartproducts);
   let ra;
-  Product.findById({ _id: pid }).then((result) => {
-    ra = result.reviewsArray;
+  Product.findById({ _id: pid }).then((product) => {
+    ra = product.reviewsArray;
     ra.push({
       userID: uid,
       title: reviewTitle,
@@ -331,11 +333,38 @@ exports.postReview = (req, res) => {
       rating: ratingvalue,
       description: reviewText,
     });
-    Product.findByIdAndUpdate(pid, { reviewsArray: ra }, { new: true }).then((result) => {
+
+    Product.findByIdAndUpdate(pid, { reviewsArray: ra }, { new: true }).then((rslt) => {
+      const productsRatingArray = getProductsRatingArray([product]);
+      if (req.session.isLoggedin) {
+        req.user
+          .populate("cart.item.productID")
+          .then((user) => {
+            const cartproducts = user.cart.item;
+            res.render("productPage", {
+              productData: product,
+              productRating: productsRatingArray[0],
+              user: req.session.user,
+              isLoggedin: req.session.isLoggedin,
+              pgTitle: product.name,
+              cartprod: cartproducts,
+              wishList: req.user.wishList.lists,
+            });
+          })
+          .catch((err) => console.log(err));
+      } 
+      else {
+        res.render("productPage", {
+          productData: product,
+          productRating: productsRatingArray[0],
+          user: req.session.user,
+          isLoggedin: req.session.isLoggedin,
+          pgTitle: product.name,
+        });
+      }
     }).catch((error) => {
       if (error) { console.error(error); }
-    });;
-
+    });
   }).catch((err) => {
     if (err) { console.error(err); }
   });

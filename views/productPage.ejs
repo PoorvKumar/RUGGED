@@ -29,15 +29,10 @@
       <div class="row">
         <div class="col-lg-1 MyBorder LeftColumn">
           <ul>
+            <% for( let index = 0; index < productData.imagesURL.length; index++ ) { %>
             <li class="productImageLi">
               <div class="productImage">
-                <img src=<%=productData.imagesURL[0]%> alt="Product" class="ProductImageInner" onclick="ChangeMainPhotoTO('productData.imagesURL[0].imageURL')">
-              </div>
-            </li>
-            <% for( let index = 1; index < productData.imagesURL.length; index++ ) { %>
-            <li class="productImageLi">
-              <div class="productImage">
-                <img src=<%=productData.imagesURL[index]%> alt="Product" class="ProductImageInner" onclick="ChangeMainPhotoTO('productData.imagesURL[index].imageURL')">
+                <img src=<%=productData.imagesURL[index]%> alt="Product" class="ProductImageInner" onclick="ChangeMainPhotoTo('<%=index%>','<%=productData.imagesURL.length%>')">
               </div>
             </li>
             <% } %>
@@ -47,17 +42,17 @@
           <div class="productCarousel" data-bs-theme="dark">
             <div id="carouselID2" class="carousel slide">
               <div class="carousel-indicators">
-                <button type="button" data-bs-target="#carouselID2" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselID2" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1" id="bottomButton0"></button>
                 <% for( let index = 1; index < productData.imagesURL.length; index++ ) { %>
-                <button type="button" data-bs-target="#carouselID2" data-bs-slide-to=<%=index%> aria-label="Slide <%= index+1 %>"></button>
+                <button type="button" data-bs-target="#carouselID2" data-bs-slide-to=<%=index%> aria-current="false" aria-label="Slide <%= index+1 %>" id="bottomButton<%=index%>"></button>
                 <% } %>
               </div>
               <div class="carousel-inner">
-                <div class="carousel-item active">
+                <div class="carousel-item active" id="carouselPhoto0">
                   <img src=<%= productData.imagesURL[0] %> class="d-block w-100" alt="image0">
                 </div>
-                <% for( let index = 0; index < productData.imagesURL.length; index++ ) { %>
-                <div class="carousel-item">
+                <% for( let index = 1; index < productData.imagesURL.length; index++ ) { %>
+                <div class="carousel-item" id="carouselPhoto<%=index%>">
                   <img src=<%=productData.imagesURL[index]%> class="d-block w-100" alt="image<%= index %>">
                 </div>
                 <% } %>
@@ -78,9 +73,9 @@
               <input type="hidden" name="productID" value="<%= productData._id %>">
             </form>
             <form action="/buynow" method="POST">
-            <button type="submit" class="btn btn-success btn-lg ">Buy Now</button>
-            <input type="hidden" name="productID" value="<%= productData._id %>">
-            <input type="hidden" name="noofitems" id="need" value="">
+              <button type="submit" class="btn btn-success btn-lg ">Buy Now</button>
+              <input type="hidden" name="productID" value="<%= productData._id %>">
+              <input type="hidden" name="noofitems" id="need" value="">
             </form>
           </div>
         </div>
@@ -94,7 +89,7 @@
                 totalNumberofPeople=1;
               }
               %>
-              <span class="starsRatingGreen rightCompartmentInner popupRating" onclick="popupRatingFunction('<%=productData._id%>')"><%=(sum/(totalNumberofPeople))%>
+              <span class="starsRatingGreen rightCompartmentInner popupRating" onclick="popupRatingFunction('<%=productData._id%>')"><%=(sum/(totalNumberofPeople)).toString().substring(0,3)%>
                 <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMyIgaGVpZ2h0PSIxMiI+PHBhdGggZmlsbD0iI0ZGRiIgZD0iTTYuNSA5LjQzOWwtMy42NzQgMi4yMy45NC00LjI2LTMuMjEtMi44ODMgNC4yNTQtLjQwNEw2LjUuMTEybDEuNjkgNC4wMSA0LjI1NC40MDQtMy4yMSAyLjg4Mi45NCA0LjI2eiIvPjwvc3ZnPg==" class="innerStars">
                 <div class="popupContent" id="popupUserRating">
                   <span class="heading">User Rating</span>
@@ -208,7 +203,11 @@
             <div class="percentOff"><%= productData.discount %>% Off</div>
           </div>
           <div class="text">Inclusive of all Taxes.</div>
-          <div class="Emi">Emi starts at ₹<%=(productData.price*(1-(productData.discount*0.01))/24)%> per month for 24 months.<a href="" class="emiLink">EMI details</a></div>
+          <% 
+            let emiPerMonthList = (productData.price*(1-(productData.discount*0.01))/24).toString().split('.');
+            let emiPerMonth = emiPerMonthList[0]+"."+emiPerMonthList[1].substring(0,2);
+          %>
+          <div class="Emi">Emi starts at ₹<%=emiPerMonth%> per month for 24 months.<a href="" class="emiLink">EMI details</a></div>
           <hr>
           <div class="services" data-bs-theme="dark">
             <% if (productData.services[0]===1) { %>
@@ -340,25 +339,46 @@
           <div class="tab-pane" id="reviews" role="tabpanel">
             <div class="row mb-5">
               <div class="col-lg-10 col-xl-9">
-                <% let max5 = productData.reviewsArray.length
+                <% 
+                let max5 = productData.reviewsArray.length
                 if(max5>5){
                   max5=5;
-                } %>
+                } 
+                let x=[];
+                if(productData.reviewsArray.length<=5)
+                {
+                  for( let index = 0; index < productData.reviewsArray.length; index++ ) {
+                    x.push(index);
+                  }
+                }
+                if(productData.reviewsArray.length>5){
+                  function myRandomInts(quantity, max){
+                    const arr = []
+                    while(arr.length < quantity){
+                      var candidateInt = Math.floor(Math.random() * max)
+                      if(arr.indexOf(candidateInt) === -1) arr.push(candidateInt)
+                    }
+                  return(arr)
+                  }
+                  x = myRandomInts(5,productData.reviewsArray.length);
+                }
+                %>
                 <% for( let index = 0; index < max5; index++ ) { %>
+
                 <div class="review d-flex">
-                  <div class="flex-shrink-0 text-center me-4 me-xl-5"><img class="review-image" src=<%= productData.reviewsArray[index].photoURLS[0] %> alt="..."><span class="text-uppercase text-muted"></span></div>
+                  <div class="flex-shrink-0 text-center me-4 me-xl-5"><img class="review-image" src=<%= productData.reviewsArray[x[index]].photoURLS[0] %> alt="..."><span class="text-uppercase text-muted"></span></div>
                   <div>
-                    <h5 class="mt-2 mb-1"><%=productData.reviewsArray[index].userID%></h5>
+                    <h5 class="mt-2 mb-1"><%=productData.reviewsArray[x[index]].userID%></h5>
                     <div class="mb-2">
-                      <% for( let j = 0; j < productData.reviewsArray[index].rating; j++ ) { %>
+                      <% for( let j = 0; j < productData.reviewsArray[x[index]].rating; j++ ) { %>
                       <i class="fa fa-xs fa-star text-warning"></i>
                       <% } %>
-                      <% for( let j = 0; j < 5-productData.reviewsArray[index].rating; j++ ) { %>
+                      <% for( let j = 0; j < 5-productData.reviewsArray[x[index]].rating; j++ ) { %>
                       <i class="fa fa-xs fa-star text-gray-200"></i>
                       <% } %>
                     </div>
-                    <h6 class="mt-2 mb-1"><%= productData.reviewsArray[index].title %></h6>
-                    <p class="text-muted"><%= productData.reviewsArray[index].description %></p>
+                    <h6 class="mt-2 mb-1"><%= productData.reviewsArray[x[index]].title %></h6>
+                    <p class="text-muted"><%= productData.reviewsArray[x[index]].description %></p>
                   </div>
                 </div>
                 <% } %>
@@ -400,7 +420,7 @@
                       <label class="form-label" for="review">Your Review</label>
                       <textarea class="form-control" rows="4" name="review" id="review" placeholder="Enter your review" required="required"></textarea>
                     </div>
-                    <input type="hidden" name="productID" value=<%=productData._id%>>
+                    <input type="hidden" name="cartProducts" value=<%=cartprod%>>
                     <button class="btn btn-outline-dark" type="submit">Post review</button>
                   </form>
                 </div>
