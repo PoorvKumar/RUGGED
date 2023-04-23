@@ -1,5 +1,6 @@
 const Product = require("../models/product");
 const Seller = require("../models/seller");
+const Order=require("../models/orders")
 const bcrypt = require("bcryptjs");
 const User = require("../models/user");
 exports.getAddProduct = (req, res, next) => {
@@ -57,12 +58,24 @@ exports.getsellerdashBoard = (req, res, next) => {
       .populate("cart.item.productID")
       .then((user) => {
         const cartproducts = user.cart.item;
-        res.render("sellerDashboard", {
-          pageTitle: "SellerDashboard",
-          isLoggedin: req.session.isLoggedin,
-          cartprod: cartproducts,
-          user: req.session.user,
-        });
+        Product.find({sellerID:req.user._id}).then(products=>{
+          noOfProducts=products.length
+          Total=0
+          for(let product of products){
+              Total+=product.price
+          }
+          Profit=0.2*Total
+          res.render("sellerDashboard", {
+            pageTitle: "SellerDashboard",
+            isLoggedin: req.session.isLoggedin,
+            cartprod: cartproducts,
+            user: req.session.user,
+            noOfProducts:noOfProducts,
+            sellprod:products.reverse(),
+            profit:Profit,
+            revenue:Total
+          });
+        }).catch((err) => console.log(err));
       })
       .catch((err) => console.log(err));
   } else {

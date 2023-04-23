@@ -34,26 +34,74 @@
       <div class="navpluscards">
         <%- include('partials/sellerDashboard/sellerdashnavbar.ejs') %>
           <div class="revenuecards">
-            <%- include('partials/sellerDashboard/smallCard.ejs') %>
-            <%- include('partials/sellerDashboard/smallCard.ejs') %>
-            <%- include('partials/sellerDashboard/smallCard.ejs') %>
-            <%- include('partials/sellerDashboard/smallCard.ejs') %>
+          
+            <div class="revenuecards1">
+              <div class="uppercard">
+              <div class="linever"></div>
+              <div class="onepart">
+                 <div class="heading">Revenue</div>
+                 <div class="number">$<%=revenue %></div>
+                 </div>
+                 <div class="image"><img src="/Images/sellerPage/revenue.png" width="50px" height="50px"></div>
+                </div>
+                 <div class="text"><span class="fsttxt"><i class="fa-solid fa-arrow-up"></i> +9.5% </span><span class="ttwn">Since last week</span></div>
+          
+             </div>
+             <div class="revenuecards1">
+              <div class="uppercard">
+              <div class="linever"></div>
+              <div class="onepart">
+                 <div class="heading">Profit</div>
+                 <div class="number">$<%=profit %></div>
+                 </div>
+                 <div class="image"><img src="/Images/sellerPage/profit.jpg" width="50px" height="50px"></div>
+                </div>
+                 <div class="text"><span class="fsttxt"><i class="fa-solid fa-arrow-up"></i> +9.5% </span><span class="ttwn">Since last week</span></div>
+          
+             </div>
+             <div class="revenuecards1">
+              <div class="uppercard">
+              <div class="linever"></div>
+              <div class="onepart">
+                 <div class="heading">Products</div>
+                 <div class="number"><%=noOfProducts %></div>
+                 </div>
+                 <div class="image"><img src="/Images/sellerPage/products.png" width="50px" height="50px"></div>
+                </div>
+                 <div class="text"><span class="fsttxt"><i class="fa-solid fa-arrow-up"></i> +9.5% </span><span class="ttwn">Since last week</span></div>
+          
+             </div>
+             <div class="revenuecards1">
+              <div class="uppercard">
+              <div class="linever"></div>
+              <div class="onepart">
+                 <div class="heading">Customers</div>
+                 <div class="number">1.234</div>
+                 </div>
+                 <div class="image"><img src="/Images/ProductImages/Shoes/customer1-removebg-preview.png" width="50px" height="50px"></div>
+                </div>
+                 <div class="text"><span class="fsttxt"><i class="fa-solid fa-arrow-up"></i> +9.5% </span><span class="ttwn">Since last week</span></div>
+          
+             </div>
+
+
           </div>
           <div class="graphs">
             <div class="graph1">
               <canvas id="myChart"></canvas>
+
             </div>
-            <div class="graph2">
+            <!-- <div class="graph2">
               <canvas id="myChart2"></canvas>
-            </div>
+            </div> -->
 
           </div>
           <div class="recent-invoices">
             <div class="bg">
-              <div class="btnbox">
+              <!-- <div class="btnbox">
                 <button id="prevButton"><i class="fa-solid fa-arrow-left"></i></button>
                 <button id="nextButton"><i class="fa-solid fa-arrow-right"></i></button>
-              </div>
+              </div> -->
               <input id="fld" class="inp" type="text" placeholder="Search..." />
             </div>
             <table id="mytable" class="table table-striped">
@@ -122,8 +170,8 @@
   </div>
 </body>
 <script src="/js/selldash.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
-</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
 <script>
   $(document).ready(function () {
     $("#fld").on("keyup", function () {
