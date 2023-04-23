@@ -102,6 +102,7 @@ exports.getInfluencersInfo=(req,res)=>
     User.find({ isInfluencer: true })
     .then(result=>
         {
+            // console.log(result);
             res.render("./partials/adminDashBoard/pages/influencers.ejs",
             {
                 pageTitle: "Influencers Info",
@@ -120,8 +121,9 @@ exports.getInfluencersInfo=(req,res)=>
 exports.removeInfluencerAdmin=(req,res)=>
 {
     const userId=req.query.userID;
+    // const userId=req.body.i;
 
-    Influencer.findByIdAndDelete({ userId:userId })
+    Influencer.findByIdAndDelete(userId)
     .then(result=>
         {
             User.findByIdAndUpdate({ _id: userId },{ isInfluencer: false },{ new: true })
@@ -130,10 +132,10 @@ exports.removeInfluencerAdmin=(req,res)=>
                 res.redirect('/admin/influencers');
             })
             .catch(err=>
-                {
-                    console.error(err);
-                    res.status(500).send("Server Error");
-                })
+            {
+                console.error(err);
+                res.status(500).send("Server Error");
+            })
         })
     .catch(err=>
         {
@@ -142,3 +144,49 @@ exports.removeInfluencerAdmin=(req,res)=>
         })
 }
 
+exports.getSellersInfo=(req,res)=>
+{
+    User.find({ isSeller: true })
+    .then(result=>
+        {
+            // console.log(result);
+            res.render("./partials/adminDashBoard/pages/sellers.ejs",
+            {
+                pageTitle: "Influencers Info",
+                user: req.session.user,
+                issLoggedin: req.session.isLoggedin,
+                sellers: result
+            })
+        })
+    .catch(err=>
+        {
+            console.error(err);
+            res.status(500).send("Server Error");
+        })
+}
+
+exports.removeSellerAdmin=(req,res)=>
+{
+    const userId=req.query.userID;
+    // const userId=req.body.i;
+
+    Seller.findByIdAndDelete(userId)
+    .then(result=>
+        {
+            User.findByIdAndUpdate({ _id: userId },{ isSeller: false },{ new: true })
+            .then(()=>
+            {
+                res.redirect('/admin/sellers');
+            })
+            .catch(err=>
+            {
+                console.error(err);
+                res.status(500).send("Server Error");
+            })
+        })
+    .catch(err=>
+        {
+            console.error(err);
+            res.status(500).send("Server Error");
+        })
+}
