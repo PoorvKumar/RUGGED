@@ -6,8 +6,8 @@ const complaintController=require("../controllers/complaintsController");
 const router=express.Router();
 
 router.get('/wishList',authMiddleware,userController.getwishList);
-router.post('/userDashboard',userController.updateUserPost);
 //user dashboard routes
+router.post('/userDashboard',userController.postUserDashboard);
 router.get('/userDashboard',authMiddleware,userController.getUserDashboard);
 router.get('/userDashboard/ReturnsAndOrders',authMiddleware,userController.getUserDashboardReturnsAndOrders);
 router.get('/userDashboard/Following',authMiddleware,userController.getUserDashboardFollowing);

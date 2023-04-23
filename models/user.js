@@ -61,6 +61,9 @@ const user = new Schema({
   },
   isInfluencer:{
     type:Boolean
+  },
+  isRuggedPlus:{
+    type:Number
   }
 });
 user.methods.addToCart = function (product) {

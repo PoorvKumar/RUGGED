@@ -62,31 +62,7 @@ exports.getwishList = (req, res, next) => {
     });
 };
 
-exports.updateUserPost = (req, res) => {
-  const userId = req.query.id;
-  // const updatedUserData=req.body;
-  const updatedUserData = {
-    firstname: req.body.First,
-    lastname: req.body.Last,
-    phoneno: req.body.Phone,
-    email: req.body.email,
-    address: req.body.Address,
-    adddressAlt: req.body.AddressAlt,
-    state: req.body.state,
-    country: req.body.country,
-  };
-  console.log(updatedUserData);
 
-  User.findByIdAndUpdate(userId, updatedUserData, { new: true })
-    .then((updatedUser) => {
-      req.session.user = updatedUser;
-      res.redirect("/userDashboard");
-    })
-    .catch((err) => {
-      console.error(err);
-      res.status(500).send("EError Updating user");
-    });
-};
 exports.deleteUser = (req, res) => {
   const userId = req.user._id;
   // console.log(userId);
@@ -206,6 +182,30 @@ exports.getUserDashboard = (req, res) => {
     });
   }
 };
+exports.postUserDashboard = (req, res) => {
+  const userId = req.query.id;
+  // const updatedUserData=req.body;
+  const updatedUserData = {
+    firstname: req.body.First,
+    lastname: req.body.Last,
+    phoneno: req.body.Phone,
+    email: req.body.email,
+    address: req.body.Address,
+    adddressAlt: req.body.AddressAlt,
+    state: req.body.state,
+    country: req.body.country,
+  };
+  User.findByIdAndUpdate(userId, updatedUserData, { new: true })
+    .then((updatedUser) => {
+      req.session.user = updatedUser;
+      res.redirect("/userDashboard");
+    })
+    .catch((err) => {
+      console.error(err);
+      res.status(500).send("EError Updating user");
+    });
+};
+
 exports.getUserDashboardReturnsAndOrders = (req, res, next) => {
   Order.find({ "user.userId": req.user._id })
     .then((orders) => {
@@ -243,6 +243,7 @@ exports.getUserDashboardFollowing = (req, res, next) => {
         }).catch((err) => console.log(err));
     }).catch((err) => console.log(err));
 };
+
 exports.getUserDashboardChangePassword = (req, res, next) => {
   if (req.session.isLoggedin) {
     res.render("partials/userDashboard/pages/changePassword", {
@@ -258,7 +259,7 @@ exports.postUserDashboardChangePassword = (req,res,next)=>{
   const newPass = req.body.newPassword;
   const confirmNewPass = req.body.confirmNewPassword;
   const uid = req.query.id;
-  user.findOne({ _id: uid })
+  User.findOne({ _id: uid })
     .then((usercollection) => {
       return bcrypt
         .compare(oldPass, usercollection.password)
@@ -316,26 +317,34 @@ exports.postUserDashboardChangePassword = (req,res,next)=>{
       console.log(err);
     });
 };
-exports.getUserDashboardRuggedPlusMembership = (req, res, next) => {
-  Order.find({ "user.userId": req.user._id })
-    .then((orders) => {
-      Order.find({ "user.userId": req.user._id, Status: "Not Shipped" })
-        .then((notshippedOrders) => {
-          Order.find({ "user.userId": req.user._id, Status: "Placed" })
-            .then((buyAgain) => {
-              res.render("partials/userDashboard/pages/ruggedPlusMembership", {
-                isLoggedin: req.session.isLoggedin,
-                // cartprod: cartproducts,
-                orders: orders,
-                user: req.session.user,
-                notshippedOrders: notshippedOrders,
-                buyAgain: buyAgain,
-              });
-            }).catch((err) => console.log(err));
-        }).catch((err) => console.log(err));
-    }).catch((err) => console.log(err));
 
+exports.getUserDashboardRuggedPlusMembership = (req, res, next) => {
+
+  User.findById(req.user.id).then((result) => {
+    res.render("partials/userDashboard/pages/ruggedPlusMembership",{
+      user:req.session.user,
+      isLoggedin: req.session.isLoggedin,
+      isRuggedPlusMember:result.isRuggedPlus
+    });
+  }).catch((err) => {
+  if (err) {
+    console.error(err);
+  }  
+  });
 };
 exports.postUserDashboardRuggedPlusMembership = (req,res,next)=>{
-
+let uid = req.query.id;
+// isRuggedPlusMembershipNewValue
+let isRPMNV = req.body.isRuggedPlusMembershipNewValue;
+User.findByIdAndUpdate(uid,{isRuggedPlus:isRPMNV}, { new: true }).then((result) => {
+  res.render("partials/userDashboard/pages/ruggedPlusMembership",{
+    user:req.session.user,
+    isLoggedin: req.session.isLoggedin,
+    isRuggedPlusMember:result.isRuggedPlus
+  });
+}).catch((err) => {
+  if (err) {
+    console.error(err);
+  }  
+});
 };
