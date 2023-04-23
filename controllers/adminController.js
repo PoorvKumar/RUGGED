@@ -40,3 +40,24 @@ exports.deleteAUserAdmin=(req,res)=>
             res.status(500).send("Server Error");
         })
 }
+
+exports.getOrdersInfo=(req,res)=>
+{
+    Orders.find()
+    .then(result=>
+        {
+            res.render('./partials/adminDashBoard/pages/order.ejs',
+            {
+                pageTitle: "Orders History",
+                user: req.session.user,
+                isLoggedin: req.session.isLoggedin,
+                orders: result
+            });
+        })
+    .catch(err=>
+        {
+            console.error(err);
+            res.status(500).send("Server Error");
+        })
+}
+

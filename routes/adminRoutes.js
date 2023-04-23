@@ -7,5 +7,6 @@ const router=express.Router();
 
 router.get('/admin',adminMiddleware,authMiddleware,adminController.getAdminPage);
 router.get('/deleteThisUser',adminMiddleware,authMiddleware,adminController.deleteAUserAdmin);
+router.get('/admin/orderHistoryAdmin',adminMiddleware,authMiddleware,adminController.getOrdersInfo);
 
 module.exports=router;

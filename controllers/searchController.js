@@ -2,6 +2,7 @@ const Product = require("../models/product");
 
 exports.searchRes = (req, res) => {
   const searchTerm = req.query.q;
+
   function getProductsRatingArray(products) {
     productsRatingArray = [
       // {
@@ -25,6 +26,7 @@ exports.searchRes = (req, res) => {
     }
     return productsRatingArray;
   }
+
   // Query MongoDB for products matching the search term
   Product.find({ name: { $regex: searchTerm, $options: "i" } })
     .then((products) => {
