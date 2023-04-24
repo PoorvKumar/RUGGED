@@ -119,7 +119,7 @@
                   <% if (cartprod.length > 0) { %>
                     <% for (let p of cartprod) { %>
                   <div class="cart-item" id="cart-item-1">
-                    <img src="/Images/ProductImages/Rucksack1/image1.jpg" alt="rucksack">
+                    <img src="<%=p.pproductID.imagesURL[0] %>" alt="rucksack">
                     <div class="details">
                       <h3><%= p.productID.name %></h3>
                       <p><%= p.productID.description %><br>

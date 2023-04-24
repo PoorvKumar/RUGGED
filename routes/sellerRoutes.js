@@ -12,4 +12,5 @@ router.get('/dashboardSeller/addproducts',authMiddleware,sellerController.Seller
 router.post("/dashboardSeller/addproducts",sellerController.sellerAddProduct);
 router.get('/sellerRegister',authMiddleware,sellerController.SellerGetRegister)
 router.post('/sellerRegister',authMiddleware,sellerController.SellerPostRegister)
+router.post('/deleteproduct',authMiddleware,sellerController.postdeleteproduct)
 module.exports=router
