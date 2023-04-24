@@ -172,4 +172,9 @@ user.methods.isSellerfunc =function(){
   this.isSeller=true
   return this.save()
 }
+user.methods.isInfluencerFunc=function()
+{
+  this.isInfluencer=true;
+  return this.save();
+}
 module.exports = mongoose.model("User", user);

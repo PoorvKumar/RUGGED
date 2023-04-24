@@ -53,7 +53,9 @@
                       <p class="mb-1 text-info" style="font-size: larger; font-weight: 550;">Your Lists</p>
                       <a class="small" href="/wishlist" rel="noopener noreferrer">Create a WishList</a>
                       <a class="small" href="/wishlist" rel="noopener noreferrer">Discover Your Style</a>
-                      <a class="small" href="/blogPost" rel="noopener noreferrer">Explore Experiences</a>
+                      <% if(!user.isInfluencer) { %>
+                        <a class="small" href="/becomeInfluencer" rel="noopener noreferrer">Become Influencer</a>
+                      <%}%>
                       <a class="small" href="/blogPost" rel="noopener noreferrer">RUGGED+ BlogPost</a>
                     </div>
                     <div class="wishlist d-flex flex-column px-4 mx-2 py-3 mt-1" style="font-weight: lighter;">

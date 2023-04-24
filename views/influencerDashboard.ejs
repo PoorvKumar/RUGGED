@@ -35,10 +35,49 @@
       <div class="navpluscards">
         <%- include('partials/influencerDashboard/main_nav.ejs') %>
           <div class="revenuecards">
-            <%- include('partials/sellerDashboard/smallCard.ejs') %>
-              <%- include('partials/sellerDashboard/smallCard.ejs') %>
-                <%- include('partials/sellerDashboard/smallCard.ejs') %>
-                  <%- include('partials/sellerDashboard/smallCard.ejs') %>
+            <div class="revenuecards1">
+              <div class="uppercard">
+                <div class="linever"></div>
+                <div class="onepart">
+                  <div class="heading">Facebook</div>
+                  <div class="number"><%= influencerData.fb %></div>
+                </div>
+                <div class="image"><img src="/Images/ProductImages/Shoes/customer1-removebg-preview.png" width="50px"
+                    height="50px"></div>
+              </div>
+              <div class="text"><span class="fsttxt"><i class="fa-solid fa-arrow-up"></i> +9.5% </span><span class="ttwn">Since
+                  last week</span></div>
+          
+            </div>
+            <div class="revenuecards1">
+              <div class="uppercard">
+                <div class="linever"></div>
+                <div class="onepart">
+                  <div class="heading">Instagram</div>
+                  <div class="number"><%= influencerData.insta %></div>
+                </div>
+                <div class="image"><img src="/Images/ProductImages/Shoes/customer1-removebg-preview.png" width="50px"
+                    height="50px"></div>
+              </div>
+              <div class="text"><span class="fsttxt"><i class="fa-solid fa-arrow-up"></i> +9.5% </span><span class="ttwn">Since
+                  last week</span></div>
+          
+            </div>
+            <div class="revenuecards1">
+              <div class="uppercard">
+                <div class="linever"></div>
+                <div class="onepart">
+                  <div class="heading">Twitter</div>
+                  <div class="number"><%= influencerData.twitter %></div>
+                </div>
+                <div class="image"><img src="/Images/ProductImages/Shoes/customer1-removebg-preview.png" width="50px"
+                    height="50px"></div>
+              </div>
+              <div class="text"><span class="fsttxt"><i class="fa-solid fa-arrow-up"></i> +9.5% </span><span class="ttwn">Since
+                  last week</span></div>
+          
+            </div>
+            
           </div>
           <div class="graphs">
             <div class="graph1">

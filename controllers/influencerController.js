@@ -1,12 +1,23 @@
 const Influencer=require("../models/influencer");
+const bcrypt = require("bcryptjs");
 
 exports.getInfluencerDash=(req,res)=>
 {
-  res.render("influencerDashboard", {
-    pageTitle: "Influencer DashBoard",
-    user: req.session.user,
-    isLoggedin: req.session.isLoggedin
-  });
+    Influencer.find({userId: req.user._id})
+    .then(result=>
+        {
+            res.render("influencerDashboard", {
+                pageTitle: "Influencer DashBoard",
+                user: req.session.user,
+                isLoggedin: req.session.isLoggedin,
+                influencerData:result
+            });
+        })
+    .catch(err=>
+        {
+            console.log(err);
+        })
+  
 }
 
 exports.getBlogPost=(req,res)=>
@@ -68,4 +79,61 @@ exports.getBlogPost=(req,res)=>
         console.error(err);
         res.status(500).send("Server Error");
     });
+}
+
+exports.getBecomeInfluencer=(req,res)=>
+{
+    res.render('becomeInfluencer',
+    {
+        user: req.session.user,
+        isLoggedin: req.session.isLoggedin,
+        pageTitle: "Become Influencer"
+    });
+}
+
+exports.postInfluencerRegister=(req,res)=>
+{
+    bcrypt.compare(req.body.password,req.user.password)
+    .then((check)=>
+    {
+        if(check)
+        {
+            const influencer=new Influencer(
+                {
+                    userId: req.user._id,
+                    firstname: req.user.firstname,
+                    lastname: req.user.lastname,
+                    fb: req.body.fb,
+                    insta: req.body.insta,
+                    twitter: req.body.twitter,
+                    posts: []
+                }
+            );
+
+            influencer.save()
+            .then(result=>
+                {
+                    req.user.isInfluencerFunc()
+                    .then(()=>
+                    {
+                        res.redirect('/influencerDash');
+                    })
+                    .catch((err) => {
+                        console.log(err);
+                      });
+                })
+            .catch(err=>
+                {
+                    console.log(err);
+                })
+        }
+        else
+        {
+            res.redirect('/');
+        }
+    })
+    .catch(err=>
+        {
+            console.log(err);
+        })
 }

@@ -25,12 +25,12 @@ const Influencer=new Schema(
                 title:
                 {
                     type: String,
-                    required: true
+                    // required: true
                 },
                 postBody:
                 {
                     type: String,
-                    require: true
+                    // require: true
                 },
                 imageURL:
                 {
@@ -42,7 +42,22 @@ const Influencer=new Schema(
                     default:Date.now()
                 }
             }
-        ]
+        ],
+        fb:
+        {
+            type: String,
+            require: true
+        },
+        insta:
+        {
+            type: String,
+            require: true
+        },
+        twitter:
+        {
+            type: String,
+            require: true
+        },
     }
 );
 

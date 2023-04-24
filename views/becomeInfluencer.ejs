@@ -1,0 +1,255 @@
+<DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/sellerRegister.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/e65b955383.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/gh/hung1001/font-awesome-pro-v6@44659d9/css/all.min.css" rel="stylesheet"
+        type="text/css" />
+    <title><%= pageTitle %></title>
+</head>
+<body>
+    <div class="registerCard">
+        <div class="img-container">
+            <img src="/Images/Login/loginimg.jpg" alt="" style="object-fit: cover;">
+        </div>
+        <div class="form-container">
+            <h1>
+                <div class='welcome'>
+                    <div class="loader" style="font-size: larger;">
+                      <span>R</span>
+                      <span>e</span>
+                      <span>g</span>
+                      <span>i</span>
+                      <span>s</span>
+                      <span>t</span>
+                      <span>e</span><br><br>
+                      <span>I</span>
+                      <span>n</span>
+                      <span>f</span>
+                      <span>l</span>
+                      <span>u</span>
+                      <span>e</span>
+                      <span>n</span>
+                      <span>c</span>
+                      <span>e</span>
+                      <span>r</span>
+
+                    </div>
+                  </div>
+            </h1>
+<form action="/becomeInfluencer" method="POST" id="regForm" onsubmit="validateForm()">
+    <div class="firstnamediv posirel">
+        <i class="fa-regular fa-user"></i>
+        <input type="text" name="fb" id="fb" placeholder="Enter Facebook followers:"  required onkeyup="validateFollowersFB()">
+        <span class="error"></span>
+    </div>
+    <div class="firstnamediv posirel">
+        <i class="fa-regular fa-user"></i>
+        <input type="text" name="insta" id="insta" placeholder="Enter Instagram followers:" required onkeyup="validateFollowersInsta()">
+        <span class="error"></span>
+    </div>
+    <div class="firstnamediv posirel">
+        <i class="fa-regular fa-user"></i>
+        <input type="text" name="twitter" id="twitter" placeholder="Enter Twitter followers:" required onkeyup="validateFollowersTwitter()">
+        <span class="error"></span>
+    </div>
+    <div class="cnf-passdiv posirel">
+        <i class="fa-regular fa-eye"></i>
+        <input type="password" name="password" id="pass" placeholder="Verify Password" required onkeyup="validatePassword()">
+        <span class="error"></span>
+    </div>
+    <button type="submit" id="btn-submit">SUBMIT</button>
+</form>
+<br>
+    <a href="/"  class="btn btn-sm btn-info"> Go to Main Page </a>
+</div>
+</div>
+<script>
+    const form = document.querySelector("#regForm");
+    const submit = document.querySelector("#btn-submit");
+    const fb=document.querySelector("#fb");
+    const insta=document.querySelector("#insta");
+    const twitter=document.querySelector("#twitter");
+    const pass = document.querySelector("#pass");
+    const error = document.querySelectorAll(".error");
+    const eyeIcon = document.querySelectorAll(".fa-eye");
+
+    
+    function validateFollowersFB()
+    {
+        if(fb.value<10000)
+        {
+            fb.style.outlineColor = "red";
+            error[0].innerHTML = "Not eligible to be influencer must have atleast 10000 followers";
+            return false;
+        }
+        else
+        {
+            fb.style.outlineColor = "green";
+            error[0].innerHTML = "";
+            return true;
+        }
+    }
+    function validateFollowersInsta()
+    {
+        if(insta.value<10000)
+        {
+            insta.style.outlineColor = "red";
+            error[1].innerHTML = "Not eligible to be influencer must have atleast 10000 followers";
+            return false;
+        }
+        else
+        {
+            insta.style.outlineColor = "green";
+            error[1].innerHTML = "";
+            return true;
+        }
+    }
+    function validateFollowersTwitter()
+    {
+        if(twitter.value<10000)
+        {
+            twitter.style.outlineColor = "red";
+            error[2].innerHTML = "Not eligible to be influencer must have atleast 10000 followers";
+            return false;
+        }
+        else
+        {
+            twitter.style.outlineColor = "green";
+            error[2].innerHTML = "";
+            return true;
+        }
+    }
+
+    // function validatesocialname() 
+    // {
+    //     if (!startWithalphabet(social)) {
+    //         social.style.outlineColor = "red";
+    //         error[0].innerHTML = "Social Handle should start with alphabet";
+    //     }
+    //     else if (!userLength(social)) {
+    //         error[0].innerHTML = "";
+    //         social.style.outlineColor = "red";
+    //         error[0].innerHTML = "Social Handle should contain atleast 5 characters atmost 20";
+    //     }
+    //     else {
+    //         error[0].innerHTML = "";
+    //         firstname.style.outlineColor = "green";
+    //         return true;
+    //     }
+    // }
+
+    function checkLowerCase() {
+    var lowerCaseLetters = /[a-z]/g;
+    if (pass.value.match(lowerCaseLetters)) {
+        return true;
+    }
+    else {
+        return false;
+    }
+}
+
+
+function passwordStrength() {
+    if (pass.value.length >= 8) {
+        return true;
+    }
+    else {
+        return false;
+    }
+}
+
+
+
+function checkUpperCase() {
+    var upperCaseLetters = /[A-Z]/g;
+    if (pass.value.match(upperCaseLetters)) {
+        return true;
+    }
+    else {
+        return false;
+    }
+}
+
+
+
+    function checkNumber() {
+        var numbers = /[0-9]/g;
+        if (pass.value.match(numbers)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+
+
+    function validatePassword() {
+
+        if (!checkLowerCase()) {
+            error[3].innerHTML = "password should contain atleast one Lowercase letter";
+            pass.style.outlineColor = "red";
+        }
+
+        else if (!checkUpperCase()) {
+            error[3].innerHTML = "password should contain atleast one Uppercase letter";
+            pass.style.outlineColor = "red";
+        }
+        else if (!checkNumber()) {
+            error[3].innerHTML = "password should contain atleast one number";
+            pass.style.outlineColor = "red";
+        }
+
+        else if (!passwordStrength()) {
+            error[3].innerHTML = "password should contain atleast 8 characters";
+            pass.style.outlineColor = "red";
+        }
+
+        else {
+            error[3].innerHTML = "";
+            pass.style.outlineColor = "green";
+        }
+
+
+        if (passwordStrength() && checkLowerCase() && checkUpperCase() && checkNumber()) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+
+    eyeIcon[0].addEventListener('click', function () {
+        if (eyeIcon[0].classList.contains('fa-eye')) {
+            eyeIcon[0].classList.remove("fa-eye");
+            eyeIcon[0].classList.add("fa-eye-slash");
+            pass.setAttribute('type', 'text');
+        }
+        else {
+            eyeIcon[0].classList.remove('fa-eye-slash');
+            eyeIcon[0].classList.add("fa-eye");
+            pass.setAttribute('type', 'password');
+        }
+    })
+
+    form.addEventListener('submit', function (e) {
+        if (validateFollowersFB() && validateFollowersInsta() && validateFollowersTwitter() && validatePassword()) {
+            return true;
+        }
+        else {
+            e.preventDefault();
+            return false;
+        }
+
+    })
+</script>
+</body>
+
+</html>
