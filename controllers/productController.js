@@ -172,8 +172,14 @@ exports.getFilter = (req, res) => {
   const ruggerVerified = req.query.RuggedVerrified;
   // const colorSelected = req.query.colour;
   const availability = req.query.availability;
+  let pattern=new RegExp(searchTerm,"i");
 
-  Product.find({ name: { $regex: searchTerm, $options: "i" } })
+  Product.find({$or:
+    [ 
+      { name: { $regex: searchTerm, $options: "i" }}, 
+      { categories: { $in: [ pattern ] } },
+      { tags: { $in:[ pattern ] } }
+  ]})
     .then((products) => {
       const priceFilter = (product) => {
         let priceAfterDiscount = product.price * (1 - product.discount * 0.01);
