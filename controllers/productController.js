@@ -3,8 +3,31 @@ const Order = require("../models/orders");
 exports.getProductInfo = (req, res) => {
   // const productId=req.params.productId;
   const productId = req.query.id;
+  // function getProductsRatingArray(products) {
+  //   let productsRatingArray = [
+  //     // {
+  //     //   productID: String,
+  //     //   ratingArray: [],
+  //     // },
+  //   ];
+  //   for (let index = 0; index < products.length; index++) {
+  //     productsRatingArray.push({
+  //       productID: products[index]._id.toString(),
+  //       ratingArray: [0, 0, 0, 0, 0, 0],
+  //     });
+  //   }
+  //   for (let index = 0; index < products.length; index++) {
+  //     let product = products[index];
+  //     let prai = productsRatingArray[index];
+  //     for (let j = 0; j < product.reviewsArray.length; j++) {
+  //       prai.ratingArray[product.reviewsArray[j].rating] =
+  //         prai.ratingArray[product.reviewsArray[j].rating] + 1;
+  //     }
+  //   }
+  //   return productsRatingArray;
+  // }
   function getProductsRatingArray(products) {
-    let productsRatingArray = [
+    productsRatingArray = [
       // {
       //   productID: String,
       //   ratingArray: [],
@@ -18,12 +41,11 @@ exports.getProductInfo = (req, res) => {
     }
     for (let index = 0; index < products.length; index++) {
       let product = products[index];
-      let prai = productsRatingArray[index];
       for (let j = 0; j < product.reviewsArray.length; j++) {
-        prai.ratingArray[product.reviewsArray[j].rating] =
-          prai.ratingArray[product.reviewsArray[j].rating] + 1;
+        productsRatingArray[index].ratingArray[product.reviewsArray[j].rating]++;
       }
     }
+    // console.log(productsRatingArray);
     return productsRatingArray;
   }
   //fetch data from database using productId
@@ -165,7 +187,7 @@ exports.getFilter = (req, res) => {
   const searchTerm = String(req.query.q);
   const customerRating = req.query.customerRating;
   const brands = req.query.brandSelected;
-  const offerSelected = req.query.offerSelected;
+  // const offerSelected = req.query.offerSelected;
   const priceLL = Number(req.query.pricefrom);
   const priceUL = Number(req.query.priceto);
   const influencersChoice = req.query.InfluencersChoice;
@@ -197,18 +219,18 @@ exports.getFilter = (req, res) => {
         }
         return product.brand === brands[index];
       };
-      const offerFilter = (product) => {
-        let index = 0;
-        let j = 0;
-        for (index = 0; index < offerSelected.length; index++) {
-          for (j = 0; j < product.offers.length; j++) {
-            if (product.offers[j] === offerSelected[index]) {
-              return product.offers[j] === offerSelected[index];
-            }
-          }
-        }
-        return product.offerApplied[j] === offerSelected[index];
-      };
+      // const offerFilter = (product) => {
+      //   let index = 0;
+      //   let j = 0;
+      //   for (index = 0; index < offerSelected.length; index++) {
+      //     for (j = 0; j < product.offers.length; j++) {
+      //       if (product.offers[j] === offerSelected[index]) {
+      //         return product.offers[j] === offerSelected[index];
+      //       }
+      //     }
+      //   }
+      //   return product.offerApplied[j] === offerSelected[index];
+      // };
       const influencersChoiceFilter = (product) => {
         if (influencersChoice === "on") {
           return product.influencersNameChoice.length > 0;
@@ -225,9 +247,9 @@ exports.getFilter = (req, res) => {
         return product.quantity > 1;
       };
 
-      // if (brands.length > 0) {
-      //   products = products.filter(brandFilter);
-      // }
+      if (brands) {
+        products = products.filter(brandFilter);
+      }
       // if (offerSelected.length > 0) {
       //   products = products.filter(offerFilter);
       // }
