@@ -31,12 +31,20 @@ exports.searchRes = (req, res) => {
 
   // {$or:
   //   [ 
-  //     { name: { $regex: searchTerm, $options: "i" } }, 
-  //     { categories: { $in: [{ $regex: searchTerm, $options: "i" }] } },
-  //     { tags: { $in: [{ $regex: searchTerm, $options: "i" }] } }
+  //     { name: { pattern } }, 
+  //     { categories: { $in: [ pattern ] } },
+  //     { tags: { pattern  } }
   // ]}
+  // { $regex: searchTerm, $options: "i" }
 
-  Product.find({ name: { $regex: searchTerm, $options: "i" } })
+  let pattern=new RegExp(searchTerm,"i");
+
+  Product.find({$or:
+    [ 
+      { name: { $regex: searchTerm, $options: "i" }}, 
+      { categories: { $in: [ pattern ] } },
+      { tags: { $in:[ pattern ] } }
+  ]})
     .then((products) => {
       const productsRatingArray = getProductsRatingArray(products);
       if (req.session.isLoggedin) {
