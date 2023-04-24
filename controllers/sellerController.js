@@ -174,6 +174,40 @@ exports.sellerAddProduct = (req, res) => {
   // console.log(req.body.imagesURL);
   imgurl=String(req.body.imageURL).split(',');
   tgs=String(req.body.tags).split(',');
+  let dimension= {
+    length: {
+      type: Number,
+    },
+    width: {
+      type: Number,
+    },
+    height: {
+      type: Number,
+    },
+  };
+  dimension.length = req.body.Length;
+  dimension.width = req.body.Width;
+  dimension.height= req.body.Height;
+
+  services=[0,0,0,0];
+  if(req.body.service0==='on')
+  {
+    services[0]=1;
+  }
+  if(req.body.service1==='on')
+  {
+    services[1]=1;
+  }
+  if(req.body.service2==='on')
+  {
+    services[2]=1;
+  }
+  if(req.body.service3==='on')
+  {
+    services[3]=1;
+  }
+  
+  console.log(services);
   const product = new Product({
     sellerID: req.user._id,
     name: req.body.name,
@@ -188,6 +222,9 @@ exports.sellerAddProduct = (req, res) => {
     imagesURL: imgurl, //array
     tags: tgs, //array
     colors: req.body.colors, 
+    dimension:dimension,
+    weightInKg:req.body.Weight,
+    services:services,
   });
 
 
