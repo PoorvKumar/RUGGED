@@ -6,6 +6,7 @@ exports.getInfluencerDash=(req,res)=>
     Influencer.find({userId: req.user._id})
     .then(result=>
         {
+            console.log(result)
             res.render("influencerDashboard", {
                 pageTitle: "Influencer DashBoard",
                 user: req.session.user,

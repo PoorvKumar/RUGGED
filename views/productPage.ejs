@@ -68,6 +68,7 @@
             </div>
           </div>
           <div class="lowerButtons mt-4">
+            <% if(isLoggedin) { %>
             <form action="/addtoCart" method="POST">
               <button type="submit" class="btn btn-warning btn-lg">Add to Cart</button>
               <input type="hidden" name="productID" value="<%= productData._id %>">
@@ -77,6 +78,7 @@
               <input type="hidden" name="productID" value="<%= productData._id %>">
               <input type="hidden" name="noofitems" id="need" value="">
             </form>
+            <% } %>
           </div>
         </div>
         <div class="col-xs-12 col-sm-6 col-md-7 col-lg-7  MyBorder RightColumn">
@@ -89,7 +91,7 @@
                 totalNumberofPeople=1;
               }
               %>
-              <span class="starsRatingGreen rightCompartmentInner popupRating" onclick="popupRatingFunction('<%=productData._id%>')"><%=(sum/(totalNumberofPeople)).toString().substring(0,3)%>
+              <span class="starsRatingGreen rightCompartmentInner popupRating" onclick="popupRatingFunction('<%=productData._id%>')"><%=(sum/(totalNumberofPeople)).toFixed(2)%>
                 <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMyIgaGVpZ2h0PSIxMiI+PHBhdGggZmlsbD0iI0ZGRiIgZD0iTTYuNSA5LjQzOWwtMy42NzQgMi4yMy45NC00LjI2LTMuMjEtMi44ODMgNC4yNTQtLjQwNEw2LjUuMTEybDEuNjkgNC4wMSA0LjI1NC40MDQtMy4yMSAyLjg4Mi45NCA0LjI2eiIvPjwvc3ZnPg==" class="innerStars">
                 <div class="popupContent" id="popupUserRating">
                   <span class="heading">User Rating</span>
@@ -204,14 +206,9 @@
           </div>
           <div class="text">Inclusive of all Taxes.</div>
           <% 
-            let emiPerMonthList = (productData.price*(1-(productData.discount*0.01))/24).toString().split('.');
-            let emiPerMonth = emiPerMonthList[0]; 
-            if(emiPerMonthList[1])
-            {
-              emiPerMonth = emiPerMonthList[0]+"."+emiPerMonthList[1];
-            }
+              emiPerMonth = (productData.price*(1-(productData.discount*0.01))/24);
           %>
-          <div class="Emi">Emi starts at ₹<%=emiPerMonth%> per month for 24 months.<a href="" class="emiLink">EMI details</a></div>
+          <div class="Emi">Emi starts at ₹<%= emiPerMonth.toFixed(2)%> per month for 24 months.<a href="" class="emiLink">EMI details</a></div>
           <hr>
           <div class="services" data-bs-theme="dark">
             <% if (productData.services[0]===1) { %>
