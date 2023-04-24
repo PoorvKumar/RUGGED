@@ -16,7 +16,7 @@
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/product-card-scroll.css">
   <link rel="stylesheet" href="css/product-card-scroll-2.css">
-  <!-- <link rel="stylesheet" href="css/carousel.css"> -->
+  <link rel="stylesheet" href="css/carousel.css">
   <link rel="stylesheet" href="/css/productCardStyle.css">
   <link rel="stylesheet" href="./css/indexStyle.css">
   <title>
@@ -38,8 +38,8 @@
   <header>
       <%- include('partials/Navbars/nav1.ejs') %>
           <%- include('partials/Navbars/nav2.ejs') %>
-              <div id="header-hero">
-                  <div class="header-bg"> <img src="./Images/header/434848.jpg" alt="header-image"
+              <!-- <div id="header-hero">
+                  <div class="header-bg"> <img src="./Images/header/pngfind.com-mountain-png-600003.png" alt="header-image"
                           style="height: 80vh; object-fit: fill;"> </div>
                   <div class="header-content">
                       <p class="heading-1">Hiking | Trekking | Camping</p>
@@ -50,6 +50,59 @@
                           style="width: 14vw; height: auto; font-size: larger;"> Shop Now </a>
 
                   </div>
+              </div> -->
+              <div id="header-carousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <a href="/productsearchCaro">
+                      <div class="caro-prod">
+                        <div class="caro-prod-title">New Hiking Collection</div>
+                        <div class="caro-prod-tag">Time to Hike is Here...</div>
+                      </div>
+                      <div class="caro-prod-price">Starting from just 99/-</div>
+                      <img src="Images/carouselImages/hiking collection.avif">
+                    </a>
+                  </div>
+                  <div class="carousel-item">
+                    <a href="/productsearchCaro">
+                      <div class="caro-prod">
+                        <div class="caro-prod-title">Opening 10% Discount on Tents</div>
+                        <div class="caro-prod-tag">Book Yours Now</div>
+                      </div>
+                      <div class="caro-prod-price">At just 399/-</div>
+                      <img src="Images/carouselImages/FORCLAZ SHOOTING TREK_MOUNTAIN_PEAH20 HAUTE-SAVOIE (1).avif" alt="">
+                    </a>
+                  </div>
+                  <div class="carousel-item">
+                    <a href="/productsearchCaro">
+                      <div class="caro-prod">
+                        <div class="caro-prod-title">New Skiing Collection is Here</div>
+                        <div class="caro-prod-tag">Dont't miss your chance </div>
+                      </div>
+                      <div class="caro-prod-price">At just 399/-</div>
+                      <img src="Images/carouselImages/WEDZE PA SKI FR500 PIQUANTE NEW AH20.avif" alt="">
+                    </a>
+                  </div>
+                  <div class="carousel-item">
+                    <a href="/productsearchCaro">
+                      <div class="caro-prod">
+                        <div class="caro-prod-title">Opening 10% Discount on Tents</div>
+                        <div class="caro-prod-tag">Book Yours Now</div>
+                      </div>
+                      <div class="caro-prod-price">At just 399/-</div>
+                      <img src="Images/carouselImages/TREK MOUNTAIN PE23 BEAUFORTAIN ALPES FRANCE.avif" alt="">
+                    </a>
+                  </div>
+                </div>
+            
+                <button class="carousel-control-prev" type="button" data-bs-slide="prev" data-bs-target="#header-carousel">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-slide="next" data-bs-target="#header-carousel">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Next</span>
+                </button>
               </div>
   </header>
   <section id="summer-collection">
@@ -185,7 +238,7 @@
                   <div class="blog-1-content">
                       <h4>Poorv Kumar</h4>
                       <h3>Excellent Camp Tools</h3>
-                      <p class="description">My hiking trip to Guwahati was made easier thanks to the reliable camp tools I purchased from RUGGED store.</p>
+                      <p class="description">"My hiking trip to Guwahati was made easier thanks to the reliable camp tools I purchased from RUGGED store."</p>
                       <a href="/"><p class="button">view post</p></a>
                   </div>
               </div>
@@ -195,7 +248,7 @@
                   <div class="blog-2-content">
                       <h4>Divyank Khajuria</h4>
                       <h3>High Quality Fishing Rods</h3>
-                      <p class="description">I recently caught my biggest fish yet using the high-quality fishing rod I purchased from our ecommerce store.</p>
+                      <p class="description">"I recently caught my biggest fish yet using the high-quality fishing rod I purchased from our ecommerce store."</p>
                       <a href="/"><p class="button">view post</p></a>
                   </div>
               </div>
