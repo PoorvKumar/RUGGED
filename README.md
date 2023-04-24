@@ -15,7 +15,7 @@ npm install ejs
 
 ## Usage
 
-1. Open the app.
+1. Open the web app using command <code> node app.js </code> in your directory command line and open server at http://localhost:3000/ in your browser 
 2. If you are not logged in, you can only see products and filter them.
 3. To access your cart and create new wishlists, log in to your account.
 4. After logging in, the cart will appear as off-canvas on the navbar, and you can add/delete products from your cart/wishlist.
