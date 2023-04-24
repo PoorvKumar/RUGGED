@@ -201,3 +201,14 @@ exports.sellerAddProduct = (req, res) => {
       res.status(500).send("Server Error");
     });
 };
+exports.postdeleteproduct =(req,res,next)=>{
+   
+  Product.findByIdAndDelete({ _id: req.body.productID })
+    .then(() => {
+          res.redirect("dashboardSeller/products");
+    })
+    .catch((err) => {
+      console.error(err);
+      res.status(500).send("Error Deleting user");
+    });
+}
