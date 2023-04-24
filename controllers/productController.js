@@ -170,7 +170,7 @@ exports.getFilter = (req, res) => {
   const priceUL = Number(req.query.priceto);
   const influencersChoice = req.query.InfluencersChoice;
   const ruggerVerified = req.query.RuggedVerrified;
-  const colorSelected = req.query.colour;
+  // const colorSelected = req.query.colour;
   const availability = req.query.availability;
 
   Product.find({ name: { $regex: searchTerm, $options: "i" } })
@@ -212,9 +212,9 @@ exports.getFilter = (req, res) => {
       const ruggedVerrifiedFilter = (product) => {
         return product.ruggedVerrified === "true";
       };
-      const colorFilter = (product) => {
-        return product.colour === clr;
-      };
+      // const colorFilter = (product) => {
+      //   return product.colour === clr;
+      // };
       const availabilityFilter = (product) => {
         return product.quantity > 1;
       };
@@ -231,15 +231,17 @@ exports.getFilter = (req, res) => {
       if (ruggerVerified === "on") {
         products = products.filter(ruggedVerrifiedFilter);
       }
-      if (colorSelected) {
-        products = products.filter(colorFilter);
-      }
+      // if (colorSelected) {
+      //   products = products.filter(colorFilter);
+      // }
       if (availability === "on") {
         products = products.filter(availabilityFilter);
       }
       if (true) {
         products = products.filter(priceFilter);
       }
+      console.log(products);
+
       if (customerRating >= 0) {
         products = products.filter(customerRatingFilter);
       }
@@ -261,6 +263,7 @@ exports.getFilter = (req, res) => {
           .catch((err) => console.log(err));
       } else {
         res.render("productSearchPage.ejs", {
+          productsData: products,
           pgTTL: "Products",
           user: req.session.user,
           isLoggedin: req.session.isLoggedin,
