@@ -40,9 +40,11 @@
     <div class="row justify-content-center">
       <div class="col-lg-8 col-md-10 col-sm-12">
         <div class="blog-post-area">
+          <% if(blogposts){ %>
           <% if(blogposts.length>0){ %>
-          <% for(let p of blogposts){ %>
-          <%- include('partials/influencerBlogPage/blogPosts.ejs',{p:p}) %>
+          <% for(let p1 of blogposts){ %>
+          <%- include('partials/influencerBlogPage/blogPosts.ejs',{p:p1}) %>
+          <% } %>
           <% } %>
           <% } %>
         </div>
