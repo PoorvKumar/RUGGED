@@ -170,9 +170,10 @@ exports.SellerGetAddProduct = (req, res) => {
 };
 exports.sellerAddProduct = (req, res) => {
   let dPrice = req.body.price * (1 - 0.01 * req.body.discount);
-  categories=String(req.body.cate).split(',')
-  imgurl=String(req.body.imageurl).split(',')
-  tgs=String(req.body.tags).split(',')
+  categories=String(req.body.cate).split(',');
+  // console.log(req.body.imagesURL);
+  imgurl=String(req.body.imageURL).split(',');
+  tgs=String(req.body.tags).split(',');
   const product = new Product({
     sellerID: req.user._id,
     name: req.body.name,
@@ -184,7 +185,7 @@ exports.sellerAddProduct = (req, res) => {
     discount: req.body.discount,
     discountedPrice: dPrice,
     description: req.body.description,
-    imageURL: imgurl, //array
+    imagesURL: imgurl, //array
     tags: tgs, //array
     colors: req.body.colors, 
   });
