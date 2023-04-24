@@ -50,7 +50,7 @@
             <div class="row mb-3" style="margin-left: 4vw;">
               <div class="col-sm-5">
                 <label for="Product Category:">Product Category:</label>
-                <input type="text" name="cate" id="productCategory" class="form-control">
+                <input type="text" name="cate" class="form-control">
               </div>
               <div class="col-sm-1"></div>
               <div class="col-sm-5">
@@ -94,7 +94,7 @@
             <div class="row mb-3" style="margin-left: 4vw;">
               <div class="col-sm-5">
                 <label for="Tags:">Tags:</label>
-                <input type="text" name="tags" id="productTags" class="form-control">
+                <input type="text" name="tags" class="form-control">
               </div>
               <div class="col-sm-1"></div>
               <div class="col-sm-5">
@@ -116,13 +116,13 @@ form.addEventListener('submit', function (event) {
 
   const productName = document.getElementById('productName').value;
   const productShortDescription = document.getElementById('productShortDescription').value;
-  const productCategory = document.getElementById('productCategory').value;
+  // const productCategory = document.getElementById('productCategory').value;
   const productBrand = document.getElementById('productBrand').value;
   const productPrice = document.getElementById('productPrice').value;
   const stockQuantity = document.getElementById('stockQuantity').value;
   const discountPercentage = document.getElementById('discountPercentage').value;
   const productDescription = document.getElementById('productDescription').value;
-  const productTags = document.getElementById('productTags').value;
+  // const productTags = document.getElementById('productTags').value;
   const colors = document.getElementById('colors').value;
   
  
@@ -154,15 +154,15 @@ if (!/^[a-zA-Z]+$/.test(productName)) {
 
 
 
-  if (productCategory === '') {
-    showError('Please select a category.', 'productCategory');
-    return;
-  }
+  // if (productCategory === '') {
+  //   showError('Please select a category.', 'productCategory');
+  //   return;
+  // }
 
-  if (!/^[a-zA-Z]+$/.test(productCategory)) {
-    showError('Product Categorry  should start with alphabets', 'productCategory');
-    return;
-  }
+  // if (!/^[a-zA-Z]+$/.test(productCategory)) {
+  //   showError('Product Categorry  should start with alphabets', 'productCategory');
+  //   return;
+  // }
   
   if (productBrand === '') {
     showError('Please enter a brand name.', 'productBrand');
@@ -192,16 +192,16 @@ if (productDescription.trim() === '' || productDescription.length < 10) {
   }
   
 
-  if (productTags.trim() === '' || !productTags.includes(',')) {
-    showError('Please enter at least one product tag (separated by commas).', 'productTags');
-    return;
-  }
+  // if (productTags.trim() === '' || !productTags.includes(',')) {
+  //   showError('Please enter at least one product tag (separated by commas).', 'productTags');
+  //   return;
+  // }
   
 
-  if (colors.trim() === '' || !colors.includes(',')) {
-    showError('Please enter at least one product color (separated by commas).', 'colors');
-    return;
-  }
+  // if (colors.trim() === '' || !colors.includes(',')) {
+  //   showError('Please enter at least one product color (separated by commas).', 'colors');
+  //   return;
+  // }
   
 
 
