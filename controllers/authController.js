@@ -76,6 +76,10 @@ exports.postSignup = (req, res, next) => {
             phoneno: phone,
             email: email,
             password: pass,
+            isRuggedPlus:0,
+            isInfluencer:false,
+            isSeller:false,
+            isAdmin:false
           });
           return person.save();
         })

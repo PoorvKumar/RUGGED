@@ -27,7 +27,7 @@
   <header>
     <%- include('partials/Navbars/nav1.ejs') %>
     <%- include('partials/Navbars/nav2.ejs') %>
-    <%- include('partials/Navbars/nav3.ejs') %>
+    <%- include('partials/Navbars/nav3.ejs',{numberOfResults:productsData.length}) %>
   </header>
   <div class="mainBody row w-100">
     <div class="filtersLeft col-3 h-50">
