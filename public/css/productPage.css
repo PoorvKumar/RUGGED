@@ -116,7 +116,7 @@
 /* The actual popup (appears on top) */
 .popupRating .popupContent {
   visibility: hidden;
-  width: 300px;
+  width: 200px;
   background-color: #555;
   color: #fff;
   text-align: center;
@@ -124,8 +124,8 @@
   padding: 0;
   position: absolute;
   z-index: 1;
-  bottom: -1000%;
-  left: 50%;
+  bottom: -715%;
+  left: 90%;
   margin-left: -80px;
 }
 
@@ -183,14 +183,14 @@
 /* Three column layout */
 .EdgeColumn {
   float: left;
-  width: 15%;
+  width: 30%;
   margin-top: 10px;
 }
 
 .CentreColumn {
   margin-top: 10px;
   float: left;
-  width: 70%;
+  width: 40%;
 }
 
 .rightText {
@@ -237,7 +237,7 @@
 }
 
 /* Responsive layout - make the columns stack on top of each other instead of next to each other */
-@media (max-width: 200px) {
+@media (max-width: 110px) {
 
   .EdgeColumn,
   .CentreColumn {
