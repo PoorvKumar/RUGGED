@@ -121,7 +121,7 @@
     <div class="jumbotron">
       <span class="pcVrtpriceCOmplete">
         <div class="pcVrtOriginalPrice"><s>₹<%=productData.price%></s></div>
-        <div class="pcVrtPrice">₹<%=productData.price*(1-(productData.discount*0.01))%> M.R.P</div>
+        <div class="pcVrtPrice">₹<%=productData.discountedPrice.toFixed(2)%> M.R.P</div>
       </span>
       <span class="pcVrtDiscount"><%=productData.discount%>% off</span>
     </div>
