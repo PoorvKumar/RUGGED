@@ -5,12 +5,7 @@ RUGGED ia n E-commerce Platform for Buying and Selling Hiking,Camping🏕️ and
 Use the Node Package Manager(npm) to initialise the project and install the .
 
 ```bash
-npm init
-npm install express 
-npm install sqlite3
-npm install body-parser
-npm install express-session
-npm install ejs
+npm i
 ```
 
 ## Usage
