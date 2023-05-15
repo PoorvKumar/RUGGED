@@ -5,7 +5,7 @@ RUGGED ia n E-commerce Platform for Buying and Selling Hiking,Camping🏕️ and
 Use the Node Package Manager(npm) to initialise the project and install the .
 
 ```bash
-npm i
+npm install
 ```
 
 ## Usage
