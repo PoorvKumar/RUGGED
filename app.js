@@ -15,6 +15,9 @@ const User = require("./models/user");
 const Order= require("./models/orders")
 // const dbh=new sqlite3.Database('./database/project.db');
 
+const dotenv=require('dotenv');
+dotenv.config();
+
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
@@ -68,14 +71,14 @@ app.use(searchRoute);
 // Filters Route
 app.use(filteringRoute);
 
+const PORT=process.env.PORT || 3000;
+
 //----------------------------
 mongoose
-  .connect(
-    "mongodb+srv://divyankkhajuria:12345@rugged-cluster.fdpaj0y.mongodb.net/RUGGED?retryWrites=true&w=majority"
-  )
+  .connect(process.env.MONGODB_URI)
   .then((result) => {
     console.log("Server started...");
-    app.listen(3000);
+    app.listen(PORT);
   })
   .catch((err) => {
     console.log(err);
