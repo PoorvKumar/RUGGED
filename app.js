@@ -75,7 +75,7 @@ const PORT=process.env.PORT || 3000;
 
 //----------------------------
 mongoose
-  .connect(process.env.MONGODB_URI)
+  .connect("mongodb+srv://divyankkhajuria:12345@rugged-cluster.fdpaj0y.mongodb.net/RUGGED?retryWrites=true&w=majority")
   .then((result) => {
     console.log("Server started...");
     app.listen(PORT);
