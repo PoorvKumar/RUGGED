@@ -8,6 +8,9 @@ Use the Node Package Manager(npm) to initialise the project and install the depe
 npm install
 ```
 
+## Demo Video
+[Link](https://drive.google.com/file/d/1oiAWTEmvLm6kbG7vCca2Cv7YZKeLqmcv/view?usp=sharing)
+
 ## Usage and Functionality
 
 1. Open the web app using command <code> node app.js </code> in your directory command line and open server at http://localhost:3000/ in your browser 
