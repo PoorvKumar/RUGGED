@@ -24,7 +24,8 @@
     </div>
     <div class="card-body">
       <div class="cardBodyHead">
-        <h5 class="card-title myCardTitle"><%=productData.name%></h5>
+        <% let endstr = productData.name.length>20 ? '...':'' %>
+        <h6 class="card-title myCardTitle" style="font-size: large; font-weight: bold;" ><%=productData.name.substring(0,20)+endstr%></h6>
         <div class="rightCompartment ">
           <% let totalNumberofPeople = productRating.ratingArray[5]+productRating.ratingArray[4]+productRating.ratingArray[3]+productRating.ratingArray[2]+productRating.ratingArray[1] ;
         let sum = productRating.ratingArray[5]*5 +productRating.ratingArray[4]*4 +productRating.ratingArray[3]*3 + productRating.ratingArray[2]*2 + productRating.ratingArray[1]*1;

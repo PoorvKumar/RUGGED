@@ -107,7 +107,6 @@
     display: flex;
     justify-content: center;
     margin: 2% 5%;
-    padding-top: 4px;
 }
 .wishlist:hover {
     cursor: pointer;
@@ -151,6 +150,7 @@
     position: relative;
     display: inline-flex;
     cursor: pointer;
+    height: fit-content;
 }
 /* The actual popup (appears on top) */
 .popupRating .popupContent {
