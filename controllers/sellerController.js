@@ -161,6 +161,7 @@ exports.SellerPostRegister = (req, res) => {
       console.log(err);
     });
 };
+// render add product form
 exports.SellerGetAddProduct = (req, res) => {
   res.render("partials/sellerDashboard/pages/addproduct.ejs", {
     user: req.session.user,
@@ -168,6 +169,7 @@ exports.SellerGetAddProduct = (req, res) => {
     pageTitle: "Influencer Dash | Add Product Page",
   });
 };
+//add product seller dash
 exports.sellerAddProduct = (req, res) => {
   let dPrice = req.body.price * (1 - 0.01 * req.body.discount);
   categories=String(req.body.cate).split(',');

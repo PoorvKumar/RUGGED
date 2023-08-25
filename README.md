@@ -2,18 +2,16 @@
 RUGGED ia n E-commerce Platform for Buying and Selling Hiking,Camping🏕️ and Trekking🥾 equipments.
 
 ## Installations
-Use the Node Package Manager(npm) to initialise the project and install the .
+Use the Node Package Manager(npm) to initialise the project and install the dependencies.
 
 ```bash
-npm init
-npm install express 
-npm install sqlite3
-npm install body-parser
-npm install express-session
-npm install ejs
+npm install
 ```
 
-## Usage
+## Demo Video
+[Link](https://drive.google.com/file/d/1oiAWTEmvLm6kbG7vCca2Cv7YZKeLqmcv/view?usp=sharing)
+
+## Usage and Functionality
 
 1. Open the web app using command <code> node app.js </code> in your directory command line and open server at http://localhost:3000/ in your browser 
 2. If you are not logged in, you can only see products and filter them.
