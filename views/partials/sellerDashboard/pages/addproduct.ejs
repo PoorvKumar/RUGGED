@@ -108,7 +108,8 @@
             <div class="row mb-3" style="margin-left: 4vw;">
               <div class="col-sm-5">
                 <label for="Tags:">Tags:</label>
-                <input type="text" name="tags" class="form-control">
+                <input type="text" name="tags" class="form-control" id="tagsed" onkeyup="validatetags()">
+                <span class="error"></span>
               </div>
               <div class="col-sm-1"></div>
               <div class="col-sm-5">
@@ -120,26 +121,26 @@
             <div class="row mb-3" style="margin-left: 4vw;">
               <div class="col-sm-5">
                 <label for="Tags:">Weight in KG:</label>
-                <input type="text" name="Weight" id="weight" class="form-control">
+                <input type="text" name="Weight" id="weight" class="form-control" onkeyup="validateweight()">
                 <span class="error"></span>
               </div>
               <div class="col-sm-1"></div>
               <div class="col-sm-5">
                 <label for="Length:">Length:</label>
-                <input type="text" name="Length" id="length" class="form-control">
+                <input type="text" name="Length" id="length" class="form-control" onkeyup="validatelength()">
                 <span class="error"></span>
               </div>
             </div>
             <div class="row mb-3" style="margin-left: 4vw;">
               <div class="col-sm-5">
                 <label for="Breadth:">Width:</label>
-                <input type="text" name="Width" id="width" class="form-control">
+                <input type="text" name="Width" id="width" class="form-control" onkeyup="validatewidth()">
                 <span class="error"></span>
               </div>
               <div class="col-sm-1"></div>
               <div class="col-sm-5">
                 <label for="Height:">Height:</label>
-                <input type="text" name="Height" id="height" class="form-control">
+                <input type="text" name="Height" id="height" class="form-control" onkeyup="validateheight()">
                 <span class="error"></span>
               </div>
             </div>

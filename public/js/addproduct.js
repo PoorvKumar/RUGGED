@@ -5,10 +5,11 @@ const discountPercentage = document.querySelector("#discountPercentage");
 const weight = document.querySelector("#weight");
 const length = document.querySelector("#length");
 const width = document.querySelector("#width");
-const height = document.querySelector("heightt");
+const height = document.querySelector("#height");
 const form = document.querySelector("#form");
 const submit = document.querySelector("#btn-submit");
 const error = document.querySelectorAll(".error");
+const tags = document.querySelector("#tagsed");
 let userregx = /^[a-z]/i;
 
 function startWithalphabet(Name) {
@@ -54,6 +55,22 @@ function checkNumber(pass) {
         return false;
     }
 }
+function checkposint(pass) {
+    var numbers = /^[0-9]\d*$/g;
+    if (pass.value.match(numbers)) {
+        return true;
+    } else {
+        return false;
+    }
+}
+function checkrange(pass) {
+    var range=/^(0|100|[1-9]|[1-9]\d)$/g;
+    if (pass.value.match(range)) {
+        return true;
+    } else {
+        return false;
+    }
+}
 function validatePrice(){
    if(!checkNumber(productPrice)){
     productPrice.style.outlineColor = "red";
@@ -64,9 +81,9 @@ function validatePrice(){
     return true;}
 }
 function validateStock(){
-    if(!checkNumber(stockQuantity)){
+    if(!checkposint(stockQuantity)){
         stockQuantity.style.outlineColor = "red";
-     error[2].innerHTML = "Stock quantity must be number";
+     error[2].innerHTML = "Stock quantity must be non-negative integer";
     }
     else{
         error[2].innerHTML="";
@@ -86,9 +103,57 @@ function validateStock(){
         return true;}
  }
 
-
-
-
+function validateheight(){
+     if(!checkNumber(height)){
+        height.style.outlineColor="red";
+        error[8].innerHTML="Height must be a positive number"
+     }
+     else{
+        error[8].innerHTML="";
+        return true;
+     }
+}
+function validatelength(){
+    if(!checkNumber(length)){
+       length.style.outlineColor="red";
+       error[6].innerHTML="length must be a positive number"
+    }
+    else{
+       error[6].innerHTML="";
+       return true;
+    }
+}
+function validateweight(){
+    if(!checkNumber(weight)){
+       weight.style.outlineColor="red";
+       error[5].innerHTML="weight must be a positive number"
+    }
+    else{
+       error[5].innerHTML="";
+       return true;
+    }
+}
+function validatewidth(){
+    if(!checkNumber(width)){
+       width.style.outlineColor="red";
+       error[7].innerHTML="width must be a positive number"
+    }
+    else{
+       error[7].innerHTML="";
+       return true;
+    }
+}
+function validatetags(){
+    var inp=/^(?:[^,]+,)*[^,]+$/g;
+    if(!tags.value.match(inp)){
+        tags.style.outlineColor="red";
+        error[4].innerHTML="Tags must be comma separted strings"
+    }
+    else{
+        error[4].innerHTML=""
+        return true
+    }
+}
  form.addEventListener('submit', function (e) {
     if (validateproductname() && validatePrice() && validateStock() && validatePercentage()) {
         return true;
