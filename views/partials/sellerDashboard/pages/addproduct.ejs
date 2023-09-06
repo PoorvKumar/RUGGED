@@ -25,7 +25,17 @@
     crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <link rel="stylesheet" href="/css/sellDash.css">
-
+  <!-- <link rel="stylesheet" href="/css/userDashboardStyle.css"> -->
+ <style>
+  .error{
+    width: 100%;
+    margin-top: 5px;
+    display:block;
+    position: relative;
+    font-size: 13px;
+    color:red;
+}
+ </style>
 </head>
 
 <body>
@@ -39,7 +49,8 @@
             <div class="row mb-3" style="margin-left: 4vw;">
               <div class="col-sm-5">
                 <label for="Product Name:">Product Name:</label>
-                <input type="text" name="name" id="productName" class="form-control">
+                <input type="text" name="name" id="productName" class="form-control" onkeyup="validateproductname()">
+                <span class="error"></span>
               </div>
               <div class="col-sm-1"></div>
               <div class="col-sm-5">
@@ -61,18 +72,21 @@
             <div class="row mb-3" style="margin-left: 4vw;">
               <div class="col-sm-5">
                 <label for="Product Price:">Product Price:</label>
-                <input type="text" name="price" id="productPrice" class="form-control">
+                <input type="text" name="price" id="productPrice" class="form-control" onkeyup="validatePrice()">
+                <span class="error"></span>
               </div>
               <div class="col-sm-1"></div>
               <div class="col-sm-5">
                 <label for="Stock Quantity:">Stock Quantity:</label>
-                <input type="text" name="stockQuantity" id="stockQuantity" class="form-control">
+                <input type="text" name="stockQuantity" id="stockQuantity" class="form-control" onkeyup="validateStock()">
+                <span class="error"></span>
               </div>
             </div>
             <div class="row mb-3" style="margin-left: 4vw;">
               <div class="col-sm-5">
                 <label for="Discount Percentage:">Discount Percentage:</label>
-                <input type="text" name="discount" id="discountPercentage" class="form-control">
+                <input type="text" name="discount" id="discountPercentage" class="form-control" onkeyup="validatePercentage()">
+                <span class="error"></span>
               </div>
               <div class="col-sm-1"></div>
               <div class="col-sm-5">
@@ -106,23 +120,27 @@
             <div class="row mb-3" style="margin-left: 4vw;">
               <div class="col-sm-5">
                 <label for="Tags:">Weight in KG:</label>
-                <input type="text" name="Weight" class="form-control">
+                <input type="text" name="Weight" id="weight" class="form-control">
+                <span class="error"></span>
               </div>
               <div class="col-sm-1"></div>
               <div class="col-sm-5">
                 <label for="Length:">Length:</label>
-                <input type="text" name="Length" class="form-control">
+                <input type="text" name="Length" id="length" class="form-control">
+                <span class="error"></span>
               </div>
             </div>
             <div class="row mb-3" style="margin-left: 4vw;">
               <div class="col-sm-5">
                 <label for="Breadth:">Width:</label>
-                <input type="text" name="Width" class="form-control">
+                <input type="text" name="Width" id="width" class="form-control">
+                <span class="error"></span>
               </div>
               <div class="col-sm-1"></div>
               <div class="col-sm-5">
                 <label for="Height:">Height:</label>
-                <input type="text" name="Height" class="form-control">
+                <input type="text" name="Height" id="height" class="form-control">
+                <span class="error"></span>
               </div>
             </div>
             <h3 style="margin-left: 8%;">Services</h3>
@@ -149,7 +167,7 @@
               </div>
             </div>
 
-            <button class="btn btn-info mt-5" type="submit" style="margin-left: 45%; width: 12%;">Submit</button>
+            <button class="btn btn-info mt-5" type="submit" style="margin-left: 45%; width: 12%;" id="btn-submit">Submit</button>
           </form>
         </div>
       </div>
@@ -294,5 +312,6 @@ function showError(message, inputName) {
   }
 
   </script> -->
+  <script src="/js/addproduct.js"></script>
 </body>
 </html>
