@@ -25,6 +25,7 @@
     crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <link rel="stylesheet" href="/css/sellDash.css">
+  <link rel="stylesheet" href="/css/userDashboardStyle.css">
 
 </head>
 
@@ -52,19 +53,30 @@
                 <hr class="my-4">
                 <h6 class="mb-4">Edit your personal information and address.</h6>
                 <div class="row g-3">
-                  <form action="/userDashboard?id=<%=user._id%>" method="post">
+                  <form action="/userDashboard?id=<%=user._id%>" method="post" id="updateform">
                     <div class="row mb-2">
-                      <div class="col-sm-6"><label class="form-label">First Name</label> <input type="text" name="First"
-                          class="form-control" value=<%=user.firstname %>></div>
-                      <div class="col-sm-6"><label class="form-label">Last Name</label> <input type="text" name="Last" class="form-control"
-                          value=<%=user.lastname %>></div>
+                      <div class="col-sm-6"><label class="form-label">First Name</label> <input type="text" name="First" id="firstname" onkeyup="validatefirstname()"
+                          class="form-control" value=<%=user.firstname %>>
+                          <span class="error"></span>
+                        </div>
+                      <div class="col-sm-6"><label class="form-label">Last Name</label> <input type="text" name="Last" class="form-control" id="lastname" onkeyup="validatelastname()"
+                          value=<%=user.lastname %>>
+                          <span class="error"></span></div>
                     </div>
                     <div class="row mb-2">
-                      <div class="col-sm-6"><label class="form-label">Phone</label> <input type="text" name="Phone" class="form-control" value=<%=user.phoneno %>></div>
-                    <div class="col-sm-6"><label class="form-label">Email</label> <input type="text" name="email" class="form-control" value=<%=user.email %>></div>
+                      <div class="col-sm-6"><label class="form-label">Phone</label> <input type="text" name="Phone" class="form-control" id="mobileno" onkeyup="validateMobileNumber()" value=<%=user.phoneno %>>
+                        <span class="error"></span>
+                      </div>
+                    <div class="col-sm-6"><label class="form-label">Email</label> <input type="text" name="email" class="form-control" id="email" onkeyup="validateEmail()" value=<%=user.email %>>
+                      <span class="error"></span>
                     </div>
-                    <div class="col-sm-8 mb-2"><label class="form-label">Address Line 1</label> <input type="text" name="Address" value="<%=user.address%>" class="form-control"></div>
-                    <div class="col-sm-8 mb-3"><label class="form-label">Address Line 2</label> <input type="text" name="AddressAlt" value="<%=user.addressAlt%>" class="form-control"></div>
+                    </div>
+                    <div class="col-sm-8 mb-2"><label class="form-label">Address Line 1</label> <input type="text" name="Address" value="<%=user.address%>" class="form-control">
+                      <span class="error"></span>
+                    </div>
+                    <div class="col-sm-8 mb-3"><label class="form-label">Address Line 2</label> <input type="text" name="AddressAlt" value="<%=user.addressAlt%>" class="form-control">
+                      <span class="error"></span>
+                    </div>
                     <div class="col-sm-6 mb-2"><label class="form-label">State</label>
                       <select class="state" name="state" class="form-select">
                         <option>Andhra Pradesh</option>
@@ -105,7 +117,7 @@
                       </select>
                     </div>
                 </div>
-                <div class="d-flex pt-5"><button type="submit" class="btn btn-info me-3">Save Changes</button> <button type="reset" class="btn btn-info">Reset</button></div>
+                <div class="d-flex pt-5"><button type="submit" id="btn-submit" class="btn btn-info me-3">Save Changes</button> <button type="reset" class="btn btn-info">Reset</button></div>
                 </form>
               </div>
             </div>
@@ -128,5 +140,5 @@
   });
 
 </script>
-
+<script src="/js/userDashboard.js"></script>
 </html>

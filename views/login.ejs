@@ -32,12 +32,12 @@
           <form action="/login" method="post" id="loginForm">
                 <div class="emaildiv posirel">
                     <i class="fa-regular fa-envelope"></i>
-                    <input type="email" name="email" placeholder="Email" required>
+                    <input type="email" id="email" name="email" placeholder="Email" onkeyup="validateEmail()" required>
                     <span class="error"></span>
                 </div>
                 <div class="passdiv posirel">
                     <i class="fa-regular fa-eye"></i>
-                    <input type="password" name="password" placeholder="Password" required>
+                    <input type="password" id="pass" name="password" placeholder="Password" onkeyup="validatePassword()" required>
                     <span class="error"></span>
                 </div>
                 <button type="submit" id="btn-submit">Login</button>
@@ -47,5 +47,6 @@
             
         </div>
     </div>
+    <script src="/js/login.js"></script>
 </body>
 </html>

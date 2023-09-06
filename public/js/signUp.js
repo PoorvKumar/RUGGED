@@ -12,7 +12,7 @@ const mobileno = document.querySelector("#mobileno");
 
 //pattens
 let userregx = /^[a-z]/i;
-let emailregx = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/i;
+let emailregx = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$/i;
 let passregx = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^\da-zA-Z]).{8,}$/
 
 function startWithalphabet(Name) {
