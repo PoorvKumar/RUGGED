@@ -161,31 +161,31 @@
               </span>
               <span class="wishlist rightCompartmentInner">
                 <!--  -->
+                <% if(isLoggedin){ %>
                 <form action="/addtorandomwishList" method="POST" id="lidrp">
                   <input type="hidden" id="selectedOption" name="listName" value="">
                   <div class="dropdown">
                     <button class="btn btn-sm btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      <% if(isLoggedin){ %>
                       <% if(wishList.length>0){ %>
                       ---Choose List---
                       <% }else{ %>
                       No wishList
                       <% } %>
-                      <% } %>
                     </button>
+                    <% if(wishList.length>0){ %>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                      <% if(isLoggedin){ %>
-                      <% if(wishList.length>0){ %>
                       <% for(let list of wishList){ %>
                       <a class="dropdown-item" href="#" onclick="selectOption('<%= list.name %>')"><%= list.name %></a>
                       <input type="hidden" name="productID" value="<%= productData._id %>">
                       <% } %>
                     </div>
-                      <button type="submit" class="btn btn-sm btn-outline-secondary" style="text-align: center;">Go</button>
-                      <% } %>
-                      <% } %>
+                    <% } %>
                   </div>
+                  <% if(wishList.length>0){ %>
+                  <button type="submit" class="btn btn-sm btn-outline-secondary" style="text-align: center;">Go</button>
+                  <% } %>
                 </form>
+                <% } %>
                 <!--  -->
                 <!-- <i class="fa-solid fa-heart wishlistInner"></i> -->
               </span>

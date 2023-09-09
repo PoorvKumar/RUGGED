@@ -227,7 +227,7 @@
     </div>
     <div class="mainContent col-9">
       <% for( let index = 0; index < productsData.length; index++ ) { %>
-      <%- include('partials/productCardSearch.ejs',{productData:productsData[index],productRating:productsRatingArray[index],}) %>
+      <%- include('partials/productCardSearch.ejs',{productData:productsData[index],productRating:productsRatingArray[index],isLogin:isLoggedin}) %>
       <% } %>
     </div>
     <nav aria-label="Page navigation example">

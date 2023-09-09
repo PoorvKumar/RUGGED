@@ -103,9 +103,11 @@
           </span>
           <span class="wishlist rightCompartmentInner">
             <form action="/addProductToWishlistDefault" method="POST">
+              <% if(isLogin){%>
               <button type="submit" style="border:0px">
                 <i class="fa-regular fa-heart wishlistInner" id="heartWishlist" onclick="wishlistHeartToggleFunction(this)"></i>
               </button>
+              <%} %>
               <input type="hidden" name="productID" value="<%= productData._id %>">
             </form>
           </span>
