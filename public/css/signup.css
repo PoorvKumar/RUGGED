@@ -85,6 +85,14 @@ input:focus{
     font-size: 13px;
     color:red;
 }
+.error2{
+  width: 100%;
+  margin-top: 5px;
+  display:block;
+  position: absolute;
+  font-size: 13px;
+  color:red;
+}
 
 
 #regForm button {

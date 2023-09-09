@@ -79,6 +79,15 @@ input:focus {
   color: red;
 }
 
+.error2 {
+  width: 100%;
+  margin-top: 5px;
+  display: block;
+  position: absolute;
+  font-size: 13px;
+  color: red;
+}
+
 
 #loginForm button {
   margin: 2rem 1rem;

@@ -49,13 +49,15 @@
                 </div>
                 <div class="mobilediv posirel">
                     <i class="fa-regular fa-mobile"></i>
-                    <input type="Number" name="Phone" id="mobileno" placeholder="MobileNumber" onkeyup="validateMobileNumber()">
+                    <input type="Number" name="Phone" id="mobileno" placeholder="MobileNumber" onkeyup="validateMobileNumber()" onblur="checkMobile()">
                     <span class="error"></span>
+                    <span class="error2" id="errorFrontEndMNo"></span>
                 </div>
                 <div class="emaildiv posirel">
                     <i class="fa-regular fa-envelope"></i>
-                    <input type="email" name="email" id="email" placeholder="Email" onkeyup="validateEmail()">
+                    <input type="email" name="email" id="email" placeholder="Email" onkeyup="validateEmail()" onblur="checkEmail()">
                     <span class="error"></span>
+                    <span class="error2" id="errorFrontEnd"></span>
                 </div>
                 <div class="passdiv posirel">
                     <i class="fa-regular fa-eye"></i>

@@ -23,7 +23,6 @@ function startWithalphabet(Name) {
         return true
     }
 }
-
 function userLength(Name) {
     if (!(Name.value.length >= 3 && Name.value.length <= 20)) {
         return false;
@@ -32,7 +31,6 @@ function userLength(Name) {
         return true;
     }
 }
-
 function validatefirstname() {
 
     if (!startWithalphabet(firstname)) {
@@ -50,7 +48,6 @@ function validatefirstname() {
         return true;
     }
 }
-
 function validatelastname() {
 
     if (!startWithalphabet(lastname)) {
@@ -68,7 +65,6 @@ function validatelastname() {
         return true;
     }
 }
-
 function validateMobileNumber() {
     if (mobileno.value.length != 10) {
         mobileno.style.outlineColor = "red";
@@ -80,9 +76,6 @@ function validateMobileNumber() {
         return true;
     }
 }
-
-
-
 function validateEmail() {
     if (!emailregx.test(email.value)) {
         email.style.outlineColor = "red";
@@ -96,8 +89,6 @@ function validateEmail() {
         return true;
     }
 }
-
-
 function checkLowerCase() {
     var lowerCaseLetters = /[a-z]/g;
     if (pass.value.match(lowerCaseLetters)) {
@@ -107,8 +98,6 @@ function checkLowerCase() {
         return false;
     }
 }
-
-
 function passwordStrength() {
     if (pass.value.length >= 8) {
         return true;
@@ -117,9 +106,6 @@ function passwordStrength() {
         return false;
     }
 }
-
-
-
 function checkUpperCase() {
     var upperCaseLetters = /[A-Z]/g;
     if (pass.value.match(upperCaseLetters)) {
@@ -129,9 +115,6 @@ function checkUpperCase() {
         return false;
     }
 }
-
-
-
 function checkNumber() {
     var numbers = /[0-9]/g;
     if (pass.value.match(numbers)) {
@@ -140,9 +123,6 @@ function checkNumber() {
         return false;
     }
 }
-
-
-
 function validatePassword() {
 
     if (!checkLowerCase()) {
@@ -177,7 +157,6 @@ function validatePassword() {
         return false;
     }
 }
-
 function checkPass() {
     if (pass.value !== cnfpass.value) {
         error[5].innerHTML = "check your password again";
@@ -189,8 +168,6 @@ function checkPass() {
         return true;
     }
 }
-
-
 eyeIcon[4].addEventListener('click', function () {
     if (eyeIcon[4].classList.contains('fa-eye')) {
         eyeIcon[4].classList.remove("fa-eye");
@@ -203,7 +180,6 @@ eyeIcon[4].addEventListener('click', function () {
         pass.setAttribute('type', 'password');
     }
 })
-
 eyeIcon[5].addEventListener('click', function () {
     if (eyeIcon[5].classList.contains('fa-eye')) {
         eyeIcon[5].classList.remove("fa-eye");
@@ -216,10 +192,6 @@ eyeIcon[5].addEventListener('click', function () {
         cnfpass.setAttribute('type', 'password');
     }
 })
-
-
-
-
 form.addEventListener('submit', function (e) {
     if (validatefirstname() && validatelastname() && validateMobileNumber() && validateEmail() && validatePassword() && checkPass()) {
         return true;
@@ -230,3 +202,37 @@ form.addEventListener('submit', function (e) {
     }
 
 })
+async function checkMobile(){
+    try {
+        const mbno=mobileno.value;
+        const mobilenos = await fetch('/signup/getMobile', {method: 'GET'});
+        const mobilenos2 = await mobilenos.json()
+        const array_of_mobilenos = mobilenos2.map((mb)=>(mb.phoneno));
+        var index=array_of_mobilenos.includes(mbno);
+        if(index){
+            document.getElementById('errorFrontEndMNo').innerHTML='Mobile already exists.';
+        }
+        else{
+            document.getElementById('errorFrontEndMNo').innerHTML='';
+        }
+    } catch (error) {
+        console.log(error);
+    }
+}
+async function checkEmail(){
+    try {
+        const eml=email.value;
+        const emails = await fetch('/signup/getEmails', {method: 'GET'});
+        const emails2 = await emails.json()
+        const array_of_emails = emails2.map((ema)=>(ema.email));
+        var index=array_of_emails.includes(eml);
+        if(index){
+            document.getElementById('errorFrontEnd').innerHTML='Email already exist';
+        }
+        else{
+            document.getElementById('errorFrontEnd').innerHTML='';
+        }
+    } catch (error) {
+        console.log(error);
+    }
+}

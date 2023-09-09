@@ -16,8 +16,8 @@ function validateEmail() {
         error[0].innerHTML = "";
         return true;
     }
-}
 
+}
 function checkLowerCase() {
     var lowerCaseLetters = /[a-z]/g;
     if (pass.value.match(lowerCaseLetters)) {
@@ -27,8 +27,6 @@ function checkLowerCase() {
         return false;
     }
 }
-
-
 function passwordStrength() {
     if (pass.value.length >= 8) {
         return true;
@@ -37,9 +35,6 @@ function passwordStrength() {
         return false;
     }
 }
-
-
-
 function checkUpperCase() {
     var upperCaseLetters = /[A-Z]/g;
     if (pass.value.match(upperCaseLetters)) {
@@ -49,9 +44,6 @@ function checkUpperCase() {
         return false;
     }
 }
-
-
-
 function checkNumber() {
     var numbers = /[0-9]/g;
     if (pass.value.match(numbers)) {
@@ -60,8 +52,6 @@ function checkNumber() {
         return false;
     }
 }
-
-
 function validatePassword() {
 
     if (!checkLowerCase()) {
@@ -96,6 +86,25 @@ function validatePassword() {
         return false;
     }
 }
+
+async function checkEmail(){
+    try {
+            const eml=email.value;
+            const emails = await fetch('/login/getEmails', {method: 'GET'});
+            const emails2 = await emails.json()
+            const array_of_emails = emails2.map((ema)=>(ema.email));
+            var index=array_of_emails.includes(eml);
+            if(!index){
+                document.getElementById('errorFrontEnd').innerHTML='Email does not exist';
+            }
+            else{
+                document.getElementById('errorFrontEnd').innerHTML='';
+            }
+        } catch (error) {
+            console.log(error);
+        }
+}
+
 form.addEventListener('submit', function (e) {
     if (validatePassword() && validatePassword()) {
         return true;

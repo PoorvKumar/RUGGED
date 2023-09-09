@@ -32,8 +32,9 @@
           <form action="/login" method="post" id="loginForm">
                 <div class="emaildiv posirel">
                     <i class="fa-regular fa-envelope"></i>
-                    <input type="email" id="email" name="email" placeholder="Email" onkeyup="validateEmail()" required>
+                    <input type="email" id="email" name="email" placeholder="Email" onkeyup="validateEmail()" onblur="checkEmail()" required>
                     <span class="error"></span>
+                    <span id="errorFrontEnd" class="error2"></span>
                 </div>
                 <div class="passdiv posirel">
                     <i class="fa-regular fa-eye"></i>

@@ -76,10 +76,10 @@ exports.postSignup = (req, res, next) => {
             phoneno: phone,
             email: email,
             password: pass,
-            isRuggedPlus:0,
-            isInfluencer:false,
-            isSeller:false,
-            isAdmin:false
+            isRuggedPlus: 0,
+            isInfluencer: false,
+            isSeller: false,
+            isAdmin: false,
           });
           return person.save();
         })
@@ -92,3 +92,12 @@ exports.postSignup = (req, res, next) => {
       console.log(err);
     });
 };
+
+exports.getEmails = async (req, res, next) => {
+  const emails = await user.find({}, "email");
+  return res.json(emails);
+};
+exports.getMobileNo = async (req,res,next)=>{
+  const mobileno = await user.find({},"phoneno");
+  return res.json(mobileno);
+}
