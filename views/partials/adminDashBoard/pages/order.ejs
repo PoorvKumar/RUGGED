@@ -48,15 +48,16 @@
               </thead>
               <tbody>
                 <%for(let i=0; i<orders.length; i++) { %>
-                    <%if(orders[i].Status=="Not Shipped") {%>
-                        <tr>
-                            <td><%= orders[i]._id %></td>
-                            <td><%= orders[i].Status %></td>
-                            <td><%= orders[i].user.firstname %></td>
-                            <td>
-                              <form action="/shipOrder" method="POST" id="shpordr">
-                            <a class="btn btn-info" href="#" onclick="document.getElementById('shpordr').submit();">Ship Order</a>
-                            <input type="hidden" name="ordership" value="<%= orders[i]._id  %>">
+                  <%if(orders[i].Status==="Not Shipped") {%>
+                    <tr>
+                      <td><%= orders[i]._id %></td>
+                      <td><%= orders[i].Status %></td>
+                      <td><%= orders[i].user.firstname %></td>
+                      <td>
+                        <form action="/shipOrder" method="POST" id="shpordr">
+                                <input type="hidden" id="ords" name="ordership" value="">
+                            <!-- <a class="btn btn-info" href="#" onclick="selectedOption('<%= orders[i]._id  %>');">Select Order</a> -->
+                            <a class="btn btn-info" href="#" onclick="selectedOption('<%= orders[i]._id  %>');document.getElementById('shpordr').submit();">Ship Order</a>
                             </form>
                             </td>
                         </tr>
@@ -79,7 +80,7 @@
               </thead>
               <tbody>
                 <%for(let i=0; i<orders.length; i++) { %>
-                    <%if(orders[i].Status=="Placed") {%>
+                    <%if(orders[i].Status==="Placed") {%>
                         <tr>
                             <td><%= orders[i]._id %></td>
                             <td><%= orders[i].Status %></td>
@@ -121,6 +122,11 @@
           </div>
       </div>
   </div>
+  <script>
+    function selectedOption(option){
+        document.getElementById('ords').value=option;
+    }
+  </script>
 </body>
 
 </html>
