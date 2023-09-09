@@ -66,7 +66,11 @@ function validatelastname() {
     }
 }
 function validateMobileNumber() {
-    if (mobileno.value.length != 10) {
+    if(mobileno.value===''){
+        mobileno.style.outlineColor = "red";
+        error[2].innerHTML = "";
+    }
+    else if (mobileno.value.length != 10) {
         mobileno.style.outlineColor = "red";
         error[2].innerHTML = "invalid Number";
     }
@@ -77,7 +81,11 @@ function validateMobileNumber() {
     }
 }
 function validateEmail() {
-    if (!emailregx.test(email.value)) {
+    if(email.value===''){
+        email.style.outlineColor = "red";
+        error[3].innerHTML = "";
+    }
+    else if (!emailregx.test(email.value)) {
         email.style.outlineColor = "red";
         email.style.position.top = "10px";
         error[3].innerHTML = "Invalid Email";

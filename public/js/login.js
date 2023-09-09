@@ -5,7 +5,11 @@ const error = document.querySelectorAll(".error");
 let emailregx = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$/i;
 let passregx = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^\da-zA-Z]).{8,}$/
 function validateEmail() {
-    if (!emailregx.test(email.value)) {
+    if(email.value===''){
+        email.style.outlineColor = "green";
+        error[0].innerHTML = "";
+    }
+    else if (!emailregx.test(email.value)) {
         email.style.outlineColor = "red";
         email.style.position.top = "10px";
         error[0].innerHTML = "Invalid Email";
