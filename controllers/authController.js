@@ -93,11 +93,13 @@ exports.postSignup = (req, res, next) => {
     });
 };
 
-exports.getEmails = async (req, res, next) => {
-  const emails = await user.find({}, "email");
-  return res.json(emails);
-};
-exports.getMobileNo = async (req,res,next)=>{
-  const mobileno = await user.find({},"phoneno");
-  return res.json(mobileno);
+exports.verifyMobile = async (req,res,next)=>{
+  const mobileno = req.body.mobileno;
+  const check = await user.find({phoneno:mobileno},"phoneno");
+  return res.json(check);
+}
+exports.verifyEmail=async(req,res,next)=>{
+  const inputEmail = req.body.email;
+  const check = await user.find({email:inputEmail}, "email");
+  return res.json(check);
 }

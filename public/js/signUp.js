@@ -212,16 +212,20 @@ form.addEventListener('submit', function (e) {
 })
 async function checkMobile(){
     try {
-        const mbno=mobileno.value;
-        const mobilenos = await fetch('/signup/getMobile', {method: 'GET'});
-        const mobilenos2 = await mobilenos.json()
-        const array_of_mobilenos = mobilenos2.map((mb)=>(mb.phoneno));
-        var index=array_of_mobilenos.includes(mbno);
-        if(index){
-            document.getElementById('errorFrontEndMNo').innerHTML='Mobile already exists.';
-        }
-        else{
-            document.getElementById('errorFrontEndMNo').innerHTML='';
+        const mbno = mobileno.value;
+        const dataToSend = { mobileno:mbno };
+        const phno = await fetch('/signup/verifyMobile',{
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(dataToSend),
+        });
+        const response = await phno.json();
+        if (response.length > 0) {
+            document.getElementById("errorFrontEndMNo").innerHTML = "Phone Number already exist";
+        } else {
+            document.getElementById("errorFrontEndMNo").innerHTML = "";
         }
     } catch (error) {
         console.log(error);
@@ -229,16 +233,20 @@ async function checkMobile(){
 }
 async function checkEmail(){
     try {
-        const eml=email.value;
-        const emails = await fetch('/signup/getEmails', {method: 'GET'});
-        const emails2 = await emails.json()
-        const array_of_emails = emails2.map((ema)=>(ema.email));
-        var index=array_of_emails.includes(eml);
-        if(index){
-            document.getElementById('errorFrontEnd').innerHTML='Email already exist';
-        }
-        else{
-            document.getElementById('errorFrontEnd').innerHTML='';
+        const eml = email.value;
+        const dataToSend = { email: eml };
+        const emls = await fetch("/signup/verifyEmail", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(dataToSend),
+        });
+        const response = await emls.json();
+        if (response.length > 0) {
+            document.getElementById("errorFrontEnd").innerHTML = "Email already exist";
+        } else {
+            document.getElementById("errorFrontEnd").innerHTML = "";
         }
     } catch (error) {
         console.log(error);
