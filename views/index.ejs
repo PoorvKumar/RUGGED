@@ -32,6 +32,7 @@
         integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
         crossorigin="anonymous"></script>
     <script src="/js/wishscript.js"></script>
+    
 </head>
 
 <body style="background-color: white;">
@@ -267,6 +268,13 @@
       </div>
   </section>
   <%- include('partials/Navbars/footer.ejs') %>
+  <script src="/js/typewriter.js"></script>
+  <script>
+    new TypeWriter('#nav-main-searchbar', ['Search \"medical kit\"', 'Search \"tent\"', 'Search \"tools\"'], {
+      holdOnceWritten: 1000,
+      holdOnceDeleted: 1000
+    });
+</script>
 </body>
 
 
