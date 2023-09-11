@@ -48,10 +48,12 @@ function validateproductname() {
     }
 }
 function checkNumber(pass) {
-    var numbers = /[0-9]/g;
+    // var numberPattern = /^-?\d+$/;
+    var numbers =/^[0-9]+(\.[0-9]+)?$/;
     if (pass.value.match(numbers)) {
         return true;
-    } else {
+    } 
+    else {
         return false;
     }
 }
@@ -64,7 +66,7 @@ function checkposint(pass) {
     }
 }
 function checkrange(pass) {
-    var range=/^(0|100|[1-9]|[1-9]\d)$/g;
+    var range=/^(100(\.0*)?|\d{0,2}(\.\d*)?)$/;
     if (pass.value.match(range)) {
         return true;
     } else {
@@ -72,7 +74,11 @@ function checkrange(pass) {
     }
 }
 function validatePrice(){
-   if(!checkNumber(productPrice)){
+    if(productPrice.value===''){
+        productPrice.style.outlineColor = "red";
+        error[1].innerHTML = "Price must not be empty";
+       }
+   else if(!checkNumber(productPrice)){
     productPrice.style.outlineColor = "red";
     error[1].innerHTML = "Price must be number";
    }
@@ -81,7 +87,11 @@ function validatePrice(){
     return true;}
 }
 function validateStock(){
-    if(!checkposint(stockQuantity)){
+    if(stockQuantity.value===''){
+        productPrice.style.outlineColor = "red";
+        error[2].innerHTML = "Stock must not be empty";
+       }
+    else if(!checkposint(stockQuantity)){
         stockQuantity.style.outlineColor = "red";
      error[2].innerHTML = "Stock quantity must be non-negative integer";
     }
@@ -90,7 +100,11 @@ function validateStock(){
     return true;}
  }
  function validatePercentage(){
-    if(!checkNumber(discountPercentage)){
+    if(discountPercentage.value===''){
+        productPrice.style.outlineColor = "red";
+        error[3].innerHTML = "Percentage must not be empty";
+       }
+    else if(!checkNumber(discountPercentage)){
     discountPercentage.style.outlineColor = "red";
      error[3].innerHTML = "Percentage must be a number";
     }
@@ -104,7 +118,11 @@ function validateStock(){
  }
 
 function validateheight(){
-     if(!checkNumber(height)){
+    if(height.value===''){
+        productPrice.style.outlineColor = "red";
+        error[8].innerHTML = "Height must not be empty";
+       }
+     else if(!checkNumber(height)){
         height.style.outlineColor="red";
         error[8].innerHTML="Height must be a positive number"
      }
@@ -114,7 +132,11 @@ function validateheight(){
      }
 }
 function validatelength(){
-    if(!checkNumber(length)){
+    if(length.valueOf===''){
+        productPrice.style.outlineColor = "red";
+        error[6].innerHTML = "Length must not be empty";
+       }
+    else if(!checkNumber(length)){
        length.style.outlineColor="red";
        error[6].innerHTML="length must be a positive number"
     }
@@ -124,7 +146,11 @@ function validatelength(){
     }
 }
 function validateweight(){
-    if(!checkNumber(weight)){
+    if(weight.value===''){
+        productPrice.style.outlineColor = "red";
+        error[5].innerHTML = "Weight must not be empty";
+       }
+    else if(!checkNumber(weight)){
        weight.style.outlineColor="red";
        error[5].innerHTML="weight must be a positive number"
     }
@@ -134,7 +160,11 @@ function validateweight(){
     }
 }
 function validatewidth(){
-    if(!checkNumber(width)){
+    if(width.value===''){
+        productPrice.style.outlineColor = "red";
+        error[7].innerHTML = "Width must not be empty";
+       }
+    else if(!checkNumber(width)){
        width.style.outlineColor="red";
        error[7].innerHTML="width must be a positive number"
     }
@@ -145,6 +175,10 @@ function validatewidth(){
 }
 function validatetags(){
     var inp=/^(?:[^,]+,)*[^,]+$/g;
+    if(tags.value===''){
+        productPrice.style.outlineColor = "red";
+        error[4].innerHTML = "Tags must not be empty";
+       }
     if(!tags.value.match(inp)){
         tags.style.outlineColor="red";
         error[4].innerHTML="Tags must be comma separted strings"
@@ -155,7 +189,7 @@ function validatetags(){
     }
 }
  form.addEventListener('submit', function (e) {
-    if (validateproductname() && validatePrice() && validateStock() && validatePercentage()) {
+    if (validateproductname() && validatePrice() && validateStock() && validatePercentage() && validateheight() && validatelength() && validateweight() && validatewidth() && validatetags()) {
         return true;
     }
     else {

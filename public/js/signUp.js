@@ -65,14 +65,28 @@ function validatelastname() {
         return true;
     }
 }
+function checkNumber1(pass) {
+    // var numberPattern = /^-?\d+$/;
+    var numbers =/^[0-9]+(\.[0-9]+)?$/;
+    if (pass.value.match(numbers)) {
+        return true;
+    } 
+    else {
+        return false;
+    }
+}
 function validateMobileNumber() {
     if(mobileno.value===''){
         mobileno.style.outlineColor = "red";
         error[2].innerHTML = "";
     }
-    else if (mobileno.value.length != 10) {
+    else if ( mobileno.value.length != 10) {
         mobileno.style.outlineColor = "red";
-        error[2].innerHTML = "invalid Number";
+        error[2].innerHTML = "Length must be 10";
+    }
+    else if(!checkNumber1(mobileno)){
+        mobileno.style.outlineColor = "red";
+        error[2].innerHTML = "It must consist of numbers";
     }
     else {
         mobileno.style.outlineColor = "green";

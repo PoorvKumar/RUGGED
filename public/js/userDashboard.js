@@ -62,11 +62,28 @@ function validatelastname() {
         return true;
     }
 }
-
+function checkNumber(pass) {
+    // var numberPattern = /^-?\d+$/;
+    var numbers =/^[0-9]+(\.[0-9]+)?$/;
+    if (pass.value.match(numbers)) {
+        return true;
+    } 
+    else {
+        return false;
+    }
+}
 function validateMobileNumber() {
-    if (mobileno.value.length != 10) {
+    if(mobileno.value===''){
         mobileno.style.outlineColor = "red";
-        error[2].innerHTML = "invalid Number";
+        error[2].innerHTML = "Mobile numebr must not be empty";
+    }
+    else if ( mobileno.value.length != 10) {
+        mobileno.style.outlineColor = "red";
+        error[2].innerHTML = "Length must be 10";
+    }
+    else if(!checkNumber(mobileno)){
+        mobileno.style.outlineColor = "red";
+        error[2].innerHTML = "It must consist of numbers";
     }
     else {
         mobileno.style.outlineColor = "green";
@@ -78,7 +95,11 @@ function validateMobileNumber() {
 
 
 function validateEmail() {
-    if (!emailregx.test(email.value)) {
+    if(email.value===''){
+        email.style.outlineColor = "red";
+        error[3].innerHTML = "Email must not be empty";
+    }
+    else if (!emailregx.test(email.value)) {
         email.style.outlineColor = "red";
         email.style.position.top = "10px";
         error[3].innerHTML = "Invalid Email";
