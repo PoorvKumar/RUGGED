@@ -10,7 +10,7 @@ const error = document.querySelectorAll(".error");
 const eyeIcon = document.querySelectorAll(".fa-regular");
 const mobileno = document.querySelector("#mobileno");
 
-//pattens
+//patterns
 let userregx = /^[a-z]/i;
 let emailregx = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$/i;
 let passregx = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^\da-zA-Z]).{8,}$/
