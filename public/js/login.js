@@ -93,7 +93,7 @@ async function checkEmail() {
     const response = await emls.json();
     if (response.length === 0) {
       document.getElementById("errorFrontEnd").innerHTML =
-        "Email does not exist";
+        "Email does not exist in our Database. Try SignUp instead.";
     } else {
       document.getElementById("errorFrontEnd").innerHTML = "";
     }
