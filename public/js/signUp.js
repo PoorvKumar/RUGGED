@@ -237,7 +237,7 @@ async function checkMobile(){
         });
         const response = await phno.json();
         if (response.length > 0) {
-            document.getElementById("errorFrontEndMNo").innerHTML = "Phone Number already exist";
+            document.getElementById("errorFrontEndMNo").innerHTML = "Phone Number already exists. Try Login or use a different Phone number.";
         } else {
             document.getElementById("errorFrontEndMNo").innerHTML = "";
         }
@@ -258,7 +258,7 @@ async function checkEmail(){
         });
         const response = await emls.json();
         if (response.length > 0) {
-            document.getElementById("errorFrontEnd").innerHTML = "Email already exist";
+            document.getElementById("errorFrontEnd").innerHTML = "Email already exists in our Database. Try Login or use a deifferent email.";
         } else {
             document.getElementById("errorFrontEnd").innerHTML = "";
         }
