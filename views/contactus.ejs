@@ -1,39 +1,131 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Contact Us Form</title>
-	<link rel="stylesheet" type="text/css" href="/css/contactUs.css">
+    <title>Contact Us Form</title>
+    <link rel="stylesheet" type="text/css" href="/css/contactUs.css">
+    <style>
+        /* Global Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom, rgba(39, 166, 230, 0.9), rgba(50, 211, 206, 0.9));
+        }
+
+        /* Header Styles */
+        header {
+            background: rgba(39, 166, 230, 0.9);
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        /* Contact Form Styles */
+        .about-page {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .header {
+            background: rgba(39, 166, 230, 0.9);
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .form {
+            padding: 20px;
+        }
+
+        form {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+            color: rgba(50, 211, 206, 0.9);
+        }
+
+        input[type="text"],
+        input[type="email"] {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid rgba(50, 211, 206, 0.9);
+            border-radius: 5px;
+        }
+
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid rgba(50, 211, 206, 0.9);
+            border-radius: 5px;
+        }
+
+        button[type="submit"] {
+            background: rgba(39, 166, 230, 0.9);
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            margin-top: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button[type="submit"]:hover {
+            background: rgba(50, 211, 206, 0.9);
+        }
+
+        a {
+            color: rgba(14, 18, 18, 0.9);
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
-	<header>
-	</header>
-	
-	<div class="about-page">
-		<div class="header">
-			<h1>Contact Us</h1>
-		</div>
-		<div class="form">
-			<h3>
-				Looking for more information you can sublmit your details here along with the query, our support team will contact you as soon as possible.
-			</h3>
-			<form id="contactForm" action ="/contact" method="post">
-				<label for="name" id="namelabel">Title:</label>
-				<input type="text" id="title" name="title" onkeyup="validatefirstname()" required>
+    <header>
+    </header>
+    
+    <div class="about-page">
+        <div class="header">
+            <h1>Contact Us</h1>
+        </div>
+        <div class="form">
+            <h3>
+                Looking for more information? You can submit your details here along with the query, and our support team will contact you as soon as possible.
+            </h3>
+            <form id="contactForm" action="/contact" method="post">
+                <label for="title" id="namelabel">Title:</label>
+                <input type="text" id="title" name="title" onkeyup="validatefirstname()" required>
 
-				<label for="email" id="emaillabel">Email:</label>
-				<input type="email" id="email" name="email" onkeyup="validateEmail()" required>
-				
-				<label for="phn" id="phnlabel">Phn:</label>
-				<input type="text" id="phn" name="phn" onkeyup="validateMobileNumber()" required>
+                <label for="email" id="emaillabel">Email:</label>
+                <input type="email" id="email" name="email" onkeyup="validateEmail()" required>
+                
+                <label for="phn" id="phnlabel">Phn:</label>
+                <input type="text" id="phn" name="phn" onkeyup="validateMobileNumber()" required>
 
-				<label for="description">Description:</label>
-				<textarea id="description" name="description" maxlength="250" rows="4"></textarea>
+                <label for="description">Description:</label>
+                <textarea id="description" name="description" maxlength="250" rows="4"></textarea>
 
-				<button type="submit">Submit</button>
-			</form>
-		</div>
-	</div>
-	<script src="/js/contactForm.js"></script>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+    <a href="/">Go Back</a>
+	<script src="./js/contactForm.js"></script>
 </body>
-<a href="/">Go Back</a>
 </html>
