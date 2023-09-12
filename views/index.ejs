@@ -10,6 +10,10 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
     integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
 
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="css/main_navbar.css">
@@ -19,6 +23,7 @@
   <link rel="stylesheet" href="css/carousel.css">
   <link rel="stylesheet" href="/css/productCardStyle.css">
   <link rel="stylesheet" href="./css/indexStyle.css">
+  <link rel="stylesheet" href="./css/indexAnimation.css">
   <title>
     RUGGED
   </title>
@@ -106,7 +111,7 @@
                 </button>
               </div>
   </header>
-  <section id="summer-collection">
+  <section id="summer-collection" class="animate__animated animate__fadeInLeft">
       <div class="container">
           <div id="indexPage" class="carousel slide" data-bs-ride="carousel">
               <div class="carousel-inner">
@@ -184,7 +189,7 @@
 
       </div>
   </section>
-  <section id="products">
+  <section id="products" class="fade-in from-right">
       <div class="container">
           <div class="products-header">
               <h2>popular products</h2>
@@ -274,7 +279,8 @@
       holdOnceWritten: 1000,
       holdOnceDeleted: 1000
     });
-</script>
+  </script>
+  <script src="./js/observer.js"></script>
 </body>
 
 
