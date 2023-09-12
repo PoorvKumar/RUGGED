@@ -21,11 +21,19 @@
 .productImage {
   padding: 1%;
 }
-
+/* .carousel-item.active{
+  min-height: min-content;
+} */
+.imgClass{
+  min-height: 500px;
+  max-height: 500px;
+}
 /* .ProductImage:hover {
   border: 5px solid red;
 } */
-
+.WishlistForm{
+  display: inline-flex;
+}
 .ProductImageInner {
   height: 74px;
   width: 60px;
@@ -55,6 +63,7 @@
 .brandName {
   opacity: 80%;
   font-size: 1.2rem;
+  margin: auto 0;
 }
 
 .rightCompartment {
@@ -84,6 +93,7 @@
   font-weight: 500;
   font-size: 12px;
   vertical-align: middle;
+  margin-top: 10px;
   background-color: #388e3c;
 }
 
