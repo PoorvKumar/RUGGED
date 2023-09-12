@@ -102,7 +102,7 @@ async function checkEmail() {
   }
 }
 form.addEventListener("submit", function (e) {
-  if (validatePassword() && validatePassword()) {
+  if (validateEmail() && validatePassword()) {
     return true;
   } else {
     e.preventDefault();
