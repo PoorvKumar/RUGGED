@@ -13,6 +13,9 @@
 
 .productImageLi {
   list-style: none;
+  margin: 3px 0;
+  border: #00bcd4 solid 5px;
+  border-radius: 1rem;
 }
 
 .productImage {
@@ -26,6 +29,7 @@
 .ProductImageInner {
   height: 74px;
   width: 60px;
+  border-radius: 1rem;
 }
 
 .lowerButtons {
@@ -483,3 +487,4 @@ user agent stylesheet img {
     display: none;
   }
 }
+
